@@ -787,6 +787,108 @@
         .nav-btn { padding: 10px 12px; }
         .stat-grid { grid-template-columns: repeat(2, 1fr); }
     }
+
+    /* ============================================================
+       MILESTONE 2 — REUSABLE LESSON / ACTIVITY CONTENT LAYER
+       ============================================================ */
+
+    /* ---------- Lesson runner shell ---------- */
+    .lesson-runner {
+        background: var(--panel);
+        border: 1px solid var(--panel-border);
+        border-radius: var(--radius-lg);
+        padding: 22px;
+        box-shadow: var(--shadow);
+    }
+    .lesson-runner-head {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+    .lesson-runner-head .lesson-exit { padding: 8px 14px; font-size: 13px; flex-shrink: 0; }
+    .lesson-progress-track {
+        flex: 1;
+        height: 7px;
+        background: var(--panel-border);
+        border-radius: 99px;
+        overflow: hidden;
+    }
+    .lesson-progress-fill {
+        height: 100%;
+        width: 0%;
+        background: linear-gradient(90deg, var(--accent), var(--gold));
+        border-radius: 99px;
+        transition: width 0.3s ease;
+    }
+    .lesson-step-count { font-size: 12.5px; color: var(--ink-soft); flex-shrink: 0; white-space: nowrap; }
+
+    .lesson-step-body { min-height: 200px; margin-bottom: 20px; animation: cardEnter 0.25s ease; }
+    .lesson-step-title { font-family: var(--font-ui); font-size: 20px; margin: 0 0 10px; }
+    .lesson-step-text { font-size: 14.5px; color: var(--ink); line-height: 1.6; margin: 0 0 10px; }
+
+    .lesson-symbol-row { display: flex; gap: 18px; justify-content: center; margin: 18px 0 4px; }
+    .lesson-symbol { font-family: var(--font-arabic); font-size: 48px; direction: rtl; color: var(--accent); }
+
+    .lesson-nav { display: flex; justify-content: space-between; gap: 10px; }
+
+    /* Harakat example cards */
+    .harakah-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px; margin-top: 10px; }
+    .harakah-card {
+        background: var(--bg-2);
+        border: 1px solid var(--panel-border);
+        border-radius: var(--radius-md);
+        padding: 16px;
+        text-align: center;
+    }
+    .harakah-symbol { font-family: var(--font-arabic); font-size: 44px; direction: rtl; color: var(--accent); margin-bottom: 4px; }
+    .harakah-name { font-weight: 700; font-size: 14.5px; margin-bottom: 6px; }
+    .harakah-sound { font-size: 12.5px; color: var(--ink-soft); margin: 0 0 10px; line-height: 1.4; }
+    .harakah-examples { display: flex; flex-direction: column; gap: 4px; font-size: 13px; margin-bottom: 10px; }
+    .harakah-examples .muted { color: var(--ink-soft); font-style: italic; }
+    .harakah-example .rtl-inline { font-size: 16px; }
+
+    /* Reusable MCQ block (shared by practice-choice steps and quiz steps) */
+    .lesson-mcq-arabic { font-family: var(--font-arabic); font-size: 40px; direction: rtl; text-align: center; color: var(--accent); margin-bottom: 8px; }
+    .lesson-mcq-prompt { font-size: 14.5px; margin-bottom: 14px; }
+    .lesson-quiz-progress { font-size: 12.5px; color: var(--ink-soft); margin: -4px 0 10px; }
+    .lesson-quiz-summary { font-weight: 700; margin-top: 10px; }
+
+    .lesson-complete-block { text-align: center; padding: 10px 0; }
+    .lesson-complete-check {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 56px; height: 56px;
+        border-radius: 50%;
+        background: var(--accent-soft);
+        color: var(--accent);
+        font-size: 28px;
+        margin-bottom: 14px;
+    }
+
+    /* ---------- Letter tracing ---------- */
+    .trace-canvas-wrap {
+        position: relative;
+        width: 260px;
+        height: 260px;
+        margin: 10px auto 14px;
+        border: 1px solid var(--panel-border);
+        border-radius: var(--radius-md);
+        background: var(--bg-2);
+        overflow: hidden;
+    }
+    .trace-canvas-wrap canvas { position: absolute; inset: 0; width: 100%; height: 100%; touch-action: none; }
+    #traceDrawCanvas { cursor: crosshair; }
+    .trace-controls { display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; }
+    .trace-controls .pill { padding: 9px 16px; font-size: 13.5px; }
+    .trace-coverage { font-size: 12.5px; color: var(--ink-soft); }
+
+    @media (max-width: 560px) {
+        .lesson-mcq-arabic { font-size: 32px; }
+        .harakah-symbol { font-size: 36px; }
+        .trace-canvas-wrap { width: 220px; height: 220px; }
+    }
 </style>
 </head>
 
@@ -960,11 +1062,11 @@
                 <p>Test yourself with multiple choice questions.</p>
                 <button class="pill show-btn" onclick="goToVocabulary('quiz')">Open Quiz</button>
             </div>
-            <div class="practice-card disabled">
+            <div class="practice-card">
                 <span class="practice-icon">✍️</span>
                 <h3>Writing Practice</h3>
-                <p>Trace and write Arabic letters.</p>
-                <span class="badge badge-upcoming">Coming soon</span>
+                <p>Trace 5 starter letters with your mouse or finger.</p>
+                <button class="pill show-btn" onclick="startLesson('alphabet-writing-1','practice')">Start Tracing</button>
             </div>
             <div class="practice-card disabled">
                 <span class="practice-icon">🎧</span>
@@ -1001,6 +1103,22 @@
         <p class="last-studied">Last studied: <span id="progLastStudied">—</span></p>
     </section>
 
+    <!-- ================= LESSON RUNNER (reusable — reached via startLesson(), not the main nav) ================= -->
+    <section id="view-lesson" class="view" hidden>
+        <div class="lesson-runner">
+            <div class="lesson-runner-head">
+                <button class="pill next-btn lesson-exit" onclick="exitLesson()">← Exit</button>
+                <div class="lesson-progress-track"><div class="lesson-progress-fill" id="lessonProgressFill"></div></div>
+                <span class="lesson-step-count" id="lessonStepCount">Step 1 of 1</span>
+            </div>
+            <div class="lesson-step-body" id="lessonStepBody"></div>
+            <div class="lesson-nav">
+                <button class="pill next-btn" id="lessonPrevBtn" onclick="lessonPrev()">← Back</button>
+                <button class="pill show-btn" id="lessonNextBtn" onclick="lessonNext()">Next →</button>
+            </div>
+        </div>
+    </section>
+
     <details class="roadmap">
         <summary>What's built &amp; what's next</summary>
         <div class="roadmap-grid">
@@ -1015,8 +1133,9 @@
             <span class="done"><span class="dot">●</span> Platform navigation (Home, Learn, Alphabet, Vocabulary, Practice, Progress)</span>
             <span class="done"><span class="dot">●</span> Curriculum structure (levels, units, lessons)</span>
             <span class="done"><span class="dot">●</span> Arabic alphabet reference</span>
-            <span><span class="dot">○</span> Guided letter-writing practice</span>
-            <span><span class="dot">○</span> Harakat (short vowel) lessons</span>
+            <span class="done"><span class="dot">●</span> Harakat (short vowel) mini-lesson</span>
+            <span class="done"><span class="dot">●</span> Letter-writing practice (5 starter letters)</span>
+            <span><span class="dot">○</span> Full guided writing practice (all 28 letters + stroke order)</span>
             <span><span class="dot">○</span> Listening exercises</span>
             <span><span class="dot">○</span> Speaking / pronunciation practice</span>
             <span><span class="dot">○</span> Student accounts</span>
@@ -1130,7 +1249,7 @@ const curriculum = {
             lessons: [
                 { id: "l1", title: "Meet the Arabic Alphabet",   description: "Get an overview of all 28 Arabic letters.",                                          status: "available", target: "alphabet" },
                 { id: "l2", title: "Arabic Letter Shapes",       description: "See how letters change shape depending on their position in a word.",               status: "preview",   target: "alphabet" },
-                { id: "l3", title: "Short Vowels (Harakat)",     description: "Learn fatha, kasra, and damma — the marks that give letters their vowel sounds.",     status: "upcoming" },
+                { id: "l3", title: "Short Vowels (Harakat)",     description: "Learn fatha, kasra, and damma — the marks that give letters their vowel sounds.",     status: "available", target: "lesson:harakat-intro" },
                 { id: "l4", title: "Reading Simple Syllables",   description: "Combine letters and harakat into your first syllables.",                             status: "upcoming" },
                 { id: "l5", title: "First Arabic Words",         description: "Start building vocabulary with flashcards.",                                        status: "available", target: "vocabulary" },
             ]
@@ -1174,6 +1293,159 @@ const arabicAlphabet = [
     { id:"waw",   isolated:"و", name:"وَاو",  translit:"wāw",   initial:"و",  medial:"ـو",  final:"ـو", connects:false },
     { id:"ya",    isolated:"ي", name:"يَاء",  translit:"yāʾ",   initial:"يـ", medial:"ـيـ", final:"ـي", connects:true },
 ];
+
+/* ============================================================
+   DATA — HARAKAT (short vowel marks)
+   Examples are pulled live from the existing flashcards array
+   (matched by the diacritic's Unicode codepoint) rather than
+   invented, so every example is verified real vocabulary.
+   ============================================================ */
+const HARAKAT = [
+    { id:"fatha", mark:"َ", symbolWord:"فَ", name:"fatḥah", translit:"a", sound:"A short, open \"a\" sound — like the \"a\" in \"cat\"." },
+    { id:"kasra", mark:"ِ", symbolWord:"فِ", name:"kasrah", translit:"i", sound:"A short \"i\" sound — like the \"i\" in \"sit\"." },
+    { id:"damma", mark:"ُ", symbolWord:"فُ", name:"ḍammah", translit:"u", sound:"A short \"u\" sound — like the \"u\" in \"put\"." },
+];
+
+function findHarakaExamples(mark, limit) {
+    return flashcards.filter(w => w.arabic.indexOf(mark) !== -1).slice(0, limit || 2);
+}
+
+/* ============================================================
+   DATA — LESSONS (reusable step-based content)
+   Each lesson is an ordered list of steps. The LessonRunner
+   (see NAVIGATION section below) renders any step by its
+   `type` using a small set of shared renderers, so a new
+   lesson is authored as data only — no new HTML/JS required
+   unless it needs a genuinely new step type.
+   ============================================================ */
+const lessons = {
+    "harakat-intro": {
+        id: "harakat-intro",
+        title: "Short Vowels — Harakat",
+        curriculumLessonId: "l3",
+        steps: [
+            {
+                type: "explain",
+                title: "Meet the Harakat",
+                body: [
+                    "Arabic letters mostly represent consonants. To show short vowel sounds, Arabic uses small marks called ḥarakāt (حَرَكَات) written above or below a letter.",
+                    "There are three short vowel marks — fatḥah, kasrah, and ḍammah — shown here on the letter ف (fāʾ):",
+                ],
+                previewSymbols: ["فَ", "فِ", "فُ"],
+            },
+            {
+                type: "example-set",
+                title: "The three short vowels",
+                intro: "Each mark changes how the consonant before it sounds. Tap 🔊 to hear the vowel sound on ف, and listen to real words that use each one.",
+                items: HARAKAT.map(h => ({
+                    symbolWord: h.symbolWord,
+                    name: h.name,
+                    translit: h.translit,
+                    sound: h.sound,
+                    examples: findHarakaExamples(h.mark, 2).map(w => ({ arabic: w.arabic, translit: w.translit, english: w.english })),
+                })),
+            },
+            {
+                type: "practice-choice",
+                title: "Quick check",
+                prompt: "Which harakah makes the short \"i\" sound?",
+                options: [
+                    { label: "fatḥah", correct: false },
+                    { label: "kasrah", correct: true },
+                    { label: "ḍammah", correct: false },
+                ],
+                explanation: "Kasrah ( ِ ) sits below the letter and makes a short \"i\" sound, like in \"sit\".",
+            },
+            {
+                type: "practice-choice",
+                title: "Quick check",
+                arabicPrompt: "فُ",
+                prompt: "Which vowel sound does this make?",
+                options: [
+                    { label: "a", correct: false },
+                    { label: "i", correct: false },
+                    { label: "u", correct: true },
+                ],
+                explanation: "ḍammah ( ُ ) sits above the letter and makes a short \"u\" sound, like in \"put\".",
+            },
+            {
+                type: "practice-choice",
+                title: "Try it with a real word",
+                arabicPrompt: "كِتَاب",
+                prompt: "\"kitāb\" (book) — what vowel sound follows the first letter, ك؟",
+                options: [
+                    { label: "a", correct: false },
+                    { label: "i", correct: true },
+                    { label: "u", correct: false },
+                ],
+                explanation: "The mark under ك is kasrah, giving a short \"i\" sound: ki-tāb.",
+            },
+            {
+                type: "quiz",
+                title: "Short check",
+                questions: [
+                    {
+                        prompt: "Which symbol is kasrah?",
+                        options: [
+                            { label: "فَ", correct: false },
+                            { label: "فِ", correct: true },
+                            { label: "فُ", correct: false },
+                        ],
+                    },
+                    {
+                        prompt: "\"daftar\" (notebook) — what vowel sound follows the first letter, د؟",
+                        arabicPrompt: "دَفْتَر",
+                        options: [
+                            { label: "a", correct: true },
+                            { label: "i", correct: false },
+                            { label: "u", correct: false },
+                        ],
+                    },
+                    {
+                        prompt: "\"kursiyy\" (chair) — what vowel sound follows the first letter, ك؟",
+                        arabicPrompt: "كُرْسِيّ",
+                        options: [
+                            { label: "a", correct: false },
+                            { label: "i", correct: false },
+                            { label: "u", correct: true },
+                        ],
+                    },
+                ],
+            },
+            {
+                type: "complete",
+                title: "Nice work!",
+                message: "You've learned the three Arabic short vowels — fatḥah, kasrah, and ḍammah — and how they change a consonant's sound.",
+                finishLabel: "Finish & mark complete",
+            },
+        ],
+    },
+    "alphabet-writing-1": {
+        id: "alphabet-writing-1",
+        title: "Write Your First Letters",
+        curriculumLessonId: null,
+        steps: [
+            {
+                type: "explain",
+                title: "Let's trace some letters",
+                body: [
+                    "Arabic is written right to left, and most letters connect to their neighbors.",
+                    "This first taste of writing practice covers 5 starter letters. Trace slowly over the pale guide with your mouse or your finger — full stroke-order guidance is coming in a future milestone.",
+                ],
+            },
+            ...["alif", "ba", "ta1", "nun", "lam"].map(id => ({
+                type: "trace-letter",
+                letter: arabicAlphabet.find(l => l.id === id),
+            })),
+            {
+                type: "complete",
+                title: "Great start!",
+                message: "You traced 5 Arabic letters. Keep practicing in the Alphabet section any time — full guided writing practice for all 28 letters is on the roadmap.",
+                finishLabel: "Finish",
+            },
+        ],
+    },
+};
 
 /* ============================================================
    STATE + PERSISTENCE
@@ -1238,6 +1510,11 @@ let currentView = "home";
 let isRouting = false;
 let alphabetRendered = false;
 let selectedLetterId = null;
+
+let activeLesson = null;
+let lessonStepIndex = 0;
+let lessonCanProceed = true;
+let lessonReturnView = "learn";
 
 /* ============================================================
    CATEGORY CHIPS
@@ -1488,7 +1765,7 @@ function nextQuizQuestion() {
 }
 
 function answerQuiz(btn, isCorrect, question) {
-    const buttons = document.querySelectorAll(".quiz-opt");
+    const buttons = document.querySelectorAll("#quizOptions .quiz-opt");
     buttons.forEach(b => b.disabled = true);
 
     quizAnswered++;
@@ -1547,7 +1824,7 @@ function initTheme() {
    markup, so even before this script runs (or if it throws)
    at most one panel can be visible.
    ============================================================ */
-const VIEW_IDS = ["home", "learn", "alphabet", "vocabulary", "practice", "progress"];
+const VIEW_IDS = ["home", "learn", "alphabet", "vocabulary", "practice", "progress", "lesson"];
 
 function setView(id, opts) {
     opts = opts || {};
@@ -1653,8 +1930,12 @@ function renderLearn() {
             const complete = progress.lessonsCompleted.indexOf(lesson.id) !== -1;
             let actionHtml = "";
             if (lesson.status === "available" || lesson.status === "preview") {
+                const isLessonRun = lesson.target && lesson.target.indexOf("lesson:") === 0;
+                const startOnclick = isLessonRun
+                    ? `startLesson('${lesson.target.slice(7)}','learn')`
+                    : `setView('${lesson.target}')`;
                 actionHtml = `
-                    <button class="pill next-btn lesson-go" onclick="setView('${lesson.target}')">${lesson.status === "preview" ? "Preview" : "Start"} →</button>
+                    <button class="pill next-btn lesson-go" onclick="${startOnclick}">${lesson.status === "preview" ? "Preview" : "Start"} →</button>
                     <button class="pill know-btn lesson-complete ${complete ? "done" : ""}" onclick="toggleLessonComplete('${lesson.id}')">${complete ? "✓ Completed" : "Mark complete"}</button>`;
             }
             return `
@@ -1779,6 +2060,374 @@ function renderProgress() {
         row.innerHTML = `<span>${cat.label}</span><span>${masteredInCat} / ${words.length}</span>`;
         catWrap.appendChild(row);
     });
+}
+
+/* ============================================================
+   LESSON RUNNER (reusable step engine)
+   Any lesson is an ordered list of steps; each step is rendered
+   by its `type` via the `stepRenderers` map below. Adding a new
+   lesson means adding data to the `lessons` object above — new
+   HTML/JS is only needed for a genuinely new step type.
+   ============================================================ */
+function startLesson(lessonId, returnView) {
+    const lesson = lessons[lessonId];
+    if (!lesson) return;
+    activeLesson = lesson;
+    lessonStepIndex = 0;
+    lessonReturnView = returnView || "learn";
+    setView("lesson");
+    renderLessonStep();
+}
+
+function exitLesson() {
+    activeLesson = null;
+    setView(lessonReturnView);
+}
+
+function completeLessonRun() {
+    if (activeLesson && activeLesson.curriculumLessonId) {
+        const id = activeLesson.curriculumLessonId;
+        if (progress.lessonsCompleted.indexOf(id) === -1) {
+            progress.lessonsCompleted.push(id);
+            saveProgress();
+        }
+    }
+    const returnTo = lessonReturnView;
+    activeLesson = null;
+    setView(returnTo);
+}
+
+const stepRenderers = {
+    explain: renderExplainStep,
+    "example-set": renderExampleSetStep,
+    "practice-choice": renderPracticeChoiceStep,
+    quiz: renderQuizStep,
+    "trace-letter": renderTraceLetterStep,
+    complete: renderCompleteStep,
+};
+
+function renderLessonStep() {
+    const step = activeLesson.steps[lessonStepIndex];
+    const body = document.getElementById("lessonStepBody");
+    lessonCanProceed = true; // step renderers that require an answer set this to false
+
+    (stepRenderers[step.type] || renderExplainStep)(step, body);
+
+    document.getElementById("lessonStepCount").textContent =
+        `Step ${lessonStepIndex + 1} of ${activeLesson.steps.length}`;
+    document.getElementById("lessonProgressFill").style.width =
+        (((lessonStepIndex + 1) / activeLesson.steps.length) * 100) + "%";
+    document.getElementById("lessonPrevBtn").style.visibility = lessonStepIndex === 0 ? "hidden" : "visible";
+
+    const isLast = lessonStepIndex === activeLesson.steps.length - 1;
+    document.getElementById("lessonNextBtn").style.display = isLast ? "none" : "";
+    updateLessonNav();
+}
+
+function updateLessonNav() {
+    const btn = document.getElementById("lessonNextBtn");
+    if (btn) btn.disabled = !lessonCanProceed;
+}
+
+function lessonNext() {
+    if (!lessonCanProceed) return;
+    if (lessonStepIndex < activeLesson.steps.length - 1) {
+        lessonStepIndex++;
+        renderLessonStep();
+    }
+}
+
+function lessonPrev() {
+    if (lessonStepIndex > 0) {
+        lessonStepIndex--;
+        renderLessonStep();
+    }
+}
+
+/* ---------- Shared multiple-choice widget ----------
+   Reused by both practice-choice steps and each question
+   inside a quiz step; also reuses the existing .quiz-options
+   / .quiz-opt / .quiz-feedback styling from the Vocabulary quiz. */
+function renderMCQ(container, cfg, onDone) {
+    container.innerHTML = "";
+    if (cfg.arabicPrompt) {
+        const ar = document.createElement("div");
+        ar.className = "lesson-mcq-arabic";
+        ar.textContent = cfg.arabicPrompt;
+        container.appendChild(ar);
+    }
+    const p = document.createElement("p");
+    p.className = "lesson-mcq-prompt";
+    p.textContent = cfg.prompt;
+    container.appendChild(p);
+
+    const optWrap = document.createElement("div");
+    optWrap.className = "quiz-options";
+    const feedback = document.createElement("div");
+    feedback.className = "quiz-feedback";
+
+    cfg.options.forEach(opt => {
+        const btn = document.createElement("button");
+        btn.className = "quiz-opt";
+        btn.textContent = opt.label;
+        btn.onclick = () => {
+            optWrap.querySelectorAll(".quiz-opt").forEach(b => b.disabled = true);
+            if (opt.correct) {
+                btn.classList.add("correct");
+                feedback.textContent = "Correct! ✓" + (cfg.explanation ? " " + cfg.explanation : "");
+                feedback.classList.add("correct");
+            } else {
+                btn.classList.add("wrong");
+                optWrap.querySelectorAll(".quiz-opt").forEach(b => {
+                    const match = cfg.options.find(o => o.label === b.textContent);
+                    if (match && match.correct) b.classList.add("correct");
+                });
+                feedback.textContent = "Not quite. " + (cfg.explanation || "");
+                feedback.classList.add("wrong");
+            }
+            bumpDailyGoal();
+            onDone(!!opt.correct);
+        };
+        optWrap.appendChild(btn);
+    });
+
+    container.appendChild(optWrap);
+    container.appendChild(feedback);
+}
+
+/* ---------- Step renderers ---------- */
+function renderExplainStep(step, body) {
+    body.innerHTML =
+        `<h3 class="lesson-step-title">${step.title}</h3>` +
+        step.body.map(p => `<p class="lesson-step-text">${p}</p>`).join("") +
+        (step.previewSymbols
+            ? `<div class="lesson-symbol-row">${step.previewSymbols.map(s => `<span class="lesson-symbol">${s}</span>`).join("")}</div>`
+            : "");
+    lessonCanProceed = true;
+}
+
+function renderExampleSetStep(step, body) {
+    body.innerHTML = `<h3 class="lesson-step-title">${step.title}</h3><p class="lesson-step-text">${step.intro || ""}</p>`;
+    const grid = document.createElement("div");
+    grid.className = "harakah-grid";
+    step.items.forEach(item => {
+        const card = document.createElement("div");
+        card.className = "harakah-card";
+        const examplesHtml = item.examples.length
+            ? item.examples.map(ex => `<div class="harakah-example"><span class="rtl-inline">${ex.arabic}</span> <em>(${ex.translit})</em> — ${ex.english}</div>`).join("")
+            : `<span class="muted">No example yet.</span>`;
+        card.innerHTML = `
+            <div class="harakah-symbol">${item.symbolWord}</div>
+            <div class="harakah-name">${item.name} <span class="letter-detail-translit">(${item.translit})</span></div>
+            <p class="harakah-sound">${item.sound}</p>
+            <div class="harakah-examples">${examplesHtml}</div>
+            <button class="speak-btn small harakah-speak" aria-label="Hear ${item.name}" title="Hear ${item.name}">🔊</button>
+        `;
+        card.querySelector(".harakah-speak").onclick = () => speakText(item.symbolWord);
+        grid.appendChild(card);
+    });
+    body.appendChild(grid);
+    lessonCanProceed = true;
+}
+
+function renderPracticeChoiceStep(step, body) {
+    body.innerHTML = `<h3 class="lesson-step-title">${step.title || "Quick check"}</h3>`;
+    const mcqWrap = document.createElement("div");
+    body.appendChild(mcqWrap);
+    lessonCanProceed = false;
+    updateLessonNav();
+    renderMCQ(mcqWrap, step, () => {
+        lessonCanProceed = true;
+        updateLessonNav();
+    });
+}
+
+function renderQuizStep(step, body) {
+    let qIndex = 0;
+    let correctCount = 0;
+    lessonCanProceed = false;
+    updateLessonNav();
+
+    function renderQuestion() {
+        body.innerHTML =
+            `<h3 class="lesson-step-title">${step.title || "Short check"}</h3>` +
+            `<p class="lesson-quiz-progress">Question ${qIndex + 1} of ${step.questions.length}</p>`;
+        const mcqWrap = document.createElement("div");
+        body.appendChild(mcqWrap);
+        const q = step.questions[qIndex];
+        renderMCQ(mcqWrap, q, (correct) => {
+            if (correct) correctCount++;
+            qIndex++;
+            if (qIndex < step.questions.length) {
+                const nextBtn = document.createElement("button");
+                nextBtn.className = "pill next-btn";
+                nextBtn.textContent = "Next question →";
+                nextBtn.onclick = renderQuestion;
+                body.appendChild(nextBtn);
+            } else {
+                const summary = document.createElement("p");
+                summary.className = "lesson-quiz-summary";
+                summary.textContent = `You got ${correctCount} / ${step.questions.length} correct.`;
+                body.appendChild(summary);
+                lessonCanProceed = true;
+                updateLessonNav();
+            }
+        });
+    }
+    renderQuestion();
+}
+
+function renderCompleteStep(step, body) {
+    body.innerHTML = `
+        <div class="lesson-complete-block">
+            <span class="lesson-complete-check">✓</span>
+            <h3 class="lesson-step-title">${step.title}</h3>
+            <p class="lesson-step-text">${step.message}</p>
+            <button class="pill show-btn" id="lessonFinishBtn">${step.finishLabel || "Finish"}</button>
+        </div>`;
+    document.getElementById("lessonFinishBtn").onclick = completeLessonRun;
+    lessonCanProceed = true;
+}
+
+/* ---------- Letter tracing (mouse + touch/pointer) ---------- */
+let traceGuideCtx = null;
+let traceCtx = null;
+let traceDrawing = false;
+let traceLastPoint = null;
+let traceBumpedThisLetter = false;
+
+function renderTraceLetterStep(step, body) {
+    const letter = step.letter;
+    body.innerHTML = `
+        <h3 class="lesson-step-title">Trace: ${letter.name} <span class="letter-detail-translit">(${letter.translit})</span></h3>
+        <p class="lesson-step-text">Follow the pale guide with your mouse or finger.</p>
+        <div class="trace-canvas-wrap">
+            <canvas id="traceGuideCanvas" width="260" height="260"></canvas>
+            <canvas id="traceDrawCanvas" width="260" height="260"></canvas>
+        </div>
+        <div class="trace-controls">
+            <button class="pill next-btn" id="traceClearBtn">Clear</button>
+            <span class="trace-coverage" id="traceCoverage">Start tracing…</span>
+        </div>
+    `;
+    lessonCanProceed = true; // tracing never blocks progression — feedback is informational only
+    initTraceCanvas(letter);
+    document.getElementById("traceClearBtn").onclick = clearTraceCanvas;
+}
+
+function tracePoint(e, canvas) {
+    const rect = canvas.getBoundingClientRect();
+    const scaleX = canvas.width / rect.width;
+    const scaleY = canvas.height / rect.height;
+    return { x: (e.clientX - rect.left) * scaleX, y: (e.clientY - rect.top) * scaleY };
+}
+
+function drawGuideLetter(ctx, canvas, letter) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.save();
+    ctx.font = "190px Amiri, Cairo, serif";
+    ctx.fillStyle = "rgba(120,113,98,0.35)";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText(letter.isolated, canvas.width / 2, canvas.height / 2 + 14);
+    ctx.restore();
+}
+
+function initTraceCanvas(letter) {
+    const guideCanvas = document.getElementById("traceGuideCanvas");
+    const drawCanvas = document.getElementById("traceDrawCanvas");
+    traceGuideCtx = guideCanvas.getContext("2d", { willReadFrequently: true });
+    traceCtx = drawCanvas.getContext("2d", { willReadFrequently: true });
+    traceDrawing = false;
+    traceLastPoint = null;
+    traceBumpedThisLetter = false;
+
+    const paint = () => drawGuideLetter(traceGuideCtx, guideCanvas, letter);
+    paint(); // immediate best-effort paint so the guide is never blank
+    if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(paint); // repaint once the Arabic webfont is confirmed loaded
+    }
+
+    traceCtx.lineWidth = 10;
+    traceCtx.lineCap = "round";
+    traceCtx.lineJoin = "round";
+    traceCtx.strokeStyle = (getComputedStyle(document.documentElement).getPropertyValue("--accent") || "#0f6b5c").trim();
+
+    drawCanvas.onpointerdown = (e) => {
+        e.preventDefault();
+        try { drawCanvas.setPointerCapture(e.pointerId); } catch (err) { /* not all pointers support capture */ }
+        traceDrawing = true;
+        if (!traceBumpedThisLetter) {
+            bumpDailyGoal();
+            traceBumpedThisLetter = true;
+        }
+        const p = tracePoint(e, drawCanvas);
+        traceLastPoint = p;
+        traceCtx.beginPath();
+        traceCtx.arc(p.x, p.y, traceCtx.lineWidth / 2, 0, Math.PI * 2);
+        traceCtx.fillStyle = traceCtx.strokeStyle;
+        traceCtx.fill();
+    };
+    drawCanvas.onpointermove = (e) => {
+        if (!traceDrawing) return;
+        const p = tracePoint(e, drawCanvas);
+        traceCtx.beginPath();
+        traceCtx.moveTo(traceLastPoint.x, traceLastPoint.y);
+        traceCtx.lineTo(p.x, p.y);
+        traceCtx.stroke();
+        traceLastPoint = p;
+    };
+    const endStroke = () => {
+        if (!traceDrawing) return;
+        traceDrawing = false;
+        traceLastPoint = null;
+        updateTraceCoverage();
+    };
+    drawCanvas.onpointerup = endStroke;
+    drawCanvas.onpointercancel = endStroke;
+    drawCanvas.onpointerleave = endStroke;
+
+    clearTraceCanvas();
+}
+
+function clearTraceCanvas() {
+    const drawCanvas = document.getElementById("traceDrawCanvas");
+    if (!drawCanvas || !traceCtx) return;
+    traceCtx.clearRect(0, 0, drawCanvas.width, drawCanvas.height);
+    updateTraceCoverage();
+}
+
+function inkNear(data, w, h, cx, cy, radius) {
+    for (let dy = -radius; dy <= radius; dy += 2) {
+        for (let dx = -radius; dx <= radius; dx += 2) {
+            const x = cx + dx, y = cy + dy;
+            if (x < 0 || y < 0 || x >= w || y >= h) continue;
+            if (data[(y * w + x) * 4 + 3] > 40) return true;
+        }
+    }
+    return false;
+}
+
+function updateTraceCoverage() {
+    const guideCanvas = document.getElementById("traceGuideCanvas");
+    const drawCanvas = document.getElementById("traceDrawCanvas");
+    const label = document.getElementById("traceCoverage");
+    if (!guideCanvas || !drawCanvas || !label || !traceGuideCtx || !traceCtx) return;
+    const w = guideCanvas.width, h = guideCanvas.height;
+    const guideData = traceGuideCtx.getImageData(0, 0, w, h).data;
+    const drawData = traceCtx.getImageData(0, 0, w, h).data;
+    let guidePixels = 0, covered = 0;
+    const step = 4, radius = 4;
+    for (let y = 0; y < h; y += step) {
+        for (let x = 0; x < w; x += step) {
+            if (guideData[(y * w + x) * 4 + 3] > 40) {
+                guidePixels++;
+                if (inkNear(drawData, w, h, x, y, radius)) covered++;
+            }
+        }
+    }
+    const pct = guidePixels ? Math.round((covered / guidePixels) * 100) : 0;
+    label.textContent = pct === 0 ? "Start tracing…" : `Ink coverage: ${pct}% of the guide traced`;
 }
 
 /* ============================================================
