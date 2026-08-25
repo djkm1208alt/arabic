@@ -1026,6 +1026,126 @@
         .word-bank-grid { grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); }
         .word-detail-ar { font-size: 34px; }
     }
+
+    /* ============================================================
+       MILESTONE 6 — READING, LISTENING & PRONUNCIATION FOUNDATIONS
+       ============================================================ */
+
+    /* ---------- Reading practice cards ---------- */
+    .reading-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+        gap: 12px;
+        margin-top: 10px;
+    }
+    .reading-card {
+        background: var(--bg-2);
+        border: 1px solid var(--panel-border);
+        border-radius: var(--radius-md);
+        padding: 16px 12px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+    }
+    .reading-card-ar { font-family: var(--font-arabic); font-size: 30px; direction: rtl; color: var(--ink); word-break: break-word; }
+    .reading-card-translit { font-size: 12.5px; color: var(--ink-soft); font-style: italic; }
+    .reading-card-en {
+        margin-top: 4px;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--accent);
+        background: var(--accent-soft);
+        padding: 3px 10px;
+        border-radius: 999px;
+        word-break: break-word;
+    }
+    .reading-card-audio { margin-top: 4px; }
+    .reading-reveal-btn { padding: 8px 14px; font-size: 12.5px; }
+
+    /* ---------- Reusable audio control (Listen / Slower) ---------- */
+    .audio-control {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin: 10px 0;
+    }
+    .audio-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        border: 1px solid var(--panel-border);
+        background: var(--panel);
+        color: var(--ink);
+        font-family: var(--font-body);
+        font-weight: 700;
+        font-size: 13.5px;
+        padding: 10px 16px;
+        min-height: 44px;
+        border-radius: 999px;
+        cursor: pointer;
+        transition: all 0.15s ease;
+    }
+    .audio-btn:hover:not(:disabled) { border-color: var(--accent); }
+    .audio-btn:disabled { opacity: 0.55; cursor: not-allowed; }
+    .audio-btn.audio-btn-playing { animation: pulse 0.6s ease infinite; border-color: var(--accent); }
+    .audio-btn-slow { background: var(--gold-soft); color: var(--gold); border-color: transparent; }
+    .mic-warning {
+        display: block;
+        color: var(--gold);
+        font-size: 12.5px;
+        margin: 6px 0 4px;
+    }
+
+    /* ---------- Arabic-script MCQ options (Listen → choose Arabic) ---------- */
+    .quiz-opt-ar { font-family: var(--font-arabic); font-size: 21px; direction: rtl; }
+
+    /* ---------- Pronunciation practice ---------- */
+    .pronounce-card {
+        background: var(--bg-2);
+        border: 1px solid var(--panel-border);
+        border-radius: var(--radius-md);
+        padding: 24px 16px;
+        text-align: center;
+        margin: 10px 0;
+    }
+    .pronounce-card .reading-card-ar { font-size: 40px; }
+    .pronounce-card .reading-card-en { margin-top: 8px; }
+    .pronounce-listen { display: flex; justify-content: center; }
+    .pronounce-recorder {
+        margin-top: 18px;
+        padding-top: 16px;
+        border-top: 1px dashed var(--panel-border);
+        text-align: center;
+    }
+    .recorder-controls {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+    }
+    .recorder-controls .pill { min-height: 44px; }
+    #recordBtn.audio-btn-recording {
+        background: var(--danger);
+        color: #fff;
+        animation: pulse 0.8s ease infinite;
+    }
+    .recorder-status {
+        font-size: 13px;
+        color: var(--ink-soft);
+        min-height: 18px;
+        margin: 0;
+    }
+
+    @media (max-width: 560px) {
+        .reading-card-ar { font-size: 24px; }
+        .pronounce-card .reading-card-ar { font-size: 32px; }
+        .audio-btn { font-size: 12.5px; padding: 9px 13px; }
+    }
 </style>
 </head>
 
@@ -1214,17 +1334,23 @@
                 <p>Trace all 28 Arabic letters with your mouse or finger.</p>
                 <button class="pill show-btn" onclick="startLesson('alphabet-writing-1','practice')">Start Tracing</button>
             </div>
-            <div class="practice-card disabled">
+            <div class="practice-card">
+                <span class="practice-icon">📖</span>
+                <h3>Reading Practice</h3>
+                <p>Read letters, syllables, familiar words, and short phrases.</p>
+                <button class="pill show-btn" onclick="startLesson('reading-foundations','practice')">Start Reading</button>
+            </div>
+            <div class="practice-card">
                 <span class="practice-icon">🎧</span>
                 <h3>Listening Practice</h3>
-                <p>Train your ear with audio exercises.</p>
-                <span class="badge badge-upcoming">Coming soon</span>
+                <p>Train your ear with short audio exercises.</p>
+                <button class="pill show-btn" onclick="startLesson('listening-foundations','practice')">Start Listening</button>
             </div>
-            <div class="practice-card disabled">
+            <div class="practice-card">
                 <span class="practice-icon">🗣️</span>
                 <h3>Pronunciation Practice</h3>
-                <p>Guided speaking practice with feedback.</p>
-                <span class="badge badge-upcoming">Coming soon</span>
+                <p>Listen, repeat, and record yourself speaking Arabic.</p>
+                <button class="pill show-btn" onclick="startLesson('pronunciation-foundations','practice')">Start Speaking</button>
             </div>
         </div>
     </section>
@@ -1245,6 +1371,10 @@
         <div class="panel-block">
             <h3>Mastery by category</h3>
             <div id="progCategoryBreakdown" class="cat-progress-list"></div>
+        </div>
+        <div class="panel-block">
+            <h3>Practice activities</h3>
+            <div id="progPracticeBreakdown" class="cat-progress-list"></div>
         </div>
         <p class="last-studied">Last studied: <span id="progLastStudied">—</span></p>
     </section>
@@ -1287,9 +1417,12 @@
             <span class="done"><span class="dot">●</span> Letter-writing practice — all 28 letters (shape + coverage feedback)</span>
             <span class="done"><span class="dot">●</span> Reading Simple Syllables mini-lesson</span>
             <span class="done"><span class="dot">●</span> Letter index / quick-jump for tracing lesson</span>
+            <span class="done"><span class="dot">●</span> Structured vocabulary system (Word Bank)</span>
+            <span class="done"><span class="dot">●</span> Reading practice (letters → syllables → words → phrases)</span>
+            <span class="done"><span class="dot">●</span> Listening exercises</span>
+            <span class="done"><span class="dot">●</span> Pronunciation practice (listen, repeat, record)</span>
             <span><span class="dot">○</span> Directional stroke-order writing guidance</span>
-            <span><span class="dot">○</span> Listening exercises</span>
-            <span><span class="dot">○</span> Speaking / pronunciation practice</span>
+            <span><span class="dot">○</span> Professionally recorded native-speaker audio</span>
             <span><span class="dot">○</span> Student accounts</span>
             <span><span class="dot">○</span> Grammar &amp; reading lessons</span>
             <span><span class="dot">○</span> Paid courses / subscriptions</span>
@@ -1723,6 +1856,54 @@ function buildSyllableGroupStep(consonantId, sound) {
 }
 
 /* ============================================================
+   MILESTONE 6 — DATA HELPERS FOR READING / LISTENING / SPEAKING
+   These build reading/listening exercise items from the *existing*
+   data sources (arabicAlphabet, HARAKAT, and the Milestone 5
+   `vocabulary` Word Bank) instead of hand-authoring duplicate
+   Arabic content. `shuffleArray` is defined later in the file as
+   a function declaration, so it's hoisted and safe to call here.
+   ============================================================ */
+function vocabWord(id) {
+    const w = vocabulary.find(v => v.id === id);
+    if (!w) throw new Error(`Unknown vocabulary id: ${id}`);
+    return w;
+}
+
+/* Reuses the existing syllable-combination logic in
+   buildSyllableGroupStep() (consonant × three harakat) instead of
+   re-deriving it, just reshaped for the reading-practice item shape. */
+function syllableReadingItems(consonantId, sound) {
+    return buildSyllableGroupStep(consonantId, sound).items.map(it => ({ arabic: it.symbolWord, translit: it.translit }));
+}
+
+function buildListenRevealItem(id) {
+    const w = vocabWord(id);
+    return { audioText: w.arabic, arabic: w.arabic, translit: w.translit, english: w.english };
+}
+
+function buildListenChooseMeaningQuestion(id, distractorIds) {
+    const w = vocabWord(id);
+    const options = shuffleArray([w.english, ...distractorIds.map(d => vocabWord(d).english)]);
+    return { audioText: w.arabic, arabic: w.arabic, translit: w.translit, english: w.english, options };
+}
+
+function buildListenChooseArabicQuestion(id, distractorIds) {
+    const w = vocabWord(id);
+    const options = shuffleArray([
+        { arabic: w.arabic, translit: w.translit },
+        ...distractorIds.map(d => { const dw = vocabWord(d); return { arabic: dw.arabic, translit: dw.translit }; }),
+    ]);
+    return { audioText: w.arabic, arabic: w.arabic, translit: w.translit, english: w.english, options };
+}
+
+function buildReadChooseMeaningQuestion(id, distractorIds) {
+    const w = vocabWord(id);
+    const options = shuffleArray([w.english, ...distractorIds.map(d => vocabWord(d).english)])
+        .map(opt => ({ label: opt, correct: opt === w.english }));
+    return { arabicPrompt: w.arabic, prompt: "What does this word mean?", options };
+}
+
+/* ============================================================
    DATA — LESSONS (reusable step-based content)
    Each lesson is an ordered list of steps. The LessonRunner
    (see NAVIGATION section below) renders any step by its
@@ -1937,7 +2118,183 @@ const lessons = {
             },
         ],
     },
+
+    /* ============================================================
+       MILESTONE 6 — READING, LISTENING & PRONUNCIATION FOUNDATIONS
+       Reached from the Practice view. All content below is sourced
+       from arabicAlphabet, HARAKAT, and the Milestone 5 `vocabulary`
+       Word Bank via the helper functions above — nothing here is
+       duplicate hand-authored Arabic content.
+       ============================================================ */
+    "reading-foundations": {
+        id: "reading-foundations",
+        title: "Reading Foundations",
+        curriculumLessonId: null,
+        steps: [
+            {
+                type: "explain",
+                title: "From recognizing to reading",
+                body: [
+                    "You've already learned the alphabet, harakat, and simple syllables. This lesson puts them together so you can read short, familiar Arabic.",
+                    "Each card has a 🔊 Listen button. It uses your browser's built-in speech synthesis as a stand-in for real native-speaker audio — helpful for practice, but not a substitute for how a person actually sounds.",
+                ],
+            },
+            {
+                type: "reading-practice",
+                title: "1. Review letters and sounds",
+                intro: "Read each letter aloud before you listen.",
+                items: arabicAlphabet.map(l => ({ arabic: l.isolated, translit: l.translit })),
+            },
+            {
+                type: "reading-practice",
+                title: "2. Harakat reading",
+                intro: "The same three vowel marks you learned, plus one consonant carrying each of them.",
+                items: [
+                    ...HARAKAT.map(h => ({ arabic: h.symbolWord, translit: `${h.name} (${h.translit})` })),
+                    ...syllableReadingItems("ba", "b"),
+                ],
+            },
+            {
+                type: "reading-practice",
+                title: "3. Simple syllables",
+                intro: "Nine short syllables built from three consonants and the three harakat.",
+                items: [
+                    ...syllableReadingItems("ba", "b"),
+                    ...syllableReadingItems("mim", "m"),
+                    ...syllableReadingItems("ta1", "t"),
+                ],
+            },
+            {
+                type: "reading-practice",
+                title: "4. Short familiar words",
+                intro: "Real words from your Word Bank. Read the Arabic first, then tap \"Show meaning\" to check yourself.",
+                items: ["hom-01", "foo-01", "sch-07", "peo-01", "col-02", "num-03"].map(id => {
+                    const w = vocabWord(id);
+                    return { arabic: w.arabic, translit: w.translit, english: w.english };
+                }),
+            },
+            {
+                type: "reading-practice",
+                title: "5. Very short phrases",
+                intro: "Short everyday phrases — the kind you'll actually use.",
+                items: ["gre-01", "gre-08", "exp-01", "exp-02", "exp-08"].map(id => {
+                    const w = vocabWord(id);
+                    return { arabic: w.arabic, translit: w.translit, english: w.english };
+                }),
+            },
+            {
+                type: "quiz",
+                title: "Read → choose the meaning",
+                questions: [
+                    buildReadChooseMeaningQuestion("adj-02", ["adj-01", "adj-06", "adj-08"]),
+                    buildReadChooseMeaningQuestion("ver-02", ["ver-03", "ver-04", "ver-01"]),
+                    buildReadChooseMeaningQuestion("pla-06", ["pla-04", "pla-07", "pla-09"]),
+                ],
+            },
+            {
+                type: "complete",
+                title: "You're reading Arabic!",
+                message: "You read letters, harakat, syllables, familiar words, and short phrases — and checked your understanding along the way.",
+                finishLabel: "Finish",
+            },
+        ],
+    },
+
+    "listening-foundations": {
+        id: "listening-foundations",
+        title: "Listening Foundations",
+        curriculumLessonId: null,
+        steps: [
+            {
+                type: "explain",
+                title: "Train your ear",
+                body: [
+                    "These exercises play Arabic audio using your browser's built-in speech synthesis — a practice stand-in, not a replacement for a real native speaker.",
+                    "You'll hear a word before you see it written. Trust your ear, then check yourself.",
+                ],
+            },
+            {
+                type: "audio-exercise",
+                title: "1. Hear individual familiar words",
+                mode: "listen-reveal",
+                questions: ["foo-09", "hom-01", "sch-06"].map(buildListenRevealItem),
+            },
+            {
+                type: "audio-exercise",
+                title: "2. Identify familiar vocabulary",
+                mode: "listen-choose-meaning",
+                questions: [
+                    buildListenChooseMeaningQuestion("foo-09", ["hom-01", "sch-06", "peo-01"]),
+                    buildListenChooseMeaningQuestion("hom-01", ["foo-09", "sch-06", "col-02"]),
+                    buildListenChooseMeaningQuestion("sch-06", ["foo-09", "hom-01", "num-03"]),
+                ],
+            },
+            {
+                type: "audio-exercise",
+                title: "3. Distinguish simple words",
+                mode: "listen-choose-arabic",
+                questions: [
+                    buildListenChooseArabicQuestion("foo-09", ["hom-01", "sch-06"]),
+                    buildListenChooseArabicQuestion("hom-01", ["foo-09", "peo-01"]),
+                    buildListenChooseArabicQuestion("sch-06", ["hom-01", "col-02"]),
+                ],
+            },
+            {
+                type: "audio-exercise",
+                title: "4. Listen to short phrases",
+                mode: "listen-choose-meaning",
+                questions: [
+                    buildListenChooseMeaningQuestion("gre-01", ["gre-08", "exp-02", "exp-05"]),
+                    buildListenChooseMeaningQuestion("exp-02", ["gre-01", "exp-01", "exp-06"]),
+                    buildListenChooseMeaningQuestion("exp-01", ["gre-08", "exp-02", "gre-01"]),
+                ],
+            },
+            {
+                type: "complete",
+                title: "Great listening!",
+                message: "You practiced hearing, identifying, and distinguishing familiar Arabic words and phrases by ear.",
+                finishLabel: "Finish",
+            },
+        ],
+    },
+
+    "pronunciation-foundations": {
+        id: "pronunciation-foundations",
+        title: "Pronunciation Foundations",
+        curriculumLessonId: null,
+        steps: [
+            {
+                type: "explain",
+                title: "Listen, repeat, record",
+                body: [
+                    "For each word: listen, say it aloud yourself, then try recording your voice and playing it back to hear how you sound.",
+                    "This is about repetition and confidence, not a perfect score — there's no grading here, and no automatic judgment of your pronunciation. Recording is optional and stays on your device; nothing is uploaded.",
+                    "If your browser or device doesn't support microphone recording, you can still listen and repeat without it.",
+                ],
+            },
+            ...["foo-09", "hom-01", "sch-06", "exp-02", "gre-01"].map(id => {
+                const w = vocabWord(id);
+                return { type: "listen-repeat", word: { arabic: w.arabic, translit: w.translit, english: w.english } };
+            }),
+            {
+                type: "complete",
+                title: "Nice repeating!",
+                message: "You listened to and practiced repeating five Arabic words and phrases.",
+                finishLabel: "Finish",
+            },
+        ],
+    },
 };
+
+/* Practice-view lessons (reached via startLesson(id,'practice'), not part
+   of the Learn curriculum) whose completion is tracked separately in
+   progress.practiceLessonsCompleted — surfaced on the Progress view. */
+const PRACTICE_LESSONS = [
+    { id: "alphabet-writing-1", label: "Letter Writing Practice" },
+    { id: "reading-foundations", label: "Reading Foundations" },
+    { id: "listening-foundations", label: "Listening Foundations" },
+    { id: "pronunciation-foundations", label: "Pronunciation Foundations" },
+];
 
 /* ============================================================
    STATE + PERSISTENCE
@@ -1960,6 +2317,7 @@ function loadProgress() {
         streak: saved.streak || 0,
         quizBest: saved.quizBest || 0,
         lessonsCompleted: saved.lessonsCompleted || [],
+        practiceLessonsCompleted: saved.practiceLessonsCompleted || [],
         dailyGoal: saved.dailyGoal || 10,
         dailyProgress: saved.dailyProgress || { date: null, count: 0 },
     };
@@ -2199,23 +2557,223 @@ if ("speechSynthesis" in window) {
     });
 }
 
-function speakText(text) {
-    if (!("speechSynthesis" in window)) return;
+/* speakText() is the browser-speech-synthesis engine. It never talks to any
+   specific button — callers pass onstart/onend/onerror so this stays reusable
+   from any component (flashcards, alphabet, harakat, word bank, and the new
+   Milestone 6 reading/listening/pronunciation activities below). */
+function speakText(text, opts) {
+    opts = opts || {};
+    if (!("speechSynthesis" in window)) {
+        if (opts.onerror) opts.onerror(new Error("speech-unsupported"));
+        return false;
+    }
     window.speechSynthesis.cancel();
     const utter = new SpeechSynthesisUtterance(text);
     utter.lang = "ar-SA";
     if (arabicVoice) utter.voice = arabicVoice;
-    utter.rate = 0.85;
-    const btn = document.getElementById("speakBtn");
-    btn.classList.add("speaking");
-    utter.onend = () => btn.classList.remove("speaking");
-    utter.onerror = () => btn.classList.remove("speaking");
+    utter.rate = opts.rate || 0.85;
+    if (opts.onstart) opts.onstart();
+    utter.onend = () => { if (opts.onend) opts.onend(); };
+    utter.onerror = () => { if (opts.onerror) opts.onerror(new Error("speech-error")); };
     window.speechSynthesis.speak(utter);
+    return true;
 }
 
 function speakCurrent() {
     if (cards.length === 0) return;
-    speakText(cards[currentCard].arabic);
+    const btn = document.getElementById("speakBtn");
+    playArabicAudio(cards[currentCard].arabic, {
+        onstart: () => btn.classList.add("speaking"),
+        onend: () => btn.classList.remove("speaking"),
+        onerror: () => btn.classList.remove("speaking"),
+    });
+}
+
+/* ============================================================
+   MILESTONE 6 — REUSABLE AUDIO ABSTRACTION
+   playArabicAudio() is the single entry point every listening
+   feature calls through. Today it always falls back to browser
+   speech synthesis (a prototype stand-in, not a substitute for
+   professionally recorded native-speaker audio). A future
+   milestone can attach a real recording by passing
+   { text, audioUrl } instead of a plain string — this function's
+   job is to prefer audioUrl when present, with no change needed
+   anywhere that already calls playArabicAudio()/buildAudioControl().
+   ============================================================ */
+function speechCapability() {
+    return {
+        supported: "speechSynthesis" in window,
+        hasArabicVoice: !!arabicVoice,
+        checked: voiceCheckDone,
+    };
+}
+
+function playArabicAudio(source, opts) {
+    opts = opts || {};
+    const audioUrl = source && typeof source === "object" ? source.audioUrl : null;
+    const text = source && typeof source === "object" ? source.text : source;
+
+    if (audioUrl) {
+        const audio = new Audio(audioUrl);
+        if (opts.onstart) opts.onstart();
+        audio.onended = () => { if (opts.onend) opts.onend(); };
+        audio.onerror = () => { if (opts.onerror) opts.onerror(new Error("audio-load-error")); };
+        audio.play().catch(() => { if (opts.onerror) opts.onerror(new Error("audio-play-error")); });
+        return true;
+    }
+    return speakText(text, opts);
+}
+
+/* A small, reusable "Listen" (+ optional "Slower") control used by reading,
+   listening, and pronunciation exercises alike. Renders a graceful disabled
+   state when speech synthesis isn't available at all, and reuses the
+   existing .voice-warning mechanism when it's available but no Arabic voice
+   was found on the device. */
+function buildAudioControl(arabicText, opts) {
+    opts = opts || {};
+    const wrap = document.createElement("div");
+    wrap.className = "audio-control";
+
+    if (!speechCapability().supported) {
+        wrap.innerHTML = `<span class="mic-warning">🔇 Audio playback isn't available on this device.</span>`;
+        return wrap;
+    }
+
+    const playBtn = document.createElement("button");
+    playBtn.type = "button";
+    playBtn.className = "audio-btn";
+    playBtn.innerHTML = `🔊 <span>${opts.label || "Listen"}</span>`;
+    playBtn.setAttribute("aria-label", opts.ariaLabel || "Listen to Arabic pronunciation");
+
+    const slowBtn = document.createElement("button");
+    slowBtn.type = "button";
+    slowBtn.className = "audio-btn audio-btn-slow";
+    slowBtn.innerHTML = `🐢 <span>Slower</span>`;
+    slowBtn.setAttribute("aria-label", "Listen slowly");
+
+    function setBusy(busy) {
+        playBtn.disabled = busy;
+        slowBtn.disabled = busy;
+        playBtn.classList.toggle("audio-btn-playing", busy);
+    }
+    playBtn.onclick = () => {
+        setBusy(true);
+        playArabicAudio(arabicText, { onend: () => setBusy(false), onerror: () => setBusy(false) });
+    };
+    slowBtn.onclick = () => {
+        setBusy(true);
+        playArabicAudio(arabicText, { rate: 0.55, onend: () => setBusy(false), onerror: () => setBusy(false) });
+    };
+
+    wrap.appendChild(playBtn);
+    wrap.appendChild(slowBtn);
+    const warn = document.createElement("span");
+    warn.className = "voice-warning";
+    warn.textContent = "⚠️ No Arabic voice found on this device — pronunciation may sound approximate.";
+    wrap.appendChild(warn);
+    return wrap;
+}
+
+/* ============================================================
+   MILESTONE 6 — RECORDING ABSTRACTION (pronunciation practice)
+   Feature-detects getUserMedia + MediaRecorder + secure-context
+   requirements up front and fails gracefully with a clear message
+   rather than leaving the learner with a broken control. Recording
+   is entirely local (an in-memory Blob played back via a hidden
+   <audio> element) — nothing is uploaded anywhere.
+   ============================================================ */
+function recordingSupport() {
+    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+        return { supported: false, reason: "Recording isn't supported in this browser. You can still listen and practice without recording." };
+    }
+    if (typeof MediaRecorder === "undefined") {
+        return { supported: false, reason: "Recording isn't supported in this browser. You can still listen and practice without recording." };
+    }
+    if (location.protocol !== "https:" && location.hostname !== "localhost" && location.hostname !== "127.0.0.1") {
+        return { supported: false, reason: "Recording requires a secure (https) connection. You can still listen and practice without recording." };
+    }
+    return { supported: true };
+}
+
+function initRecorder(container) {
+    const support = recordingSupport();
+    if (!support.supported) {
+        container.innerHTML = `<p class="mic-warning">🎙️ ${support.reason}</p>`;
+        return;
+    }
+
+    let mediaRecorder = null;
+    let stream = null;
+    let chunks = [];
+    let audioURL = null;
+
+    container.innerHTML = `
+        <div class="recorder-controls">
+            <button type="button" class="pill show-btn" id="recordBtn">🎙️ Record</button>
+            <button type="button" class="pill next-btn" id="playRecordingBtn" style="display:none;">▶️ Play my recording</button>
+            <button type="button" class="pill next-btn" id="retryBtn" style="display:none;">🔁 Try again</button>
+        </div>
+        <p class="recorder-status" id="recorderStatus" aria-live="polite">Ready to record.</p>
+        <audio id="recorderPlayback" style="display:none;"></audio>
+    `;
+    const recordBtn = container.querySelector("#recordBtn");
+    const playBtn = container.querySelector("#playRecordingBtn");
+    const retryBtn = container.querySelector("#retryBtn");
+    const status = container.querySelector("#recorderStatus");
+    const audioEl = container.querySelector("#recorderPlayback");
+
+    function setState(state, msg) {
+        status.textContent = msg;
+        recordBtn.style.display = (state === "ready" || state === "recording") ? "" : "none";
+        recordBtn.textContent = state === "recording" ? "⏹ Stop recording" : "🎙️ Record";
+        recordBtn.classList.toggle("audio-btn-recording", state === "recording");
+        playBtn.style.display = state === "recorded" ? "" : "none";
+        retryBtn.style.display = state === "recorded" ? "" : "none";
+    }
+
+    recordBtn.onclick = async () => {
+        if (mediaRecorder && mediaRecorder.state === "recording") {
+            mediaRecorder.stop();
+            return;
+        }
+        setState("requesting", "Requesting microphone access…");
+        try {
+            stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        } catch (err) {
+            const reason = (err && err.name === "NotAllowedError")
+                ? "Microphone access was denied. You can still listen and practice without recording."
+                : "Microphone access is unavailable. You can still listen and practice without recording.";
+            setState("error", reason);
+            return;
+        }
+        chunks = [];
+        try {
+            mediaRecorder = new MediaRecorder(stream);
+        } catch (err) {
+            stream.getTracks().forEach(t => t.stop());
+            setState("error", "Recording isn't supported in this browser. You can still listen and practice without recording.");
+            return;
+        }
+        mediaRecorder.ondataavailable = (e) => { if (e.data && e.data.size > 0) chunks.push(e.data); };
+        mediaRecorder.onstop = () => {
+            stream.getTracks().forEach(t => t.stop());
+            const blob = new Blob(chunks, { type: mediaRecorder.mimeType || "audio/webm" });
+            if (audioURL) URL.revokeObjectURL(audioURL);
+            audioURL = URL.createObjectURL(blob);
+            audioEl.src = audioURL;
+            setState("recorded", "Recording ready. Play it back, or try again.");
+        };
+        mediaRecorder.start();
+        setState("recording", "Recording… tap Stop recording when you're done.");
+    };
+
+    playBtn.onclick = () => {
+        audioEl.currentTime = 0;
+        audioEl.play().catch(() => { status.textContent = "Couldn't play back the recording. Try recording again."; });
+    };
+    retryBtn.onclick = () => setState("ready", "Ready to record.");
+
+    setState("ready", "Ready to record.");
 }
 
 /* ============================================================
@@ -2401,7 +2959,10 @@ function selectVocabWord(id) {
     `;
 
     document.getElementById("wordSpeakBtn").disabled = !speechOk;
-    document.getElementById("wordSpeakBtn").onclick = () => speakText(word.arabic);
+    document.getElementById("wordSpeakBtn").onclick = () => {
+        const btn = document.getElementById("wordSpeakBtn");
+        playArabicAudio(word.arabic, { onstart: () => btn.classList.add("speaking"), onend: () => btn.classList.remove("speaking"), onerror: () => btn.classList.remove("speaking") });
+    };
     updateVoiceWarning();
 }
 
@@ -2632,11 +3193,16 @@ function selectLetter(id) {
     `;
 
     document.getElementById("letterSpeakBtn").disabled = !speechOk;
-    document.getElementById("letterSpeakBtn").onclick = () => speakText(letter.isolated);
+    document.getElementById("letterSpeakBtn").onclick = () => {
+        const btn = document.getElementById("letterSpeakBtn");
+        playArabicAudio(letter.isolated, { onstart: () => btn.classList.add("speaking"), onend: () => btn.classList.remove("speaking"), onerror: () => btn.classList.remove("speaking") });
+    };
     const exampleBtn = document.getElementById("exampleSpeakBtn");
     if (exampleBtn) {
         exampleBtn.disabled = !speechOk;
-        exampleBtn.onclick = () => speakText(example.arabic);
+        exampleBtn.onclick = () => {
+            playArabicAudio(example.arabic, { onstart: () => exampleBtn.classList.add("speaking"), onend: () => exampleBtn.classList.remove("speaking"), onerror: () => exampleBtn.classList.remove("speaking") });
+        };
     }
     updateVoiceWarning();
 }
@@ -2667,6 +3233,16 @@ function renderProgress() {
         row.innerHTML = `<span>${cat.label}</span><span>${masteredInCat} / ${words.length}</span>`;
         catWrap.appendChild(row);
     });
+
+    const practiceWrap = document.getElementById("progPracticeBreakdown");
+    practiceWrap.innerHTML = "";
+    PRACTICE_LESSONS.forEach(pl => {
+        const done = progress.practiceLessonsCompleted.indexOf(pl.id) !== -1;
+        const row = document.createElement("div");
+        row.className = "cat-progress-row";
+        row.innerHTML = `<span>${pl.label}</span><span>${done ? "✓ Completed" : "Not yet"}</span>`;
+        practiceWrap.appendChild(row);
+    });
 }
 
 /* ============================================================
@@ -2692,12 +3268,15 @@ function exitLesson() {
 }
 
 function completeLessonRun() {
-    if (activeLesson && activeLesson.curriculumLessonId) {
-        const id = activeLesson.curriculumLessonId;
-        if (progress.lessonsCompleted.indexOf(id) === -1) {
-            progress.lessonsCompleted.push(id);
-            saveProgress();
+    if (activeLesson) {
+        if (activeLesson.curriculumLessonId) {
+            const id = activeLesson.curriculumLessonId;
+            if (progress.lessonsCompleted.indexOf(id) === -1) progress.lessonsCompleted.push(id);
         }
+        if (progress.practiceLessonsCompleted.indexOf(activeLesson.id) === -1) {
+            progress.practiceLessonsCompleted.push(activeLesson.id);
+        }
+        saveProgress();
     }
     const returnTo = lessonReturnView;
     activeLesson = null;
@@ -2710,6 +3289,9 @@ const stepRenderers = {
     "practice-choice": renderPracticeChoiceStep,
     quiz: renderQuizStep,
     "trace-letter": renderTraceLetterStep,
+    "reading-practice": renderReadingPracticeStep,
+    "audio-exercise": renderAudioExerciseStep,
+    "listen-repeat": renderListenRepeatStep,
     complete: renderCompleteStep,
 };
 
@@ -2819,6 +3401,9 @@ function lessonPrev() {
    / .quiz-opt / .quiz-feedback styling from the Vocabulary quiz. */
 function renderMCQ(container, cfg, onDone) {
     container.innerHTML = "";
+    if (cfg.audioText) {
+        container.appendChild(buildAudioControl(cfg.audioText));
+    }
     if (cfg.arabicPrompt) {
         const ar = document.createElement("div");
         ar.className = "lesson-mcq-arabic";
@@ -2834,10 +3419,11 @@ function renderMCQ(container, cfg, onDone) {
     optWrap.className = "quiz-options";
     const feedback = document.createElement("div");
     feedback.className = "quiz-feedback";
+    feedback.setAttribute("aria-live", "polite");
 
     cfg.options.forEach(opt => {
         const btn = document.createElement("button");
-        btn.className = "quiz-opt";
+        btn.className = "quiz-opt" + (cfg.arabicOptions ? " quiz-opt-ar" : "");
         btn.textContent = opt.label;
         btn.onclick = () => {
             optWrap.querySelectorAll(".quiz-opt").forEach(b => b.disabled = true);
@@ -2892,7 +3478,10 @@ function renderExampleSetStep(step, body) {
             <div class="harakah-examples">${examplesHtml}</div>
             <button class="speak-btn small harakah-speak" aria-label="Hear ${item.name}" title="Hear ${item.name}">🔊</button>
         `;
-        card.querySelector(".harakah-speak").onclick = () => speakText(item.symbolWord);
+        const harakahBtn = card.querySelector(".harakah-speak");
+        harakahBtn.onclick = () => {
+            playArabicAudio(item.symbolWord, { onstart: () => harakahBtn.classList.add("speaking"), onend: () => harakahBtn.classList.remove("speaking"), onerror: () => harakahBtn.classList.remove("speaking") });
+        };
         grid.appendChild(card);
     });
     body.appendChild(grid);
@@ -3101,6 +3690,157 @@ function updateTraceCoverage() {
     }
     const pct = guidePixels ? Math.round((covered / guidePixels) * 100) : 0;
     label.textContent = pct === 0 ? "Start tracing…" : `Ink coverage: ${pct}% of the guide traced`;
+}
+
+/* ============================================================
+   MILESTONE 6 — READING PRACTICE
+   A small, reusable "show a few items to read" step. Never
+   blocks lesson progression — reading practice is exploratory,
+   not graded. Each item optionally has a Listen control and an
+   English meaning hidden behind a "Show meaning" tap so the
+   learner reads the Arabic first.
+   ============================================================ */
+function renderReadingPracticeStep(step, body) {
+    body.innerHTML = `<h3 class="lesson-step-title">${step.title}</h3><p class="lesson-step-text">${step.intro || ""}</p>`;
+    const grid = document.createElement("div");
+    grid.className = "reading-grid";
+    step.items.forEach(item => {
+        const card = document.createElement("div");
+        card.className = "reading-card";
+        card.innerHTML = `
+            <div class="reading-card-ar">${item.arabic}</div>
+            ${item.translit ? `<div class="reading-card-translit">${item.translit}</div>` : ""}
+            <div class="reading-card-audio"></div>
+            ${item.english ? `<button type="button" class="reading-reveal-btn pill next-btn">Show meaning</button><div class="reading-card-en" style="display:none;">${item.english}</div>` : ""}
+        `;
+        card.querySelector(".reading-card-audio").appendChild(buildAudioControl(item.arabic));
+        const revealBtn = card.querySelector(".reading-reveal-btn");
+        if (revealBtn) {
+            const enEl = card.querySelector(".reading-card-en");
+            revealBtn.onclick = () => {
+                enEl.style.display = "";
+                revealBtn.style.display = "none";
+            };
+        }
+        grid.appendChild(card);
+    });
+    body.appendChild(grid);
+    lessonCanProceed = true;
+}
+
+/* ============================================================
+   MILESTONE 6 — LISTENING PRACTICE (audio-exercise step)
+   Supports three exercise modes, all reusing renderMCQ where the
+   answer is graded, and a lighter listen-then-reveal flow where
+   it isn't:
+     - listen-reveal          — hear it, then reveal the Arabic (ungraded)
+     - listen-choose-meaning  — hear it, choose the English meaning
+     - listen-choose-arabic   — hear it, choose the matching Arabic word
+   Each mode never shows the Arabic text before the learner has
+   listened (and, for graded modes, answered) — that's the whole
+   point of a listening exercise.
+   ============================================================ */
+function renderAudioExerciseStep(step, body) {
+    let qIndex = 0;
+    let correctCount = 0;
+    const graded = step.mode !== "listen-reveal";
+    lessonCanProceed = false;
+    updateLessonNav();
+
+    function advance(wasCorrect) {
+        if (wasCorrect) correctCount++;
+        qIndex++;
+        if (qIndex < step.questions.length) {
+            const nextBtn = document.createElement("button");
+            nextBtn.type = "button";
+            nextBtn.className = "pill next-btn";
+            nextBtn.textContent = "Next →";
+            nextBtn.onclick = renderQuestion;
+            body.appendChild(nextBtn);
+        } else {
+            const summary = document.createElement("p");
+            summary.className = "lesson-quiz-summary";
+            summary.textContent = graded
+                ? `You got ${correctCount} / ${step.questions.length} correct.`
+                : `You listened to ${step.questions.length} word${step.questions.length === 1 ? "" : "s"}.`;
+            body.appendChild(summary);
+            lessonCanProceed = true;
+            updateLessonNav();
+        }
+    }
+
+    function renderQuestion() {
+        const q = step.questions[qIndex];
+        body.innerHTML =
+            `<h3 class="lesson-step-title">${step.title}</h3>` +
+            `<p class="lesson-quiz-progress">${graded ? "Question" : "Word"} ${qIndex + 1} of ${step.questions.length}</p>`;
+        const wrap = document.createElement("div");
+        body.appendChild(wrap);
+
+        if (step.mode === "listen-reveal") {
+            wrap.appendChild(buildAudioControl(q.audioText));
+            const revealBtn = document.createElement("button");
+            revealBtn.type = "button";
+            revealBtn.className = "pill show-btn";
+            revealBtn.textContent = "Reveal Arabic";
+            const panel = document.createElement("div");
+            panel.className = "reading-card";
+            panel.style.display = "none";
+            panel.innerHTML = `
+                <div class="reading-card-ar">${q.arabic}</div>
+                ${q.translit ? `<div class="reading-card-translit">${q.translit}</div>` : ""}
+                ${q.english ? `<div class="reading-card-en">${q.english}</div>` : ""}
+            `;
+            revealBtn.onclick = () => {
+                panel.style.display = "";
+                revealBtn.disabled = true;
+                advance(true);
+            };
+            wrap.appendChild(revealBtn);
+            wrap.appendChild(panel);
+        } else if (step.mode === "listen-choose-meaning") {
+            renderMCQ(wrap, {
+                audioText: q.audioText,
+                prompt: "What does this word mean?",
+                options: q.options.map(opt => ({ label: opt, correct: opt === q.english })),
+            }, advance);
+        } else if (step.mode === "listen-choose-arabic") {
+            renderMCQ(wrap, {
+                audioText: q.audioText,
+                prompt: "Which word did you hear?",
+                arabicOptions: true,
+                options: q.options.map(opt => ({ label: opt.arabic, correct: opt.arabic === q.arabic })),
+            }, advance);
+        }
+    }
+
+    renderQuestion();
+}
+
+/* ============================================================
+   MILESTONE 6 — PRONUNCIATION PRACTICE (listen-repeat step)
+   One target word/phrase per step: Listen (+ optional slower
+   playback), say it aloud, then optionally Record → Play my
+   recording → Try again via the reusable recorder abstraction
+   above. Never blocks progression and never scores the
+   recording — recognition/scoring is explicitly out of scope.
+   ============================================================ */
+function renderListenRepeatStep(step, body) {
+    const word = step.word;
+    body.innerHTML = `
+        <h3 class="lesson-step-title">Listen &amp; repeat</h3>
+        <p class="lesson-step-text">Listen to the word, say it aloud yourself, then try recording your voice and playing it back.</p>
+        <div class="pronounce-card">
+            <div class="reading-card-ar">${word.arabic}</div>
+            ${word.translit ? `<div class="reading-card-translit">${word.translit}</div>` : ""}
+            ${word.english ? `<div class="reading-card-en">${word.english}</div>` : ""}
+        </div>
+        <div class="pronounce-listen"></div>
+        <div class="pronounce-recorder"></div>
+    `;
+    body.querySelector(".pronounce-listen").appendChild(buildAudioControl(word.arabic, { label: "Listen", ariaLabel: "Listen to the target pronunciation" }));
+    initRecorder(body.querySelector(".pronounce-recorder"));
+    lessonCanProceed = true;
 }
 
 /* ============================================================
