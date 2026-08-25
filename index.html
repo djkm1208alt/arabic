@@ -1065,7 +1065,7 @@
             <div class="practice-card">
                 <span class="practice-icon">✍️</span>
                 <h3>Writing Practice</h3>
-                <p>Trace 5 starter letters with your mouse or finger.</p>
+                <p>Trace all 28 Arabic letters with your mouse or finger.</p>
                 <button class="pill show-btn" onclick="startLesson('alphabet-writing-1','practice')">Start Tracing</button>
             </div>
             <div class="practice-card disabled">
@@ -1134,8 +1134,9 @@
             <span class="done"><span class="dot">●</span> Curriculum structure (levels, units, lessons)</span>
             <span class="done"><span class="dot">●</span> Arabic alphabet reference</span>
             <span class="done"><span class="dot">●</span> Harakat (short vowel) mini-lesson</span>
-            <span class="done"><span class="dot">●</span> Letter-writing practice (5 starter letters)</span>
-            <span><span class="dot">○</span> Full guided writing practice (all 28 letters + stroke order)</span>
+            <span class="done"><span class="dot">●</span> Letter-writing practice — all 28 letters (shape + coverage feedback)</span>
+            <span class="done"><span class="dot">●</span> Reading Simple Syllables mini-lesson</span>
+            <span><span class="dot">○</span> Directional stroke-order writing guidance</span>
             <span><span class="dot">○</span> Listening exercises</span>
             <span><span class="dot">○</span> Speaking / pronunciation practice</span>
             <span><span class="dot">○</span> Student accounts</span>
@@ -1250,7 +1251,7 @@ const curriculum = {
                 { id: "l1", title: "Meet the Arabic Alphabet",   description: "Get an overview of all 28 Arabic letters.",                                          status: "available", target: "alphabet" },
                 { id: "l2", title: "Arabic Letter Shapes",       description: "See how letters change shape depending on their position in a word.",               status: "preview",   target: "alphabet" },
                 { id: "l3", title: "Short Vowels (Harakat)",     description: "Learn fatha, kasra, and damma — the marks that give letters their vowel sounds.",     status: "available", target: "lesson:harakat-intro" },
-                { id: "l4", title: "Reading Simple Syllables",   description: "Combine letters and harakat into your first syllables.",                             status: "upcoming" },
+                { id: "l4", title: "Reading Simple Syllables",   description: "Combine letters and harakat into your first syllables.",                             status: "available", target: "lesson:syllables-1" },
                 { id: "l5", title: "First Arabic Words",         description: "Start building vocabulary with flashcards.",                                        status: "available", target: "vocabulary" },
             ]
         }
@@ -1308,6 +1309,25 @@ const HARAKAT = [
 
 function findHarakaExamples(mark, limit) {
     return flashcards.filter(w => w.arabic.indexOf(mark) !== -1).slice(0, limit || 2);
+}
+
+/* Builds one example-set step for a consonant + all three harakat,
+   reusing the same arabicAlphabet / HARAKAT data — no new content
+   is invented, only recombined. */
+function buildSyllableGroupStep(consonantId, sound) {
+    const letter = arabicAlphabet.find(l => l.id === consonantId);
+    return {
+        type: "example-set",
+        title: `${letter.isolated} (${sound}) + harakat`,
+        intro: `Combine ${letter.isolated} with each short vowel mark to read a syllable.`,
+        items: HARAKAT.map(h => ({
+            symbolWord: letter.isolated + h.mark,
+            name: sound + h.translit,
+            translit: sound + h.translit,
+            sound: `"${sound}" + "${h.translit}" → "${sound}${h.translit}"`,
+            examples: [],
+        })),
+    };
 }
 
 /* ============================================================
@@ -1422,26 +1442,106 @@ const lessons = {
     },
     "alphabet-writing-1": {
         id: "alphabet-writing-1",
-        title: "Write Your First Letters",
+        title: "Write the Arabic Alphabet",
         curriculumLessonId: null,
         steps: [
             {
                 type: "explain",
-                title: "Let's trace some letters",
+                title: "Let's trace the alphabet",
                 body: [
                     "Arabic is written right to left, and most letters connect to their neighbors.",
-                    "This first taste of writing practice covers 5 starter letters. Trace slowly over the pale guide with your mouse or your finger — full stroke-order guidance is coming in a future milestone.",
+                    "This covers all 28 letters, one at a time. Trace slowly over the pale guide with your mouse or your finger. We don't have verified stroke-order data yet, so for now: practice following the shape shown.",
                 ],
             },
-            ...["alif", "ba", "ta1", "nun", "lam"].map(id => ({
+            ...arabicAlphabet.map(letter => ({
                 type: "trace-letter",
-                letter: arabicAlphabet.find(l => l.id === id),
+                letter: letter,
             })),
             {
                 type: "complete",
-                title: "Great start!",
-                message: "You traced 5 Arabic letters. Keep practicing in the Alphabet section any time — full guided writing practice for all 28 letters is on the roadmap.",
+                title: "Great work!",
+                message: "You traced all 28 Arabic letters. Keep practicing any time — directional stroke-order guidance is on the roadmap for a future milestone.",
                 finishLabel: "Finish",
+            },
+        ],
+    },
+    "syllables-1": {
+        id: "syllables-1",
+        title: "Reading Simple Syllables",
+        curriculumLessonId: "l4",
+        steps: [
+            {
+                type: "explain",
+                title: "Consonant + Harakah = Syllable",
+                body: [
+                    "You've learned that Arabic short vowels — the harakāt — are small marks written around a consonant.",
+                    "A consonant and the harakah written on it are read together as one short syllable. For example: ب + fatḥah = بَ, read \"ba\".",
+                ],
+                previewSymbols: ["بَ", "بِ", "بُ"],
+            },
+            buildSyllableGroupStep("ba", "b"),
+            buildSyllableGroupStep("mim", "m"),
+            buildSyllableGroupStep("ta1", "t"),
+            {
+                type: "practice-choice",
+                title: "Quick check",
+                arabicPrompt: "بَ",
+                prompt: "What sound does this syllable make?",
+                options: [
+                    { label: "ba", correct: true },
+                    { label: "bi", correct: false },
+                    { label: "bu", correct: false },
+                ],
+                explanation: "ب + fatḥah = بَ = \"ba\".",
+            },
+            {
+                type: "practice-choice",
+                title: "Quick check",
+                prompt: "Which syllable reads \"mu\"?",
+                options: [
+                    { label: "مَ", correct: false },
+                    { label: "مِ", correct: false },
+                    { label: "مُ", correct: true },
+                ],
+                explanation: "م + ḍammah = مُ = \"mu\".",
+            },
+            {
+                type: "quiz",
+                title: "Short check",
+                questions: [
+                    {
+                        arabicPrompt: "تُ",
+                        prompt: "What does this syllable sound like?",
+                        options: [
+                            { label: "ta", correct: false },
+                            { label: "ti", correct: false },
+                            { label: "tu", correct: true },
+                        ],
+                    },
+                    {
+                        prompt: "Which syllable reads \"bi\"?",
+                        options: [
+                            { label: "بَ", correct: false },
+                            { label: "بِ", correct: true },
+                            { label: "بُ", correct: false },
+                        ],
+                    },
+                    {
+                        arabicPrompt: "مَ",
+                        prompt: "What does this syllable sound like?",
+                        options: [
+                            { label: "ma", correct: true },
+                            { label: "mi", correct: false },
+                            { label: "mu", correct: false },
+                        ],
+                    },
+                ],
+            },
+            {
+                type: "complete",
+                title: "You can read syllables!",
+                message: "You combined ب, م, and ت with the three harakāt to read nine short syllables.",
+                finishLabel: "Finish & mark complete",
             },
         ],
     },
@@ -2218,7 +2318,7 @@ function renderExampleSetStep(step, body) {
             : `<span class="muted">No example yet.</span>`;
         card.innerHTML = `
             <div class="harakah-symbol">${item.symbolWord}</div>
-            <div class="harakah-name">${item.name} <span class="letter-detail-translit">(${item.translit})</span></div>
+            <div class="harakah-name">${item.name}${item.translit && item.translit !== item.name ? ` <span class="letter-detail-translit">(${item.translit})</span>` : ""}</div>
             <p class="harakah-sound">${item.sound}</p>
             <div class="harakah-examples">${examplesHtml}</div>
             <button class="speak-btn small harakah-speak" aria-label="Hear ${item.name}" title="Hear ${item.name}">🔊</button>
@@ -2298,9 +2398,10 @@ let traceBumpedThisLetter = false;
 
 function renderTraceLetterStep(step, body) {
     const letter = step.letter;
+    const example = findExampleWord(letter);
     body.innerHTML = `
         <h3 class="lesson-step-title">Trace: ${letter.name} <span class="letter-detail-translit">(${letter.translit})</span></h3>
-        <p class="lesson-step-text">Follow the pale guide with your mouse or finger.</p>
+        <p class="lesson-step-text">Practice following the shape shown.${letter.connects === false ? " This letter does not connect to the letter that follows it." : ""}</p>
         <div class="trace-canvas-wrap">
             <canvas id="traceGuideCanvas" width="260" height="260"></canvas>
             <canvas id="traceDrawCanvas" width="260" height="260"></canvas>
@@ -2309,6 +2410,9 @@ function renderTraceLetterStep(step, body) {
             <button class="pill next-btn" id="traceClearBtn">Clear</button>
             <span class="trace-coverage" id="traceCoverage">Start tracing…</span>
         </div>
+        ${example
+            ? `<div class="letter-example"><b>Example:</b> <span class="rtl-inline">${example.arabic}</span> <em>(${example.translit})</em> — ${example.english}</div>`
+            : ""}
     `;
     lessonCanProceed = true; // tracing never blocks progression — feedback is informational only
     initTraceCanvas(letter);
