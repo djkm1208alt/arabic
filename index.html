@@ -888,7 +888,71 @@
         .lesson-mcq-arabic { font-size: 32px; }
         .harakah-symbol { font-size: 36px; }
         .trace-canvas-wrap { width: 220px; height: 220px; }
+        .lesson-letter-tile-ar { font-size: 18px; }
+        .lesson-letter-tile-translit { font-size: 9px; }
     }
+
+    /* ============================================================
+       MILESTONE 4 — LETTER INDEX / QUICK-JUMP FOR TRACING LESSON
+       ============================================================ */
+    details.lesson-letter-picker {
+        margin-bottom: 18px;
+        background: var(--bg-2);
+        border: 1px solid var(--panel-border);
+        border-radius: var(--radius-md);
+        padding: 4px 14px;
+    }
+    details.lesson-letter-picker summary {
+        cursor: pointer;
+        padding: 12px 0;
+        font-weight: 700;
+        font-size: 13.5px;
+        color: var(--ink);
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+    }
+    details.lesson-letter-picker summary::-webkit-details-marker { display: none; }
+    details.lesson-letter-picker summary::after {
+        content: "＋";
+        color: var(--ink-soft);
+        font-weight: 400;
+        transition: transform 0.2s ease;
+        flex-shrink: 0;
+    }
+    details.lesson-letter-picker[open] summary::after { transform: rotate(45deg); }
+    .lesson-letter-picker-current { font-weight: 400; color: var(--ink-soft); font-size: 12.5px; }
+
+    .lesson-letter-picker-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(46px, 1fr));
+        gap: 6px;
+        padding: 2px 0 16px;
+    }
+    .lesson-letter-tile {
+        background: var(--panel);
+        border: 1px solid var(--panel-border);
+        border-radius: 10px;
+        padding: 8px 2px 6px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3px;
+        cursor: pointer;
+        font-family: var(--font-body);
+        transition: all 0.15s ease;
+    }
+    .lesson-letter-tile:hover { border-color: var(--accent); }
+    .lesson-letter-tile-ar { font-family: var(--font-arabic); font-size: 20px; direction: rtl; color: var(--ink); }
+    .lesson-letter-tile-translit { font-size: 10px; color: var(--ink-soft); }
+    .lesson-letter-tile.active {
+        border-color: var(--accent);
+        background: var(--accent-soft);
+    }
+    .lesson-letter-tile.active .lesson-letter-tile-ar,
+    .lesson-letter-tile.active .lesson-letter-tile-translit { color: var(--accent); }
 </style>
 </head>
 
@@ -1111,6 +1175,10 @@
                 <div class="lesson-progress-track"><div class="lesson-progress-fill" id="lessonProgressFill"></div></div>
                 <span class="lesson-step-count" id="lessonStepCount">Step 1 of 1</span>
             </div>
+            <details class="lesson-letter-picker" id="lessonLetterPicker" hidden open>
+                <summary>Jump to a letter <span class="lesson-letter-picker-current" id="lessonLetterPickerCurrent"></span></summary>
+                <div class="lesson-letter-picker-grid" id="lessonLetterPickerGrid" aria-label="Arabic letter index"></div>
+            </details>
             <div class="lesson-step-body" id="lessonStepBody"></div>
             <div class="lesson-nav">
                 <button class="pill next-btn" id="lessonPrevBtn" onclick="lessonPrev()">← Back</button>
@@ -1136,6 +1204,7 @@
             <span class="done"><span class="dot">●</span> Harakat (short vowel) mini-lesson</span>
             <span class="done"><span class="dot">●</span> Letter-writing practice — all 28 letters (shape + coverage feedback)</span>
             <span class="done"><span class="dot">●</span> Reading Simple Syllables mini-lesson</span>
+            <span class="done"><span class="dot">●</span> Letter index / quick-jump for tracing lesson</span>
             <span><span class="dot">○</span> Directional stroke-order writing guidance</span>
             <span><span class="dot">○</span> Listening exercises</span>
             <span><span class="dot">○</span> Speaking / pronunciation practice</span>
@@ -2222,6 +2291,68 @@ function renderLessonStep() {
     const isLast = lessonStepIndex === activeLesson.steps.length - 1;
     document.getElementById("lessonNextBtn").style.display = isLast ? "none" : "";
     updateLessonNav();
+    renderLessonLetterPicker();
+}
+
+/* ---------- Letter index / quick-jump ----------
+   Built from the same `arabicAlphabet` data used everywhere else —
+   no letter-specific markup is authored. Only shown for lessons
+   that actually contain trace-letter steps (currently
+   "alphabet-writing-1"), and only rebuilt when the active lesson
+   changes so step-to-step navigation stays cheap and doesn't steal
+   keyboard focus from the letter tiles. */
+function findLetterStepIndex(lessonObj, letterId) {
+    return lessonObj.steps.findIndex(s => s.type === "trace-letter" && s.letter.id === letterId);
+}
+
+function jumpToLetterStep(letterId) {
+    if (!activeLesson) return;
+    const idx = findLetterStepIndex(activeLesson, letterId);
+    if (idx === -1) return;
+    lessonStepIndex = idx;
+    renderLessonStep();
+}
+
+function renderLessonLetterPicker() {
+    const picker = document.getElementById("lessonLetterPicker");
+    const grid = document.getElementById("lessonLetterPickerGrid");
+    if (!picker || !grid) return;
+
+    const hasLetterSteps = !!activeLesson && activeLesson.steps.some(s => s.type === "trace-letter");
+    picker.hidden = !hasLetterSteps;
+    if (!hasLetterSteps) {
+        grid.innerHTML = "";
+        picker.dataset.lessonId = "";
+        return;
+    }
+
+    if (picker.dataset.lessonId !== activeLesson.id) {
+        picker.dataset.lessonId = activeLesson.id;
+        grid.innerHTML = "";
+        arabicAlphabet.forEach(letter => {
+            const btn = document.createElement("button");
+            btn.type = "button";
+            btn.className = "lesson-letter-tile";
+            btn.dataset.letterId = letter.id;
+            btn.setAttribute("aria-label", `${letter.translit} (${letter.name})`);
+            btn.innerHTML = `<span class="lesson-letter-tile-ar">${letter.isolated}</span><span class="lesson-letter-tile-translit">${letter.translit}</span>`;
+            btn.onclick = () => jumpToLetterStep(letter.id);
+            grid.appendChild(btn);
+        });
+    }
+
+    const currentStep = activeLesson.steps[lessonStepIndex];
+    const currentLetterId = currentStep && currentStep.type === "trace-letter" ? currentStep.letter.id : null;
+    const currentLetter = currentLetterId ? arabicAlphabet.find(l => l.id === currentLetterId) : null;
+    document.getElementById("lessonLetterPickerCurrent").textContent =
+        currentLetter ? `— currently on ${currentLetter.translit}` : "";
+
+    grid.querySelectorAll(".lesson-letter-tile").forEach(btn => {
+        const isCurrent = btn.dataset.letterId === currentLetterId;
+        btn.classList.toggle("active", isCurrent);
+        if (isCurrent) btn.setAttribute("aria-current", "step");
+        else btn.removeAttribute("aria-current");
+    });
 }
 
 function updateLessonNav() {
