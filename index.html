@@ -953,6 +953,79 @@
     }
     .lesson-letter-tile.active .lesson-letter-tile-ar,
     .lesson-letter-tile.active .lesson-letter-tile-translit { color: var(--accent); }
+
+    /* ============================================================
+       MILESTONE 5 — STRUCTURED VOCABULARY SYSTEM (Word Bank)
+       Same grid + detail-panel interaction already used by the
+       Alphabet reference view, applied to the new vocabulary
+       dataset so it scales the same way to many more entries.
+       ============================================================ */
+    .word-bank-count {
+        font-size: 12.5px;
+        color: var(--ink-soft);
+        margin: -8px 0 14px;
+    }
+    .word-bank-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+    .word-tile {
+        background: var(--panel);
+        border: 1px solid var(--panel-border);
+        border-radius: var(--radius-md);
+        padding: 14px 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        cursor: pointer;
+        text-align: center;
+        font-family: var(--font-body);
+        transition: all 0.15s ease;
+    }
+    .word-tile:hover { border-color: var(--accent); }
+    .word-tile-ar { font-family: var(--font-arabic); font-size: 22px; direction: rtl; color: var(--ink); }
+    .word-tile-en { font-size: 11.5px; color: var(--ink-soft); }
+    .word-tile.active { border-color: var(--accent); background: var(--accent-soft); }
+    .word-tile.active .word-tile-en { color: var(--accent); }
+
+    .word-bank-detail {
+        background: var(--panel);
+        border: 1px solid var(--panel-border);
+        border-radius: var(--radius-lg);
+        padding: 24px;
+        box-shadow: var(--shadow);
+    }
+    .word-detail-head { display: flex; align-items: center; gap: 16px; margin-bottom: 6px; flex-wrap: wrap; }
+    .word-detail-ar { font-family: var(--font-arabic); font-size: 46px; color: var(--accent); direction: rtl; }
+    .word-detail-en { font-weight: 700; font-size: 17px; }
+    .word-detail-translit { font-weight: 400; color: var(--ink-soft); font-size: 14px; font-style: italic; }
+    .word-detail-badges { display: flex; gap: 6px; flex-wrap: wrap; margin: 12px 0 4px; }
+    .word-detail-form { font-size: 14px; margin: 10px 0 0; }
+    .word-detail-example {
+        margin-top: 14px;
+        padding: 12px 14px;
+        background: var(--bg-2);
+        border: 1px solid var(--panel-border);
+        border-radius: var(--radius-md);
+    }
+    .word-detail-example p { margin: 4px 0; }
+    .word-detail-example .example-en { color: var(--ink-soft); font-style: italic; font-size: 13.5px; }
+    .word-detail-notes {
+        margin-top: 14px;
+        padding-top: 10px;
+        border-top: 1px dashed var(--panel-border);
+        font-size: 13px;
+        color: var(--ink-soft);
+        font-style: italic;
+    }
+
+    @media (max-width: 560px) {
+        .word-bank-grid { grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); }
+        .word-detail-ar { font-size: 34px; }
+    }
 </style>
 </head>
 
@@ -1040,6 +1113,7 @@
         <div class="mode-switch" role="tablist" aria-label="Study mode">
             <button id="tabFlash" class="active" role="tab" aria-selected="true" onclick="setMode('flash')">📇 Flashcards</button>
             <button id="tabQuiz" role="tab" aria-selected="false" onclick="setMode('quiz')">🧠 Quiz</button>
+            <button id="tabWordBank" role="tab" aria-selected="false" onclick="setMode('wordbank')">📚 Word Bank</button>
         </div>
 
         <div class="chip-row" id="chipRow" aria-label="Filter by category"></div>
@@ -1106,6 +1180,14 @@
                 <div class="quiz-feedback" id="quizFeedback" aria-live="polite"></div>
                 <button class="pill show-btn" id="quizNextBtn" onclick="nextQuizQuestion()">Next Question →</button>
             </div>
+        </section>
+
+        <!-- ================= WORD BANK MODE (structured vocabulary browser — Milestone 5) ================= -->
+        <section id="wordBankView" style="display:none;">
+            <div class="chip-row" id="wordBankChipRow" aria-label="Filter vocabulary by category"></div>
+            <p class="word-bank-count" id="wordBankCount"></p>
+            <div class="word-bank-grid" id="wordBankGrid"></div>
+            <div class="word-bank-detail" id="wordBankDetail"></div>
         </section>
     </section>
 
@@ -1296,6 +1378,247 @@ const categories = [
 ];
 
 const catLabel = Object.fromEntries(categories.map(c => [c.id, c.label]));
+
+/* ============================================================
+   DATA — STRUCTURED VOCABULARY SYSTEM (Milestone 5)
+   A richer, extensible word model separate from the simple
+   `flashcards` array above (which continues to power the
+   existing Flashcards/Quiz modes unchanged). This dataset is
+   designed to scale from ~140 entries today to hundreds or
+   thousands later without any change to the rendering code —
+   new words are just new objects in `vocabulary`, and a new
+   topic is just a new entry in `VOCAB_CATEGORIES`.
+
+   Schema (fields beyond `id`/`arabic`/`english` are optional
+   and can be omitted per-entry; new optional fields can be
+   added later without touching existing entries):
+     id        — unique string id, e.g. "gre-01"
+     arabic    — Arabic word/phrase, with harakat where useful
+     translit  — Latin transliteration
+     english   — natural English meaning
+     pos       — part of speech ("noun","verb","adjective","phrase","adverb","number")
+     category  — one of VOCAB_CATEGORIES ids
+     level     — CEFR-style level id, reusing curriculum.levels ids (A0, A1, ...)
+     example   — optional { arabic, english } sentence pair
+     plural    — optional { arabic, translit } for nouns with a notable plural
+     notes     — optional short usage note
+   ============================================================ */
+const VOCAB_CATEGORIES = [
+    { id: "all",         label: "All words" },
+    { id: "greetings",   label: "Greetings" },
+    { id: "people",      label: "People & Family" },
+    { id: "numbers",     label: "Numbers" },
+    { id: "colors",      label: "Colors" },
+    { id: "food",        label: "Food & Drink" },
+    { id: "home",        label: "Home" },
+    { id: "school",      label: "School & Learning" },
+    { id: "objects",     label: "Common Objects" },
+    { id: "places",      label: "Places" },
+    { id: "time",        label: "Time & Days" },
+    { id: "verbs",       label: "Common Verbs" },
+    { id: "adjectives",  label: "Common Adjectives" },
+    { id: "expressions", label: "Useful Expressions" },
+];
+
+const vocabCatLabel = Object.fromEntries(VOCAB_CATEGORIES.map(c => [c.id, c.label]));
+
+const vocabulary = [
+    // ---------- Greetings ----------
+    { id:"gre-01", arabic:"مَرْحَبًا", translit:"marhaban", english:"hello", pos:"phrase", category:"greetings", level:"A0",
+        example:{ arabic:"مَرْحَبًا، كَيْفَ حَالُكَ؟", english:"Hello, how are you?" } },
+    { id:"gre-02", arabic:"السَّلَامُ عَلَيْكُم", translit:"as-salāmu ʿalaykum", english:"peace be upon you (a greeting)", pos:"phrase", category:"greetings", level:"A0",
+        notes:"The traditional Islamic/Arabic greeting, used any time of day." },
+    { id:"gre-03", arabic:"وَعَلَيْكُمُ السَّلَام", translit:"wa ʿalaykumu s-salām", english:"and upon you be peace (the reply)", pos:"phrase", category:"greetings", level:"A0",
+        notes:"The standard reply to as-salāmu ʿalaykum." },
+    { id:"gre-04", arabic:"صَبَاحُ الْخَيْر", translit:"ṣabāḥu l-khayr", english:"good morning", pos:"phrase", category:"greetings", level:"A0" },
+    { id:"gre-05", arabic:"صَبَاحُ النُّور", translit:"ṣabāḥu n-nūr", english:"good morning (the reply)", pos:"phrase", category:"greetings", level:"A0" },
+    { id:"gre-06", arabic:"مَسَاءُ الْخَيْر", translit:"masāʾu l-khayr", english:"good evening", pos:"phrase", category:"greetings", level:"A0" },
+    { id:"gre-07", arabic:"مَسَاءُ النُّور", translit:"masāʾu n-nūr", english:"good evening (the reply)", pos:"phrase", category:"greetings", level:"A0" },
+    { id:"gre-08", arabic:"مَعَ السَّلَامَة", translit:"maʿa s-salāmah", english:"goodbye", pos:"phrase", category:"greetings", level:"A0" },
+    { id:"gre-09", arabic:"إِلَى اللِّقَاء", translit:"ilā l-liqāʾ", english:"see you later", pos:"phrase", category:"greetings", level:"A0" },
+    { id:"gre-10", arabic:"تُصْبِحُ عَلَى خَيْر", translit:"tuṣbiḥu ʿalā khayr", english:"good night", pos:"phrase", category:"greetings", level:"A0",
+        notes:"Literally \"may you wake up well\" — said when parting for the night." },
+
+    // ---------- People & Family ----------
+    { id:"peo-01", arabic:"أُمّ", translit:"umm", english:"mother", pos:"noun", category:"people", level:"A0" },
+    { id:"peo-02", arabic:"أَب", translit:"ab", english:"father", pos:"noun", category:"people", level:"A0" },
+    { id:"peo-03", arabic:"أَخ", translit:"akh", english:"brother", pos:"noun", category:"people", level:"A0",
+        plural:{ arabic:"إِخْوَة", translit:"ikhwah" } },
+    { id:"peo-04", arabic:"أُخْت", translit:"ukht", english:"sister", pos:"noun", category:"people", level:"A0",
+        plural:{ arabic:"أَخَوَات", translit:"akhawāt" } },
+    { id:"peo-05", arabic:"اِبْن", translit:"ibn", english:"son", pos:"noun", category:"people", level:"A0",
+        plural:{ arabic:"أَبْنَاء", translit:"abnāʾ" } },
+    { id:"peo-06", arabic:"اِبْنَة", translit:"ibnah", english:"daughter", pos:"noun", category:"people", level:"A0",
+        plural:{ arabic:"بَنَات", translit:"banāt" } },
+    { id:"peo-07", arabic:"جَدّ", translit:"jadd", english:"grandfather", pos:"noun", category:"people", level:"A0" },
+    { id:"peo-08", arabic:"جَدَّة", translit:"jaddah", english:"grandmother", pos:"noun", category:"people", level:"A0" },
+    { id:"peo-09", arabic:"زَوْج", translit:"zawj", english:"husband", pos:"noun", category:"people", level:"A1" },
+    { id:"peo-10", arabic:"زَوْجَة", translit:"zawjah", english:"wife", pos:"noun", category:"people", level:"A1" },
+    { id:"peo-11", arabic:"صَدِيق", translit:"ṣadīq", english:"friend (male)", pos:"noun", category:"people", level:"A0",
+        plural:{ arabic:"أَصْدِقَاء", translit:"aṣdiqāʾ" },
+        example:{ arabic:"هَذَا صَدِيقِي.", english:"This is my friend." } },
+    { id:"peo-12", arabic:"صَدِيقَة", translit:"ṣadīqah", english:"friend (female)", pos:"noun", category:"people", level:"A0" },
+
+    // ---------- Numbers ----------
+    { id:"num-00", arabic:"صِفْر", translit:"ṣifr", english:"zero", pos:"number", category:"numbers", level:"A0" },
+    { id:"num-01", arabic:"وَاحِد", translit:"wāḥid", english:"one", pos:"number", category:"numbers", level:"A0" },
+    { id:"num-02", arabic:"اِثْنَان", translit:"ithnān", english:"two", pos:"number", category:"numbers", level:"A0" },
+    { id:"num-03", arabic:"ثَلَاثَة", translit:"thalāthah", english:"three", pos:"number", category:"numbers", level:"A0",
+        example:{ arabic:"عِنْدِي ثَلَاثَةُ كُتُب.", english:"I have three books." } },
+    { id:"num-04", arabic:"أَرْبَعَة", translit:"arbaʿah", english:"four", pos:"number", category:"numbers", level:"A0" },
+    { id:"num-05", arabic:"خَمْسَة", translit:"khamsah", english:"five", pos:"number", category:"numbers", level:"A0" },
+    { id:"num-06", arabic:"سِتَّة", translit:"sittah", english:"six", pos:"number", category:"numbers", level:"A0" },
+    { id:"num-07", arabic:"سَبْعَة", translit:"sabʿah", english:"seven", pos:"number", category:"numbers", level:"A0" },
+    { id:"num-08", arabic:"ثَمَانِيَة", translit:"thamāniyah", english:"eight", pos:"number", category:"numbers", level:"A0" },
+    { id:"num-09", arabic:"تِسْعَة", translit:"tisʿah", english:"nine", pos:"number", category:"numbers", level:"A0" },
+    { id:"num-10", arabic:"عَشَرَة", translit:"ʿasharah", english:"ten", pos:"number", category:"numbers", level:"A0",
+        example:{ arabic:"عَشَرَة أَيَّام فِي الْأُسْبُوعَيْن.", english:"Ten days in two weeks." } },
+
+    // ---------- Colors ----------
+    { id:"col-01", arabic:"أَحْمَر", translit:"aḥmar", english:"red", pos:"adjective", category:"colors", level:"A0",
+        notes:"Feminine form: حَمْرَاء (ḥamrāʾ) — Arabic color adjectives agree in gender with the noun they describe." },
+    { id:"col-02", arabic:"أَزْرَق", translit:"azraq", english:"blue", pos:"adjective", category:"colors", level:"A0" },
+    { id:"col-03", arabic:"أَخْضَر", translit:"akhḍar", english:"green", pos:"adjective", category:"colors", level:"A0" },
+    { id:"col-04", arabic:"أَصْفَر", translit:"aṣfar", english:"yellow", pos:"adjective", category:"colors", level:"A0" },
+    { id:"col-05", arabic:"أَسْوَد", translit:"aswad", english:"black", pos:"adjective", category:"colors", level:"A0" },
+    { id:"col-06", arabic:"أَبْيَض", translit:"abyaḍ", english:"white", pos:"adjective", category:"colors", level:"A0" },
+    { id:"col-07", arabic:"بُرْتُقَالِيّ", translit:"burtuqāliyy", english:"orange", pos:"adjective", category:"colors", level:"A1" },
+    { id:"col-08", arabic:"بُنِّيّ", translit:"bunniyy", english:"brown", pos:"adjective", category:"colors", level:"A1" },
+    { id:"col-09", arabic:"وَرْدِيّ", translit:"wardiyy", english:"pink", pos:"adjective", category:"colors", level:"A1" },
+    { id:"col-10", arabic:"رَمَادِيّ", translit:"ramādiyy", english:"gray", pos:"adjective", category:"colors", level:"A1" },
+
+    // ---------- Food & Drink ----------
+    { id:"foo-01", arabic:"خُبْز", translit:"khubz", english:"bread", pos:"noun", category:"food", level:"A0" },
+    { id:"foo-02", arabic:"أَرُزّ", translit:"aruzz", english:"rice", pos:"noun", category:"food", level:"A0" },
+    { id:"foo-03", arabic:"لَحْم", translit:"laḥm", english:"meat", pos:"noun", category:"food", level:"A0" },
+    { id:"foo-04", arabic:"دَجَاج", translit:"dajāj", english:"chicken", pos:"noun", category:"food", level:"A0" },
+    { id:"foo-05", arabic:"سَمَك", translit:"samak", english:"fish", pos:"noun", category:"food", level:"A0" },
+    { id:"foo-06", arabic:"فَاكِهَة", translit:"fākihah", english:"fruit", pos:"noun", category:"food", level:"A0",
+        example:{ arabic:"أُحِبُّ الْفَاكِهَة.", english:"I like fruit." } },
+    { id:"foo-07", arabic:"خُضَار", translit:"khuḍār", english:"vegetables", pos:"noun", category:"food", level:"A0" },
+    { id:"foo-08", arabic:"حَلِيب", translit:"ḥalīb", english:"milk", pos:"noun", category:"food", level:"A0" },
+    { id:"foo-09", arabic:"مَاء", translit:"māʾ", english:"water", pos:"noun", category:"food", level:"A0" },
+    { id:"foo-10", arabic:"قَهْوَة", translit:"qahwah", english:"coffee", pos:"noun", category:"food", level:"A0",
+        notes:"Arabic coffee is a symbol of hospitality — often served with dates when welcoming a guest." },
+    { id:"foo-11", arabic:"شَاي", translit:"shāy", english:"tea", pos:"noun", category:"food", level:"A0" },
+    { id:"foo-12", arabic:"سُكَّر", translit:"sukkar", english:"sugar", pos:"noun", category:"food", level:"A0" },
+
+    // ---------- Home ----------
+    { id:"hom-01", arabic:"بَيْت", translit:"bayt", english:"house", pos:"noun", category:"home", level:"A0" },
+    { id:"hom-02", arabic:"غُرْفَة", translit:"ghurfah", english:"room", pos:"noun", category:"home", level:"A0" },
+    { id:"hom-03", arabic:"غُرْفَةُ النَّوْم", translit:"ghurfat an-nawm", english:"bedroom", pos:"noun", category:"home", level:"A0" },
+    { id:"hom-04", arabic:"مَطْبَخ", translit:"maṭbakh", english:"kitchen", pos:"noun", category:"home", level:"A0" },
+    { id:"hom-05", arabic:"حَمَّام", translit:"ḥammām", english:"bathroom", pos:"noun", category:"home", level:"A0" },
+    { id:"hom-06", arabic:"بَاب", translit:"bāb", english:"door", pos:"noun", category:"home", level:"A0" },
+    { id:"hom-07", arabic:"نَافِذَة", translit:"nāfidhah", english:"window", pos:"noun", category:"home", level:"A0" },
+    { id:"hom-08", arabic:"طَاوِلَة", translit:"ṭāwilah", english:"table", pos:"noun", category:"home", level:"A0" },
+    { id:"hom-09", arabic:"كُرْسِيّ", translit:"kursiyy", english:"chair", pos:"noun", category:"home", level:"A0" },
+    { id:"hom-10", arabic:"سَرِير", translit:"sarīr", english:"bed", pos:"noun", category:"home", level:"A0" },
+
+    // ---------- School & Learning ----------
+    { id:"sch-01", arabic:"مَدْرَسَة", translit:"madrasah", english:"school", pos:"noun", category:"school", level:"A0" },
+    { id:"sch-02", arabic:"مُعَلِّم", translit:"muʿallim", english:"teacher (male)", pos:"noun", category:"school", level:"A0" },
+    { id:"sch-03", arabic:"مُعَلِّمَة", translit:"muʿallimah", english:"teacher (female)", pos:"noun", category:"school", level:"A0" },
+    { id:"sch-04", arabic:"طَالِب", translit:"ṭālib", english:"student (male)", pos:"noun", category:"school", level:"A0",
+        example:{ arabic:"أَنَا طَالِب فِي الْمَدْرَسَة.", english:"I am a student at the school." } },
+    { id:"sch-05", arabic:"طَالِبَة", translit:"ṭālibah", english:"student (female)", pos:"noun", category:"school", level:"A0" },
+    { id:"sch-06", arabic:"كِتَاب", translit:"kitāb", english:"book", pos:"noun", category:"school", level:"A0" },
+    { id:"sch-07", arabic:"قَلَم", translit:"qalam", english:"pen", pos:"noun", category:"school", level:"A0" },
+    { id:"sch-08", arabic:"دَفْتَر", translit:"daftar", english:"notebook", pos:"noun", category:"school", level:"A0" },
+    { id:"sch-09", arabic:"دَرْس", translit:"dars", english:"lesson", pos:"noun", category:"school", level:"A0" },
+    { id:"sch-10", arabic:"وَاجِب", translit:"wājib", english:"homework", pos:"noun", category:"school", level:"A1",
+        example:{ arabic:"أَنْهَيْتُ وَاجِبِي.", english:"I finished my homework." } },
+
+    // ---------- Common Objects ----------
+    { id:"obj-01", arabic:"هَاتِف", translit:"hātif", english:"phone", pos:"noun", category:"objects", level:"A0" },
+    { id:"obj-02", arabic:"حَاسُوب", translit:"ḥāsūb", english:"computer", pos:"noun", category:"objects", level:"A0" },
+    { id:"obj-03", arabic:"سَاعَة", translit:"sāʿah", english:"clock / watch", pos:"noun", category:"objects", level:"A0" },
+    { id:"obj-04", arabic:"مِفْتَاح", translit:"miftāḥ", english:"key", pos:"noun", category:"objects", level:"A0" },
+    { id:"obj-05", arabic:"حَقِيبَة", translit:"ḥaqībah", english:"bag", pos:"noun", category:"objects", level:"A0" },
+    { id:"obj-06", arabic:"مِصْبَاح", translit:"miṣbāḥ", english:"lamp", pos:"noun", category:"objects", level:"A1" },
+    { id:"obj-07", arabic:"مِرْآة", translit:"mirʾāh", english:"mirror", pos:"noun", category:"objects", level:"A1" },
+    { id:"obj-08", arabic:"مِظَلَّة", translit:"miẓallah", english:"umbrella", pos:"noun", category:"objects", level:"A1" },
+
+    // ---------- Places ----------
+    { id:"pla-01", arabic:"مَدِينَة", translit:"madīnah", english:"city", pos:"noun", category:"places", level:"A0" },
+    { id:"pla-02", arabic:"قَرْيَة", translit:"qaryah", english:"village", pos:"noun", category:"places", level:"A1" },
+    { id:"pla-03", arabic:"شَارِع", translit:"shāriʿ", english:"street", pos:"noun", category:"places", level:"A0" },
+    { id:"pla-04", arabic:"مَسْجِد", translit:"masjid", english:"mosque", pos:"noun", category:"places", level:"A0" },
+    { id:"pla-05", arabic:"مُسْتَشْفَى", translit:"mustashfā", english:"hospital", pos:"noun", category:"places", level:"A1" },
+    { id:"pla-06", arabic:"مَطْعَم", translit:"maṭʿam", english:"restaurant", pos:"noun", category:"places", level:"A0",
+        example:{ arabic:"نَذْهَبُ إِلَى الْمَطْعَم.", english:"We are going to the restaurant." } },
+    { id:"pla-07", arabic:"سُوق", translit:"sūq", english:"market", pos:"noun", category:"places", level:"A0" },
+    { id:"pla-08", arabic:"مَطَار", translit:"maṭār", english:"airport", pos:"noun", category:"places", level:"A1" },
+    { id:"pla-09", arabic:"فُنْدُق", translit:"funduq", english:"hotel", pos:"noun", category:"places", level:"A1" },
+    { id:"pla-10", arabic:"مَكْتَبَة", translit:"maktabah", english:"library / bookstore", pos:"noun", category:"places", level:"A0" },
+
+    // ---------- Time & Days ----------
+    { id:"tim-01", arabic:"الْيَوْم", translit:"al-yawm", english:"today", pos:"adverb", category:"time", level:"A0" },
+    { id:"tim-02", arabic:"غَدًا", translit:"ghadan", english:"tomorrow", pos:"adverb", category:"time", level:"A0" },
+    { id:"tim-03", arabic:"أَمْس", translit:"ams", english:"yesterday", pos:"adverb", category:"time", level:"A0" },
+    { id:"tim-04", arabic:"الْآن", translit:"al-ān", english:"now", pos:"adverb", category:"time", level:"A0" },
+    { id:"tim-05", arabic:"صَبَاح", translit:"ṣabāḥ", english:"morning", pos:"noun", category:"time", level:"A0" },
+    { id:"tim-06", arabic:"مَسَاء", translit:"masāʾ", english:"evening", pos:"noun", category:"time", level:"A0" },
+    { id:"tim-07", arabic:"لَيْل", translit:"layl", english:"night", pos:"noun", category:"time", level:"A0" },
+    { id:"tim-08", arabic:"أُسْبُوع", translit:"usbūʿ", english:"week", pos:"noun", category:"time", level:"A0" },
+    { id:"tim-09", arabic:"شَهْر", translit:"shahr", english:"month", pos:"noun", category:"time", level:"A0" },
+    { id:"tim-10", arabic:"سَنَة", translit:"sanah", english:"year", pos:"noun", category:"time", level:"A0" },
+    { id:"tim-11", arabic:"الْأَحَد", translit:"al-aḥad", english:"Sunday", pos:"noun", category:"time", level:"A0" },
+    { id:"tim-12", arabic:"الِاثْنَيْن", translit:"al-ithnayn", english:"Monday", pos:"noun", category:"time", level:"A0" },
+    { id:"tim-13", arabic:"الثُّلَاثَاء", translit:"ath-thulāthāʾ", english:"Tuesday", pos:"noun", category:"time", level:"A0" },
+    { id:"tim-14", arabic:"الْأَرْبِعَاء", translit:"al-arbiʿāʾ", english:"Wednesday", pos:"noun", category:"time", level:"A0" },
+    { id:"tim-15", arabic:"الْخَمِيس", translit:"al-khamīs", english:"Thursday", pos:"noun", category:"time", level:"A0" },
+    { id:"tim-16", arabic:"الْجُمُعَة", translit:"al-jumʿah", english:"Friday", pos:"noun", category:"time", level:"A0" },
+    { id:"tim-17", arabic:"السَّبْت", translit:"as-sabt", english:"Saturday", pos:"noun", category:"time", level:"A0" },
+
+    // ---------- Common Verbs ----------
+    { id:"ver-01", arabic:"ذَهَبَ", translit:"dhahaba", english:"to go", pos:"verb", category:"verbs", level:"A1",
+        notes:"Present tense: يَذْهَب (yadh-hab, \"he goes\").",
+        example:{ arabic:"ذَهَبَ إِلَى الْمَدْرَسَة.", english:"He went to school." } },
+    { id:"ver-02", arabic:"أَكَلَ", translit:"akala", english:"to eat", pos:"verb", category:"verbs", level:"A0",
+        example:{ arabic:"أَكَلْتُ التُّفَّاح.", english:"I ate the apple." } },
+    { id:"ver-03", arabic:"شَرِبَ", translit:"shariba", english:"to drink", pos:"verb", category:"verbs", level:"A0",
+        example:{ arabic:"شَرِبَ الْمَاء.", english:"He drank the water." } },
+    { id:"ver-04", arabic:"كَتَبَ", translit:"kataba", english:"to write", pos:"verb", category:"verbs", level:"A0" },
+    { id:"ver-05", arabic:"قَرَأَ", translit:"qaraʾa", english:"to read", pos:"verb", category:"verbs", level:"A0",
+        example:{ arabic:"قَرَأَتِ الْكِتَاب.", english:"She read the book." } },
+    { id:"ver-06", arabic:"تَكَلَّمَ", translit:"takallama", english:"to speak", pos:"verb", category:"verbs", level:"A1",
+        notes:"Present tense: يَتَكَلَّم (yatakallam, \"he speaks\")." },
+    { id:"ver-07", arabic:"سَمِعَ", translit:"samiʿa", english:"to hear / to listen", pos:"verb", category:"verbs", level:"A1" },
+    { id:"ver-08", arabic:"رَأَى", translit:"raʾā", english:"to see", pos:"verb", category:"verbs", level:"A1" },
+    { id:"ver-09", arabic:"فَهِمَ", translit:"fahima", english:"to understand", pos:"verb", category:"verbs", level:"A1",
+        notes:"Present tense: يَفْهَم (yafham, \"he understands\").",
+        example:{ arabic:"هَلْ فَهِمْتَ الدَّرْس؟", english:"Did you understand the lesson?" } },
+    { id:"ver-10", arabic:"عَمِلَ", translit:"ʿamila", english:"to work / to do", pos:"verb", category:"verbs", level:"A1" },
+
+    // ---------- Common Adjectives ----------
+    { id:"adj-01", arabic:"كَبِير", translit:"kabīr", english:"big", pos:"adjective", category:"adjectives", level:"A0" },
+    { id:"adj-02", arabic:"صَغِير", translit:"ṣaghīr", english:"small", pos:"adjective", category:"adjectives", level:"A0",
+        example:{ arabic:"الْبَيْتُ صَغِير.", english:"The house is small." } },
+    { id:"adj-03", arabic:"جَمِيل", translit:"jamīl", english:"beautiful", pos:"adjective", category:"adjectives", level:"A0" },
+    { id:"adj-04", arabic:"طَوِيل", translit:"ṭawīl", english:"tall / long", pos:"adjective", category:"adjectives", level:"A0" },
+    { id:"adj-05", arabic:"قَصِير", translit:"qaṣīr", english:"short", pos:"adjective", category:"adjectives", level:"A0" },
+    { id:"adj-06", arabic:"جَدِيد", translit:"jadīd", english:"new", pos:"adjective", category:"adjectives", level:"A0" },
+    { id:"adj-07", arabic:"قَدِيم", translit:"qadīm", english:"old (things)", pos:"adjective", category:"adjectives", level:"A0" },
+    { id:"adj-08", arabic:"سَعِيد", translit:"saʿīd", english:"happy", pos:"adjective", category:"adjectives", level:"A0",
+        example:{ arabic:"أَنَا سَعِيد الْيَوْم.", english:"I am happy today." } },
+    { id:"adj-09", arabic:"حَزِين", translit:"ḥazīn", english:"sad", pos:"adjective", category:"adjectives", level:"A0" },
+    { id:"adj-10", arabic:"سَهْل", translit:"sahl", english:"easy", pos:"adjective", category:"adjectives", level:"A1" },
+    { id:"adj-11", arabic:"صَعْب", translit:"ṣaʿb", english:"difficult", pos:"adjective", category:"adjectives", level:"A1",
+        example:{ arabic:"هَذَا الدَّرْسُ صَعْب.", english:"This lesson is difficult." } },
+
+    // ---------- Useful Expressions ----------
+    { id:"exp-01", arabic:"مِنْ فَضْلِك", translit:"min faḍlik", english:"please", pos:"phrase", category:"expressions", level:"A0" },
+    { id:"exp-02", arabic:"شُكْرًا", translit:"shukran", english:"thank you", pos:"phrase", category:"expressions", level:"A0" },
+    { id:"exp-03", arabic:"عَفْوًا", translit:"ʿafwan", english:"you're welcome / excuse me", pos:"phrase", category:"expressions", level:"A0" },
+    { id:"exp-04", arabic:"آسِف", translit:"āsif", english:"sorry (said by a male speaker)", pos:"phrase", category:"expressions", level:"A0" },
+    { id:"exp-05", arabic:"نَعَم", translit:"naʿam", english:"yes", pos:"phrase", category:"expressions", level:"A0" },
+    { id:"exp-06", arabic:"لَا", translit:"lā", english:"no", pos:"phrase", category:"expressions", level:"A0" },
+    { id:"exp-07", arabic:"لَا أَعْرِف", translit:"lā aʿrif", english:"I don't know", pos:"phrase", category:"expressions", level:"A1" },
+    { id:"exp-08", arabic:"أَيْنَ الْحَمَّام؟", translit:"ayna l-ḥammām?", english:"Where is the bathroom?", pos:"phrase", category:"expressions", level:"A1" },
+    { id:"exp-09", arabic:"كَمِ السَّاعَة؟", translit:"kami s-sāʿah?", english:"What time is it?", pos:"phrase", category:"expressions", level:"A1" },
+    { id:"exp-10", arabic:"بِكَمْ هَذَا؟", translit:"bikam hādhā?", english:"How much is this?", pos:"phrase", category:"expressions", level:"A1" },
+];
 
 /* ============================================================
    DATA — CURRICULUM (levels / units / lessons)
@@ -1680,6 +2003,9 @@ let isRouting = false;
 let alphabetRendered = false;
 let selectedLetterId = null;
 
+let vocabActiveCategory = "all";
+let selectedVocabId = null;
+
 let activeLesson = null;
 let lessonStepIndex = 0;
 let lessonCanProceed = true;
@@ -1723,16 +2049,24 @@ function setMode(next) {
     mode = next;
     document.getElementById("tabFlash").classList.toggle("active", mode === "flash");
     document.getElementById("tabQuiz").classList.toggle("active", mode === "quiz");
+    document.getElementById("tabWordBank").classList.toggle("active", mode === "wordbank");
     document.getElementById("tabFlash").setAttribute("aria-selected", mode === "flash");
     document.getElementById("tabQuiz").setAttribute("aria-selected", mode === "quiz");
+    document.getElementById("tabWordBank").setAttribute("aria-selected", mode === "wordbank");
     document.getElementById("flashView").style.display = mode === "flash" ? "" : "none";
     document.getElementById("quizView").style.display = mode === "quiz" ? "" : "none";
+    document.getElementById("wordBankView").style.display = mode === "wordbank" ? "" : "none";
+    // The flashcards/quiz category chip row doesn't apply to the Word Bank's
+    // own (larger, separately-filtered) category set — hide it there.
+    document.getElementById("chipRow").style.display = mode === "wordbank" ? "none" : "";
 
     if (mode === "flash") {
         rebuildDeck();
-    } else {
+    } else if (mode === "quiz") {
         buildQuizPool();
         nextQuizQuestion();
+    } else if (mode === "wordbank") {
+        renderWordBank();
     }
 }
 
@@ -1965,6 +2299,110 @@ function answerQuiz(btn, isCorrect, question) {
 function updateQuizScore() {
     document.getElementById("quizScore").textContent = `${quizCorrect} / ${quizAnswered}`;
     document.getElementById("quizStreak").textContent = progress.quizBest;
+}
+
+/* ============================================================
+   WORD BANK — structured vocabulary browser (Milestone 5)
+   Reuses the grid + detail-panel interaction already used by the
+   Alphabet reference view, driven entirely by the `vocabulary` /
+   VOCAB_CATEGORIES data above — no per-word markup is authored,
+   so the same code scales from ~140 entries to thousands.
+   ============================================================ */
+function wordsInVocabCategory(catId) {
+    return catId === "all" ? vocabulary : vocabulary.filter(w => w.category === catId);
+}
+
+function renderWordBankChips() {
+    const row = document.getElementById("wordBankChipRow");
+    row.innerHTML = "";
+    VOCAB_CATEGORIES.forEach(cat => {
+        const btn = document.createElement("button");
+        btn.className = "chip" + (cat.id === vocabActiveCategory ? " active" : "");
+        btn.textContent = cat.label;
+        btn.setAttribute("aria-pressed", cat.id === vocabActiveCategory ? "true" : "false");
+        btn.onclick = () => selectVocabCategory(cat.id);
+        row.appendChild(btn);
+    });
+}
+
+function selectVocabCategory(id) {
+    vocabActiveCategory = id;
+    renderWordBankChips();
+    renderWordBankGrid();
+}
+
+function renderWordBank() {
+    renderWordBankChips();
+    renderWordBankGrid();
+}
+
+function renderWordBankGrid() {
+    const grid = document.getElementById("wordBankGrid");
+    const words = wordsInVocabCategory(vocabActiveCategory);
+
+    document.getElementById("wordBankCount").textContent =
+        `${words.length} word${words.length === 1 ? "" : "s"} in ${vocabActiveCategory === "all" ? "the word bank" : vocabCatLabel[vocabActiveCategory]}`;
+
+    grid.innerHTML = "";
+    words.forEach(w => {
+        const btn = document.createElement("button");
+        btn.className = "word-tile";
+        btn.dataset.wordId = w.id;
+        btn.innerHTML = `<span class="word-tile-ar">${w.arabic}</span><span class="word-tile-en">${w.english}</span>`;
+        btn.onclick = () => selectVocabWord(w.id);
+        grid.appendChild(btn);
+    });
+
+    if (!words.length) {
+        selectedVocabId = null;
+        document.getElementById("wordBankDetail").innerHTML = `<p class="word-detail-notes">No words in this category yet.</p>`;
+        return;
+    }
+    const stillPresent = words.some(w => w.id === selectedVocabId);
+    selectVocabWord(stillPresent ? selectedVocabId : words[0].id);
+}
+
+function selectVocabWord(id) {
+    selectedVocabId = id;
+    const word = vocabulary.find(w => w.id === id);
+    if (!word) return;
+
+    document.querySelectorAll("#wordBankGrid .word-tile").forEach(el => {
+        el.classList.toggle("active", el.dataset.wordId === id);
+    });
+
+    const speechOk = "speechSynthesis" in window;
+    const detail = document.getElementById("wordBankDetail");
+    detail.innerHTML = `
+        <div class="word-detail-head">
+            <span class="word-detail-ar">${word.arabic}</span>
+            <div>
+                <div class="word-detail-en">${word.english}</div>
+                <div class="word-detail-translit">${word.translit}</div>
+            </div>
+            <button class="speak-btn" id="wordSpeakBtn" aria-label="Hear pronunciation" title="Hear pronunciation">🔊</button>
+        </div>
+        <p class="voice-warning">⚠️ No Arabic voice found on this device — pronunciation may sound approximate.</p>
+        <div class="word-detail-badges">
+            <span class="badge badge-available">${word.pos}</span>
+            <span class="badge badge-preview">${word.level}</span>
+            <span class="badge badge-upcoming">${vocabCatLabel[word.category] || word.category}</span>
+        </div>
+        ${word.plural
+            ? `<p class="word-detail-form"><b>Plural:</b> <span class="rtl-inline">${word.plural.arabic}</span> <em>(${word.plural.translit})</em></p>`
+            : ""}
+        ${word.example
+            ? `<div class="word-detail-example">
+                   <p class="rtl-inline">${word.example.arabic}</p>
+                   <p class="example-en">${word.example.english}</p>
+               </div>`
+            : ""}
+        ${word.notes ? `<p class="word-detail-notes">${word.notes}</p>` : ""}
+    `;
+
+    document.getElementById("wordSpeakBtn").disabled = !speechOk;
+    document.getElementById("wordSpeakBtn").onclick = () => speakText(word.arabic);
+    updateVoiceWarning();
 }
 
 /* ============================================================
