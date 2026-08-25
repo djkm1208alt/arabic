@@ -313,6 +313,7 @@
     .speak-btn:active { transform: scale(0.95); }
     .speak-btn[disabled] { opacity: 0.35; cursor: not-allowed; }
     .speak-btn.speaking { animation: pulse 0.6s ease infinite; }
+    .speak-btn.small { width: 34px; height: 34px; font-size: 14px; }
 
     .translit {
         text-align: center;
@@ -519,6 +520,273 @@
         outline: 2px solid var(--accent);
         outline-offset: 2px;
     }
+
+    /* ============================================================
+       MILESTONE 1 — PLATFORM FOUNDATION ADDITIONS
+       (nav, views, dashboard, curriculum, alphabet, practice, progress)
+       ============================================================ */
+
+    /* ---------- Primary navigation ---------- */
+    .main-nav {
+        display: flex;
+        gap: 6px;
+        overflow-x: auto;
+        background: var(--panel);
+        border: 1px solid var(--panel-border);
+        border-radius: 999px;
+        padding: 6px;
+        margin-bottom: 22px;
+        position: sticky;
+        top: 10px;
+        z-index: 5;
+        scrollbar-width: thin;
+    }
+    .nav-btn {
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        border: 0;
+        background: transparent;
+        color: var(--ink-soft);
+        font-family: var(--font-body);
+        font-weight: 700;
+        font-size: 14px;
+        padding: 10px 16px;
+        border-radius: 999px;
+        cursor: pointer;
+        white-space: nowrap;
+        transition: background 0.2s ease, color 0.2s ease;
+    }
+    .nav-btn.active { background: var(--accent); color: var(--accent-ink); }
+    .nav-btn:hover:not(.active) { background: var(--bg-2); }
+
+    .view { animation: cardEnter 0.3s ease; }
+    .view-title { margin: 0 0 4px; font-family: var(--font-ui); font-size: 24px; font-weight: 600; }
+    .view-sub { margin: 0 0 20px; color: var(--ink-soft); font-size: 14.5px; }
+
+    /* ---------- Home / dashboard ---------- */
+    .hero-card {
+        background: var(--panel);
+        border: 1px solid var(--panel-border);
+        border-radius: var(--radius-lg);
+        padding: 28px;
+        box-shadow: var(--shadow);
+        margin-bottom: 18px;
+    }
+    .hero-card h2 { margin: 0 0 6px; font-family: var(--font-ui); font-size: 24px; }
+    .hero-sub { margin: 0 0 16px; color: var(--ink-soft); font-size: 14.5px; }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        gap: 12px;
+        margin-bottom: 18px;
+    }
+    .stat-card {
+        background: var(--panel);
+        border: 1px solid var(--panel-border);
+        border-radius: var(--radius-md);
+        padding: 16px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+    .stat-value { font-family: var(--font-ui); font-size: 26px; font-weight: 600; color: var(--accent); }
+    .stat-label { font-size: 12.5px; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.4px; }
+
+    .goal-card {
+        background: var(--panel);
+        border: 1px solid var(--panel-border);
+        border-radius: var(--radius-md);
+        padding: 16px 18px;
+        margin-bottom: 20px;
+    }
+    .goal-head { display: flex; justify-content: space-between; font-size: 13.5px; color: var(--ink-soft); margin-bottom: 8px; font-weight: 600; }
+    .goal-head span:first-child { color: var(--ink); }
+    .goal-card .progress-bar { margin-bottom: 0; }
+
+    .quick-links {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+    }
+    .quick-link {
+        background: var(--panel);
+        border: 1px solid var(--panel-border);
+        border-radius: var(--radius-md);
+        padding: 16px 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        font-size: 22px;
+        color: var(--ink);
+        cursor: pointer;
+        font-family: var(--font-body);
+    }
+    .quick-link span { font-size: 12px; font-weight: 600; }
+    .quick-link:hover { border-color: var(--accent); }
+
+    /* ---------- Learn / curriculum ---------- */
+    .level-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 12px;
+        margin-bottom: 26px;
+    }
+    .level-card {
+        background: var(--panel);
+        border: 1px solid var(--panel-border);
+        border-radius: var(--radius-md);
+        padding: 16px;
+        opacity: 0.6;
+    }
+    .level-card.active { opacity: 1; border-color: var(--accent); }
+    .level-code { font-family: var(--font-ui); font-weight: 700; font-size: 15px; color: var(--accent); }
+    .level-title { font-weight: 700; margin: 4px 0; font-size: 14.5px; }
+    .level-desc { font-size: 12.5px; color: var(--ink-soft); margin: 0 0 10px; line-height: 1.4; }
+
+    .badge {
+        display: inline-block;
+        font-size: 11px;
+        font-weight: 700;
+        padding: 3px 9px;
+        border-radius: 999px;
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+    }
+    .badge-active, .badge-available { background: var(--accent-soft); color: var(--accent); }
+    .badge-preview { background: var(--gold-soft); color: var(--gold); }
+    .badge-upcoming { background: var(--panel-border); color: var(--ink-soft); }
+
+    .unit-block { margin-bottom: 10px; }
+    .unit-block h3 { font-family: var(--font-ui); font-size: 18px; margin: 0 0 12px; display: flex; align-items: center; gap: 8px; }
+    .unit-level { font-size: 11px; background: var(--accent-soft); color: var(--accent); padding: 2px 8px; border-radius: 999px; font-weight: 700; }
+
+    .lesson-list { display: flex; flex-direction: column; gap: 10px; }
+    .lesson-item {
+        background: var(--panel);
+        border: 1px solid var(--panel-border);
+        border-radius: var(--radius-md);
+        padding: 14px 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 14px;
+        flex-wrap: wrap;
+    }
+    .lesson-main h4 { margin: 6px 0 4px; font-size: 15px; }
+    .lesson-main p { margin: 0; font-size: 12.5px; color: var(--ink-soft); }
+    .lesson-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+    .lesson-actions .pill { padding: 8px 14px; font-size: 13px; }
+    .lesson-complete.done { background: var(--accent-soft); color: var(--accent); }
+
+    /* ---------- Alphabet ---------- */
+    .alphabet-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(64px, 1fr));
+        gap: 8px;
+        margin-bottom: 20px;
+    }
+    .letter-tile {
+        background: var(--panel);
+        border: 1px solid var(--panel-border);
+        border-radius: var(--radius-md);
+        padding: 12px 4px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        cursor: pointer;
+        font-family: var(--font-body);
+    }
+    .letter-tile-ar { font-family: var(--font-arabic); font-size: 26px; direction: rtl; }
+    .letter-tile-translit { font-size: 10.5px; color: var(--ink-soft); }
+    .letter-tile.active { border-color: var(--accent); background: var(--accent-soft); }
+
+    .letter-detail {
+        background: var(--panel);
+        border: 1px solid var(--panel-border);
+        border-radius: var(--radius-lg);
+        padding: 24px;
+        box-shadow: var(--shadow);
+    }
+    .letter-detail-head { display: flex; align-items: center; gap: 16px; margin-bottom: 6px; }
+    .letter-detail-ar { font-family: var(--font-arabic); font-size: 54px; color: var(--accent); direction: rtl; }
+    .letter-detail-name { font-weight: 700; font-size: 17px; margin-bottom: 8px; }
+    .letter-detail-translit { font-weight: 400; color: var(--ink-soft); font-size: 14px; }
+
+    .forms-table { width: 100%; border-collapse: collapse; margin: 14px 0 6px; }
+    .forms-table th, .forms-table td {
+        border: 1px solid var(--panel-border);
+        padding: 10px;
+        text-align: center;
+        font-family: var(--font-arabic);
+        font-size: 22px;
+        direction: rtl;
+    }
+    .forms-table th { font-family: var(--font-body); font-size: 11px; text-transform: uppercase; color: var(--ink-soft); direction: ltr; }
+    .letter-note { font-size: 12.5px; color: var(--ink-soft); font-style: italic; margin: 6px 0 12px; }
+    .letter-example { font-size: 14px; margin-top: 10px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .letter-example .muted { color: var(--ink-soft); font-style: italic; }
+    .rtl-inline { font-family: var(--font-arabic); direction: rtl; unicode-bidi: embed; font-size: 17px; }
+    .writing-practice-placeholder {
+        margin-top: 16px;
+        padding: 12px 14px;
+        background: var(--bg-2);
+        border: 1px dashed var(--panel-border);
+        border-radius: var(--radius-md);
+        color: var(--ink-soft);
+        font-size: 13px;
+    }
+    .voice-warning { color: var(--gold); font-size: 12.5px; margin: 6px 0 4px; display: none; }
+
+    /* ---------- Practice ---------- */
+    .practice-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 14px;
+    }
+    .practice-card {
+        background: var(--panel);
+        border: 1px solid var(--panel-border);
+        border-radius: var(--radius-lg);
+        padding: 20px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+    .practice-card.disabled { opacity: 0.55; }
+    .practice-icon { font-size: 30px; }
+    .practice-card h3 { margin: 0; font-size: 15.5px; }
+    .practice-card p { margin: 0 0 6px; font-size: 12.5px; color: var(--ink-soft); }
+
+    /* ---------- Progress ---------- */
+    .panel-block {
+        background: var(--panel);
+        border: 1px solid var(--panel-border);
+        border-radius: var(--radius-md);
+        padding: 18px;
+        margin-bottom: 16px;
+    }
+    .panel-block h3 { margin: 0 0 12px; font-size: 15px; }
+    .cat-progress-list { display: flex; flex-direction: column; gap: 8px; }
+    .cat-progress-row { display: flex; justify-content: space-between; font-size: 13.5px; padding: 6px 0; border-bottom: 1px solid var(--panel-border); }
+    .cat-progress-row:last-child { border-bottom: none; }
+    .last-studied { font-size: 13px; color: var(--ink-soft); }
+
+    @media (max-width: 560px) {
+        .quick-links { grid-template-columns: repeat(2, 1fr); }
+        .letter-detail-ar { font-size: 40px; }
+        .forms-table th, .forms-table td { font-size: 16px; padding: 6px; }
+        .nav-btn span { display: none; }
+        .nav-btn { padding: 10px 12px; }
+        .stat-grid { grid-template-columns: repeat(2, 1fr); }
+    }
 </style>
 </head>
 
@@ -535,74 +803,202 @@
         <button class="icon-btn" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
     </header>
 
-    <div class="mode-switch" role="tablist" aria-label="Study mode">
-        <button id="tabFlash" class="active" role="tab" aria-selected="true" onclick="setMode('flash')">📇 Flashcards</button>
-        <button id="tabQuiz" role="tab" aria-selected="false" onclick="setMode('quiz')">🧠 Quiz</button>
-    </div>
+    <nav class="main-nav" id="mainNav" aria-label="Primary">
+        <button class="nav-btn" data-view="home" aria-label="Home">🏠<span>Home</span></button>
+        <button class="nav-btn" data-view="learn" aria-label="Learn">📚<span>Learn</span></button>
+        <button class="nav-btn" data-view="alphabet" aria-label="Alphabet">🔤<span>Alphabet</span></button>
+        <button class="nav-btn" data-view="vocabulary" aria-label="Vocabulary">📖<span>Vocabulary</span></button>
+        <button class="nav-btn" data-view="practice" aria-label="Practice">🎯<span>Practice</span></button>
+        <button class="nav-btn" data-view="progress" aria-label="Progress">📈<span>Progress</span></button>
+    </nav>
 
-    <div class="chip-row" id="chipRow" aria-label="Filter by category"></div>
-
-    <!-- ================= FLASHCARD MODE ================= -->
-    <section id="flashView">
-
-        <div class="stats">
-            <span id="cardNumber">Card 1 of 20</span>
-            <span id="masteredCount"><strong>0</strong> mastered · 🔥 <strong id="streakNum">0</strong> day streak</span>
+    <!-- ================= HOME / DASHBOARD ================= -->
+    <section id="view-home" class="view">
+        <div class="hero-card">
+            <h2>Welcome back 👋</h2>
+            <p class="hero-sub">Pick up where you left off, or explore a new part of the course.</p>
+            <button class="pill show-btn" onclick="goToVocabulary('flash')">Continue Learning →</button>
         </div>
-        <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
 
-        <div class="card" id="card">
-            <div class="card-top">
-                <span class="label">Arabic word</span>
-                <span class="cat-tag" id="catTag">Category</span>
+        <div class="stat-grid">
+            <div class="stat-card">
+                <span class="stat-value" id="homeStreak">0</span>
+                <span class="stat-label">🔥 Day streak</span>
             </div>
-
-            <div class="arabic-row">
-                <span class="arabic" id="arabicWord">كِتَاب</span>
-                <button class="speak-btn" id="speakBtn" onclick="speakCurrent()" aria-label="Hear pronunciation" title="Hear pronunciation">🔊</button>
+            <div class="stat-card">
+                <span class="stat-value"><span id="homeMastered">0</span>/<span id="homeMasteredTotal">0</span></span>
+                <span class="stat-label">Words mastered</span>
             </div>
-            <p class="translit" id="translit">kitāb</p>
-
-            <div class="answer hidden" id="answer">
-                <p><strong>English</strong> <span id="englishWord">book</span></p>
-                <p><strong>French</strong> <span id="frenchWord">livre</span></p>
-                <div class="note" id="noteWrap" style="display:none;"><b>Note —</b> <span id="noteText"></span></div>
-            </div>
-
-            <div class="buttons">
-                <button class="pill show-btn" id="showButton" onclick="showAnswer()">Show Answer</button>
-                <button class="pill next-btn" onclick="nextCard()">Next Card →</button>
-                <button class="pill shuffle-btn" onclick="shuffleCards()">🔀 Shuffle</button>
-            </div>
-
-            <div class="review-row" id="reviewRow" style="display:none;">
-                <button class="pill review-btn" onclick="markCard(false)">Still learning</button>
-                <button class="pill know-btn" onclick="markCard(true)">I know this ✓</button>
+            <div class="stat-card">
+                <span class="stat-value"><span id="homeLessons">0</span>/<span id="homeLessonsTotal">0</span></span>
+                <span class="stat-label">Lessons completed</span>
             </div>
         </div>
 
-        <p class="tip">Tip: <b>Space</b> shows the answer · <b>→</b> next card · <b>🔊</b> hear it spoken aloud</p>
+        <div class="goal-card">
+            <div class="goal-head">
+                <span>Daily goal</span>
+                <span id="homeGoalText">0 / 10 reviewed today</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" id="homeGoalFill"></div></div>
+        </div>
+
+        <div class="quick-links">
+            <button class="quick-link" onclick="setView('alphabet')">🔤<span>Alphabet</span></button>
+            <button class="quick-link" onclick="setView('vocabulary')">📖<span>Vocabulary</span></button>
+            <button class="quick-link" onclick="goToVocabulary('flash')">📇<span>Flashcards</span></button>
+            <button class="quick-link" onclick="goToVocabulary('quiz')">🧠<span>Quiz</span></button>
+        </div>
     </section>
 
-    <!-- ================= QUIZ MODE ================= -->
-    <section id="quizView" style="display:none;">
-        <div class="quiz-card">
-            <div class="quiz-score">
-                <span>Score <strong id="quizScore">0 / 0</strong></span>
-                <span>Best streak <strong id="quizStreak">0</strong></span>
-            </div>
+    <!-- ================= LEARN ================= -->
+    <section id="view-learn" class="view" hidden>
+        <h2 class="view-title">Learn</h2>
+        <p class="view-sub">A structured path from your first letter to fluent conversation.</p>
+        <div class="level-grid" id="levelGrid"></div>
+        <div id="unitList"></div>
+    </section>
 
-            <div class="quiz-question">
-                <span class="cat-tag" id="quizCatTag">Category</span>
-                <div class="quiz-arabic" id="quizArabic">بَيْت</div>
-                <p class="translit" id="quizTranslit">bayt</p>
-            </div>
-            <p class="quiz-prompt">What does this word mean in <span id="quizLangLabel">English</span>?</p>
+    <!-- ================= ALPHABET ================= -->
+    <section id="view-alphabet" class="view" hidden>
+        <h2 class="view-title">The Arabic Alphabet</h2>
+        <p class="view-sub">28 letters. Tap a letter to see its forms and hear it spoken.</p>
+        <div class="alphabet-grid" id="alphabetGrid"></div>
+        <div class="letter-detail" id="letterDetail"></div>
+    </section>
 
-            <div class="quiz-options" id="quizOptions"></div>
-            <div class="quiz-feedback" id="quizFeedback" aria-live="polite"></div>
-            <button class="pill show-btn" id="quizNextBtn" onclick="nextQuizQuestion()">Next Question →</button>
+    <!-- ================= VOCABULARY (existing flashcard/quiz engine) ================= -->
+    <section id="view-vocabulary" class="view" hidden>
+        <h2 class="view-title">Vocabulary</h2>
+
+        <div class="mode-switch" role="tablist" aria-label="Study mode">
+            <button id="tabFlash" class="active" role="tab" aria-selected="true" onclick="setMode('flash')">📇 Flashcards</button>
+            <button id="tabQuiz" role="tab" aria-selected="false" onclick="setMode('quiz')">🧠 Quiz</button>
         </div>
+
+        <div class="chip-row" id="chipRow" aria-label="Filter by category"></div>
+
+        <!-- ================= FLASHCARD MODE ================= -->
+        <section id="flashView">
+
+            <div class="stats">
+                <span id="cardNumber">Card 1 of 20</span>
+                <span id="masteredCount"><strong>0</strong> mastered · 🔥 <strong id="streakNum">0</strong> day streak</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+            <div class="card" id="card">
+                <div class="card-top">
+                    <span class="label">Arabic word</span>
+                    <span class="cat-tag" id="catTag">Category</span>
+                </div>
+
+                <div class="arabic-row">
+                    <span class="arabic" id="arabicWord">كِتَاب</span>
+                    <button class="speak-btn" id="speakBtn" onclick="speakCurrent()" aria-label="Hear pronunciation" title="Hear pronunciation">🔊</button>
+                </div>
+                <p class="translit" id="translit">kitāb</p>
+                <p class="voice-warning">⚠️ No Arabic voice found on this device — pronunciation may sound approximate.</p>
+
+                <div class="answer hidden" id="answer">
+                    <p><strong>English</strong> <span id="englishWord">book</span></p>
+                    <p><strong>French</strong> <span id="frenchWord">livre</span></p>
+                    <div class="note" id="noteWrap" style="display:none;"><b>Note —</b> <span id="noteText"></span></div>
+                </div>
+
+                <div class="buttons">
+                    <button class="pill show-btn" id="showButton" onclick="showAnswer()">Show Answer</button>
+                    <button class="pill next-btn" onclick="nextCard()">Next Card →</button>
+                    <button class="pill shuffle-btn" onclick="shuffleCards()">🔀 Shuffle</button>
+                </div>
+
+                <div class="review-row" id="reviewRow" style="display:none;">
+                    <button class="pill review-btn" onclick="markCard(false)">Still learning</button>
+                    <button class="pill know-btn" onclick="markCard(true)">I know this ✓</button>
+                </div>
+            </div>
+
+            <p class="tip">Tip: <b>Space</b> shows the answer · <b>→</b> next card · <b>🔊</b> hear it spoken aloud</p>
+        </section>
+
+        <!-- ================= QUIZ MODE ================= -->
+        <section id="quizView" style="display:none;">
+            <div class="quiz-card">
+                <div class="quiz-score">
+                    <span>Score <strong id="quizScore">0 / 0</strong></span>
+                    <span>Best streak <strong id="quizStreak">0</strong></span>
+                </div>
+
+                <div class="quiz-question">
+                    <span class="cat-tag" id="quizCatTag">Category</span>
+                    <div class="quiz-arabic" id="quizArabic">بَيْت</div>
+                    <p class="translit" id="quizTranslit">bayt</p>
+                </div>
+                <p class="quiz-prompt">What does this word mean in <span id="quizLangLabel">English</span>?</p>
+
+                <div class="quiz-options" id="quizOptions"></div>
+                <div class="quiz-feedback" id="quizFeedback" aria-live="polite"></div>
+                <button class="pill show-btn" id="quizNextBtn" onclick="nextQuizQuestion()">Next Question →</button>
+            </div>
+        </section>
+    </section>
+
+    <!-- ================= PRACTICE ================= -->
+    <section id="view-practice" class="view" hidden>
+        <h2 class="view-title">Practice</h2>
+        <p class="view-sub">Sharpen specific skills.</p>
+        <div class="practice-grid">
+            <div class="practice-card">
+                <span class="practice-icon">📇</span>
+                <h3>Flashcards</h3>
+                <p>Review vocabulary at your own pace.</p>
+                <button class="pill show-btn" onclick="goToVocabulary('flash')">Open Flashcards</button>
+            </div>
+            <div class="practice-card">
+                <span class="practice-icon">🧠</span>
+                <h3>Quiz</h3>
+                <p>Test yourself with multiple choice questions.</p>
+                <button class="pill show-btn" onclick="goToVocabulary('quiz')">Open Quiz</button>
+            </div>
+            <div class="practice-card disabled">
+                <span class="practice-icon">✍️</span>
+                <h3>Writing Practice</h3>
+                <p>Trace and write Arabic letters.</p>
+                <span class="badge badge-upcoming">Coming soon</span>
+            </div>
+            <div class="practice-card disabled">
+                <span class="practice-icon">🎧</span>
+                <h3>Listening Practice</h3>
+                <p>Train your ear with audio exercises.</p>
+                <span class="badge badge-upcoming">Coming soon</span>
+            </div>
+            <div class="practice-card disabled">
+                <span class="practice-icon">🗣️</span>
+                <h3>Pronunciation Practice</h3>
+                <p>Guided speaking practice with feedback.</p>
+                <span class="badge badge-upcoming">Coming soon</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= PROGRESS ================= -->
+    <section id="view-progress" class="view" hidden>
+        <h2 class="view-title">Your Progress</h2>
+        <div class="stat-grid">
+            <div class="stat-card"><span class="stat-value" id="progMastered">0/0</span><span class="stat-label">Words mastered</span></div>
+            <div class="stat-card"><span class="stat-value" id="progStreak">0</span><span class="stat-label">🔥 Current streak</span></div>
+            <div class="stat-card"><span class="stat-value" id="progQuizBest">0</span><span class="stat-label">Best quiz streak</span></div>
+            <div class="stat-card"><span class="stat-value" id="progLessons">0/0</span><span class="stat-label">Lessons completed</span></div>
+        </div>
+        <div class="goal-card">
+            <div class="goal-head"><span>Daily goal</span><span id="progGoalText">0 / 10 reviewed today</span></div>
+            <div class="progress-bar"><div class="progress-fill" id="progGoalFill"></div></div>
+        </div>
+        <div class="panel-block">
+            <h3>Mastery by category</h3>
+            <div id="progCategoryBreakdown" class="cat-progress-list"></div>
+        </div>
+        <p class="last-studied">Last studied: <span id="progLastStudied">—</span></p>
     </section>
 
     <details class="roadmap">
@@ -616,10 +1012,15 @@
             <span class="done"><span class="dot">●</span> French support</span>
             <span class="done"><span class="dot">●</span> Dark mode</span>
             <span class="done"><span class="dot">●</span> Mobile-friendly design</span>
-            <span><span class="dot">○</span> Speaking exercises</span>
+            <span class="done"><span class="dot">●</span> Platform navigation (Home, Learn, Alphabet, Vocabulary, Practice, Progress)</span>
+            <span class="done"><span class="dot">●</span> Curriculum structure (levels, units, lessons)</span>
+            <span class="done"><span class="dot">●</span> Arabic alphabet reference</span>
+            <span><span class="dot">○</span> Guided letter-writing practice</span>
+            <span><span class="dot">○</span> Harakat (short vowel) lessons</span>
+            <span><span class="dot">○</span> Listening exercises</span>
+            <span><span class="dot">○</span> Speaking / pronunciation practice</span>
             <span><span class="dot">○</span> Student accounts</span>
             <span><span class="dot">○</span> Grammar &amp; reading lessons</span>
-            <span><span class="dot">○</span> Listening exercises</span>
             <span><span class="dot">○</span> Paid courses / subscriptions</span>
         </div>
     </details>
@@ -708,16 +1109,96 @@ const categories = [
 const catLabel = Object.fromEntries(categories.map(c => [c.id, c.label]));
 
 /* ============================================================
+   DATA — CURRICULUM (levels / units / lessons)
+   Extensible structure: add more levels/units/lessons later
+   without changing any rendering code.
+   ============================================================ */
+const curriculum = {
+    levels: [
+        { id: "A0", title: "Absolute Beginner",   description: "Arabic script, sounds, and your first words.",                status: "active" },
+        { id: "A1", title: "Beginner",             description: "Everyday phrases, basic grammar, and simple conversations.",  status: "upcoming" },
+        { id: "A2", title: "Elementary",           description: "Expanded vocabulary and short connected sentences.",          status: "upcoming" },
+        { id: "B1", title: "Intermediate",         description: "Discuss familiar topics with more grammatical range.",        status: "upcoming" },
+        { id: "B2", title: "Upper Intermediate",   description: "Follow more complex texts and conversations.",                status: "upcoming" },
+        { id: "C1", title: "Advanced",             description: "Near-fluent comprehension and expression.",                  status: "upcoming" },
+    ],
+    units: [
+        {
+            id: "a0-u1",
+            level: "A0",
+            title: "Arabic Foundations",
+            lessons: [
+                { id: "l1", title: "Meet the Arabic Alphabet",   description: "Get an overview of all 28 Arabic letters.",                                          status: "available", target: "alphabet" },
+                { id: "l2", title: "Arabic Letter Shapes",       description: "See how letters change shape depending on their position in a word.",               status: "preview",   target: "alphabet" },
+                { id: "l3", title: "Short Vowels (Harakat)",     description: "Learn fatha, kasra, and damma — the marks that give letters their vowel sounds.",     status: "upcoming" },
+                { id: "l4", title: "Reading Simple Syllables",   description: "Combine letters and harakat into your first syllables.",                             status: "upcoming" },
+                { id: "l5", title: "First Arabic Words",         description: "Start building vocabulary with flashcards.",                                        status: "available", target: "vocabulary" },
+            ]
+        }
+    ]
+};
+
+/* ============================================================
+   DATA — ARABIC ALPHABET (28 letters)
+   Structural fields are populated now; richer content
+   (audio clips, writing practice, curated examples) will be
+   authored in a later milestone.
+   ============================================================ */
+const arabicAlphabet = [
+    { id:"alif",  isolated:"ا", name:"أَلِف", translit:"alif",  initial:"ا",  medial:"ـا",  final:"ـا", connects:false },
+    { id:"ba",    isolated:"ب", name:"بَاء",  translit:"bāʾ",   initial:"بـ", medial:"ـبـ", final:"ـب", connects:true },
+    { id:"ta1",   isolated:"ت", name:"تَاء",  translit:"tāʾ",   initial:"تـ", medial:"ـتـ", final:"ـت", connects:true },
+    { id:"tha",   isolated:"ث", name:"ثَاء",  translit:"thāʾ",  initial:"ثـ", medial:"ـثـ", final:"ـث", connects:true },
+    { id:"jim",   isolated:"ج", name:"جِيم",  translit:"jīm",   initial:"جـ", medial:"ـجـ", final:"ـج", connects:true },
+    { id:"ha1",   isolated:"ح", name:"حَاء",  translit:"ḥāʾ",   initial:"حـ", medial:"ـحـ", final:"ـح", connects:true },
+    { id:"kha",   isolated:"خ", name:"خَاء",  translit:"khāʾ",  initial:"خـ", medial:"ـخـ", final:"ـخ", connects:true },
+    { id:"dal",   isolated:"د", name:"دَال",  translit:"dāl",   initial:"د",  medial:"ـد",  final:"ـد", connects:false },
+    { id:"dhal",  isolated:"ذ", name:"ذَال",  translit:"dhāl",  initial:"ذ",  medial:"ـذ",  final:"ـذ", connects:false },
+    { id:"ra",    isolated:"ر", name:"رَاء",  translit:"rāʾ",   initial:"ر",  medial:"ـر",  final:"ـر", connects:false },
+    { id:"zay",   isolated:"ز", name:"زَاي",  translit:"zāy",   initial:"ز",  medial:"ـز",  final:"ـز", connects:false },
+    { id:"sin",   isolated:"س", name:"سِين",  translit:"sīn",   initial:"سـ", medial:"ـسـ", final:"ـس", connects:true },
+    { id:"shin",  isolated:"ش", name:"شِين",  translit:"shīn",  initial:"شـ", medial:"ـشـ", final:"ـش", connects:true },
+    { id:"sad",   isolated:"ص", name:"صَاد",  translit:"ṣād",   initial:"صـ", medial:"ـصـ", final:"ـص", connects:true },
+    { id:"dad",   isolated:"ض", name:"ضَاد",  translit:"ḍād",   initial:"ضـ", medial:"ـضـ", final:"ـض", connects:true },
+    { id:"ta2",   isolated:"ط", name:"طَاء",  translit:"ṭāʾ",   initial:"طـ", medial:"ـطـ", final:"ـط", connects:true },
+    { id:"za2",   isolated:"ظ", name:"ظَاء",  translit:"ẓāʾ",   initial:"ظـ", medial:"ـظـ", final:"ـظ", connects:true },
+    { id:"ayn",   isolated:"ع", name:"عَيْن",  translit:"ʿayn",  initial:"عـ", medial:"ـعـ", final:"ـع", connects:true },
+    { id:"ghayn", isolated:"غ", name:"غَيْن",  translit:"ghayn", initial:"غـ", medial:"ـغـ", final:"ـغ", connects:true },
+    { id:"fa",    isolated:"ف", name:"فَاء",  translit:"fāʾ",   initial:"فـ", medial:"ـفـ", final:"ـف", connects:true },
+    { id:"qaf",   isolated:"ق", name:"قَاف",  translit:"qāf",   initial:"قـ", medial:"ـقـ", final:"ـق", connects:true },
+    { id:"kaf",   isolated:"ك", name:"كَاف",  translit:"kāf",   initial:"كـ", medial:"ـكـ", final:"ـك", connects:true },
+    { id:"lam",   isolated:"ل", name:"لَام",  translit:"lām",   initial:"لـ", medial:"ـلـ", final:"ـل", connects:true },
+    { id:"mim",   isolated:"م", name:"مِيم",  translit:"mīm",   initial:"مـ", medial:"ـمـ", final:"ـم", connects:true },
+    { id:"nun",   isolated:"ن", name:"نُون",  translit:"nūn",   initial:"نـ", medial:"ـنـ", final:"ـن", connects:true },
+    { id:"ha2",   isolated:"ه", name:"هَاء",  translit:"hāʾ",   initial:"هـ", medial:"ـهـ", final:"ـه", connects:true },
+    { id:"waw",   isolated:"و", name:"وَاو",  translit:"wāw",   initial:"و",  medial:"ـو",  final:"ـو", connects:false },
+    { id:"ya",    isolated:"ي", name:"يَاء",  translit:"yāʾ",   initial:"يـ", medial:"ـيـ", final:"ـي", connects:true },
+];
+
+/* ============================================================
    STATE + PERSISTENCE
+   Single localStorage key for all progress data — the home,
+   progress, and learn views all read/write this same object,
+   there is no second/competing progress store.
    ============================================================ */
 const STORAGE_KEY = "learnArabic_progress_v1";
 
 function loadProgress() {
+    let saved = null;
     try {
         const raw = localStorage.getItem(STORAGE_KEY);
-        if (raw) return JSON.parse(raw);
+        if (raw) saved = JSON.parse(raw);
     } catch (e) { /* ignore corrupt storage */ }
-    return { mastered: [], lastStudied: null, streak: 0, quizBest: 0 };
+    saved = saved || {};
+    return {
+        mastered: saved.mastered || [],
+        lastStudied: saved.lastStudied || null,
+        streak: saved.streak || 0,
+        quizBest: saved.quizBest || 0,
+        lessonsCompleted: saved.lessonsCompleted || [],
+        dailyGoal: saved.dailyGoal || 10,
+        dailyProgress: saved.dailyProgress || { date: null, count: 0 },
+    };
 }
 
 function saveProgress() {
@@ -733,6 +1214,15 @@ function bumpStreak() {
     saveProgress();
 }
 
+function bumpDailyGoal() {
+    const today = new Date().toDateString();
+    if (!progress.dailyProgress || progress.dailyProgress.date !== today) {
+        progress.dailyProgress = { date: today, count: 0 };
+    }
+    progress.dailyProgress.count++;
+    saveProgress();
+}
+
 let progress = loadProgress();
 let mode = "flash";
 let activeCategory = "all";
@@ -743,6 +1233,11 @@ let quizIndex = 0;
 let quizCorrect = 0;
 let quizAnswered = 0;
 let quizStreak = 0;
+
+let currentView = "home";
+let isRouting = false;
+let alphabetRendered = false;
+let selectedLetterId = null;
 
 /* ============================================================
    CATEGORY CHIPS
@@ -857,6 +1352,7 @@ function showAnswer() {
     document.getElementById("showButton").style.display = "none";
     document.getElementById("reviewRow").style.display = "flex";
     bumpStreak();
+    bumpDailyGoal();
 }
 
 function markCard(knewIt) {
@@ -894,12 +1390,23 @@ function animateCard() {
    AUDIO PRONUNCIATION
    ============================================================ */
 let arabicVoice = null;
+let voiceCheckDone = false;
 
 function pickArabicVoice() {
     if (!("speechSynthesis" in window)) return;
     const voices = window.speechSynthesis.getVoices();
+    if (!voices.length) return;
     arabicVoice = voices.find(v => v.lang && v.lang.toLowerCase().startsWith("ar")) || null;
-    document.getElementById("speakBtn").disabled = !("speechSynthesis" in window);
+    voiceCheckDone = true;
+    document.getElementById("speakBtn").disabled = false;
+    updateVoiceWarning();
+}
+
+function updateVoiceWarning() {
+    const show = voiceCheckDone && !arabicVoice;
+    document.querySelectorAll(".voice-warning").forEach(el => {
+        el.style.display = show ? "block" : "none";
+    });
 }
 
 if ("speechSynthesis" in window) {
@@ -1004,6 +1511,7 @@ function answerQuiz(btn, isCorrect, question) {
     }
 
     bumpStreak();
+    bumpDailyGoal();
     updateQuizScore();
     document.getElementById("quizNextBtn").style.visibility = "visible";
 }
@@ -1033,10 +1541,251 @@ function initTheme() {
 }
 
 /* ============================================================
+   NAVIGATION / VIEW ROUTER
+   Only one .view section is ever unhidden at a time — every
+   other view carries the `hidden` attribute directly in the
+   markup, so even before this script runs (or if it throws)
+   at most one panel can be visible.
+   ============================================================ */
+const VIEW_IDS = ["home", "learn", "alphabet", "vocabulary", "practice", "progress"];
+
+function setView(id, opts) {
+    opts = opts || {};
+    if (VIEW_IDS.indexOf(id) === -1) id = "home";
+    currentView = id;
+
+    VIEW_IDS.forEach(v => {
+        document.getElementById("view-" + v).hidden = v !== id;
+    });
+    document.querySelectorAll(".nav-btn").forEach(btn => {
+        const active = btn.dataset.view === id;
+        btn.classList.toggle("active", active);
+        if (active) btn.setAttribute("aria-current", "page");
+        else btn.removeAttribute("aria-current");
+    });
+
+    if (!opts.fromHash && location.hash.slice(1) !== id) {
+        isRouting = true;
+        location.hash = id;
+        isRouting = false;
+    }
+
+    if (id === "home") renderHome();
+    if (id === "learn") renderLearn();
+    if (id === "progress") renderProgress();
+    if (id === "alphabet" && !alphabetRendered) renderAlphabetGrid();
+
+    window.scrollTo(0, 0);
+}
+
+function goToVocabulary(subMode) {
+    setView("vocabulary");
+    setMode(subMode || "flash");
+}
+
+function initRouter() {
+    document.querySelectorAll(".nav-btn").forEach(btn => {
+        btn.addEventListener("click", () => setView(btn.dataset.view));
+    });
+    window.addEventListener("hashchange", () => {
+        if (isRouting) return;
+        setView(location.hash.slice(1) || "home", { fromHash: true });
+    });
+    const initial = location.hash.slice(1);
+    setView(VIEW_IDS.indexOf(initial) !== -1 ? initial : "home", { fromHash: true });
+}
+
+/* ============================================================
+   HOME / DASHBOARD
+   ============================================================ */
+function computeMasteryStats() {
+    return { total: flashcards.length, masteredCount: progress.mastered.length };
+}
+
+function todaysGoalCount() {
+    const today = new Date().toDateString();
+    return (progress.dailyProgress && progress.dailyProgress.date === today) ? progress.dailyProgress.count : 0;
+}
+
+function totalLessonCount() {
+    return curriculum.units.reduce((n, u) => n + u.lessons.length, 0);
+}
+
+function renderHome() {
+    const { total, masteredCount } = computeMasteryStats();
+    document.getElementById("homeStreak").textContent = progress.streak;
+    document.getElementById("homeMastered").textContent = masteredCount;
+    document.getElementById("homeMasteredTotal").textContent = total;
+    document.getElementById("homeLessons").textContent = progress.lessonsCompleted.length;
+    document.getElementById("homeLessonsTotal").textContent = totalLessonCount();
+
+    const goal = progress.dailyGoal || 10;
+    const todayCount = todaysGoalCount();
+    document.getElementById("homeGoalText").textContent = `${todayCount} / ${goal} reviewed today`;
+    document.getElementById("homeGoalFill").style.width = Math.min(100, (todayCount / goal) * 100) + "%";
+}
+
+/* ============================================================
+   LEARN / CURRICULUM
+   ============================================================ */
+function renderLearn() {
+    const levelWrap = document.getElementById("levelGrid");
+    levelWrap.innerHTML = "";
+    curriculum.levels.forEach(lvl => {
+        const card = document.createElement("div");
+        card.className = "level-card" + (lvl.status === "active" ? " active" : "");
+        card.innerHTML = `
+            <div class="level-code">${lvl.id}</div>
+            <div class="level-title">${lvl.title}</div>
+            <p class="level-desc">${lvl.description}</p>
+            <span class="badge badge-${lvl.status}">${lvl.status === "active" ? "Available now" : "Coming soon"}</span>
+        `;
+        levelWrap.appendChild(card);
+    });
+
+    const statusLabel = { available: "Available", preview: "Preview available", upcoming: "Coming soon" };
+    const unitWrap = document.getElementById("unitList");
+    unitWrap.innerHTML = "";
+    curriculum.units.forEach(unit => {
+        const unitEl = document.createElement("div");
+        unitEl.className = "unit-block";
+        const lessonsHtml = unit.lessons.map(lesson => {
+            const complete = progress.lessonsCompleted.indexOf(lesson.id) !== -1;
+            let actionHtml = "";
+            if (lesson.status === "available" || lesson.status === "preview") {
+                actionHtml = `
+                    <button class="pill next-btn lesson-go" onclick="setView('${lesson.target}')">${lesson.status === "preview" ? "Preview" : "Start"} →</button>
+                    <button class="pill know-btn lesson-complete ${complete ? "done" : ""}" onclick="toggleLessonComplete('${lesson.id}')">${complete ? "✓ Completed" : "Mark complete"}</button>`;
+            }
+            return `
+                <div class="lesson-item">
+                    <div class="lesson-main">
+                        <span class="badge badge-${lesson.status}">${statusLabel[lesson.status]}</span>
+                        <h4>${lesson.title}</h4>
+                        <p>${lesson.description}</p>
+                    </div>
+                    <div class="lesson-actions">${actionHtml}</div>
+                </div>`;
+        }).join("");
+        unitEl.innerHTML = `<h3>${unit.title} <span class="unit-level">${unit.level}</span></h3><div class="lesson-list">${lessonsHtml}</div>`;
+        unitWrap.appendChild(unitEl);
+    });
+}
+
+function toggleLessonComplete(lessonId) {
+    const idx = progress.lessonsCompleted.indexOf(lessonId);
+    if (idx === -1) progress.lessonsCompleted.push(lessonId);
+    else progress.lessonsCompleted.splice(idx, 1);
+    saveProgress();
+    renderLearn();
+}
+
+/* ============================================================
+   ALPHABET
+   ============================================================ */
+function stripArabicDiacritics(str) {
+    return str.replace(/[ً-ْٰۖ-ۭ]/g, "").replace(/[أإآ]/g, "ا");
+}
+
+function findExampleWord(letter) {
+    const target = stripArabicDiacritics(letter.isolated);
+    return flashcards.find(w => stripArabicDiacritics(w.arabic).charAt(0) === target);
+}
+
+function renderAlphabetGrid() {
+    const grid = document.getElementById("alphabetGrid");
+    grid.innerHTML = "";
+    arabicAlphabet.forEach(letter => {
+        const btn = document.createElement("button");
+        btn.className = "letter-tile";
+        btn.innerHTML = `<span class="letter-tile-ar">${letter.isolated}</span><span class="letter-tile-translit">${letter.translit}</span>`;
+        btn.onclick = () => selectLetter(letter.id);
+        grid.appendChild(btn);
+    });
+    alphabetRendered = true;
+    selectLetter(arabicAlphabet[0].id);
+}
+
+function selectLetter(id) {
+    selectedLetterId = id;
+    const letter = arabicAlphabet.find(l => l.id === id);
+    document.querySelectorAll(".letter-tile").forEach((el, i) => {
+        el.classList.toggle("active", arabicAlphabet[i].id === id);
+    });
+
+    const speechOk = "speechSynthesis" in window;
+    const example = findExampleWord(letter);
+    const detail = document.getElementById("letterDetail");
+    detail.innerHTML = `
+        <div class="letter-detail-head">
+            <span class="letter-detail-ar">${letter.isolated}</span>
+            <div>
+                <div class="letter-detail-name">${letter.name} <span class="letter-detail-translit">(${letter.translit})</span></div>
+                <button class="speak-btn" id="letterSpeakBtn" aria-label="Hear pronunciation" title="Hear pronunciation">🔊</button>
+            </div>
+        </div>
+        <p class="voice-warning">⚠️ No Arabic voice found on this device — pronunciation may sound approximate.</p>
+        <table class="forms-table">
+            <thead><tr><th>Isolated</th><th>Initial</th><th>Medial</th><th>Final</th></tr></thead>
+            <tbody><tr>
+                <td>${letter.isolated}</td>
+                <td>${letter.connects ? letter.initial : "—"}</td>
+                <td>${letter.connects ? letter.medial : "—"}</td>
+                <td>${letter.final}</td>
+            </tr></tbody>
+        </table>
+        ${!letter.connects ? `<p class="letter-note">This letter does not connect to the letter that follows it.</p>` : ""}
+        <div class="letter-example">
+            ${example
+                ? `<b>Example:</b> <span class="rtl-inline">${example.arabic}</span> <em>(${example.translit})</em> — ${example.english} <button class="speak-btn small" id="exampleSpeakBtn" aria-label="Hear example word" title="Hear example word">🔊</button>`
+                : `<span class="muted">No example word yet in the vocabulary — more coming soon.</span>`}
+        </div>
+        <div class="writing-practice-placeholder">✍️ Writing practice — coming in a future milestone.</div>
+    `;
+
+    document.getElementById("letterSpeakBtn").disabled = !speechOk;
+    document.getElementById("letterSpeakBtn").onclick = () => speakText(letter.isolated);
+    const exampleBtn = document.getElementById("exampleSpeakBtn");
+    if (exampleBtn) {
+        exampleBtn.disabled = !speechOk;
+        exampleBtn.onclick = () => speakText(example.arabic);
+    }
+    updateVoiceWarning();
+}
+
+/* ============================================================
+   PROGRESS DASHBOARD
+   ============================================================ */
+function renderProgress() {
+    const { total, masteredCount } = computeMasteryStats();
+    document.getElementById("progMastered").textContent = `${masteredCount}/${total}`;
+    document.getElementById("progStreak").textContent = progress.streak;
+    document.getElementById("progQuizBest").textContent = progress.quizBest;
+    document.getElementById("progLessons").textContent = `${progress.lessonsCompleted.length}/${totalLessonCount()}`;
+    document.getElementById("progLastStudied").textContent = progress.lastStudied || "Not yet studied";
+
+    const goal = progress.dailyGoal || 10;
+    const todayCount = todaysGoalCount();
+    document.getElementById("progGoalText").textContent = `${todayCount} / ${goal} reviewed today`;
+    document.getElementById("progGoalFill").style.width = Math.min(100, (todayCount / goal) * 100) + "%";
+
+    const catWrap = document.getElementById("progCategoryBreakdown");
+    catWrap.innerHTML = "";
+    categories.filter(c => c.id !== "all").forEach(cat => {
+        const words = flashcards.filter(w => w.category === cat.id);
+        const masteredInCat = words.filter(w => progress.mastered.includes(w.id)).length;
+        const row = document.createElement("div");
+        row.className = "cat-progress-row";
+        row.innerHTML = `<span>${cat.label}</span><span>${masteredInCat} / ${words.length}</span>`;
+        catWrap.appendChild(row);
+    });
+}
+
+/* ============================================================
    KEYBOARD SHORTCUTS
    ============================================================ */
 document.addEventListener("keydown", function (event) {
-    if (mode !== "flash") return;
+    if (currentView !== "vocabulary" || mode !== "flash") return;
     if (event.code === "Space") {
         event.preventDefault();
         if (document.getElementById("answer").classList.contains("hidden")) showAnswer();
@@ -1050,6 +1799,8 @@ document.addEventListener("keydown", function (event) {
 initTheme();
 renderChips();
 rebuildDeck();
+renderAlphabetGrid();
+initRouter();
 </script>
 
 </body>
