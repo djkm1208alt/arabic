@@ -2304,10 +2304,28 @@ const PRACTICE_LESSONS = [
    ============================================================ */
 const STORAGE_KEY = "learnArabic_progress_v1";
 
+/* localStorage access can throw (private-browsing storage disabled, browser
+   settings blocking storage, sandboxed embeds, quota errors, etc). These
+   wrappers turn a failed read/write into a safe no-op fallback instead of
+   an uncaught exception, so the app keeps working without persistence. */
+function safeStorageGet(key) {
+    try {
+        return localStorage.getItem(key);
+    } catch (e) {
+        return null;
+    }
+}
+
+function safeStorageSet(key, value) {
+    try {
+        localStorage.setItem(key, value);
+    } catch (e) { /* storage unavailable — continue without persisting */ }
+}
+
 function loadProgress() {
     let saved = null;
     try {
-        const raw = localStorage.getItem(STORAGE_KEY);
+        const raw = safeStorageGet(STORAGE_KEY);
         if (raw) saved = JSON.parse(raw);
     } catch (e) { /* ignore corrupt storage */ }
     saved = saved || {};
@@ -2324,7 +2342,7 @@ function loadProgress() {
 }
 
 function saveProgress() {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+    safeStorageSet(STORAGE_KEY, JSON.stringify(progress));
 }
 
 function bumpStreak() {
@@ -2974,11 +2992,11 @@ function toggleTheme() {
     const isDark = html.getAttribute("data-theme") === "dark";
     html.setAttribute("data-theme", isDark ? "light" : "dark");
     document.getElementById("themeToggle").textContent = isDark ? "🌙" : "☀️";
-    localStorage.setItem("learnArabic_theme", isDark ? "light" : "dark");
+    safeStorageSet("learnArabic_theme", isDark ? "light" : "dark");
 }
 
 function initTheme() {
-    const saved = localStorage.getItem("learnArabic_theme");
+    const saved = safeStorageGet("learnArabic_theme");
     const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
     const theme = saved || (prefersDark ? "dark" : "light");
     document.documentElement.setAttribute("data-theme", theme);
@@ -2997,6 +3015,15 @@ const VIEW_IDS = ["home", "learn", "alphabet", "vocabulary", "practice", "progre
 function setView(id, opts) {
     opts = opts || {};
     if (VIEW_IDS.indexOf(id) === -1) id = "home";
+    if (id === "lesson" && !activeLesson) {
+        // No lesson in progress (e.g. the page was reloaded mid-lesson, or
+        // #lesson was reached directly) — the lesson runner has nothing to
+        // render, so bounce to a safe view instead of showing a broken
+        // Next/Back/Exit screen. Force the hash to resync too, even on a
+        // hashchange-driven call, so the URL doesn't stay stuck on #lesson.
+        id = "home";
+        opts = { fromHash: false };
+    }
     currentView = id;
 
     VIEW_IDS.forEach(v => {
@@ -3381,7 +3408,7 @@ function updateLessonNav() {
 }
 
 function lessonNext() {
-    if (!lessonCanProceed) return;
+    if (!activeLesson || !lessonCanProceed) return;
     if (lessonStepIndex < activeLesson.steps.length - 1) {
         lessonStepIndex++;
         renderLessonStep();
@@ -3389,6 +3416,7 @@ function lessonNext() {
 }
 
 function lessonPrev() {
+    if (!activeLesson) return;
     if (lessonStepIndex > 0) {
         lessonStepIndex--;
         renderLessonStep();
