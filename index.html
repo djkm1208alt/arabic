@@ -1413,7 +1413,7 @@
             <span class="done"><span class="dot">●</span> Platform navigation (Home, Learn, Alphabet, Vocabulary, Practice, Progress)</span>
             <span class="done"><span class="dot">●</span> Curriculum structure (levels, units, lessons)</span>
             <span class="done"><span class="dot">●</span> Arabic alphabet reference</span>
-            <span class="done"><span class="dot">●</span> Harakat (short vowel) mini-lesson</span>
+            <span class="done"><span class="dot">●</span> Harakāt &amp; reading marks lesson (full alphabet)</span>
             <span class="done"><span class="dot">●</span> Letter-writing practice — all 28 letters (shape + coverage feedback)</span>
             <span class="done"><span class="dot">●</span> Reading Simple Syllables mini-lesson</span>
             <span class="done"><span class="dot">●</span> Letter index / quick-jump for tracing lesson</span>
@@ -1647,6 +1647,8 @@ const vocabulary = [
     { id:"hom-08", arabic:"طَاوِلَة", translit:"ṭāwilah", english:"table", pos:"noun", category:"home", level:"A0" },
     { id:"hom-09", arabic:"كُرْسِيّ", translit:"kursiyy", english:"chair", pos:"noun", category:"home", level:"A0" },
     { id:"hom-10", arabic:"سَرِير", translit:"sarīr", english:"bed", pos:"noun", category:"home", level:"A0" },
+    { id:"hom-11", arabic:"بَيْتٌ", translit:"baytun", english:"a house (subject form, ending in ḍammatayn)", pos:"noun", category:"home", level:"A1" },
+    { id:"hom-12", arabic:"فِي بَيْتٍ", translit:"fī baytin", english:"in a house (ending in kasratayn, after a preposition)", pos:"phrase", category:"home", level:"A1" },
 
     // ---------- School & Learning ----------
     { id:"sch-01", arabic:"مَدْرَسَة", translit:"madrasah", english:"school", pos:"noun", category:"school", level:"A0" },
@@ -1775,7 +1777,7 @@ const curriculum = {
             lessons: [
                 { id: "l1", title: "Meet the Arabic Alphabet",   description: "Get an overview of all 28 Arabic letters.",                                          status: "available", target: "alphabet" },
                 { id: "l2", title: "Arabic Letter Shapes",       description: "See how letters change shape depending on their position in a word.",               status: "preview",   target: "alphabet" },
-                { id: "l3", title: "Short Vowels (Harakat)",     description: "Learn fatha, kasra, and damma — the marks that give letters their vowel sounds.",     status: "available", target: "lesson:harakat-intro" },
+                { id: "l3", title: "Harakāt & Reading Marks",    description: "Learn every Arabic reading mark — short vowels, sukūn, shaddah, tanwīn, and long vowels — across the full alphabet.", status: "available", target: "lesson:harakat-intro" },
                 { id: "l4", title: "Reading Simple Syllables",   description: "Combine letters and harakat into your first syllables.",                             status: "available", target: "lesson:syllables-1" },
                 { id: "l5", title: "First Arabic Words",         description: "Start building vocabulary with flashcards.",                                        status: "available", target: "vocabulary" },
             ]
@@ -1856,6 +1858,75 @@ function buildSyllableGroupStep(consonantId, sound) {
 }
 
 /* ============================================================
+   DATA — SUKŪN, SHADDAH, TANWĪN, MADD (the rest of the Arabic
+   reading marks). Kept separate from HARAKAT on purpose:
+   buildSyllableGroupStep() / syllables-1 / reading-foundations
+   step 3 all iterate HARAKAT expecting exactly the three short
+   vowels — appending here would silently change that already-
+   shipped content. Examples are pulled live from the larger
+   `vocabulary` Word Bank (not the smaller legacy `flashcards`
+   array HARAKAT's examples use) for the widest real-word
+   coverage — same "never invented" rule as HARAKAT throughout.
+   ============================================================ */
+const SUKUN_MARK = "ْ";
+
+const TANWIN = [
+    { id: "fathatayn", mark: "ً", symbolWord: "فً", name: "fatḥatayn", translit: "an", sound: "An \"-an\" sound added at the end of a word — the most common tanwīn in everyday words." },
+    { id: "kasratayn", mark: "ٍ", symbolWord: "فٍ", name: "kasratayn", translit: "in", sound: "An \"-in\" sound, marking a word as grammatically indefinite and genitive — often heard after a preposition like فِي (\"in\") or مِنْ (\"from\")." },
+    { id: "dammatayn", mark: "ٌ", symbolWord: "فٌ", name: "ḍammatayn", translit: "un", sound: "An \"-un\" sound, marking a word as grammatically indefinite and the subject of a sentence." },
+];
+
+const MADD_PATTERNS = [
+    { id: "madd-alif", pattern: /َا/, letter: "ا", name: "fatḥah + alif", translit: "ā", sound: "Stretches the short \"a\" into a long \"aa\", held about twice as long — like the \"a\" in \"father\"." },
+    { id: "madd-ya", pattern: /ِيْ?/, letter: "ي", name: "kasrah + yāʾ", translit: "ī", sound: "Stretches the short \"i\" into a long \"ee\" — like the \"ee\" in \"see\"." },
+    { id: "madd-waw", pattern: /ُوْ?/, letter: "و", name: "ḍammah + wāw", translit: "ū", sound: "Stretches the short \"u\" into a long \"oo\" — like the \"oo\" in \"food\"." },
+];
+
+/* Same "search real vocabulary, never invent" rule as
+   findHarakaExamples(), generalized to accept either a plain
+   mark string or a regex pattern, searching the larger
+   vocabulary Word Bank for the widest real coverage. */
+function findVocabExamples(matcher, limit) {
+    const test = matcher instanceof RegExp ? (w => matcher.test(w.arabic)) : (w => w.arabic.indexOf(matcher) !== -1);
+    // Shorter words first — a single simple word demonstrates a new
+    // sound more clearly than a long greeting phrase that happens to
+    // contain it too.
+    return vocabulary.filter(test)
+        .slice()
+        .sort((a, b) => a.arabic.length - b.arabic.length)
+        .slice(0, limit || 3);
+}
+
+/* Every "regular" letter (all 28 minus alif — alif is a long-vowel
+   letter, not a consonant that takes short vowels; see
+   MADD_PATTERNS for its real role) combined with one primary
+   mark. Generated entirely from arabicAlphabet, so covering all
+   27 letters costs one function call, not 27 hand-authored cards. */
+function buildFullAlphabetMarkStep(mark, title, markLabel) {
+    const letters = arabicAlphabet.filter(l => l.id !== "alif");
+    return {
+        type: "reading-practice",
+        title: title,
+        intro: `Every Arabic letter with ${markLabel}. Tap 🔊 to hear each one.`,
+        items: letters.map(l => ({ arabic: l.isolated + mark, translit: l.translit })),
+    };
+}
+
+/* For marks that aren't valid on every letter in practice (sukūn,
+   shaddah) — generated from real vocabulary instead: one real word
+   per letter, for every letter that actually has one, rather than
+   a full-alphabet matrix. Skips letters with no real example
+   instead of inventing one. */
+function buildLetterMarkExampleStep(mark, title, intro) {
+    const items = [];
+    arabicAlphabet.filter(l => l.id !== "alif").forEach(l => {
+        const match = vocabulary.find(w => w.arabic.indexOf(l.isolated + mark) !== -1);
+        if (match) items.push({ arabic: match.arabic, translit: match.translit, english: match.english });
+    });
+    return { type: "reading-practice", title, intro, items };
+}
+
+/* ============================================================
    MILESTONE 6 — DATA HELPERS FOR READING / LISTENING / SPEAKING
    These build reading/listening exercise items from the *existing*
    data sources (arabicAlphabet, HARAKAT, and the Milestone 5
@@ -1914,7 +1985,7 @@ function buildReadChooseMeaningQuestion(id, distractorIds) {
 const lessons = {
     "harakat-intro": {
         id: "harakat-intro",
-        title: "Short Vowels — Harakat",
+        title: "Harakāt & Reading Marks",
         curriculumLessonId: "l3",
         steps: [
             {
@@ -2006,9 +2077,122 @@ const lessons = {
                 ],
             },
             {
+                type: "explain",
+                title: "Sukūn — no vowel at all",
+                body: [
+                    "Not every letter carries a vowel. Sukūn (سُكُون) is a small circle written above a letter that means \"no vowel sound here\" — the consonant is pronounced on its own, usually closing off a syllable.",
+                    "Compare ف with a vowel to ف with sukūn:",
+                ],
+                previewSymbols: ["فَ", "فْ"],
+            },
+            buildLetterMarkExampleStep(
+                SUKUN_MARK,
+                "Sukūn across the alphabet",
+                "Real words showing sukūn on different letters — tap 🔊 to hear each one."
+            ),
+            {
+                type: "explain",
+                title: "Shaddah — doubling a consonant",
+                body: [
+                    "Shaddah (شَدَّة) looks like a small w-shaped mark above a letter. It means that consonant is doubled — held twice as long as usual. Shaddah always needs a vowel mark to go with it, like فَّ.",
+                    "Compare a single ف to a doubled ف:",
+                ],
+                previewSymbols: ["فَ", "فَّ"],
+            },
+            buildLetterMarkExampleStep(
+                "ّ",
+                "Shaddah in real words",
+                "Shaddah doesn't appear on every letter equally often — here are real words that use it. Tap 🔊 to hear each one."
+            ),
+            {
+                type: "explain",
+                title: "Tanwīn — three ways a word can end in \"n\"",
+                body: [
+                    "Tanwīn (تَنْوِين) is a doubled version of fatḥah, kasrah, or ḍammah, written at the end of a word. It adds an \"n\" sound without an actual ن letter — often marking a word as indefinite (\"a house\" rather than \"the house\").",
+                    "The three tanwīn marks, shown here on ف:",
+                ],
+                previewSymbols: TANWIN.map(t => t.symbolWord),
+            },
+            {
+                type: "example-set",
+                title: "The three tanwīn endings",
+                intro: "Tap 🔊 to hear each ending, and see how it sounds in a real word.",
+                items: TANWIN.map(t => ({
+                    symbolWord: t.symbolWord,
+                    name: t.name,
+                    translit: t.translit,
+                    sound: t.sound,
+                    examples: findVocabExamples(t.mark, 2).map(w => ({ arabic: w.arabic, translit: w.translit, english: w.english })),
+                })),
+            },
+            {
+                type: "explain",
+                title: "Long vowels (madd) — و ي ا can stretch a vowel",
+                body: [
+                    "و (wāw) and ي (yāʾ) are usually consonants — و sounds like \"w\" (وَلَد, \"walad\", boy) and ي sounds like \"y\" (يَد, \"yad\", hand). But right after a matching short vowel, they do something different: they stretch that vowel into a long one instead of adding their own consonant sound.",
+                    "ا (alif) works the same way after fatḥah, but only ever as a long vowel — alif is not a consonant and never takes fatḥah, kasrah, ḍammah, or sukūn itself.",
+                ],
+                previewSymbols: ["بَا", "بِي", "بُو"],
+            },
+            {
+                type: "example-set",
+                title: "The three long vowels",
+                intro: "Held about twice as long as the matching short vowel. Tap 🔊 to hear each one in a real word.",
+                items: MADD_PATTERNS.map(m => ({
+                    symbolWord: (m.id === "madd-alif" ? "بَا" : m.id === "madd-ya" ? "بِي" : "بُو"),
+                    name: m.name,
+                    translit: m.translit,
+                    sound: m.sound,
+                    examples: findVocabExamples(m.pattern, 2).map(w => ({ arabic: w.arabic, translit: w.translit, english: w.english })),
+                })),
+            },
+            buildFullAlphabetMarkStep("َ", "Every letter + fatḥah", "fatḥah"),
+            buildFullAlphabetMarkStep("ِ", "Every letter + kasrah", "kasrah"),
+            buildFullAlphabetMarkStep("ُ", "Every letter + ḍammah", "ḍammah"),
+            {
+                type: "quiz",
+                title: "Reading marks check",
+                questions: [
+                    {
+                        prompt: "Which mark means \"no vowel sound at all\"?",
+                        options: [
+                            { label: "فَ", correct: false },
+                            { label: "فْ", correct: true },
+                            { label: "فّ", correct: false },
+                        ],
+                    },
+                    {
+                        prompt: "What does shaddah (ّ) do to a consonant?",
+                        options: [
+                            { label: "Removes its vowel", correct: false },
+                            { label: "Doubles it", correct: true },
+                            { label: "Makes it silent", correct: false },
+                        ],
+                    },
+                    {
+                        prompt: "\"baytun\" (a house) — which tanwīn ending is on this word?",
+                        arabicPrompt: "بَيْتٌ",
+                        options: [
+                            { label: "-an", correct: false },
+                            { label: "-in", correct: false },
+                            { label: "-un", correct: true },
+                        ],
+                    },
+                    {
+                        prompt: "\"bāb\" (door) — which long vowel sound is in this word?",
+                        arabicPrompt: "بَاب",
+                        options: [
+                            { label: "aa", correct: true },
+                            { label: "ee", correct: false },
+                            { label: "oo", correct: false },
+                        ],
+                    },
+                ],
+            },
+            {
                 type: "complete",
                 title: "Nice work!",
-                message: "You've learned the three Arabic short vowels — fatḥah, kasrah, and ḍammah — and how they change a consonant's sound.",
+                message: "You've learned every Arabic reading mark — fatḥah, kasrah, ḍammah, sukūn, shaddah, tanwīn, and the long vowels — and how they shape every letter's sound across the whole alphabet.",
                 finishLabel: "Finish & mark complete",
             },
         ],
