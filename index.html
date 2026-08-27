@@ -1381,6 +1381,12 @@
                 <p>Read the same sentences with fewer marks — how real Arabic text looks.</p>
                 <button class="pill show-btn" onclick="startLesson('unvowelled-reading','practice')">Start Unvowelled Reading</button>
             </div>
+            <div class="practice-card">
+                <span class="practice-icon">📐</span>
+                <h3>Grammar for Reading</h3>
+                <p>Gender agreement, present-tense verbs, and sun/moon letters.</p>
+                <button class="pill show-btn" onclick="startLesson('grammar-intro','practice')">Start Grammar</button>
+            </div>
         </div>
     </section>
 
@@ -1456,7 +1462,7 @@
             <span><span class="dot">○</span> Directional stroke-order writing guidance</span>
             <span><span class="dot">○</span> Professionally recorded native-speaker audio</span>
             <span><span class="dot">○</span> Student accounts</span>
-            <span><span class="dot">○</span> Grammar &amp; reading lessons</span>
+            <span class="done"><span class="dot">●</span> Grammar &amp; reading lessons — gender agreement, present tense, sun/moon letters</span>
             <span><span class="dot">○</span> Paid courses / subscriptions</span>
         </div>
     </details>
@@ -1587,6 +1593,7 @@ const VOCAB_CATEGORIES = [
     { id: "verbs",       label: "Common Verbs" },
     { id: "adjectives",  label: "Common Adjectives" },
     { id: "expressions", label: "Useful Expressions" },
+    { id: "pronouns",    label: "Pronouns" },
 ];
 
 const vocabCatLabel = Object.fromEntries(VOCAB_CATEGORIES.map(c => [c.id, c.label]));
@@ -1746,6 +1753,8 @@ const vocabulary = [
     { id:"tim-15", arabic:"الْخَمِيس", translit:"al-khamīs", english:"Thursday", pos:"noun", category:"time", level:"A0" },
     { id:"tim-16", arabic:"الْجُمُعَة", translit:"al-jumʿah", english:"Friday", pos:"noun", category:"time", level:"A0" },
     { id:"tim-17", arabic:"السَّبْت", translit:"as-sabt", english:"Saturday", pos:"noun", category:"time", level:"A0" },
+    { id:"tim-18", arabic:"شَمْس", translit:"shams", english:"sun", pos:"noun", category:"time", level:"A0" },
+    { id:"tim-19", arabic:"قَمَر", translit:"qamar", english:"moon", pos:"noun", category:"time", level:"A0" },
 
     // ---------- Common Verbs ----------
     { id:"ver-01", arabic:"ذَهَبَ", translit:"dhahaba", english:"to go", pos:"verb", category:"verbs", level:"A1",
@@ -1769,6 +1778,7 @@ const vocabulary = [
 
     // ---------- Common Adjectives ----------
     { id:"adj-01", arabic:"كَبِير", translit:"kabīr", english:"big", pos:"adjective", category:"adjectives", level:"A0" },
+    { id:"adj-01f", arabic:"كَبِيرَة", translit:"kabīrah", english:"big (feminine)", pos:"adjective", category:"adjectives", level:"A0", gender:"feminine" },
     { id:"adj-02", arabic:"صَغِير", translit:"ṣaghīr", english:"small", pos:"adjective", category:"adjectives", level:"A0",
         example:{ arabic:"الْبَيْتُ صَغِير.", english:"The house is small." } },
     { id:"adj-03", arabic:"جَمِيل", translit:"jamīl", english:"beautiful", pos:"adjective", category:"adjectives", level:"A0" },
@@ -1795,6 +1805,11 @@ const vocabulary = [
     { id:"exp-08", arabic:"أَيْنَ الْحَمَّام؟", translit:"ayna l-ḥammām?", english:"Where is the bathroom?", pos:"phrase", category:"expressions", level:"A1" },
     { id:"exp-09", arabic:"كَمِ السَّاعَة؟", translit:"kami s-sāʿah?", english:"What time is it?", pos:"phrase", category:"expressions", level:"A1" },
     { id:"exp-10", arabic:"بِكَمْ هَذَا؟", translit:"bikam hādhā?", english:"How much is this?", pos:"phrase", category:"expressions", level:"A1" },
+
+    // ---------- Pronouns ----------
+    { id:"pro-01", arabic:"هُوَ", translit:"huwa", english:"he", pos:"pronoun", category:"pronouns", level:"A1" },
+    { id:"pro-02", arabic:"هِيَ", translit:"hiya", english:"she", pos:"pronoun", category:"pronouns", level:"A1" },
+    { id:"pro-03", arabic:"هُمْ", translit:"hum", english:"they (masculine/mixed group)", pos:"pronoun", category:"pronouns", level:"A1" },
 ];
 
 /* ============================================================
@@ -2173,6 +2188,98 @@ function buildVowellingLevelStep(field, title, intro) {
         title,
         intro,
         items: readingPassages.map(p => ({ arabic: p[field], translit: p.transliteration, english: p.meaning })),
+    };
+}
+
+/* ============================================================
+   MILESTONE 11 — GRAMMAR & READING (gender agreement, simple
+   present tense, sun/moon letter assimilation). Reuses
+   sentenceWord()/vocabWord() from M8 - present-tense verb forms
+   are inflections of the already-existing "dhahaba" headword, not
+   new dictionary words, so (matching the M8 precedent exactly)
+   they're supplied inline here rather than as new Word Bank
+   entries. Every genuinely new headword (kabīrah, huwa/hiya/hum,
+   shams/qamar) was added as a real vocabulary entry instead.
+   ============================================================ */
+const grammarExamples = [
+    {
+        id: "gram-gender-bint",
+        concept: "gender-agreement",
+        sentence: "الْبِنْتُ كَبِيرَةٌ",
+        words: [
+            sentenceWord("peo-13", "الْبِنْتُ", "al-bintu", "feminine"),
+            sentenceWord("adj-01f", "كَبِيرَةٌ", "kabīratun", "feminine"),
+        ],
+        transliteration: "al-bintu kabīratun",
+        meaning: "The girl is big.",
+        audioText: "الْبِنْتُ كَبِيرَةٌ",
+    },
+    {
+        id: "gram-verb-he",
+        concept: "present-tense",
+        sentence: "هُوَ يَذْهَبُ إِلَى الْمَدْرَسَةِ",
+        words: [
+            sentenceWord("pro-01", "هُوَ", "huwa", "masculine"),
+            sentenceWord("ver-01", "يَذْهَبُ", "yadhhabu", "masculine"),
+            sentenceWord("sch-01", "إِلَى الْمَدْرَسَةِ", "ilā al-madrasati", null),
+        ],
+        transliteration: "huwa yadhhabu ilā al-madrasati",
+        meaning: "He goes to school.",
+        audioText: "هُوَ يَذْهَبُ إِلَى الْمَدْرَسَةِ",
+    },
+    {
+        id: "gram-verb-she",
+        concept: "present-tense",
+        sentence: "هِيَ تَذْهَبُ إِلَى الْمَدْرَسَةِ",
+        words: [
+            sentenceWord("pro-02", "هِيَ", "hiya", "feminine"),
+            sentenceWord("ver-01", "تَذْهَبُ", "tadhhabu", "feminine"),
+            sentenceWord("sch-01", "إِلَى الْمَدْرَسَةِ", "ilā al-madrasati", null),
+        ],
+        transliteration: "hiya tadhhabu ilā al-madrasati",
+        meaning: "She goes to school.",
+        audioText: "هِيَ تَذْهَبُ إِلَى الْمَدْرَسَةِ",
+    },
+    {
+        id: "gram-verb-they",
+        concept: "present-tense",
+        sentence: "هُمْ يَذْهَبُونَ إِلَى الْمَدْرَسَةِ",
+        words: [
+            sentenceWord("pro-03", "هُمْ", "hum", null),
+            sentenceWord("ver-01", "يَذْهَبُونَ", "yadhhabūna", null),
+            sentenceWord("sch-01", "إِلَى الْمَدْرَسَةِ", "ilā al-madrasati", null),
+        ],
+        transliteration: "hum yadhhabūna ilā al-madrasati",
+        meaning: "They go to school.",
+        audioText: "هُمْ يَذْهَبُونَ إِلَى الْمَدْرَسَةِ",
+    },
+    {
+        id: "gram-sunletter-shams",
+        concept: "sun-moon",
+        sentence: "الشَّمْسُ كَبِيرَةٌ",
+        words: [
+            sentenceWord("tim-18", "الشَّمْسُ", "ash-shamsu", "feminine"),
+            sentenceWord("adj-01f", "كَبِيرَةٌ", "kabīratun", "feminine"),
+        ],
+        transliteration: "ash-shamsu kabīratun",
+        meaning: "The sun is big.",
+        audioText: "الشَّمْسُ كَبِيرَةٌ",
+    },
+];
+
+function grammarByConcept(concept) {
+    return grammarExamples.filter(g => g.concept === concept);
+}
+
+/* One "Practice" reading-practice step per concept - every
+   sentence in that concept, audio + reveal, same as buildSentence*
+   helpers from M8. */
+function buildGrammarPracticeStep(concept, title, intro) {
+    return {
+        type: "reading-practice",
+        title,
+        intro,
+        items: grammarByConcept(concept).map(g => ({ arabic: g.sentence, translit: g.transliteration, english: g.meaning })),
     };
 }
 
@@ -2920,6 +3027,178 @@ const lessons = {
     },
 
     /* ============================================================
+       MILESTONE 11 — GRAMMAR & READING LESSONS
+       Practice-only lesson (curriculumLessonId: null), reached from
+       the Practice view like every M6-M10 foundations lesson. Three
+       concepts, each split into its own Concept-Intro -> Visual-
+       Example -> Practice -> Quick-Check (4 steps, perfectly
+       symmetric across all three), then one shared Quiz and one
+       shared Reading Application capstone. No grammar theory beyond
+       what's needed to read the fixed examples correctly - this is
+       reading application, not a grammar course.
+       ============================================================ */
+    "grammar-intro": {
+        id: "grammar-intro",
+        title: "Grammar for Reading",
+        curriculumLessonId: null,
+        steps: [
+            /* ---------- Concept 1: gender agreement ---------- */
+            {
+                type: "explain",
+                title: "Adjectives Match the Noun's Gender",
+                body: [
+                    "You've read real sentences and real words since Milestone 8. This lesson adds a few patterns that will help you read even more Arabic correctly — starting with how describing words change.",
+                    "In Arabic, an adjective has to match the gender of the noun it describes. Feminine nouns usually end in ة, and the adjective describing them takes a matching ة ending too.",
+                ],
+            },
+            {
+                type: "explain",
+                title: "See the Pattern",
+                body: [
+                    "Compare a sentence you already know to a new one:",
+                    "الْبَيْتُ كَبِيرٌ — \"the house is big\" (بَيْت is masculine, so كَبِير has no extra ending).",
+                    "الْبِنْتُ كَبِيرَةٌ — \"the girl is big\" (بِنْت is feminine, so كَبِيرَة takes ة).",
+                ],
+                previewSymbols: ["كَبِيرٌ", "كَبِيرَةٌ"],
+            },
+            buildGrammarPracticeStep("gender-agreement", "Practice: Gender Agreement", "Tap 🔊 to hear it, then check the meaning."),
+            {
+                type: "practice-choice",
+                title: "Quick check",
+                arabicPrompt: "الْبِنْتُ كَبِيرَةٌ",
+                prompt: "Why does كَبِيرَة have an extra ة here?",
+                options: [
+                    { label: "Because بِنْت (girl) is feminine", correct: true },
+                    { label: "Because the sentence is a question", correct: false },
+                    { label: "It's optional and doesn't change the meaning", correct: false },
+                ],
+                explanation: "بِنْت is feminine, so its adjective takes the matching ة ending: كَبِيرَة.",
+            },
+
+            /* ---------- Concept 2: simple present tense (he/she/they) ---------- */
+            {
+                type: "explain",
+                title: "Present-Tense Verbs Change With the Subject",
+                body: [
+                    "Arabic present-tense verbs take a different prefix depending on who's doing the action — the verb itself doesn't stay the same the way \"go\" does in English for \"he goes\" vs \"they go.\"",
+                    "For \"to go\" (ذَهَبَ), the pattern is: يَـ for he, تَـ for she, and يَـ...ونَ for they.",
+                ],
+            },
+            {
+                type: "explain",
+                title: "See the Pattern",
+                body: [
+                    "Notice the prefix changing while the root ذهب stays the same:",
+                    "هُوَ يَذْهَبُ — \"he goes\" (يَـ)",
+                    "هِيَ تَذْهَبُ — \"she goes\" (تَـ)",
+                    "هُمْ يَذْهَبُونَ — \"they go\" (يَـ...ونَ)",
+                ],
+                previewSymbols: ["يَذْهَبُ", "تَذْهَبُ", "يَذْهَبُونَ"],
+            },
+            buildGrammarPracticeStep("present-tense", "Practice: He / She / They", "Tap 🔊 to hear each one, then check the meaning."),
+            {
+                type: "practice-choice",
+                title: "Quick check",
+                arabicPrompt: "هِيَ تَذْهَبُ إِلَى الْمَدْرَسَةِ",
+                prompt: "Which prefix tells you this is \"she\"?",
+                options: [
+                    { label: "يَـ", correct: false },
+                    { label: "تَـ", correct: true },
+                    { label: "أَـ", correct: false },
+                ],
+                explanation: "تَـ marks \"she\" (and \"you\") in the present tense — compare هُوَ يَذْهَبُ (he) with هِيَ تَذْهَبُ (she).",
+            },
+
+            /* ---------- Concept 3: sun & moon letters ---------- */
+            {
+                type: "explain",
+                title: "\"The\" Sounds Different Before Some Letters",
+                body: [
+                    "ال (\"the\") isn't always pronounced the same way. Before most letters — called \"moon letters\" — ل is pronounced normally. Before a specific set of letters — \"sun letters\" — the ل becomes silent and the next letter doubles instead.",
+                    "This is exactly what it sounds like when it happens: the two words used to name the rule are themselves the example.",
+                ],
+            },
+            {
+                type: "explain",
+                title: "See the Pattern",
+                body: [
+                    "الْقَمَر — \"the moon\" (ق is a moon letter — ل is pronounced: al-qamar).",
+                    "الشَّمْس — \"the sun\" (ش is a sun letter — ل is silent, ش doubles instead: ash-shams).",
+                ],
+                previewSymbols: ["الْقَمَر", "الشَّمْس"],
+            },
+            buildGrammarPracticeStep("sun-moon", "Practice: Sun Letters", "Tap 🔊 to hear it, then check the meaning."),
+            {
+                type: "practice-choice",
+                title: "Quick check",
+                arabicPrompt: "الشَّمْسُ",
+                prompt: "What happens to ل before a sun letter like ش?",
+                options: [
+                    { label: "It's pronounced normally", correct: false },
+                    { label: "It becomes silent, and the next letter doubles", correct: true },
+                    { label: "The whole word is dropped", correct: false },
+                ],
+                explanation: "ش is a sun letter, so ل is silent and ش doubles: ash-shams, not al-shams.",
+            },
+
+            /* ---------- Wrap-up ---------- */
+            {
+                type: "quiz",
+                title: "Grammar for Reading Check",
+                questions: [
+                    {
+                        arabicPrompt: "الْبِنْتُ كَبِيرَةٌ",
+                        prompt: "What does this sentence mean?",
+                        options: shuffleArray([
+                            { label: "The girl is big.", correct: true },
+                            { label: "The house is big.", correct: false },
+                            { label: "The sun is big.", correct: false },
+                        ]),
+                    },
+                    {
+                        arabicPrompt: "هُمْ يَذْهَبُونَ إِلَى الْمَدْرَسَةِ",
+                        prompt: "Who is going to school here?",
+                        options: shuffleArray([
+                            { label: "They", correct: true },
+                            { label: "He", correct: false },
+                            { label: "She", correct: false },
+                        ]),
+                    },
+                    {
+                        prompt: "Which of these is a sun letter (ل becomes silent before it)?",
+                        options: shuffleArray([
+                            { label: "ش", correct: true },
+                            { label: "ق", correct: false },
+                            { label: "م", correct: false },
+                        ]),
+                    },
+                    {
+                        arabicPrompt: "هِيَ تَذْهَبُ إِلَى الْمَدْرَسَةِ",
+                        prompt: "What does this sentence mean?",
+                        options: shuffleArray([
+                            { label: "She goes to school.", correct: true },
+                            { label: "He goes to school.", correct: false },
+                            { label: "They go to school.", correct: false },
+                        ]),
+                    },
+                ],
+            },
+            {
+                type: "reading-practice",
+                title: "Reading Application: Read Them All",
+                intro: "One last pass — all five new sentences from this lesson, together.",
+                items: grammarExamples.map(g => ({ arabic: g.sentence, translit: g.transliteration, english: g.meaning })),
+            },
+            {
+                type: "complete",
+                title: "You're reading with grammar!",
+                message: "You learned gender agreement, present-tense he/she/they, and sun-and-moon letter assimilation — and read five real sentences applying every one of them.",
+                finishLabel: "Finish & mark complete",
+            },
+        ],
+    },
+
+    /* ============================================================
        MILESTONE 6 — READING, LISTENING & PRONUNCIATION FOUNDATIONS
        Reached from the Practice view. All content below is sourced
        from arabicAlphabet, HARAKAT, and the Milestone 5 `vocabulary`
@@ -3097,6 +3376,7 @@ const PRACTICE_LESSONS = [
     { id: "syllables-intro", label: "Syllables: CVV, CVC & Doubling" },
     { id: "sentence-reading", label: "Reading Real Sentences" },
     { id: "unvowelled-reading", label: "Reading Without Full Vowelling" },
+    { id: "grammar-intro", label: "Grammar for Reading" },
 ];
 
 /* ============================================================
