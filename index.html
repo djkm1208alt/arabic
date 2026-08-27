@@ -1368,6 +1368,12 @@
                 <p>Long vowels, closed syllables, and doubled consonants.</p>
                 <button class="pill show-btn" onclick="startLesson('syllables-intro','practice')">Start Syllables</button>
             </div>
+            <div class="practice-card">
+                <span class="practice-icon">📜</span>
+                <h3>Reading Real Sentences</h3>
+                <p>Decode, listen to, and read short fully-vowelled sentences.</p>
+                <button class="pill show-btn" onclick="startLesson('sentence-reading','practice')">Start Reading Sentences</button>
+            </div>
         </div>
     </section>
 
@@ -1433,6 +1439,7 @@
             <span class="done"><span class="dot">●</span> Letter-writing practice — all 28 letters (shape + coverage feedback)</span>
             <span class="done"><span class="dot">●</span> Reading Simple Syllables mini-lesson</span>
             <span class="done"><span class="dot">●</span> Syllable foundation — long vowels, closed syllables, doubling (CVV / CVC / gemination)</span>
+            <span class="done"><span class="dot">●</span> Sentence-level reading — fully vowelled sentences (decode, listen, read aloud)</span>
             <span class="done"><span class="dot">●</span> Letter index / quick-jump for tracing lesson</span>
             <span class="done"><span class="dot">●</span> Structured vocabulary system (Word Bank)</span>
             <span class="done"><span class="dot">●</span> Reading practice (letters → syllables → words → phrases)</span>
@@ -1759,6 +1766,7 @@ const vocabulary = [
     { id:"adj-07", arabic:"قَدِيم", translit:"qadīm", english:"old (things)", pos:"adjective", category:"adjectives", level:"A0" },
     { id:"adj-08", arabic:"سَعِيد", translit:"saʿīd", english:"happy", pos:"adjective", category:"adjectives", level:"A0",
         example:{ arabic:"أَنَا سَعِيد الْيَوْم.", english:"I am happy today." } },
+    { id:"adj-08f", arabic:"سَعِيدَة", translit:"saʿīdah", english:"happy (feminine)", pos:"adjective", category:"adjectives", level:"A0", gender:"feminine" },
     { id:"adj-09", arabic:"حَزِين", translit:"ḥazīn", english:"sad", pos:"adjective", category:"adjectives", level:"A0" },
     { id:"adj-10", arabic:"سَهْل", translit:"sahl", english:"easy", pos:"adjective", category:"adjectives", level:"A1" },
     { id:"adj-11", arabic:"صَعْب", translit:"ṣaʿb", english:"difficult", pos:"adjective", category:"adjectives", level:"A1",
@@ -2031,6 +2039,92 @@ function buildSyllableReadingStep(dataArray, title, intro) {
             translit: s.exampleWord.translit,
             english: s.exampleWord.english,
         })),
+    };
+}
+
+/* ============================================================
+   MILESTONE 8 — SENTENCE-LEVEL READING (fully vowelled only —
+   this is NOT unvowelled/reduced reading, that stays a separate
+   future milestone). Every word below is pulled live from the
+   vocabulary Word Bank via vocabWord(id) — the sentence-form
+   (with its case ending) is supplied here since that inflected
+   form isn't the word's dictionary form, but the gloss/gender
+   always comes from the real Word Bank entry, never invented.
+   The one word that didn't already exist — the feminine form of
+   "happy" — was added as a single new Word Bank entry (adj-08f)
+   rather than changing how vocabulary data works elsewhere.
+   `vocabWord()` is defined just below; function declarations are
+   hoisted, so calling it here (evaluated after full parse) is safe.
+   ============================================================ */
+function sentenceWord(id, inflectedArabic, inflectedTransliteration, gender) {
+    const w = vocabWord(id);
+    return { arabic: inflectedArabic, transliteration: inflectedTransliteration, gloss: w.english, gender };
+}
+
+const readingPassages = [
+    {
+        id: "sent-house-big",
+        sentence: "الْبَيْتُ كَبِيرٌ",
+        words: [
+            sentenceWord("hom-01", "الْبَيْتُ", "al-baytu", "masculine"),
+            sentenceWord("adj-01", "كَبِيرٌ", "kabīrun", "masculine"),
+        ],
+        transliteration: "al-baytu kabīrun",
+        meaning: "The house is big.",
+        audioText: "الْبَيْتُ كَبِيرٌ",
+    },
+    {
+        id: "sent-book-beautiful",
+        sentence: "الْكِتَابُ جَمِيلٌ",
+        words: [
+            sentenceWord("sch-06", "الْكِتَابُ", "al-kitābu", "masculine"),
+            sentenceWord("adj-03", "جَمِيلٌ", "jamīlun", "masculine"),
+        ],
+        transliteration: "al-kitābu jamīlun",
+        meaning: "The book is beautiful.",
+        audioText: "الْكِتَابُ جَمِيلٌ",
+    },
+    {
+        id: "sent-girl-happy",
+        sentence: "الْبِنْتُ سَعِيدَةٌ",
+        words: [
+            sentenceWord("peo-13", "الْبِنْتُ", "al-bintu", "feminine"),
+            sentenceWord("adj-08f", "سَعِيدَةٌ", "saʿīdatun", "feminine"),
+        ],
+        transliteration: "al-bintu saʿīdatun",
+        meaning: "The girl is happy.",
+        audioText: "الْبِنْتُ سَعِيدَةٌ",
+    },
+];
+
+/* Shared per-sentence step generators, reused three times instead
+   of hand-repeated — same pattern as the M7 syllable generators. */
+function buildSentenceDecodeStep(passage) {
+    return {
+        type: "reading-practice",
+        title: `Decode: "${passage.meaning}"`,
+        intro: "Read each word on its own first — tap 🔊 to check yourself — then see how they combine below.",
+        items: passage.words.map(w => ({ arabic: w.arabic, translit: w.transliteration, english: w.gloss })),
+    };
+}
+
+function buildSentenceListenStep(passage) {
+    return {
+        type: "audio-exercise",
+        title: "Listen to the Full Sentence",
+        mode: "listen-reveal",
+        questions: [
+            { audioText: passage.audioText, arabic: passage.sentence, translit: passage.transliteration, english: passage.meaning },
+        ],
+    };
+}
+
+function buildSentenceReadAloudStep(passage) {
+    return {
+        type: "reading-practice",
+        title: "Read It Aloud",
+        intro: "Read the whole sentence yourself, then tap 🔊 to check your pronunciation.",
+        items: [{ arabic: passage.sentence, translit: passage.transliteration, english: passage.meaning }],
     };
 }
 
@@ -2630,6 +2724,68 @@ const lessons = {
     },
 
     /* ============================================================
+       MILESTONE 8 — SENTENCE-LEVEL READING
+       Practice-only lesson (curriculumLessonId: null), reached from
+       the Practice view like the M6/M7 foundations lessons. Applies
+       what M6 (harakāt) and M7 (syllables) already taught to short,
+       fully-vowelled, connected sentences — reading application,
+       not new grammar. Fixed per-sentence flow, never combined:
+       Decode word-by-word -> Listen to full sentence -> Read aloud,
+       repeated once per sentence, then one comprehension quiz.
+       ============================================================ */
+    "sentence-reading": {
+        id: "sentence-reading",
+        title: "Reading Real Sentences",
+        curriculumLessonId: null,
+        steps: [
+            {
+                type: "explain",
+                title: "Reading Real Sentences",
+                body: [
+                    "You already know every sound in the sentences below — long vowels, closed syllables, doubled consonants, and the marks that show them. A sentence is just those same words, fully vowelled, placed next to each other.",
+                    "Each sentence here follows the same simple pattern: a definite noun (\"the house\", \"the book\", \"the girl\") followed by a describing word.",
+                ],
+            },
+            {
+                type: "explain",
+                title: "See the Sentences",
+                body: [
+                    "Here are the three sentences you'll read in this lesson. Don't worry about understanding them yet — just notice the shape and rhythm of connected, fully-vowelled Arabic.",
+                ],
+                previewSymbols: readingPassages.map(p => p.sentence),
+            },
+
+            buildSentenceDecodeStep(readingPassages[0]),
+            buildSentenceListenStep(readingPassages[0]),
+            buildSentenceReadAloudStep(readingPassages[0]),
+
+            buildSentenceDecodeStep(readingPassages[1]),
+            buildSentenceListenStep(readingPassages[1]),
+            buildSentenceReadAloudStep(readingPassages[1]),
+
+            buildSentenceDecodeStep(readingPassages[2]),
+            buildSentenceListenStep(readingPassages[2]),
+            buildSentenceReadAloudStep(readingPassages[2]),
+
+            {
+                type: "quiz",
+                title: "Sentence Reading Check",
+                questions: readingPassages.map(p => ({
+                    arabicPrompt: p.sentence,
+                    prompt: "What does this sentence mean?",
+                    options: shuffleArray(readingPassages.map(other => ({ label: other.meaning, correct: other.id === p.id }))),
+                })),
+            },
+            {
+                type: "complete",
+                title: "You're reading real sentences!",
+                message: "You decoded, listened to, and read aloud three fully-vowelled Arabic sentences — applying the long vowels, closed syllables, and doubled consonants you already know to connected, real reading.",
+                finishLabel: "Finish & mark complete",
+            },
+        ],
+    },
+
+    /* ============================================================
        MILESTONE 6 — READING, LISTENING & PRONUNCIATION FOUNDATIONS
        Reached from the Practice view. All content below is sourced
        from arabicAlphabet, HARAKAT, and the Milestone 5 `vocabulary`
@@ -2805,6 +2961,7 @@ const PRACTICE_LESSONS = [
     { id: "listening-foundations", label: "Listening Foundations" },
     { id: "pronunciation-foundations", label: "Pronunciation Foundations" },
     { id: "syllables-intro", label: "Syllables: CVV, CVC & Doubling" },
+    { id: "sentence-reading", label: "Reading Real Sentences" },
 ];
 
 /* ============================================================
