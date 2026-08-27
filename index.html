@@ -115,22 +115,30 @@
         font-weight: 600;
         font-size: 34px;
         letter-spacing: -0.02em;
-        display: flex;
-        align-items: baseline;
-        gap: 12px;
     }
 
-    .title-block h1 .ar {
+    .title-block .ar-brand {
+        margin: 5px 0 0;
         font-family: var(--font-arabic);
-        font-size: 30px;
+        font-size: 22px;
+        font-weight: 600;
         color: var(--accent);
         direction: rtl;
+        text-align: left;
     }
 
     .title-block p {
         margin: 6px 0 0;
         color: var(--ink-soft);
         font-size: 15px;
+    }
+
+    .title-block .ar-tagline {
+        font-family: var(--font-arabic);
+        font-size: 14px;
+        direction: rtl;
+        text-align: left;
+        margin-top: 2px;
     }
 
     .icon-btn {
@@ -518,7 +526,8 @@
     @media (max-width: 560px) {
         .wrap { padding: 20px 14px 50px; }
         .title-block h1 { font-size: 26px; }
-        .title-block h1 .ar { font-size: 22px; }
+        .title-block .ar-brand { font-size: 18px; }
+        .title-block .ar-tagline { font-size: 12.5px; }
         .card { padding: 28px 18px 22px; }
         .arabic { font-size: 46px; }
         .quiz-arabic { font-size: 40px; }
@@ -738,7 +747,19 @@
         direction: rtl;
     }
     .forms-table th { font-family: var(--font-body); font-size: 11px; text-transform: uppercase; color: var(--ink-soft); direction: ltr; }
+    .form-equiv {
+        display: block;
+        font-family: var(--font-body);
+        font-size: 9px;
+        font-style: normal;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        color: var(--ink-soft);
+        direction: ltr;
+        margin-top: 2px;
+    }
     .letter-note { font-size: 12.5px; color: var(--ink-soft); font-style: italic; margin: 6px 0 12px; }
+    .letter-note .rtl-inline { font-size: 14px; font-style: normal; }
     .letter-example { font-size: 14px; margin-top: 10px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
     .letter-example .muted { color: var(--ink-soft); font-style: italic; }
     .rtl-inline { font-family: var(--font-arabic); direction: rtl; unicode-bidi: embed; font-size: 17px; }
@@ -793,6 +814,7 @@
         .quick-links { grid-template-columns: repeat(2, 1fr); }
         .letter-detail-ar { font-size: 40px; }
         .forms-table th, .forms-table td { font-size: 16px; padding: 6px; }
+        .form-equiv { font-size: 8px; }
         .nav-btn span { display: none; }
         .nav-btn { padding: 10px 12px; }
         .stat-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1166,8 +1188,10 @@
 
     <header>
         <div class="title-block">
-            <h1>Learn Arabic <span class="ar">تعلّم</span></h1>
-            <p>Vocabulary for English &amp; French speakers</p>
+            <h1>Learn Arabic</h1>
+            <p class="ar-brand">تَعَلَّمِ الْعَرَبِيَّةَ</p>
+            <p class="tagline">Learn to read, write, understand and speak Arabic</p>
+            <p class="tagline ar-tagline">تَعَلَّمْ قِرَاءَةَ الْعَرَبِيَّةِ وَكِتَابَتَهَا وَفَهْمَهَا وَالتَّحَدُّثَ بِهَا</p>
         </div>
         <button class="icon-btn" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
     </header>
@@ -4377,12 +4401,12 @@ function selectLetter(id) {
             <thead><tr><th>Isolated</th><th>Initial</th><th>Medial</th><th>Final</th></tr></thead>
             <tbody><tr>
                 <td>${letter.isolated}</td>
-                <td>${letter.connects ? letter.initial : "—"}</td>
-                <td>${letter.connects ? letter.medial : "—"}</td>
+                <td>${letter.initial}${!letter.connects ? `<span class="form-equiv">= isolated</span>` : ""}</td>
+                <td>${letter.medial}${!letter.connects ? `<span class="form-equiv">= final</span>` : ""}</td>
                 <td>${letter.final}</td>
             </tr></tbody>
         </table>
-        ${!letter.connects ? `<p class="letter-note">This letter does not connect to the letter that follows it.</p>` : ""}
+        ${!letter.connects ? `<p class="letter-note"><span class="rtl-inline">${letter.name}</span> <span class="letter-detail-translit">(${letter.translit})</span> does not connect to the letter that follows it, so it has no separate initial or medial joining shape of its own — its initial form is written the same as its isolated form, and its medial form the same as its final form. It only ever attaches to the letter before it, never the one after.</p>` : ""}
         <div class="letter-example">
             ${example
                 ? `<b>Example:</b> <span class="rtl-inline">${example.arabic}</span> <em>(${example.translit})</em> — ${example.english} <button class="speak-btn small" id="exampleSpeakBtn" aria-label="Hear example word" title="Hear example word">🔊</button>`
