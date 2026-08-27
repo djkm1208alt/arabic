@@ -1387,6 +1387,12 @@
                 <p>Gender agreement, present-tense verbs, and sun/moon letters.</p>
                 <button class="pill show-btn" onclick="startLesson('grammar-intro','practice')">Start Grammar</button>
             </div>
+            <div class="practice-card">
+                <span class="practice-icon">➡️</span>
+                <h3>Stroke-Order Writing</h3>
+                <p>Watch, trace, then write each letter from memory with correct stroke direction.</p>
+                <button class="pill show-btn" onclick="startLesson('stroke-order-writing','practice')">Start Stroke Order</button>
+            </div>
         </div>
     </section>
 
@@ -1459,7 +1465,7 @@
             <span class="done"><span class="dot">●</span> Reading practice (letters → syllables → words → phrases)</span>
             <span class="done"><span class="dot">●</span> Listening exercises</span>
             <span class="done"><span class="dot">●</span> Pronunciation practice (listen, repeat, record)</span>
-            <span><span class="dot">○</span> Directional stroke-order writing guidance</span>
+            <span class="done"><span class="dot">●</span> Directional stroke-order writing guidance — Watch → Trace → Write independently</span>
             <span><span class="dot">○</span> Professionally recorded native-speaker audio</span>
             <span><span class="dot">○</span> Student accounts</span>
             <span class="done"><span class="dot">●</span> Grammar &amp; reading lessons — gender agreement, present tense, sun/moon letters</span>
@@ -1878,6 +1884,51 @@ const arabicAlphabet = [
     { id:"waw",   isolated:"و", name:"وَاو",  translit:"wāw",   initial:"و",  medial:"ـو",  final:"ـو", connects:false },
     { id:"ya",    isolated:"ي", name:"يَاء",  translit:"yāʾ",   initial:"يـ", medial:"ـيـ", final:"ـي", connects:true },
 ];
+
+/* ============================================================
+   MILESTONE 12 — DIRECTIONAL STROKE-ORDER GUIDANCE (data only —
+   the rendering functions that consume this live much later in the
+   file, alongside the rest of the tracing code; this data has to
+   be defined before `lessons` below, which references it while
+   building the stroke-order-writing lesson's steps). Simplified,
+   general-direction strokes (correct right-to-left, top-to-bottom
+   starting convention; 1-2 body strokes per letter, normalized 0-1
+   canvas coordinates) for an arrow overlay - not precise
+   calligraphic path data. Dot count/position is mentioned in each
+   step's instructional text rather than modeled as separate
+   numbered strokes. See m12_stroke_order_scope.md for the full
+   honesty note on confidence level.
+   ============================================================ */
+const strokeOrderData = {
+    alif:  { strokes: [{ from: { x: 0.50, y: 0.25 }, to: { x: 0.50, y: 0.75 } }] },
+    ba:    { strokes: [{ from: { x: 0.75, y: 0.55 }, to: { x: 0.25, y: 0.55 } }] },
+    ta1:   { strokes: [{ from: { x: 0.75, y: 0.55 }, to: { x: 0.25, y: 0.55 } }] },
+    tha:   { strokes: [{ from: { x: 0.75, y: 0.55 }, to: { x: 0.25, y: 0.55 } }] },
+    jim:   { strokes: [{ from: { x: 0.65, y: 0.35 }, to: { x: 0.40, y: 0.70 } }] },
+    ha1:   { strokes: [{ from: { x: 0.65, y: 0.35 }, to: { x: 0.40, y: 0.70 } }] },
+    kha:   { strokes: [{ from: { x: 0.65, y: 0.35 }, to: { x: 0.40, y: 0.70 } }] },
+    dal:   { strokes: [{ from: { x: 0.60, y: 0.30 }, to: { x: 0.35, y: 0.60 } }] },
+    dhal:  { strokes: [{ from: { x: 0.60, y: 0.30 }, to: { x: 0.35, y: 0.60 } }] },
+    ra:    { strokes: [{ from: { x: 0.65, y: 0.35 }, to: { x: 0.35, y: 0.65 } }] },
+    zay:   { strokes: [{ from: { x: 0.65, y: 0.35 }, to: { x: 0.35, y: 0.65 } }] },
+    sin:   { strokes: [{ from: { x: 0.80, y: 0.55 }, to: { x: 0.25, y: 0.55 } }] },
+    shin:  { strokes: [{ from: { x: 0.80, y: 0.55 }, to: { x: 0.25, y: 0.55 } }] },
+    sad:   { strokes: [{ from: { x: 0.70, y: 0.40 }, to: { x: 0.30, y: 0.55 } }] },
+    dad:   { strokes: [{ from: { x: 0.70, y: 0.40 }, to: { x: 0.30, y: 0.55 } }] },
+    ta2:   { strokes: [{ from: { x: 0.70, y: 0.60 }, to: { x: 0.35, y: 0.60 } }, { from: { x: 0.50, y: 0.60 }, to: { x: 0.50, y: 0.25 } }] },
+    za2:   { strokes: [{ from: { x: 0.70, y: 0.60 }, to: { x: 0.35, y: 0.60 } }, { from: { x: 0.50, y: 0.60 }, to: { x: 0.50, y: 0.25 } }] },
+    ayn:   { strokes: [{ from: { x: 0.65, y: 0.35 }, to: { x: 0.35, y: 0.60 } }] },
+    ghayn: { strokes: [{ from: { x: 0.65, y: 0.35 }, to: { x: 0.35, y: 0.60 } }] },
+    fa:    { strokes: [{ from: { x: 0.65, y: 0.35 }, to: { x: 0.35, y: 0.65 } }] },
+    qaf:   { strokes: [{ from: { x: 0.65, y: 0.35 }, to: { x: 0.35, y: 0.70 } }] },
+    kaf:   { strokes: [{ from: { x: 0.60, y: 0.30 }, to: { x: 0.40, y: 0.65 } }, { from: { x: 0.55, y: 0.45 }, to: { x: 0.45, y: 0.40 } }] },
+    lam:   { strokes: [{ from: { x: 0.50, y: 0.20 }, to: { x: 0.40, y: 0.70 } }] },
+    mim:   { strokes: [{ from: { x: 0.55, y: 0.35 }, to: { x: 0.45, y: 0.70 } }] },
+    nun:   { strokes: [{ from: { x: 0.75, y: 0.55 }, to: { x: 0.30, y: 0.55 } }] },
+    ha2:   { strokes: [{ from: { x: 0.65, y: 0.35 }, to: { x: 0.40, y: 0.55 } }] },
+    waw:   { strokes: [{ from: { x: 0.60, y: 0.35 }, to: { x: 0.45, y: 0.70 } }] },
+    ya:    { strokes: [{ from: { x: 0.75, y: 0.50 }, to: { x: 0.30, y: 0.65 } }] },
+};
 
 /* ============================================================
    DATA — HARAKAT (short vowel marks)
@@ -2574,11 +2625,48 @@ const lessons = {
             {
                 type: "complete",
                 title: "Great work!",
-                message: "You traced all 28 Arabic letters. Keep practicing any time — directional stroke-order guidance is on the roadmap for a future milestone.",
+                message: "You traced all 28 Arabic letters. Keep practicing any time — for directional stroke-order guidance, try the \"Stroke-Order Writing\" lesson in Practice.",
                 finishLabel: "Finish",
             },
         ],
     },
+
+    /* ============================================================
+       MILESTONE 12 — DIRECTIONAL STROKE-ORDER WRITING GUIDANCE
+       Practice-only lesson (curriculumLessonId: null), entirely
+       separate from alphabet-writing-1 above (zero shared steps) so
+       that lesson's already-shipped behavior can never be affected.
+       Each letter step internally cycles Watch -> Trace -> Write
+       Independently via renderStrokeGuidePhase(), triggered by the
+       presence of `strokes` on each step (see renderTraceLetterStep).
+       ============================================================ */
+    "stroke-order-writing": {
+        id: "stroke-order-writing",
+        title: "Directional Stroke-Order Writing",
+        curriculumLessonId: null,
+        steps: [
+            {
+                type: "explain",
+                title: "Writing With the Right Strokes",
+                body: [
+                    "You've already traced every letter's shape. This lesson adds the missing piece: which direction to actually draw each stroke in, and in what order — the difference between copying a shape and really learning to write it.",
+                    "Each letter has 3 steps: Watch the numbered arrows, Trace along with them, then Write the letter from memory with no guide at all.",
+                ],
+            },
+            ...arabicAlphabet.map(letter => ({
+                type: "trace-letter",
+                letter: letter,
+                strokes: (strokeOrderData[letter.id] && strokeOrderData[letter.id].strokes) || [],
+            })),
+            {
+                type: "complete",
+                title: "You know the strokes!",
+                message: "You watched, traced, and wrote all 28 Arabic letters using the correct stroke direction and order — not just their shape.",
+                finishLabel: "Finish",
+            },
+        ],
+    },
+
     "syllables-1": {
         id: "syllables-1",
         title: "Reading Simple Syllables",
@@ -3377,6 +3465,7 @@ const PRACTICE_LESSONS = [
     { id: "sentence-reading", label: "Reading Real Sentences" },
     { id: "unvowelled-reading", label: "Reading Without Full Vowelling" },
     { id: "grammar-intro", label: "Grammar for Reading" },
+    { id: "stroke-order-writing", label: "Directional Stroke-Order Writing" },
 ];
 
 /* ============================================================
@@ -4664,10 +4753,19 @@ let traceCtx = null;
 let traceDrawing = false;
 let traceLastPoint = null;
 let traceBumpedThisLetter = false;
+let traceGuidePhase = "watch"; // watch | trace | write — only used by the M12 stroke-guide flow below
 
 function renderTraceLetterStep(step, body) {
     const letter = step.letter;
     const example = findExampleWord(letter);
+    if (step.strokes) {
+        // M12 stroke-order guide flow — entirely separate code path, added
+        // without changing a single line below for the existing (no
+        // step.strokes) case that alphabet-writing-1's 28 steps all use.
+        traceGuidePhase = "watch";
+        renderStrokeGuidePhase(step, body, letter, example);
+        return;
+    }
     body.innerHTML = `
         <h3 class="lesson-step-title">Trace: ${letter.name} <span class="letter-detail-translit">(${letter.translit})</span></h3>
         <p class="lesson-step-text">Practice following the shape shown.${letter.connects === false ? " This letter does not connect to the letter that follows it." : ""}</p>
@@ -4801,6 +4899,162 @@ function updateTraceCoverage() {
     }
     const pct = guidePixels ? Math.round((covered / guidePixels) * 100) : 0;
     label.textContent = pct === 0 ? "Start tracing…" : `Ink coverage: ${pct}% of the guide traced`;
+}
+
+/* Plain canvas line + arrowhead + number, reusing the existing
+   --danger design token for color (same pattern the tracing code
+   already uses for --accent) - no new CSS, no new library. */
+function drawStrokeArrows(ctx, canvas, strokes, opacity) {
+    if (!strokes || !strokes.length) return;
+    const color = (getComputedStyle(document.documentElement).getPropertyValue("--danger") || "#b8452f").trim();
+    ctx.save();
+    ctx.globalAlpha = opacity;
+    ctx.strokeStyle = color;
+    ctx.fillStyle = color;
+    ctx.lineWidth = 3;
+    ctx.lineCap = "round";
+    strokes.forEach((s, i) => {
+        const x1 = s.from.x * canvas.width, y1 = s.from.y * canvas.height;
+        const x2 = s.to.x * canvas.width, y2 = s.to.y * canvas.height;
+        ctx.beginPath();
+        ctx.moveTo(x1, y1);
+        ctx.lineTo(x2, y2);
+        ctx.stroke();
+        const angle = Math.atan2(y2 - y1, x2 - x1);
+        const headLen = 10;
+        ctx.beginPath();
+        ctx.moveTo(x2, y2);
+        ctx.lineTo(x2 - headLen * Math.cos(angle - Math.PI / 6), y2 - headLen * Math.sin(angle - Math.PI / 6));
+        ctx.moveTo(x2, y2);
+        ctx.lineTo(x2 - headLen * Math.cos(angle + Math.PI / 6), y2 - headLen * Math.sin(angle + Math.PI / 6));
+        ctx.stroke();
+        ctx.font = "bold 16px Inter, sans-serif";
+        ctx.fillText(String(i + 1), x1 - 6, y1 - 6);
+    });
+    ctx.restore();
+}
+
+/* Mirrors initTraceCanvas() but adds the phase-aware guide/arrow
+   rendering - kept as its own function (some duplication with
+   initTraceCanvas is intentional) rather than modifying the
+   existing function, so alphabet-writing-1's behavior can never be
+   affected by this addition. */
+function initTraceCanvasWithStrokes(letter, strokes, phase) {
+    const guideCanvas = document.getElementById("traceGuideCanvas");
+    const drawCanvas = document.getElementById("traceDrawCanvas");
+    traceGuideCtx = guideCanvas.getContext("2d", { willReadFrequently: true });
+    traceCtx = drawCanvas.getContext("2d", { willReadFrequently: true });
+    traceDrawing = false;
+    traceLastPoint = null;
+    traceBumpedThisLetter = false;
+
+    const showGuideGlyph = phase !== "write";
+    const showArrows = phase === "watch" || phase === "trace";
+    const paint = () => {
+        traceGuideCtx.clearRect(0, 0, guideCanvas.width, guideCanvas.height);
+        if (showGuideGlyph) drawGuideLetter(traceGuideCtx, guideCanvas, letter);
+        if (showArrows) drawStrokeArrows(traceGuideCtx, guideCanvas, strokes, phase === "watch" ? 1 : 0.55);
+    };
+    paint();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(paint);
+
+    traceCtx.lineWidth = 10;
+    traceCtx.lineCap = "round";
+    traceCtx.lineJoin = "round";
+    traceCtx.strokeStyle = (getComputedStyle(document.documentElement).getPropertyValue("--accent") || "#0f6b5c").trim();
+
+    drawCanvas.onpointerdown = (e) => {
+        e.preventDefault();
+        try { drawCanvas.setPointerCapture(e.pointerId); } catch (err) { /* not all pointers support capture */ }
+        traceDrawing = true;
+        if (!traceBumpedThisLetter) {
+            bumpDailyGoal();
+            traceBumpedThisLetter = true;
+        }
+        const p = tracePoint(e, drawCanvas);
+        traceLastPoint = p;
+        traceCtx.beginPath();
+        traceCtx.arc(p.x, p.y, traceCtx.lineWidth / 2, 0, Math.PI * 2);
+        traceCtx.fillStyle = traceCtx.strokeStyle;
+        traceCtx.fill();
+    };
+    drawCanvas.onpointermove = (e) => {
+        if (!traceDrawing) return;
+        const p = tracePoint(e, drawCanvas);
+        traceCtx.beginPath();
+        traceCtx.moveTo(traceLastPoint.x, traceLastPoint.y);
+        traceCtx.lineTo(p.x, p.y);
+        traceCtx.stroke();
+        traceLastPoint = p;
+    };
+    const endStroke = () => {
+        if (!traceDrawing) return;
+        traceDrawing = false;
+        traceLastPoint = null;
+        if (phase !== "write") updateTraceCoverage(); // no guide to score against in write-from-memory
+    };
+    drawCanvas.onpointerup = endStroke;
+    drawCanvas.onpointercancel = endStroke;
+    drawCanvas.onpointerleave = endStroke;
+
+    clearTraceCanvas();
+    if (phase === "write") {
+        const label = document.getElementById("traceCoverage");
+        if (label) label.textContent = "Writing from memory — no guide shown.";
+    }
+}
+
+/* Dot count/position per letter, for the "Watch" phase's instructional
+   text only — kept as its own lookup rather than a new field on the
+   existing arabicAlphabet entries, so that array's shape stays
+   untouched (same "extend, don't modify existing entries" rule
+   applied to vocabulary in M8/M11). Letters with no dot are omitted. */
+const LETTER_DOT_NOTES = {
+    ba: "It has 1 dot below.", tha: "It has 3 dots above.",
+    jim: "It has 1 dot below.", kha: "It has 1 dot above.",
+    dhal: "It has 1 dot above.", zay: "It has 1 dot above.",
+    shin: "It has 3 dots above.", dad: "It has 1 dot above.",
+    za2: "It has 1 dot above.", ghayn: "It has 1 dot above.",
+    fa: "It has 1 dot above.", qaf: "It has 2 dots above.",
+    nun: "It has 1 dot above.", ta1: "It has 2 dots above.",
+    ya: "It has 2 dots below (in isolated form).",
+};
+
+const STROKE_PHASE_LABEL = { watch: "1. Watch", trace: "2. Trace", write: "3. Write from Memory" };
+const STROKE_PHASE_INSTRUCTIONS = {
+    watch: "Follow the numbered arrows to see the direction each stroke moves. No need to draw yet.",
+    trace: "Now trace the letter yourself, following the same numbered strokes.",
+    write: "The guide and arrows are gone — write the letter from memory.",
+};
+const STROKE_PHASE_BTN_LABEL = { watch: "Start Tracing →", trace: "Write From Memory →", write: "Done — Next Letter" };
+
+function renderStrokeGuidePhase(step, body, letter, example) {
+    const strokes = step.strokes;
+    const dotNote = LETTER_DOT_NOTES[letter.id] ? ` ${LETTER_DOT_NOTES[letter.id]}` : "";
+    body.innerHTML = `
+        <h3 class="lesson-step-title">Trace: ${letter.name} <span class="letter-detail-translit">(${letter.translit})</span></h3>
+        <p class="lesson-step-text"><strong>${STROKE_PHASE_LABEL[traceGuidePhase]}</strong> — ${STROKE_PHASE_INSTRUCTIONS[traceGuidePhase]}${traceGuidePhase === "watch" ? dotNote : ""}</p>
+        <div class="trace-canvas-wrap">
+            <canvas id="traceGuideCanvas" width="260" height="260"></canvas>
+            <canvas id="traceDrawCanvas" width="260" height="260"></canvas>
+        </div>
+        <div class="trace-controls">
+            <button class="pill next-btn" id="traceClearBtn">Clear</button>
+            <span class="trace-coverage" id="traceCoverage">Start tracing…</span>
+        </div>
+        <button type="button" class="pill show-btn" id="tracePhaseBtn" style="margin-top:12px;">${STROKE_PHASE_BTN_LABEL[traceGuidePhase]}</button>
+        ${example
+            ? `<div class="letter-example"><b>Example:</b> <span class="rtl-inline">${example.arabic}</span> <em>(${example.translit})</em> — ${example.english}</div>`
+            : ""}
+    `;
+    lessonCanProceed = true; // tracing never blocks progression — feedback is informational only
+    initTraceCanvasWithStrokes(letter, strokes, traceGuidePhase);
+    document.getElementById("traceClearBtn").onclick = clearTraceCanvas;
+    document.getElementById("tracePhaseBtn").onclick = () => {
+        if (traceGuidePhase === "watch") { traceGuidePhase = "trace"; renderStrokeGuidePhase(step, body, letter, example); }
+        else if (traceGuidePhase === "trace") { traceGuidePhase = "write"; renderStrokeGuidePhase(step, body, letter, example); }
+        else { lessonNext(); }
+    };
 }
 
 /* ============================================================
