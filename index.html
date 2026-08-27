@@ -1374,6 +1374,12 @@
                 <p>Decode, listen to, and read short fully-vowelled sentences.</p>
                 <button class="pill show-btn" onclick="startLesson('sentence-reading','practice')">Start Reading Sentences</button>
             </div>
+            <div class="practice-card">
+                <span class="practice-icon">🕊️</span>
+                <h3>Reading Without Full Vowelling</h3>
+                <p>Read the same sentences with fewer marks — how real Arabic text looks.</p>
+                <button class="pill show-btn" onclick="startLesson('unvowelled-reading','practice')">Start Unvowelled Reading</button>
+            </div>
         </div>
     </section>
 
@@ -1440,6 +1446,7 @@
             <span class="done"><span class="dot">●</span> Reading Simple Syllables mini-lesson</span>
             <span class="done"><span class="dot">●</span> Syllable foundation — long vowels, closed syllables, doubling (CVV / CVC / gemination)</span>
             <span class="done"><span class="dot">●</span> Sentence-level reading — fully vowelled sentences (decode, listen, read aloud)</span>
+            <span class="done"><span class="dot">●</span> Reduced-vowel / unvowelled reading — reading the same sentences with fewer marks</span>
             <span class="done"><span class="dot">●</span> Letter index / quick-jump for tracing lesson</span>
             <span class="done"><span class="dot">●</span> Structured vocabulary system (Word Bank)</span>
             <span class="done"><span class="dot">●</span> Reading practice (letters → syllables → words → phrases)</span>
@@ -2097,6 +2104,29 @@ const readingPassages = [
     },
 ];
 
+/* ============================================================
+   MILESTONE 9 — REDUCED-VOWEL / UNVOWELLED READING
+   Extends the existing M8 `readingPassages` entries in place with
+   two derived forms — generated programmatically from the same
+   `sentence` string, never hand-typed — matching the existing
+   stripArabicDiacritics() pattern already used by the Alphabet view.
+   "Reduced" drops short vowels + tanwīn but keeps sukūn/shaddah as
+   a gentler bridge (Option A, approved); "unvowelled" drops every
+   mark, leaving the bare consonant skeleton exactly as ordinary
+   printed Arabic appears. No new sentences, no new vocabulary —
+   same 3 sentences as M8, applying what's already known.
+   ============================================================ */
+function reduceVowelling(sentence) {
+    return sentence.replace(/[ًٌٍَُِ]/g, ""); // fathatayn, dammatayn, kasratayn, fatha, damma, kasra
+}
+function stripAllVowelling(sentence) {
+    return sentence.replace(/[ً-ْ]/g, ""); // full tashkil range, incl. sukūn (0652) + shaddah (0651)
+}
+readingPassages.forEach(p => {
+    p.reduced = reduceVowelling(p.sentence);
+    p.unvowelled = stripAllVowelling(p.sentence);
+});
+
 /* Shared per-sentence step generators, reused three times instead
    of hand-repeated — same pattern as the M7 syllable generators. */
 function buildSentenceDecodeStep(passage) {
@@ -2125,6 +2155,19 @@ function buildSentenceReadAloudStep(passage) {
         title: "Read It Aloud",
         intro: "Read the whole sentence yourself, then tap 🔊 to check your pronunciation.",
         items: [{ arabic: passage.sentence, translit: passage.transliteration, english: passage.meaning }],
+    };
+}
+
+/* M9 step generators — one step per stage, covering all 3 sentences
+   as a grid (established M6/M7 reference pattern) rather than
+   repeating the full progression per sentence, since all three
+   sentences share the same reduction rule. */
+function buildVowellingLevelStep(field, title, intro) {
+    return {
+        type: "reading-practice",
+        title,
+        intro,
+        items: readingPassages.map(p => ({ arabic: p[field], translit: p.transliteration, english: p.meaning })),
     };
 }
 
@@ -2786,6 +2829,92 @@ const lessons = {
     },
 
     /* ============================================================
+       MILESTONE 9 — REDUCED-VOWEL / UNVOWELLED READING
+       Practice-only lesson (curriculumLessonId: null), reached from
+       the Practice view like the M6-M8 foundations lessons. Reuses
+       the exact 3 sentences from M8 — no new vocabulary — and walks
+       the learner from full vowelling down to the bare consonant
+       skeleton they already know is coming, since they read these
+       same sentences fully vowelled in M8. Concept -> Visual Example
+       -> Explanation -> Pronunciation -> Practice -> Quiz -> Reading
+       Application, per the locked 7-stage progression.
+       ============================================================ */
+    "unvowelled-reading": {
+        id: "unvowelled-reading",
+        title: "Reading Without Full Vowelling",
+        curriculumLessonId: null,
+        steps: [
+            {
+                type: "explain",
+                title: "Real Arabic Isn't Always Fully Marked",
+                body: [
+                    "You already know these exact sentences from the last lesson — the words, the sounds, and the meanings haven't changed at all. What's about to change is how much gets written down.",
+                    "Most real Arabic — newspapers, books, text messages — isn't fully vowelled like everything you've read so far. This lesson is about recognizing the same sentences you already know with fewer marks on the page.",
+                ],
+            },
+            {
+                type: "explain",
+                title: "See the Difference",
+                body: [
+                    "Here's one sentence you already know, shown three ways: fully marked, partly marked, and completely bare. Notice what stays the same the whole time — every letter is still there.",
+                ],
+                previewSymbols: [readingPassages[0].sentence, readingPassages[0].reduced, readingPassages[0].unvowelled],
+            },
+            {
+                type: "explain",
+                title: "What Gets Dropped, What Stays",
+                body: [
+                    "Going from full to reduced: the short vowels (fatḥah, kasrah, ḍammah) and tanwīn disappear first — sukūn and shaddah stick around a little longer as a bridge.",
+                    "Going from reduced to unvowelled: everything else disappears too. But the letters themselves — including long vowels like ا, و, and ي — never disappear. They're letters, not marks, so they're always there to read.",
+                ],
+            },
+            buildVowellingLevelStep("sentence", "Listen — Same Sentences, Same Sounds", "Nothing about the pronunciation has changed. Tap 🔊 to hear each sentence exactly as before."),
+            buildVowellingLevelStep("reduced", "Practice: Partly Marked", "Read each sentence in its reduced form, then tap 🔊 or reveal the meaning to check yourself."),
+            {
+                type: "practice-choice",
+                title: "Quick check",
+                arabicPrompt: readingPassages[0].reduced,
+                prompt: "You've seen this sentence before, fully marked. What does it mean?",
+                options: [
+                    { label: readingPassages[0].meaning, correct: true },
+                    { label: readingPassages[1].meaning, correct: false },
+                    { label: readingPassages[2].meaning, correct: false },
+                ],
+                explanation: "Same sentence, same meaning — sukūn and shaddah were still there to help, and now you don't even need them.",
+            },
+            buildVowellingLevelStep("unvowelled", "Practice: No Marks at All", "The same sentences, completely bare. Read each one, then check yourself."),
+            {
+                type: "practice-choice",
+                title: "Quick check",
+                arabicPrompt: readingPassages[2].unvowelled,
+                prompt: "No marks at all this time. What does this sentence mean?",
+                options: [
+                    { label: readingPassages[0].meaning, correct: false },
+                    { label: readingPassages[1].meaning, correct: false },
+                    { label: readingPassages[2].meaning, correct: true },
+                ],
+                explanation: "Every letter you need is still on the page — the marks were a training tool, not the only way to read.",
+            },
+            {
+                type: "quiz",
+                title: "Unvowelled Reading Check",
+                questions: readingPassages.map(p => ({
+                    arabicPrompt: p.unvowelled,
+                    prompt: "What does this sentence mean?",
+                    options: shuffleArray(readingPassages.map(other => ({ label: other.meaning, correct: other.id === p.id }))),
+                })),
+            },
+            buildVowellingLevelStep("unvowelled", "Reading Application: Read Them All", "One last pass — all three sentences, completely unvowelled, exactly as you'd meet them in real Arabic text."),
+            {
+                type: "complete",
+                title: "You're reading unvowelled Arabic!",
+                message: "You read the same three sentences from the last lesson — fully marked, partly marked, and completely bare — and understood every one, without losing anything but the marks.",
+                finishLabel: "Finish & mark complete",
+            },
+        ],
+    },
+
+    /* ============================================================
        MILESTONE 6 — READING, LISTENING & PRONUNCIATION FOUNDATIONS
        Reached from the Practice view. All content below is sourced
        from arabicAlphabet, HARAKAT, and the Milestone 5 `vocabulary`
@@ -2962,6 +3091,7 @@ const PRACTICE_LESSONS = [
     { id: "pronunciation-foundations", label: "Pronunciation Foundations" },
     { id: "syllables-intro", label: "Syllables: CVV, CVC & Doubling" },
     { id: "sentence-reading", label: "Reading Real Sentences" },
+    { id: "unvowelled-reading", label: "Reading Without Full Vowelling" },
 ];
 
 /* ============================================================
