@@ -1362,6 +1362,12 @@
                 <p>Listen, repeat, and record yourself speaking Arabic.</p>
                 <button class="pill show-btn" onclick="startLesson('pronunciation-foundations','practice')">Start Speaking</button>
             </div>
+            <div class="practice-card">
+                <span class="practice-icon">🧩</span>
+                <h3>Syllables: CVV, CVC &amp; Doubling</h3>
+                <p>Long vowels, closed syllables, and doubled consonants.</p>
+                <button class="pill show-btn" onclick="startLesson('syllables-intro','practice')">Start Syllables</button>
+            </div>
         </div>
     </section>
 
@@ -1426,6 +1432,7 @@
             <span class="done"><span class="dot">●</span> Harakāt &amp; reading marks lesson (full alphabet)</span>
             <span class="done"><span class="dot">●</span> Letter-writing practice — all 28 letters (shape + coverage feedback)</span>
             <span class="done"><span class="dot">●</span> Reading Simple Syllables mini-lesson</span>
+            <span class="done"><span class="dot">●</span> Syllable foundation — long vowels, closed syllables, doubling (CVV / CVC / gemination)</span>
             <span class="done"><span class="dot">●</span> Letter index / quick-jump for tracing lesson</span>
             <span class="done"><span class="dot">●</span> Structured vocabulary system (Word Bank)</span>
             <span class="done"><span class="dot">●</span> Reading practice (letters → syllables → words → phrases)</span>
@@ -1601,6 +1608,7 @@ const vocabulary = [
         plural:{ arabic:"أَصْدِقَاء", translit:"aṣdiqāʾ" },
         example:{ arabic:"هَذَا صَدِيقِي.", english:"This is my friend." } },
     { id:"peo-12", arabic:"صَدِيقَة", translit:"ṣadīqah", english:"friend (female)", pos:"noun", category:"people", level:"A0" },
+    { id:"peo-13", arabic:"بِنْت", translit:"bint", english:"girl", pos:"noun", category:"people", level:"A0" },
 
     // ---------- Numbers ----------
     { id:"num-00", arabic:"صِفْر", translit:"ṣifr", english:"zero", pos:"number", category:"numbers", level:"A0" },
@@ -1645,6 +1653,9 @@ const vocabulary = [
         notes:"Arabic coffee is a symbol of hospitality — often served with dates when welcoming a guest." },
     { id:"foo-11", arabic:"شَاي", translit:"shāy", english:"tea", pos:"noun", category:"food", level:"A0" },
     { id:"foo-12", arabic:"سُكَّر", translit:"sukkar", english:"sugar", pos:"noun", category:"food", level:"A0" },
+    { id:"foo-13", arabic:"مُوز", translit:"mūz", english:"banana", pos:"noun", category:"food", level:"A0" },
+    { id:"foo-14", arabic:"تِين", translit:"tīn", english:"figs", pos:"noun", category:"food", level:"A0" },
+    { id:"foo-15", arabic:"تُوت", translit:"tūt", english:"berries", pos:"noun", category:"food", level:"A0" },
 
     // ---------- Home ----------
     { id:"hom-01", arabic:"بَيْت", translit:"bayt", english:"house", pos:"noun", category:"home", level:"A0" },
@@ -1696,6 +1707,7 @@ const vocabulary = [
     { id:"pla-08", arabic:"مَطَار", translit:"maṭār", english:"airport", pos:"noun", category:"places", level:"A1" },
     { id:"pla-09", arabic:"فُنْدُق", translit:"funduq", english:"hotel", pos:"noun", category:"places", level:"A1" },
     { id:"pla-10", arabic:"مَكْتَبَة", translit:"maktabah", english:"library / bookstore", pos:"noun", category:"places", level:"A0" },
+    { id:"pla-11", arabic:"بَحْر", translit:"baḥr", english:"sea", pos:"noun", category:"places", level:"A0" },
 
     // ---------- Time & Days ----------
     { id:"tim-01", arabic:"الْيَوْم", translit:"al-yawm", english:"today", pos:"adverb", category:"time", level:"A0" },
@@ -1934,6 +1946,92 @@ function buildLetterMarkExampleStep(mark, title, intro) {
         if (match) items.push({ arabic: match.arabic, translit: match.translit, english: match.english });
     });
     return { type: "reading-practice", title, intro, items };
+}
+
+/* ============================================================
+   MILESTONE 7 — SYLLABLE FOUNDATION: CVV, CVC, GEMINATED
+   Extends the CV syllable set already taught in syllables-1
+   (buildSyllableGroupStep, same three consonants ب/م/ت) into
+   their long-vowel (CVV), closed (CVC), and doubled/geminated
+   forms. Every exampleWord below is found live in the vocabulary
+   Word Bank via findSyllableExample() — never hand-picked or
+   invented, same rule as every other data structure in this file.
+   Kept entirely separate from HARAKAT/syllables-1/reading-
+   foundations, which must keep behaving exactly as before.
+   ============================================================ */
+function findSyllableExample(syllable) {
+    return vocabulary
+        .filter(w => w.arabic.indexOf(syllable) !== -1)
+        .slice()
+        .sort((a, b) => a.arabic.length - b.arabic.length)[0] || null;
+}
+
+const CVV_BASE = [
+    { id: "cvv-ba", arabic: "بَا", transliteration: "bā", english: "long \"aa\" sound — ب + long vowel ا", audioLabel: "بَا" },
+    { id: "cvv-bi", arabic: "بِي", transliteration: "bī", english: "long \"ee\" sound — ب + long vowel ي", audioLabel: "بِي" },
+    { id: "cvv-bu", arabic: "بُو", transliteration: "bū", english: "long \"oo\" sound — ب + long vowel و", audioLabel: "بُو" },
+    { id: "cvv-ma", arabic: "مَا", transliteration: "mā", english: "long \"aa\" sound — م + long vowel ا", audioLabel: "مَا" },
+    { id: "cvv-mi", arabic: "مِي", transliteration: "mī", english: "long \"ee\" sound — م + long vowel ي", audioLabel: "مِي" },
+    { id: "cvv-mu", arabic: "مُو", transliteration: "mū", english: "long \"oo\" sound — م + long vowel و", audioLabel: "مُو" },
+    { id: "cvv-ta", arabic: "تَا", transliteration: "tā", english: "long \"aa\" sound — ت + long vowel ا", audioLabel: "تَا" },
+    { id: "cvv-ti", arabic: "تِي", transliteration: "tī", english: "long \"ee\" sound — ت + long vowel ي", audioLabel: "تِي" },
+    { id: "cvv-tu", arabic: "تُو", transliteration: "tū", english: "long \"oo\" sound — ت + long vowel و", audioLabel: "تُو" },
+];
+const cvvSyllables = CVV_BASE.map(s => ({ ...s, exampleWord: findSyllableExample(s.arabic) }));
+
+const CVC_BASE = [
+    { id: "cvc-ba", arabic: "بَحْ", transliteration: "baḥ-", english: "opens \"ba\", closes on ح + sukūn (no vowel)", audioLabel: "بَحْ" },
+    { id: "cvc-bi", arabic: "بِنْ", transliteration: "bin-", english: "opens \"bi\", closes on ن + sukūn (no vowel)", audioLabel: "بِنْ" },
+    { id: "cvc-bu", arabic: "بُرْ", transliteration: "bur-", english: "opens \"bu\", closes on ر + sukūn (no vowel)", audioLabel: "بُرْ" },
+    { id: "cvc-ma", arabic: "مَدْ", transliteration: "mad-", english: "opens \"ma\", closes on د + sukūn (no vowel)", audioLabel: "مَدْ" },
+    { id: "cvc-mi", arabic: "مِرْ", transliteration: "mir-", english: "opens \"mi\", closes on ر + sukūn (no vowel)", audioLabel: "مِرْ" },
+    { id: "cvc-mu", arabic: "مُسْ", transliteration: "mus-", english: "opens \"mu\", closes on س + sukūn (no vowel)", audioLabel: "مُسْ" },
+    { id: "cvc-ta", arabic: "تَشْ", transliteration: "tash-", english: "opens \"ta\", closes on ش + sukūn (no vowel)", audioLabel: "تَشْ" },
+    { id: "cvc-ti", arabic: "تِسْ", transliteration: "tis-", english: "opens \"ti\", closes on س + sukūn (no vowel)", audioLabel: "تِسْ" },
+    { id: "cvc-tu", arabic: "تُصْ", transliteration: "tuṣ-", english: "opens \"tu\", closes on ص + sukūn (no vowel)", audioLabel: "تُصْ" },
+];
+const cvcSyllables = CVC_BASE.map(s => ({ ...s, exampleWord: findSyllableExample(s.arabic) }));
+
+/* Deliberately NOT restricted to ب/م/ت — real geminated+vowel
+   backing for those three is thin (only م and ت have any), so
+   this curated set draws from whichever letters the vocabulary
+   actually backs, exactly like M6's shaddah section did. */
+const GEMINATED_BASE = [
+    { id: "gem-da", arabic: "دَّ", transliteration: "-dda-", english: "doubles د — held twice as long", audioLabel: "دَّ" },
+    { id: "gem-ma", arabic: "مَّ", transliteration: "-mma-", english: "doubles م — held twice as long", audioLabel: "مَّ" },
+    { id: "gem-ta", arabic: "تَّ", transliteration: "-tta-", english: "doubles ت — held twice as long", audioLabel: "تَّ" },
+    { id: "gem-ka", arabic: "كَّ", transliteration: "-kka-", english: "doubles ك — held twice as long", audioLabel: "كَّ" },
+];
+const geminatedSyllables = GEMINATED_BASE.map(s => ({ ...s, exampleWord: findSyllableExample(s.arabic) }));
+
+/* Shared step generators for the three M7 syllable categories, so
+   the item-mapping logic isn't hand-repeated three times. */
+function buildSyllablePronunciationStep(dataArray, title, intro) {
+    return {
+        type: "example-set",
+        title,
+        intro,
+        items: dataArray.map(s => ({
+            symbolWord: s.arabic,
+            name: s.transliteration,
+            translit: s.transliteration,
+            sound: s.english,
+            examples: s.exampleWord ? [{ arabic: s.exampleWord.arabic, translit: s.exampleWord.translit, english: s.exampleWord.english }] : [],
+        })),
+    };
+}
+
+function buildSyllableReadingStep(dataArray, title, intro) {
+    return {
+        type: "reading-practice",
+        title,
+        intro,
+        items: dataArray.filter(s => s.exampleWord).map(s => ({
+            arabic: s.exampleWord.arabic,
+            translit: s.exampleWord.translit,
+            english: s.exampleWord.english,
+        })),
+    };
 }
 
 /* ============================================================
@@ -2314,6 +2412,224 @@ const lessons = {
     },
 
     /* ============================================================
+       MILESTONE 7 — SYLLABLE FOUNDATION (CVV, CVC, GEMINATED)
+       Practice-only lesson (curriculumLessonId: null), reached from
+       the Practice view like the M6 foundations lessons. Every
+       stage reuses an existing step type/renderer — no new lesson-
+       engine code was needed. Fixed flow per category, never
+       combined: Concept -> Visual Example -> Pronunciation (TTS) ->
+       Recognition Practice -> Quiz -> Reading Application.
+       ============================================================ */
+    "syllables-intro": {
+        id: "syllables-intro",
+        title: "Syllables: Long Vowels, Closed Syllables & Doubling",
+        curriculumLessonId: null,
+        steps: [
+            /* ---------- CVV: long vowels ---------- */
+            {
+                type: "explain",
+                title: "Long Vowels — Stretching a Sound (CVV)",
+                body: [
+                    "You already know that a consonant + a short vowel makes a syllable — بَ (ba), بِ (bi), بُ (bu). A CVV syllable adds one more letter: a long-vowel letter (ا, ي, or و) right after a matching short vowel, which stretches that vowel out.",
+                    "بَا = بَ (ب + fatḥah) + ا (alif) — the alif stretches the short \"a\" into a long \"aa\". The same pattern works for بِي (+ ي) and بُو (+ و).",
+                ],
+                previewSymbols: ["بَا", "بِي", "بُو"],
+            },
+            {
+                type: "explain",
+                title: "See the Long Vowels",
+                body: [
+                    "Here are all nine CVV syllables built from the three consonants you already know (ب, م, ت) and the three long vowels. Each one is the short syllable you already read, with one extra letter.",
+                ],
+                previewSymbols: cvvSyllables.map(s => s.arabic),
+            },
+            buildSyllablePronunciationStep(cvvSyllables, "Listen to the Long Vowels", "Tap 🔊 to hear each CVV syllable, and see a real word that uses it."),
+            {
+                type: "practice-choice",
+                title: "Quick check",
+                arabicPrompt: "بَا",
+                prompt: "Which sound does this make?",
+                options: [
+                    { label: "short \"a\" (ba)", correct: false },
+                    { label: "long \"aa\" (bā)", correct: true },
+                    { label: "long \"ee\" (bī)", correct: false },
+                ],
+                explanation: "The extra ا after the fatḥah stretches the vowel into a long \"aa\".",
+            },
+            {
+                type: "quiz",
+                title: "CVV Quiz",
+                questions: [
+                    {
+                        arabicPrompt: "بُو",
+                        prompt: "Which transliteration matches this syllable?",
+                        options: [
+                            { label: "bū", correct: true },
+                            { label: "bu", correct: false },
+                            { label: "bī", correct: false },
+                        ],
+                    },
+                    {
+                        arabicPrompt: "تِي",
+                        prompt: "Which transliteration matches this syllable?",
+                        options: [
+                            { label: "ti", correct: false },
+                            { label: "tā", correct: false },
+                            { label: "tī", correct: true },
+                        ],
+                    },
+                    {
+                        prompt: "Which letter, added after a matching short vowel, stretches it into a long \"aa\" sound?",
+                        options: [
+                            { label: "ا (alif)", correct: true },
+                            { label: "ي (yāʾ)", correct: false },
+                            { label: "و (wāw)", correct: false },
+                        ],
+                    },
+                ],
+            },
+            buildSyllableReadingStep(cvvSyllables, "Read Full Words (CVV)", "Each of these real words contains one of the long-vowel syllables you just learned. Read the Arabic first, then check yourself."),
+
+            /* ---------- CVC: closed syllables ---------- */
+            {
+                type: "explain",
+                title: "Closed Syllables — When a Consonant Stops (CVC)",
+                body: [
+                    "Not every syllable ends in a vowel. A CVC syllable opens with a consonant + short vowel, then closes with a second consonant marked with sukūn — meaning that second consonant has no vowel of its own, it just stops the syllable.",
+                    "For example: بَاتْ (bāt) — after the long vowel ا, the final ت carries sukūn, so it's pronounced \"baat\" with a clean stop, not \"baatuh\" or \"baati\".",
+                ],
+                previewSymbols: ["بَحْ", "بِنْ", "بُرْ"],
+            },
+            {
+                type: "explain",
+                title: "See the Closed Syllables",
+                body: [
+                    "Here are nine CVC syllables — each opens with ب, م, or ت plus a short vowel, then closes on a sukūn-marked consonant with no vowel sound.",
+                ],
+                previewSymbols: cvcSyllables.map(s => s.arabic),
+            },
+            buildSyllablePronunciationStep(cvcSyllables, "Listen to the Closed Syllables", "Tap 🔊 to hear each CVC syllable, and see a real word that uses it."),
+            {
+                type: "practice-choice",
+                title: "Quick check",
+                arabicPrompt: "مَدْ",
+                prompt: "What does the sukūn on the final consonant mean?",
+                options: [
+                    { label: "It has a short \"a\" vowel", correct: false },
+                    { label: "It has no vowel — the consonant just stops", correct: true },
+                    { label: "It is silent and not pronounced at all", correct: false },
+                ],
+                explanation: "Sukūn means \"no vowel sound here\" — the consonant is still pronounced, just without a following vowel.",
+            },
+            {
+                type: "quiz",
+                title: "CVC Quiz",
+                questions: [
+                    {
+                        arabicPrompt: "بِنْت",
+                        prompt: "\"bint\" (girl) — which two marks close the first syllable?",
+                        options: [
+                            { label: "kasrah on ب, sukūn on ن", correct: true },
+                            { label: "fatḥah on ب, sukūn on ن", correct: false },
+                            { label: "kasrah on ب, shaddah on ن", correct: false },
+                        ],
+                    },
+                    {
+                        prompt: "What does sukūn mean on a consonant?",
+                        options: [
+                            { label: "The consonant is silent", correct: false },
+                            { label: "The consonant has no vowel sound", correct: true },
+                            { label: "The consonant is doubled", correct: false },
+                        ],
+                    },
+                    {
+                        arabicPrompt: "مُسْتَشْفَى",
+                        prompt: "\"mustashfā\" (hospital) — what closes the very first syllable, مُسْ؟",
+                        options: [
+                            { label: "ḍammah", correct: false },
+                            { label: "sukūn", correct: true },
+                            { label: "shaddah", correct: false },
+                        ],
+                    },
+                ],
+            },
+            buildSyllableReadingStep(cvcSyllables, "Read Full Words (CVC)", "Each of these real words contains one of the closed syllables you just learned."),
+
+            /* ---------- Geminated: doubled consonants (shaddah) ---------- */
+            {
+                type: "explain",
+                title: "Doubling a Consonant — Gemination (Shaddah)",
+                body: [
+                    "Shaddah doesn't close a syllable the way sukūn does — instead, it doubles the consonant it sits on, holding it for twice as long. A doubled consonant is actually pronounced twice: once closing the syllable before it, and once opening the syllable after it.",
+                    "For example: بَبَّ (bab-ba) — the doubled ب is held long enough that you can hear both halves: the end of \"bab\" and the start of \"ba\".",
+                ],
+                previewSymbols: ["دَّ", "مَّ", "تَّ", "كَّ"],
+            },
+            {
+                type: "explain",
+                title: "See the Doubled Consonants",
+                body: [
+                    "These four letters are shown here because real words in your Word Bank already use them doubled — you'll recognize them right away.",
+                ],
+                previewSymbols: geminatedSyllables.map(s => s.arabic),
+            },
+            buildSyllablePronunciationStep(geminatedSyllables, "Listen to the Doubled Consonants", "Tap 🔊 to hear each doubled consonant, and see a real word that uses it."),
+            {
+                type: "practice-choice",
+                title: "Quick check",
+                arabicPrompt: "سُكَّر",
+                prompt: "\"sukkar\" (sugar) — what does the shaddah on ك mean?",
+                options: [
+                    { label: "The ك is doubled — held twice as long", correct: true },
+                    { label: "The ك has no vowel", correct: false },
+                    { label: "The ك is silent", correct: false },
+                ],
+                explanation: "Shaddah means gemination — the consonant is pronounced doubled, not silenced or de-voweled.",
+            },
+            {
+                type: "quiz",
+                title: "Gemination Quiz",
+                questions: [
+                    {
+                        arabicPrompt: "حَمَّام",
+                        prompt: "\"ḥammām\" (bathroom) — which letter is doubled?",
+                        options: [
+                            { label: "ح", correct: false },
+                            { label: "م", correct: true },
+                            { label: "ا", correct: false },
+                        ],
+                    },
+                    {
+                        prompt: "What does shaddah do to a consonant?",
+                        options: [
+                            { label: "Removes its vowel", correct: false },
+                            { label: "Doubles it", correct: true },
+                            { label: "Silences it", correct: false },
+                        ],
+                    },
+                    {
+                        arabicPrompt: "جَدَّة",
+                        prompt: "\"jaddah\" (grandmother) — which letter is doubled?",
+                        options: [
+                            { label: "ج", correct: false },
+                            { label: "د", correct: true },
+                            { label: "ة", correct: false },
+                        ],
+                    },
+                ],
+            },
+            buildSyllableReadingStep(geminatedSyllables, "Read Full Words (Gemination)", "Each of these real words contains one of the doubled consonants you just learned."),
+
+            {
+                type: "complete",
+                title: "You can read syllables!",
+                message: "You learned long vowels (CVV), closed syllables (CVC), and doubled consonants (shaddah gemination) — and read real Arabic words using each pattern.",
+                finishLabel: "Finish & mark complete",
+            },
+        ],
+    },
+
+    /* ============================================================
        MILESTONE 6 — READING, LISTENING & PRONUNCIATION FOUNDATIONS
        Reached from the Practice view. All content below is sourced
        from arabicAlphabet, HARAKAT, and the Milestone 5 `vocabulary`
@@ -2488,6 +2804,7 @@ const PRACTICE_LESSONS = [
     { id: "reading-foundations", label: "Reading Foundations" },
     { id: "listening-foundations", label: "Listening Foundations" },
     { id: "pronunciation-foundations", label: "Pronunciation Foundations" },
+    { id: "syllables-intro", label: "Syllables: CVV, CVC & Doubling" },
 ];
 
 /* ============================================================
