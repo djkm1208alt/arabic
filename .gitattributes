@@ -1,0 +1,14 @@
+# The repository already stores text blobs with LF endings. Pin working-copy
+# endings to LF too, so they stay consistent across platforms (Windows
+# core.autocrlf otherwise checks these out as CRLF) and so
+# tools/build-audio-manifest.js --check compares cleanly.
+*.html  text eol=lf
+*.js    text eol=lf
+*.json  text eol=lf
+*.md    text eol=lf
+*.css   text eol=lf
+
+# Binary assets — never touch.
+*.png   binary
+*.mp3   binary
+*.woff2 binary
