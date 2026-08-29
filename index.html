@@ -763,15 +763,6 @@
     .letter-example { font-size: 14px; margin-top: 10px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
     .letter-example .muted { color: var(--ink-soft); font-style: italic; }
     .rtl-inline { font-family: var(--font-arabic); direction: rtl; unicode-bidi: embed; font-size: 17px; }
-    .writing-practice-placeholder {
-        margin-top: 16px;
-        padding: 12px 14px;
-        background: var(--bg-2);
-        border: 1px dashed var(--panel-border);
-        border-radius: var(--radius-md);
-        color: var(--ink-soft);
-        font-size: 13px;
-    }
     .voice-warning { color: var(--gold); font-size: 12.5px; margin: 6px 0 4px; display: none; }
 
     /* ---------- Practice ---------- */
@@ -4412,7 +4403,7 @@ function selectLetter(id) {
                 ? `<b>Example:</b> <span class="rtl-inline">${example.arabic}</span> <em>(${example.translit})</em> — ${example.english} <button class="speak-btn small" id="exampleSpeakBtn" aria-label="Hear example word" title="Hear example word">🔊</button>`
                 : `<span class="muted">No example word yet in the vocabulary — more coming soon.</span>`}
         </div>
-        <div class="writing-practice-placeholder">✍️ Writing practice — coming in a future milestone.</div>
+        <button class="pill show-btn" style="margin-top:16px;" onclick="practiceLetterWriting('${letter.id}')">✍️ Practice Writing This Letter</button>
     `;
 
     document.getElementById("letterSpeakBtn").disabled = !speechOk;
@@ -4554,6 +4545,15 @@ function jumpToLetterStep(letterId) {
     if (idx === -1) return;
     lessonStepIndex = idx;
     renderLessonStep();
+}
+
+/* Entry point for the Alphabet view's per-letter "Practice Writing" button.
+   Reuses startLesson()+jumpToLetterStep() unmodified rather than adding a
+   bypass into the lesson runner — step 0 renders for one synchronous tick
+   before the jump overwrites it, but nothing ever paints in between. */
+function practiceLetterWriting(letterId) {
+    startLesson("stroke-order-writing", "alphabet");
+    jumpToLetterStep(letterId);
 }
 
 function renderLessonLetterPicker() {
