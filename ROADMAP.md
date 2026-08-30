@@ -12,7 +12,7 @@ The standing plan for the Arabic-learning platform. Every milestone scope doc ci
 
 ## Position
 
-`main` @ `3ca6311`. **M6–M15 merged and live.** Next: **M16**.
+`main` @ `b1e2e13`. **M6–M16 merged and live** (+ a `lang="ar"` accessibility fix). Next: **M17**.
 
 Phases 1–2 (M13–M15) build the frame. Phase 3 (M16) fills it. Phases 4–6 (M17–M19) make learning findable, provable, and durable. Phase 7 (M20–M21) produces content. Phase 8 (M22–M23) adds accounts and monetisation. Then the UI/UX pass, the AI tutor layer, and the long tail of content.
 
@@ -25,7 +25,7 @@ Phases 1–2 (M13–M15) build the frame. Phase 3 (M16) fills it. Phases 4–6 (
 | **M13** | Native-audio prep | Manifest + resolver + TTS fallback, inert behind a flag. | ✅ merged | — |
 | **M14** | Learning-object core | One `lexemes` table + typed `LETTERS`/`MARKS`/`SYLLABLE_OBJECTS`/`GRAMMAR_POINTS`/`TEXTS` in `content/*.json`, compiled to the app. Behaviour-preserving. | ✅ merged | — |
 | **M15** | Skills · levels · learning graph | 8 strands, 7 levels (PRE_A1→C2), **all 56 Arabic-specific can-do descriptors** (each cited to an external framework), `prereqs` edges among M14 objects, honest `deriveLevel(skill)`. Progress view gains a per-strand panel; no other UI change. | ✅ merged (PR #10) — 234 objects tagged, 62 acyclic level-monotonic edges, `deriveLevel` returns level + confidence or "insufficient evidence", "Your skills" panel live. | M14 |
-| **M16** | Curriculum spine | The real `curriculum` tree (levels → units → lessons) wired to objects and levels; Learn view "start where you fit"; lessons declare `objectives`; the 7-stage lesson generator. The full A2–C2 content *map* (topics, grammar spine, morphology ladder, reading/listening/writing/speaking ladders) placed by level. | A learner can enter at any level and see a coherent path; every lesson resolves to real objects. | M15 |
+| **M16** | Curriculum spine | The real `curriculum` tree (levels → units → lessons) wired to objects and levels; Learn view "start where you fit"; lessons declare `objectives`; the 7-stage lesson generator. The full A2–C2 content *map* placed by level. | ✅ merged (PR #12) — `content/curriculum.json` (37 units / 18 lesson nodes), `generateLessonSteps` v1 + 2 generated A1 lessons, `deriveLevel` introduced-coverage bridge (capped A1), Learn view rebuilt. | M15 |
 | **M17** | Placement / diagnostic | Per-strand adaptive-lite diagnostics for the reliably-measurable strands, self-report for speaking/writing, honest confidence, learner override. **Rides on the existing MCQ / listen-identify primitives** — does not build a new item engine. | Placement recommends a per-strand entry level with a confidence flag; the learner can override every one. | M15, M16 |
 | **M18** | Assessment framework | `exerciseTypes` registry (parallel to `stepRenderers`); migrate MCQ in; add `match` / `order` / `cloze` / `build-word` / `build-sentence` / `dictation` / `transform`. Each item references learning objects; results feed the review store. | Non-MCQ types work; each strand has item types suited to it; every graded interaction emits an `InteractionEvent`. | M15 |
 | **M19** | Review / retention | `InteractionEvent` + per-object `ReviewState` (backfilled from existing quizzes); an SM-2-lite scheduler as a pluggable module; a mistake log; review queues. The crude `mastered` toggle becomes `learned → practised → weak → forgotten → reviewed → retained`. | Review queues built from `dueDate` + mistakes; the word "spaced repetition" is only used once a real scheduler runs. | M18 |
