@@ -1,0 +1,2018 @@
+[
+  {
+    "id": "lex:gre-01",
+    "kind": "lexeme",
+    "ar": "مَرْحَبًا",
+    "translit": "marhaban",
+    "en": "hello",
+    "pos": "phrase",
+    "topic": "greetings",
+    "level": "A0",
+    "example": {
+      "ar": "مَرْحَبًا، كَيْفَ حَالُكَ؟",
+      "en": "Hello, how are you?"
+    },
+    "fr": "bonjour",
+    "tags": [
+      "legacy-flashcard"
+    ]
+  },
+  {
+    "id": "lex:gre-02",
+    "kind": "lexeme",
+    "ar": "السَّلَامُ عَلَيْكُم",
+    "translit": "as-salāmu ʿalaykum",
+    "en": "peace be upon you (a greeting)",
+    "pos": "phrase",
+    "topic": "greetings",
+    "level": "A0",
+    "notes": "The traditional Islamic/Arabic greeting, used any time of day.",
+    "tags": []
+  },
+  {
+    "id": "lex:gre-03",
+    "kind": "lexeme",
+    "ar": "وَعَلَيْكُمُ السَّلَام",
+    "translit": "wa ʿalaykumu s-salām",
+    "en": "and upon you be peace (the reply)",
+    "pos": "phrase",
+    "topic": "greetings",
+    "level": "A0",
+    "notes": "The standard reply to as-salāmu ʿalaykum.",
+    "tags": []
+  },
+  {
+    "id": "lex:gre-04",
+    "kind": "lexeme",
+    "ar": "صَبَاحُ الْخَيْر",
+    "translit": "ṣabāḥu l-khayr",
+    "en": "good morning",
+    "pos": "phrase",
+    "topic": "greetings",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:gre-05",
+    "kind": "lexeme",
+    "ar": "صَبَاحُ النُّور",
+    "translit": "ṣabāḥu n-nūr",
+    "en": "good morning (the reply)",
+    "pos": "phrase",
+    "topic": "greetings",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:gre-06",
+    "kind": "lexeme",
+    "ar": "مَسَاءُ الْخَيْر",
+    "translit": "masāʾu l-khayr",
+    "en": "good evening",
+    "pos": "phrase",
+    "topic": "greetings",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:gre-07",
+    "kind": "lexeme",
+    "ar": "مَسَاءُ النُّور",
+    "translit": "masāʾu n-nūr",
+    "en": "good evening (the reply)",
+    "pos": "phrase",
+    "topic": "greetings",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:gre-08",
+    "kind": "lexeme",
+    "ar": "مَعَ السَّلَامَة",
+    "translit": "maʿa s-salāmah",
+    "en": "goodbye",
+    "pos": "phrase",
+    "topic": "greetings",
+    "level": "A0",
+    "fr": "au revoir",
+    "tags": [
+      "legacy-flashcard"
+    ]
+  },
+  {
+    "id": "lex:gre-09",
+    "kind": "lexeme",
+    "ar": "إِلَى اللِّقَاء",
+    "translit": "ilā l-liqāʾ",
+    "en": "see you later",
+    "pos": "phrase",
+    "topic": "greetings",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:gre-10",
+    "kind": "lexeme",
+    "ar": "تُصْبِحُ عَلَى خَيْر",
+    "translit": "tuṣbiḥu ʿalā khayr",
+    "en": "good night",
+    "pos": "phrase",
+    "topic": "greetings",
+    "level": "A0",
+    "notes": "Literally \"may you wake up well\" — said when parting for the night.",
+    "tags": []
+  },
+  {
+    "id": "lex:peo-01",
+    "kind": "lexeme",
+    "ar": "أُمّ",
+    "translit": "umm",
+    "en": "mother",
+    "pos": "noun",
+    "topic": "people",
+    "level": "A0",
+    "fr": "mère",
+    "tags": [
+      "legacy-flashcard"
+    ]
+  },
+  {
+    "id": "lex:peo-02",
+    "kind": "lexeme",
+    "ar": "أَب",
+    "translit": "ab",
+    "en": "father",
+    "pos": "noun",
+    "topic": "people",
+    "level": "A0",
+    "fr": "père",
+    "tags": [
+      "legacy-flashcard"
+    ]
+  },
+  {
+    "id": "lex:peo-03",
+    "kind": "lexeme",
+    "ar": "أَخ",
+    "translit": "akh",
+    "en": "brother",
+    "pos": "noun",
+    "topic": "people",
+    "level": "A0",
+    "plural": {
+      "ar": "إِخْوَة",
+      "translit": "ikhwah"
+    },
+    "fr": "frère",
+    "tags": [
+      "legacy-flashcard"
+    ]
+  },
+  {
+    "id": "lex:peo-04",
+    "kind": "lexeme",
+    "ar": "أُخْت",
+    "translit": "ukht",
+    "en": "sister",
+    "pos": "noun",
+    "topic": "people",
+    "level": "A0",
+    "plural": {
+      "ar": "أَخَوَات",
+      "translit": "akhawāt"
+    },
+    "fr": "sœur",
+    "tags": [
+      "legacy-flashcard"
+    ]
+  },
+  {
+    "id": "lex:peo-05",
+    "kind": "lexeme",
+    "ar": "اِبْن",
+    "translit": "ibn",
+    "en": "son",
+    "pos": "noun",
+    "topic": "people",
+    "level": "A0",
+    "plural": {
+      "ar": "أَبْنَاء",
+      "translit": "abnāʾ"
+    },
+    "tags": []
+  },
+  {
+    "id": "lex:peo-06",
+    "kind": "lexeme",
+    "ar": "اِبْنَة",
+    "translit": "ibnah",
+    "en": "daughter",
+    "pos": "noun",
+    "topic": "people",
+    "level": "A0",
+    "plural": {
+      "ar": "بَنَات",
+      "translit": "banāt"
+    },
+    "tags": []
+  },
+  {
+    "id": "lex:peo-07",
+    "kind": "lexeme",
+    "ar": "جَدّ",
+    "translit": "jadd",
+    "en": "grandfather",
+    "pos": "noun",
+    "topic": "people",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:peo-08",
+    "kind": "lexeme",
+    "ar": "جَدَّة",
+    "translit": "jaddah",
+    "en": "grandmother",
+    "pos": "noun",
+    "topic": "people",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:peo-09",
+    "kind": "lexeme",
+    "ar": "زَوْج",
+    "translit": "zawj",
+    "en": "husband",
+    "pos": "noun",
+    "topic": "people",
+    "level": "A1",
+    "tags": []
+  },
+  {
+    "id": "lex:peo-10",
+    "kind": "lexeme",
+    "ar": "زَوْجَة",
+    "translit": "zawjah",
+    "en": "wife",
+    "pos": "noun",
+    "topic": "people",
+    "level": "A1",
+    "tags": []
+  },
+  {
+    "id": "lex:peo-11",
+    "kind": "lexeme",
+    "ar": "صَدِيق",
+    "translit": "ṣadīq",
+    "en": "friend (male)",
+    "pos": "noun",
+    "topic": "people",
+    "level": "A0",
+    "plural": {
+      "ar": "أَصْدِقَاء",
+      "translit": "aṣdiqāʾ"
+    },
+    "example": {
+      "ar": "هَذَا صَدِيقِي.",
+      "en": "This is my friend."
+    },
+    "fr": "ami(e)",
+    "tags": [
+      "legacy-flashcard"
+    ]
+  },
+  {
+    "id": "lex:peo-12",
+    "kind": "lexeme",
+    "ar": "صَدِيقَة",
+    "translit": "ṣadīqah",
+    "en": "friend (female)",
+    "pos": "noun",
+    "topic": "people",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:peo-13",
+    "kind": "lexeme",
+    "ar": "بِنْت",
+    "translit": "bint",
+    "en": "girl",
+    "pos": "noun",
+    "topic": "people",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:num-00",
+    "kind": "lexeme",
+    "ar": "صِفْر",
+    "translit": "ṣifr",
+    "en": "zero",
+    "pos": "number",
+    "topic": "numbers",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:num-01",
+    "kind": "lexeme",
+    "ar": "وَاحِد",
+    "translit": "wāḥid",
+    "en": "one",
+    "pos": "number",
+    "topic": "numbers",
+    "level": "A0",
+    "fr": "un",
+    "tags": [
+      "legacy-flashcard"
+    ]
+  },
+  {
+    "id": "lex:num-02",
+    "kind": "lexeme",
+    "ar": "اِثْنَان",
+    "translit": "ithnān",
+    "en": "two",
+    "pos": "number",
+    "topic": "numbers",
+    "level": "A0",
+    "fr": "deux",
+    "tags": [
+      "legacy-flashcard"
+    ]
+  },
+  {
+    "id": "lex:num-03",
+    "kind": "lexeme",
+    "ar": "ثَلَاثَة",
+    "translit": "thalāthah",
+    "en": "three",
+    "pos": "number",
+    "topic": "numbers",
+    "level": "A0",
+    "example": {
+      "ar": "عِنْدِي ثَلَاثَةُ كُتُب.",
+      "en": "I have three books."
+    },
+    "fr": "trois",
+    "tags": [
+      "legacy-flashcard"
+    ]
+  },
+  {
+    "id": "lex:num-04",
+    "kind": "lexeme",
+    "ar": "أَرْبَعَة",
+    "translit": "arbaʿah",
+    "en": "four",
+    "pos": "number",
+    "topic": "numbers",
+    "level": "A0",
+    "fr": "quatre",
+    "tags": [
+      "legacy-flashcard"
+    ]
+  },
+  {
+    "id": "lex:num-05",
+    "kind": "lexeme",
+    "ar": "خَمْسَة",
+    "translit": "khamsah",
+    "en": "five",
+    "pos": "number",
+    "topic": "numbers",
+    "level": "A0",
+    "fr": "cinq",
+    "tags": [
+      "legacy-flashcard"
+    ]
+  },
+  {
+    "id": "lex:num-06",
+    "kind": "lexeme",
+    "ar": "سِتَّة",
+    "translit": "sittah",
+    "en": "six",
+    "pos": "number",
+    "topic": "numbers",
+    "level": "A0",
+    "fr": "six",
+    "tags": [
+      "legacy-flashcard"
+    ]
+  },
+  {
+    "id": "lex:num-07",
+    "kind": "lexeme",
+    "ar": "سَبْعَة",
+    "translit": "sabʿah",
+    "en": "seven",
+    "pos": "number",
+    "topic": "numbers",
+    "level": "A0",
+    "fr": "sept",
+    "tags": [
+      "legacy-flashcard"
+    ]
+  },
+  {
+    "id": "lex:num-08",
+    "kind": "lexeme",
+    "ar": "ثَمَانِيَة",
+    "translit": "thamāniyah",
+    "en": "eight",
+    "pos": "number",
+    "topic": "numbers",
+    "level": "A0",
+    "fr": "huit",
+    "tags": [
+      "legacy-flashcard"
+    ]
+  },
+  {
+    "id": "lex:num-09",
+    "kind": "lexeme",
+    "ar": "تِسْعَة",
+    "translit": "tisʿah",
+    "en": "nine",
+    "pos": "number",
+    "topic": "numbers",
+    "level": "A0",
+    "fr": "neuf",
+    "tags": [
+      "legacy-flashcard"
+    ]
+  },
+  {
+    "id": "lex:num-10",
+    "kind": "lexeme",
+    "ar": "عَشَرَة",
+    "translit": "ʿasharah",
+    "en": "ten",
+    "pos": "number",
+    "topic": "numbers",
+    "level": "A0",
+    "example": {
+      "ar": "عَشَرَة أَيَّام فِي الْأُسْبُوعَيْن.",
+      "en": "Ten days in two weeks."
+    },
+    "fr": "dix",
+    "tags": [
+      "legacy-flashcard"
+    ]
+  },
+  {
+    "id": "lex:col-01",
+    "kind": "lexeme",
+    "ar": "أَحْمَر",
+    "translit": "aḥmar",
+    "en": "red",
+    "pos": "adjective",
+    "topic": "colors",
+    "level": "A0",
+    "notes": "Feminine form: حَمْرَاء (ḥamrāʾ) — Arabic color adjectives agree in gender with the noun they describe.",
+    "tags": []
+  },
+  {
+    "id": "lex:col-02",
+    "kind": "lexeme",
+    "ar": "أَزْرَق",
+    "translit": "azraq",
+    "en": "blue",
+    "pos": "adjective",
+    "topic": "colors",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:col-03",
+    "kind": "lexeme",
+    "ar": "أَخْضَر",
+    "translit": "akhḍar",
+    "en": "green",
+    "pos": "adjective",
+    "topic": "colors",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:col-04",
+    "kind": "lexeme",
+    "ar": "أَصْفَر",
+    "translit": "aṣfar",
+    "en": "yellow",
+    "pos": "adjective",
+    "topic": "colors",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:col-05",
+    "kind": "lexeme",
+    "ar": "أَسْوَد",
+    "translit": "aswad",
+    "en": "black",
+    "pos": "adjective",
+    "topic": "colors",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:col-06",
+    "kind": "lexeme",
+    "ar": "أَبْيَض",
+    "translit": "abyaḍ",
+    "en": "white",
+    "pos": "adjective",
+    "topic": "colors",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:col-07",
+    "kind": "lexeme",
+    "ar": "بُرْتُقَالِيّ",
+    "translit": "burtuqāliyy",
+    "en": "orange",
+    "pos": "adjective",
+    "topic": "colors",
+    "level": "A1",
+    "tags": []
+  },
+  {
+    "id": "lex:col-08",
+    "kind": "lexeme",
+    "ar": "بُنِّيّ",
+    "translit": "bunniyy",
+    "en": "brown",
+    "pos": "adjective",
+    "topic": "colors",
+    "level": "A1",
+    "tags": []
+  },
+  {
+    "id": "lex:col-09",
+    "kind": "lexeme",
+    "ar": "وَرْدِيّ",
+    "translit": "wardiyy",
+    "en": "pink",
+    "pos": "adjective",
+    "topic": "colors",
+    "level": "A1",
+    "tags": []
+  },
+  {
+    "id": "lex:col-10",
+    "kind": "lexeme",
+    "ar": "رَمَادِيّ",
+    "translit": "ramādiyy",
+    "en": "gray",
+    "pos": "adjective",
+    "topic": "colors",
+    "level": "A1",
+    "tags": []
+  },
+  {
+    "id": "lex:foo-01",
+    "kind": "lexeme",
+    "ar": "خُبْز",
+    "translit": "khubz",
+    "en": "bread",
+    "pos": "noun",
+    "topic": "food",
+    "level": "A0",
+    "fr": "pain",
+    "tags": [
+      "legacy-flashcard"
+    ]
+  },
+  {
+    "id": "lex:foo-02",
+    "kind": "lexeme",
+    "ar": "أَرُزّ",
+    "translit": "aruzz",
+    "en": "rice",
+    "pos": "noun",
+    "topic": "food",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:foo-03",
+    "kind": "lexeme",
+    "ar": "لَحْم",
+    "translit": "laḥm",
+    "en": "meat",
+    "pos": "noun",
+    "topic": "food",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:foo-04",
+    "kind": "lexeme",
+    "ar": "دَجَاج",
+    "translit": "dajāj",
+    "en": "chicken",
+    "pos": "noun",
+    "topic": "food",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:foo-05",
+    "kind": "lexeme",
+    "ar": "سَمَك",
+    "translit": "samak",
+    "en": "fish",
+    "pos": "noun",
+    "topic": "food",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:foo-06",
+    "kind": "lexeme",
+    "ar": "فَاكِهَة",
+    "translit": "fākihah",
+    "en": "fruit",
+    "pos": "noun",
+    "topic": "food",
+    "level": "A0",
+    "example": {
+      "ar": "أُحِبُّ الْفَاكِهَة.",
+      "en": "I like fruit."
+    },
+    "tags": []
+  },
+  {
+    "id": "lex:foo-07",
+    "kind": "lexeme",
+    "ar": "خُضَار",
+    "translit": "khuḍār",
+    "en": "vegetables",
+    "pos": "noun",
+    "topic": "food",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:foo-08",
+    "kind": "lexeme",
+    "ar": "حَلِيب",
+    "translit": "ḥalīb",
+    "en": "milk",
+    "pos": "noun",
+    "topic": "food",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:foo-09",
+    "kind": "lexeme",
+    "ar": "مَاء",
+    "translit": "māʾ",
+    "en": "water",
+    "pos": "noun",
+    "topic": "food",
+    "level": "A0",
+    "fr": "eau",
+    "tags": [
+      "legacy-flashcard"
+    ]
+  },
+  {
+    "id": "lex:foo-10",
+    "kind": "lexeme",
+    "ar": "قَهْوَة",
+    "translit": "qahwah",
+    "en": "coffee",
+    "pos": "noun",
+    "topic": "food",
+    "level": "A0",
+    "notes": "Arabic coffee is a symbol of hospitality — often served with dates when welcoming a guest.",
+    "fr": "café",
+    "tags": [
+      "legacy-flashcard"
+    ]
+  },
+  {
+    "id": "lex:foo-11",
+    "kind": "lexeme",
+    "ar": "شَاي",
+    "translit": "shāy",
+    "en": "tea",
+    "pos": "noun",
+    "topic": "food",
+    "level": "A0",
+    "fr": "thé",
+    "tags": [
+      "legacy-flashcard"
+    ]
+  },
+  {
+    "id": "lex:foo-12",
+    "kind": "lexeme",
+    "ar": "سُكَّر",
+    "translit": "sukkar",
+    "en": "sugar",
+    "pos": "noun",
+    "topic": "food",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:foo-13",
+    "kind": "lexeme",
+    "ar": "مُوز",
+    "translit": "mūz",
+    "en": "banana",
+    "pos": "noun",
+    "topic": "food",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:foo-14",
+    "kind": "lexeme",
+    "ar": "تِين",
+    "translit": "tīn",
+    "en": "figs",
+    "pos": "noun",
+    "topic": "food",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:foo-15",
+    "kind": "lexeme",
+    "ar": "تُوت",
+    "translit": "tūt",
+    "en": "berries",
+    "pos": "noun",
+    "topic": "food",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:hom-01",
+    "kind": "lexeme",
+    "ar": "بَيْت",
+    "translit": "bayt",
+    "en": "house",
+    "pos": "noun",
+    "topic": "home",
+    "level": "A0",
+    "fr": "maison",
+    "tags": [
+      "legacy-flashcard"
+    ]
+  },
+  {
+    "id": "lex:hom-02",
+    "kind": "lexeme",
+    "ar": "غُرْفَة",
+    "translit": "ghurfah",
+    "en": "room",
+    "pos": "noun",
+    "topic": "home",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:hom-03",
+    "kind": "lexeme",
+    "ar": "غُرْفَةُ النَّوْم",
+    "translit": "ghurfat an-nawm",
+    "en": "bedroom",
+    "pos": "noun",
+    "topic": "home",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:hom-04",
+    "kind": "lexeme",
+    "ar": "مَطْبَخ",
+    "translit": "maṭbakh",
+    "en": "kitchen",
+    "pos": "noun",
+    "topic": "home",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:hom-05",
+    "kind": "lexeme",
+    "ar": "حَمَّام",
+    "translit": "ḥammām",
+    "en": "bathroom",
+    "pos": "noun",
+    "topic": "home",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:hom-06",
+    "kind": "lexeme",
+    "ar": "بَاب",
+    "translit": "bāb",
+    "en": "door",
+    "pos": "noun",
+    "topic": "home",
+    "level": "A0",
+    "fr": "porte",
+    "tags": [
+      "legacy-flashcard"
+    ]
+  },
+  {
+    "id": "lex:hom-07",
+    "kind": "lexeme",
+    "ar": "نَافِذَة",
+    "translit": "nāfidhah",
+    "en": "window",
+    "pos": "noun",
+    "topic": "home",
+    "level": "A0",
+    "fr": "fenêtre",
+    "tags": [
+      "legacy-flashcard"
+    ]
+  },
+  {
+    "id": "lex:hom-08",
+    "kind": "lexeme",
+    "ar": "طَاوِلَة",
+    "translit": "ṭāwilah",
+    "en": "table",
+    "pos": "noun",
+    "topic": "home",
+    "level": "A0",
+    "fr": "table",
+    "tags": [
+      "legacy-flashcard"
+    ]
+  },
+  {
+    "id": "lex:hom-09",
+    "kind": "lexeme",
+    "ar": "كُرْسِيّ",
+    "translit": "kursiyy",
+    "en": "chair",
+    "pos": "noun",
+    "topic": "home",
+    "level": "A0",
+    "fr": "chaise",
+    "tags": [
+      "legacy-flashcard"
+    ]
+  },
+  {
+    "id": "lex:hom-10",
+    "kind": "lexeme",
+    "ar": "سَرِير",
+    "translit": "sarīr",
+    "en": "bed",
+    "pos": "noun",
+    "topic": "home",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:hom-11",
+    "kind": "lexeme",
+    "ar": "بَيْتٌ",
+    "translit": "baytun",
+    "en": "a house (subject form, ending in ḍammatayn)",
+    "pos": "noun",
+    "topic": "home",
+    "level": "A1",
+    "tags": []
+  },
+  {
+    "id": "lex:hom-12",
+    "kind": "lexeme",
+    "ar": "فِي بَيْتٍ",
+    "translit": "fī baytin",
+    "en": "in a house (ending in kasratayn, after a preposition)",
+    "pos": "phrase",
+    "topic": "home",
+    "level": "A1",
+    "tags": []
+  },
+  {
+    "id": "lex:sch-01",
+    "kind": "lexeme",
+    "ar": "مَدْرَسَة",
+    "translit": "madrasah",
+    "en": "school",
+    "pos": "noun",
+    "topic": "school",
+    "level": "A0",
+    "fr": "école",
+    "tags": [
+      "legacy-flashcard"
+    ]
+  },
+  {
+    "id": "lex:sch-02",
+    "kind": "lexeme",
+    "ar": "مُعَلِّم",
+    "translit": "muʿallim",
+    "en": "teacher (male)",
+    "pos": "noun",
+    "topic": "school",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:sch-03",
+    "kind": "lexeme",
+    "ar": "مُعَلِّمَة",
+    "translit": "muʿallimah",
+    "en": "teacher (female)",
+    "pos": "noun",
+    "topic": "school",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:sch-04",
+    "kind": "lexeme",
+    "ar": "طَالِب",
+    "translit": "ṭālib",
+    "en": "student (male)",
+    "pos": "noun",
+    "topic": "school",
+    "level": "A0",
+    "example": {
+      "ar": "أَنَا طَالِب فِي الْمَدْرَسَة.",
+      "en": "I am a student at the school."
+    },
+    "tags": []
+  },
+  {
+    "id": "lex:sch-05",
+    "kind": "lexeme",
+    "ar": "طَالِبَة",
+    "translit": "ṭālibah",
+    "en": "student (female)",
+    "pos": "noun",
+    "topic": "school",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:sch-06",
+    "kind": "lexeme",
+    "ar": "كِتَاب",
+    "translit": "kitāb",
+    "en": "book",
+    "pos": "noun",
+    "topic": "school",
+    "level": "A0",
+    "fr": "livre",
+    "tags": [
+      "legacy-flashcard"
+    ]
+  },
+  {
+    "id": "lex:sch-07",
+    "kind": "lexeme",
+    "ar": "قَلَم",
+    "translit": "qalam",
+    "en": "pen",
+    "pos": "noun",
+    "topic": "school",
+    "level": "A0",
+    "fr": "stylo",
+    "tags": [
+      "legacy-flashcard"
+    ]
+  },
+  {
+    "id": "lex:sch-08",
+    "kind": "lexeme",
+    "ar": "دَفْتَر",
+    "translit": "daftar",
+    "en": "notebook",
+    "pos": "noun",
+    "topic": "school",
+    "level": "A0",
+    "fr": "carnet de notes",
+    "tags": [
+      "legacy-flashcard"
+    ]
+  },
+  {
+    "id": "lex:sch-09",
+    "kind": "lexeme",
+    "ar": "دَرْس",
+    "translit": "dars",
+    "en": "lesson",
+    "pos": "noun",
+    "topic": "school",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:sch-10",
+    "kind": "lexeme",
+    "ar": "وَاجِب",
+    "translit": "wājib",
+    "en": "homework",
+    "pos": "noun",
+    "topic": "school",
+    "level": "A1",
+    "example": {
+      "ar": "أَنْهَيْتُ وَاجِبِي.",
+      "en": "I finished my homework."
+    },
+    "tags": []
+  },
+  {
+    "id": "lex:obj-01",
+    "kind": "lexeme",
+    "ar": "هَاتِف",
+    "translit": "hātif",
+    "en": "phone",
+    "pos": "noun",
+    "topic": "objects",
+    "level": "A0",
+    "fr": "téléphone",
+    "tags": [
+      "legacy-flashcard"
+    ]
+  },
+  {
+    "id": "lex:obj-02",
+    "kind": "lexeme",
+    "ar": "حَاسُوب",
+    "translit": "ḥāsūb",
+    "en": "computer",
+    "pos": "noun",
+    "topic": "objects",
+    "level": "A0",
+    "fr": "ordinateur",
+    "tags": [
+      "legacy-flashcard"
+    ]
+  },
+  {
+    "id": "lex:obj-03",
+    "kind": "lexeme",
+    "ar": "سَاعَة",
+    "translit": "sāʿah",
+    "en": "clock / watch",
+    "pos": "noun",
+    "topic": "objects",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:obj-04",
+    "kind": "lexeme",
+    "ar": "مِفْتَاح",
+    "translit": "miftāḥ",
+    "en": "key",
+    "pos": "noun",
+    "topic": "objects",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:obj-05",
+    "kind": "lexeme",
+    "ar": "حَقِيبَة",
+    "translit": "ḥaqībah",
+    "en": "bag",
+    "pos": "noun",
+    "topic": "objects",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:obj-06",
+    "kind": "lexeme",
+    "ar": "مِصْبَاح",
+    "translit": "miṣbāḥ",
+    "en": "lamp",
+    "pos": "noun",
+    "topic": "objects",
+    "level": "A1",
+    "tags": []
+  },
+  {
+    "id": "lex:obj-07",
+    "kind": "lexeme",
+    "ar": "مِرْآة",
+    "translit": "mirʾāh",
+    "en": "mirror",
+    "pos": "noun",
+    "topic": "objects",
+    "level": "A1",
+    "tags": []
+  },
+  {
+    "id": "lex:obj-08",
+    "kind": "lexeme",
+    "ar": "مِظَلَّة",
+    "translit": "miẓallah",
+    "en": "umbrella",
+    "pos": "noun",
+    "topic": "objects",
+    "level": "A1",
+    "tags": []
+  },
+  {
+    "id": "lex:pla-01",
+    "kind": "lexeme",
+    "ar": "مَدِينَة",
+    "translit": "madīnah",
+    "en": "city",
+    "pos": "noun",
+    "topic": "places",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:pla-02",
+    "kind": "lexeme",
+    "ar": "قَرْيَة",
+    "translit": "qaryah",
+    "en": "village",
+    "pos": "noun",
+    "topic": "places",
+    "level": "A1",
+    "tags": []
+  },
+  {
+    "id": "lex:pla-03",
+    "kind": "lexeme",
+    "ar": "شَارِع",
+    "translit": "shāriʿ",
+    "en": "street",
+    "pos": "noun",
+    "topic": "places",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:pla-04",
+    "kind": "lexeme",
+    "ar": "مَسْجِد",
+    "translit": "masjid",
+    "en": "mosque",
+    "pos": "noun",
+    "topic": "places",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:pla-05",
+    "kind": "lexeme",
+    "ar": "مُسْتَشْفَى",
+    "translit": "mustashfā",
+    "en": "hospital",
+    "pos": "noun",
+    "topic": "places",
+    "level": "A1",
+    "tags": []
+  },
+  {
+    "id": "lex:pla-06",
+    "kind": "lexeme",
+    "ar": "مَطْعَم",
+    "translit": "maṭʿam",
+    "en": "restaurant",
+    "pos": "noun",
+    "topic": "places",
+    "level": "A0",
+    "example": {
+      "ar": "نَذْهَبُ إِلَى الْمَطْعَم.",
+      "en": "We are going to the restaurant."
+    },
+    "tags": []
+  },
+  {
+    "id": "lex:pla-07",
+    "kind": "lexeme",
+    "ar": "سُوق",
+    "translit": "sūq",
+    "en": "market",
+    "pos": "noun",
+    "topic": "places",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:pla-08",
+    "kind": "lexeme",
+    "ar": "مَطَار",
+    "translit": "maṭār",
+    "en": "airport",
+    "pos": "noun",
+    "topic": "places",
+    "level": "A1",
+    "tags": []
+  },
+  {
+    "id": "lex:pla-09",
+    "kind": "lexeme",
+    "ar": "فُنْدُق",
+    "translit": "funduq",
+    "en": "hotel",
+    "pos": "noun",
+    "topic": "places",
+    "level": "A1",
+    "tags": []
+  },
+  {
+    "id": "lex:pla-10",
+    "kind": "lexeme",
+    "ar": "مَكْتَبَة",
+    "translit": "maktabah",
+    "en": "library / bookstore",
+    "pos": "noun",
+    "topic": "places",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:pla-11",
+    "kind": "lexeme",
+    "ar": "بَحْر",
+    "translit": "baḥr",
+    "en": "sea",
+    "pos": "noun",
+    "topic": "places",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:tim-01",
+    "kind": "lexeme",
+    "ar": "الْيَوْم",
+    "translit": "al-yawm",
+    "en": "today",
+    "pos": "adverb",
+    "topic": "time",
+    "level": "A0",
+    "fr": "aujourd'hui",
+    "tags": [
+      "legacy-flashcard"
+    ]
+  },
+  {
+    "id": "lex:tim-02",
+    "kind": "lexeme",
+    "ar": "غَدًا",
+    "translit": "ghadan",
+    "en": "tomorrow",
+    "pos": "adverb",
+    "topic": "time",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:tim-03",
+    "kind": "lexeme",
+    "ar": "أَمْس",
+    "translit": "ams",
+    "en": "yesterday",
+    "pos": "adverb",
+    "topic": "time",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:tim-04",
+    "kind": "lexeme",
+    "ar": "الْآن",
+    "translit": "al-ān",
+    "en": "now",
+    "pos": "adverb",
+    "topic": "time",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:tim-05",
+    "kind": "lexeme",
+    "ar": "صَبَاح",
+    "translit": "ṣabāḥ",
+    "en": "morning",
+    "pos": "noun",
+    "topic": "time",
+    "level": "A0",
+    "fr": "matin",
+    "tags": [
+      "legacy-flashcard"
+    ]
+  },
+  {
+    "id": "lex:tim-06",
+    "kind": "lexeme",
+    "ar": "مَسَاء",
+    "translit": "masāʾ",
+    "en": "evening",
+    "pos": "noun",
+    "topic": "time",
+    "level": "A0",
+    "fr": "soirée",
+    "tags": [
+      "legacy-flashcard"
+    ]
+  },
+  {
+    "id": "lex:tim-07",
+    "kind": "lexeme",
+    "ar": "لَيْل",
+    "translit": "layl",
+    "en": "night",
+    "pos": "noun",
+    "topic": "time",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:tim-08",
+    "kind": "lexeme",
+    "ar": "أُسْبُوع",
+    "translit": "usbūʿ",
+    "en": "week",
+    "pos": "noun",
+    "topic": "time",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:tim-09",
+    "kind": "lexeme",
+    "ar": "شَهْر",
+    "translit": "shahr",
+    "en": "month",
+    "pos": "noun",
+    "topic": "time",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:tim-10",
+    "kind": "lexeme",
+    "ar": "سَنَة",
+    "translit": "sanah",
+    "en": "year",
+    "pos": "noun",
+    "topic": "time",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:tim-11",
+    "kind": "lexeme",
+    "ar": "الْأَحَد",
+    "translit": "al-aḥad",
+    "en": "Sunday",
+    "pos": "noun",
+    "topic": "time",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:tim-12",
+    "kind": "lexeme",
+    "ar": "الِاثْنَيْن",
+    "translit": "al-ithnayn",
+    "en": "Monday",
+    "pos": "noun",
+    "topic": "time",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:tim-13",
+    "kind": "lexeme",
+    "ar": "الثُّلَاثَاء",
+    "translit": "ath-thulāthāʾ",
+    "en": "Tuesday",
+    "pos": "noun",
+    "topic": "time",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:tim-14",
+    "kind": "lexeme",
+    "ar": "الْأَرْبِعَاء",
+    "translit": "al-arbiʿāʾ",
+    "en": "Wednesday",
+    "pos": "noun",
+    "topic": "time",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:tim-15",
+    "kind": "lexeme",
+    "ar": "الْخَمِيس",
+    "translit": "al-khamīs",
+    "en": "Thursday",
+    "pos": "noun",
+    "topic": "time",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:tim-16",
+    "kind": "lexeme",
+    "ar": "الْجُمُعَة",
+    "translit": "al-jumʿah",
+    "en": "Friday",
+    "pos": "noun",
+    "topic": "time",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:tim-17",
+    "kind": "lexeme",
+    "ar": "السَّبْت",
+    "translit": "as-sabt",
+    "en": "Saturday",
+    "pos": "noun",
+    "topic": "time",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:tim-18",
+    "kind": "lexeme",
+    "ar": "شَمْس",
+    "translit": "shams",
+    "en": "sun",
+    "pos": "noun",
+    "topic": "time",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:tim-19",
+    "kind": "lexeme",
+    "ar": "قَمَر",
+    "translit": "qamar",
+    "en": "moon",
+    "pos": "noun",
+    "topic": "time",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:ver-01",
+    "kind": "lexeme",
+    "ar": "ذَهَبَ",
+    "translit": "dhahaba",
+    "en": "to go",
+    "pos": "verb",
+    "topic": "verbs",
+    "level": "A1",
+    "example": {
+      "ar": "ذَهَبَ إِلَى الْمَدْرَسَة.",
+      "en": "He went to school."
+    },
+    "notes": "Present tense: يَذْهَب (yadh-hab, \"he goes\").",
+    "tags": []
+  },
+  {
+    "id": "lex:ver-02",
+    "kind": "lexeme",
+    "ar": "أَكَلَ",
+    "translit": "akala",
+    "en": "to eat",
+    "pos": "verb",
+    "topic": "verbs",
+    "level": "A0",
+    "example": {
+      "ar": "أَكَلْتُ التُّفَّاح.",
+      "en": "I ate the apple."
+    },
+    "tags": []
+  },
+  {
+    "id": "lex:ver-03",
+    "kind": "lexeme",
+    "ar": "شَرِبَ",
+    "translit": "shariba",
+    "en": "to drink",
+    "pos": "verb",
+    "topic": "verbs",
+    "level": "A0",
+    "example": {
+      "ar": "شَرِبَ الْمَاء.",
+      "en": "He drank the water."
+    },
+    "tags": []
+  },
+  {
+    "id": "lex:ver-04",
+    "kind": "lexeme",
+    "ar": "كَتَبَ",
+    "translit": "kataba",
+    "en": "to write",
+    "pos": "verb",
+    "topic": "verbs",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:ver-05",
+    "kind": "lexeme",
+    "ar": "قَرَأَ",
+    "translit": "qaraʾa",
+    "en": "to read",
+    "pos": "verb",
+    "topic": "verbs",
+    "level": "A0",
+    "example": {
+      "ar": "قَرَأَتِ الْكِتَاب.",
+      "en": "She read the book."
+    },
+    "tags": []
+  },
+  {
+    "id": "lex:ver-06",
+    "kind": "lexeme",
+    "ar": "تَكَلَّمَ",
+    "translit": "takallama",
+    "en": "to speak",
+    "pos": "verb",
+    "topic": "verbs",
+    "level": "A1",
+    "notes": "Present tense: يَتَكَلَّم (yatakallam, \"he speaks\").",
+    "tags": []
+  },
+  {
+    "id": "lex:ver-07",
+    "kind": "lexeme",
+    "ar": "سَمِعَ",
+    "translit": "samiʿa",
+    "en": "to hear / to listen",
+    "pos": "verb",
+    "topic": "verbs",
+    "level": "A1",
+    "tags": []
+  },
+  {
+    "id": "lex:ver-08",
+    "kind": "lexeme",
+    "ar": "رَأَى",
+    "translit": "raʾā",
+    "en": "to see",
+    "pos": "verb",
+    "topic": "verbs",
+    "level": "A1",
+    "tags": []
+  },
+  {
+    "id": "lex:ver-09",
+    "kind": "lexeme",
+    "ar": "فَهِمَ",
+    "translit": "fahima",
+    "en": "to understand",
+    "pos": "verb",
+    "topic": "verbs",
+    "level": "A1",
+    "example": {
+      "ar": "هَلْ فَهِمْتَ الدَّرْس؟",
+      "en": "Did you understand the lesson?"
+    },
+    "notes": "Present tense: يَفْهَم (yafham, \"he understands\").",
+    "tags": []
+  },
+  {
+    "id": "lex:ver-10",
+    "kind": "lexeme",
+    "ar": "عَمِلَ",
+    "translit": "ʿamila",
+    "en": "to work / to do",
+    "pos": "verb",
+    "topic": "verbs",
+    "level": "A1",
+    "tags": []
+  },
+  {
+    "id": "lex:adj-01",
+    "kind": "lexeme",
+    "ar": "كَبِير",
+    "translit": "kabīr",
+    "en": "big",
+    "pos": "adjective",
+    "topic": "adjectives",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:adj-01f",
+    "kind": "lexeme",
+    "ar": "كَبِيرَة",
+    "translit": "kabīrah",
+    "en": "big (feminine)",
+    "pos": "adjective",
+    "topic": "adjectives",
+    "level": "A0",
+    "gender": "feminine",
+    "tags": []
+  },
+  {
+    "id": "lex:adj-02",
+    "kind": "lexeme",
+    "ar": "صَغِير",
+    "translit": "ṣaghīr",
+    "en": "small",
+    "pos": "adjective",
+    "topic": "adjectives",
+    "level": "A0",
+    "example": {
+      "ar": "الْبَيْتُ صَغِير.",
+      "en": "The house is small."
+    },
+    "tags": []
+  },
+  {
+    "id": "lex:adj-03",
+    "kind": "lexeme",
+    "ar": "جَمِيل",
+    "translit": "jamīl",
+    "en": "beautiful",
+    "pos": "adjective",
+    "topic": "adjectives",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:adj-04",
+    "kind": "lexeme",
+    "ar": "طَوِيل",
+    "translit": "ṭawīl",
+    "en": "tall / long",
+    "pos": "adjective",
+    "topic": "adjectives",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:adj-05",
+    "kind": "lexeme",
+    "ar": "قَصِير",
+    "translit": "qaṣīr",
+    "en": "short",
+    "pos": "adjective",
+    "topic": "adjectives",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:adj-06",
+    "kind": "lexeme",
+    "ar": "جَدِيد",
+    "translit": "jadīd",
+    "en": "new",
+    "pos": "adjective",
+    "topic": "adjectives",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:adj-07",
+    "kind": "lexeme",
+    "ar": "قَدِيم",
+    "translit": "qadīm",
+    "en": "old (things)",
+    "pos": "adjective",
+    "topic": "adjectives",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:adj-08",
+    "kind": "lexeme",
+    "ar": "سَعِيد",
+    "translit": "saʿīd",
+    "en": "happy",
+    "pos": "adjective",
+    "topic": "adjectives",
+    "level": "A0",
+    "example": {
+      "ar": "أَنَا سَعِيد الْيَوْم.",
+      "en": "I am happy today."
+    },
+    "tags": []
+  },
+  {
+    "id": "lex:adj-08f",
+    "kind": "lexeme",
+    "ar": "سَعِيدَة",
+    "translit": "saʿīdah",
+    "en": "happy (feminine)",
+    "pos": "adjective",
+    "topic": "adjectives",
+    "level": "A0",
+    "gender": "feminine",
+    "tags": []
+  },
+  {
+    "id": "lex:adj-09",
+    "kind": "lexeme",
+    "ar": "حَزِين",
+    "translit": "ḥazīn",
+    "en": "sad",
+    "pos": "adjective",
+    "topic": "adjectives",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:adj-10",
+    "kind": "lexeme",
+    "ar": "سَهْل",
+    "translit": "sahl",
+    "en": "easy",
+    "pos": "adjective",
+    "topic": "adjectives",
+    "level": "A1",
+    "tags": []
+  },
+  {
+    "id": "lex:adj-11",
+    "kind": "lexeme",
+    "ar": "صَعْب",
+    "translit": "ṣaʿb",
+    "en": "difficult",
+    "pos": "adjective",
+    "topic": "adjectives",
+    "level": "A1",
+    "example": {
+      "ar": "هَذَا الدَّرْسُ صَعْب.",
+      "en": "This lesson is difficult."
+    },
+    "tags": []
+  },
+  {
+    "id": "lex:exp-01",
+    "kind": "lexeme",
+    "ar": "مِنْ فَضْلِك",
+    "translit": "min faḍlik",
+    "en": "please",
+    "pos": "phrase",
+    "topic": "expressions",
+    "level": "A0",
+    "fr": "s'il vous plaît",
+    "tags": [
+      "legacy-flashcard"
+    ]
+  },
+  {
+    "id": "lex:exp-02",
+    "kind": "lexeme",
+    "ar": "شُكْرًا",
+    "translit": "shukran",
+    "en": "thank you",
+    "pos": "phrase",
+    "topic": "expressions",
+    "level": "A0",
+    "fr": "merci",
+    "tags": [
+      "legacy-flashcard"
+    ]
+  },
+  {
+    "id": "lex:exp-03",
+    "kind": "lexeme",
+    "ar": "عَفْوًا",
+    "translit": "ʿafwan",
+    "en": "you're welcome / excuse me",
+    "pos": "phrase",
+    "topic": "expressions",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:exp-04",
+    "kind": "lexeme",
+    "ar": "آسِف",
+    "translit": "āsif",
+    "en": "sorry (said by a male speaker)",
+    "pos": "phrase",
+    "topic": "expressions",
+    "level": "A0",
+    "tags": []
+  },
+  {
+    "id": "lex:exp-05",
+    "kind": "lexeme",
+    "ar": "نَعَم",
+    "translit": "naʿam",
+    "en": "yes",
+    "pos": "phrase",
+    "topic": "expressions",
+    "level": "A0",
+    "fr": "oui",
+    "tags": [
+      "legacy-flashcard"
+    ]
+  },
+  {
+    "id": "lex:exp-06",
+    "kind": "lexeme",
+    "ar": "لَا",
+    "translit": "lā",
+    "en": "no",
+    "pos": "phrase",
+    "topic": "expressions",
+    "level": "A0",
+    "fr": "non",
+    "tags": [
+      "legacy-flashcard"
+    ]
+  },
+  {
+    "id": "lex:exp-07",
+    "kind": "lexeme",
+    "ar": "لَا أَعْرِف",
+    "translit": "lā aʿrif",
+    "en": "I don't know",
+    "pos": "phrase",
+    "topic": "expressions",
+    "level": "A1",
+    "tags": []
+  },
+  {
+    "id": "lex:exp-08",
+    "kind": "lexeme",
+    "ar": "أَيْنَ الْحَمَّام؟",
+    "translit": "ayna l-ḥammām?",
+    "en": "Where is the bathroom?",
+    "pos": "phrase",
+    "topic": "expressions",
+    "level": "A1",
+    "tags": []
+  },
+  {
+    "id": "lex:exp-09",
+    "kind": "lexeme",
+    "ar": "كَمِ السَّاعَة؟",
+    "translit": "kami s-sāʿah?",
+    "en": "What time is it?",
+    "pos": "phrase",
+    "topic": "expressions",
+    "level": "A1",
+    "tags": []
+  },
+  {
+    "id": "lex:exp-10",
+    "kind": "lexeme",
+    "ar": "بِكَمْ هَذَا؟",
+    "translit": "bikam hādhā?",
+    "en": "How much is this?",
+    "pos": "phrase",
+    "topic": "expressions",
+    "level": "A1",
+    "tags": []
+  },
+  {
+    "id": "lex:pro-01",
+    "kind": "lexeme",
+    "ar": "هُوَ",
+    "translit": "huwa",
+    "en": "he",
+    "pos": "pronoun",
+    "topic": "pronouns",
+    "level": "A1",
+    "tags": []
+  },
+  {
+    "id": "lex:pro-02",
+    "kind": "lexeme",
+    "ar": "هِيَ",
+    "translit": "hiya",
+    "en": "she",
+    "pos": "pronoun",
+    "topic": "pronouns",
+    "level": "A1",
+    "tags": []
+  },
+  {
+    "id": "lex:pro-03",
+    "kind": "lexeme",
+    "ar": "هُمْ",
+    "translit": "hum",
+    "en": "they (masculine/mixed group)",
+    "pos": "pronoun",
+    "topic": "pronouns",
+    "level": "A1",
+    "tags": []
+  },
+  {
+    "id": "lex:fc-3",
+    "kind": "lexeme",
+    "ar": "سَيَّارَة",
+    "translit": "sayyārah",
+    "en": "car",
+    "pos": "noun",
+    "topic": "objects",
+    "level": "A0",
+    "fr": "voiture",
+    "tags": [
+      "legacy-flashcard"
+    ]
+  },
+  {
+    "id": "lex:fc-14",
+    "kind": "lexeme",
+    "ar": "طَعَام",
+    "translit": "taʿām",
+    "en": "food",
+    "pos": "noun",
+    "topic": "food",
+    "level": "A0",
+    "fr": "nourriture",
+    "tags": [
+      "legacy-flashcard"
+    ]
+  },
+  {
+    "id": "lex:fc-27",
+    "kind": "lexeme",
+    "ar": "أَهْلًا وَسَهْلًا",
+    "translit": "ahlan wa sahlan",
+    "en": "welcome",
+    "pos": "phrase",
+    "topic": "greetings",
+    "level": "A0",
+    "fr": "bienvenue",
+    "notes": "Literally \"family and ease\" — a warm phrase meant to make a guest feel at home.",
+    "tags": [
+      "legacy-flashcard"
+    ]
+  },
+  {
+    "id": "lex:fc-28",
+    "kind": "lexeme",
+    "ar": "كَيْفَ حَالُك؟",
+    "translit": "kayfa hāluk",
+    "en": "how are you?",
+    "pos": "phrase",
+    "topic": "greetings",
+    "level": "A0",
+    "fr": "comment ça va ?",
+    "tags": [
+      "legacy-flashcard"
+    ]
+  },
+  {
+    "id": "lex:fc-29",
+    "kind": "lexeme",
+    "ar": "اِسْمِي...",
+    "translit": "ismī...",
+    "en": "my name is...",
+    "pos": "phrase",
+    "topic": "greetings",
+    "level": "A0",
+    "fr": "je m'appelle...",
+    "tags": [
+      "legacy-flashcard"
+    ]
+  },
+  {
+    "id": "lex:fc-30",
+    "kind": "lexeme",
+    "ar": "تَشَرَّفْنَا",
+    "translit": "tasharrafnā",
+    "en": "nice to meet you",
+    "pos": "phrase",
+    "topic": "greetings",
+    "level": "A0",
+    "fr": "enchanté(e)",
+    "tags": [
+      "legacy-flashcard"
+    ]
+  },
+  {
+    "id": "lex:fc-45",
+    "kind": "lexeme",
+    "ar": "عَائِلَة",
+    "translit": "ʿāʾilah",
+    "en": "family",
+    "pos": "noun",
+    "topic": "people",
+    "level": "A0",
+    "fr": "famille",
+    "notes": "Family and hospitality sit at the heart of Arab culture — guests are often welcomed like family.",
+    "tags": [
+      "legacy-flashcard"
+    ]
+  }
+]

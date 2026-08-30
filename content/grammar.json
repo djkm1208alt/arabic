@@ -1,0 +1,37 @@
+[
+  {
+    "id": "gr:gender-agreement",
+    "kind": "grammar",
+    "name": "Noun–adjective gender agreement",
+    "level": "A1",
+    "rule": "A feminine noun (usually ending ة) takes a feminine adjective, which adds ة.",
+    "examples": [
+      "txt:gram-gender-bint"
+    ],
+    "commonErrors": []
+  },
+  {
+    "id": "gr:present-tense",
+    "kind": "grammar",
+    "name": "Present-tense verb prefixes (he / she / they)",
+    "level": "A2",
+    "rule": "The present-tense verb prefix changes with the subject: يَـ (he), تَـ (she), يَـ…ونَ (they).",
+    "examples": [
+      "txt:gram-verb-he",
+      "txt:gram-verb-she",
+      "txt:gram-verb-they"
+    ],
+    "commonErrors": []
+  },
+  {
+    "id": "gr:sun-moon",
+    "kind": "grammar",
+    "name": "Sun & moon letters (definite-article assimilation)",
+    "level": "A1",
+    "rule": "ال is pronounced before moon letters; before the 14 sun letters ل is silent and the consonant doubles.",
+    "examples": [
+      "txt:gram-sunletter-shams"
+    ],
+    "commonErrors": []
+  }
+]

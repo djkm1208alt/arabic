@@ -1,0 +1,760 @@
+[
+  {
+    "id": "let:alif",
+    "kind": "letter",
+    "ar": "ا",
+    "name": "أَلِف",
+    "translit": "alif",
+    "forms": {
+      "isolated": "ا",
+      "initial": "ا",
+      "medial": "ـا",
+      "final": "ـا"
+    },
+    "connects": false,
+    "strokeOrder": [
+      {
+        "from": {
+          "x": 0.5,
+          "y": 0.25
+        },
+        "to": {
+          "x": 0.5,
+          "y": 0.75
+        }
+      }
+    ]
+  },
+  {
+    "id": "let:ba",
+    "kind": "letter",
+    "ar": "ب",
+    "name": "بَاء",
+    "translit": "bāʾ",
+    "forms": {
+      "isolated": "ب",
+      "initial": "بـ",
+      "medial": "ـبـ",
+      "final": "ـب"
+    },
+    "connects": true,
+    "strokeOrder": [
+      {
+        "from": {
+          "x": 0.75,
+          "y": 0.55
+        },
+        "to": {
+          "x": 0.25,
+          "y": 0.55
+        }
+      }
+    ]
+  },
+  {
+    "id": "let:ta1",
+    "kind": "letter",
+    "ar": "ت",
+    "name": "تَاء",
+    "translit": "tāʾ",
+    "forms": {
+      "isolated": "ت",
+      "initial": "تـ",
+      "medial": "ـتـ",
+      "final": "ـت"
+    },
+    "connects": true,
+    "strokeOrder": [
+      {
+        "from": {
+          "x": 0.75,
+          "y": 0.55
+        },
+        "to": {
+          "x": 0.25,
+          "y": 0.55
+        }
+      }
+    ]
+  },
+  {
+    "id": "let:tha",
+    "kind": "letter",
+    "ar": "ث",
+    "name": "ثَاء",
+    "translit": "thāʾ",
+    "forms": {
+      "isolated": "ث",
+      "initial": "ثـ",
+      "medial": "ـثـ",
+      "final": "ـث"
+    },
+    "connects": true,
+    "strokeOrder": [
+      {
+        "from": {
+          "x": 0.75,
+          "y": 0.55
+        },
+        "to": {
+          "x": 0.25,
+          "y": 0.55
+        }
+      }
+    ]
+  },
+  {
+    "id": "let:jim",
+    "kind": "letter",
+    "ar": "ج",
+    "name": "جِيم",
+    "translit": "jīm",
+    "forms": {
+      "isolated": "ج",
+      "initial": "جـ",
+      "medial": "ـجـ",
+      "final": "ـج"
+    },
+    "connects": true,
+    "strokeOrder": [
+      {
+        "from": {
+          "x": 0.65,
+          "y": 0.35
+        },
+        "to": {
+          "x": 0.4,
+          "y": 0.7
+        }
+      }
+    ]
+  },
+  {
+    "id": "let:ha1",
+    "kind": "letter",
+    "ar": "ح",
+    "name": "حَاء",
+    "translit": "ḥāʾ",
+    "forms": {
+      "isolated": "ح",
+      "initial": "حـ",
+      "medial": "ـحـ",
+      "final": "ـح"
+    },
+    "connects": true,
+    "strokeOrder": [
+      {
+        "from": {
+          "x": 0.65,
+          "y": 0.35
+        },
+        "to": {
+          "x": 0.4,
+          "y": 0.7
+        }
+      }
+    ]
+  },
+  {
+    "id": "let:kha",
+    "kind": "letter",
+    "ar": "خ",
+    "name": "خَاء",
+    "translit": "khāʾ",
+    "forms": {
+      "isolated": "خ",
+      "initial": "خـ",
+      "medial": "ـخـ",
+      "final": "ـخ"
+    },
+    "connects": true,
+    "strokeOrder": [
+      {
+        "from": {
+          "x": 0.65,
+          "y": 0.35
+        },
+        "to": {
+          "x": 0.4,
+          "y": 0.7
+        }
+      }
+    ]
+  },
+  {
+    "id": "let:dal",
+    "kind": "letter",
+    "ar": "د",
+    "name": "دَال",
+    "translit": "dāl",
+    "forms": {
+      "isolated": "د",
+      "initial": "د",
+      "medial": "ـد",
+      "final": "ـد"
+    },
+    "connects": false,
+    "strokeOrder": [
+      {
+        "from": {
+          "x": 0.6,
+          "y": 0.3
+        },
+        "to": {
+          "x": 0.35,
+          "y": 0.6
+        }
+      }
+    ]
+  },
+  {
+    "id": "let:dhal",
+    "kind": "letter",
+    "ar": "ذ",
+    "name": "ذَال",
+    "translit": "dhāl",
+    "forms": {
+      "isolated": "ذ",
+      "initial": "ذ",
+      "medial": "ـذ",
+      "final": "ـذ"
+    },
+    "connects": false,
+    "strokeOrder": [
+      {
+        "from": {
+          "x": 0.6,
+          "y": 0.3
+        },
+        "to": {
+          "x": 0.35,
+          "y": 0.6
+        }
+      }
+    ]
+  },
+  {
+    "id": "let:ra",
+    "kind": "letter",
+    "ar": "ر",
+    "name": "رَاء",
+    "translit": "rāʾ",
+    "forms": {
+      "isolated": "ر",
+      "initial": "ر",
+      "medial": "ـر",
+      "final": "ـر"
+    },
+    "connects": false,
+    "strokeOrder": [
+      {
+        "from": {
+          "x": 0.65,
+          "y": 0.35
+        },
+        "to": {
+          "x": 0.35,
+          "y": 0.65
+        }
+      }
+    ]
+  },
+  {
+    "id": "let:zay",
+    "kind": "letter",
+    "ar": "ز",
+    "name": "زَاي",
+    "translit": "zāy",
+    "forms": {
+      "isolated": "ز",
+      "initial": "ز",
+      "medial": "ـز",
+      "final": "ـز"
+    },
+    "connects": false,
+    "strokeOrder": [
+      {
+        "from": {
+          "x": 0.65,
+          "y": 0.35
+        },
+        "to": {
+          "x": 0.35,
+          "y": 0.65
+        }
+      }
+    ]
+  },
+  {
+    "id": "let:sin",
+    "kind": "letter",
+    "ar": "س",
+    "name": "سِين",
+    "translit": "sīn",
+    "forms": {
+      "isolated": "س",
+      "initial": "سـ",
+      "medial": "ـسـ",
+      "final": "ـس"
+    },
+    "connects": true,
+    "strokeOrder": [
+      {
+        "from": {
+          "x": 0.8,
+          "y": 0.55
+        },
+        "to": {
+          "x": 0.25,
+          "y": 0.55
+        }
+      }
+    ]
+  },
+  {
+    "id": "let:shin",
+    "kind": "letter",
+    "ar": "ش",
+    "name": "شِين",
+    "translit": "shīn",
+    "forms": {
+      "isolated": "ش",
+      "initial": "شـ",
+      "medial": "ـشـ",
+      "final": "ـش"
+    },
+    "connects": true,
+    "strokeOrder": [
+      {
+        "from": {
+          "x": 0.8,
+          "y": 0.55
+        },
+        "to": {
+          "x": 0.25,
+          "y": 0.55
+        }
+      }
+    ]
+  },
+  {
+    "id": "let:sad",
+    "kind": "letter",
+    "ar": "ص",
+    "name": "صَاد",
+    "translit": "ṣād",
+    "forms": {
+      "isolated": "ص",
+      "initial": "صـ",
+      "medial": "ـصـ",
+      "final": "ـص"
+    },
+    "connects": true,
+    "strokeOrder": [
+      {
+        "from": {
+          "x": 0.7,
+          "y": 0.4
+        },
+        "to": {
+          "x": 0.3,
+          "y": 0.55
+        }
+      }
+    ]
+  },
+  {
+    "id": "let:dad",
+    "kind": "letter",
+    "ar": "ض",
+    "name": "ضَاد",
+    "translit": "ḍād",
+    "forms": {
+      "isolated": "ض",
+      "initial": "ضـ",
+      "medial": "ـضـ",
+      "final": "ـض"
+    },
+    "connects": true,
+    "strokeOrder": [
+      {
+        "from": {
+          "x": 0.7,
+          "y": 0.4
+        },
+        "to": {
+          "x": 0.3,
+          "y": 0.55
+        }
+      }
+    ]
+  },
+  {
+    "id": "let:ta2",
+    "kind": "letter",
+    "ar": "ط",
+    "name": "طَاء",
+    "translit": "ṭāʾ",
+    "forms": {
+      "isolated": "ط",
+      "initial": "طـ",
+      "medial": "ـطـ",
+      "final": "ـط"
+    },
+    "connects": true,
+    "strokeOrder": [
+      {
+        "from": {
+          "x": 0.7,
+          "y": 0.6
+        },
+        "to": {
+          "x": 0.35,
+          "y": 0.6
+        }
+      },
+      {
+        "from": {
+          "x": 0.5,
+          "y": 0.6
+        },
+        "to": {
+          "x": 0.5,
+          "y": 0.25
+        }
+      }
+    ]
+  },
+  {
+    "id": "let:za2",
+    "kind": "letter",
+    "ar": "ظ",
+    "name": "ظَاء",
+    "translit": "ẓāʾ",
+    "forms": {
+      "isolated": "ظ",
+      "initial": "ظـ",
+      "medial": "ـظـ",
+      "final": "ـظ"
+    },
+    "connects": true,
+    "strokeOrder": [
+      {
+        "from": {
+          "x": 0.7,
+          "y": 0.6
+        },
+        "to": {
+          "x": 0.35,
+          "y": 0.6
+        }
+      },
+      {
+        "from": {
+          "x": 0.5,
+          "y": 0.6
+        },
+        "to": {
+          "x": 0.5,
+          "y": 0.25
+        }
+      }
+    ]
+  },
+  {
+    "id": "let:ayn",
+    "kind": "letter",
+    "ar": "ع",
+    "name": "عَيْن",
+    "translit": "ʿayn",
+    "forms": {
+      "isolated": "ع",
+      "initial": "عـ",
+      "medial": "ـعـ",
+      "final": "ـع"
+    },
+    "connects": true,
+    "strokeOrder": [
+      {
+        "from": {
+          "x": 0.65,
+          "y": 0.35
+        },
+        "to": {
+          "x": 0.35,
+          "y": 0.6
+        }
+      }
+    ]
+  },
+  {
+    "id": "let:ghayn",
+    "kind": "letter",
+    "ar": "غ",
+    "name": "غَيْن",
+    "translit": "ghayn",
+    "forms": {
+      "isolated": "غ",
+      "initial": "غـ",
+      "medial": "ـغـ",
+      "final": "ـغ"
+    },
+    "connects": true,
+    "strokeOrder": [
+      {
+        "from": {
+          "x": 0.65,
+          "y": 0.35
+        },
+        "to": {
+          "x": 0.35,
+          "y": 0.6
+        }
+      }
+    ]
+  },
+  {
+    "id": "let:fa",
+    "kind": "letter",
+    "ar": "ف",
+    "name": "فَاء",
+    "translit": "fāʾ",
+    "forms": {
+      "isolated": "ف",
+      "initial": "فـ",
+      "medial": "ـفـ",
+      "final": "ـف"
+    },
+    "connects": true,
+    "strokeOrder": [
+      {
+        "from": {
+          "x": 0.65,
+          "y": 0.35
+        },
+        "to": {
+          "x": 0.35,
+          "y": 0.65
+        }
+      }
+    ]
+  },
+  {
+    "id": "let:qaf",
+    "kind": "letter",
+    "ar": "ق",
+    "name": "قَاف",
+    "translit": "qāf",
+    "forms": {
+      "isolated": "ق",
+      "initial": "قـ",
+      "medial": "ـقـ",
+      "final": "ـق"
+    },
+    "connects": true,
+    "strokeOrder": [
+      {
+        "from": {
+          "x": 0.65,
+          "y": 0.35
+        },
+        "to": {
+          "x": 0.35,
+          "y": 0.7
+        }
+      }
+    ]
+  },
+  {
+    "id": "let:kaf",
+    "kind": "letter",
+    "ar": "ك",
+    "name": "كَاف",
+    "translit": "kāf",
+    "forms": {
+      "isolated": "ك",
+      "initial": "كـ",
+      "medial": "ـكـ",
+      "final": "ـك"
+    },
+    "connects": true,
+    "strokeOrder": [
+      {
+        "from": {
+          "x": 0.6,
+          "y": 0.3
+        },
+        "to": {
+          "x": 0.4,
+          "y": 0.65
+        }
+      },
+      {
+        "from": {
+          "x": 0.55,
+          "y": 0.45
+        },
+        "to": {
+          "x": 0.45,
+          "y": 0.4
+        }
+      }
+    ]
+  },
+  {
+    "id": "let:lam",
+    "kind": "letter",
+    "ar": "ل",
+    "name": "لَام",
+    "translit": "lām",
+    "forms": {
+      "isolated": "ل",
+      "initial": "لـ",
+      "medial": "ـلـ",
+      "final": "ـل"
+    },
+    "connects": true,
+    "strokeOrder": [
+      {
+        "from": {
+          "x": 0.5,
+          "y": 0.2
+        },
+        "to": {
+          "x": 0.4,
+          "y": 0.7
+        }
+      }
+    ]
+  },
+  {
+    "id": "let:mim",
+    "kind": "letter",
+    "ar": "م",
+    "name": "مِيم",
+    "translit": "mīm",
+    "forms": {
+      "isolated": "م",
+      "initial": "مـ",
+      "medial": "ـمـ",
+      "final": "ـم"
+    },
+    "connects": true,
+    "strokeOrder": [
+      {
+        "from": {
+          "x": 0.55,
+          "y": 0.35
+        },
+        "to": {
+          "x": 0.45,
+          "y": 0.7
+        }
+      }
+    ]
+  },
+  {
+    "id": "let:nun",
+    "kind": "letter",
+    "ar": "ن",
+    "name": "نُون",
+    "translit": "nūn",
+    "forms": {
+      "isolated": "ن",
+      "initial": "نـ",
+      "medial": "ـنـ",
+      "final": "ـن"
+    },
+    "connects": true,
+    "strokeOrder": [
+      {
+        "from": {
+          "x": 0.75,
+          "y": 0.55
+        },
+        "to": {
+          "x": 0.3,
+          "y": 0.55
+        }
+      }
+    ]
+  },
+  {
+    "id": "let:ha2",
+    "kind": "letter",
+    "ar": "ه",
+    "name": "هَاء",
+    "translit": "hāʾ",
+    "forms": {
+      "isolated": "ه",
+      "initial": "هـ",
+      "medial": "ـهـ",
+      "final": "ـه"
+    },
+    "connects": true,
+    "strokeOrder": [
+      {
+        "from": {
+          "x": 0.65,
+          "y": 0.35
+        },
+        "to": {
+          "x": 0.4,
+          "y": 0.55
+        }
+      }
+    ]
+  },
+  {
+    "id": "let:waw",
+    "kind": "letter",
+    "ar": "و",
+    "name": "وَاو",
+    "translit": "wāw",
+    "forms": {
+      "isolated": "و",
+      "initial": "و",
+      "medial": "ـو",
+      "final": "ـو"
+    },
+    "connects": false,
+    "strokeOrder": [
+      {
+        "from": {
+          "x": 0.6,
+          "y": 0.35
+        },
+        "to": {
+          "x": 0.45,
+          "y": 0.7
+        }
+      }
+    ]
+  },
+  {
+    "id": "let:ya",
+    "kind": "letter",
+    "ar": "ي",
+    "name": "يَاء",
+    "translit": "yāʾ",
+    "forms": {
+      "isolated": "ي",
+      "initial": "يـ",
+      "medial": "ـيـ",
+      "final": "ـي"
+    },
+    "connects": true,
+    "strokeOrder": [
+      {
+        "from": {
+          "x": 0.75,
+          "y": 0.5
+        },
+        "to": {
+          "x": 0.3,
+          "y": 0.65
+        }
+      }
+    ]
+  }
+]

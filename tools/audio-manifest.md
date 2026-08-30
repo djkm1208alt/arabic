@@ -7,14 +7,14 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 
 | | count |
 |---|---:|
-| Distinct targets | 398 |
+| Distinct targets | 359 |
 | — Tier 1 (foundation) | 98 |
-| — Tier 2 (vocabulary) | 222 |
+| — Tier 2 (vocabulary) | 183 |
 | — Tier 3 (stays TTS) | 78 |
 | Unique native recordings needed (Tier 1+2) | 275 |
 | — of those, present on disk | 0 |
 | — still missing | 275 |
-| Aliases (share another recording) | 45 |
+| Aliases (share another recording) | 6 |
 
 ## Tier 1 — Foundation
 
@@ -172,6 +172,13 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `words/exp-08.mp3` | أَيْنَ الْحَمَّام؟ | ayna l-ḥammām? | Where is the bathroom? | recording | tts |
 | `words/exp-09.mp3` | كَمِ السَّاعَة؟ | kami s-sāʿah? | What time is it? | recording | tts |
 | `words/exp-10.mp3` | بِكَمْ هَذَا؟ | bikam hādhā? | How much is this? | recording | tts |
+| `words/fc-14.mp3` | طَعَام | taʿām | food | recording | tts |
+| `words/fc-27.mp3` | أَهْلًا وَسَهْلًا | ahlan wa sahlan | welcome | recording | tts |
+| `words/fc-28.mp3` | كَيْفَ حَالُك؟ | kayfa hāluk | how are you? | recording | tts |
+| `words/fc-29.mp3` | اِسْمِي... | ismī... | my name is... | recording | tts |
+| `words/fc-3.mp3` | سَيَّارَة | sayyārah | car | recording | tts |
+| `words/fc-30.mp3` | تَشَرَّفْنَا | tasharrafnā | nice to meet you | recording | tts |
+| `words/fc-45.mp3` | عَائِلَة | ʿāʾilah | family | recording | tts |
 | `words/foo-01.mp3` | خُبْز | khubz | bread | recording | tts |
 | `words/foo-02.mp3` | أَرُزّ | aruzz | rice | recording | tts |
 | `words/foo-03.mp3` | لَحْم | laḥm | meat | recording | tts |
@@ -294,52 +301,6 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `words/ver-08.mp3` | رَأَى | raʾā | to see | recording | tts |
 | `words/ver-09.mp3` | فَهِمَ | fahima | to understand | recording | tts |
 | `words/ver-10.mp3` | عَمِلَ | ʿamila | to work / to do | recording | tts |
-| `words/sch-06.mp3` | كِتَاب | kitāb | book | alias | tts |
-| `words/sch-08.mp3` | دَفْتَر | daftar | notebook | alias | tts |
-| `words/obj-01.mp3` | هَاتِف | hātif | phone | alias | tts |
-| `words/obj-02.mp3` | حَاسُوب | hāsūb | computer | alias | tts |
-| `words/foo-09.mp3` | مَاء | māʾ | water | alias | tts |
-| `words/fc-14.mp3` | طَعَام | taʿām | food | recording | tts |
-| `words/foo-01.mp3` | خُبْز | khubz | bread | alias | tts |
-| `words/foo-10.mp3` | قَهْوَة | qahwah | coffee | alias | tts |
-| `words/foo-11.mp3` | شَاي | shāy | tea | alias | tts |
-| `words/tim-05.mp3` | صَبَاح | sabāh | morning | alias | tts |
-| `words/tim-06.mp3` | مَسَاء | masāʾ | evening | alias | tts |
-| `words/sch-01.mp3` | مَدْرَسَة | madrasah | school | alias | tts |
-| `words/tim-01.mp3` | الْيَوْم | al-yawm | today | alias | tts |
-| `words/gre-01.mp3` | مَرْحَبًا | marhaban | hello | alias | tts |
-| `words/gre-08.mp3` | مَعَ السَّلَامَة | maʿa as-salāmah | goodbye | alias | tts |
-| `words/exp-02.mp3` | شُكْرًا | shukran | thank you | alias | tts |
-| `words/exp-01.mp3` | مِنْ فَضْلِك | min faḍlik | please | alias | tts |
-| `words/exp-05.mp3` | نَعَم | naʿam | yes | alias | tts |
-| `words/exp-06.mp3` | لَا | lā | no | alias | tts |
-| `words/fc-27.mp3` | أَهْلًا وَسَهْلًا | ahlan wa sahlan | welcome | recording | tts |
-| `words/fc-28.mp3` | كَيْفَ حَالُك؟ | kayfa hāluk | how are you? | recording | tts |
-| `words/fc-29.mp3` | اِسْمِي... | ismī... | my name is... | recording | tts |
-| `words/fc-3.mp3` | سَيَّارَة | sayyārah | car | recording | tts |
-| `words/fc-30.mp3` | تَشَرَّفْنَا | tasharrafnā | nice to meet you | recording | tts |
-| `words/num-01.mp3` | وَاحِد | wāhid | one | alias | tts |
-| `words/num-02.mp3` | اِثْنَان | ithnān | two | alias | tts |
-| `words/num-03.mp3` | ثَلَاثَة | thalāthah | three | alias | tts |
-| `words/num-04.mp3` | أَرْبَعَة | arbaʿah | four | alias | tts |
-| `words/num-05.mp3` | خَمْسَة | khamsah | five | alias | tts |
-| `words/num-06.mp3` | سِتَّة | sittah | six | alias | tts |
-| `words/num-07.mp3` | سَبْعَة | sabʿah | seven | alias | tts |
-| `words/num-08.mp3` | ثَمَانِيَة | thamāniyah | eight | alias | tts |
-| `words/num-09.mp3` | تِسْعَة | tisʿah | nine | alias | tts |
-| `words/hom-01.mp3` | بَيْت | bayt | house | alias | tts |
-| `words/num-10.mp3` | عَشَرَة | ʿasharah | ten | alias | tts |
-| `words/peo-01.mp3` | أُمّ | umm | mother | alias | tts |
-| `words/peo-02.mp3` | أَب | ab | father | alias | tts |
-| `words/peo-03.mp3` | أَخ | akh | brother | alias | tts |
-| `words/peo-04.mp3` | أُخْت | ukht | sister | alias | tts |
-| `words/fc-45.mp3` | عَائِلَة | ʿāʾilah | family | recording | tts |
-| `words/peo-11.mp3` | صَدِيق | sadīq | friend | alias | tts |
-| `words/hom-06.mp3` | بَاب | bāb | door | alias | tts |
-| `words/hom-07.mp3` | نَافِذَة | nāfidhah | window | alias | tts |
-| `words/hom-09.mp3` | كُرْسِيّ | kursiyy | chair | alias | tts |
-| `words/hom-08.mp3` | طَاوِلَة | ṭāwilah | table | alias | tts |
-| `words/sch-07.mp3` | قَلَم | qalam | pen | alias | tts |
 | `words/peo-03-pl.mp3` | إِخْوَة | ikhwah | brother (plural) | recording | tts |
 | `words/peo-04-pl.mp3` | أَخَوَات | akhawāt | sister (plural) | recording | tts |
 | `words/peo-05-pl.mp3` | أَبْنَاء | abnāʾ | son (plural) | recording | tts |

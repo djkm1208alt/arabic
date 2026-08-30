@@ -1,0 +1,223 @@
+[
+  {
+    "id": "txt:sent-house-big",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m8",
+    "vowelled": "الْبَيْتُ كَبِيرٌ",
+    "reduced": "الْبيْت كبير",
+    "unvowelled": "البيت كبير",
+    "translit": "al-baytu kabīrun",
+    "en": "The house is big.",
+    "words": [
+      {
+        "surface": "الْبَيْتُ",
+        "translit": "al-baytu",
+        "gloss": "house",
+        "gender": "masculine"
+      },
+      {
+        "surface": "كَبِيرٌ",
+        "translit": "kabīrun",
+        "gloss": "big",
+        "gender": "masculine"
+      }
+    ],
+    "audio": "الْبَيْتُ كَبِيرٌ"
+  },
+  {
+    "id": "txt:sent-book-beautiful",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m8",
+    "vowelled": "الْكِتَابُ جَمِيلٌ",
+    "reduced": "الْكتاب جميل",
+    "unvowelled": "الكتاب جميل",
+    "translit": "al-kitābu jamīlun",
+    "en": "The book is beautiful.",
+    "words": [
+      {
+        "surface": "الْكِتَابُ",
+        "translit": "al-kitābu",
+        "gloss": "book",
+        "gender": "masculine"
+      },
+      {
+        "surface": "جَمِيلٌ",
+        "translit": "jamīlun",
+        "gloss": "beautiful",
+        "gender": "masculine"
+      }
+    ],
+    "audio": "الْكِتَابُ جَمِيلٌ"
+  },
+  {
+    "id": "txt:sent-girl-happy",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m8",
+    "vowelled": "الْبِنْتُ سَعِيدَةٌ",
+    "reduced": "الْبنْت سعيدة",
+    "unvowelled": "البنت سعيدة",
+    "translit": "al-bintu saʿīdatun",
+    "en": "The girl is happy.",
+    "words": [
+      {
+        "surface": "الْبِنْتُ",
+        "translit": "al-bintu",
+        "gloss": "girl",
+        "gender": "feminine"
+      },
+      {
+        "surface": "سَعِيدَةٌ",
+        "translit": "saʿīdatun",
+        "gloss": "happy (feminine)",
+        "gender": "feminine"
+      }
+    ],
+    "audio": "الْبِنْتُ سَعِيدَةٌ"
+  },
+  {
+    "id": "txt:gram-gender-bint",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "gender-agreement",
+    "vowelled": "الْبِنْتُ كَبِيرَةٌ",
+    "translit": "al-bintu kabīratun",
+    "en": "The girl is big.",
+    "words": [
+      {
+        "surface": "الْبِنْتُ",
+        "translit": "al-bintu",
+        "gloss": "girl",
+        "gender": "feminine"
+      },
+      {
+        "surface": "كَبِيرَةٌ",
+        "translit": "kabīratun",
+        "gloss": "big (feminine)",
+        "gender": "feminine"
+      }
+    ],
+    "audio": "الْبِنْتُ كَبِيرَةٌ"
+  },
+  {
+    "id": "txt:gram-verb-he",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "present-tense",
+    "vowelled": "هُوَ يَذْهَبُ إِلَى الْمَدْرَسَةِ",
+    "translit": "huwa yadhhabu ilā al-madrasati",
+    "en": "He goes to school.",
+    "words": [
+      {
+        "surface": "هُوَ",
+        "translit": "huwa",
+        "gloss": "he",
+        "gender": "masculine"
+      },
+      {
+        "surface": "يَذْهَبُ",
+        "translit": "yadhhabu",
+        "gloss": "to go",
+        "gender": "masculine"
+      },
+      {
+        "surface": "إِلَى الْمَدْرَسَةِ",
+        "translit": "ilā al-madrasati",
+        "gloss": "school",
+        "gender": null
+      }
+    ],
+    "audio": "هُوَ يَذْهَبُ إِلَى الْمَدْرَسَةِ"
+  },
+  {
+    "id": "txt:gram-verb-she",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "present-tense",
+    "vowelled": "هِيَ تَذْهَبُ إِلَى الْمَدْرَسَةِ",
+    "translit": "hiya tadhhabu ilā al-madrasati",
+    "en": "She goes to school.",
+    "words": [
+      {
+        "surface": "هِيَ",
+        "translit": "hiya",
+        "gloss": "she",
+        "gender": "feminine"
+      },
+      {
+        "surface": "تَذْهَبُ",
+        "translit": "tadhhabu",
+        "gloss": "to go",
+        "gender": "feminine"
+      },
+      {
+        "surface": "إِلَى الْمَدْرَسَةِ",
+        "translit": "ilā al-madrasati",
+        "gloss": "school",
+        "gender": null
+      }
+    ],
+    "audio": "هِيَ تَذْهَبُ إِلَى الْمَدْرَسَةِ"
+  },
+  {
+    "id": "txt:gram-verb-they",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "present-tense",
+    "vowelled": "هُمْ يَذْهَبُونَ إِلَى الْمَدْرَسَةِ",
+    "translit": "hum yadhhabūna ilā al-madrasati",
+    "en": "They go to school.",
+    "words": [
+      {
+        "surface": "هُمْ",
+        "translit": "hum",
+        "gloss": "they (masculine/mixed group)",
+        "gender": null
+      },
+      {
+        "surface": "يَذْهَبُونَ",
+        "translit": "yadhhabūna",
+        "gloss": "to go",
+        "gender": null
+      },
+      {
+        "surface": "إِلَى الْمَدْرَسَةِ",
+        "translit": "ilā al-madrasati",
+        "gloss": "school",
+        "gender": null
+      }
+    ],
+    "audio": "هُمْ يَذْهَبُونَ إِلَى الْمَدْرَسَةِ"
+  },
+  {
+    "id": "txt:gram-sunletter-shams",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "sun-moon",
+    "vowelled": "الشَّمْسُ كَبِيرَةٌ",
+    "translit": "ash-shamsu kabīratun",
+    "en": "The sun is big.",
+    "words": [
+      {
+        "surface": "الشَّمْسُ",
+        "translit": "ash-shamsu",
+        "gloss": "sun",
+        "gender": "feminine"
+      },
+      {
+        "surface": "كَبِيرَةٌ",
+        "translit": "kabīratun",
+        "gloss": "big (feminine)",
+        "gender": "feminine"
+      }
+    ],
+    "audio": "الشَّمْسُ كَبِيرَةٌ"
+  }
+]
