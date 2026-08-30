@@ -795,6 +795,49 @@
     }
     .placement-headline { font-size: 14px; text-align: center; margin: 4px 0 16px; }
 
+    /* ---------- Exercise types (M18) ---------- */
+    .exercise-host { margin-top: 4px; }
+    .exercise-prompt { font-size: 14px; color: var(--ink); margin: 0 0 14px; }
+    .exercise-hint { font-size: 12px; color: var(--ink-soft); margin: -8px 0 14px; }
+    .exercise-check { display: block; width: 100%; margin-top: 16px; }
+    .tile-bank { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+    .tile {
+        padding: 10px 14px; border: 1px solid var(--panel-border); border-radius: 10px;
+        background: var(--bg-2); color: var(--ink); font-size: 15px; font-family: var(--font-body); cursor: pointer;
+        transition: border-color 0.12s ease, transform 0.1s ease;
+    }
+    .tile.ar { font-family: var(--font-arabic); font-size: 21px; }
+    .tile:hover:not(:disabled) { border-color: var(--accent); }
+    .tile:disabled { cursor: default; opacity: 0.8; }
+    .match-grid { display: flex; gap: 12px; justify-content: center; }
+    .match-col { display: flex; flex-direction: column; gap: 8px; flex: 1; max-width: 190px; }
+    .match-tile {
+        padding: 12px 10px; border: 1px solid var(--panel-border); border-radius: 10px;
+        background: var(--panel); color: var(--ink); font-size: 14px; font-family: var(--font-body); cursor: pointer;
+        transition: all 0.12s ease;
+    }
+    .match-tile.ar { font-family: var(--font-arabic); font-size: 20px; }
+    .match-tile.sel { border-color: var(--accent); background: var(--accent-soft); }
+    .match-tile.done { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); cursor: default; opacity: 0.7; }
+    .match-tile.miss { border-color: var(--danger); background: var(--danger-soft); }
+    .cloze-sentence { font-family: var(--font-arabic); font-size: 24px; text-align: center; margin: 0 0 18px; line-height: 1.9; direction: rtl; }
+    .cloze-gap { display: inline-block; min-width: 60px; border-bottom: 2px dashed var(--ink-soft); margin: 0 6px; color: var(--ink-soft); }
+    .cloze-gap.right { border-color: var(--accent); color: var(--accent); }
+    .cloze-gap.wrong { border-color: var(--danger); color: var(--danger); }
+    .build-answer, .order-answer {
+        min-height: 48px; display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+        padding: 10px; border: 1px dashed var(--panel-border); border-radius: 10px; margin-bottom: 14px;
+    }
+    .build-answer { direction: rtl; }
+    .order-answer { flex-direction: column; align-items: stretch; }
+    .build-answer.right, .order-answer.right { border-color: var(--accent); background: var(--accent-soft); }
+    .build-answer.wrong, .order-answer.wrong { border-color: var(--danger); background: var(--danger-soft); }
+    .order-tile { text-align: right; }
+    .order-num {
+        display: inline-block; min-width: 20px; text-align: center; margin-inline-end: 8px;
+        background: var(--panel-border); color: var(--ink-soft); border-radius: 6px; font-size: 12px; font-family: var(--font-body);
+    }
+
     /* ---------- Alphabet ---------- */
     .alphabet-grid {
         display: grid;
@@ -2421,7 +2464,7 @@ function buildListenRevealItem(id) {
 function buildListenChooseMeaningQuestion(id, distractorIds) {
     const w = vocabWord(id);
     const options = shuffleArray([w.english, ...distractorIds.map(d => vocabWord(d).english)]);
-    return { audioText: w.arabic, arabic: w.arabic, translit: w.translit, english: w.english, options };
+    return { audioText: w.arabic, arabic: w.arabic, translit: w.translit, english: w.english, options, _objectId: "lex:" + id };
 }
 
 function buildListenChooseArabicQuestion(id, distractorIds) {
@@ -2430,7 +2473,7 @@ function buildListenChooseArabicQuestion(id, distractorIds) {
         { arabic: w.arabic, translit: w.translit },
         ...distractorIds.map(d => { const dw = vocabWord(d); return { arabic: dw.arabic, translit: dw.translit }; }),
     ]);
-    return { audioText: w.arabic, arabic: w.arabic, translit: w.translit, english: w.english, options };
+    return { audioText: w.arabic, arabic: w.arabic, translit: w.translit, english: w.english, options, _objectId: "lex:" + id };
 }
 
 function buildReadChooseMeaningQuestion(id, distractorIds) {
@@ -3634,6 +3677,275 @@ function generateLessonSteps(node) {
 }
 
 /* ============================================================
+   MILESTONE 18 — EXERCISE-TYPE REGISTRY
+   A map parallel to stepRenderers. Each entry:
+     render(item, host, onResult)  — build UI into `host`; call
+        onResult({ correct, objectResults?, latencyMs? }) once answered.
+     score?(item, response)         — optional pure scorer.
+     strands?: [skillId]            — which strands this kind can assess.
+   Items are authored as data referencing learning objects; the
+   generators below build them from an object's own fields — no new
+   Arabic, no authored question file.
+   `choice` is self-managed (it wraps renderMCQ, which owns the daily
+   goal); it emits its own interaction. The others let renderExerciseStep
+   own the goal + emit.
+   ============================================================ */
+const exerciseTypes = {};
+
+function exShuffle(a) { return shuffleArray(a); }
+
+/* base char + any trailing combining marks (harakāt, shaddah, maddah) */
+const AR_MARKS = "\u0610-\u061A\u064B-\u065F\u0670\u06D6-\u06ED";
+const GRAPHEME_RE = new RegExp("[^\s" + AR_MARKS + "][" + AR_MARKS + "]*", "g");
+function graphemeTiles(ar) {
+    return (String(ar || "").match(GRAPHEME_RE) || []);
+}
+
+exerciseTypes.choice = {
+    selfManaged: true,
+    strands: ["reading", "vocabulary", "grammar", "listening", "comprehension", "pronunciation"],
+    render(item, host, onResult) {
+        renderMCQ(host, item, (correct) => {
+            emitInteraction((item.objectIds || [])[0] || null, item.skill || null, "choice", correct, null);
+            onResult({ correct });
+        });
+    },
+};
+
+exerciseTypes.match = {
+    strands: ["vocabulary", "reading", "listening"],
+    render(item, host, onResult) {
+        const pairs = item.pairs.slice();
+        const left = exShuffle(pairs.map((p, i) => ({ text: p.a, i })));
+        const right = exShuffle(pairs.map((p, i) => ({ text: p.b, i })));
+        const state = { picked: null, solved: 0, erred: {} };
+        host.innerHTML = `<p class="exercise-prompt">${item.prompt || "Match each pair."}</p>`;
+        const grid = document.createElement("div");
+        grid.className = "match-grid";
+        const col = (rows, side) => {
+            const c = document.createElement("div");
+            c.className = "match-col";
+            rows.forEach(r => {
+                const b = document.createElement("button");
+                b.className = "match-tile";
+                b.textContent = r.text;
+                if (isArabicText(r.text)) { b.classList.add("ar"); b.lang = "ar"; }
+                b.dataset.i = r.i; b.dataset.side = side;
+                b.onclick = () => pick(b);
+                c.appendChild(b);
+            });
+            return c;
+        };
+        grid.appendChild(col(left, "l"));
+        grid.appendChild(col(right, "r"));
+        host.appendChild(grid);
+        function pick(b) {
+            if (b.classList.contains("done")) return;
+            if (!state.picked) { state.picked = b; b.classList.add("sel"); return; }
+            if (state.picked === b) { b.classList.remove("sel"); state.picked = null; return; }
+            if (state.picked.dataset.side === b.dataset.side) { state.picked.classList.remove("sel"); state.picked = b; b.classList.add("sel"); return; }
+            const a = state.picked; state.picked = null; a.classList.remove("sel");
+            if (a.dataset.i === b.dataset.i) {
+                a.classList.add("done"); b.classList.add("done");
+                state.solved++;
+                if (state.solved === pairs.length) {
+                    onResult({
+                        correct: Object.keys(state.erred).length === 0,
+                        objectResults: pairs.map((p, i) => ({ objectId: p.objectId || null, correct: !state.erred[i] })),
+                    });
+                }
+            } else {
+                state.erred[a.dataset.i] = true; state.erred[b.dataset.i] = true;
+                a.classList.add("miss"); b.classList.add("miss");
+                setTimeout(() => { a.classList.remove("miss"); b.classList.remove("miss"); }, 500);
+            }
+        }
+    },
+};
+
+exerciseTypes.cloze = {
+    strands: ["grammar", "vocabulary", "reading"],
+    render(item, host, onResult) {
+        host.innerHTML = `<p class="exercise-prompt">${item.prompt || "Choose the word that fills the gap."}</p>`;
+        const sentence = document.createElement("div");
+        sentence.className = "cloze-sentence"; sentence.lang = "ar";
+        sentence.innerHTML = `<span>${item.before || ""}</span><span class="cloze-gap" id="clozeGap">…</span><span>${item.after || ""}</span>`;
+        host.appendChild(sentence);
+        const bank = document.createElement("div");
+        bank.className = "tile-bank";
+        exShuffle(item.options.slice()).forEach(opt => {
+            const b = document.createElement("button");
+            b.className = "tile ar"; b.lang = "ar"; b.textContent = opt;
+            b.onclick = () => {
+                bank.querySelectorAll("button").forEach(x => x.disabled = true);
+                const correct = opt === item.answer;
+                document.getElementById("clozeGap").textContent = opt;
+                document.getElementById("clozeGap").classList.add(correct ? "right" : "wrong");
+                if (!correct) b.classList.add("wrong");
+                onResult({ correct, objectResults: [{ objectId: item.objectId || null, correct }] });
+            };
+            bank.appendChild(b);
+        });
+        host.appendChild(bank);
+    },
+};
+
+exerciseTypes.build = {
+    strands: ["writing", "reading"],
+    render(item, host, onResult) {
+        const target = item.target.slice();
+        host.innerHTML = `<p class="exercise-prompt">${item.prompt || "Build the word."}</p>`
+            + (item.hint ? `<p class="exercise-hint">${item.hint}</p>` : "");
+        const answer = document.createElement("div");
+        answer.className = "build-answer"; answer.lang = "ar";
+        const bank = document.createElement("div");
+        bank.className = "tile-bank";
+        const placed = [];
+        const refresh = () => {
+            answer.innerHTML = "";
+            placed.forEach((t, idx) => {
+                const b = document.createElement("button");
+                b.className = "tile ar"; b.lang = "ar"; b.textContent = t;
+                b.onclick = () => { bank.appendChild(mkBankTile(placed.splice(idx, 1)[0])); refresh(); };
+                answer.appendChild(b);
+            });
+        };
+        const mkBankTile = (t) => {
+            const b = document.createElement("button");
+            b.className = "tile ar"; b.lang = "ar"; b.textContent = t;
+            b.onclick = () => { b.remove(); placed.push(t); refresh(); };
+            return b;
+        };
+        exShuffle(target.slice()).forEach(t => bank.appendChild(mkBankTile(t)));
+        const check = document.createElement("button");
+        check.className = "pill show-btn exercise-check";
+        check.textContent = "Check";
+        check.onclick = () => {
+            const correct = placed.length === target.length && placed.every((t, i) => t === target[i]);
+            answer.classList.add(correct ? "right" : "wrong");
+            check.disabled = true;
+            answer.querySelectorAll("button").forEach(b => b.disabled = true);
+            bank.querySelectorAll("button").forEach(b => b.disabled = true);
+            onResult({ correct, objectResults: [{ objectId: item.objectId || null, correct }] });
+        };
+        host.appendChild(answer);
+        host.appendChild(bank);
+        host.appendChild(check);
+        refresh();
+    },
+};
+
+exerciseTypes.order = {
+    strands: ["grammar", "reading", "comprehension"],
+    render(item, host, onResult) {
+        const target = item.items.map(x => x.label);
+        host.innerHTML = `<p class="exercise-prompt">${item.prompt || "Put these in the right order."}</p>`;
+        const answer = document.createElement("div");
+        answer.className = "order-answer";
+        if (item.rtl !== false) answer.lang = "ar";
+        const bank = document.createElement("div");
+        bank.className = "tile-bank order-bank";
+        const placed = [];
+        const refresh = () => {
+            answer.innerHTML = "";
+            placed.forEach((t, idx) => {
+                const row = document.createElement("button");
+                row.className = "tile order-tile" + (isArabicText(t) ? " ar" : "");
+                if (isArabicText(t)) row.lang = "ar";
+                row.innerHTML = `<span class="order-num">${idx + 1}</span> ${t}`;
+                row.onclick = () => { bank.appendChild(mk(placed.splice(idx, 1)[0])); refresh(); };
+                answer.appendChild(row);
+            });
+        };
+        const mk = (t) => {
+            const b = document.createElement("button");
+            b.className = "tile order-tile" + (isArabicText(t) ? " ar" : "");
+            if (isArabicText(t)) b.lang = "ar";
+            b.textContent = t;
+            b.onclick = () => { b.remove(); placed.push(t); refresh(); };
+            return b;
+        };
+        exShuffle(target.slice()).forEach(t => bank.appendChild(mk(t)));
+        const check = document.createElement("button");
+        check.className = "pill show-btn exercise-check";
+        check.textContent = "Check";
+        check.onclick = () => {
+            const correct = placed.length === target.length && placed.every((t, i) => t === target[i]);
+            answer.classList.add(correct ? "right" : "wrong");
+            check.disabled = true;
+            [answer, bank].forEach(w => w.querySelectorAll("button").forEach(b => b.disabled = true));
+            onResult({ correct, objectResults: [{ objectId: item.objectId || null, correct }] });
+        };
+        host.appendChild(answer);
+        host.appendChild(bank);
+        host.appendChild(check);
+        refresh();
+    },
+};
+
+/* ---- item generators — build one exercise from an object's own fields ---- */
+function exGenMatch(skillId) {
+    // 4 lexemes from one well-populated topic
+    const topics = {};
+    LEXEMES.forEach(l => { (topics[l.topic] = topics[l.topic] || []).push(l); });
+    const big = Object.values(topics).filter(a => a.length >= 4);
+    if (!big.length) return null;
+    const set = exShuffle(exShuffle(big)[0]).slice(0, 4);
+    return {
+        kind: "match", skill: skillId || "vocabulary",
+        prompt: "Match each word to its meaning.",
+        objectIds: set.map(l => l.id),
+        pairs: set.map(l => ({ a: l.ar, b: l.en, objectId: l.id })),
+    };
+}
+
+function exGenCloze(textId) {
+    const t = textId ? OBJECT_BY_ID.get(textId) : exShuffle(TEXTS.slice())[0];
+    if (!t || !Array.isArray(t.words) || t.words.length < 2) return null;
+    const gapIdx = 1;   // the second word carries the verb / adjective / agreement
+    const surfaces = t.words.map(w => w.surface);
+    const answer = surfaces[gapIdx];
+    const uniq = arr => arr.filter((v, i, a) => a.indexOf(v) === i);
+    // prefer the word at the same position in sibling texts (same grammar point),
+    // then any other surface — so a gapped verb gets other verb forms as foils
+    const sibling = TEXTS.filter(x => x.id !== t.id && (x.words || [])[gapIdx]).map(x => x.words[gapIdx].surface);
+    const anySurface = TEXTS.flatMap(x => (x.words || []).map(w => w.surface));
+    const distractors = uniq(exShuffle(sibling).concat(exShuffle(anySurface)))
+        .filter(s => s && s !== answer).slice(0, 3);
+    return {
+        kind: "cloze", skill: "grammar", objectId: t.id, objectIds: [t.id],
+        prompt: `Complete: “${t.en}”`,
+        before: surfaces.slice(0, gapIdx).join(" ") + " ",
+        after: " " + surfaces.slice(gapIdx + 1).join(" "),
+        answer,
+        options: exShuffle(uniq([answer].concat(distractors))),
+    };
+}
+
+function exGenBuild(lexId) {
+    const l = lexId ? OBJECT_BY_ID.get(lexId) : exShuffle(LEXEMES.filter(x => graphemeTiles(x.ar).length >= 3 && graphemeTiles(x.ar).length <= 6))[0];
+    if (!l) return null;
+    const tiles = graphemeTiles(l.ar);
+    if (tiles.length < 3) return null;
+    return {
+        kind: "build", skill: "writing", objectId: l.id, objectIds: [l.id],
+        prompt: `Spell “${l.en}” (${l.translit})`,
+        hint: "Tap the letters in order, right to left.",
+        target: tiles,
+    };
+}
+
+function exGenOrder(textId) {
+    const t = textId ? OBJECT_BY_ID.get(textId) : exShuffle(TEXTS.filter(x => (x.words || []).length >= 3))[0];
+    if (!t || (t.words || []).length < 3) return null;
+    return {
+        kind: "order", skill: "grammar", objectId: t.id, objectIds: [t.id],
+        prompt: `Put the words in order: “${t.en}”`,
+        items: t.words.map((w, i) => ({ label: w.surface, pos: i })),
+    };
+}
+
+/* ============================================================
    STATE + PERSISTENCE
    Single localStorage key for all progress data — the home,
    progress, and learn views all read/write this same object,
@@ -3709,11 +4021,45 @@ function loadProgress() {
         placementResult: saved.placementResult || null,
         /* M16 — objects introduced by completed lessons; backfilled on load. */
         objectsIntroduced: backfillObjectsIntroduced(saved),
+        /* M18 — capped ring buffer of graded interactions; the raw material for
+           M19's review scheduler. Additive; no backfill (no historical
+           per-object data to reconstruct). */
+        interactionLog: Array.isArray(saved.interactionLog) ? saved.interactionLog.slice(-INTERACTION_LOG_CAP) : [],
     };
 }
 
 function saveProgress() {
     safeStorageSet(STORAGE_KEY, JSON.stringify(progress));
+}
+
+/* ============================================================
+   MILESTONE 18 — INTERACTION EVENTS
+   Every graded answer (the new exerciseTypes and the legacy
+   quiz / practice-choice / audio-exercise steps) appends one
+   InteractionEvent per referenced object. Placement (M17) does
+   NOT emit — a diagnostic is not practice.
+   ============================================================ */
+const INTERACTION_LOG_CAP = 400;
+
+function emitInteraction(objectId, skill, itemType, correct, latencyMs) {
+    if (!Array.isArray(progress.interactionLog)) progress.interactionLog = [];
+    progress.interactionLog.push({
+        objectId: objectId || null,
+        skill: skill || (objectId ? skillOfObject(objectId) : null),
+        itemType: itemType || "choice",
+        correct: !!correct,
+        latencyMs: (typeof latencyMs === "number" && isFinite(latencyMs)) ? Math.round(latencyMs) : null,
+        ts: new Date().toISOString(),
+    });
+    if (progress.interactionLog.length > INTERACTION_LOG_CAP) {
+        progress.interactionLog = progress.interactionLog.slice(-INTERACTION_LOG_CAP);
+    }
+    saveProgress();
+}
+
+function skillOfObject(objectId) {
+    const o = OBJECT_BY_ID.get(objectId);
+    return (o && Array.isArray(o.skills) && o.skills[0]) || null;
 }
 
 function bumpStreak() {
@@ -5755,8 +6101,40 @@ const stepRenderers = {
     "reading-practice": renderReadingPracticeStep,
     "audio-exercise": renderAudioExerciseStep,
     "listen-repeat": renderListenRepeatStep,
+    exercise: renderExerciseStep,
     complete: renderCompleteStep,
 };
+
+/* M18 — a lesson step { type:"exercise", exercise:{ kind, ... } } routed
+   through the exerciseTypes registry. `choice` is self-managed (it owns the
+   daily goal + its own emit); the others let this function own both. */
+function renderExerciseStep(step, body) {
+    const ex = step.exercise || {};
+    const def = exerciseTypes[ex.kind];
+    body.innerHTML = `<h3 class="lesson-step-title">${step.title || "Practice"}</h3>`;
+    if (!def) {
+        body.innerHTML += `<p class="lesson-step-text">This exercise isn't available.</p>`;
+        lessonCanProceed = true;
+        return;
+    }
+    const host = document.createElement("div");
+    host.className = "exercise-host";
+    body.appendChild(host);
+    lessonCanProceed = false;
+    updateLessonNav();
+    const t0 = (typeof performance !== "undefined" && performance.now) ? performance.now() : Date.now();
+    def.render(ex, host, (res) => {
+        res = res || {};
+        if (!def.selfManaged) {
+            const latency = ((typeof performance !== "undefined" && performance.now) ? performance.now() : Date.now()) - t0;
+            bumpDailyGoal();
+            const results = res.objectResults || [{ objectId: (ex.objectIds || [])[0] || null, correct: !!res.correct }];
+            results.forEach(o => emitInteraction(o.objectId, ex.skill || null, ex.kind, o.correct, latency));
+        }
+        lessonCanProceed = true;
+        updateLessonNav();
+    });
+}
 
 function renderLessonStep() {
     const step = activeLesson.steps[lessonStepIndex];
@@ -5974,7 +6352,8 @@ function renderPracticeChoiceStep(step, body) {
     body.appendChild(mcqWrap);
     lessonCanProceed = false;
     updateLessonNav();
-    renderMCQ(mcqWrap, step, () => {
+    renderMCQ(mcqWrap, step, (correct) => {
+        emitInteraction(step._objectId || null, step._skill || null, "choice", correct, null);
         lessonCanProceed = true;
         updateLessonNav();
     });
@@ -5994,6 +6373,7 @@ function renderQuizStep(step, body) {
         body.appendChild(mcqWrap);
         const q = step.questions[qIndex];
         renderMCQ(mcqWrap, q, (correct) => {
+            emitInteraction(q._objectId || step._objectId || null, q._skill || step._skill || null, "choice", correct, null);
             if (correct) correctCount++;
             qIndex++;
             if (qIndex < step.questions.length) {
@@ -6448,14 +6828,14 @@ function renderAudioExerciseStep(step, body) {
                 audioText: q.audioText,
                 prompt: "What does this word mean?",
                 options: q.options.map(opt => ({ label: opt, correct: opt === q.english })),
-            }, advance);
+            }, (correct) => { emitInteraction(q._objectId || null, "listening", "listen-choose", correct, null); advance(correct); });
         } else if (step.mode === "listen-choose-arabic") {
             renderMCQ(wrap, {
                 audioText: q.audioText,
                 prompt: "Which word did you hear?",
                 arabicOptions: true,
                 options: q.options.map(opt => ({ label: opt.arabic, correct: opt.arabic === q.arabic })),
-            }, advance);
+            }, (correct) => { emitInteraction(q._objectId || null, "listening", "listen-choose", correct, null); advance(correct); });
         }
     }
 

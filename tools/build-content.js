@@ -208,6 +208,19 @@ function load() {
             errors.push(`placement: strand "${strand}" has objects at only ${levelsWithObjects.size} level(s) — the diagnostic needs ≥ 2`);
     }
 
+    /* M18: each exercise kind needs raw material to generate at least one item. */
+    const topicSizes = {};
+    for (const l of data.lexemes) topicSizes[l.topic] = (topicSizes[l.topic] || 0) + 1;
+    if (!Object.values(topicSizes).some(n => n >= 4))
+        errors.push(`exercise "match": no lexeme topic has ≥ 4 words`);
+    const textsWithWords = data.texts.filter(t => Array.isArray(t.words) && t.words.length >= 3);
+    if (!textsWithWords.length)
+        errors.push(`exercise "cloze"/"order": no text has words[] of length ≥ 3`);
+    const AR_MARK = /[ؐ-ًؚ-ٰٟۖ-ۭ]/;
+    const graphemeCount = s => (String(s).match(new RegExp("[^\\s" + AR_MARK.source.slice(1, -1) + "]", "g")) || []).length;
+    if (!data.lexemes.some(l => { const g = graphemeCount(l.ar); return g >= 3 && g <= 6; }))
+        errors.push(`exercise "build": no lexeme spells to 3–6 base letters`);
+
     /* prereq graph must be level-monotonic: a prereq is never a higher level than its dependent */
     const objLevel = {};
     for (const key of Object.keys(FILES)) for (const o of data[key]) objLevel[o.id] = o.level;
