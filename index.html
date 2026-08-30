@@ -3650,9 +3650,27 @@ function generateLessonSteps(node) {
                 .filter(d => d.en !== target.en)
                 .slice(0, 3);
             const options = shuffleArray([target].concat(distractors)).map(o => ({ label: o.en, correct: o.id === target.id }));
-            return { arabicPrompt: target.ar, prompt: "What does this word mean?", options };
+            return { arabicPrompt: target.ar, prompt: "What does this word mean?", options, _objectId: target.id, _skill: "vocabulary" };
         });
         steps.push({ type: "quiz", title: "Quick check", questions });
+    }
+
+    /* 6b. M18 — a varied graded item wherever the objectives support one. */
+    if (lex.length >= 3) {
+        const m = exGenMatch(lex.slice(0, 4));
+        if (m) steps.push({ type: "exercise", title: "Match the pairs", exercise: m });
+    }
+    const spellable = lex.find(l => l.ar && !/\s/.test(l.ar) && graphemeTiles(l.ar).length >= 3 && graphemeTiles(l.ar).length <= 6);
+    if (spellable) steps.push({ type: "exercise", title: "Spell it out", exercise: exGenBuild(spellable.id) });
+    const gramText = objs.find(o => o.kind === "text" && Array.isArray(o.words) && o.words.length >= 2
+        && GRAMMAR_POINTS.some(g => (g.examples || []).indexOf(o.id) !== -1));
+    if (gramText) {
+        const cz = exGenCloze(gramText.id);
+        if (cz) steps.push({ type: "exercise", title: "Fill the gap", exercise: cz });
+        if ((gramText.words || []).length >= 3) {
+            const od = exGenOrder(gramText.id);
+            if (od) steps.push({ type: "exercise", title: "Put the words in order", exercise: od });
+        }
     }
 
     /* 7. Application / recap */
@@ -3884,15 +3902,20 @@ exerciseTypes.order = {
 };
 
 /* ---- item generators — build one exercise from an object's own fields ---- */
-function exGenMatch(skillId) {
-    // 4 lexemes from one well-populated topic
-    const topics = {};
-    LEXEMES.forEach(l => { (topics[l.topic] = topics[l.topic] || []).push(l); });
-    const big = Object.values(topics).filter(a => a.length >= 4);
-    if (!big.length) return null;
-    const set = exShuffle(exShuffle(big)[0]).slice(0, 4);
+function exGenMatch(skillOrLexemes) {
+    let set;
+    if (Array.isArray(skillOrLexemes)) {
+        set = exShuffle(skillOrLexemes.filter(l => l && l.ar && l.en)).slice(0, 4);
+    } else {
+        const topics = {};
+        LEXEMES.forEach(l => { (topics[l.topic] = topics[l.topic] || []).push(l); });
+        const big = Object.values(topics).filter(a => a.length >= 4);
+        if (!big.length) return null;
+        set = exShuffle(exShuffle(big)[0]).slice(0, 4);
+    }
+    if (set.length < 3) return null;
     return {
-        kind: "match", skill: skillId || "vocabulary",
+        kind: "match", skill: "vocabulary",
         prompt: "Match each word to its meaning.",
         objectIds: set.map(l => l.id),
         pairs: set.map(l => ({ a: l.ar, b: l.en, objectId: l.id })),
@@ -3923,10 +3946,10 @@ function exGenCloze(textId) {
 }
 
 function exGenBuild(lexId) {
-    const l = lexId ? OBJECT_BY_ID.get(lexId) : exShuffle(LEXEMES.filter(x => graphemeTiles(x.ar).length >= 3 && graphemeTiles(x.ar).length <= 6))[0];
-    if (!l) return null;
+    const single = l => l && l.ar && !/\s/.test(l.ar) && graphemeTiles(l.ar).length >= 3 && graphemeTiles(l.ar).length <= 6;
+    const l = lexId ? OBJECT_BY_ID.get(lexId) : exShuffle(LEXEMES.filter(single))[0];
+    if (!single(l)) return null;
     const tiles = graphemeTiles(l.ar);
-    if (tiles.length < 3) return null;
     return {
         kind: "build", skill: "writing", objectId: l.id, objectIds: [l.id],
         prompt: `Spell “${l.en}” (${l.translit})`,
