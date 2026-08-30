@@ -380,6 +380,23 @@ function lint(data, legacyMap) {
         if (!referenced.has(o.id)) warnings.push(`orphaned: ${o.id} (${key}) is not referenced by any prereq, syllable, grammar example, curriculum objective, or legacy map`);
     }
 
+    /* M20.5 — texts.json's hand-authored reduced/unvowelled drift check.
+       Mirrors index.html's deriveReducedForm()/deriveUnvowelledForm()
+       exactly (same two regexes) so this can never disagree with what the
+       app itself would compute. A mismatch is a flag for human review, not
+       an auto-fix — some "reduced" choices are stylistic (see the M20.5
+       scope doc); an empty reduced/unvowelled field is unauthored, not
+       wrong, and isn't flagged. */
+    const deriveReducedForm = (v) => String(v || "").replace(/[ً-ّٰۖ-ۭ]/g, "");
+    const deriveUnvowelledForm = (v) => String(v || "").replace(/[ً-ْٰۖ-ۭ]/g, "");
+    for (const t of data.texts) {
+        if (!t.vowelled) continue;
+        if (t.reduced && deriveReducedForm(t.vowelled) !== t.reduced)
+            warnings.push(`text ${t.id}: reduced "${t.reduced}" does not match the mechanical derivation "${deriveReducedForm(t.vowelled)}" from vowelled`);
+        if (t.unvowelled && deriveUnvowelledForm(t.vowelled) !== t.unvowelled)
+            warnings.push(`text ${t.id}: unvowelled "${t.unvowelled}" does not match the mechanical derivation "${deriveUnvowelledForm(t.vowelled)}" from vowelled`);
+    }
+
     return warnings;
 }
 

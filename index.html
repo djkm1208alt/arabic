@@ -6325,6 +6325,46 @@ function stripArabicDiacritics(str) {
     return str.replace(/[ً-ْٰۖ-ۭ]/g, "").replace(/[أإآ]/g, "ا");
 }
 
+/* M20.5 — mechanical Arabic-text helpers, generalizing stripArabicDiacritics()
+   the same way: pure Unicode transforms, no linguistic judgment, so they
+   carry none of the "never invent Arabic" risk a curated table like
+   content/roots.json does. See m20.5_arabic_language_tools_scope.md and
+   content/m20.5-language-tools-review.md. */
+
+/* Normalizes free-typed Arabic for *comparison* only — never mutates what a
+   learner sees on screen (their own input stays exactly as typed). Folds the
+   two confusable-letter pairs beginners most commonly mix up: alef variants
+   (via stripArabicDiacritics, which already does this) and tāʾ marbūṭa/hāʾ
+   (ة/ه — pronounced identically in pause, a very common typing slip). Not
+   wired into any grading path yet — no free-text exercise type exists in the
+   app today (M18); ships as a ready-to-use function for whichever milestone
+   builds one. */
+function normalizeArabicInput(str) {
+    return stripArabicDiacritics(String(str == null ? "" : str))
+        .replace(/ة/g, "ه")
+        .trim()
+        .replace(/\s+/g, " ");
+}
+
+/* Strips every combining mark except sukūn (ARABIC SUKUN, U+0652). Verified
+   against every currently-populated content/texts.json "reduced" field —
+   the hand-authored convention there keeps exactly the sukūn marks the
+   vowelled source has and drops every other ḥarakah/tanwīn/shaddah. Feeds
+   tools/build-content.js --lint's drift check; never auto-corrects the
+   hand-authored field (some reductions are stylistic judgment calls a
+   human made, not purely mechanical — see the scope doc). */
+function deriveReducedForm(vowelled) {
+    return String(vowelled == null ? "" : vowelled).replace(/[ً-ّٰۖ-ۭ]/g, "");
+}
+
+/* Strips every combining mark including sukūn — but, unlike
+   stripArabicDiacritics(), does NOT fold alef-hamza variants (أ/إ/آ), since
+   those are consonant letters, not vowel marks, and a real "unvowelled"
+   Arabic reading text keeps them exactly as written. */
+function deriveUnvowelledForm(vowelled) {
+    return String(vowelled == null ? "" : vowelled).replace(/[ً-ْٰۖ-ۭ]/g, "");
+}
+
 function findExampleWord(letter) {
     const target = stripArabicDiacritics(letter.isolated);
     return flashcards.find(w => stripArabicDiacritics(w.arabic).charAt(0) === target);

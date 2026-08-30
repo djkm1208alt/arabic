@@ -1,0 +1,79 @@
+[
+  {
+    "root": "ك-ت-ب",
+    "gloss": "write",
+    "lexemes": ["lex:sch-06", "lex:ver-04", "lex:pla-10"],
+    "note": "كِتَاب (book) / كَتَبَ (he wrote) / مَكْتَبَة (library) — the same root printed three ways.",
+    "source": "Standard MSA root morphology (Hans Wehr root ك ت ب); cross-checked against Wiktionary."
+  },
+  {
+    "root": "ط-ع-م",
+    "gloss": "taste, food",
+    "lexemes": ["lex:pla-06", "lex:fc-14"],
+    "note": "مَطْعَم (restaurant) / طَعَام (food) — a place-noun (مفعل pattern) built on the same root as the food it serves.",
+    "source": "Standard MSA root morphology (Hans Wehr root ط ع م)."
+  },
+  {
+    "root": "ص-ب-ح",
+    "gloss": "morning, dawn, shine",
+    "lexemes": ["lex:obj-06", "lex:tim-05"],
+    "note": "مِصْبَاح (lamp) / صَبَاح (morning) — the lamp is literally \"the thing that shines/dawns\".",
+    "source": "Standard MSA root morphology (Hans Wehr root ص ب ح)."
+  },
+  {
+    "root": "د-ر-س",
+    "gloss": "study",
+    "lexemes": ["lex:sch-01", "lex:sch-09"],
+    "note": "مَدْرَسَة (school) / دَرْس (lesson) — a place-noun (مفعل pattern) built on the same root as what happens there.",
+    "source": "Standard MSA root morphology (Hans Wehr root د ر س)."
+  },
+  {
+    "root": "ج-د-د",
+    "gloss": "new, renew",
+    "lexemes": ["lex:adj-06", "lex:peo-07", "lex:peo-08"],
+    "note": "جَدِيد (new) / جَدّ (grandfather) / جَدَّة (grandmother) — a genuinely non-obvious pairing (\"grandparent\" and \"new\" don't look related in translation) that's a real, well-documented root family in Arabic, not a coincidence of spelling.",
+    "source": "Standard MSA root morphology (Hans Wehr root ج د د); cross-checked against Wiktionary."
+  },
+  {
+    "root": "ر-أ-ي",
+    "gloss": "see",
+    "lexemes": ["lex:ver-08", "lex:obj-07"],
+    "note": "رَأَى (he saw) / مِرْآة (mirror) — an instrument-noun (مفعلة pattern), \"the thing you see with\".",
+    "source": "Standard MSA root morphology (Hans Wehr root ر أ ي)."
+  },
+  {
+    "root": "و-ح-د",
+    "gloss": "one, alone",
+    "lexemes": ["lex:num-01", "lex:tim-11"],
+    "note": "وَاحِد (one) / الْأَحَد (Sunday, literally \"the first [day]\") — five of the seven Arabic weekday names are built directly on the numbers 1-5.",
+    "source": "Standard MSA root morphology; verified against Wiktionary and multiple weekday-etymology references (see content/m20.5-language-tools-review.md)."
+  },
+  {
+    "root": "ث-ن-ي",
+    "gloss": "two, fold",
+    "lexemes": ["lex:num-02", "lex:tim-12"],
+    "note": "اِثْنَان (two) / الِاثْنَيْن (Monday) — same root, and visibly the same word with the definite article and dual ending.",
+    "source": "Standard MSA root morphology; verified against Wiktionary and weekday-etymology references."
+  },
+  {
+    "root": "ث-ل-ث",
+    "gloss": "three",
+    "lexemes": ["lex:num-03", "lex:tim-13"],
+    "note": "ثَلَاثَة (three) / الثُّلَاثَاء (Tuesday).",
+    "source": "Standard MSA root morphology; verified against Wiktionary and weekday-etymology references."
+  },
+  {
+    "root": "ر-ب-ع",
+    "gloss": "four",
+    "lexemes": ["lex:num-04", "lex:tim-14"],
+    "note": "أَرْبَعَة (four) / الْأَرْبِعَاء (Wednesday).",
+    "source": "Standard MSA root morphology; verified against Wiktionary and weekday-etymology references."
+  },
+  {
+    "root": "خ-م-س",
+    "gloss": "five",
+    "lexemes": ["lex:num-05", "lex:tim-15"],
+    "note": "خَمْسَة (five) / الْخَمِيس (Thursday).",
+    "source": "Standard MSA root morphology; verified against Wiktionary and weekday-etymology references."
+  }
+]
