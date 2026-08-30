@@ -461,23 +461,25 @@ Each is a `status: "planned"` unit carrying a title, level, skills, and a blurb 
 | `c2-u4` | Near-Native Comprehension | comprehension, listening | c1-u2, c1-u4 |
 | `c2-u5` | Idiomatic & Stylistic Mastery | speaking, vocabulary | c1-u5 |
 
-## 5. What `deriveLevel` will do with this (preview)
+## 5. What `deriveLevel` does with this (as implemented)
 
-The M15 `LESSON_LEVEL_FLOOR` map (11 hand-maintained rows) is replaced by **real coverage from `progress.objectsIntroduced`** — the union of `objectives` across every completed lesson.
+The M15 `LESSON_LEVEL_FLOOR` map (11 hand-maintained rows) is gone. `deriveLevel` now has two signals:
 
-- **Mastery coverage** (`progress.mastered`) is unchanged and always wins — it can be `firm`.
-- **Introduced coverage** is the new bridge: a strand reaches a level *provisionally* when enough of its objects at that level have been introduced by a completed lesson. **Capped at A1** — completing lessons can never assert A2+ (that needs graded evidence in M18/M19). This keeps the honest contract: *introduced ≠ learned*.
-- `self-report` (speaking) → always `null`. `partial` (writing, pronunciation) → provisional at most. No evidence → `{ level: null, reason: "insufficient evidence" }`.
+1. **Mastery coverage** (`progress.mastered`) — unchanged; a level is reached when ≥ 75 % of the strand's objects *at that level* are mastered. Can be `firm` (reliable strand, ≥ 12 mastered items).
+2. **Introduced coverage** (new) — a level is reached *provisionally* when ≥ 75 % of the strand's objects at that level have been met in a completed lesson **that itself teaches that strand** (so an alphabet overview listing letters as objectives feeds `reading`/`pronunciation`, not `writing`). **Capped at A1** — completing lessons never asserts A2+.
 
-Worked examples (fresh profile, then completing the lesson shown):
+`self-report` (speaking) → always `null`. `partial` (writing, pronunciation) → provisional at most. No evidence → `{ level: null, reason: "insufficient evidence" }`. Mastery always wins over introduced.
 
-| completed | introduces | strand effect |
-|---|---|---|
-| Meet the Arabic Alphabet | 28 `let:*` | reading / writing / pronunciation → **A0 · provisional** |
-| Harakāt & Reading Marks | 11 `mrk:*` | reading / pronunciation → stays **A0 · provisional** (marks are A0) |
-| Reading Real Sentences | 3 `txt:sent-*` | reading / comprehension → **A1 · provisional** |
-| Grammar for Reading | 3 `gr:*` + 5 `txt:gram-*` | grammar → **A1 · provisional** (A2 objects are introduced but the bridge is capped at A1) |
-| Colours (generated) | 10 `lex:col-*` | vocabulary → still **keep going** (introduced ≠ mastered; vocabulary level needs mastery) |
+Verified against a live run completing the whole A0 track, then A1:
+
+| after completing | reading | writing | pronunciation | grammar | vocabulary | listening / comprehension |
+|---|---|---|---|---|---|---|
+| the A0 units (alphabet, ḥarakāt, syllables, first words) | **A0 · prov.** | **A0 · prov.** | **A0 · prov.** | — | — (needs mastery) | — |
+| + the A1 units (sentences, grammar, unvowelled, everyday words) | **A1 · prov.** | A0 · prov. | A0 · prov. | **A1 · prov.** | — (needs mastery) | — |
+
+Notes on the two "—" columns:
+- **`vocabulary`** never derives from lessons by design — it needs real word mastery (`progress.mastered`). Completing *Colours* introduces the 10 colour lexemes but vocabulary stays "keep going" until they're mastered in Flashcards/Quiz.
+- **`listening` / `comprehension`** stay "keep going" through M16: there are no A0 objects tagged `listening`, and the A1 text objects aren't introduced by a `listening`-tagged lesson (the foundations lessons use vocabulary objects). The `comprehension` A0 descriptor is literally *"not yet assessed."* Real signal for these two arrives with the assessment framework (M18) and the A1 content build (M20). This is an honest gap, not a bug.
 
 ## 6. Decisions & refinements to confirm
 

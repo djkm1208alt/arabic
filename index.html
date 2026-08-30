@@ -702,6 +702,40 @@
     .lesson-actions .pill { padding: 8px 14px; font-size: 13px; }
     .lesson-complete.done { background: var(--accent-soft); color: var(--accent); }
 
+    /* ---------- Learn / curriculum — M16 additions ---------- */
+    .learn-placement {
+        background: var(--accent-soft);
+        border: 1px solid var(--accent);
+        border-radius: var(--radius-md);
+        padding: 14px 16px;
+        margin-bottom: 22px;
+    }
+    .learn-placement p { margin: 0; font-size: 13.5px; color: var(--ink); line-height: 1.5; }
+    .learn-placement .placement-cta {
+        margin-top: 10px;
+        background: transparent;
+        border: 1px solid var(--accent);
+        color: var(--accent);
+    }
+    .level-heading {
+        font-family: var(--font-ui);
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.6px;
+        color: var(--ink-soft);
+        margin: 24px 0 12px;
+    }
+    .unit-meta { font-size: 11.5px; color: var(--ink-soft); font-weight: 600; }
+    .unit-block.is-planned { opacity: 0.62; }
+    .lesson-item.is-planned { opacity: 0.68; border-style: dashed; }
+    .lesson-note { display: block; margin-top: 6px; font-size: 11.5px; color: var(--ink-soft); font-style: italic; }
+    .lesson-level-tag {
+        font-size: 10.5px; font-weight: 700; letter-spacing: 0.3px;
+        background: var(--panel-border); color: var(--ink-soft);
+        padding: 2px 7px; border-radius: 999px; margin-left: 6px;
+    }
+
     /* ---------- Alphabet ---------- */
     .alphabet-grid {
         display: grid;
@@ -1976,6 +2010,27 @@ const DESCRIPTORS = CONTENT.descriptors || [];
 const LEVEL_ORDER = LEVELS.map(l => l.id);
 const ALL_OBJECTS = [].concat(LEXEMES, LETTERS, MARKS, SYLLABLE_OBJECTS, GRAMMAR_POINTS, TEXTS);
 
+/* M16 — the curriculum spine (levels → units → lessons), compiled from
+   content/curriculum.json. Lesson nodes carry `objectives` (object ids) and a
+   `source`; see generateLessonSteps() and startCurriculumLesson() below. */
+const CURRICULUM = CONTENT.curriculum || { levels: [], units: [], lessons: [] };
+const OBJECT_BY_ID = new Map(ALL_OBJECTS.map(o => [o.id, o]));
+const CURRICULUM_LESSON_BY_ID = new Map((CURRICULUM.lessons || []).map(l => [l.id, l]));
+/* catalog lesson id (e.g. "harakat-intro") -> its curriculum node, via source "steps:<id>" */
+const CURRICULUM_NODE_BY_CATALOG = new Map();
+(CURRICULUM.lessons || []).forEach(l => {
+    if (typeof l.source === "string" && l.source.indexOf("steps:") === 0) CURRICULUM_NODE_BY_CATALOG.set(l.source.slice(6), l);
+});
+
+/* The learning objects a completed lesson is responsible for. Accepts either a
+   curriculum node id ("l3", "a1-colours") or a catalog lesson id
+   ("harakat-intro"). Objectives live only on the curriculum node — single
+   source of truth, no duplication onto the `lessons` catalog. */
+function lessonObjectives(completedId) {
+    const node = CURRICULUM_LESSON_BY_ID.get(completedId) || CURRICULUM_NODE_BY_CATALOG.get(completedId);
+    return node && Array.isArray(node.objectives) ? node.objectives : [];
+}
+
 const LEXEME_BY_ID = new Map(LEXEMES.map(l => [l.id, l]));
 const NUM_BY_LEXEME = {};
 Object.entries(CONTENT.legacyFlashcardId || {}).forEach(([n, lid]) => { NUM_BY_LEXEME[lid] = Number(n); });
@@ -2099,35 +2154,9 @@ const categories = [{ id: "all", label: "All words" }].concat(
 const catLabel = Object.fromEntries(categories.map(c => [c.id, c.label]));
 
 
-/* ============================================================
-   DATA — CURRICULUM (levels / units / lessons)
-   Extensible structure: add more levels/units/lessons later
-   without changing any rendering code.
-   ============================================================ */
-const curriculum = {
-    levels: [
-        { id: "A0", title: "Absolute Beginner",   description: "Arabic script, sounds, and your first words.",                status: "active" },
-        { id: "A1", title: "Beginner",             description: "Everyday phrases, basic grammar, and simple conversations.",  status: "upcoming" },
-        { id: "A2", title: "Elementary",           description: "Expanded vocabulary and short connected sentences.",          status: "upcoming" },
-        { id: "B1", title: "Intermediate",         description: "Discuss familiar topics with more grammatical range.",        status: "upcoming" },
-        { id: "B2", title: "Upper Intermediate",   description: "Follow more complex texts and conversations.",                status: "upcoming" },
-        { id: "C1", title: "Advanced",             description: "Near-fluent comprehension and expression.",                  status: "upcoming" },
-    ],
-    units: [
-        {
-            id: "a0-u1",
-            level: "A0",
-            title: "Arabic Foundations",
-            lessons: [
-                { id: "l1", title: "Meet the Arabic Alphabet",   description: "Get an overview of all 28 Arabic letters.",                                          status: "available", target: "alphabet" },
-                { id: "l2", title: "Arabic Letter Shapes",       description: "See how letters change shape depending on their position in a word.",               status: "preview",   target: "alphabet" },
-                { id: "l3", title: "Harakāt & Reading Marks",    description: "Learn every Arabic reading mark — short vowels, sukūn, shaddah, tanwīn, and long vowels — across the full alphabet.", status: "available", target: "lesson:harakat-intro" },
-                { id: "l4", title: "Reading Simple Syllables",   description: "Combine letters and harakat into your first syllables.",                             status: "available", target: "lesson:syllables-1" },
-                { id: "l5", title: "First Arabic Words",         description: "Start building vocabulary with flashcards.",                                        status: "available", target: "vocabulary" },
-            ]
-        }
-    ]
-};
+/* The curriculum tree (levels / units / lessons) is compiled from
+   content/curriculum.json into CONTENT.curriculum and adapted as `CURRICULUM`
+   near the top of this script (see the M16 block). renderLearn() reads it. */
 
 
 
@@ -3429,6 +3458,113 @@ const PRACTICE_LESSONS = [
 ];
 
 /* ============================================================
+   MILESTONE 16 — LESSON GENERATOR (v1)
+   Turns a curriculum lesson node's `objectives` into a runnable
+   step array following the 7-stage arc: Concept → Visual →
+   Explanation → Pronunciation → Practice → Quiz → Application.
+   Uses only existing step types, and only material (examples,
+   notes, audio) that already lives on the referenced objects —
+   it never invents Arabic. A stage with no real material is
+   skipped, not padded. v1 covers vocabulary (lexeme) objectives;
+   letter/mark/grammar generation stays with the hand-written
+   lessons until a later milestone.
+   ============================================================ */
+function generateLessonSteps(node) {
+    const objs = (node.objectives || []).map(id => OBJECT_BY_ID.get(id)).filter(Boolean);
+    const lex = objs.filter(o => o.kind === "lexeme");
+    const steps = [];
+    const n = lex.length || objs.length;
+
+    /* 1. Concept */
+    steps.push({
+        type: "explain",
+        title: node.title,
+        body: [
+            node.blurb || `In this lesson you'll meet ${n} new item${n === 1 ? "" : "s"}.`,
+            "Read each one, listen with the 🔊 button, then check yourself.",
+        ],
+        previewSymbols: lex.slice(0, 6).map(l => l.ar),
+    });
+
+    /* 2. Visual — one card per word, with audio and any example sentence */
+    const toCard = l => ({
+        symbolWord: l.ar,
+        name: l.en,
+        translit: l.translit,
+        sound: l.pos || "",
+        examples: (l.example && l.example.ar && l.example.en)
+            ? [{ arabic: l.example.ar, translit: l.example.translit || l.translit, english: l.example.en }]
+            : [],
+    });
+    for (let i = 0; i < lex.length; i += 8) {
+        const group = lex.slice(i, i + 8);
+        const total = Math.ceil(lex.length / 8);
+        steps.push({
+            type: "example-set",
+            title: total > 1 ? `The words (${i / 8 + 1} of ${total})` : "The words",
+            intro: "Tap 🔊 to hear each word. Read it aloud before you move on.",
+            items: group.map(toCard),
+        });
+    }
+
+    /* 3. Explanation — only when an objective carries a real note */
+    const noted = lex.filter(l => l.notes);
+    if (noted.length) {
+        steps.push({
+            type: "explain",
+            title: "Good to know",
+            body: noted.map(l => `${l.ar} (${l.translit}) — ${l.notes}`),
+        });
+    }
+
+    /* 4 + 5. Pronunciation + Practice — read aloud, then reveal the meaning */
+    if (lex.length) {
+        steps.push({
+            type: "reading-practice",
+            title: "Read and say each one aloud",
+            intro: "Read the Arabic and say it out loud, then tap “Show meaning” to check yourself.",
+            items: lex.map(l => ({ arabic: l.ar, translit: l.translit, english: l.en })),
+        });
+    }
+
+    /* 6. Quiz — up to 5 meaning questions; distractors from the same lesson,
+          then the same topic. Skipped if there aren't enough words for real
+          multiple choice. */
+    if (lex.length >= 3) {
+        const uniqByEn = arr => arr.filter((v, i, a) => a.findIndex(x => x.en === v.en) === i);
+        const questions = shuffleArray(lex).slice(0, Math.min(5, lex.length)).map(target => {
+            const sameTopic = LEXEMES.filter(x => x.kind === "lexeme" && x.topic === target.topic && x.id !== target.id);
+            const distractors = uniqByEn(shuffleArray(lex.filter(l => l.id !== target.id).concat(sameTopic)))
+                .filter(d => d.en !== target.en)
+                .slice(0, 3);
+            const options = shuffleArray([target].concat(distractors)).map(o => ({ label: o.en, correct: o.id === target.id }));
+            return { arabicPrompt: target.ar, prompt: "What does this word mean?", options };
+        });
+        steps.push({ type: "quiz", title: "Quick check", questions });
+    }
+
+    /* 7. Application / recap */
+    steps.push({
+        type: "explain",
+        title: "You've met these words",
+        body: [
+            lex.length
+                ? `${lex.map(l => l.ar).join("، ")}`
+                : "Nice work.",
+            "Find them in your Word Bank and Flashcards to keep them fresh.",
+        ],
+    });
+    steps.push({
+        type: "complete",
+        title: "Lesson complete",
+        message: `You worked through “${node.title}”.`,
+        finishLabel: "Finish",
+    });
+
+    return steps;
+}
+
+/* ============================================================
    STATE + PERSISTENCE
    Single localStorage key for all progress data — the home,
    progress, and learn views all read/write this same object,
@@ -3467,6 +3603,20 @@ function migrateMastered(mastered) {
     return out;
 }
 
+/* M16: the learning objects a learner has been *introduced to* by a completed
+   lesson (weaker than `mastered`). Backfilled from the lessons already
+   completed, so a pre-M16 profile gains the right coverage on first load.
+   Idempotent — running it again over the same lists yields the same set. */
+function backfillObjectsIntroduced(saved) {
+    const set = new Set(Array.isArray(saved.objectsIntroduced) ? saved.objectsIntroduced : []);
+    const done = [].concat(
+        Array.isArray(saved.lessonsCompleted) ? saved.lessonsCompleted : [],
+        Array.isArray(saved.practiceLessonsCompleted) ? saved.practiceLessonsCompleted : []
+    );
+    for (const id of done) for (const oid of lessonObjectives(id)) set.add(oid);
+    return [...set];
+}
+
 function loadProgress() {
     let saved = null;
     try {
@@ -3488,6 +3638,8 @@ function loadProgress() {
            pre-M15 field above is preserved. */
         skillLevels: (saved.skillLevels && typeof saved.skillLevels === "object") ? saved.skillLevels : {},
         placementResult: saved.placementResult || null,
+        /* M16 — objects introduced by completed lessons; backfilled on load. */
+        objectsIntroduced: backfillObjectsIntroduced(saved),
     };
 }
 
@@ -3517,67 +3669,72 @@ function bumpDailyGoal() {
    MILESTONE 15 — PER-STRAND PROFICIENCY (deriveLevel)
    Honest by design: returns { level: null, reason } whenever there
    is not enough evidence, and never a number for writing/speaking.
-   Today the only mastery signal is progress.mastered (lexeme ids);
-   a light lessonsCompleted bridge gives a provisional floor for the
-   other strands until M16 wires lesson objectives + per-object
-   coverage and M18/M19 add real graded signal.
+   Two signals: `progress.mastered` (graded — can be "firm") and,
+   since M16, `progress.objectsIntroduced` (met in a completed
+   lesson — provisional only, capped at A1). M18/M19 add real
+   graded signal for the other strands.
    ============================================================ */
-const MASTERY_THRESHOLD = 0.75;  // fraction of a strand's ≤L objects mastered
+const MASTERY_THRESHOLD = 0.75;  // fraction of a strand's objects at a level that must be covered
 const EVIDENCE_MIN = 12;         // mastered items needed to call a level "firm"
-
-/* completed lesson id -> the provisional strand floor it implies. A bridge,
-   replaced by lesson `objectives` in M16. */
-const LESSON_LEVEL_FLOOR = {
-    "harakat-intro":             { reading: "A0", pronunciation: "A0" },
-    "syllables-1":               { reading: "A0", pronunciation: "A0" },
-    "syllables-intro":           { reading: "A0", pronunciation: "A0" },
-    "reading-foundations":       { reading: "A0" },
-    "listening-foundations":     { listening: "A0" },
-    "pronunciation-foundations": { pronunciation: "A0" },
-    "alphabet-writing-1":        { writing: "A0" },
-    "stroke-order-writing":      { writing: "A0" },
-    "sentence-reading":          { reading: "A1", comprehension: "A1" },
-    "unvowelled-reading":        { reading: "A2" },
-    "grammar-intro":             { grammar: "A1", reading: "A1" },
-};
+const INTRODUCED_LEVEL_CAP = "A1";  // completing lessons never asserts higher than this
 
 function levelIndex(id) { return LEVEL_ORDER.indexOf(id); }
 function higherLevel(a, b) { return levelIndex(a) >= levelIndex(b) ? a : b; }
+
+/* Highest level whose own objects in this strand are ≥ THRESHOLD covered by
+   `coveredSet`, climbing from A0 and stopping at the first authored level that
+   isn't covered. `capLevel` clamps the result (used for the weaker
+   "introduced" signal). */
+function coverageLevel(strandObjects, coveredSet, capLevel) {
+    const cap = capLevel ? levelIndex(capLevel) : LEVEL_ORDER.length - 1;
+    let found = null;
+    for (let i = 0; i <= cap; i++) {
+        const atLevel = strandObjects.filter(o => levelIndex(o.level) === i);
+        if (!atLevel.length) continue;  // no content authored at this level yet
+        const covered = atLevel.filter(o => coveredSet.has(o.id)).length;
+        if (covered / atLevel.length >= MASTERY_THRESHOLD) found = LEVEL_ORDER[i];
+        else break;
+    }
+    return found;
+}
+
+/* Objects a completed lesson introduced *for a specific strand* — counted only
+   when the lesson itself claims that strand (so an alphabet overview that lists
+   letters as objectives feeds `reading`, not `writing`). */
+function introducedForStrand(skillId) {
+    const set = new Set();
+    for (const cid of [].concat(progress.lessonsCompleted, progress.practiceLessonsCompleted)) {
+        const node = CURRICULUM_LESSON_BY_ID.get(cid) || CURRICULUM_NODE_BY_CATALOG.get(cid);
+        if (!node || (node.skills || []).indexOf(skillId) === -1) continue;
+        for (const oid of node.objectives || []) {
+            const o = OBJECT_BY_ID.get(oid);
+            if (o && (o.skills || []).indexOf(skillId) !== -1) set.add(oid);
+        }
+    }
+    return set;
+}
 
 function deriveLevel(skillId) {
     const skill = SKILLS.find(s => s.id === skillId);
     if (!skill) return { level: null, reason: "unknown skill" };
     if (skill.assess === "self-report") return { level: null, reason: "self-tracked" };
 
-    // 1. object-coverage signal — climb the levels in order; a level is
-    //    "cleared" when ≥75% of this strand's objects AT that level are
-    //    mastered. Stop at the first level that has content and isn't cleared.
-    //    Each level is judged on its own objects (not "L and below"), so
-    //    mastering many A0 items can never by itself imply a higher level.
-    const masteredSet = new Set(progress.mastered);
     const strandObjects = ALL_OBJECTS.filter(o => (o.skills || []).indexOf(skillId) !== -1);
-    const masteredCount = strandObjects.filter(o => masteredSet.has(o.id)).length;
-    let coverageLevel = null;
-    for (let i = 0; i < LEVEL_ORDER.length; i++) {
-        const atLevel = strandObjects.filter(o => levelIndex(o.level) === i);
-        if (!atLevel.length) continue;  // no content authored at this level yet
-        const m = atLevel.filter(o => masteredSet.has(o.id)).length;
-        if (m / atLevel.length >= MASTERY_THRESHOLD) coverageLevel = LEVEL_ORDER[i];
-        else break;
-    }
 
-    // 2. lesson-completion bridge — a provisional floor
-    let bridgeLevel = null;
-    for (const lid of progress.lessonsCompleted.concat(progress.practiceLessonsCompleted)) {
-        const floor = LESSON_LEVEL_FLOOR[lid];
-        if (floor && floor[skillId]) bridgeLevel = bridgeLevel ? higherLevel(bridgeLevel, floor[skillId]) : floor[skillId];
-    }
+    // 1. graded signal — mastered-item coverage; can be "firm"
+    const masteredSet = new Set(progress.mastered);
+    const masteredCount = strandObjects.filter(o => masteredSet.has(o.id)).length;
+    const masteredLevel = coverageLevel(strandObjects, masteredSet, null);
+
+    // 2. introduced signal — objects met in a completed lesson that teaches this
+    //    strand; provisional only, capped at A1.
+    const introducedLevel = coverageLevel(strandObjects, introducedForStrand(skillId), INTRODUCED_LEVEL_CAP);
 
     // Only "reliable" strands (a real graded signal) are ever called "firm".
-    if (coverageLevel && skill.assess === "reliable" && masteredCount >= EVIDENCE_MIN)
-        return { level: coverageLevel, confidence: "firm", reason: "from mastered items" };
-    if (coverageLevel) return { level: coverageLevel, confidence: "provisional", reason: "few graded items so far" };
-    if (bridgeLevel) return { level: bridgeLevel, confidence: "provisional", reason: "from completed lessons" };
+    if (masteredLevel && skill.assess === "reliable" && masteredCount >= EVIDENCE_MIN)
+        return { level: masteredLevel, confidence: "firm", reason: "from mastered items" };
+    if (masteredLevel) return { level: masteredLevel, confidence: "provisional", reason: "few graded items so far" };
+    if (introducedLevel) return { level: introducedLevel, confidence: "provisional", reason: "from completed lessons" };
     return { level: null, reason: "insufficient evidence" };
 }
 
@@ -4658,7 +4815,7 @@ function todaysGoalCount() {
 }
 
 function totalLessonCount() {
-    return curriculum.units.reduce((n, u) => n + u.lessons.length, 0);
+    return CURRICULUM.lessons.filter(l => l.status !== "planned").length;
 }
 
 function renderHome() {
@@ -4676,61 +4833,159 @@ function renderHome() {
 }
 
 /* ============================================================
-   LEARN / CURRICULUM
+   LEARN / CURRICULUM  (M16 — driven by CONTENT.curriculum)
    ============================================================ */
+/* Has this curriculum lesson node been completed? Checks the node id in
+   lessonsCompleted, and — for steps:<id> nodes — the catalog id in
+   practiceLessonsCompleted. */
+function curriculumLessonDone(node) {
+    if (progress.lessonsCompleted.indexOf(node.id) !== -1) return true;
+    if (typeof node.source === "string" && node.source.indexOf("steps:") === 0) {
+        if (progress.practiceLessonsCompleted.indexOf(node.source.slice(6)) !== -1) return true;
+    }
+    return false;
+}
+
+function unitDone(unit) {
+    const ls = CURRICULUM.lessons.filter(l => l.unitId === unit.id && l.status !== "planned");
+    return ls.length > 0 && ls.every(curriculumLessonDone);
+}
+
+/* The Learn "start where you fit" line. Uses the honest headline level, names
+   only the strands it actually had evidence for, and never locks anything. */
+function placementSuggestion() {
+    const headline = deriveHeadlineLevel();
+    if (headline) {
+        const known = ["reading", "vocabulary", "grammar"].filter(s => deriveLevel(s).level);
+        const names = known.map(s => ((SKILLS.find(x => x.id === s) || {}).name || s).toLowerCase());
+        const basis = names.length >= 3 ? "reading, vocabulary and grammar"
+            : names.length === 2 ? `${names[0]} and ${names[1]}` : names[0];
+        const verb = names.length === 1 ? "is" : "are";
+        const anyDone = progress.lessonsCompleted.length + progress.practiceLessonsCompleted.length > 0;
+        const target = CURRICULUM.units.find(u => u.level === headline && u.status === "available" && !unitDone(u))
+                    || CURRICULUM.units.find(u => u.level === headline && u.status === "available")
+                    || CURRICULUM.units.find(u => u.status === "available");
+        return {
+            text: `Your ${basis} ${verb} around <strong>${levelName(headline)}</strong>. A good place to ${anyDone ? "pick up" : "start"} is <strong>${target ? target.title : "the next unit"}</strong>.`,
+            cta: null,
+        };
+    }
+    return {
+        text: "New to Arabic? Start at <strong>The Arabic Alphabet</strong>. Already know some? A placement check is coming soon — for now, jump to whichever level fits.",
+        cta: null,
+    };
+}
+
 function renderLearn() {
     const levelWrap = document.getElementById("levelGrid");
+    const unitWrap = document.getElementById("unitList");
     levelWrap.innerHTML = "";
-    curriculum.levels.forEach(lvl => {
+    unitWrap.innerHTML = "";
+
+    // placement banner
+    const sug = placementSuggestion();
+    const banner = document.createElement("div");
+    banner.className = "learn-placement";
+    banner.innerHTML = `<p>${sug.text}</p>` +
+        (sug.cta ? `<button class="pill placement-cta" onclick="${sug.cta.onclick}">${sug.cta.label}</button>` : "");
+    levelWrap.appendChild(banner);
+
+    // level ladder cards
+    const grid = document.createElement("div");
+    grid.className = "level-grid";
+    CURRICULUM.levels.forEach(lvl => {
         const card = document.createElement("div");
-        card.className = "level-card" + (lvl.status === "active" ? " active" : "");
+        card.className = "level-card" + (lvl.status === "available" ? " active" : "");
         card.innerHTML = `
             <div class="level-code">${lvl.id}</div>
-            <div class="level-title">${lvl.title}</div>
-            <p class="level-desc">${lvl.description}</p>
-            <span class="badge badge-${lvl.status}">${lvl.status === "active" ? "Available now" : "Coming soon"}</span>
+            <div class="level-title">${levelName(lvl.id)}</div>
+            <p class="level-desc">${(LEVELS.find(x => x.id === lvl.id) || {}).blurb || ""}</p>
+            <span class="badge ${lvl.status === "available" ? "badge-available" : "badge-upcoming"}">${lvl.status === "available" ? "Available" : "In development"}</span>
         `;
-        levelWrap.appendChild(card);
+        grid.appendChild(card);
     });
+    levelWrap.appendChild(grid);
 
-    const statusLabel = { available: "Available", preview: "Preview available", upcoming: "Coming soon" };
-    const unitWrap = document.getElementById("unitList");
-    unitWrap.innerHTML = "";
-    curriculum.units.forEach(unit => {
-        const unitEl = document.createElement("div");
-        unitEl.className = "unit-block";
-        const lessonsHtml = unit.lessons.map(lesson => {
-            const complete = progress.lessonsCompleted.indexOf(lesson.id) !== -1;
-            let actionHtml = "";
-            if (lesson.status === "available" || lesson.status === "preview") {
-                const isLessonRun = lesson.target && lesson.target.indexOf("lesson:") === 0;
-                const startOnclick = isLessonRun
-                    ? `startLesson('${lesson.target.slice(7)}','learn')`
-                    : `setView('${lesson.target}')`;
-                actionHtml = `
-                    <button class="pill next-btn lesson-go" onclick="${startOnclick}">${lesson.status === "preview" ? "Preview" : "Start"} →</button>
-                    <button class="pill know-btn lesson-complete ${complete ? "done" : ""}" onclick="toggleLessonComplete('${lesson.id}')">${complete ? "✓ Completed" : "Mark complete"}</button>`;
-            }
-            return `
-                <div class="lesson-item">
-                    <div class="lesson-main">
-                        <span class="badge badge-${lesson.status}">${statusLabel[lesson.status]}</span>
-                        <h4>${lesson.title}</h4>
-                        <p>${lesson.description}</p>
-                    </div>
-                    <div class="lesson-actions">${actionHtml}</div>
-                </div>`;
-        }).join("");
-        unitEl.innerHTML = `<h3>${unit.title} <span class="unit-level">${unit.level}</span></h3><div class="lesson-list">${lessonsHtml}</div>`;
-        unitWrap.appendChild(unitEl);
+    const statusLabel = { available: "Available", preview: "Preview", planned: "In development" };
+
+    // units grouped by level, in LEVEL_ORDER
+    LEVEL_ORDER.forEach(levelId => {
+        const units = CURRICULUM.units.filter(u => u.level === levelId).sort((a, b) => (a.order || 0) - (b.order || 0));
+        if (!units.length) return;
+        const heading = document.createElement("div");
+        heading.className = "level-heading";
+        heading.textContent = levelName(levelId);
+        unitWrap.appendChild(heading);
+
+        units.forEach(unit => {
+            const unitEl = document.createElement("div");
+            unitEl.className = "unit-block" + (unit.status === "planned" ? " is-planned" : "");
+            const lessonNodes = CURRICULUM.lessons.filter(l => l.unitId === unit.id).sort((a, b) => (a.order || 0) - (b.order || 0));
+            const liveNodes = lessonNodes.filter(l => l.status !== "planned");
+            const doneCount = liveNodes.filter(curriculumLessonDone).length;
+            const introduced = new Set(progress.objectsIntroduced || []);
+            const introCount = lessonNodes.reduce((set, l) => {
+                (l.objectives || []).forEach(o => { if (introduced.has(o)) set.add(o); });
+                return set;
+            }, new Set()).size;
+
+            const metaBits = [];
+            if (liveNodes.length) metaBits.push(`${doneCount} / ${liveNodes.length} lesson${liveNodes.length === 1 ? "" : "s"}`);
+            if (introCount) metaBits.push(`${introCount} objective${introCount === 1 ? "" : "s"} introduced`);
+            const prereqUnmet = (unit.prereqs || []).filter(pid => {
+                const pu = CURRICULUM.units.find(x => x.id === pid);
+                return pu && !unitDone(pu);
+            }).map(pid => (CURRICULUM.units.find(x => x.id === pid) || {}).title).filter(Boolean);
+
+            const lessonsHtml = lessonNodes.map(node => {
+                const done = curriculumLessonDone(node);
+                const runnable = node.status === "available" || node.status === "preview";
+                const levelTag = node.level !== unit.level ? `<span class="lesson-level-tag">${node.level}</span>` : "";
+                let note = "";
+                if (node.status === "planned") note = `<span class="lesson-note">In development</span>`;
+                let actionHtml = "";
+                if (runnable) {
+                    const label = node.status === "preview" ? "Preview" : (done ? "Review" : "Start");
+                    actionHtml = `
+                        <button class="pill next-btn lesson-go" onclick="startCurriculumLesson('${node.id}','learn')">${label} →</button>
+                        <button class="pill know-btn lesson-complete ${done ? "done" : ""}" onclick="toggleLessonComplete('${node.id}')">${done ? "✓ Completed" : "Mark complete"}</button>`;
+                }
+                return `
+                    <div class="lesson-item${node.status === "planned" ? " is-planned" : ""}">
+                        <div class="lesson-main">
+                            <span class="badge badge-${node.status === "planned" ? "upcoming" : (node.status === "preview" ? "preview" : "available")}">${statusLabel[node.status]}</span>
+                            <h4>${node.title}${levelTag}</h4>
+                            <p>${node.blurb || ""}</p>
+                            ${note}
+                        </div>
+                        <div class="lesson-actions">${actionHtml}</div>
+                    </div>`;
+            }).join("");
+
+            unitEl.innerHTML = `
+                <h3>${unit.title}<span class="unit-level">${unit.level}</span></h3>
+                <p class="lesson-main"><span class="unit-meta">${metaBits.join(" · ") || "In development"}</span></p>
+                ${prereqUnmet.length ? `<p class="lesson-note">builds on: ${prereqUnmet.join(", ")}</p>` : ""}
+                ${lessonNodes.length ? `<div class="lesson-list">${lessonsHtml}</div>` : ""}`;
+            unitWrap.appendChild(unitEl);
+        });
     });
 }
 
 function toggleLessonComplete(lessonId) {
     const idx = progress.lessonsCompleted.indexOf(lessonId);
-    if (idx === -1) progress.lessonsCompleted.push(lessonId);
-    else progress.lessonsCompleted.splice(idx, 1);
+    if (idx === -1) {
+        progress.lessonsCompleted.push(lessonId);
+        const introduced = new Set(progress.objectsIntroduced || []);
+        lessonObjectives(lessonId).forEach(oid => introduced.add(oid));
+        progress.objectsIntroduced = [...introduced];
+    } else {
+        progress.lessonsCompleted.splice(idx, 1);
+        // leave objectsIntroduced as-is — "introduced" is monotonic; unchecking a
+        // box doesn't un-teach the material.
+    }
     saveProgress();
+    refreshSkillLevels();
     renderLearn();
 }
 
@@ -4905,6 +5160,31 @@ function startLesson(lessonId, returnView) {
     renderLessonStep();
 }
 
+/* M16 — run a curriculum lesson node. Resolves its `source`:
+   view:*   -> open that view;  steps:<id> -> the hand-written catalog lesson;
+   generate -> build the steps from the node's `objectives`. */
+function startCurriculumLesson(nodeId, returnView) {
+    const node = CURRICULUM_LESSON_BY_ID.get(nodeId);
+    if (!node) { startLesson(nodeId, returnView); return; }
+    const src = node.source || "";
+    if (src.indexOf("view:") === 0) { setView(src.slice(5)); return; }
+    if (src.indexOf("steps:") === 0) { startLesson(src.slice(6), returnView); return; }
+    if (src === "generate") {
+        activeLesson = {
+            id: node.id,
+            title: node.title,
+            isCurriculum: true,
+            curriculumLessonId: node.id,
+            objectives: node.objectives || [],
+            steps: generateLessonSteps(node),
+        };
+        lessonStepIndex = 0;
+        lessonReturnView = returnView || "learn";
+        setView("lesson");
+        renderLessonStep();
+    }
+}
+
 function exitLesson() {
     activeLesson = null;
     setView(lessonReturnView);
@@ -4916,9 +5196,16 @@ function completeLessonRun() {
             const id = activeLesson.curriculumLessonId;
             if (progress.lessonsCompleted.indexOf(id) === -1) progress.lessonsCompleted.push(id);
         }
-        if (progress.practiceLessonsCompleted.indexOf(activeLesson.id) === -1) {
+        // Catalog lessons also record in the Practice-view list; generated
+        // curriculum lessons do not (they aren't Practice activities).
+        if (!activeLesson.isCurriculum && progress.practiceLessonsCompleted.indexOf(activeLesson.id) === -1) {
             progress.practiceLessonsCompleted.push(activeLesson.id);
         }
+        // M16 — everything this lesson is responsible for is now "introduced".
+        const introduced = new Set(progress.objectsIntroduced || []);
+        [activeLesson.id, activeLesson.curriculumLessonId].filter(Boolean)
+            .forEach(key => lessonObjectives(key).forEach(oid => introduced.add(oid)));
+        progress.objectsIntroduced = [...introduced];
         saveProgress();
         refreshSkillLevels();   // M15 — keep the per-strand cache current
     }
