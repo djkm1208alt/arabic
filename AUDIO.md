@@ -13,10 +13,12 @@ M13 added the *plumbing* for native audio, not the audio:
 | | |
 |---|---|
 | Recorded audio files in repo | **0** |
-| Audio targets the app can play | **398** (all via TTS today) |
-| — of those, candidates for native recordings (Tier 1 + 2) | **320** rows → **275** unique recordings + 45 aliases |
+| Audio targets the app can play | **359** (all via TTS today) |
+| — of those, candidates for native recordings (Tier 1 + 2) | **281** rows (98 + 183) → **275** unique recordings + 6 aliases |
 | — Tier 3 (consonant × harakah drill grid) | **78** — stays TTS by decision |
 | Roadmap line "Professionally recorded native-speaker audio" | still **○ not done** — flips only when real recordings ship |
+
+*(Figures above regenerate with `node tools/build-audio-manifest.js` — see `tools/audio-manifest.md` for the always-current numbers; these were last refreshed alongside M15.5, since M14–M16's content growth had drifted them from AUDIO.md's original M13-era count.)*
 
 The authoritative, always-current inventory is generated:
 
@@ -48,6 +50,20 @@ Every playback in the app goes through one function, `playArabicAudio(text)`
 `resolveRecordedAudio()` looks the (normalised) Arabic string up in
 `RECORDED_AUDIO_MANIFEST` — an auto-generated map of `Arabic string → file stem
 under audio/`. It returns `null` whenever `RECORDED_AUDIO_ENABLED` is `false`.
+
+**M15.5** added two learner-facing pieces on top of this, neither requiring any
+code change to go live once real recordings land:
+
+- **`buildAudioControl()`** now shows a small "🎙️ Recorded" / "🔈 Synthesized" tag
+  next to every Listen control, computed by `audioSourceKind(text)` (the exact
+  same resolution `playArabicAudio()` itself uses, so it can never claim
+  "recorded" for something that will actually play as TTS). With
+  `RECORDED_AUDIO_ENABLED = false`, every tag reads "Synthesized" today — that
+  is the accurate state, not a placeholder.
+- **`initRecorder(container, { referenceText })`** (used by the `listen-repeat`
+  lesson step) gained a "🆚 Compare with model" button once a recording exists:
+  it plays the reference pronunciation, then the learner's own recording, back
+  to back. Still strictly "compare to model" — it introduces no score.
 
 **Ship state:** `RECORDED_AUDIO_ENABLED = false` and there is no `audio/`
 directory, so step 1 always returns `null` and playback is 100% TTS — byte-for-

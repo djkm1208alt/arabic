@@ -1288,6 +1288,21 @@
     .audio-btn:disabled { opacity: 0.55; cursor: not-allowed; }
     .audio-btn.audio-btn-playing { animation: pulse 0.6s ease infinite; border-color: var(--accent); }
     .audio-btn-slow { background: var(--gold-soft); color: var(--gold); border-color: transparent; }
+    /* M15.5 — audio-provenance honesty tag (see UI_BASELINE.md). Plain text,
+       not interactive, so no touch-target floor applies; contrast checked
+       like any other text by tools/a11y-audit.js. */
+    .audio-source-tag {
+        display: inline-flex;
+        align-items: center;
+        font-size: 11.5px;
+        font-weight: 700;
+        padding: 4px 10px;
+        border-radius: 999px;
+        background: var(--panel-border);
+        color: var(--ink-soft);
+    }
+    [data-theme="light"] .audio-source-tag { color: #5c564b; }
+    .audio-source-tag-recorded { background: var(--accent-soft); color: var(--accent); }
     .mic-warning {
         display: block;
         color: var(--gold);
@@ -5138,6 +5153,16 @@ function resolveRecordedAudio(text) {
     return stem ? RECORDED_AUDIO_BASE + stem + ".mp3" : null;
 }
 
+/* M15.5 — honesty about audio provenance. Mirrors resolveRecordedAudio()'s
+   own resolution exactly (same manifest lookup, same enable flag) so the
+   indicator can never claim "recorded" for something that will actually
+   play as TTS, or vice versa. Ships alongside RECORDED_AUDIO_ENABLED=false,
+   so every indicator reads "Synthesized" today — that's accurate, not a
+   placeholder, until real recordings land (see AUDIO.md). */
+function audioSourceKind(text) {
+    return resolveRecordedAudio(text) ? "recorded" : "synthesized";
+}
+
 /* ============================================================
    MILESTONE 6 — REUSABLE AUDIO ABSTRACTION  (extended in M13)
    playArabicAudio() is the single entry point every listening
@@ -5230,6 +5255,17 @@ function buildAudioControl(arabicText, opts) {
 
     wrap.appendChild(playBtn);
     wrap.appendChild(slowBtn);
+
+    /* M15.5 — honesty about audio provenance (roadmap standing rule 4,
+       extended from graded skills to audio). Computed once from the same
+       resolver playArabicAudio() itself consults, so it can never drift
+       from what actually plays. */
+    const isRecorded = audioSourceKind(arabicText) === "recorded";
+    const sourceTag = document.createElement("span");
+    sourceTag.className = "audio-source-tag" + (isRecorded ? " audio-source-tag-recorded" : "");
+    sourceTag.textContent = isRecorded ? "🎙️ Recorded" : "🔈 Synthesized";
+    wrap.appendChild(sourceTag);
+
     const warn = document.createElement("span");
     warn.className = "voice-warning";
     warn.textContent = "⚠️ No Arabic voice found on this device — pronunciation may sound approximate.";
@@ -5258,7 +5294,8 @@ function recordingSupport() {
     return { supported: true };
 }
 
-function initRecorder(container) {
+function initRecorder(container, opts) {
+    opts = opts || {};
     const support = recordingSupport();
     if (!support.supported) {
         container.innerHTML = `<p class="mic-warning">🎙️ ${support.reason}</p>`;
@@ -5270,10 +5307,22 @@ function initRecorder(container) {
     let chunks = [];
     let audioURL = null;
 
+    /* M15.5 — A/B "compare with model": only shown when the caller supplies
+       the reference text being practised (renderListenRepeatStep does; a
+       bare standalone recorder does not, and stays exactly as before). Plays
+       the reference audio, then the learner's own recording, back to back —
+       an easier way to do the comparison the app already supported one
+       click at a time. Never scores anything; strictly the roadmap's
+       "compare to model" boundary. */
+    const compareBtnHtml = opts.referenceText
+        ? `<button type="button" class="pill next-btn" id="compareBtn" style="display:none;">🆚 Compare with model</button>`
+        : "";
+
     container.innerHTML = `
         <div class="recorder-controls">
             <button type="button" class="pill show-btn" id="recordBtn">🎙️ Record</button>
             <button type="button" class="pill next-btn" id="playRecordingBtn" style="display:none;">▶️ Play my recording</button>
+            ${compareBtnHtml}
             <button type="button" class="pill next-btn" id="retryBtn" style="display:none;">🔁 Try again</button>
         </div>
         <p class="recorder-status" id="recorderStatus" aria-live="polite">Ready to record.</p>
@@ -5281,6 +5330,7 @@ function initRecorder(container) {
     `;
     const recordBtn = container.querySelector("#recordBtn");
     const playBtn = container.querySelector("#playRecordingBtn");
+    const compareBtn = container.querySelector("#compareBtn");
     const retryBtn = container.querySelector("#retryBtn");
     const status = container.querySelector("#recorderStatus");
     const audioEl = container.querySelector("#recorderPlayback");
@@ -5291,7 +5341,22 @@ function initRecorder(container) {
         recordBtn.textContent = state === "recording" ? "⏹ Stop recording" : "🎙️ Record";
         recordBtn.classList.toggle("audio-btn-recording", state === "recording");
         playBtn.style.display = state === "recorded" ? "" : "none";
+        if (compareBtn) compareBtn.style.display = state === "recorded" ? "" : "none";
         retryBtn.style.display = state === "recorded" ? "" : "none";
+    }
+
+    if (compareBtn) {
+        compareBtn.onclick = () => {
+            compareBtn.disabled = true;
+            playArabicAudio(opts.referenceText, {
+                onend: () => {
+                    audioEl.currentTime = 0;
+                    audioEl.play().catch(() => {});
+                },
+                onerror: () => { compareBtn.disabled = false; },
+            });
+            audioEl.onended = () => { compareBtn.disabled = false; };
+        };
     }
 
     recordBtn.onclick = async () => {
@@ -7264,7 +7329,7 @@ function renderListenRepeatStep(step, body) {
         <div class="pronounce-recorder"></div>
     `;
     body.querySelector(".pronounce-listen").appendChild(buildAudioControl(word.arabic, { label: "Listen", ariaLabel: "Listen to the target pronunciation" }));
-    initRecorder(body.querySelector(".pronounce-recorder"));
+    initRecorder(body.querySelector(".pronounce-recorder"), { referenceText: word.arabic });
     lessonCanProceed = true;
 }
 
