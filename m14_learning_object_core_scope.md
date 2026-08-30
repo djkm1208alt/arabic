@@ -1,8 +1,16 @@
 # M14 Scope: Learning-Object Core & Vocabulary Unification
 
-**Status:** Draft for review. **No code written.** Do not begin implementation until this is approved.
+**Status:** Implemented on branch `feature/m14-learning-object-core`. Scope + all 5 open questions approved as recommended; merge list ([`content/lexemes.merge-report.md`](content/lexemes.merge-report.md)) signed off.
 
 **Parent design:** [CURRICULUM_ARCHITECTURE.md](CURRICULUM_ARCHITECTURE.md) — all 7 decisions in §16 are approved as stated. M14 executes §14 migration steps 1–2 and nothing else.
+
+**What shipped (vs. this plan):**
+- Lexeme ids reuse the existing Word Bank ids (`lex:sch-06`), not fresh transliteration slugs — more stable, zero churn to M13's audio manifest. The 7 new flashcard-only words are `lex:fc-3` … `lex:fc-45`.
+- `progress.mastered` migrates numeric → lexeme id; the derived `flashcards[].id` **is** the lexeme id, so `markCard` / `rebuildDeck` / the Progress breakdown are untouched (they compare `.id` consistently). `build-audio-manifest.js`'s legacy-flashcard pass was removed as fully redundant (all 46 deck words are now Word Bank lexemes) — `RECORDED_AUDIO_MANIFEST` is byte-identical.
+- `VOCAB_CATEGORIES` keeps its name (not renamed to `TOPICS`); only `categories` becomes a derived subset.
+- The migration is reproducible: `tools/m14-migrate.js --patch-app` on the pre-M14 `index.html` regenerates this exact result (and refuses to run once M14 is applied).
+- The 18 flagged merges were all "keep the Word Bank value" (5 transliteration precision, 13 category refinement) — zero judgement calls. 0 skeleton-only (ḥarakāt-differ) matches.
+- Verified: the fully-built `lessons` object and every derived array are **byte-identical to pre-M14** except the approved changes (5 translit fixes flowing into example text; +7 Word Bank words; data-driven chip list). Confirmed by seeded-RNG deep comparison against the pre-M14 build.
 
 **One-line summary:** Collapse the two vocabulary systems into one `lexemes` table, wrap the other content arrays as typed learning objects, move that data into `content/*.json` compiled by a dev-time tool — as a **pure, behaviour-preserving refactor**. No UI change, no new content, no new lessons.
 

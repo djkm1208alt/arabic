@@ -126,7 +126,7 @@ function loadAppData(html) {
         if (process.env.DEBUG_MANIFEST) console.error("[eval note]", e.message);
     }
 
-    const need = ["arabicAlphabet", "HARAKAT", "TANWIN", "vocabulary", "flashcards",
+    const need = ["arabicAlphabet", "HARAKAT", "TANWIN", "vocabulary",
         "cvvSyllables", "cvcSyllables", "geminatedSyllables", "readingPassages", "grammarExamples"];
     const data = {};
     for (const k of need) {
@@ -293,14 +293,9 @@ function buildTargets(data) {
         file: `sentences/${w.id}-ex.mp3`, nativeTarget: true,
     }));
 
-    // 3.9 legacy flashcard words — Tier 2 (most duplicate a Word Bank entry and
-    //     become aliases; only the ~7 unique ones get their own recording).
-    data.flashcards.forEach(c => push({
-        id: `words/fc-${c.id}`, type: "word-legacy", tier: 2,
-        arabic: c.arabic, translit: c.translit, english: c.english,
-        category: c.category, source: "flashcards", sourceId: String(c.id),
-        file: `words/fc-${c.id}.mp3`, nativeTarget: true,
-    }));
+    // 3.9  (removed in M14) — the legacy `flashcards` deck was unified into the
+    //      Word Bank; every one of its 46 words is now a `vocabulary` lexeme and
+    //      is already covered by §3.6 above.
 
     // 3.10 Tier 3 — the generated consonant × harakah grid used by the M6
     //      "every letter with fatḥah / kasrah / ḍammah" reading steps.

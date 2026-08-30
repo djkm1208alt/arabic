@@ -348,8 +348,8 @@ Hard boundary. The core curriculum is **MSA / fuṣḥā**. The architecture res
 
 Ordered, each step shippable and reversible:
 
-1. **Unify vocabulary** (`flashcards` + `vocabulary` → `lexemes`), with id-compat aliases so `progress.mastered` survives. Flashcards/Quiz/Alphabet-examples/Word-Bank all read `lexemes`. One category taxonomy.
-2. **Wrap existing arrays as learning objects.** `arabicAlphabet` → `letter` objects; `HARAKAT`/`TANWIN`/`MADD_PATTERNS` → `mark` objects; syllable arrays → `syllable` objects; `grammarExamples` concepts → real `grammar` objects; `readingPassages` → `text` objects. Thin adapters first — the existing lessons keep working unchanged because the builder functions now read objects.
+1. ✅ **[M14]** **Unify vocabulary** (`flashcards` + `vocabulary` → `lexemes`), `progress.mastered` migrated numeric → lexeme id. Flashcards/Quiz/Word-Bank read `lexemes`; Alphabet examples stay scoped to the legacy 46. One taxonomy.
+2. ✅ **[M14]** **Wrap existing arrays as learning objects** — `LETTERS` / `MARKS` / `SYLLABLE_OBJECTS` / `GRAMMAR_POINTS` (stubs) / `TEXTS`, in `content/*.json` compiled by `tools/build-content.js`. Existing consts are now thin derived views; every lesson + builder function is byte-unchanged.
 3. **Introduce `skills` + `levels` + descriptors** as data; add `deriveLevel()` (honest, "insufficient evidence" aware). No UI upheaval — Progress view gains a per-strand panel.
 4. **Real `curriculum` tree** wired to objects and levels; Learn view shows levels → units → lessons with "start where you fit".
 5. **`InteractionEvent` + `ReviewState`** populated from existing quizzes immediately (data first, scheduler later).

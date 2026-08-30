@@ -1,0 +1,200 @@
+[
+  {
+    "id": "syl:cvv-ba",
+    "kind": "syllable",
+    "ar": "بَا",
+    "translit": "bā",
+    "gloss": "long \"aa\" sound — ب + long vowel ا",
+    "shape": "CVV",
+    "exampleWord": "lex:hom-06"
+  },
+  {
+    "id": "syl:cvv-bi",
+    "kind": "syllable",
+    "ar": "بِي",
+    "translit": "bī",
+    "gloss": "long \"ee\" sound — ب + long vowel ي",
+    "shape": "CVV",
+    "exampleWord": "lex:adj-01"
+  },
+  {
+    "id": "syl:cvv-bu",
+    "kind": "syllable",
+    "ar": "بُو",
+    "translit": "bū",
+    "gloss": "long \"oo\" sound — ب + long vowel و",
+    "shape": "CVV",
+    "exampleWord": "lex:tim-08"
+  },
+  {
+    "id": "syl:cvv-ma",
+    "kind": "syllable",
+    "ar": "مَا",
+    "translit": "mā",
+    "gloss": "long \"aa\" sound — م + long vowel ا",
+    "shape": "CVV",
+    "exampleWord": "lex:foo-09"
+  },
+  {
+    "id": "syl:cvv-mi",
+    "kind": "syllable",
+    "ar": "مِي",
+    "translit": "mī",
+    "gloss": "long \"ee\" sound — م + long vowel ي",
+    "shape": "CVV",
+    "exampleWord": "lex:adj-03"
+  },
+  {
+    "id": "syl:cvv-mu",
+    "kind": "syllable",
+    "ar": "مُو",
+    "translit": "mū",
+    "gloss": "long \"oo\" sound — م + long vowel و",
+    "shape": "CVV",
+    "exampleWord": "lex:foo-13"
+  },
+  {
+    "id": "syl:cvv-ta",
+    "kind": "syllable",
+    "ar": "تَا",
+    "translit": "tā",
+    "gloss": "long \"aa\" sound — ت + long vowel ا",
+    "shape": "CVV",
+    "exampleWord": "lex:sch-06"
+  },
+  {
+    "id": "syl:cvv-ti",
+    "kind": "syllable",
+    "ar": "تِي",
+    "translit": "tī",
+    "gloss": "long \"ee\" sound — ت + long vowel ي",
+    "shape": "CVV",
+    "exampleWord": "lex:foo-14"
+  },
+  {
+    "id": "syl:cvv-tu",
+    "kind": "syllable",
+    "ar": "تُو",
+    "translit": "tū",
+    "gloss": "long \"oo\" sound — ت + long vowel و",
+    "shape": "CVV",
+    "exampleWord": "lex:foo-15"
+  },
+  {
+    "id": "syl:cvc-ba",
+    "kind": "syllable",
+    "ar": "بَحْ",
+    "translit": "baḥ-",
+    "gloss": "opens \"ba\", closes on ح + sukūn (no vowel)",
+    "shape": "CVC",
+    "exampleWord": "lex:pla-11"
+  },
+  {
+    "id": "syl:cvc-bi",
+    "kind": "syllable",
+    "ar": "بِنْ",
+    "translit": "bin-",
+    "gloss": "opens \"bi\", closes on ن + sukūn (no vowel)",
+    "shape": "CVC",
+    "exampleWord": "lex:peo-13"
+  },
+  {
+    "id": "syl:cvc-bu",
+    "kind": "syllable",
+    "ar": "بُرْ",
+    "translit": "bur-",
+    "gloss": "opens \"bu\", closes on ر + sukūn (no vowel)",
+    "shape": "CVC",
+    "exampleWord": "lex:col-07"
+  },
+  {
+    "id": "syl:cvc-ma",
+    "kind": "syllable",
+    "ar": "مَدْ",
+    "translit": "mad-",
+    "gloss": "opens \"ma\", closes on د + sukūn (no vowel)",
+    "shape": "CVC",
+    "exampleWord": "lex:sch-01"
+  },
+  {
+    "id": "syl:cvc-mi",
+    "kind": "syllable",
+    "ar": "مِرْ",
+    "translit": "mir-",
+    "gloss": "opens \"mi\", closes on ر + sukūn (no vowel)",
+    "shape": "CVC",
+    "exampleWord": "lex:obj-07"
+  },
+  {
+    "id": "syl:cvc-mu",
+    "kind": "syllable",
+    "ar": "مُسْ",
+    "translit": "mus-",
+    "gloss": "opens \"mu\", closes on س + sukūn (no vowel)",
+    "shape": "CVC",
+    "exampleWord": "lex:pla-05"
+  },
+  {
+    "id": "syl:cvc-ta",
+    "kind": "syllable",
+    "ar": "تَشْ",
+    "translit": "tash-",
+    "gloss": "opens \"ta\", closes on ش + sukūn (no vowel)",
+    "shape": "CVC",
+    "exampleWord": "lex:pla-05"
+  },
+  {
+    "id": "syl:cvc-ti",
+    "kind": "syllable",
+    "ar": "تِسْ",
+    "translit": "tis-",
+    "gloss": "opens \"ti\", closes on س + sukūn (no vowel)",
+    "shape": "CVC",
+    "exampleWord": "lex:num-09"
+  },
+  {
+    "id": "syl:cvc-tu",
+    "kind": "syllable",
+    "ar": "تُصْ",
+    "translit": "tuṣ-",
+    "gloss": "opens \"tu\", closes on ص + sukūn (no vowel)",
+    "shape": "CVC",
+    "exampleWord": "lex:gre-10"
+  },
+  {
+    "id": "syl:gem-da",
+    "kind": "syllable",
+    "ar": "دَّ",
+    "translit": "-dda-",
+    "gloss": "doubles د — held twice as long",
+    "shape": "geminated",
+    "exampleWord": "lex:peo-08"
+  },
+  {
+    "id": "syl:gem-ma",
+    "kind": "syllable",
+    "ar": "مَّ",
+    "translit": "-mma-",
+    "gloss": "doubles م — held twice as long",
+    "shape": "geminated",
+    "exampleWord": "lex:hom-05"
+  },
+  {
+    "id": "syl:gem-ta",
+    "kind": "syllable",
+    "ar": "تَّ",
+    "translit": "-tta-",
+    "gloss": "doubles ت — held twice as long",
+    "shape": "geminated",
+    "exampleWord": "lex:num-06"
+  },
+  {
+    "id": "syl:gem-ka",
+    "kind": "syllable",
+    "ar": "كَّ",
+    "translit": "-kka-",
+    "gloss": "doubles ك — held twice as long",
+    "shape": "geminated",
+    "exampleWord": "lex:foo-12"
+  }
+]

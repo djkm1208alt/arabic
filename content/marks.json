@@ -1,0 +1,112 @@
+[
+  {
+    "id": "mrk:fatha",
+    "kind": "mark",
+    "symbol": "َ",
+    "ar": "فَ",
+    "translit": "a",
+    "name": "fatḥah",
+    "markClass": "short-vowel",
+    "fn": "A short, open \"a\" sound — like the \"a\" in \"cat\"."
+  },
+  {
+    "id": "mrk:kasra",
+    "kind": "mark",
+    "symbol": "ِ",
+    "ar": "فِ",
+    "translit": "i",
+    "name": "kasrah",
+    "markClass": "short-vowel",
+    "fn": "A short \"i\" sound — like the \"i\" in \"sit\"."
+  },
+  {
+    "id": "mrk:damma",
+    "kind": "mark",
+    "symbol": "ُ",
+    "ar": "فُ",
+    "translit": "u",
+    "name": "ḍammah",
+    "markClass": "short-vowel",
+    "fn": "A short \"u\" sound — like the \"u\" in \"put\"."
+  },
+  {
+    "id": "mrk:fathatayn",
+    "kind": "mark",
+    "symbol": "ً",
+    "ar": "فً",
+    "translit": "an",
+    "name": "fatḥatayn",
+    "markClass": "tanwin",
+    "fn": "An \"-an\" sound added at the end of a word — the most common tanwīn in everyday words."
+  },
+  {
+    "id": "mrk:kasratayn",
+    "kind": "mark",
+    "symbol": "ٍ",
+    "ar": "فٍ",
+    "translit": "in",
+    "name": "kasratayn",
+    "markClass": "tanwin",
+    "fn": "An \"-in\" sound, marking a word as grammatically indefinite and genitive — often heard after a preposition like فِي (\"in\") or مِنْ (\"from\")."
+  },
+  {
+    "id": "mrk:dammatayn",
+    "kind": "mark",
+    "symbol": "ٌ",
+    "ar": "فٌ",
+    "translit": "un",
+    "name": "ḍammatayn",
+    "markClass": "tanwin",
+    "fn": "An \"-un\" sound, marking a word as grammatically indefinite and the subject of a sentence."
+  },
+  {
+    "id": "mrk:madd-alif",
+    "kind": "mark",
+    "pattern": "َا",
+    "letter": "ا",
+    "translit": "ā",
+    "name": "fatḥah + alif",
+    "markClass": "long-vowel",
+    "fn": "Stretches the short \"a\" into a long \"aa\", held about twice as long — like the \"a\" in \"father\"."
+  },
+  {
+    "id": "mrk:madd-ya",
+    "kind": "mark",
+    "pattern": "ِيْ?",
+    "letter": "ي",
+    "translit": "ī",
+    "name": "kasrah + yāʾ",
+    "markClass": "long-vowel",
+    "fn": "Stretches the short \"i\" into a long \"ee\" — like the \"ee\" in \"see\"."
+  },
+  {
+    "id": "mrk:madd-waw",
+    "kind": "mark",
+    "pattern": "ُوْ?",
+    "letter": "و",
+    "translit": "ū",
+    "name": "ḍammah + wāw",
+    "markClass": "long-vowel",
+    "fn": "Stretches the short \"u\" into a long \"oo\" — like the \"oo\" in \"food\"."
+  },
+  {
+    "id": "mrk:sukun",
+    "kind": "mark",
+    "symbol": "ْ",
+    "ar": "فْ",
+    "translit": null,
+    "name": "sukūn",
+    "markClass": "sukun",
+    "fn": "marks a consonant with no vowel of its own; closes a syllable"
+  },
+  {
+    "id": "mrk:shadda",
+    "kind": "mark",
+    "symbol": "ّ",
+    "ar": "فَّ",
+    "translit": null,
+    "name": "shaddah",
+    "markClass": "shadda",
+    "fn": "doubles (geminates) the consonant; always carries a vowel or tanwīn"
+  }
+]
