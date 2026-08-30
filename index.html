@@ -3549,7 +3549,7 @@ function generateLessonSteps(node) {
         title: "You've met these words",
         body: [
             lex.length
-                ? `${lex.map(l => l.ar).join("، ")}`
+                ? `<span lang="ar">${lex.map(l => l.ar).join("، ")}</span>`
                 : "Nice work.",
             "Find them in your Word Bank and Flashcards to keep them fresh.",
         ],
