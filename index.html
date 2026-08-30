@@ -1426,6 +1426,11 @@
             <div class="progress-bar"><div class="progress-fill" id="progGoalFill"></div></div>
         </div>
         <div class="panel-block">
+            <h3>Your skills</h3>
+            <p id="progSkillsHeadline" class="last-studied"></p>
+            <div id="progSkillsBreakdown" class="cat-progress-list"></div>
+        </div>
+        <div class="panel-block">
             <h3>Mastery by category</h3>
             <div id="progCategoryBreakdown" class="cat-progress-list"></div>
         </div>
@@ -1504,251 +1509,328 @@
    tools/build-content.js. Do not hand-edit. Regenerate:
      node tools/build-content.js --write-app */
 const CONTENT = {
+"skills": [
+  {"id":"reading","name":"Reading","blurb":"Decoding the script and understanding written Arabic — from letters to unvowelled authentic text.","assess":"reliable"},
+  {"id":"writing","name":"Writing","blurb":"Letter formation, joining, spelling, and composition. Composition is self-assessed against a rubric.","assess":"partial"},
+  {"id":"listening","name":"Listening","blurb":"Understanding spoken Arabic — from phoneme discrimination to extended broadcast audio.","assess":"reliable"},
+  {"id":"speaking","name":"Speaking","blurb":"Interaction and spoken production. Never machine-scored — self-assessed against model recordings.","assess":"self-report"},
+  {"id":"vocabulary","name":"Vocabulary","blurb":"Breadth and control of known words, phrases, collocations, and word families.","assess":"reliable"},
+  {"id":"grammar","name":"Grammar","blurb":"Sentence structure, agreement, tense, derived forms, case (iʿrāb), and syntax.","assess":"reliable"},
+  {"id":"pronunciation","name":"Pronunciation","blurb":"Producing and recognising Arabic sounds and prosody. Recognition is scored; production is compared to a model.","assess":"partial"},
+  {"id":"comprehension","name":"Comprehension","blurb":"Inferential and integrated understanding — gist, inference, stance, argument, tone — applied to read and heard texts alike.","assess":"reliable"},
+],
+"levels": [
+  {"id":"A0","name":"Pre-A1 · Absolute Beginner","blurb":"The Arabic script and sound system: letters, forms, joining, ḥarakāt, syllables, first words."},
+  {"id":"A1","name":"A1 · Beginner","blurb":"Fully-vowelled words and short sentences; everyday phrases; the nominal sentence and basic agreement."},
+  {"id":"A2","name":"A2 · Elementary","blurb":"Fully-vowelled paragraphs and routine exchanges; the verbal sentence, past and present Form I, iḍāfa, numbers."},
+  {"id":"B1","name":"B1 · Intermediate","blurb":"Mostly-unvowelled MSA on familiar topics; derived verb forms, relative clauses, verbal nouns, the subjunctive."},
+  {"id":"B2","name":"B2 · Upper Intermediate","blurb":"Unvowelled authentic texts and broadcast audio; the full case system used actively, the jussive, conditionals, the passive."},
+  {"id":"C1","name":"C1 · Advanced","blurb":"Editorials, essays, and literary prose; rhetorical syntax, register control, implicit meaning."},
+  {"id":"C2","name":"C2 · Mastery","blurb":"Virtually any prose including classical, academic, and stylised literary Arabic; structural ambiguity and stylistic nuance."},
+],
+"descriptors": [
+  {"skill":"reading","level":"A0","canDo":"Names and sounds all 28 letters; recognises the four positional forms and knows which six letters (ا د ذ ر ز و) do not join to the letter that follows; reads fully-vowelled CV and CVV syllables aloud.","source":"Arabic script-literacy competency (no CEFR analogue); standard first-year sequence, e.g. Al-Kitaab Part 1 Alif Baa; ACTFL Arabic — script and sound system."},
+  {"skill":"reading","level":"A1","canDo":"Reads fully-vowelled words and short sentences aloud accurately; correctly handles sukūn, shaddah, the three tanwīn, tāʾ marbūṭa (ة), alif maqṣūra (ى), and sun/moon-letter assimilation of the definite article ال.","source":"CEFR-CV 2018 Overall Reading Comprehension A1, adapted for full vowelling; Arabic reading-mark competency from standard first-year sequences."},
+  {"skill":"reading","level":"A2","canDo":"Reads fully-vowelled paragraphs on familiar topics; begins reading high-frequency words that carry only the vowels needed to resolve ambiguity; recognises common word-shape (wazn) patterns.","source":"CEFR-CV 2018 Overall Reading Comprehension A2; the fully→partially vowelled transition is an Arabic-specific stage (documented rationale)."},
+  {"skill":"reading","level":"B1","canDo":"Reads mostly-unvowelled MSA on familiar and everyday topics, supplying vowels from morphological pattern and context; handles broken plurals and derived-verb forms met in context.","source":"CEFR-CV 2018 Overall Reading Comprehension B1; the unvowelled-reading milestone from ACTFL Arabic — Intermediate Reading."},
+  {"skill":"reading","level":"B2","canDo":"Reads unvowelled authentic texts — news reports, feature articles, factual prose — with occasional dictionary support; follows the line of argument and separates main points from detail.","source":"CEFR-CV 2018 Overall Reading Comprehension B2 / Reading for Information and Argument B2."},
+  {"skill":"reading","level":"C1","canDo":"Reads editorials, essays, and literary prose fluently; handles register shifts, ellipsis, complex subordination, and implicit meaning; needs the dictionary only for low-frequency or specialised vocabulary.","source":"CEFR-CV 2018 Overall Reading Comprehension C1; ACTFL Arabic — Advanced/Superior Reading."},
+  {"skill":"reading","level":"C2","canDo":"Reads virtually any prose — classical and heritage texts, specialised academic and legal writing, sophisticated literary style — parsing structural ambiguity and appreciating stylistic nuance.","source":"CEFR-CV 2018 Overall Reading Comprehension C2; ACTFL Arabic — Distinguished Reading."},
+  {"skill":"writing","level":"A0","canDo":"Forms all 28 letters in isolation with correct stroke order and direction (right-to-left, top-to-bottom); copies fully-vowelled syllables legibly.","notes":"Machine-checkable at this level (stroke order, letter-form selection).","source":"Arabic handwriting pedagogy (no CEFR analogue); CEFR-CV 2018 Orthographic Control Pre-A1 for the copying element."},
+  {"skill":"writing","level":"A1","canDo":"Writes letters correctly in initial / medial / final position with correct joining; spells familiar fully-vowelled words from dictation; writes short simple sentences (subject + predicate).","notes":"Joining and dictation machine-checkable; sentence writing self-assessed.","source":"CEFR-CV 2018 Overall Written Production A1 + Orthographic Control A1."},
+  {"skill":"writing","level":"A2","canDo":"Writes a short connected paragraph on a familiar topic (self, family, daily routine) using learned vocabulary and basic connectors (وَ، ثُمَّ، لكِنْ); spelling of high-frequency words is generally accurate.","source":"CEFR-CV 2018 Overall Written Production A2."},
+  {"skill":"writing","level":"B1","canDo":"Writes straightforward connected texts — a description, a narrative, an informal message — on familiar topics; links ideas with common conjunctions and relative clauses; attempts case endings where required.","source":"CEFR-CV 2018 Overall Written Production B1."},
+  {"skill":"writing","level":"B2","canDo":"Writes clear, detailed texts — an argumentative paragraph, a formal message, a summary — with appropriate paragraphing and cohesion; controls the case system and derived forms with occasional slips.","source":"CEFR-CV 2018 Overall Written Production B2 + Grammatical Accuracy B2."},
+  {"skill":"writing","level":"C1","canDo":"Writes well-structured essays and formal correspondence, selecting register and style for the reader; expands and supports points with subordinate structures and rhetorical devices.","source":"CEFR-CV 2018 Overall Written Production C1; ACTFL Arabic — Advanced/Superior Writing."},
+  {"skill":"writing","level":"C2","canDo":"Writes coherent, sophisticated prose — analytical essays, formal reports, stylised literary or persuasive writing — with control of classical constructions and deliberate stylistic variation.","source":"CEFR-CV 2018 Overall Written Production C2; ACTFL Arabic — Distinguished Writing."},
+  {"skill":"listening","level":"A0","canDo":"Distinguishes the 28 letter sounds and the hard Arabic contrasts — س/ص، ت/ط، د/ض، ه/ح، ك/ق، ذ/ز/ظ — in minimal pairs; recognises the three short vowels and their long counterparts by ear.","source":"Arabic phonemic discrimination — the emphatics and pharyngeals have no European analogue (documented rationale); CEFR-CV 2018 Phonological Control Pre-A1 (perception)."},
+  {"skill":"listening","level":"A1","canDo":"Understands familiar words and very short, slowly and clearly spoken phrases — greetings, numbers, personal information — with repetition available.","source":"CEFR-CV 2018 Overall Listening Comprehension A1."},
+  {"skill":"listening","level":"A2","canDo":"Understands the main point of short, clear spoken passages and simple exchanges on familiar everyday matters (shopping, directions, routine) at near-natural pace.","source":"CEFR-CV 2018 Overall Listening Comprehension A2."},
+  {"skill":"listening","level":"B1","canDo":"Follows the main points of clear standard-Arabic speech on familiar topics — a short narrative, an interview, a simple dialogue — and understands a straightforward factual report.","source":"CEFR-CV 2018 Overall Listening Comprehension B1; ACTFL Arabic — Intermediate Listening."},
+  {"skill":"listening","level":"B2","canDo":"Understands extended speech and most broadcast audio (news, documentary, discussion) in standard Arabic on concrete and abstract topics; follows the speaker's stance and argument.","source":"CEFR-CV 2018 Overall Listening Comprehension B2 + Listening to Media and Recordings B2."},
+  {"skill":"listening","level":"C1","canDo":"Understands extended speech even when not clearly structured — lectures, debates, films — and grasps implicit meaning, humour, and register.","source":"CEFR-CV 2018 Overall Listening Comprehension C1."},
+  {"skill":"listening","level":"C2","canDo":"Understands any standard-Arabic speech at natural native pace, including specialised lectures and rapid or regionally-accented delivery, given time to adjust to the accent.","source":"CEFR-CV 2018 Overall Listening Comprehension C2; ACTFL Arabic — Distinguished Listening."},
+  {"skill":"speaking","level":"A0","canDo":"Produces the individual letter sounds and short syllables intelligibly by imitation.","notes":"Never machine-scored — self-assessed against model recordings.","source":"Arabic sound-production by imitation (no CEFR analogue); CEFR-CV 2018 Phonological Control Pre-A1 (production)."},
+  {"skill":"speaking","level":"A1","canDo":"Uses simple memorised phrases and sentences to give personal information, greet, and ask or answer very simple questions; long pauses to search for expression are normal.","source":"CEFR-CV 2018 Overall Spoken Production + Spoken Interaction A1; ACTFL Arabic — Novice speaking."},
+  {"skill":"speaking","level":"A2","canDo":"Handles short social exchanges and simple routine transactions (ordering, buying, asking directions); describes in simple terms family, background, and immediate surroundings.","source":"CEFR-CV 2018 Overall Spoken Production + Spoken Interaction A2."},
+  {"skill":"speaking","level":"B1","canDo":"Sustains a conversation on familiar topics; narrates an event or experience, gives reasons and brief explanations, and copes with less routine situations with some hesitation.","source":"CEFR-CV 2018 Overall Spoken Production + Spoken Interaction B1; ACTFL Arabic — Intermediate speaking."},
+  {"skill":"speaking","level":"B2","canDo":"Interacts with a degree of fluency and spontaneity; presents a clear, detailed description or argument on a range of subjects and defends a point of view.","source":"CEFR-CV 2018 Overall Spoken Production + Spoken Interaction B2."},
+  {"skill":"speaking","level":"C1","canDo":"Expresses ideas fluently and almost effortlessly; uses language flexibly for social, academic, and professional purposes; formulates ideas precisely and relates contributions skilfully to those of others.","source":"CEFR-CV 2018 Overall Spoken Production + Spoken Interaction C1; ACTFL Arabic — Advanced/Superior speaking."},
+  {"skill":"speaking","level":"C2","canDo":"Participates effortlessly in any conversation or discussion with idiomatic and colloquial-register fluency; presents a clear, smoothly flowing argument in a style appropriate to the context.","source":"CEFR-CV 2018 Overall Spoken Production + Spoken Interaction C2; ACTFL Arabic — Distinguished speaking."},
+  {"skill":"vocabulary","level":"A0","canDo":"Recognises a small set of concrete words and set phrases — greetings, a few everyday objects, numbers 1–10 — presented with full vowelling.","source":"CEFR-CV 2018 Vocabulary Range Pre-A1."},
+  {"skill":"vocabulary","level":"A1","canDo":"Has a repertoire of roughly 300–500 high-frequency words and phrases covering personal details and everyday needs (family, food, home, time, basic verbs).","source":"CEFR-CV 2018 Vocabulary Range A1; size band from common CEFR vocabulary-size estimates."},
+  {"skill":"vocabulary","level":"A2","canDo":"Around 1,000–1,500 words covering routine topics (shopping, travel, work, health, directions); begins recognising word families that share a root.","source":"CEFR-CV 2018 Vocabulary Range A2; root-family recognition is Arabic-specific (documented rationale)."},
+  {"skill":"vocabulary","level":"B1","canDo":"Around 2,500–3,500 words allowing discussion of familiar and some unfamiliar topics; actively uses common derived-verb forms and verbal nouns; recognises many broken plurals.","source":"CEFR-CV 2018 Vocabulary Range B1."},
+  {"skill":"vocabulary","level":"B2","canDo":"Around 5,000–7,000 words including abstract, topical, and lower-frequency vocabulary; controls collocations and the formal vs. everyday register distinction.","source":"CEFR-CV 2018 Vocabulary Range + Vocabulary Control B2."},
+  {"skill":"vocabulary","level":"C1","canDo":"Around 8,000–10,000+ words including idiomatic, literary, and specialised vocabulary; understands connotation and stylistic colouring.","source":"CEFR-CV 2018 Vocabulary Range C1."},
+  {"skill":"vocabulary","level":"C2","canDo":"A very broad, precise vocabulary including rare, classical, technical, and figurative usage; near-native command of nuance and idiom.","source":"CEFR-CV 2018 Vocabulary Range C2."},
+  {"skill":"grammar","level":"A0","canDo":"Pre-grammar: the learner is building the script and sound system. No sentence grammar is expected or assessed yet.","source":"Placeholder cell — grammar instruction begins at A1 in standard Arabic sequences."},
+  {"skill":"grammar","level":"A1","canDo":"Noun gender and number; definiteness (ال, tanwīn); the nominal sentence (mubtadaʾ + khabar); demonstratives; attached possessive pronouns; core prepositions; adjective agreement; negation with ليس / لا / ما.","source":"CURRICULUM_ARCHITECTURE.md §10.2 (A1); CEFR-CV 2018 Grammatical Accuracy A1 for the control framing."},
+  {"skill":"grammar","level":"A2","canDo":"The verbal sentence and VSO order; past and present tense of Form I; the three short-vowel case endings in fixed high-frequency phrases; the genitive construct (iḍāfa); object pronouns; كان; comparatives; numbers 1–10 with the counted noun.","source":"CURRICULUM_ARCHITECTURE.md §10.2 (A2); Al-Kitaab / Georgetown first-year progression."},
+  {"skill":"grammar","level":"B1","canDo":"Derived verb Forms II–X (recognition and high-frequency production); relative clauses (الَّذِي family); إنّ وأخواتها; the verbal noun (maṣdar); active and passive participles; the subjunctive after أن / لن / كي / حتى; expanded negation.","source":"CURRICULUM_ARCHITECTURE.md §10.2 (B1); standard second-year reference grammar."},
+  {"skill":"grammar","level":"B2","canDo":"The full case system (iʿrāb) used actively across nominal and verbal sentences; the jussive (after لم, لا الناهية, conditional particles); conditional sentences; the internal passive; كان وأخواتها in full; the ḥāl and tamyīz constructions.","source":"CURRICULUM_ARCHITECTURE.md §10.2 (B2); CEFR-CV 2018 Grammatical Accuracy B2."},
+  {"skill":"grammar","level":"C1","canDo":"Rhetorical syntax — fronting and emphasis, particle nuance, stylistic case variation; complex multi-clause subordination; control of formal and classical constructions.","source":"CURRICULUM_ARCHITECTURE.md §10.2 (C1–C2); classical rhetoric (بلاغة) references."},
+  {"skill":"grammar","level":"C2","canDo":"Advanced iʿrāb including contested and stylistic parses; classical and heritage constructions; analysis of syntactic ambiguity in real text.","source":"CURRICULUM_ARCHITECTURE.md §10.2 (C1–C2); traditional naḥw analysis."},
+  {"skill":"pronunciation","level":"A0","canDo":"Produces the short and long vowels and the non-emphatic consonants intelligibly; recognises by ear the emphatic vs. plain contrasts and the pharyngeals ع and ح.","notes":"Recognition (minimal pairs) is machine-scored; production is compared to a model.","source":"Arabic phoneme inventory (documented rationale); CEFR-CV 2018 Phonological Control Pre-A1."},
+  {"skill":"pronunciation","level":"A1","canDo":"Produces most consonants clearly including ع، ح، ق، غ; applies sun/moon assimilation of ال; word stress is usually appropriate; a foreign accent is evident but does not impede understanding.","source":"CEFR-CV 2018 Phonological Control A1 (Sound Articulation + Prosodic Features)."},
+  {"skill":"pronunciation","level":"A2","canDo":"Pronunciation is clearly intelligible across familiar material; handles shaddah (gemination) and consonant clusters at syllable boundaries; tāʾ marbūṭa is realised correctly in pause vs. construct.","source":"CEFR-CV 2018 Phonological Control A2."},
+  {"skill":"pronunciation","level":"B1","canDo":"Consistently intelligible; case-ending pronunciation is attempted in careful speech; intonation carries basic sentence function (statement, question).","source":"CEFR-CV 2018 Phonological Control B1."},
+  {"skill":"pronunciation","level":"B2","canDo":"Clear, natural pronunciation and intonation; occasional slips on low-frequency words; reads a prepared text aloud with appropriate phrasing and case endings.","source":"CEFR-CV 2018 Phonological Control B2."},
+  {"skill":"pronunciation","level":"C1","canDo":"Near-native articulation and prosody; varies delivery for effect; only an occasional non-native feature.","source":"CEFR-CV 2018 Phonological Control C1."},
+  {"skill":"pronunciation","level":"C2","canDo":"Pronunciation and prosody effectively indistinguishable from an educated native speaker, including reading classical text aloud with correct iʿrāb.","source":"CEFR-CV 2018 Phonological Control C2."},
+  {"skill":"comprehension","level":"A0","canDo":"Not yet assessed: the learner is decoding the script, not yet extracting meaning from connected text.","source":"Placeholder cell — text comprehension is assessed from A1."},
+  {"skill":"comprehension","level":"A1","canDo":"Extracts specific predictable information from a very short simple text or exchange (a name, a number, a time, a place); understands the overall topic when it is stated explicitly.","source":"Synthesised from CEFR-CV 2018 Reading/Listening 'Identifying cues and inferring' A1 (documented rationale — no single comprehension scale exists)."},
+  {"skill":"comprehension","level":"A2","canDo":"Identifies the main idea and several supporting details in a short text or dialogue on a familiar topic; makes simple inferences that are strongly signalled.","source":"Synthesised from CEFR-CV 2018 Reading/Listening comprehension and inference scales A2."},
+  {"skill":"comprehension","level":"B1","canDo":"Follows the gist and the sequence of ideas in a straightforward text or talk; distinguishes fact from opinion when marked; infers the meaning of unknown words from context.","source":"Synthesised from CEFR-CV 2018 comprehension + inference scales B1."},
+  {"skill":"comprehension","level":"B2","canDo":"Grasps the writer's or speaker's stance, purpose, and line of argument; distinguishes main points from supporting detail and example; recognises how a text is organised.","source":"Synthesised from CEFR-CV 2018 'Understanding argumentation' + 'Reading for orientation' B2."},
+  {"skill":"comprehension","level":"C1","canDo":"Interprets implicit meaning, tone, irony, and attitude; relates a text to its context and to other texts; evaluates the strength of an argument.","source":"Synthesised from CEFR-CV 2018 comprehension + mediation (analysis) scales C1."},
+  {"skill":"comprehension","level":"C2","canDo":"Critically analyses sophisticated texts — literary, rhetorical, academic — for structure, style, assumption, and effect; appreciates cultural and intertextual reference.","source":"Synthesised from CEFR-CV 2018 comprehension + mediation scales C2; literary-analysis (النقد) pedagogy."},
+],
 "lexemes": [
-  {"id":"lex:gre-01","kind":"lexeme","ar":"مَرْحَبًا","translit":"marhaban","en":"hello","pos":"phrase","topic":"greetings","level":"A0","example":{"ar":"مَرْحَبًا، كَيْفَ حَالُكَ؟","en":"Hello, how are you?"},"fr":"bonjour","tags":["legacy-flashcard"]},
-  {"id":"lex:gre-02","kind":"lexeme","ar":"السَّلَامُ عَلَيْكُم","translit":"as-salāmu ʿalaykum","en":"peace be upon you (a greeting)","pos":"phrase","topic":"greetings","level":"A0","notes":"The traditional Islamic/Arabic greeting, used any time of day.","tags":[]},
-  {"id":"lex:gre-03","kind":"lexeme","ar":"وَعَلَيْكُمُ السَّلَام","translit":"wa ʿalaykumu s-salām","en":"and upon you be peace (the reply)","pos":"phrase","topic":"greetings","level":"A0","notes":"The standard reply to as-salāmu ʿalaykum.","tags":[]},
-  {"id":"lex:gre-04","kind":"lexeme","ar":"صَبَاحُ الْخَيْر","translit":"ṣabāḥu l-khayr","en":"good morning","pos":"phrase","topic":"greetings","level":"A0","tags":[]},
-  {"id":"lex:gre-05","kind":"lexeme","ar":"صَبَاحُ النُّور","translit":"ṣabāḥu n-nūr","en":"good morning (the reply)","pos":"phrase","topic":"greetings","level":"A0","tags":[]},
-  {"id":"lex:gre-06","kind":"lexeme","ar":"مَسَاءُ الْخَيْر","translit":"masāʾu l-khayr","en":"good evening","pos":"phrase","topic":"greetings","level":"A0","tags":[]},
-  {"id":"lex:gre-07","kind":"lexeme","ar":"مَسَاءُ النُّور","translit":"masāʾu n-nūr","en":"good evening (the reply)","pos":"phrase","topic":"greetings","level":"A0","tags":[]},
-  {"id":"lex:gre-08","kind":"lexeme","ar":"مَعَ السَّلَامَة","translit":"maʿa s-salāmah","en":"goodbye","pos":"phrase","topic":"greetings","level":"A0","fr":"au revoir","tags":["legacy-flashcard"]},
-  {"id":"lex:gre-09","kind":"lexeme","ar":"إِلَى اللِّقَاء","translit":"ilā l-liqāʾ","en":"see you later","pos":"phrase","topic":"greetings","level":"A0","tags":[]},
-  {"id":"lex:gre-10","kind":"lexeme","ar":"تُصْبِحُ عَلَى خَيْر","translit":"tuṣbiḥu ʿalā khayr","en":"good night","pos":"phrase","topic":"greetings","level":"A0","notes":"Literally \"may you wake up well\" — said when parting for the night.","tags":[]},
-  {"id":"lex:peo-01","kind":"lexeme","ar":"أُمّ","translit":"umm","en":"mother","pos":"noun","topic":"people","level":"A0","fr":"mère","tags":["legacy-flashcard"]},
-  {"id":"lex:peo-02","kind":"lexeme","ar":"أَب","translit":"ab","en":"father","pos":"noun","topic":"people","level":"A0","fr":"père","tags":["legacy-flashcard"]},
-  {"id":"lex:peo-03","kind":"lexeme","ar":"أَخ","translit":"akh","en":"brother","pos":"noun","topic":"people","level":"A0","plural":{"ar":"إِخْوَة","translit":"ikhwah"},"fr":"frère","tags":["legacy-flashcard"]},
-  {"id":"lex:peo-04","kind":"lexeme","ar":"أُخْت","translit":"ukht","en":"sister","pos":"noun","topic":"people","level":"A0","plural":{"ar":"أَخَوَات","translit":"akhawāt"},"fr":"sœur","tags":["legacy-flashcard"]},
-  {"id":"lex:peo-05","kind":"lexeme","ar":"اِبْن","translit":"ibn","en":"son","pos":"noun","topic":"people","level":"A0","plural":{"ar":"أَبْنَاء","translit":"abnāʾ"},"tags":[]},
-  {"id":"lex:peo-06","kind":"lexeme","ar":"اِبْنَة","translit":"ibnah","en":"daughter","pos":"noun","topic":"people","level":"A0","plural":{"ar":"بَنَات","translit":"banāt"},"tags":[]},
-  {"id":"lex:peo-07","kind":"lexeme","ar":"جَدّ","translit":"jadd","en":"grandfather","pos":"noun","topic":"people","level":"A0","tags":[]},
-  {"id":"lex:peo-08","kind":"lexeme","ar":"جَدَّة","translit":"jaddah","en":"grandmother","pos":"noun","topic":"people","level":"A0","tags":[]},
-  {"id":"lex:peo-09","kind":"lexeme","ar":"زَوْج","translit":"zawj","en":"husband","pos":"noun","topic":"people","level":"A1","tags":[]},
-  {"id":"lex:peo-10","kind":"lexeme","ar":"زَوْجَة","translit":"zawjah","en":"wife","pos":"noun","topic":"people","level":"A1","tags":[]},
-  {"id":"lex:peo-11","kind":"lexeme","ar":"صَدِيق","translit":"ṣadīq","en":"friend (male)","pos":"noun","topic":"people","level":"A0","plural":{"ar":"أَصْدِقَاء","translit":"aṣdiqāʾ"},"example":{"ar":"هَذَا صَدِيقِي.","en":"This is my friend."},"fr":"ami(e)","tags":["legacy-flashcard"]},
-  {"id":"lex:peo-12","kind":"lexeme","ar":"صَدِيقَة","translit":"ṣadīqah","en":"friend (female)","pos":"noun","topic":"people","level":"A0","tags":[]},
-  {"id":"lex:peo-13","kind":"lexeme","ar":"بِنْت","translit":"bint","en":"girl","pos":"noun","topic":"people","level":"A0","tags":[]},
-  {"id":"lex:num-00","kind":"lexeme","ar":"صِفْر","translit":"ṣifr","en":"zero","pos":"number","topic":"numbers","level":"A0","tags":[]},
-  {"id":"lex:num-01","kind":"lexeme","ar":"وَاحِد","translit":"wāḥid","en":"one","pos":"number","topic":"numbers","level":"A0","fr":"un","tags":["legacy-flashcard"]},
-  {"id":"lex:num-02","kind":"lexeme","ar":"اِثْنَان","translit":"ithnān","en":"two","pos":"number","topic":"numbers","level":"A0","fr":"deux","tags":["legacy-flashcard"]},
-  {"id":"lex:num-03","kind":"lexeme","ar":"ثَلَاثَة","translit":"thalāthah","en":"three","pos":"number","topic":"numbers","level":"A0","example":{"ar":"عِنْدِي ثَلَاثَةُ كُتُب.","en":"I have three books."},"fr":"trois","tags":["legacy-flashcard"]},
-  {"id":"lex:num-04","kind":"lexeme","ar":"أَرْبَعَة","translit":"arbaʿah","en":"four","pos":"number","topic":"numbers","level":"A0","fr":"quatre","tags":["legacy-flashcard"]},
-  {"id":"lex:num-05","kind":"lexeme","ar":"خَمْسَة","translit":"khamsah","en":"five","pos":"number","topic":"numbers","level":"A0","fr":"cinq","tags":["legacy-flashcard"]},
-  {"id":"lex:num-06","kind":"lexeme","ar":"سِتَّة","translit":"sittah","en":"six","pos":"number","topic":"numbers","level":"A0","fr":"six","tags":["legacy-flashcard"]},
-  {"id":"lex:num-07","kind":"lexeme","ar":"سَبْعَة","translit":"sabʿah","en":"seven","pos":"number","topic":"numbers","level":"A0","fr":"sept","tags":["legacy-flashcard"]},
-  {"id":"lex:num-08","kind":"lexeme","ar":"ثَمَانِيَة","translit":"thamāniyah","en":"eight","pos":"number","topic":"numbers","level":"A0","fr":"huit","tags":["legacy-flashcard"]},
-  {"id":"lex:num-09","kind":"lexeme","ar":"تِسْعَة","translit":"tisʿah","en":"nine","pos":"number","topic":"numbers","level":"A0","fr":"neuf","tags":["legacy-flashcard"]},
-  {"id":"lex:num-10","kind":"lexeme","ar":"عَشَرَة","translit":"ʿasharah","en":"ten","pos":"number","topic":"numbers","level":"A0","example":{"ar":"عَشَرَة أَيَّام فِي الْأُسْبُوعَيْن.","en":"Ten days in two weeks."},"fr":"dix","tags":["legacy-flashcard"]},
-  {"id":"lex:col-01","kind":"lexeme","ar":"أَحْمَر","translit":"aḥmar","en":"red","pos":"adjective","topic":"colors","level":"A0","notes":"Feminine form: حَمْرَاء (ḥamrāʾ) — Arabic color adjectives agree in gender with the noun they describe.","tags":[]},
-  {"id":"lex:col-02","kind":"lexeme","ar":"أَزْرَق","translit":"azraq","en":"blue","pos":"adjective","topic":"colors","level":"A0","tags":[]},
-  {"id":"lex:col-03","kind":"lexeme","ar":"أَخْضَر","translit":"akhḍar","en":"green","pos":"adjective","topic":"colors","level":"A0","tags":[]},
-  {"id":"lex:col-04","kind":"lexeme","ar":"أَصْفَر","translit":"aṣfar","en":"yellow","pos":"adjective","topic":"colors","level":"A0","tags":[]},
-  {"id":"lex:col-05","kind":"lexeme","ar":"أَسْوَد","translit":"aswad","en":"black","pos":"adjective","topic":"colors","level":"A0","tags":[]},
-  {"id":"lex:col-06","kind":"lexeme","ar":"أَبْيَض","translit":"abyaḍ","en":"white","pos":"adjective","topic":"colors","level":"A0","tags":[]},
-  {"id":"lex:col-07","kind":"lexeme","ar":"بُرْتُقَالِيّ","translit":"burtuqāliyy","en":"orange","pos":"adjective","topic":"colors","level":"A1","tags":[]},
-  {"id":"lex:col-08","kind":"lexeme","ar":"بُنِّيّ","translit":"bunniyy","en":"brown","pos":"adjective","topic":"colors","level":"A1","tags":[]},
-  {"id":"lex:col-09","kind":"lexeme","ar":"وَرْدِيّ","translit":"wardiyy","en":"pink","pos":"adjective","topic":"colors","level":"A1","tags":[]},
-  {"id":"lex:col-10","kind":"lexeme","ar":"رَمَادِيّ","translit":"ramādiyy","en":"gray","pos":"adjective","topic":"colors","level":"A1","tags":[]},
-  {"id":"lex:foo-01","kind":"lexeme","ar":"خُبْز","translit":"khubz","en":"bread","pos":"noun","topic":"food","level":"A0","fr":"pain","tags":["legacy-flashcard"]},
-  {"id":"lex:foo-02","kind":"lexeme","ar":"أَرُزّ","translit":"aruzz","en":"rice","pos":"noun","topic":"food","level":"A0","tags":[]},
-  {"id":"lex:foo-03","kind":"lexeme","ar":"لَحْم","translit":"laḥm","en":"meat","pos":"noun","topic":"food","level":"A0","tags":[]},
-  {"id":"lex:foo-04","kind":"lexeme","ar":"دَجَاج","translit":"dajāj","en":"chicken","pos":"noun","topic":"food","level":"A0","tags":[]},
-  {"id":"lex:foo-05","kind":"lexeme","ar":"سَمَك","translit":"samak","en":"fish","pos":"noun","topic":"food","level":"A0","tags":[]},
-  {"id":"lex:foo-06","kind":"lexeme","ar":"فَاكِهَة","translit":"fākihah","en":"fruit","pos":"noun","topic":"food","level":"A0","example":{"ar":"أُحِبُّ الْفَاكِهَة.","en":"I like fruit."},"tags":[]},
-  {"id":"lex:foo-07","kind":"lexeme","ar":"خُضَار","translit":"khuḍār","en":"vegetables","pos":"noun","topic":"food","level":"A0","tags":[]},
-  {"id":"lex:foo-08","kind":"lexeme","ar":"حَلِيب","translit":"ḥalīb","en":"milk","pos":"noun","topic":"food","level":"A0","tags":[]},
-  {"id":"lex:foo-09","kind":"lexeme","ar":"مَاء","translit":"māʾ","en":"water","pos":"noun","topic":"food","level":"A0","fr":"eau","tags":["legacy-flashcard"]},
-  {"id":"lex:foo-10","kind":"lexeme","ar":"قَهْوَة","translit":"qahwah","en":"coffee","pos":"noun","topic":"food","level":"A0","notes":"Arabic coffee is a symbol of hospitality — often served with dates when welcoming a guest.","fr":"café","tags":["legacy-flashcard"]},
-  {"id":"lex:foo-11","kind":"lexeme","ar":"شَاي","translit":"shāy","en":"tea","pos":"noun","topic":"food","level":"A0","fr":"thé","tags":["legacy-flashcard"]},
-  {"id":"lex:foo-12","kind":"lexeme","ar":"سُكَّر","translit":"sukkar","en":"sugar","pos":"noun","topic":"food","level":"A0","tags":[]},
-  {"id":"lex:foo-13","kind":"lexeme","ar":"مُوز","translit":"mūz","en":"banana","pos":"noun","topic":"food","level":"A0","tags":[]},
-  {"id":"lex:foo-14","kind":"lexeme","ar":"تِين","translit":"tīn","en":"figs","pos":"noun","topic":"food","level":"A0","tags":[]},
-  {"id":"lex:foo-15","kind":"lexeme","ar":"تُوت","translit":"tūt","en":"berries","pos":"noun","topic":"food","level":"A0","tags":[]},
-  {"id":"lex:hom-01","kind":"lexeme","ar":"بَيْت","translit":"bayt","en":"house","pos":"noun","topic":"home","level":"A0","fr":"maison","tags":["legacy-flashcard"]},
-  {"id":"lex:hom-02","kind":"lexeme","ar":"غُرْفَة","translit":"ghurfah","en":"room","pos":"noun","topic":"home","level":"A0","tags":[]},
-  {"id":"lex:hom-03","kind":"lexeme","ar":"غُرْفَةُ النَّوْم","translit":"ghurfat an-nawm","en":"bedroom","pos":"noun","topic":"home","level":"A0","tags":[]},
-  {"id":"lex:hom-04","kind":"lexeme","ar":"مَطْبَخ","translit":"maṭbakh","en":"kitchen","pos":"noun","topic":"home","level":"A0","tags":[]},
-  {"id":"lex:hom-05","kind":"lexeme","ar":"حَمَّام","translit":"ḥammām","en":"bathroom","pos":"noun","topic":"home","level":"A0","tags":[]},
-  {"id":"lex:hom-06","kind":"lexeme","ar":"بَاب","translit":"bāb","en":"door","pos":"noun","topic":"home","level":"A0","fr":"porte","tags":["legacy-flashcard"]},
-  {"id":"lex:hom-07","kind":"lexeme","ar":"نَافِذَة","translit":"nāfidhah","en":"window","pos":"noun","topic":"home","level":"A0","fr":"fenêtre","tags":["legacy-flashcard"]},
-  {"id":"lex:hom-08","kind":"lexeme","ar":"طَاوِلَة","translit":"ṭāwilah","en":"table","pos":"noun","topic":"home","level":"A0","fr":"table","tags":["legacy-flashcard"]},
-  {"id":"lex:hom-09","kind":"lexeme","ar":"كُرْسِيّ","translit":"kursiyy","en":"chair","pos":"noun","topic":"home","level":"A0","fr":"chaise","tags":["legacy-flashcard"]},
-  {"id":"lex:hom-10","kind":"lexeme","ar":"سَرِير","translit":"sarīr","en":"bed","pos":"noun","topic":"home","level":"A0","tags":[]},
-  {"id":"lex:hom-11","kind":"lexeme","ar":"بَيْتٌ","translit":"baytun","en":"a house (subject form, ending in ḍammatayn)","pos":"noun","topic":"home","level":"A1","tags":[]},
-  {"id":"lex:hom-12","kind":"lexeme","ar":"فِي بَيْتٍ","translit":"fī baytin","en":"in a house (ending in kasratayn, after a preposition)","pos":"phrase","topic":"home","level":"A1","tags":[]},
-  {"id":"lex:sch-01","kind":"lexeme","ar":"مَدْرَسَة","translit":"madrasah","en":"school","pos":"noun","topic":"school","level":"A0","fr":"école","tags":["legacy-flashcard"]},
-  {"id":"lex:sch-02","kind":"lexeme","ar":"مُعَلِّم","translit":"muʿallim","en":"teacher (male)","pos":"noun","topic":"school","level":"A0","tags":[]},
-  {"id":"lex:sch-03","kind":"lexeme","ar":"مُعَلِّمَة","translit":"muʿallimah","en":"teacher (female)","pos":"noun","topic":"school","level":"A0","tags":[]},
-  {"id":"lex:sch-04","kind":"lexeme","ar":"طَالِب","translit":"ṭālib","en":"student (male)","pos":"noun","topic":"school","level":"A0","example":{"ar":"أَنَا طَالِب فِي الْمَدْرَسَة.","en":"I am a student at the school."},"tags":[]},
-  {"id":"lex:sch-05","kind":"lexeme","ar":"طَالِبَة","translit":"ṭālibah","en":"student (female)","pos":"noun","topic":"school","level":"A0","tags":[]},
-  {"id":"lex:sch-06","kind":"lexeme","ar":"كِتَاب","translit":"kitāb","en":"book","pos":"noun","topic":"school","level":"A0","fr":"livre","tags":["legacy-flashcard"]},
-  {"id":"lex:sch-07","kind":"lexeme","ar":"قَلَم","translit":"qalam","en":"pen","pos":"noun","topic":"school","level":"A0","fr":"stylo","tags":["legacy-flashcard"]},
-  {"id":"lex:sch-08","kind":"lexeme","ar":"دَفْتَر","translit":"daftar","en":"notebook","pos":"noun","topic":"school","level":"A0","fr":"carnet de notes","tags":["legacy-flashcard"]},
-  {"id":"lex:sch-09","kind":"lexeme","ar":"دَرْس","translit":"dars","en":"lesson","pos":"noun","topic":"school","level":"A0","tags":[]},
-  {"id":"lex:sch-10","kind":"lexeme","ar":"وَاجِب","translit":"wājib","en":"homework","pos":"noun","topic":"school","level":"A1","example":{"ar":"أَنْهَيْتُ وَاجِبِي.","en":"I finished my homework."},"tags":[]},
-  {"id":"lex:obj-01","kind":"lexeme","ar":"هَاتِف","translit":"hātif","en":"phone","pos":"noun","topic":"objects","level":"A0","fr":"téléphone","tags":["legacy-flashcard"]},
-  {"id":"lex:obj-02","kind":"lexeme","ar":"حَاسُوب","translit":"ḥāsūb","en":"computer","pos":"noun","topic":"objects","level":"A0","fr":"ordinateur","tags":["legacy-flashcard"]},
-  {"id":"lex:obj-03","kind":"lexeme","ar":"سَاعَة","translit":"sāʿah","en":"clock / watch","pos":"noun","topic":"objects","level":"A0","tags":[]},
-  {"id":"lex:obj-04","kind":"lexeme","ar":"مِفْتَاح","translit":"miftāḥ","en":"key","pos":"noun","topic":"objects","level":"A0","tags":[]},
-  {"id":"lex:obj-05","kind":"lexeme","ar":"حَقِيبَة","translit":"ḥaqībah","en":"bag","pos":"noun","topic":"objects","level":"A0","tags":[]},
-  {"id":"lex:obj-06","kind":"lexeme","ar":"مِصْبَاح","translit":"miṣbāḥ","en":"lamp","pos":"noun","topic":"objects","level":"A1","tags":[]},
-  {"id":"lex:obj-07","kind":"lexeme","ar":"مِرْآة","translit":"mirʾāh","en":"mirror","pos":"noun","topic":"objects","level":"A1","tags":[]},
-  {"id":"lex:obj-08","kind":"lexeme","ar":"مِظَلَّة","translit":"miẓallah","en":"umbrella","pos":"noun","topic":"objects","level":"A1","tags":[]},
-  {"id":"lex:pla-01","kind":"lexeme","ar":"مَدِينَة","translit":"madīnah","en":"city","pos":"noun","topic":"places","level":"A0","tags":[]},
-  {"id":"lex:pla-02","kind":"lexeme","ar":"قَرْيَة","translit":"qaryah","en":"village","pos":"noun","topic":"places","level":"A1","tags":[]},
-  {"id":"lex:pla-03","kind":"lexeme","ar":"شَارِع","translit":"shāriʿ","en":"street","pos":"noun","topic":"places","level":"A0","tags":[]},
-  {"id":"lex:pla-04","kind":"lexeme","ar":"مَسْجِد","translit":"masjid","en":"mosque","pos":"noun","topic":"places","level":"A0","tags":[]},
-  {"id":"lex:pla-05","kind":"lexeme","ar":"مُسْتَشْفَى","translit":"mustashfā","en":"hospital","pos":"noun","topic":"places","level":"A1","tags":[]},
-  {"id":"lex:pla-06","kind":"lexeme","ar":"مَطْعَم","translit":"maṭʿam","en":"restaurant","pos":"noun","topic":"places","level":"A0","example":{"ar":"نَذْهَبُ إِلَى الْمَطْعَم.","en":"We are going to the restaurant."},"tags":[]},
-  {"id":"lex:pla-07","kind":"lexeme","ar":"سُوق","translit":"sūq","en":"market","pos":"noun","topic":"places","level":"A0","tags":[]},
-  {"id":"lex:pla-08","kind":"lexeme","ar":"مَطَار","translit":"maṭār","en":"airport","pos":"noun","topic":"places","level":"A1","tags":[]},
-  {"id":"lex:pla-09","kind":"lexeme","ar":"فُنْدُق","translit":"funduq","en":"hotel","pos":"noun","topic":"places","level":"A1","tags":[]},
-  {"id":"lex:pla-10","kind":"lexeme","ar":"مَكْتَبَة","translit":"maktabah","en":"library / bookstore","pos":"noun","topic":"places","level":"A0","tags":[]},
-  {"id":"lex:pla-11","kind":"lexeme","ar":"بَحْر","translit":"baḥr","en":"sea","pos":"noun","topic":"places","level":"A0","tags":[]},
-  {"id":"lex:tim-01","kind":"lexeme","ar":"الْيَوْم","translit":"al-yawm","en":"today","pos":"adverb","topic":"time","level":"A0","fr":"aujourd'hui","tags":["legacy-flashcard"]},
-  {"id":"lex:tim-02","kind":"lexeme","ar":"غَدًا","translit":"ghadan","en":"tomorrow","pos":"adverb","topic":"time","level":"A0","tags":[]},
-  {"id":"lex:tim-03","kind":"lexeme","ar":"أَمْس","translit":"ams","en":"yesterday","pos":"adverb","topic":"time","level":"A0","tags":[]},
-  {"id":"lex:tim-04","kind":"lexeme","ar":"الْآن","translit":"al-ān","en":"now","pos":"adverb","topic":"time","level":"A0","tags":[]},
-  {"id":"lex:tim-05","kind":"lexeme","ar":"صَبَاح","translit":"ṣabāḥ","en":"morning","pos":"noun","topic":"time","level":"A0","fr":"matin","tags":["legacy-flashcard"]},
-  {"id":"lex:tim-06","kind":"lexeme","ar":"مَسَاء","translit":"masāʾ","en":"evening","pos":"noun","topic":"time","level":"A0","fr":"soirée","tags":["legacy-flashcard"]},
-  {"id":"lex:tim-07","kind":"lexeme","ar":"لَيْل","translit":"layl","en":"night","pos":"noun","topic":"time","level":"A0","tags":[]},
-  {"id":"lex:tim-08","kind":"lexeme","ar":"أُسْبُوع","translit":"usbūʿ","en":"week","pos":"noun","topic":"time","level":"A0","tags":[]},
-  {"id":"lex:tim-09","kind":"lexeme","ar":"شَهْر","translit":"shahr","en":"month","pos":"noun","topic":"time","level":"A0","tags":[]},
-  {"id":"lex:tim-10","kind":"lexeme","ar":"سَنَة","translit":"sanah","en":"year","pos":"noun","topic":"time","level":"A0","tags":[]},
-  {"id":"lex:tim-11","kind":"lexeme","ar":"الْأَحَد","translit":"al-aḥad","en":"Sunday","pos":"noun","topic":"time","level":"A0","tags":[]},
-  {"id":"lex:tim-12","kind":"lexeme","ar":"الِاثْنَيْن","translit":"al-ithnayn","en":"Monday","pos":"noun","topic":"time","level":"A0","tags":[]},
-  {"id":"lex:tim-13","kind":"lexeme","ar":"الثُّلَاثَاء","translit":"ath-thulāthāʾ","en":"Tuesday","pos":"noun","topic":"time","level":"A0","tags":[]},
-  {"id":"lex:tim-14","kind":"lexeme","ar":"الْأَرْبِعَاء","translit":"al-arbiʿāʾ","en":"Wednesday","pos":"noun","topic":"time","level":"A0","tags":[]},
-  {"id":"lex:tim-15","kind":"lexeme","ar":"الْخَمِيس","translit":"al-khamīs","en":"Thursday","pos":"noun","topic":"time","level":"A0","tags":[]},
-  {"id":"lex:tim-16","kind":"lexeme","ar":"الْجُمُعَة","translit":"al-jumʿah","en":"Friday","pos":"noun","topic":"time","level":"A0","tags":[]},
-  {"id":"lex:tim-17","kind":"lexeme","ar":"السَّبْت","translit":"as-sabt","en":"Saturday","pos":"noun","topic":"time","level":"A0","tags":[]},
-  {"id":"lex:tim-18","kind":"lexeme","ar":"شَمْس","translit":"shams","en":"sun","pos":"noun","topic":"time","level":"A0","tags":[]},
-  {"id":"lex:tim-19","kind":"lexeme","ar":"قَمَر","translit":"qamar","en":"moon","pos":"noun","topic":"time","level":"A0","tags":[]},
-  {"id":"lex:ver-01","kind":"lexeme","ar":"ذَهَبَ","translit":"dhahaba","en":"to go","pos":"verb","topic":"verbs","level":"A1","example":{"ar":"ذَهَبَ إِلَى الْمَدْرَسَة.","en":"He went to school."},"notes":"Present tense: يَذْهَب (yadh-hab, \"he goes\").","tags":[]},
-  {"id":"lex:ver-02","kind":"lexeme","ar":"أَكَلَ","translit":"akala","en":"to eat","pos":"verb","topic":"verbs","level":"A0","example":{"ar":"أَكَلْتُ التُّفَّاح.","en":"I ate the apple."},"tags":[]},
-  {"id":"lex:ver-03","kind":"lexeme","ar":"شَرِبَ","translit":"shariba","en":"to drink","pos":"verb","topic":"verbs","level":"A0","example":{"ar":"شَرِبَ الْمَاء.","en":"He drank the water."},"tags":[]},
-  {"id":"lex:ver-04","kind":"lexeme","ar":"كَتَبَ","translit":"kataba","en":"to write","pos":"verb","topic":"verbs","level":"A0","tags":[]},
-  {"id":"lex:ver-05","kind":"lexeme","ar":"قَرَأَ","translit":"qaraʾa","en":"to read","pos":"verb","topic":"verbs","level":"A0","example":{"ar":"قَرَأَتِ الْكِتَاب.","en":"She read the book."},"tags":[]},
-  {"id":"lex:ver-06","kind":"lexeme","ar":"تَكَلَّمَ","translit":"takallama","en":"to speak","pos":"verb","topic":"verbs","level":"A1","notes":"Present tense: يَتَكَلَّم (yatakallam, \"he speaks\").","tags":[]},
-  {"id":"lex:ver-07","kind":"lexeme","ar":"سَمِعَ","translit":"samiʿa","en":"to hear / to listen","pos":"verb","topic":"verbs","level":"A1","tags":[]},
-  {"id":"lex:ver-08","kind":"lexeme","ar":"رَأَى","translit":"raʾā","en":"to see","pos":"verb","topic":"verbs","level":"A1","tags":[]},
-  {"id":"lex:ver-09","kind":"lexeme","ar":"فَهِمَ","translit":"fahima","en":"to understand","pos":"verb","topic":"verbs","level":"A1","example":{"ar":"هَلْ فَهِمْتَ الدَّرْس؟","en":"Did you understand the lesson?"},"notes":"Present tense: يَفْهَم (yafham, \"he understands\").","tags":[]},
-  {"id":"lex:ver-10","kind":"lexeme","ar":"عَمِلَ","translit":"ʿamila","en":"to work / to do","pos":"verb","topic":"verbs","level":"A1","tags":[]},
-  {"id":"lex:adj-01","kind":"lexeme","ar":"كَبِير","translit":"kabīr","en":"big","pos":"adjective","topic":"adjectives","level":"A0","tags":[]},
-  {"id":"lex:adj-01f","kind":"lexeme","ar":"كَبِيرَة","translit":"kabīrah","en":"big (feminine)","pos":"adjective","topic":"adjectives","level":"A0","gender":"feminine","tags":[]},
-  {"id":"lex:adj-02","kind":"lexeme","ar":"صَغِير","translit":"ṣaghīr","en":"small","pos":"adjective","topic":"adjectives","level":"A0","example":{"ar":"الْبَيْتُ صَغِير.","en":"The house is small."},"tags":[]},
-  {"id":"lex:adj-03","kind":"lexeme","ar":"جَمِيل","translit":"jamīl","en":"beautiful","pos":"adjective","topic":"adjectives","level":"A0","tags":[]},
-  {"id":"lex:adj-04","kind":"lexeme","ar":"طَوِيل","translit":"ṭawīl","en":"tall / long","pos":"adjective","topic":"adjectives","level":"A0","tags":[]},
-  {"id":"lex:adj-05","kind":"lexeme","ar":"قَصِير","translit":"qaṣīr","en":"short","pos":"adjective","topic":"adjectives","level":"A0","tags":[]},
-  {"id":"lex:adj-06","kind":"lexeme","ar":"جَدِيد","translit":"jadīd","en":"new","pos":"adjective","topic":"adjectives","level":"A0","tags":[]},
-  {"id":"lex:adj-07","kind":"lexeme","ar":"قَدِيم","translit":"qadīm","en":"old (things)","pos":"adjective","topic":"adjectives","level":"A0","tags":[]},
-  {"id":"lex:adj-08","kind":"lexeme","ar":"سَعِيد","translit":"saʿīd","en":"happy","pos":"adjective","topic":"adjectives","level":"A0","example":{"ar":"أَنَا سَعِيد الْيَوْم.","en":"I am happy today."},"tags":[]},
-  {"id":"lex:adj-08f","kind":"lexeme","ar":"سَعِيدَة","translit":"saʿīdah","en":"happy (feminine)","pos":"adjective","topic":"adjectives","level":"A0","gender":"feminine","tags":[]},
-  {"id":"lex:adj-09","kind":"lexeme","ar":"حَزِين","translit":"ḥazīn","en":"sad","pos":"adjective","topic":"adjectives","level":"A0","tags":[]},
-  {"id":"lex:adj-10","kind":"lexeme","ar":"سَهْل","translit":"sahl","en":"easy","pos":"adjective","topic":"adjectives","level":"A1","tags":[]},
-  {"id":"lex:adj-11","kind":"lexeme","ar":"صَعْب","translit":"ṣaʿb","en":"difficult","pos":"adjective","topic":"adjectives","level":"A1","example":{"ar":"هَذَا الدَّرْسُ صَعْب.","en":"This lesson is difficult."},"tags":[]},
-  {"id":"lex:exp-01","kind":"lexeme","ar":"مِنْ فَضْلِك","translit":"min faḍlik","en":"please","pos":"phrase","topic":"expressions","level":"A0","fr":"s'il vous plaît","tags":["legacy-flashcard"]},
-  {"id":"lex:exp-02","kind":"lexeme","ar":"شُكْرًا","translit":"shukran","en":"thank you","pos":"phrase","topic":"expressions","level":"A0","fr":"merci","tags":["legacy-flashcard"]},
-  {"id":"lex:exp-03","kind":"lexeme","ar":"عَفْوًا","translit":"ʿafwan","en":"you're welcome / excuse me","pos":"phrase","topic":"expressions","level":"A0","tags":[]},
-  {"id":"lex:exp-04","kind":"lexeme","ar":"آسِف","translit":"āsif","en":"sorry (said by a male speaker)","pos":"phrase","topic":"expressions","level":"A0","tags":[]},
-  {"id":"lex:exp-05","kind":"lexeme","ar":"نَعَم","translit":"naʿam","en":"yes","pos":"phrase","topic":"expressions","level":"A0","fr":"oui","tags":["legacy-flashcard"]},
-  {"id":"lex:exp-06","kind":"lexeme","ar":"لَا","translit":"lā","en":"no","pos":"phrase","topic":"expressions","level":"A0","fr":"non","tags":["legacy-flashcard"]},
-  {"id":"lex:exp-07","kind":"lexeme","ar":"لَا أَعْرِف","translit":"lā aʿrif","en":"I don't know","pos":"phrase","topic":"expressions","level":"A1","tags":[]},
-  {"id":"lex:exp-08","kind":"lexeme","ar":"أَيْنَ الْحَمَّام؟","translit":"ayna l-ḥammām?","en":"Where is the bathroom?","pos":"phrase","topic":"expressions","level":"A1","tags":[]},
-  {"id":"lex:exp-09","kind":"lexeme","ar":"كَمِ السَّاعَة؟","translit":"kami s-sāʿah?","en":"What time is it?","pos":"phrase","topic":"expressions","level":"A1","tags":[]},
-  {"id":"lex:exp-10","kind":"lexeme","ar":"بِكَمْ هَذَا؟","translit":"bikam hādhā?","en":"How much is this?","pos":"phrase","topic":"expressions","level":"A1","tags":[]},
-  {"id":"lex:pro-01","kind":"lexeme","ar":"هُوَ","translit":"huwa","en":"he","pos":"pronoun","topic":"pronouns","level":"A1","tags":[]},
-  {"id":"lex:pro-02","kind":"lexeme","ar":"هِيَ","translit":"hiya","en":"she","pos":"pronoun","topic":"pronouns","level":"A1","tags":[]},
-  {"id":"lex:pro-03","kind":"lexeme","ar":"هُمْ","translit":"hum","en":"they (masculine/mixed group)","pos":"pronoun","topic":"pronouns","level":"A1","tags":[]},
-  {"id":"lex:fc-3","kind":"lexeme","ar":"سَيَّارَة","translit":"sayyārah","en":"car","pos":"noun","topic":"objects","level":"A0","fr":"voiture","tags":["legacy-flashcard"]},
-  {"id":"lex:fc-14","kind":"lexeme","ar":"طَعَام","translit":"taʿām","en":"food","pos":"noun","topic":"food","level":"A0","fr":"nourriture","tags":["legacy-flashcard"]},
-  {"id":"lex:fc-27","kind":"lexeme","ar":"أَهْلًا وَسَهْلًا","translit":"ahlan wa sahlan","en":"welcome","pos":"phrase","topic":"greetings","level":"A0","fr":"bienvenue","notes":"Literally \"family and ease\" — a warm phrase meant to make a guest feel at home.","tags":["legacy-flashcard"]},
-  {"id":"lex:fc-28","kind":"lexeme","ar":"كَيْفَ حَالُك؟","translit":"kayfa hāluk","en":"how are you?","pos":"phrase","topic":"greetings","level":"A0","fr":"comment ça va ?","tags":["legacy-flashcard"]},
-  {"id":"lex:fc-29","kind":"lexeme","ar":"اِسْمِي...","translit":"ismī...","en":"my name is...","pos":"phrase","topic":"greetings","level":"A0","fr":"je m'appelle...","tags":["legacy-flashcard"]},
-  {"id":"lex:fc-30","kind":"lexeme","ar":"تَشَرَّفْنَا","translit":"tasharrafnā","en":"nice to meet you","pos":"phrase","topic":"greetings","level":"A0","fr":"enchanté(e)","tags":["legacy-flashcard"]},
-  {"id":"lex:fc-45","kind":"lexeme","ar":"عَائِلَة","translit":"ʿāʾilah","en":"family","pos":"noun","topic":"people","level":"A0","fr":"famille","notes":"Family and hospitality sit at the heart of Arab culture — guests are often welcomed like family.","tags":["legacy-flashcard"]},
+  {"id":"lex:gre-01","kind":"lexeme","ar":"مَرْحَبًا","translit":"marhaban","en":"hello","pos":"phrase","topic":"greetings","level":"A0","example":{"ar":"مَرْحَبًا، كَيْفَ حَالُكَ؟","en":"Hello, how are you?"},"fr":"bonjour","tags":["legacy-flashcard"],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:gre-02","kind":"lexeme","ar":"السَّلَامُ عَلَيْكُم","translit":"as-salāmu ʿalaykum","en":"peace be upon you (a greeting)","pos":"phrase","topic":"greetings","level":"A0","notes":"The traditional Islamic/Arabic greeting, used any time of day.","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:gre-03","kind":"lexeme","ar":"وَعَلَيْكُمُ السَّلَام","translit":"wa ʿalaykumu s-salām","en":"and upon you be peace (the reply)","pos":"phrase","topic":"greetings","level":"A0","notes":"The standard reply to as-salāmu ʿalaykum.","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:gre-04","kind":"lexeme","ar":"صَبَاحُ الْخَيْر","translit":"ṣabāḥu l-khayr","en":"good morning","pos":"phrase","topic":"greetings","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:gre-05","kind":"lexeme","ar":"صَبَاحُ النُّور","translit":"ṣabāḥu n-nūr","en":"good morning (the reply)","pos":"phrase","topic":"greetings","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:gre-06","kind":"lexeme","ar":"مَسَاءُ الْخَيْر","translit":"masāʾu l-khayr","en":"good evening","pos":"phrase","topic":"greetings","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:gre-07","kind":"lexeme","ar":"مَسَاءُ النُّور","translit":"masāʾu n-nūr","en":"good evening (the reply)","pos":"phrase","topic":"greetings","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:gre-08","kind":"lexeme","ar":"مَعَ السَّلَامَة","translit":"maʿa s-salāmah","en":"goodbye","pos":"phrase","topic":"greetings","level":"A0","fr":"au revoir","tags":["legacy-flashcard"],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:gre-09","kind":"lexeme","ar":"إِلَى اللِّقَاء","translit":"ilā l-liqāʾ","en":"see you later","pos":"phrase","topic":"greetings","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:gre-10","kind":"lexeme","ar":"تُصْبِحُ عَلَى خَيْر","translit":"tuṣbiḥu ʿalā khayr","en":"good night","pos":"phrase","topic":"greetings","level":"A0","notes":"Literally \"may you wake up well\" — said when parting for the night.","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:peo-01","kind":"lexeme","ar":"أُمّ","translit":"umm","en":"mother","pos":"noun","topic":"people","level":"A0","fr":"mère","tags":["legacy-flashcard"],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:peo-02","kind":"lexeme","ar":"أَب","translit":"ab","en":"father","pos":"noun","topic":"people","level":"A0","fr":"père","tags":["legacy-flashcard"],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:peo-03","kind":"lexeme","ar":"أَخ","translit":"akh","en":"brother","pos":"noun","topic":"people","level":"A0","plural":{"ar":"إِخْوَة","translit":"ikhwah"},"fr":"frère","tags":["legacy-flashcard"],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:peo-04","kind":"lexeme","ar":"أُخْت","translit":"ukht","en":"sister","pos":"noun","topic":"people","level":"A0","plural":{"ar":"أَخَوَات","translit":"akhawāt"},"fr":"sœur","tags":["legacy-flashcard"],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:peo-05","kind":"lexeme","ar":"اِبْن","translit":"ibn","en":"son","pos":"noun","topic":"people","level":"A0","plural":{"ar":"أَبْنَاء","translit":"abnāʾ"},"tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:peo-06","kind":"lexeme","ar":"اِبْنَة","translit":"ibnah","en":"daughter","pos":"noun","topic":"people","level":"A0","plural":{"ar":"بَنَات","translit":"banāt"},"tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:peo-07","kind":"lexeme","ar":"جَدّ","translit":"jadd","en":"grandfather","pos":"noun","topic":"people","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:peo-08","kind":"lexeme","ar":"جَدَّة","translit":"jaddah","en":"grandmother","pos":"noun","topic":"people","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:peo-09","kind":"lexeme","ar":"زَوْج","translit":"zawj","en":"husband","pos":"noun","topic":"people","level":"A1","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:peo-10","kind":"lexeme","ar":"زَوْجَة","translit":"zawjah","en":"wife","pos":"noun","topic":"people","level":"A1","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:peo-11","kind":"lexeme","ar":"صَدِيق","translit":"ṣadīq","en":"friend (male)","pos":"noun","topic":"people","level":"A0","plural":{"ar":"أَصْدِقَاء","translit":"aṣdiqāʾ"},"example":{"ar":"هَذَا صَدِيقِي.","en":"This is my friend."},"fr":"ami(e)","tags":["legacy-flashcard"],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:peo-12","kind":"lexeme","ar":"صَدِيقَة","translit":"ṣadīqah","en":"friend (female)","pos":"noun","topic":"people","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:peo-13","kind":"lexeme","ar":"بِنْت","translit":"bint","en":"girl","pos":"noun","topic":"people","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:num-00","kind":"lexeme","ar":"صِفْر","translit":"ṣifr","en":"zero","pos":"number","topic":"numbers","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:num-01","kind":"lexeme","ar":"وَاحِد","translit":"wāḥid","en":"one","pos":"number","topic":"numbers","level":"A0","fr":"un","tags":["legacy-flashcard"],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:num-02","kind":"lexeme","ar":"اِثْنَان","translit":"ithnān","en":"two","pos":"number","topic":"numbers","level":"A0","fr":"deux","tags":["legacy-flashcard"],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:num-03","kind":"lexeme","ar":"ثَلَاثَة","translit":"thalāthah","en":"three","pos":"number","topic":"numbers","level":"A0","example":{"ar":"عِنْدِي ثَلَاثَةُ كُتُب.","en":"I have three books."},"fr":"trois","tags":["legacy-flashcard"],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:num-04","kind":"lexeme","ar":"أَرْبَعَة","translit":"arbaʿah","en":"four","pos":"number","topic":"numbers","level":"A0","fr":"quatre","tags":["legacy-flashcard"],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:num-05","kind":"lexeme","ar":"خَمْسَة","translit":"khamsah","en":"five","pos":"number","topic":"numbers","level":"A0","fr":"cinq","tags":["legacy-flashcard"],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:num-06","kind":"lexeme","ar":"سِتَّة","translit":"sittah","en":"six","pos":"number","topic":"numbers","level":"A0","fr":"six","tags":["legacy-flashcard"],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:num-07","kind":"lexeme","ar":"سَبْعَة","translit":"sabʿah","en":"seven","pos":"number","topic":"numbers","level":"A0","fr":"sept","tags":["legacy-flashcard"],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:num-08","kind":"lexeme","ar":"ثَمَانِيَة","translit":"thamāniyah","en":"eight","pos":"number","topic":"numbers","level":"A0","fr":"huit","tags":["legacy-flashcard"],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:num-09","kind":"lexeme","ar":"تِسْعَة","translit":"tisʿah","en":"nine","pos":"number","topic":"numbers","level":"A0","fr":"neuf","tags":["legacy-flashcard"],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:num-10","kind":"lexeme","ar":"عَشَرَة","translit":"ʿasharah","en":"ten","pos":"number","topic":"numbers","level":"A0","example":{"ar":"عَشَرَة أَيَّام فِي الْأُسْبُوعَيْن.","en":"Ten days in two weeks."},"fr":"dix","tags":["legacy-flashcard"],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:col-01","kind":"lexeme","ar":"أَحْمَر","translit":"aḥmar","en":"red","pos":"adjective","topic":"colors","level":"A0","notes":"Feminine form: حَمْرَاء (ḥamrāʾ) — Arabic color adjectives agree in gender with the noun they describe.","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:col-02","kind":"lexeme","ar":"أَزْرَق","translit":"azraq","en":"blue","pos":"adjective","topic":"colors","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:col-03","kind":"lexeme","ar":"أَخْضَر","translit":"akhḍar","en":"green","pos":"adjective","topic":"colors","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:col-04","kind":"lexeme","ar":"أَصْفَر","translit":"aṣfar","en":"yellow","pos":"adjective","topic":"colors","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:col-05","kind":"lexeme","ar":"أَسْوَد","translit":"aswad","en":"black","pos":"adjective","topic":"colors","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:col-06","kind":"lexeme","ar":"أَبْيَض","translit":"abyaḍ","en":"white","pos":"adjective","topic":"colors","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:col-07","kind":"lexeme","ar":"بُرْتُقَالِيّ","translit":"burtuqāliyy","en":"orange","pos":"adjective","topic":"colors","level":"A1","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:col-08","kind":"lexeme","ar":"بُنِّيّ","translit":"bunniyy","en":"brown","pos":"adjective","topic":"colors","level":"A1","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:col-09","kind":"lexeme","ar":"وَرْدِيّ","translit":"wardiyy","en":"pink","pos":"adjective","topic":"colors","level":"A1","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:col-10","kind":"lexeme","ar":"رَمَادِيّ","translit":"ramādiyy","en":"gray","pos":"adjective","topic":"colors","level":"A1","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:foo-01","kind":"lexeme","ar":"خُبْز","translit":"khubz","en":"bread","pos":"noun","topic":"food","level":"A0","fr":"pain","tags":["legacy-flashcard"],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:foo-02","kind":"lexeme","ar":"أَرُزّ","translit":"aruzz","en":"rice","pos":"noun","topic":"food","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:foo-03","kind":"lexeme","ar":"لَحْم","translit":"laḥm","en":"meat","pos":"noun","topic":"food","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:foo-04","kind":"lexeme","ar":"دَجَاج","translit":"dajāj","en":"chicken","pos":"noun","topic":"food","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:foo-05","kind":"lexeme","ar":"سَمَك","translit":"samak","en":"fish","pos":"noun","topic":"food","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:foo-06","kind":"lexeme","ar":"فَاكِهَة","translit":"fākihah","en":"fruit","pos":"noun","topic":"food","level":"A0","example":{"ar":"أُحِبُّ الْفَاكِهَة.","en":"I like fruit."},"tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:foo-07","kind":"lexeme","ar":"خُضَار","translit":"khuḍār","en":"vegetables","pos":"noun","topic":"food","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:foo-08","kind":"lexeme","ar":"حَلِيب","translit":"ḥalīb","en":"milk","pos":"noun","topic":"food","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:foo-09","kind":"lexeme","ar":"مَاء","translit":"māʾ","en":"water","pos":"noun","topic":"food","level":"A0","fr":"eau","tags":["legacy-flashcard"],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:foo-10","kind":"lexeme","ar":"قَهْوَة","translit":"qahwah","en":"coffee","pos":"noun","topic":"food","level":"A0","notes":"Arabic coffee is a symbol of hospitality — often served with dates when welcoming a guest.","fr":"café","tags":["legacy-flashcard"],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:foo-11","kind":"lexeme","ar":"شَاي","translit":"shāy","en":"tea","pos":"noun","topic":"food","level":"A0","fr":"thé","tags":["legacy-flashcard"],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:foo-12","kind":"lexeme","ar":"سُكَّر","translit":"sukkar","en":"sugar","pos":"noun","topic":"food","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:foo-13","kind":"lexeme","ar":"مُوز","translit":"mūz","en":"banana","pos":"noun","topic":"food","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:foo-14","kind":"lexeme","ar":"تِين","translit":"tīn","en":"figs","pos":"noun","topic":"food","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:foo-15","kind":"lexeme","ar":"تُوت","translit":"tūt","en":"berries","pos":"noun","topic":"food","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:hom-01","kind":"lexeme","ar":"بَيْت","translit":"bayt","en":"house","pos":"noun","topic":"home","level":"A0","fr":"maison","tags":["legacy-flashcard"],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:hom-02","kind":"lexeme","ar":"غُرْفَة","translit":"ghurfah","en":"room","pos":"noun","topic":"home","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:hom-03","kind":"lexeme","ar":"غُرْفَةُ النَّوْم","translit":"ghurfat an-nawm","en":"bedroom","pos":"noun","topic":"home","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:hom-04","kind":"lexeme","ar":"مَطْبَخ","translit":"maṭbakh","en":"kitchen","pos":"noun","topic":"home","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:hom-05","kind":"lexeme","ar":"حَمَّام","translit":"ḥammām","en":"bathroom","pos":"noun","topic":"home","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:hom-06","kind":"lexeme","ar":"بَاب","translit":"bāb","en":"door","pos":"noun","topic":"home","level":"A0","fr":"porte","tags":["legacy-flashcard"],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:hom-07","kind":"lexeme","ar":"نَافِذَة","translit":"nāfidhah","en":"window","pos":"noun","topic":"home","level":"A0","fr":"fenêtre","tags":["legacy-flashcard"],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:hom-08","kind":"lexeme","ar":"طَاوِلَة","translit":"ṭāwilah","en":"table","pos":"noun","topic":"home","level":"A0","fr":"table","tags":["legacy-flashcard"],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:hom-09","kind":"lexeme","ar":"كُرْسِيّ","translit":"kursiyy","en":"chair","pos":"noun","topic":"home","level":"A0","fr":"chaise","tags":["legacy-flashcard"],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:hom-10","kind":"lexeme","ar":"سَرِير","translit":"sarīr","en":"bed","pos":"noun","topic":"home","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:hom-11","kind":"lexeme","ar":"بَيْتٌ","translit":"baytun","en":"a house (subject form, ending in ḍammatayn)","pos":"noun","topic":"home","level":"A1","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:hom-12","kind":"lexeme","ar":"فِي بَيْتٍ","translit":"fī baytin","en":"in a house (ending in kasratayn, after a preposition)","pos":"phrase","topic":"home","level":"A1","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:sch-01","kind":"lexeme","ar":"مَدْرَسَة","translit":"madrasah","en":"school","pos":"noun","topic":"school","level":"A0","fr":"école","tags":["legacy-flashcard"],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:sch-02","kind":"lexeme","ar":"مُعَلِّم","translit":"muʿallim","en":"teacher (male)","pos":"noun","topic":"school","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:sch-03","kind":"lexeme","ar":"مُعَلِّمَة","translit":"muʿallimah","en":"teacher (female)","pos":"noun","topic":"school","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:sch-04","kind":"lexeme","ar":"طَالِب","translit":"ṭālib","en":"student (male)","pos":"noun","topic":"school","level":"A0","example":{"ar":"أَنَا طَالِب فِي الْمَدْرَسَة.","en":"I am a student at the school."},"tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:sch-05","kind":"lexeme","ar":"طَالِبَة","translit":"ṭālibah","en":"student (female)","pos":"noun","topic":"school","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:sch-06","kind":"lexeme","ar":"كِتَاب","translit":"kitāb","en":"book","pos":"noun","topic":"school","level":"A0","fr":"livre","tags":["legacy-flashcard"],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:sch-07","kind":"lexeme","ar":"قَلَم","translit":"qalam","en":"pen","pos":"noun","topic":"school","level":"A0","fr":"stylo","tags":["legacy-flashcard"],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:sch-08","kind":"lexeme","ar":"دَفْتَر","translit":"daftar","en":"notebook","pos":"noun","topic":"school","level":"A0","fr":"carnet de notes","tags":["legacy-flashcard"],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:sch-09","kind":"lexeme","ar":"دَرْس","translit":"dars","en":"lesson","pos":"noun","topic":"school","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:sch-10","kind":"lexeme","ar":"وَاجِب","translit":"wājib","en":"homework","pos":"noun","topic":"school","level":"A1","example":{"ar":"أَنْهَيْتُ وَاجِبِي.","en":"I finished my homework."},"tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:obj-01","kind":"lexeme","ar":"هَاتِف","translit":"hātif","en":"phone","pos":"noun","topic":"objects","level":"A0","fr":"téléphone","tags":["legacy-flashcard"],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:obj-02","kind":"lexeme","ar":"حَاسُوب","translit":"ḥāsūb","en":"computer","pos":"noun","topic":"objects","level":"A0","fr":"ordinateur","tags":["legacy-flashcard"],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:obj-03","kind":"lexeme","ar":"سَاعَة","translit":"sāʿah","en":"clock / watch","pos":"noun","topic":"objects","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:obj-04","kind":"lexeme","ar":"مِفْتَاح","translit":"miftāḥ","en":"key","pos":"noun","topic":"objects","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:obj-05","kind":"lexeme","ar":"حَقِيبَة","translit":"ḥaqībah","en":"bag","pos":"noun","topic":"objects","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:obj-06","kind":"lexeme","ar":"مِصْبَاح","translit":"miṣbāḥ","en":"lamp","pos":"noun","topic":"objects","level":"A1","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:obj-07","kind":"lexeme","ar":"مِرْآة","translit":"mirʾāh","en":"mirror","pos":"noun","topic":"objects","level":"A1","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:obj-08","kind":"lexeme","ar":"مِظَلَّة","translit":"miẓallah","en":"umbrella","pos":"noun","topic":"objects","level":"A1","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:pla-01","kind":"lexeme","ar":"مَدِينَة","translit":"madīnah","en":"city","pos":"noun","topic":"places","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:pla-02","kind":"lexeme","ar":"قَرْيَة","translit":"qaryah","en":"village","pos":"noun","topic":"places","level":"A1","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:pla-03","kind":"lexeme","ar":"شَارِع","translit":"shāriʿ","en":"street","pos":"noun","topic":"places","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:pla-04","kind":"lexeme","ar":"مَسْجِد","translit":"masjid","en":"mosque","pos":"noun","topic":"places","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:pla-05","kind":"lexeme","ar":"مُسْتَشْفَى","translit":"mustashfā","en":"hospital","pos":"noun","topic":"places","level":"A1","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:pla-06","kind":"lexeme","ar":"مَطْعَم","translit":"maṭʿam","en":"restaurant","pos":"noun","topic":"places","level":"A0","example":{"ar":"نَذْهَبُ إِلَى الْمَطْعَم.","en":"We are going to the restaurant."},"tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:pla-07","kind":"lexeme","ar":"سُوق","translit":"sūq","en":"market","pos":"noun","topic":"places","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:pla-08","kind":"lexeme","ar":"مَطَار","translit":"maṭār","en":"airport","pos":"noun","topic":"places","level":"A1","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:pla-09","kind":"lexeme","ar":"فُنْدُق","translit":"funduq","en":"hotel","pos":"noun","topic":"places","level":"A1","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:pla-10","kind":"lexeme","ar":"مَكْتَبَة","translit":"maktabah","en":"library / bookstore","pos":"noun","topic":"places","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:pla-11","kind":"lexeme","ar":"بَحْر","translit":"baḥr","en":"sea","pos":"noun","topic":"places","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:tim-01","kind":"lexeme","ar":"الْيَوْم","translit":"al-yawm","en":"today","pos":"adverb","topic":"time","level":"A0","fr":"aujourd'hui","tags":["legacy-flashcard"],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:tim-02","kind":"lexeme","ar":"غَدًا","translit":"ghadan","en":"tomorrow","pos":"adverb","topic":"time","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:tim-03","kind":"lexeme","ar":"أَمْس","translit":"ams","en":"yesterday","pos":"adverb","topic":"time","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:tim-04","kind":"lexeme","ar":"الْآن","translit":"al-ān","en":"now","pos":"adverb","topic":"time","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:tim-05","kind":"lexeme","ar":"صَبَاح","translit":"ṣabāḥ","en":"morning","pos":"noun","topic":"time","level":"A0","fr":"matin","tags":["legacy-flashcard"],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:tim-06","kind":"lexeme","ar":"مَسَاء","translit":"masāʾ","en":"evening","pos":"noun","topic":"time","level":"A0","fr":"soirée","tags":["legacy-flashcard"],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:tim-07","kind":"lexeme","ar":"لَيْل","translit":"layl","en":"night","pos":"noun","topic":"time","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:tim-08","kind":"lexeme","ar":"أُسْبُوع","translit":"usbūʿ","en":"week","pos":"noun","topic":"time","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:tim-09","kind":"lexeme","ar":"شَهْر","translit":"shahr","en":"month","pos":"noun","topic":"time","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:tim-10","kind":"lexeme","ar":"سَنَة","translit":"sanah","en":"year","pos":"noun","topic":"time","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:tim-11","kind":"lexeme","ar":"الْأَحَد","translit":"al-aḥad","en":"Sunday","pos":"noun","topic":"time","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:tim-12","kind":"lexeme","ar":"الِاثْنَيْن","translit":"al-ithnayn","en":"Monday","pos":"noun","topic":"time","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:tim-13","kind":"lexeme","ar":"الثُّلَاثَاء","translit":"ath-thulāthāʾ","en":"Tuesday","pos":"noun","topic":"time","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:tim-14","kind":"lexeme","ar":"الْأَرْبِعَاء","translit":"al-arbiʿāʾ","en":"Wednesday","pos":"noun","topic":"time","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:tim-15","kind":"lexeme","ar":"الْخَمِيس","translit":"al-khamīs","en":"Thursday","pos":"noun","topic":"time","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:tim-16","kind":"lexeme","ar":"الْجُمُعَة","translit":"al-jumʿah","en":"Friday","pos":"noun","topic":"time","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:tim-17","kind":"lexeme","ar":"السَّبْت","translit":"as-sabt","en":"Saturday","pos":"noun","topic":"time","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:tim-18","kind":"lexeme","ar":"شَمْس","translit":"shams","en":"sun","pos":"noun","topic":"time","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:tim-19","kind":"lexeme","ar":"قَمَر","translit":"qamar","en":"moon","pos":"noun","topic":"time","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:ver-01","kind":"lexeme","ar":"ذَهَبَ","translit":"dhahaba","en":"to go","pos":"verb","topic":"verbs","level":"A1","example":{"ar":"ذَهَبَ إِلَى الْمَدْرَسَة.","en":"He went to school."},"notes":"Present tense: يَذْهَب (yadh-hab, \"he goes\").","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:ver-02","kind":"lexeme","ar":"أَكَلَ","translit":"akala","en":"to eat","pos":"verb","topic":"verbs","level":"A0","example":{"ar":"أَكَلْتُ التُّفَّاح.","en":"I ate the apple."},"tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:ver-03","kind":"lexeme","ar":"شَرِبَ","translit":"shariba","en":"to drink","pos":"verb","topic":"verbs","level":"A0","example":{"ar":"شَرِبَ الْمَاء.","en":"He drank the water."},"tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:ver-04","kind":"lexeme","ar":"كَتَبَ","translit":"kataba","en":"to write","pos":"verb","topic":"verbs","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:ver-05","kind":"lexeme","ar":"قَرَأَ","translit":"qaraʾa","en":"to read","pos":"verb","topic":"verbs","level":"A0","example":{"ar":"قَرَأَتِ الْكِتَاب.","en":"She read the book."},"tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:ver-06","kind":"lexeme","ar":"تَكَلَّمَ","translit":"takallama","en":"to speak","pos":"verb","topic":"verbs","level":"A1","notes":"Present tense: يَتَكَلَّم (yatakallam, \"he speaks\").","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:ver-07","kind":"lexeme","ar":"سَمِعَ","translit":"samiʿa","en":"to hear / to listen","pos":"verb","topic":"verbs","level":"A1","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:ver-08","kind":"lexeme","ar":"رَأَى","translit":"raʾā","en":"to see","pos":"verb","topic":"verbs","level":"A1","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:ver-09","kind":"lexeme","ar":"فَهِمَ","translit":"fahima","en":"to understand","pos":"verb","topic":"verbs","level":"A1","example":{"ar":"هَلْ فَهِمْتَ الدَّرْس؟","en":"Did you understand the lesson?"},"notes":"Present tense: يَفْهَم (yafham, \"he understands\").","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:ver-10","kind":"lexeme","ar":"عَمِلَ","translit":"ʿamila","en":"to work / to do","pos":"verb","topic":"verbs","level":"A1","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:adj-01","kind":"lexeme","ar":"كَبِير","translit":"kabīr","en":"big","pos":"adjective","topic":"adjectives","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:adj-01f","kind":"lexeme","ar":"كَبِيرَة","translit":"kabīrah","en":"big (feminine)","pos":"adjective","topic":"adjectives","level":"A0","gender":"feminine","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:adj-02","kind":"lexeme","ar":"صَغِير","translit":"ṣaghīr","en":"small","pos":"adjective","topic":"adjectives","level":"A0","example":{"ar":"الْبَيْتُ صَغِير.","en":"The house is small."},"tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:adj-03","kind":"lexeme","ar":"جَمِيل","translit":"jamīl","en":"beautiful","pos":"adjective","topic":"adjectives","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:adj-04","kind":"lexeme","ar":"طَوِيل","translit":"ṭawīl","en":"tall / long","pos":"adjective","topic":"adjectives","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:adj-05","kind":"lexeme","ar":"قَصِير","translit":"qaṣīr","en":"short","pos":"adjective","topic":"adjectives","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:adj-06","kind":"lexeme","ar":"جَدِيد","translit":"jadīd","en":"new","pos":"adjective","topic":"adjectives","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:adj-07","kind":"lexeme","ar":"قَدِيم","translit":"qadīm","en":"old (things)","pos":"adjective","topic":"adjectives","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:adj-08","kind":"lexeme","ar":"سَعِيد","translit":"saʿīd","en":"happy","pos":"adjective","topic":"adjectives","level":"A0","example":{"ar":"أَنَا سَعِيد الْيَوْم.","en":"I am happy today."},"tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:adj-08f","kind":"lexeme","ar":"سَعِيدَة","translit":"saʿīdah","en":"happy (feminine)","pos":"adjective","topic":"adjectives","level":"A0","gender":"feminine","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:adj-09","kind":"lexeme","ar":"حَزِين","translit":"ḥazīn","en":"sad","pos":"adjective","topic":"adjectives","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:adj-10","kind":"lexeme","ar":"سَهْل","translit":"sahl","en":"easy","pos":"adjective","topic":"adjectives","level":"A1","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:adj-11","kind":"lexeme","ar":"صَعْب","translit":"ṣaʿb","en":"difficult","pos":"adjective","topic":"adjectives","level":"A1","example":{"ar":"هَذَا الدَّرْسُ صَعْب.","en":"This lesson is difficult."},"tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:exp-01","kind":"lexeme","ar":"مِنْ فَضْلِك","translit":"min faḍlik","en":"please","pos":"phrase","topic":"expressions","level":"A0","fr":"s'il vous plaît","tags":["legacy-flashcard"],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:exp-02","kind":"lexeme","ar":"شُكْرًا","translit":"shukran","en":"thank you","pos":"phrase","topic":"expressions","level":"A0","fr":"merci","tags":["legacy-flashcard"],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:exp-03","kind":"lexeme","ar":"عَفْوًا","translit":"ʿafwan","en":"you're welcome / excuse me","pos":"phrase","topic":"expressions","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:exp-04","kind":"lexeme","ar":"آسِف","translit":"āsif","en":"sorry (said by a male speaker)","pos":"phrase","topic":"expressions","level":"A0","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:exp-05","kind":"lexeme","ar":"نَعَم","translit":"naʿam","en":"yes","pos":"phrase","topic":"expressions","level":"A0","fr":"oui","tags":["legacy-flashcard"],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:exp-06","kind":"lexeme","ar":"لَا","translit":"lā","en":"no","pos":"phrase","topic":"expressions","level":"A0","fr":"non","tags":["legacy-flashcard"],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:exp-07","kind":"lexeme","ar":"لَا أَعْرِف","translit":"lā aʿrif","en":"I don't know","pos":"phrase","topic":"expressions","level":"A1","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:exp-08","kind":"lexeme","ar":"أَيْنَ الْحَمَّام؟","translit":"ayna l-ḥammām?","en":"Where is the bathroom?","pos":"phrase","topic":"expressions","level":"A1","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:exp-09","kind":"lexeme","ar":"كَمِ السَّاعَة؟","translit":"kami s-sāʿah?","en":"What time is it?","pos":"phrase","topic":"expressions","level":"A1","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:exp-10","kind":"lexeme","ar":"بِكَمْ هَذَا؟","translit":"bikam hādhā?","en":"How much is this?","pos":"phrase","topic":"expressions","level":"A1","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:pro-01","kind":"lexeme","ar":"هُوَ","translit":"huwa","en":"he","pos":"pronoun","topic":"pronouns","level":"A1","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:pro-02","kind":"lexeme","ar":"هِيَ","translit":"hiya","en":"she","pos":"pronoun","topic":"pronouns","level":"A1","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:pro-03","kind":"lexeme","ar":"هُمْ","translit":"hum","en":"they (masculine/mixed group)","pos":"pronoun","topic":"pronouns","level":"A1","tags":[],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:fc-3","kind":"lexeme","ar":"سَيَّارَة","translit":"sayyārah","en":"car","pos":"noun","topic":"objects","level":"A0","fr":"voiture","tags":["legacy-flashcard"],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:fc-14","kind":"lexeme","ar":"طَعَام","translit":"taʿām","en":"food","pos":"noun","topic":"food","level":"A0","fr":"nourriture","tags":["legacy-flashcard"],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:fc-27","kind":"lexeme","ar":"أَهْلًا وَسَهْلًا","translit":"ahlan wa sahlan","en":"welcome","pos":"phrase","topic":"greetings","level":"A0","fr":"bienvenue","notes":"Literally \"family and ease\" — a warm phrase meant to make a guest feel at home.","tags":["legacy-flashcard"],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:fc-28","kind":"lexeme","ar":"كَيْفَ حَالُك؟","translit":"kayfa hāluk","en":"how are you?","pos":"phrase","topic":"greetings","level":"A0","fr":"comment ça va ?","tags":["legacy-flashcard"],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:fc-29","kind":"lexeme","ar":"اِسْمِي...","translit":"ismī...","en":"my name is...","pos":"phrase","topic":"greetings","level":"A0","fr":"je m'appelle...","tags":["legacy-flashcard"],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:fc-30","kind":"lexeme","ar":"تَشَرَّفْنَا","translit":"tasharrafnā","en":"nice to meet you","pos":"phrase","topic":"greetings","level":"A0","fr":"enchanté(e)","tags":["legacy-flashcard"],"skills":["vocabulary"],"prereqs":[]},
+  {"id":"lex:fc-45","kind":"lexeme","ar":"عَائِلَة","translit":"ʿāʾilah","en":"family","pos":"noun","topic":"people","level":"A0","fr":"famille","notes":"Family and hospitality sit at the heart of Arab culture — guests are often welcomed like family.","tags":["legacy-flashcard"],"skills":["vocabulary"],"prereqs":[]},
 ],
 "letters": [
-  {"id":"let:alif","kind":"letter","ar":"ا","name":"أَلِف","translit":"alif","forms":{"isolated":"ا","initial":"ا","medial":"ـا","final":"ـا"},"connects":false,"strokeOrder":[{"from":{"x":0.5,"y":0.25},"to":{"x":0.5,"y":0.75}}]},
-  {"id":"let:ba","kind":"letter","ar":"ب","name":"بَاء","translit":"bāʾ","forms":{"isolated":"ب","initial":"بـ","medial":"ـبـ","final":"ـب"},"connects":true,"strokeOrder":[{"from":{"x":0.75,"y":0.55},"to":{"x":0.25,"y":0.55}}]},
-  {"id":"let:ta1","kind":"letter","ar":"ت","name":"تَاء","translit":"tāʾ","forms":{"isolated":"ت","initial":"تـ","medial":"ـتـ","final":"ـت"},"connects":true,"strokeOrder":[{"from":{"x":0.75,"y":0.55},"to":{"x":0.25,"y":0.55}}]},
-  {"id":"let:tha","kind":"letter","ar":"ث","name":"ثَاء","translit":"thāʾ","forms":{"isolated":"ث","initial":"ثـ","medial":"ـثـ","final":"ـث"},"connects":true,"strokeOrder":[{"from":{"x":0.75,"y":0.55},"to":{"x":0.25,"y":0.55}}]},
-  {"id":"let:jim","kind":"letter","ar":"ج","name":"جِيم","translit":"jīm","forms":{"isolated":"ج","initial":"جـ","medial":"ـجـ","final":"ـج"},"connects":true,"strokeOrder":[{"from":{"x":0.65,"y":0.35},"to":{"x":0.4,"y":0.7}}]},
-  {"id":"let:ha1","kind":"letter","ar":"ح","name":"حَاء","translit":"ḥāʾ","forms":{"isolated":"ح","initial":"حـ","medial":"ـحـ","final":"ـح"},"connects":true,"strokeOrder":[{"from":{"x":0.65,"y":0.35},"to":{"x":0.4,"y":0.7}}]},
-  {"id":"let:kha","kind":"letter","ar":"خ","name":"خَاء","translit":"khāʾ","forms":{"isolated":"خ","initial":"خـ","medial":"ـخـ","final":"ـخ"},"connects":true,"strokeOrder":[{"from":{"x":0.65,"y":0.35},"to":{"x":0.4,"y":0.7}}]},
-  {"id":"let:dal","kind":"letter","ar":"د","name":"دَال","translit":"dāl","forms":{"isolated":"د","initial":"د","medial":"ـد","final":"ـد"},"connects":false,"strokeOrder":[{"from":{"x":0.6,"y":0.3},"to":{"x":0.35,"y":0.6}}]},
-  {"id":"let:dhal","kind":"letter","ar":"ذ","name":"ذَال","translit":"dhāl","forms":{"isolated":"ذ","initial":"ذ","medial":"ـذ","final":"ـذ"},"connects":false,"strokeOrder":[{"from":{"x":0.6,"y":0.3},"to":{"x":0.35,"y":0.6}}]},
-  {"id":"let:ra","kind":"letter","ar":"ر","name":"رَاء","translit":"rāʾ","forms":{"isolated":"ر","initial":"ر","medial":"ـر","final":"ـر"},"connects":false,"strokeOrder":[{"from":{"x":0.65,"y":0.35},"to":{"x":0.35,"y":0.65}}]},
-  {"id":"let:zay","kind":"letter","ar":"ز","name":"زَاي","translit":"zāy","forms":{"isolated":"ز","initial":"ز","medial":"ـز","final":"ـز"},"connects":false,"strokeOrder":[{"from":{"x":0.65,"y":0.35},"to":{"x":0.35,"y":0.65}}]},
-  {"id":"let:sin","kind":"letter","ar":"س","name":"سِين","translit":"sīn","forms":{"isolated":"س","initial":"سـ","medial":"ـسـ","final":"ـس"},"connects":true,"strokeOrder":[{"from":{"x":0.8,"y":0.55},"to":{"x":0.25,"y":0.55}}]},
-  {"id":"let:shin","kind":"letter","ar":"ش","name":"شِين","translit":"shīn","forms":{"isolated":"ش","initial":"شـ","medial":"ـشـ","final":"ـش"},"connects":true,"strokeOrder":[{"from":{"x":0.8,"y":0.55},"to":{"x":0.25,"y":0.55}}]},
-  {"id":"let:sad","kind":"letter","ar":"ص","name":"صَاد","translit":"ṣād","forms":{"isolated":"ص","initial":"صـ","medial":"ـصـ","final":"ـص"},"connects":true,"strokeOrder":[{"from":{"x":0.7,"y":0.4},"to":{"x":0.3,"y":0.55}}]},
-  {"id":"let:dad","kind":"letter","ar":"ض","name":"ضَاد","translit":"ḍād","forms":{"isolated":"ض","initial":"ضـ","medial":"ـضـ","final":"ـض"},"connects":true,"strokeOrder":[{"from":{"x":0.7,"y":0.4},"to":{"x":0.3,"y":0.55}}]},
-  {"id":"let:ta2","kind":"letter","ar":"ط","name":"طَاء","translit":"ṭāʾ","forms":{"isolated":"ط","initial":"طـ","medial":"ـطـ","final":"ـط"},"connects":true,"strokeOrder":[{"from":{"x":0.7,"y":0.6},"to":{"x":0.35,"y":0.6}},{"from":{"x":0.5,"y":0.6},"to":{"x":0.5,"y":0.25}}]},
-  {"id":"let:za2","kind":"letter","ar":"ظ","name":"ظَاء","translit":"ẓāʾ","forms":{"isolated":"ظ","initial":"ظـ","medial":"ـظـ","final":"ـظ"},"connects":true,"strokeOrder":[{"from":{"x":0.7,"y":0.6},"to":{"x":0.35,"y":0.6}},{"from":{"x":0.5,"y":0.6},"to":{"x":0.5,"y":0.25}}]},
-  {"id":"let:ayn","kind":"letter","ar":"ع","name":"عَيْن","translit":"ʿayn","forms":{"isolated":"ع","initial":"عـ","medial":"ـعـ","final":"ـع"},"connects":true,"strokeOrder":[{"from":{"x":0.65,"y":0.35},"to":{"x":0.35,"y":0.6}}]},
-  {"id":"let:ghayn","kind":"letter","ar":"غ","name":"غَيْن","translit":"ghayn","forms":{"isolated":"غ","initial":"غـ","medial":"ـغـ","final":"ـغ"},"connects":true,"strokeOrder":[{"from":{"x":0.65,"y":0.35},"to":{"x":0.35,"y":0.6}}]},
-  {"id":"let:fa","kind":"letter","ar":"ف","name":"فَاء","translit":"fāʾ","forms":{"isolated":"ف","initial":"فـ","medial":"ـفـ","final":"ـف"},"connects":true,"strokeOrder":[{"from":{"x":0.65,"y":0.35},"to":{"x":0.35,"y":0.65}}]},
-  {"id":"let:qaf","kind":"letter","ar":"ق","name":"قَاف","translit":"qāf","forms":{"isolated":"ق","initial":"قـ","medial":"ـقـ","final":"ـق"},"connects":true,"strokeOrder":[{"from":{"x":0.65,"y":0.35},"to":{"x":0.35,"y":0.7}}]},
-  {"id":"let:kaf","kind":"letter","ar":"ك","name":"كَاف","translit":"kāf","forms":{"isolated":"ك","initial":"كـ","medial":"ـكـ","final":"ـك"},"connects":true,"strokeOrder":[{"from":{"x":0.6,"y":0.3},"to":{"x":0.4,"y":0.65}},{"from":{"x":0.55,"y":0.45},"to":{"x":0.45,"y":0.4}}]},
-  {"id":"let:lam","kind":"letter","ar":"ل","name":"لَام","translit":"lām","forms":{"isolated":"ل","initial":"لـ","medial":"ـلـ","final":"ـل"},"connects":true,"strokeOrder":[{"from":{"x":0.5,"y":0.2},"to":{"x":0.4,"y":0.7}}]},
-  {"id":"let:mim","kind":"letter","ar":"م","name":"مِيم","translit":"mīm","forms":{"isolated":"م","initial":"مـ","medial":"ـمـ","final":"ـم"},"connects":true,"strokeOrder":[{"from":{"x":0.55,"y":0.35},"to":{"x":0.45,"y":0.7}}]},
-  {"id":"let:nun","kind":"letter","ar":"ن","name":"نُون","translit":"nūn","forms":{"isolated":"ن","initial":"نـ","medial":"ـنـ","final":"ـن"},"connects":true,"strokeOrder":[{"from":{"x":0.75,"y":0.55},"to":{"x":0.3,"y":0.55}}]},
-  {"id":"let:ha2","kind":"letter","ar":"ه","name":"هَاء","translit":"hāʾ","forms":{"isolated":"ه","initial":"هـ","medial":"ـهـ","final":"ـه"},"connects":true,"strokeOrder":[{"from":{"x":0.65,"y":0.35},"to":{"x":0.4,"y":0.55}}]},
-  {"id":"let:waw","kind":"letter","ar":"و","name":"وَاو","translit":"wāw","forms":{"isolated":"و","initial":"و","medial":"ـو","final":"ـو"},"connects":false,"strokeOrder":[{"from":{"x":0.6,"y":0.35},"to":{"x":0.45,"y":0.7}}]},
-  {"id":"let:ya","kind":"letter","ar":"ي","name":"يَاء","translit":"yāʾ","forms":{"isolated":"ي","initial":"يـ","medial":"ـيـ","final":"ـي"},"connects":true,"strokeOrder":[{"from":{"x":0.75,"y":0.5},"to":{"x":0.3,"y":0.65}}]},
+  {"id":"let:alif","kind":"letter","ar":"ا","name":"أَلِف","translit":"alif","forms":{"isolated":"ا","initial":"ا","medial":"ـا","final":"ـا"},"connects":false,"strokeOrder":[{"from":{"x":0.5,"y":0.25},"to":{"x":0.5,"y":0.75}}],"level":"A0","skills":["reading","writing","pronunciation"],"prereqs":[]},
+  {"id":"let:ba","kind":"letter","ar":"ب","name":"بَاء","translit":"bāʾ","forms":{"isolated":"ب","initial":"بـ","medial":"ـبـ","final":"ـب"},"connects":true,"strokeOrder":[{"from":{"x":0.75,"y":0.55},"to":{"x":0.25,"y":0.55}}],"level":"A0","skills":["reading","writing","pronunciation"],"prereqs":[]},
+  {"id":"let:ta1","kind":"letter","ar":"ت","name":"تَاء","translit":"tāʾ","forms":{"isolated":"ت","initial":"تـ","medial":"ـتـ","final":"ـت"},"connects":true,"strokeOrder":[{"from":{"x":0.75,"y":0.55},"to":{"x":0.25,"y":0.55}}],"level":"A0","skills":["reading","writing","pronunciation"],"prereqs":[]},
+  {"id":"let:tha","kind":"letter","ar":"ث","name":"ثَاء","translit":"thāʾ","forms":{"isolated":"ث","initial":"ثـ","medial":"ـثـ","final":"ـث"},"connects":true,"strokeOrder":[{"from":{"x":0.75,"y":0.55},"to":{"x":0.25,"y":0.55}}],"level":"A0","skills":["reading","writing","pronunciation"],"prereqs":[]},
+  {"id":"let:jim","kind":"letter","ar":"ج","name":"جِيم","translit":"jīm","forms":{"isolated":"ج","initial":"جـ","medial":"ـجـ","final":"ـج"},"connects":true,"strokeOrder":[{"from":{"x":0.65,"y":0.35},"to":{"x":0.4,"y":0.7}}],"level":"A0","skills":["reading","writing","pronunciation"],"prereqs":[]},
+  {"id":"let:ha1","kind":"letter","ar":"ح","name":"حَاء","translit":"ḥāʾ","forms":{"isolated":"ح","initial":"حـ","medial":"ـحـ","final":"ـح"},"connects":true,"strokeOrder":[{"from":{"x":0.65,"y":0.35},"to":{"x":0.4,"y":0.7}}],"level":"A0","skills":["reading","writing","pronunciation"],"prereqs":[]},
+  {"id":"let:kha","kind":"letter","ar":"خ","name":"خَاء","translit":"khāʾ","forms":{"isolated":"خ","initial":"خـ","medial":"ـخـ","final":"ـخ"},"connects":true,"strokeOrder":[{"from":{"x":0.65,"y":0.35},"to":{"x":0.4,"y":0.7}}],"level":"A0","skills":["reading","writing","pronunciation"],"prereqs":[]},
+  {"id":"let:dal","kind":"letter","ar":"د","name":"دَال","translit":"dāl","forms":{"isolated":"د","initial":"د","medial":"ـد","final":"ـد"},"connects":false,"strokeOrder":[{"from":{"x":0.6,"y":0.3},"to":{"x":0.35,"y":0.6}}],"level":"A0","skills":["reading","writing","pronunciation"],"prereqs":[]},
+  {"id":"let:dhal","kind":"letter","ar":"ذ","name":"ذَال","translit":"dhāl","forms":{"isolated":"ذ","initial":"ذ","medial":"ـذ","final":"ـذ"},"connects":false,"strokeOrder":[{"from":{"x":0.6,"y":0.3},"to":{"x":0.35,"y":0.6}}],"level":"A0","skills":["reading","writing","pronunciation"],"prereqs":[]},
+  {"id":"let:ra","kind":"letter","ar":"ر","name":"رَاء","translit":"rāʾ","forms":{"isolated":"ر","initial":"ر","medial":"ـر","final":"ـر"},"connects":false,"strokeOrder":[{"from":{"x":0.65,"y":0.35},"to":{"x":0.35,"y":0.65}}],"level":"A0","skills":["reading","writing","pronunciation"],"prereqs":[]},
+  {"id":"let:zay","kind":"letter","ar":"ز","name":"زَاي","translit":"zāy","forms":{"isolated":"ز","initial":"ز","medial":"ـز","final":"ـز"},"connects":false,"strokeOrder":[{"from":{"x":0.65,"y":0.35},"to":{"x":0.35,"y":0.65}}],"level":"A0","skills":["reading","writing","pronunciation"],"prereqs":[]},
+  {"id":"let:sin","kind":"letter","ar":"س","name":"سِين","translit":"sīn","forms":{"isolated":"س","initial":"سـ","medial":"ـسـ","final":"ـس"},"connects":true,"strokeOrder":[{"from":{"x":0.8,"y":0.55},"to":{"x":0.25,"y":0.55}}],"level":"A0","skills":["reading","writing","pronunciation"],"prereqs":[]},
+  {"id":"let:shin","kind":"letter","ar":"ش","name":"شِين","translit":"shīn","forms":{"isolated":"ش","initial":"شـ","medial":"ـشـ","final":"ـش"},"connects":true,"strokeOrder":[{"from":{"x":0.8,"y":0.55},"to":{"x":0.25,"y":0.55}}],"level":"A0","skills":["reading","writing","pronunciation"],"prereqs":[]},
+  {"id":"let:sad","kind":"letter","ar":"ص","name":"صَاد","translit":"ṣād","forms":{"isolated":"ص","initial":"صـ","medial":"ـصـ","final":"ـص"},"connects":true,"strokeOrder":[{"from":{"x":0.7,"y":0.4},"to":{"x":0.3,"y":0.55}}],"level":"A0","skills":["reading","writing","pronunciation"],"prereqs":[]},
+  {"id":"let:dad","kind":"letter","ar":"ض","name":"ضَاد","translit":"ḍād","forms":{"isolated":"ض","initial":"ضـ","medial":"ـضـ","final":"ـض"},"connects":true,"strokeOrder":[{"from":{"x":0.7,"y":0.4},"to":{"x":0.3,"y":0.55}}],"level":"A0","skills":["reading","writing","pronunciation"],"prereqs":[]},
+  {"id":"let:ta2","kind":"letter","ar":"ط","name":"طَاء","translit":"ṭāʾ","forms":{"isolated":"ط","initial":"طـ","medial":"ـطـ","final":"ـط"},"connects":true,"strokeOrder":[{"from":{"x":0.7,"y":0.6},"to":{"x":0.35,"y":0.6}},{"from":{"x":0.5,"y":0.6},"to":{"x":0.5,"y":0.25}}],"level":"A0","skills":["reading","writing","pronunciation"],"prereqs":[]},
+  {"id":"let:za2","kind":"letter","ar":"ظ","name":"ظَاء","translit":"ẓāʾ","forms":{"isolated":"ظ","initial":"ظـ","medial":"ـظـ","final":"ـظ"},"connects":true,"strokeOrder":[{"from":{"x":0.7,"y":0.6},"to":{"x":0.35,"y":0.6}},{"from":{"x":0.5,"y":0.6},"to":{"x":0.5,"y":0.25}}],"level":"A0","skills":["reading","writing","pronunciation"],"prereqs":[]},
+  {"id":"let:ayn","kind":"letter","ar":"ع","name":"عَيْن","translit":"ʿayn","forms":{"isolated":"ع","initial":"عـ","medial":"ـعـ","final":"ـع"},"connects":true,"strokeOrder":[{"from":{"x":0.65,"y":0.35},"to":{"x":0.35,"y":0.6}}],"level":"A0","skills":["reading","writing","pronunciation"],"prereqs":[]},
+  {"id":"let:ghayn","kind":"letter","ar":"غ","name":"غَيْن","translit":"ghayn","forms":{"isolated":"غ","initial":"غـ","medial":"ـغـ","final":"ـغ"},"connects":true,"strokeOrder":[{"from":{"x":0.65,"y":0.35},"to":{"x":0.35,"y":0.6}}],"level":"A0","skills":["reading","writing","pronunciation"],"prereqs":[]},
+  {"id":"let:fa","kind":"letter","ar":"ف","name":"فَاء","translit":"fāʾ","forms":{"isolated":"ف","initial":"فـ","medial":"ـفـ","final":"ـف"},"connects":true,"strokeOrder":[{"from":{"x":0.65,"y":0.35},"to":{"x":0.35,"y":0.65}}],"level":"A0","skills":["reading","writing","pronunciation"],"prereqs":[]},
+  {"id":"let:qaf","kind":"letter","ar":"ق","name":"قَاف","translit":"qāf","forms":{"isolated":"ق","initial":"قـ","medial":"ـقـ","final":"ـق"},"connects":true,"strokeOrder":[{"from":{"x":0.65,"y":0.35},"to":{"x":0.35,"y":0.7}}],"level":"A0","skills":["reading","writing","pronunciation"],"prereqs":[]},
+  {"id":"let:kaf","kind":"letter","ar":"ك","name":"كَاف","translit":"kāf","forms":{"isolated":"ك","initial":"كـ","medial":"ـكـ","final":"ـك"},"connects":true,"strokeOrder":[{"from":{"x":0.6,"y":0.3},"to":{"x":0.4,"y":0.65}},{"from":{"x":0.55,"y":0.45},"to":{"x":0.45,"y":0.4}}],"level":"A0","skills":["reading","writing","pronunciation"],"prereqs":[]},
+  {"id":"let:lam","kind":"letter","ar":"ل","name":"لَام","translit":"lām","forms":{"isolated":"ل","initial":"لـ","medial":"ـلـ","final":"ـل"},"connects":true,"strokeOrder":[{"from":{"x":0.5,"y":0.2},"to":{"x":0.4,"y":0.7}}],"level":"A0","skills":["reading","writing","pronunciation"],"prereqs":[]},
+  {"id":"let:mim","kind":"letter","ar":"م","name":"مِيم","translit":"mīm","forms":{"isolated":"م","initial":"مـ","medial":"ـمـ","final":"ـم"},"connects":true,"strokeOrder":[{"from":{"x":0.55,"y":0.35},"to":{"x":0.45,"y":0.7}}],"level":"A0","skills":["reading","writing","pronunciation"],"prereqs":[]},
+  {"id":"let:nun","kind":"letter","ar":"ن","name":"نُون","translit":"nūn","forms":{"isolated":"ن","initial":"نـ","medial":"ـنـ","final":"ـن"},"connects":true,"strokeOrder":[{"from":{"x":0.75,"y":0.55},"to":{"x":0.3,"y":0.55}}],"level":"A0","skills":["reading","writing","pronunciation"],"prereqs":[]},
+  {"id":"let:ha2","kind":"letter","ar":"ه","name":"هَاء","translit":"hāʾ","forms":{"isolated":"ه","initial":"هـ","medial":"ـهـ","final":"ـه"},"connects":true,"strokeOrder":[{"from":{"x":0.65,"y":0.35},"to":{"x":0.4,"y":0.55}}],"level":"A0","skills":["reading","writing","pronunciation"],"prereqs":[]},
+  {"id":"let:waw","kind":"letter","ar":"و","name":"وَاو","translit":"wāw","forms":{"isolated":"و","initial":"و","medial":"ـو","final":"ـو"},"connects":false,"strokeOrder":[{"from":{"x":0.6,"y":0.35},"to":{"x":0.45,"y":0.7}}],"level":"A0","skills":["reading","writing","pronunciation"],"prereqs":[]},
+  {"id":"let:ya","kind":"letter","ar":"ي","name":"يَاء","translit":"yāʾ","forms":{"isolated":"ي","initial":"يـ","medial":"ـيـ","final":"ـي"},"connects":true,"strokeOrder":[{"from":{"x":0.75,"y":0.5},"to":{"x":0.3,"y":0.65}}],"level":"A0","skills":["reading","writing","pronunciation"],"prereqs":[]},
 ],
 "marks": [
-  {"id":"mrk:fatha","kind":"mark","symbol":"َ","ar":"فَ","translit":"a","name":"fatḥah","markClass":"short-vowel","fn":"A short, open \"a\" sound — like the \"a\" in \"cat\"."},
-  {"id":"mrk:kasra","kind":"mark","symbol":"ِ","ar":"فِ","translit":"i","name":"kasrah","markClass":"short-vowel","fn":"A short \"i\" sound — like the \"i\" in \"sit\"."},
-  {"id":"mrk:damma","kind":"mark","symbol":"ُ","ar":"فُ","translit":"u","name":"ḍammah","markClass":"short-vowel","fn":"A short \"u\" sound — like the \"u\" in \"put\"."},
-  {"id":"mrk:fathatayn","kind":"mark","symbol":"ً","ar":"فً","translit":"an","name":"fatḥatayn","markClass":"tanwin","fn":"An \"-an\" sound added at the end of a word — the most common tanwīn in everyday words."},
-  {"id":"mrk:kasratayn","kind":"mark","symbol":"ٍ","ar":"فٍ","translit":"in","name":"kasratayn","markClass":"tanwin","fn":"An \"-in\" sound, marking a word as grammatically indefinite and genitive — often heard after a preposition like فِي (\"in\") or مِنْ (\"from\")."},
-  {"id":"mrk:dammatayn","kind":"mark","symbol":"ٌ","ar":"فٌ","translit":"un","name":"ḍammatayn","markClass":"tanwin","fn":"An \"-un\" sound, marking a word as grammatically indefinite and the subject of a sentence."},
-  {"id":"mrk:madd-alif","kind":"mark","pattern":"َا","letter":"ا","translit":"ā","name":"fatḥah + alif","markClass":"long-vowel","fn":"Stretches the short \"a\" into a long \"aa\", held about twice as long — like the \"a\" in \"father\"."},
-  {"id":"mrk:madd-ya","kind":"mark","pattern":"ِيْ?","letter":"ي","translit":"ī","name":"kasrah + yāʾ","markClass":"long-vowel","fn":"Stretches the short \"i\" into a long \"ee\" — like the \"ee\" in \"see\"."},
-  {"id":"mrk:madd-waw","kind":"mark","pattern":"ُوْ?","letter":"و","translit":"ū","name":"ḍammah + wāw","markClass":"long-vowel","fn":"Stretches the short \"u\" into a long \"oo\" — like the \"oo\" in \"food\"."},
-  {"id":"mrk:sukun","kind":"mark","symbol":"ْ","ar":"فْ","translit":null,"name":"sukūn","markClass":"sukun","fn":"marks a consonant with no vowel of its own; closes a syllable"},
-  {"id":"mrk:shadda","kind":"mark","symbol":"ّ","ar":"فَّ","translit":null,"name":"shaddah","markClass":"shadda","fn":"doubles (geminates) the consonant; always carries a vowel or tanwīn"},
+  {"id":"mrk:fatha","kind":"mark","symbol":"َ","ar":"فَ","translit":"a","name":"fatḥah","markClass":"short-vowel","fn":"A short, open \"a\" sound — like the \"a\" in \"cat\".","level":"A0","skills":["reading","pronunciation"],"prereqs":[]},
+  {"id":"mrk:kasra","kind":"mark","symbol":"ِ","ar":"فِ","translit":"i","name":"kasrah","markClass":"short-vowel","fn":"A short \"i\" sound — like the \"i\" in \"sit\".","level":"A0","skills":["reading","pronunciation"],"prereqs":[]},
+  {"id":"mrk:damma","kind":"mark","symbol":"ُ","ar":"فُ","translit":"u","name":"ḍammah","markClass":"short-vowel","fn":"A short \"u\" sound — like the \"u\" in \"put\".","level":"A0","skills":["reading","pronunciation"],"prereqs":[]},
+  {"id":"mrk:fathatayn","kind":"mark","symbol":"ً","ar":"فً","translit":"an","name":"fatḥatayn","markClass":"tanwin","fn":"An \"-an\" sound added at the end of a word — the most common tanwīn in everyday words.","level":"A0","skills":["reading","pronunciation"],"prereqs":["mrk:fatha"]},
+  {"id":"mrk:kasratayn","kind":"mark","symbol":"ٍ","ar":"فٍ","translit":"in","name":"kasratayn","markClass":"tanwin","fn":"An \"-in\" sound, marking a word as grammatically indefinite and genitive — often heard after a preposition like فِي (\"in\") or مِنْ (\"from\").","level":"A0","skills":["reading","pronunciation"],"prereqs":["mrk:kasra"]},
+  {"id":"mrk:dammatayn","kind":"mark","symbol":"ٌ","ar":"فٌ","translit":"un","name":"ḍammatayn","markClass":"tanwin","fn":"An \"-un\" sound, marking a word as grammatically indefinite and the subject of a sentence.","level":"A0","skills":["reading","pronunciation"],"prereqs":["mrk:damma"]},
+  {"id":"mrk:madd-alif","kind":"mark","pattern":"َا","letter":"ا","translit":"ā","name":"fatḥah + alif","markClass":"long-vowel","fn":"Stretches the short \"a\" into a long \"aa\", held about twice as long — like the \"a\" in \"father\".","level":"A0","skills":["reading","pronunciation"],"prereqs":["mrk:fatha"]},
+  {"id":"mrk:madd-ya","kind":"mark","pattern":"ِيْ?","letter":"ي","translit":"ī","name":"kasrah + yāʾ","markClass":"long-vowel","fn":"Stretches the short \"i\" into a long \"ee\" — like the \"ee\" in \"see\".","level":"A0","skills":["reading","pronunciation"],"prereqs":["mrk:kasra"]},
+  {"id":"mrk:madd-waw","kind":"mark","pattern":"ُوْ?","letter":"و","translit":"ū","name":"ḍammah + wāw","markClass":"long-vowel","fn":"Stretches the short \"u\" into a long \"oo\" — like the \"oo\" in \"food\".","level":"A0","skills":["reading","pronunciation"],"prereqs":["mrk:damma"]},
+  {"id":"mrk:sukun","kind":"mark","symbol":"ْ","ar":"فْ","translit":null,"name":"sukūn","markClass":"sukun","fn":"marks a consonant with no vowel of its own; closes a syllable","level":"A0","skills":["reading","pronunciation"],"prereqs":["mrk:fatha","mrk:kasra","mrk:damma"]},
+  {"id":"mrk:shadda","kind":"mark","symbol":"ّ","ar":"فَّ","translit":null,"name":"shaddah","markClass":"shadda","fn":"doubles (geminates) the consonant; always carries a vowel or tanwīn","level":"A0","skills":["reading","pronunciation"],"prereqs":["mrk:fatha","mrk:kasra","mrk:damma"]},
 ],
 "syllables": [
-  {"id":"syl:cvv-ba","kind":"syllable","ar":"بَا","translit":"bā","gloss":"long \"aa\" sound — ب + long vowel ا","shape":"CVV","exampleWord":"lex:hom-06"},
-  {"id":"syl:cvv-bi","kind":"syllable","ar":"بِي","translit":"bī","gloss":"long \"ee\" sound — ب + long vowel ي","shape":"CVV","exampleWord":"lex:adj-01"},
-  {"id":"syl:cvv-bu","kind":"syllable","ar":"بُو","translit":"bū","gloss":"long \"oo\" sound — ب + long vowel و","shape":"CVV","exampleWord":"lex:tim-08"},
-  {"id":"syl:cvv-ma","kind":"syllable","ar":"مَا","translit":"mā","gloss":"long \"aa\" sound — م + long vowel ا","shape":"CVV","exampleWord":"lex:foo-09"},
-  {"id":"syl:cvv-mi","kind":"syllable","ar":"مِي","translit":"mī","gloss":"long \"ee\" sound — م + long vowel ي","shape":"CVV","exampleWord":"lex:adj-03"},
-  {"id":"syl:cvv-mu","kind":"syllable","ar":"مُو","translit":"mū","gloss":"long \"oo\" sound — م + long vowel و","shape":"CVV","exampleWord":"lex:foo-13"},
-  {"id":"syl:cvv-ta","kind":"syllable","ar":"تَا","translit":"tā","gloss":"long \"aa\" sound — ت + long vowel ا","shape":"CVV","exampleWord":"lex:sch-06"},
-  {"id":"syl:cvv-ti","kind":"syllable","ar":"تِي","translit":"tī","gloss":"long \"ee\" sound — ت + long vowel ي","shape":"CVV","exampleWord":"lex:foo-14"},
-  {"id":"syl:cvv-tu","kind":"syllable","ar":"تُو","translit":"tū","gloss":"long \"oo\" sound — ت + long vowel و","shape":"CVV","exampleWord":"lex:foo-15"},
-  {"id":"syl:cvc-ba","kind":"syllable","ar":"بَحْ","translit":"baḥ-","gloss":"opens \"ba\", closes on ح + sukūn (no vowel)","shape":"CVC","exampleWord":"lex:pla-11"},
-  {"id":"syl:cvc-bi","kind":"syllable","ar":"بِنْ","translit":"bin-","gloss":"opens \"bi\", closes on ن + sukūn (no vowel)","shape":"CVC","exampleWord":"lex:peo-13"},
-  {"id":"syl:cvc-bu","kind":"syllable","ar":"بُرْ","translit":"bur-","gloss":"opens \"bu\", closes on ر + sukūn (no vowel)","shape":"CVC","exampleWord":"lex:col-07"},
-  {"id":"syl:cvc-ma","kind":"syllable","ar":"مَدْ","translit":"mad-","gloss":"opens \"ma\", closes on د + sukūn (no vowel)","shape":"CVC","exampleWord":"lex:sch-01"},
-  {"id":"syl:cvc-mi","kind":"syllable","ar":"مِرْ","translit":"mir-","gloss":"opens \"mi\", closes on ر + sukūn (no vowel)","shape":"CVC","exampleWord":"lex:obj-07"},
-  {"id":"syl:cvc-mu","kind":"syllable","ar":"مُسْ","translit":"mus-","gloss":"opens \"mu\", closes on س + sukūn (no vowel)","shape":"CVC","exampleWord":"lex:pla-05"},
-  {"id":"syl:cvc-ta","kind":"syllable","ar":"تَشْ","translit":"tash-","gloss":"opens \"ta\", closes on ش + sukūn (no vowel)","shape":"CVC","exampleWord":"lex:pla-05"},
-  {"id":"syl:cvc-ti","kind":"syllable","ar":"تِسْ","translit":"tis-","gloss":"opens \"ti\", closes on س + sukūn (no vowel)","shape":"CVC","exampleWord":"lex:num-09"},
-  {"id":"syl:cvc-tu","kind":"syllable","ar":"تُصْ","translit":"tuṣ-","gloss":"opens \"tu\", closes on ص + sukūn (no vowel)","shape":"CVC","exampleWord":"lex:gre-10"},
-  {"id":"syl:gem-da","kind":"syllable","ar":"دَّ","translit":"-dda-","gloss":"doubles د — held twice as long","shape":"geminated","exampleWord":"lex:peo-08"},
-  {"id":"syl:gem-ma","kind":"syllable","ar":"مَّ","translit":"-mma-","gloss":"doubles م — held twice as long","shape":"geminated","exampleWord":"lex:hom-05"},
-  {"id":"syl:gem-ta","kind":"syllable","ar":"تَّ","translit":"-tta-","gloss":"doubles ت — held twice as long","shape":"geminated","exampleWord":"lex:num-06"},
-  {"id":"syl:gem-ka","kind":"syllable","ar":"كَّ","translit":"-kka-","gloss":"doubles ك — held twice as long","shape":"geminated","exampleWord":"lex:foo-12"},
+  {"id":"syl:cvv-ba","kind":"syllable","ar":"بَا","translit":"bā","gloss":"long \"aa\" sound — ب + long vowel ا","shape":"CVV","exampleWord":"lex:hom-06","level":"A0","skills":["reading","pronunciation"],"prereqs":["let:ba","mrk:madd-alif"]},
+  {"id":"syl:cvv-bi","kind":"syllable","ar":"بِي","translit":"bī","gloss":"long \"ee\" sound — ب + long vowel ي","shape":"CVV","exampleWord":"lex:adj-01","level":"A0","skills":["reading","pronunciation"],"prereqs":["let:ba","mrk:madd-ya"]},
+  {"id":"syl:cvv-bu","kind":"syllable","ar":"بُو","translit":"bū","gloss":"long \"oo\" sound — ب + long vowel و","shape":"CVV","exampleWord":"lex:tim-08","level":"A0","skills":["reading","pronunciation"],"prereqs":["let:ba","mrk:madd-waw"]},
+  {"id":"syl:cvv-ma","kind":"syllable","ar":"مَا","translit":"mā","gloss":"long \"aa\" sound — م + long vowel ا","shape":"CVV","exampleWord":"lex:foo-09","level":"A0","skills":["reading","pronunciation"],"prereqs":["let:mim","mrk:madd-alif"]},
+  {"id":"syl:cvv-mi","kind":"syllable","ar":"مِي","translit":"mī","gloss":"long \"ee\" sound — م + long vowel ي","shape":"CVV","exampleWord":"lex:adj-03","level":"A0","skills":["reading","pronunciation"],"prereqs":["let:mim","mrk:madd-ya"]},
+  {"id":"syl:cvv-mu","kind":"syllable","ar":"مُو","translit":"mū","gloss":"long \"oo\" sound — م + long vowel و","shape":"CVV","exampleWord":"lex:foo-13","level":"A0","skills":["reading","pronunciation"],"prereqs":["let:mim","mrk:madd-waw"]},
+  {"id":"syl:cvv-ta","kind":"syllable","ar":"تَا","translit":"tā","gloss":"long \"aa\" sound — ت + long vowel ا","shape":"CVV","exampleWord":"lex:sch-06","level":"A0","skills":["reading","pronunciation"],"prereqs":["let:ta1","mrk:madd-alif"]},
+  {"id":"syl:cvv-ti","kind":"syllable","ar":"تِي","translit":"tī","gloss":"long \"ee\" sound — ت + long vowel ي","shape":"CVV","exampleWord":"lex:foo-14","level":"A0","skills":["reading","pronunciation"],"prereqs":["let:ta1","mrk:madd-ya"]},
+  {"id":"syl:cvv-tu","kind":"syllable","ar":"تُو","translit":"tū","gloss":"long \"oo\" sound — ت + long vowel و","shape":"CVV","exampleWord":"lex:foo-15","level":"A0","skills":["reading","pronunciation"],"prereqs":["let:ta1","mrk:madd-waw"]},
+  {"id":"syl:cvc-ba","kind":"syllable","ar":"بَحْ","translit":"baḥ-","gloss":"opens \"ba\", closes on ح + sukūn (no vowel)","shape":"CVC","exampleWord":"lex:pla-11","level":"A0","skills":["reading","pronunciation"],"prereqs":["let:ba","mrk:sukun"]},
+  {"id":"syl:cvc-bi","kind":"syllable","ar":"بِنْ","translit":"bin-","gloss":"opens \"bi\", closes on ن + sukūn (no vowel)","shape":"CVC","exampleWord":"lex:peo-13","level":"A0","skills":["reading","pronunciation"],"prereqs":["let:ba","mrk:sukun"]},
+  {"id":"syl:cvc-bu","kind":"syllable","ar":"بُرْ","translit":"bur-","gloss":"opens \"bu\", closes on ر + sukūn (no vowel)","shape":"CVC","exampleWord":"lex:col-07","level":"A0","skills":["reading","pronunciation"],"prereqs":["let:ba","mrk:sukun"]},
+  {"id":"syl:cvc-ma","kind":"syllable","ar":"مَدْ","translit":"mad-","gloss":"opens \"ma\", closes on د + sukūn (no vowel)","shape":"CVC","exampleWord":"lex:sch-01","level":"A0","skills":["reading","pronunciation"],"prereqs":["let:mim","mrk:sukun"]},
+  {"id":"syl:cvc-mi","kind":"syllable","ar":"مِرْ","translit":"mir-","gloss":"opens \"mi\", closes on ر + sukūn (no vowel)","shape":"CVC","exampleWord":"lex:obj-07","level":"A0","skills":["reading","pronunciation"],"prereqs":["let:mim","mrk:sukun"]},
+  {"id":"syl:cvc-mu","kind":"syllable","ar":"مُسْ","translit":"mus-","gloss":"opens \"mu\", closes on س + sukūn (no vowel)","shape":"CVC","exampleWord":"lex:pla-05","level":"A0","skills":["reading","pronunciation"],"prereqs":["let:mim","mrk:sukun"]},
+  {"id":"syl:cvc-ta","kind":"syllable","ar":"تَشْ","translit":"tash-","gloss":"opens \"ta\", closes on ش + sukūn (no vowel)","shape":"CVC","exampleWord":"lex:pla-05","level":"A0","skills":["reading","pronunciation"],"prereqs":["let:ta1","mrk:sukun"]},
+  {"id":"syl:cvc-ti","kind":"syllable","ar":"تِسْ","translit":"tis-","gloss":"opens \"ti\", closes on س + sukūn (no vowel)","shape":"CVC","exampleWord":"lex:num-09","level":"A0","skills":["reading","pronunciation"],"prereqs":["let:ta1","mrk:sukun"]},
+  {"id":"syl:cvc-tu","kind":"syllable","ar":"تُصْ","translit":"tuṣ-","gloss":"opens \"tu\", closes on ص + sukūn (no vowel)","shape":"CVC","exampleWord":"lex:gre-10","level":"A0","skills":["reading","pronunciation"],"prereqs":["let:ta1","mrk:sukun"]},
+  {"id":"syl:gem-da","kind":"syllable","ar":"دَّ","translit":"-dda-","gloss":"doubles د — held twice as long","shape":"geminated","exampleWord":"lex:peo-08","level":"A0","skills":["reading","pronunciation"],"prereqs":["let:dal","mrk:shadda"]},
+  {"id":"syl:gem-ma","kind":"syllable","ar":"مَّ","translit":"-mma-","gloss":"doubles م — held twice as long","shape":"geminated","exampleWord":"lex:hom-05","level":"A0","skills":["reading","pronunciation"],"prereqs":["let:mim","mrk:shadda"]},
+  {"id":"syl:gem-ta","kind":"syllable","ar":"تَّ","translit":"-tta-","gloss":"doubles ت — held twice as long","shape":"geminated","exampleWord":"lex:num-06","level":"A0","skills":["reading","pronunciation"],"prereqs":["let:ta1","mrk:shadda"]},
+  {"id":"syl:gem-ka","kind":"syllable","ar":"كَّ","translit":"-kka-","gloss":"doubles ك — held twice as long","shape":"geminated","exampleWord":"lex:foo-12","level":"A0","skills":["reading","pronunciation"],"prereqs":["let:kaf","mrk:shadda"]},
 ],
 "grammar": [
-  {"id":"gr:gender-agreement","kind":"grammar","name":"Noun–adjective gender agreement","level":"A1","rule":"A feminine noun (usually ending ة) takes a feminine adjective, which adds ة.","examples":["txt:gram-gender-bint"],"commonErrors":[]},
-  {"id":"gr:present-tense","kind":"grammar","name":"Present-tense verb prefixes (he / she / they)","level":"A2","rule":"The present-tense verb prefix changes with the subject: يَـ (he), تَـ (she), يَـ…ونَ (they).","examples":["txt:gram-verb-he","txt:gram-verb-she","txt:gram-verb-they"],"commonErrors":[]},
-  {"id":"gr:sun-moon","kind":"grammar","name":"Sun & moon letters (definite-article assimilation)","level":"A1","rule":"ال is pronounced before moon letters; before the 14 sun letters ل is silent and the consonant doubles.","examples":["txt:gram-sunletter-shams"],"commonErrors":[]},
+  {"id":"gr:gender-agreement","kind":"grammar","name":"Noun–adjective gender agreement","level":"A1","rule":"A feminine noun (usually ending ة) takes a feminine adjective, which adds ة.","examples":["txt:gram-gender-bint"],"commonErrors":[],"skills":["grammar","reading"],"prereqs":[]},
+  {"id":"gr:present-tense","kind":"grammar","name":"Present-tense verb prefixes (he / she / they)","level":"A2","rule":"The present-tense verb prefix changes with the subject: يَـ (he), تَـ (she), يَـ…ونَ (they).","examples":["txt:gram-verb-he","txt:gram-verb-she","txt:gram-verb-they"],"commonErrors":[],"skills":["grammar","reading"],"prereqs":[]},
+  {"id":"gr:sun-moon","kind":"grammar","name":"Sun & moon letters (definite-article assimilation)","level":"A1","rule":"ال is pronounced before moon letters; before the 14 sun letters ل is silent and the consonant doubles.","examples":["txt:gram-sunletter-shams"],"commonErrors":[],"skills":["grammar","reading"],"prereqs":["let:lam"]},
 ],
 "texts": [
-  {"id":"txt:sent-house-big","kind":"text","textType":"sentence","source":"m8","vowelled":"الْبَيْتُ كَبِيرٌ","reduced":"الْبيْت كبير","unvowelled":"البيت كبير","translit":"al-baytu kabīrun","en":"The house is big.","words":[{"surface":"الْبَيْتُ","translit":"al-baytu","gloss":"house","gender":"masculine"},{"surface":"كَبِيرٌ","translit":"kabīrun","gloss":"big","gender":"masculine"}],"audio":"الْبَيْتُ كَبِيرٌ"},
-  {"id":"txt:sent-book-beautiful","kind":"text","textType":"sentence","source":"m8","vowelled":"الْكِتَابُ جَمِيلٌ","reduced":"الْكتاب جميل","unvowelled":"الكتاب جميل","translit":"al-kitābu jamīlun","en":"The book is beautiful.","words":[{"surface":"الْكِتَابُ","translit":"al-kitābu","gloss":"book","gender":"masculine"},{"surface":"جَمِيلٌ","translit":"jamīlun","gloss":"beautiful","gender":"masculine"}],"audio":"الْكِتَابُ جَمِيلٌ"},
-  {"id":"txt:sent-girl-happy","kind":"text","textType":"sentence","source":"m8","vowelled":"الْبِنْتُ سَعِيدَةٌ","reduced":"الْبنْت سعيدة","unvowelled":"البنت سعيدة","translit":"al-bintu saʿīdatun","en":"The girl is happy.","words":[{"surface":"الْبِنْتُ","translit":"al-bintu","gloss":"girl","gender":"feminine"},{"surface":"سَعِيدَةٌ","translit":"saʿīdatun","gloss":"happy (feminine)","gender":"feminine"}],"audio":"الْبِنْتُ سَعِيدَةٌ"},
-  {"id":"txt:gram-gender-bint","kind":"text","textType":"sentence","source":"m11","concept":"gender-agreement","vowelled":"الْبِنْتُ كَبِيرَةٌ","translit":"al-bintu kabīratun","en":"The girl is big.","words":[{"surface":"الْبِنْتُ","translit":"al-bintu","gloss":"girl","gender":"feminine"},{"surface":"كَبِيرَةٌ","translit":"kabīratun","gloss":"big (feminine)","gender":"feminine"}],"audio":"الْبِنْتُ كَبِيرَةٌ"},
-  {"id":"txt:gram-verb-he","kind":"text","textType":"sentence","source":"m11","concept":"present-tense","vowelled":"هُوَ يَذْهَبُ إِلَى الْمَدْرَسَةِ","translit":"huwa yadhhabu ilā al-madrasati","en":"He goes to school.","words":[{"surface":"هُوَ","translit":"huwa","gloss":"he","gender":"masculine"},{"surface":"يَذْهَبُ","translit":"yadhhabu","gloss":"to go","gender":"masculine"},{"surface":"إِلَى الْمَدْرَسَةِ","translit":"ilā al-madrasati","gloss":"school","gender":null}],"audio":"هُوَ يَذْهَبُ إِلَى الْمَدْرَسَةِ"},
-  {"id":"txt:gram-verb-she","kind":"text","textType":"sentence","source":"m11","concept":"present-tense","vowelled":"هِيَ تَذْهَبُ إِلَى الْمَدْرَسَةِ","translit":"hiya tadhhabu ilā al-madrasati","en":"She goes to school.","words":[{"surface":"هِيَ","translit":"hiya","gloss":"she","gender":"feminine"},{"surface":"تَذْهَبُ","translit":"tadhhabu","gloss":"to go","gender":"feminine"},{"surface":"إِلَى الْمَدْرَسَةِ","translit":"ilā al-madrasati","gloss":"school","gender":null}],"audio":"هِيَ تَذْهَبُ إِلَى الْمَدْرَسَةِ"},
-  {"id":"txt:gram-verb-they","kind":"text","textType":"sentence","source":"m11","concept":"present-tense","vowelled":"هُمْ يَذْهَبُونَ إِلَى الْمَدْرَسَةِ","translit":"hum yadhhabūna ilā al-madrasati","en":"They go to school.","words":[{"surface":"هُمْ","translit":"hum","gloss":"they (masculine/mixed group)","gender":null},{"surface":"يَذْهَبُونَ","translit":"yadhhabūna","gloss":"to go","gender":null},{"surface":"إِلَى الْمَدْرَسَةِ","translit":"ilā al-madrasati","gloss":"school","gender":null}],"audio":"هُمْ يَذْهَبُونَ إِلَى الْمَدْرَسَةِ"},
-  {"id":"txt:gram-sunletter-shams","kind":"text","textType":"sentence","source":"m11","concept":"sun-moon","vowelled":"الشَّمْسُ كَبِيرَةٌ","translit":"ash-shamsu kabīratun","en":"The sun is big.","words":[{"surface":"الشَّمْسُ","translit":"ash-shamsu","gloss":"sun","gender":"feminine"},{"surface":"كَبِيرَةٌ","translit":"kabīratun","gloss":"big (feminine)","gender":"feminine"}],"audio":"الشَّمْسُ كَبِيرَةٌ"},
+  {"id":"txt:sent-house-big","kind":"text","textType":"sentence","source":"m8","vowelled":"الْبَيْتُ كَبِيرٌ","reduced":"الْبيْت كبير","unvowelled":"البيت كبير","translit":"al-baytu kabīrun","en":"The house is big.","words":[{"surface":"الْبَيْتُ","translit":"al-baytu","gloss":"house","gender":"masculine"},{"surface":"كَبِيرٌ","translit":"kabīrun","gloss":"big","gender":"masculine"}],"audio":"الْبَيْتُ كَبِيرٌ","level":"A1","skills":["reading","comprehension","listening"],"prereqs":[]},
+  {"id":"txt:sent-book-beautiful","kind":"text","textType":"sentence","source":"m8","vowelled":"الْكِتَابُ جَمِيلٌ","reduced":"الْكتاب جميل","unvowelled":"الكتاب جميل","translit":"al-kitābu jamīlun","en":"The book is beautiful.","words":[{"surface":"الْكِتَابُ","translit":"al-kitābu","gloss":"book","gender":"masculine"},{"surface":"جَمِيلٌ","translit":"jamīlun","gloss":"beautiful","gender":"masculine"}],"audio":"الْكِتَابُ جَمِيلٌ","level":"A1","skills":["reading","comprehension","listening"],"prereqs":[]},
+  {"id":"txt:sent-girl-happy","kind":"text","textType":"sentence","source":"m8","vowelled":"الْبِنْتُ سَعِيدَةٌ","reduced":"الْبنْت سعيدة","unvowelled":"البنت سعيدة","translit":"al-bintu saʿīdatun","en":"The girl is happy.","words":[{"surface":"الْبِنْتُ","translit":"al-bintu","gloss":"girl","gender":"feminine"},{"surface":"سَعِيدَةٌ","translit":"saʿīdatun","gloss":"happy (feminine)","gender":"feminine"}],"audio":"الْبِنْتُ سَعِيدَةٌ","level":"A1","skills":["reading","comprehension","listening"],"prereqs":[]},
+  {"id":"txt:gram-gender-bint","kind":"text","textType":"sentence","source":"m11","concept":"gender-agreement","vowelled":"الْبِنْتُ كَبِيرَةٌ","translit":"al-bintu kabīratun","en":"The girl is big.","words":[{"surface":"الْبِنْتُ","translit":"al-bintu","gloss":"girl","gender":"feminine"},{"surface":"كَبِيرَةٌ","translit":"kabīratun","gloss":"big (feminine)","gender":"feminine"}],"audio":"الْبِنْتُ كَبِيرَةٌ","level":"A1","skills":["reading","comprehension","listening","grammar"],"prereqs":["gr:gender-agreement"]},
+  {"id":"txt:gram-verb-he","kind":"text","textType":"sentence","source":"m11","concept":"present-tense","vowelled":"هُوَ يَذْهَبُ إِلَى الْمَدْرَسَةِ","translit":"huwa yadhhabu ilā al-madrasati","en":"He goes to school.","words":[{"surface":"هُوَ","translit":"huwa","gloss":"he","gender":"masculine"},{"surface":"يَذْهَبُ","translit":"yadhhabu","gloss":"to go","gender":"masculine"},{"surface":"إِلَى الْمَدْرَسَةِ","translit":"ilā al-madrasati","gloss":"school","gender":null}],"audio":"هُوَ يَذْهَبُ إِلَى الْمَدْرَسَةِ","level":"A2","skills":["reading","comprehension","listening","grammar"],"prereqs":["gr:present-tense"]},
+  {"id":"txt:gram-verb-she","kind":"text","textType":"sentence","source":"m11","concept":"present-tense","vowelled":"هِيَ تَذْهَبُ إِلَى الْمَدْرَسَةِ","translit":"hiya tadhhabu ilā al-madrasati","en":"She goes to school.","words":[{"surface":"هِيَ","translit":"hiya","gloss":"she","gender":"feminine"},{"surface":"تَذْهَبُ","translit":"tadhhabu","gloss":"to go","gender":"feminine"},{"surface":"إِلَى الْمَدْرَسَةِ","translit":"ilā al-madrasati","gloss":"school","gender":null}],"audio":"هِيَ تَذْهَبُ إِلَى الْمَدْرَسَةِ","level":"A2","skills":["reading","comprehension","listening","grammar"],"prereqs":["gr:present-tense"]},
+  {"id":"txt:gram-verb-they","kind":"text","textType":"sentence","source":"m11","concept":"present-tense","vowelled":"هُمْ يَذْهَبُونَ إِلَى الْمَدْرَسَةِ","translit":"hum yadhhabūna ilā al-madrasati","en":"They go to school.","words":[{"surface":"هُمْ","translit":"hum","gloss":"they (masculine/mixed group)","gender":null},{"surface":"يَذْهَبُونَ","translit":"yadhhabūna","gloss":"to go","gender":null},{"surface":"إِلَى الْمَدْرَسَةِ","translit":"ilā al-madrasati","gloss":"school","gender":null}],"audio":"هُمْ يَذْهَبُونَ إِلَى الْمَدْرَسَةِ","level":"A2","skills":["reading","comprehension","listening","grammar"],"prereqs":["gr:present-tense"]},
+  {"id":"txt:gram-sunletter-shams","kind":"text","textType":"sentence","source":"m11","concept":"sun-moon","vowelled":"الشَّمْسُ كَبِيرَةٌ","translit":"ash-shamsu kabīratun","en":"The sun is big.","words":[{"surface":"الشَّمْسُ","translit":"ash-shamsu","gloss":"sun","gender":"feminine"},{"surface":"كَبِيرَةٌ","translit":"kabīratun","gloss":"big (feminine)","gender":"feminine"}],"audio":"الشَّمْسُ كَبِيرَةٌ","level":"A1","skills":["reading","comprehension","listening","grammar"],"prereqs":["gr:sun-moon"]},
 ],
 "legacyFlashcardId": {
   "1": "lex:sch-06",
@@ -1816,6 +1898,13 @@ const MARKS = CONTENT.marks || [];
 const SYLLABLE_OBJECTS = CONTENT.syllables || [];
 const GRAMMAR_POINTS = CONTENT.grammar || [];
 const TEXTS = CONTENT.texts || [];
+
+/* M15 — proficiency model. Read-only structures; see deriveLevel() below. */
+const SKILLS = CONTENT.skills || [];
+const LEVELS = CONTENT.levels || [];
+const DESCRIPTORS = CONTENT.descriptors || [];
+const LEVEL_ORDER = LEVELS.map(l => l.id);
+const ALL_OBJECTS = [].concat(LEXEMES, LETTERS, MARKS, SYLLABLE_OBJECTS, GRAMMAR_POINTS, TEXTS);
 
 const LEXEME_BY_ID = new Map(LEXEMES.map(l => [l.id, l]));
 const NUM_BY_LEXEME = {};
@@ -3324,6 +3413,11 @@ function loadProgress() {
         practiceLessonsCompleted: saved.practiceLessonsCompleted || [],
         dailyGoal: saved.dailyGoal || 10,
         dailyProgress: saved.dailyProgress || { date: null, count: 0 },
+        /* M15 — per-strand levels (a derived cache, recomputed on load and after
+           lessons) and the placement result (null until M17). Additive; every
+           pre-M15 field above is preserved. */
+        skillLevels: (saved.skillLevels && typeof saved.skillLevels === "object") ? saved.skillLevels : {},
+        placementResult: saved.placementResult || null,
     };
 }
 
@@ -3347,6 +3441,90 @@ function bumpDailyGoal() {
     }
     progress.dailyProgress.count++;
     saveProgress();
+}
+
+/* ============================================================
+   MILESTONE 15 — PER-STRAND PROFICIENCY (deriveLevel)
+   Honest by design: returns { level: null, reason } whenever there
+   is not enough evidence, and never a number for writing/speaking.
+   Today the only mastery signal is progress.mastered (lexeme ids);
+   a light lessonsCompleted bridge gives a provisional floor for the
+   other strands until M16 wires lesson objectives + per-object
+   coverage and M18/M19 add real graded signal.
+   ============================================================ */
+const MASTERY_THRESHOLD = 0.75;  // fraction of a strand's ≤L objects mastered
+const EVIDENCE_MIN = 12;         // mastered items needed to call a level "firm"
+
+/* completed lesson id -> the provisional strand floor it implies. A bridge,
+   replaced by lesson `objectives` in M16. */
+const LESSON_LEVEL_FLOOR = {
+    "harakat-intro":             { reading: "A0", pronunciation: "A0" },
+    "syllables-1":               { reading: "A0", pronunciation: "A0" },
+    "syllables-intro":           { reading: "A0", pronunciation: "A0" },
+    "reading-foundations":       { reading: "A0" },
+    "listening-foundations":     { listening: "A0" },
+    "pronunciation-foundations": { pronunciation: "A0" },
+    "alphabet-writing-1":        { writing: "A0" },
+    "stroke-order-writing":      { writing: "A0" },
+    "sentence-reading":          { reading: "A1", comprehension: "A1" },
+    "unvowelled-reading":        { reading: "A2" },
+    "grammar-intro":             { grammar: "A1", reading: "A1" },
+};
+
+function levelIndex(id) { return LEVEL_ORDER.indexOf(id); }
+function higherLevel(a, b) { return levelIndex(a) >= levelIndex(b) ? a : b; }
+
+function deriveLevel(skillId) {
+    const skill = SKILLS.find(s => s.id === skillId);
+    if (!skill) return { level: null, reason: "unknown skill" };
+    if (skill.assess === "self-report") return { level: null, reason: "self-tracked" };
+
+    // 1. object-coverage signal — climb the levels in order; a level is
+    //    "cleared" when ≥75% of this strand's objects AT that level are
+    //    mastered. Stop at the first level that has content and isn't cleared.
+    //    Each level is judged on its own objects (not "L and below"), so
+    //    mastering many A0 items can never by itself imply a higher level.
+    const masteredSet = new Set(progress.mastered);
+    const strandObjects = ALL_OBJECTS.filter(o => (o.skills || []).indexOf(skillId) !== -1);
+    const masteredCount = strandObjects.filter(o => masteredSet.has(o.id)).length;
+    let coverageLevel = null;
+    for (let i = 0; i < LEVEL_ORDER.length; i++) {
+        const atLevel = strandObjects.filter(o => levelIndex(o.level) === i);
+        if (!atLevel.length) continue;  // no content authored at this level yet
+        const m = atLevel.filter(o => masteredSet.has(o.id)).length;
+        if (m / atLevel.length >= MASTERY_THRESHOLD) coverageLevel = LEVEL_ORDER[i];
+        else break;
+    }
+
+    // 2. lesson-completion bridge — a provisional floor
+    let bridgeLevel = null;
+    for (const lid of progress.lessonsCompleted.concat(progress.practiceLessonsCompleted)) {
+        const floor = LESSON_LEVEL_FLOOR[lid];
+        if (floor && floor[skillId]) bridgeLevel = bridgeLevel ? higherLevel(bridgeLevel, floor[skillId]) : floor[skillId];
+    }
+
+    // Only "reliable" strands (a real graded signal) are ever called "firm".
+    if (coverageLevel && skill.assess === "reliable" && masteredCount >= EVIDENCE_MIN)
+        return { level: coverageLevel, confidence: "firm", reason: "from mastered items" };
+    if (coverageLevel) return { level: coverageLevel, confidence: "provisional", reason: "few graded items so far" };
+    if (bridgeLevel) return { level: bridgeLevel, confidence: "provisional", reason: "from completed lessons" };
+    return { level: null, reason: "insufficient evidence" };
+}
+
+/* Single headline level = the min of the three load-bearing strands. */
+function deriveHeadlineLevel() {
+    const core = ["reading", "vocabulary", "grammar"].map(s => deriveLevel(s).level).filter(Boolean);
+    if (!core.length) return null;
+    return core.reduce((min, l) => levelIndex(l) < levelIndex(min) ? l : min);
+}
+
+/* Recompute the cache on progress.skillLevels and persist. */
+function refreshSkillLevels() {
+    const next = {};
+    for (const s of SKILLS) next[s.id] = deriveLevel(s.id);
+    progress.skillLevels = next;
+    saveProgress();
+    return next;
 }
 
 let progress = loadProgress();
@@ -4580,6 +4758,8 @@ function renderProgress() {
     document.getElementById("progGoalText").textContent = `${todayCount} / ${goal} reviewed today`;
     document.getElementById("progGoalFill").style.width = Math.min(100, (todayCount / goal) * 100) + "%";
 
+    renderSkillsPanel();
+
     const catWrap = document.getElementById("progCategoryBreakdown");
     catWrap.innerHTML = "";
     categories.filter(c => c.id !== "all").forEach(cat => {
@@ -4599,6 +4779,42 @@ function renderProgress() {
         row.className = "cat-progress-row";
         row.innerHTML = `<span>${pl.label}</span><span>${done ? "✓ Completed" : "Not yet"}</span>`;
         practiceWrap.appendChild(row);
+    });
+}
+
+/* M15 — the per-strand proficiency panel on the Progress view. Reuses the
+   existing .cat-progress-list / .cat-progress-row markup; no new CSS. */
+function levelName(id) { const l = LEVELS.find(x => x.id === id); return l ? l.name : id; }
+
+function skillLevelText(d) {
+    if (d.level && d.confidence === "firm") return levelName(d.level);
+    if (d.level) return levelName(d.level) + " · provisional";
+    if (d.reason === "self-tracked") return "self-tracked";
+    return "keep going";
+}
+
+function renderSkillsPanel() {
+    const levels = refreshSkillLevels();
+    const core = ["reading", "vocabulary", "grammar"];
+    const knownCore = core.filter(id => levels[id] && levels[id].level);
+    const headline = deriveHeadlineLevel();
+    const headEl = document.getElementById("progSkillsHeadline");
+    if (!headline) {
+        headEl.textContent = "Complete a few lessons or take a placement check to see your level.";
+    } else if (knownCore.length === core.length) {
+        headEl.textContent = `Overall: ${levelName(headline)} — your reading, vocabulary and grammar combined.`;
+    } else {
+        const named = knownCore.map(id => (SKILLS.find(s => s.id === id) || {}).name || id).join(" and ");
+        headEl.textContent = `So far: ${levelName(headline)}, from your ${named}. Keep going to place the rest.`;
+    }
+
+    const wrap = document.getElementById("progSkillsBreakdown");
+    wrap.innerHTML = "";
+    SKILLS.forEach(s => {
+        const row = document.createElement("div");
+        row.className = "cat-progress-row";
+        row.innerHTML = `<span>${s.name}</span><span>${skillLevelText(levels[s.id] || { reason: "insufficient evidence" })}</span>`;
+        wrap.appendChild(row);
     });
 }
 
@@ -4634,6 +4850,7 @@ function completeLessonRun() {
             progress.practiceLessonsCompleted.push(activeLesson.id);
         }
         saveProgress();
+        refreshSkillLevels();   // M15 — keep the per-strand cache current
     }
     const returnTo = lessonReturnView;
     activeLesson = null;

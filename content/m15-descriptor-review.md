@@ -132,7 +132,7 @@ Files: [`content/skills.json`](skills.json) · [`content/levels.json`](levels.js
 | by strand | count | | by level | count |
 |---|---:|---|---|---:|
 | vocabulary | 162 (all lexemes) | | A0 | 192 |
-| reading | 72 (letters, marks, syllables, texts) | | A1 | 38 |
+| reading | 72 (letters, marks, syllables, texts, grammar points) | | A1 | 38 |
 | pronunciation | 61 (letters, marks, syllables) | | A2 | 4 |
 | writing | 28 (letters) | | | |
 | grammar | 8 (3 points + 5 grammar texts) | | | |
@@ -141,30 +141,32 @@ Files: [`content/skills.json`](skills.json) · [`content/levels.json`](levels.js
 
 **Lexeme levels unchanged from M14**: 131 at A0, 31 at A1 (the Word Bank's own split; refined in M16/M20).
 
-## 5. Prerequisite edges — 36
+## 5. Prerequisite edges — 62
 
 M15 ships the graph *mechanism* + these edges (the full fine-grained graph is M16). Validated: acyclic, and **level-monotonic** (no prereq is a higher level than its dependent).
 
-| edge | rationale |
-|---|---|
-| `mrk:fathatayn/kasratayn/dammatayn` ← the matching short vowel | tanwīn is a doubled short vowel |
-| `mrk:madd-alif/ya/waw` ← the matching short vowel | a long vowel is the stretched short one |
-| `mrk:sukun`, `mrk:shadda` ← all three short vowels | "no vowel" / "held consonant" only make sense once vowels are known |
-| `syl:cvv-*` ← its consonant letter + its long-vowel mark | a CVV syllable is exactly those two parts |
-| `syl:cvc-*` ← its consonant letter + `mrk:sukun` | closed syllable = consonant + coda-with-sukūn |
-| `syl:gem-*` ← its consonant letter + `mrk:shadda` | gemination = the shadda on that consonant |
-| `gr:sun-moon` ← `let:lam` | ال assimilation is about the ل of the article |
-| `txt:gram-*` ← the grammar point it demonstrates | you meet the sentence after the rule |
+| edge family | count | rationale |
+|---|---:|---|
+| `mrk:fathatayn/kasratayn/dammatayn` ← the matching short vowel | 3 | tanwīn is a doubled short vowel |
+| `mrk:madd-alif/ya/waw` ← the matching short vowel | 3 | a long vowel is the stretched short one |
+| `mrk:sukun`, `mrk:shadda` ← all three short vowels | 6 | "no vowel" / "held consonant" only make sense once vowels are known |
+| `syl:cvv-*` ← its consonant letter + its long-vowel mark | 16 | a CVV syllable is exactly those two parts |
+| `syl:cvc-*` ← its consonant letter + `mrk:sukun` | 14 | closed syllable = consonant + coda-with-sukūn |
+| `syl:gem-*` ← its consonant letter + `mrk:shadda` | 14 | gemination = the shadda on that consonant |
+| `gr:sun-moon` ← `let:lam` | 1 | ال assimilation is about the ل of the article |
+| `txt:gram-*` ← the grammar point it demonstrates | 5 | you meet the sentence after the rule |
+| **total** | **62** | |
 
 ## 6. What `deriveLevel` will show (preview — honest by design)
 
 M15's only mastery signal today is `progress.mastered` (lexeme ids). So:
 
-- **`vocabulary`** — derived from mastered-lexeme coverage per level. A fresh learner → `{ level: null, reason: "insufficient evidence" }`. A learner who has mastered most A0 words → `A0` (provisional) → `A1` as A1 words accumulate.
-- **`reading` / `grammar` / `listening` / `comprehension` / `pronunciation`** — no per-object mastery signal yet → mostly `"insufficient evidence — take a check"` (the check is M17). A light bridge from `lessonsCompleted` gives a provisional floor (finished the harakāt + syllables lessons → `reading` ≥ A0 provisional; finished `grammar-intro` → `grammar` ≥ A1 provisional). This bridge is replaced by real object coverage in M16.
-- **`writing` / `speaking`** — shown as "self-tracked," never a derived number.
-- **Headline level** (your Q5) = **min of `reading`, `vocabulary`, `grammar`**; listening + speaking shown alongside, not averaged in.
-- **Thresholds** (your Q4): assert level L when ≥ 75 % of that strand's ≤ L objects are mastered **and** ≥ 12 graded interactions exist in the strand; else "insufficient evidence." Tunable constants — deliberately conservative until M18/M19 add real signal.
+- **`vocabulary`** — derived from mastered-lexeme coverage per level. A fresh learner → `{ level: null, reason: "insufficient evidence" }`. A learner who has mastered most A0 words → `A0` (firm, once ≥ 12 items) → `A1` as A1 words accumulate.
+- **`reading` / `grammar` / `listening` / `comprehension` / `pronunciation`** — no per-object mastery signal yet → mostly `"insufficient evidence"` (the placement check is M17). A light bridge from `lessonsCompleted` gives a **provisional** floor (finished the harakāt / syllables / reading-foundations lessons → `reading` ≥ A0 provisional; finished `grammar-intro` → `grammar` **and** `reading` ≥ A1 provisional). This bridge is replaced by real object coverage in M16.
+- **`writing` / `pronunciation`** (`assess: partial`) — a level only ever from the lesson bridge, shown **provisional**; never "firm."
+- **`speaking`** (`assess: self-report`) — always `{ level: null, reason: "self-tracked" }`; shown as "self-tracked," never a derived level.
+- **Headline level** (your Q5) = **min of `reading`, `vocabulary`, `grammar`** when all three are known ("Overall: …"); when only one or two are known it falls back to the min of those, labelled "So far: … from your …" so the panel never implies evidence it doesn't have; `null` (→ "complete a few lessons") when none are known.
+- **Thresholds** (your Q4): a level `L` is "cleared" when ≥ 75 % of the strand's objects **at level `L`** are mastered (each level judged on its own objects — clearing A0 can't imply A1+). "Firm" additionally needs ≥ 12 mastered items in the strand **and** `assess: reliable`; otherwise "provisional." Tunable constants — deliberately conservative until M18/M19 add real signal.
 
 ---
 

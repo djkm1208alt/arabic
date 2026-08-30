@@ -79,6 +79,15 @@ function load() {
     try { legacyMap = readJSON(path.join(CONTENT_DIR, "_legacy-id-map.json")); }
     catch (e) { errors.push(`_legacy-id-map.json: cannot parse — ${e.message}`); }
 
+    // M15 taxonomy — skills, levels (bare ids), and the descriptor grid.
+    for (const [key, file] of [["skills", "skills.json"], ["levels", "levels.json"], ["descriptors", "descriptors.json"]]) {
+        try {
+            const arr = readJSON(path.join(CONTENT_DIR, file));
+            if (!Array.isArray(arr)) errors.push(`${file}: expected a JSON array`);
+            else data[key] = arr;
+        } catch (e) { errors.push(`${file}: cannot parse — ${e.message}`); }
+    }
+
     if (errors.length) return { errors };
 
     /* ids: present, prefixed, globally unique */
@@ -129,6 +138,50 @@ function load() {
     }
     const cyc = findCycle(graph);
     if (cyc) errors.push(`prereq cycle: ${cyc.join(" → ")}`);
+
+    /* -------- M15: skills, levels, descriptors, object tags -------- */
+    const skillIds = new Set((data.skills || []).map(s => s.id));
+    const levelIds = (data.levels || []).map(l => l.id);
+    const levelIdx = Object.fromEntries(levelIds.map((id, i) => [id, i]));
+
+    if (skillIds.size !== (data.skills || []).length) errors.push("skills.json: duplicate skill id");
+    if (new Set(levelIds).size !== levelIds.length) errors.push("levels.json: duplicate level id");
+    for (const s of data.skills || []) if (!["reliable", "partial", "self-report"].includes(s.assess))
+        errors.push(`skill ${s.id}: assess "${s.assess}" must be reliable | partial | self-report`);
+
+    /* descriptors: exactly one per (skill × level), each with canDo + source */
+    if (data.descriptors && data.skills && data.levels) {
+        const want = skillIds.size * levelIds.length;
+        if (data.descriptors.length !== want)
+            errors.push(`descriptors.json: expected ${want} cells (${skillIds.size} skills × ${levelIds.length} levels), found ${data.descriptors.length}`);
+        const seen = new Set();
+        for (const d of data.descriptors) {
+            const key = `${d.skill}/${d.level}`;
+            if (!skillIds.has(d.skill)) errors.push(`descriptor ${key}: unknown skill`);
+            if (!(d.level in levelIdx)) errors.push(`descriptor ${key}: unknown level`);
+            if (seen.has(key)) errors.push(`descriptor ${key}: duplicate cell`);
+            seen.add(key);
+            if (!d.canDo || !d.canDo.trim()) errors.push(`descriptor ${key}: empty canDo`);
+            if (!d.source || !d.source.trim()) errors.push(`descriptor ${key}: empty source`);
+        }
+        for (const s of skillIds) for (const l of levelIds)
+            if (!seen.has(`${s}/${l}`)) errors.push(`descriptors.json: missing cell ${s}/${l}`);
+    }
+
+    /* every learning object: a valid level + ≥1 valid skill */
+    for (const key of Object.keys(FILES)) for (const o of data[key]) {
+        if (!o.level || !(o.level in levelIdx)) errors.push(`${o.id}: level "${o.level}" is not in levels.json`);
+        if (!Array.isArray(o.skills) || o.skills.length === 0) errors.push(`${o.id}: missing skills[]`);
+        else for (const sk of o.skills) if (!skillIds.has(sk)) errors.push(`${o.id}: unknown skill "${sk}"`);
+    }
+
+    /* prereq graph must be level-monotonic: a prereq is never a higher level than its dependent */
+    const objLevel = {};
+    for (const key of Object.keys(FILES)) for (const o of data[key]) objLevel[o.id] = o.level;
+    for (const [id, prereqs] of graph) for (const p of prereqs) {
+        if (objLevel[p] && objLevel[id] && levelIdx[objLevel[p]] > levelIdx[objLevel[id]])
+            errors.push(`${id} (${objLevel[id]}) has a higher-level prereq ${p} (${objLevel[p]})`);
+    }
 
     /* legacy id map: keys 1..46, values are real lexeme ids, 1:1 */
     if (legacyMap) {
@@ -187,6 +240,9 @@ function compile(data, legacyMap) {
         "   tools/build-content.js. Do not hand-edit. Regenerate:",
         "     node tools/build-content.js --write-app */",
         "const CONTENT = {",
+        section("skills") + ",",
+        section("levels") + ",",
+        section("descriptors") + ",",
         section("lexemes") + ",",
         section("letters") + ",",
         section("marks") + ",",
@@ -250,6 +306,7 @@ function main() {
     console.log("content validated — " + sum(counts) + " learning objects");
     for (const [k, n] of Object.entries(counts)) console.log("  " + k.padEnd(12) + n);
     console.log("  legacy id map  " + Object.keys(legacyMap).length);
+    console.log("  taxonomy       " + (data.skills || []).length + " skills, " + (data.levels || []).length + " levels, " + (data.descriptors || []).length + " descriptors");
     if (!args.has("--write-app")) console.log("\n(run with --write-app to splice into index.html, or --check to verify)");
 }
 
