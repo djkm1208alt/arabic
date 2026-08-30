@@ -8,7 +8,12 @@
     "examples": [
       "txt:gram-gender-bint"
     ],
-    "commonErrors": []
+    "commonErrors": [],
+    "skills": [
+      "grammar",
+      "reading"
+    ],
+    "prereqs": []
   },
   {
     "id": "gr:present-tense",
@@ -21,7 +26,12 @@
       "txt:gram-verb-she",
       "txt:gram-verb-they"
     ],
-    "commonErrors": []
+    "commonErrors": [],
+    "skills": [
+      "grammar",
+      "reading"
+    ],
+    "prereqs": []
   },
   {
     "id": "gr:sun-moon",
@@ -32,6 +42,13 @@
     "examples": [
       "txt:gram-sunletter-shams"
     ],
-    "commonErrors": []
+    "commonErrors": [],
+    "skills": [
+      "grammar",
+      "reading"
+    ],
+    "prereqs": [
+      "let:lam"
+    ]
   }
 ]

@@ -1,0 +1,293 @@
+[
+  {
+    "skill": "reading", "level": "A0",
+    "canDo": "Names and sounds all 28 letters; recognises the four positional forms and knows which six letters (ا د ذ ر ز و) do not join to the letter that follows; reads fully-vowelled CV and CVV syllables aloud.",
+    "source": "Arabic script-literacy competency (no CEFR analogue); standard first-year sequence, e.g. Al-Kitaab Part 1 Alif Baa; ACTFL Arabic — script and sound system."
+  },
+  {
+    "skill": "reading", "level": "A1",
+    "canDo": "Reads fully-vowelled words and short sentences aloud accurately; correctly handles sukūn, shaddah, the three tanwīn, tāʾ marbūṭa (ة), alif maqṣūra (ى), and sun/moon-letter assimilation of the definite article ال.",
+    "source": "CEFR-CV 2018 Overall Reading Comprehension A1, adapted for full vowelling; Arabic reading-mark competency from standard first-year sequences."
+  },
+  {
+    "skill": "reading", "level": "A2",
+    "canDo": "Reads fully-vowelled paragraphs on familiar topics; begins reading high-frequency words that carry only the vowels needed to resolve ambiguity; recognises common word-shape (wazn) patterns.",
+    "source": "CEFR-CV 2018 Overall Reading Comprehension A2; the fully→partially vowelled transition is an Arabic-specific stage (documented rationale)."
+  },
+  {
+    "skill": "reading", "level": "B1",
+    "canDo": "Reads mostly-unvowelled MSA on familiar and everyday topics, supplying vowels from morphological pattern and context; handles broken plurals and derived-verb forms met in context.",
+    "source": "CEFR-CV 2018 Overall Reading Comprehension B1; the unvowelled-reading milestone from ACTFL Arabic — Intermediate Reading."
+  },
+  {
+    "skill": "reading", "level": "B2",
+    "canDo": "Reads unvowelled authentic texts — news reports, feature articles, factual prose — with occasional dictionary support; follows the line of argument and separates main points from detail.",
+    "source": "CEFR-CV 2018 Overall Reading Comprehension B2 / Reading for Information and Argument B2."
+  },
+  {
+    "skill": "reading", "level": "C1",
+    "canDo": "Reads editorials, essays, and literary prose fluently; handles register shifts, ellipsis, complex subordination, and implicit meaning; needs the dictionary only for low-frequency or specialised vocabulary.",
+    "source": "CEFR-CV 2018 Overall Reading Comprehension C1; ACTFL Arabic — Advanced/Superior Reading."
+  },
+  {
+    "skill": "reading", "level": "C2",
+    "canDo": "Reads virtually any prose — classical and heritage texts, specialised academic and legal writing, sophisticated literary style — parsing structural ambiguity and appreciating stylistic nuance.",
+    "source": "CEFR-CV 2018 Overall Reading Comprehension C2; ACTFL Arabic — Distinguished Reading."
+  },
+
+  {
+    "skill": "writing", "level": "A0",
+    "canDo": "Forms all 28 letters in isolation with correct stroke order and direction (right-to-left, top-to-bottom); copies fully-vowelled syllables legibly.",
+    "notes": "Machine-checkable at this level (stroke order, letter-form selection).",
+    "source": "Arabic handwriting pedagogy (no CEFR analogue); CEFR-CV 2018 Orthographic Control Pre-A1 for the copying element."
+  },
+  {
+    "skill": "writing", "level": "A1",
+    "canDo": "Writes letters correctly in initial / medial / final position with correct joining; spells familiar fully-vowelled words from dictation; writes short simple sentences (subject + predicate).",
+    "notes": "Joining and dictation machine-checkable; sentence writing self-assessed.",
+    "source": "CEFR-CV 2018 Overall Written Production A1 + Orthographic Control A1."
+  },
+  {
+    "skill": "writing", "level": "A2",
+    "canDo": "Writes a short connected paragraph on a familiar topic (self, family, daily routine) using learned vocabulary and basic connectors (وَ، ثُمَّ، لكِنْ); spelling of high-frequency words is generally accurate.",
+    "source": "CEFR-CV 2018 Overall Written Production A2."
+  },
+  {
+    "skill": "writing", "level": "B1",
+    "canDo": "Writes straightforward connected texts — a description, a narrative, an informal message — on familiar topics; links ideas with common conjunctions and relative clauses; attempts case endings where required.",
+    "source": "CEFR-CV 2018 Overall Written Production B1."
+  },
+  {
+    "skill": "writing", "level": "B2",
+    "canDo": "Writes clear, detailed texts — an argumentative paragraph, a formal message, a summary — with appropriate paragraphing and cohesion; controls the case system and derived forms with occasional slips.",
+    "source": "CEFR-CV 2018 Overall Written Production B2 + Grammatical Accuracy B2."
+  },
+  {
+    "skill": "writing", "level": "C1",
+    "canDo": "Writes well-structured essays and formal correspondence, selecting register and style for the reader; expands and supports points with subordinate structures and rhetorical devices.",
+    "source": "CEFR-CV 2018 Overall Written Production C1; ACTFL Arabic — Advanced/Superior Writing."
+  },
+  {
+    "skill": "writing", "level": "C2",
+    "canDo": "Writes coherent, sophisticated prose — analytical essays, formal reports, stylised literary or persuasive writing — with control of classical constructions and deliberate stylistic variation.",
+    "source": "CEFR-CV 2018 Overall Written Production C2; ACTFL Arabic — Distinguished Writing."
+  },
+
+  {
+    "skill": "listening", "level": "A0",
+    "canDo": "Distinguishes the 28 letter sounds and the hard Arabic contrasts — س/ص، ت/ط، د/ض، ه/ح، ك/ق، ذ/ز/ظ — in minimal pairs; recognises the three short vowels and their long counterparts by ear.",
+    "source": "Arabic phonemic discrimination — the emphatics and pharyngeals have no European analogue (documented rationale); CEFR-CV 2018 Phonological Control Pre-A1 (perception)."
+  },
+  {
+    "skill": "listening", "level": "A1",
+    "canDo": "Understands familiar words and very short, slowly and clearly spoken phrases — greetings, numbers, personal information — with repetition available.",
+    "source": "CEFR-CV 2018 Overall Listening Comprehension A1."
+  },
+  {
+    "skill": "listening", "level": "A2",
+    "canDo": "Understands the main point of short, clear spoken passages and simple exchanges on familiar everyday matters (shopping, directions, routine) at near-natural pace.",
+    "source": "CEFR-CV 2018 Overall Listening Comprehension A2."
+  },
+  {
+    "skill": "listening", "level": "B1",
+    "canDo": "Follows the main points of clear standard-Arabic speech on familiar topics — a short narrative, an interview, a simple dialogue — and understands a straightforward factual report.",
+    "source": "CEFR-CV 2018 Overall Listening Comprehension B1; ACTFL Arabic — Intermediate Listening."
+  },
+  {
+    "skill": "listening", "level": "B2",
+    "canDo": "Understands extended speech and most broadcast audio (news, documentary, discussion) in standard Arabic on concrete and abstract topics; follows the speaker's stance and argument.",
+    "source": "CEFR-CV 2018 Overall Listening Comprehension B2 + Listening to Media and Recordings B2."
+  },
+  {
+    "skill": "listening", "level": "C1",
+    "canDo": "Understands extended speech even when not clearly structured — lectures, debates, films — and grasps implicit meaning, humour, and register.",
+    "source": "CEFR-CV 2018 Overall Listening Comprehension C1."
+  },
+  {
+    "skill": "listening", "level": "C2",
+    "canDo": "Understands any standard-Arabic speech at natural native pace, including specialised lectures and rapid or regionally-accented delivery, given time to adjust to the accent.",
+    "source": "CEFR-CV 2018 Overall Listening Comprehension C2; ACTFL Arabic — Distinguished Listening."
+  },
+
+  {
+    "skill": "speaking", "level": "A0",
+    "canDo": "Produces the individual letter sounds and short syllables intelligibly by imitation.",
+    "notes": "Never machine-scored — self-assessed against model recordings.",
+    "source": "Arabic sound-production by imitation (no CEFR analogue); CEFR-CV 2018 Phonological Control Pre-A1 (production)."
+  },
+  {
+    "skill": "speaking", "level": "A1",
+    "canDo": "Uses simple memorised phrases and sentences to give personal information, greet, and ask or answer very simple questions; long pauses to search for expression are normal.",
+    "source": "CEFR-CV 2018 Overall Spoken Production + Spoken Interaction A1; ACTFL Arabic — Novice speaking."
+  },
+  {
+    "skill": "speaking", "level": "A2",
+    "canDo": "Handles short social exchanges and simple routine transactions (ordering, buying, asking directions); describes in simple terms family, background, and immediate surroundings.",
+    "source": "CEFR-CV 2018 Overall Spoken Production + Spoken Interaction A2."
+  },
+  {
+    "skill": "speaking", "level": "B1",
+    "canDo": "Sustains a conversation on familiar topics; narrates an event or experience, gives reasons and brief explanations, and copes with less routine situations with some hesitation.",
+    "source": "CEFR-CV 2018 Overall Spoken Production + Spoken Interaction B1; ACTFL Arabic — Intermediate speaking."
+  },
+  {
+    "skill": "speaking", "level": "B2",
+    "canDo": "Interacts with a degree of fluency and spontaneity; presents a clear, detailed description or argument on a range of subjects and defends a point of view.",
+    "source": "CEFR-CV 2018 Overall Spoken Production + Spoken Interaction B2."
+  },
+  {
+    "skill": "speaking", "level": "C1",
+    "canDo": "Expresses ideas fluently and almost effortlessly; uses language flexibly for social, academic, and professional purposes; formulates ideas precisely and relates contributions skilfully to those of others.",
+    "source": "CEFR-CV 2018 Overall Spoken Production + Spoken Interaction C1; ACTFL Arabic — Advanced/Superior speaking."
+  },
+  {
+    "skill": "speaking", "level": "C2",
+    "canDo": "Participates effortlessly in any conversation or discussion with idiomatic and colloquial-register fluency; presents a clear, smoothly flowing argument in a style appropriate to the context.",
+    "source": "CEFR-CV 2018 Overall Spoken Production + Spoken Interaction C2; ACTFL Arabic — Distinguished speaking."
+  },
+
+  {
+    "skill": "vocabulary", "level": "A0",
+    "canDo": "Recognises a small set of concrete words and set phrases — greetings, a few everyday objects, numbers 1–10 — presented with full vowelling.",
+    "source": "CEFR-CV 2018 Vocabulary Range Pre-A1."
+  },
+  {
+    "skill": "vocabulary", "level": "A1",
+    "canDo": "Has a repertoire of roughly 300–500 high-frequency words and phrases covering personal details and everyday needs (family, food, home, time, basic verbs).",
+    "source": "CEFR-CV 2018 Vocabulary Range A1; size band from common CEFR vocabulary-size estimates."
+  },
+  {
+    "skill": "vocabulary", "level": "A2",
+    "canDo": "Around 1,000–1,500 words covering routine topics (shopping, travel, work, health, directions); begins recognising word families that share a root.",
+    "source": "CEFR-CV 2018 Vocabulary Range A2; root-family recognition is Arabic-specific (documented rationale)."
+  },
+  {
+    "skill": "vocabulary", "level": "B1",
+    "canDo": "Around 2,500–3,500 words allowing discussion of familiar and some unfamiliar topics; actively uses common derived-verb forms and verbal nouns; recognises many broken plurals.",
+    "source": "CEFR-CV 2018 Vocabulary Range B1."
+  },
+  {
+    "skill": "vocabulary", "level": "B2",
+    "canDo": "Around 5,000–7,000 words including abstract, topical, and lower-frequency vocabulary; controls collocations and the formal vs. everyday register distinction.",
+    "source": "CEFR-CV 2018 Vocabulary Range + Vocabulary Control B2."
+  },
+  {
+    "skill": "vocabulary", "level": "C1",
+    "canDo": "Around 8,000–10,000+ words including idiomatic, literary, and specialised vocabulary; understands connotation and stylistic colouring.",
+    "source": "CEFR-CV 2018 Vocabulary Range C1."
+  },
+  {
+    "skill": "vocabulary", "level": "C2",
+    "canDo": "A very broad, precise vocabulary including rare, classical, technical, and figurative usage; near-native command of nuance and idiom.",
+    "source": "CEFR-CV 2018 Vocabulary Range C2."
+  },
+
+  {
+    "skill": "grammar", "level": "A0",
+    "canDo": "Pre-grammar: the learner is building the script and sound system. No sentence grammar is expected or assessed yet.",
+    "source": "Placeholder cell — grammar instruction begins at A1 in standard Arabic sequences."
+  },
+  {
+    "skill": "grammar", "level": "A1",
+    "canDo": "Noun gender and number; definiteness (ال, tanwīn); the nominal sentence (mubtadaʾ + khabar); demonstratives; attached possessive pronouns; core prepositions; adjective agreement; negation with ليس / لا / ما.",
+    "source": "CURRICULUM_ARCHITECTURE.md §10.2 (A1); CEFR-CV 2018 Grammatical Accuracy A1 for the control framing."
+  },
+  {
+    "skill": "grammar", "level": "A2",
+    "canDo": "The verbal sentence and VSO order; past and present tense of Form I; the three short-vowel case endings in fixed high-frequency phrases; the genitive construct (iḍāfa); object pronouns; كان; comparatives; numbers 1–10 with the counted noun.",
+    "source": "CURRICULUM_ARCHITECTURE.md §10.2 (A2); Al-Kitaab / Georgetown first-year progression."
+  },
+  {
+    "skill": "grammar", "level": "B1",
+    "canDo": "Derived verb Forms II–X (recognition and high-frequency production); relative clauses (الَّذِي family); إنّ وأخواتها; the verbal noun (maṣdar); active and passive participles; the subjunctive after أن / لن / كي / حتى; expanded negation.",
+    "source": "CURRICULUM_ARCHITECTURE.md §10.2 (B1); standard second-year reference grammar."
+  },
+  {
+    "skill": "grammar", "level": "B2",
+    "canDo": "The full case system (iʿrāb) used actively across nominal and verbal sentences; the jussive (after لم, لا الناهية, conditional particles); conditional sentences; the internal passive; كان وأخواتها in full; the ḥāl and tamyīz constructions.",
+    "source": "CURRICULUM_ARCHITECTURE.md §10.2 (B2); CEFR-CV 2018 Grammatical Accuracy B2."
+  },
+  {
+    "skill": "grammar", "level": "C1",
+    "canDo": "Rhetorical syntax — fronting and emphasis, particle nuance, stylistic case variation; complex multi-clause subordination; control of formal and classical constructions.",
+    "source": "CURRICULUM_ARCHITECTURE.md §10.2 (C1–C2); classical rhetoric (بلاغة) references."
+  },
+  {
+    "skill": "grammar", "level": "C2",
+    "canDo": "Advanced iʿrāb including contested and stylistic parses; classical and heritage constructions; analysis of syntactic ambiguity in real text.",
+    "source": "CURRICULUM_ARCHITECTURE.md §10.2 (C1–C2); traditional naḥw analysis."
+  },
+
+  {
+    "skill": "pronunciation", "level": "A0",
+    "canDo": "Produces the short and long vowels and the non-emphatic consonants intelligibly; recognises by ear the emphatic vs. plain contrasts and the pharyngeals ع and ح.",
+    "notes": "Recognition (minimal pairs) is machine-scored; production is compared to a model.",
+    "source": "Arabic phoneme inventory (documented rationale); CEFR-CV 2018 Phonological Control Pre-A1."
+  },
+  {
+    "skill": "pronunciation", "level": "A1",
+    "canDo": "Produces most consonants clearly including ع، ح، ق، غ; applies sun/moon assimilation of ال; word stress is usually appropriate; a foreign accent is evident but does not impede understanding.",
+    "source": "CEFR-CV 2018 Phonological Control A1 (Sound Articulation + Prosodic Features)."
+  },
+  {
+    "skill": "pronunciation", "level": "A2",
+    "canDo": "Pronunciation is clearly intelligible across familiar material; handles shaddah (gemination) and consonant clusters at syllable boundaries; tāʾ marbūṭa is realised correctly in pause vs. construct.",
+    "source": "CEFR-CV 2018 Phonological Control A2."
+  },
+  {
+    "skill": "pronunciation", "level": "B1",
+    "canDo": "Consistently intelligible; case-ending pronunciation is attempted in careful speech; intonation carries basic sentence function (statement, question).",
+    "source": "CEFR-CV 2018 Phonological Control B1."
+  },
+  {
+    "skill": "pronunciation", "level": "B2",
+    "canDo": "Clear, natural pronunciation and intonation; occasional slips on low-frequency words; reads a prepared text aloud with appropriate phrasing and case endings.",
+    "source": "CEFR-CV 2018 Phonological Control B2."
+  },
+  {
+    "skill": "pronunciation", "level": "C1",
+    "canDo": "Near-native articulation and prosody; varies delivery for effect; only an occasional non-native feature.",
+    "source": "CEFR-CV 2018 Phonological Control C1."
+  },
+  {
+    "skill": "pronunciation", "level": "C2",
+    "canDo": "Pronunciation and prosody effectively indistinguishable from an educated native speaker, including reading classical text aloud with correct iʿrāb.",
+    "source": "CEFR-CV 2018 Phonological Control C2."
+  },
+
+  {
+    "skill": "comprehension", "level": "A0",
+    "canDo": "Not yet assessed: the learner is decoding the script, not yet extracting meaning from connected text.",
+    "source": "Placeholder cell — text comprehension is assessed from A1."
+  },
+  {
+    "skill": "comprehension", "level": "A1",
+    "canDo": "Extracts specific predictable information from a very short simple text or exchange (a name, a number, a time, a place); understands the overall topic when it is stated explicitly.",
+    "source": "Synthesised from CEFR-CV 2018 Reading/Listening 'Identifying cues and inferring' A1 (documented rationale — no single comprehension scale exists)."
+  },
+  {
+    "skill": "comprehension", "level": "A2",
+    "canDo": "Identifies the main idea and several supporting details in a short text or dialogue on a familiar topic; makes simple inferences that are strongly signalled.",
+    "source": "Synthesised from CEFR-CV 2018 Reading/Listening comprehension and inference scales A2."
+  },
+  {
+    "skill": "comprehension", "level": "B1",
+    "canDo": "Follows the gist and the sequence of ideas in a straightforward text or talk; distinguishes fact from opinion when marked; infers the meaning of unknown words from context.",
+    "source": "Synthesised from CEFR-CV 2018 comprehension + inference scales B1."
+  },
+  {
+    "skill": "comprehension", "level": "B2",
+    "canDo": "Grasps the writer's or speaker's stance, purpose, and line of argument; distinguishes main points from supporting detail and example; recognises how a text is organised.",
+    "source": "Synthesised from CEFR-CV 2018 'Understanding argumentation' + 'Reading for orientation' B2."
+  },
+  {
+    "skill": "comprehension", "level": "C1",
+    "canDo": "Interprets implicit meaning, tone, irony, and attitude; relates a text to its context and to other texts; evaluates the strength of an argument.",
+    "source": "Synthesised from CEFR-CV 2018 comprehension + mediation (analysis) scales C1."
+  },
+  {
+    "skill": "comprehension", "level": "C2",
+    "canDo": "Critically analyses sophisticated texts — literary, rhetorical, academic — for structure, style, assumption, and effect; appreciates cultural and intertextual reference.",
+    "source": "Synthesised from CEFR-CV 2018 comprehension + mediation scales C2; literary-analysis (النقد) pedagogy."
+  }
+]

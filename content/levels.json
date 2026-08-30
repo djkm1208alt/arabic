@@ -1,0 +1,37 @@
+[
+  {
+    "id": "A0",
+    "name": "Pre-A1 · Absolute Beginner",
+    "blurb": "The Arabic script and sound system: letters, forms, joining, ḥarakāt, syllables, first words."
+  },
+  {
+    "id": "A1",
+    "name": "A1 · Beginner",
+    "blurb": "Fully-vowelled words and short sentences; everyday phrases; the nominal sentence and basic agreement."
+  },
+  {
+    "id": "A2",
+    "name": "A2 · Elementary",
+    "blurb": "Fully-vowelled paragraphs and routine exchanges; the verbal sentence, past and present Form I, iḍāfa, numbers."
+  },
+  {
+    "id": "B1",
+    "name": "B1 · Intermediate",
+    "blurb": "Mostly-unvowelled MSA on familiar topics; derived verb forms, relative clauses, verbal nouns, the subjunctive."
+  },
+  {
+    "id": "B2",
+    "name": "B2 · Upper Intermediate",
+    "blurb": "Unvowelled authentic texts and broadcast audio; the full case system used actively, the jussive, conditionals, the passive."
+  },
+  {
+    "id": "C1",
+    "name": "C1 · Advanced",
+    "blurb": "Editorials, essays, and literary prose; rhetorical syntax, register control, implicit meaning."
+  },
+  {
+    "id": "C2",
+    "name": "C2 · Mastery",
+    "blurb": "Virtually any prose including classical, academic, and stylised literary Arabic; structural ambiguity and stylistic nuance."
+  }
+]

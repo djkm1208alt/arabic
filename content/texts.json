@@ -23,7 +23,14 @@
         "gender": "masculine"
       }
     ],
-    "audio": "الْبَيْتُ كَبِيرٌ"
+    "audio": "الْبَيْتُ كَبِيرٌ",
+    "level": "A1",
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening"
+    ],
+    "prereqs": []
   },
   {
     "id": "txt:sent-book-beautiful",
@@ -49,7 +56,14 @@
         "gender": "masculine"
       }
     ],
-    "audio": "الْكِتَابُ جَمِيلٌ"
+    "audio": "الْكِتَابُ جَمِيلٌ",
+    "level": "A1",
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening"
+    ],
+    "prereqs": []
   },
   {
     "id": "txt:sent-girl-happy",
@@ -75,7 +89,14 @@
         "gender": "feminine"
       }
     ],
-    "audio": "الْبِنْتُ سَعِيدَةٌ"
+    "audio": "الْبِنْتُ سَعِيدَةٌ",
+    "level": "A1",
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening"
+    ],
+    "prereqs": []
   },
   {
     "id": "txt:gram-gender-bint",
@@ -100,7 +121,17 @@
         "gender": "feminine"
       }
     ],
-    "audio": "الْبِنْتُ كَبِيرَةٌ"
+    "audio": "الْبِنْتُ كَبِيرَةٌ",
+    "level": "A1",
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:gender-agreement"
+    ]
   },
   {
     "id": "txt:gram-verb-he",
@@ -131,7 +162,17 @@
         "gender": null
       }
     ],
-    "audio": "هُوَ يَذْهَبُ إِلَى الْمَدْرَسَةِ"
+    "audio": "هُوَ يَذْهَبُ إِلَى الْمَدْرَسَةِ",
+    "level": "A2",
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:present-tense"
+    ]
   },
   {
     "id": "txt:gram-verb-she",
@@ -162,7 +203,17 @@
         "gender": null
       }
     ],
-    "audio": "هِيَ تَذْهَبُ إِلَى الْمَدْرَسَةِ"
+    "audio": "هِيَ تَذْهَبُ إِلَى الْمَدْرَسَةِ",
+    "level": "A2",
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:present-tense"
+    ]
   },
   {
     "id": "txt:gram-verb-they",
@@ -193,7 +244,17 @@
         "gender": null
       }
     ],
-    "audio": "هُمْ يَذْهَبُونَ إِلَى الْمَدْرَسَةِ"
+    "audio": "هُمْ يَذْهَبُونَ إِلَى الْمَدْرَسَةِ",
+    "level": "A2",
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:present-tense"
+    ]
   },
   {
     "id": "txt:gram-sunletter-shams",
@@ -218,6 +279,16 @@
         "gender": "feminine"
       }
     ],
-    "audio": "الشَّمْسُ كَبِيرَةٌ"
+    "audio": "الشَّمْسُ كَبِيرَةٌ",
+    "level": "A1",
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:sun-moon"
+    ]
   }
 ]

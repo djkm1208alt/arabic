@@ -1,0 +1,50 @@
+[
+  {
+    "id": "reading",
+    "name": "Reading",
+    "blurb": "Decoding the script and understanding written Arabic — from letters to unvowelled authentic text.",
+    "assess": "reliable"
+  },
+  {
+    "id": "writing",
+    "name": "Writing",
+    "blurb": "Letter formation, joining, spelling, and composition. Composition is self-assessed against a rubric.",
+    "assess": "partial"
+  },
+  {
+    "id": "listening",
+    "name": "Listening",
+    "blurb": "Understanding spoken Arabic — from phoneme discrimination to extended broadcast audio.",
+    "assess": "reliable"
+  },
+  {
+    "id": "speaking",
+    "name": "Speaking",
+    "blurb": "Interaction and spoken production. Never machine-scored — self-assessed against model recordings.",
+    "assess": "self-report"
+  },
+  {
+    "id": "vocabulary",
+    "name": "Vocabulary",
+    "blurb": "Breadth and control of known words, phrases, collocations, and word families.",
+    "assess": "reliable"
+  },
+  {
+    "id": "grammar",
+    "name": "Grammar",
+    "blurb": "Sentence structure, agreement, tense, derived forms, case (iʿrāb), and syntax.",
+    "assess": "reliable"
+  },
+  {
+    "id": "pronunciation",
+    "name": "Pronunciation",
+    "blurb": "Producing and recognising Arabic sounds and prosody. Recognition is scored; production is compared to a model.",
+    "assess": "partial"
+  },
+  {
+    "id": "comprehension",
+    "name": "Comprehension",
+    "blurb": "Inferential and integrated understanding — gist, inference, stance, argument, tone — applied to read and heard texts alike.",
+    "assess": "reliable"
+  }
+]

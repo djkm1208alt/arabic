@@ -23,7 +23,14 @@
           "y": 0.75
         }
       }
-    ]
+    ],
+    "level": "A0",
+    "skills": [
+      "reading",
+      "writing",
+      "pronunciation"
+    ],
+    "prereqs": []
   },
   {
     "id": "let:ba",
@@ -49,7 +56,14 @@
           "y": 0.55
         }
       }
-    ]
+    ],
+    "level": "A0",
+    "skills": [
+      "reading",
+      "writing",
+      "pronunciation"
+    ],
+    "prereqs": []
   },
   {
     "id": "let:ta1",
@@ -75,7 +89,14 @@
           "y": 0.55
         }
       }
-    ]
+    ],
+    "level": "A0",
+    "skills": [
+      "reading",
+      "writing",
+      "pronunciation"
+    ],
+    "prereqs": []
   },
   {
     "id": "let:tha",
@@ -101,7 +122,14 @@
           "y": 0.55
         }
       }
-    ]
+    ],
+    "level": "A0",
+    "skills": [
+      "reading",
+      "writing",
+      "pronunciation"
+    ],
+    "prereqs": []
   },
   {
     "id": "let:jim",
@@ -127,7 +155,14 @@
           "y": 0.7
         }
       }
-    ]
+    ],
+    "level": "A0",
+    "skills": [
+      "reading",
+      "writing",
+      "pronunciation"
+    ],
+    "prereqs": []
   },
   {
     "id": "let:ha1",
@@ -153,7 +188,14 @@
           "y": 0.7
         }
       }
-    ]
+    ],
+    "level": "A0",
+    "skills": [
+      "reading",
+      "writing",
+      "pronunciation"
+    ],
+    "prereqs": []
   },
   {
     "id": "let:kha",
@@ -179,7 +221,14 @@
           "y": 0.7
         }
       }
-    ]
+    ],
+    "level": "A0",
+    "skills": [
+      "reading",
+      "writing",
+      "pronunciation"
+    ],
+    "prereqs": []
   },
   {
     "id": "let:dal",
@@ -205,7 +254,14 @@
           "y": 0.6
         }
       }
-    ]
+    ],
+    "level": "A0",
+    "skills": [
+      "reading",
+      "writing",
+      "pronunciation"
+    ],
+    "prereqs": []
   },
   {
     "id": "let:dhal",
@@ -231,7 +287,14 @@
           "y": 0.6
         }
       }
-    ]
+    ],
+    "level": "A0",
+    "skills": [
+      "reading",
+      "writing",
+      "pronunciation"
+    ],
+    "prereqs": []
   },
   {
     "id": "let:ra",
@@ -257,7 +320,14 @@
           "y": 0.65
         }
       }
-    ]
+    ],
+    "level": "A0",
+    "skills": [
+      "reading",
+      "writing",
+      "pronunciation"
+    ],
+    "prereqs": []
   },
   {
     "id": "let:zay",
@@ -283,7 +353,14 @@
           "y": 0.65
         }
       }
-    ]
+    ],
+    "level": "A0",
+    "skills": [
+      "reading",
+      "writing",
+      "pronunciation"
+    ],
+    "prereqs": []
   },
   {
     "id": "let:sin",
@@ -309,7 +386,14 @@
           "y": 0.55
         }
       }
-    ]
+    ],
+    "level": "A0",
+    "skills": [
+      "reading",
+      "writing",
+      "pronunciation"
+    ],
+    "prereqs": []
   },
   {
     "id": "let:shin",
@@ -335,7 +419,14 @@
           "y": 0.55
         }
       }
-    ]
+    ],
+    "level": "A0",
+    "skills": [
+      "reading",
+      "writing",
+      "pronunciation"
+    ],
+    "prereqs": []
   },
   {
     "id": "let:sad",
@@ -361,7 +452,14 @@
           "y": 0.55
         }
       }
-    ]
+    ],
+    "level": "A0",
+    "skills": [
+      "reading",
+      "writing",
+      "pronunciation"
+    ],
+    "prereqs": []
   },
   {
     "id": "let:dad",
@@ -387,7 +485,14 @@
           "y": 0.55
         }
       }
-    ]
+    ],
+    "level": "A0",
+    "skills": [
+      "reading",
+      "writing",
+      "pronunciation"
+    ],
+    "prereqs": []
   },
   {
     "id": "let:ta2",
@@ -423,7 +528,14 @@
           "y": 0.25
         }
       }
-    ]
+    ],
+    "level": "A0",
+    "skills": [
+      "reading",
+      "writing",
+      "pronunciation"
+    ],
+    "prereqs": []
   },
   {
     "id": "let:za2",
@@ -459,7 +571,14 @@
           "y": 0.25
         }
       }
-    ]
+    ],
+    "level": "A0",
+    "skills": [
+      "reading",
+      "writing",
+      "pronunciation"
+    ],
+    "prereqs": []
   },
   {
     "id": "let:ayn",
@@ -485,7 +604,14 @@
           "y": 0.6
         }
       }
-    ]
+    ],
+    "level": "A0",
+    "skills": [
+      "reading",
+      "writing",
+      "pronunciation"
+    ],
+    "prereqs": []
   },
   {
     "id": "let:ghayn",
@@ -511,7 +637,14 @@
           "y": 0.6
         }
       }
-    ]
+    ],
+    "level": "A0",
+    "skills": [
+      "reading",
+      "writing",
+      "pronunciation"
+    ],
+    "prereqs": []
   },
   {
     "id": "let:fa",
@@ -537,7 +670,14 @@
           "y": 0.65
         }
       }
-    ]
+    ],
+    "level": "A0",
+    "skills": [
+      "reading",
+      "writing",
+      "pronunciation"
+    ],
+    "prereqs": []
   },
   {
     "id": "let:qaf",
@@ -563,7 +703,14 @@
           "y": 0.7
         }
       }
-    ]
+    ],
+    "level": "A0",
+    "skills": [
+      "reading",
+      "writing",
+      "pronunciation"
+    ],
+    "prereqs": []
   },
   {
     "id": "let:kaf",
@@ -599,7 +746,14 @@
           "y": 0.4
         }
       }
-    ]
+    ],
+    "level": "A0",
+    "skills": [
+      "reading",
+      "writing",
+      "pronunciation"
+    ],
+    "prereqs": []
   },
   {
     "id": "let:lam",
@@ -625,7 +779,14 @@
           "y": 0.7
         }
       }
-    ]
+    ],
+    "level": "A0",
+    "skills": [
+      "reading",
+      "writing",
+      "pronunciation"
+    ],
+    "prereqs": []
   },
   {
     "id": "let:mim",
@@ -651,7 +812,14 @@
           "y": 0.7
         }
       }
-    ]
+    ],
+    "level": "A0",
+    "skills": [
+      "reading",
+      "writing",
+      "pronunciation"
+    ],
+    "prereqs": []
   },
   {
     "id": "let:nun",
@@ -677,7 +845,14 @@
           "y": 0.55
         }
       }
-    ]
+    ],
+    "level": "A0",
+    "skills": [
+      "reading",
+      "writing",
+      "pronunciation"
+    ],
+    "prereqs": []
   },
   {
     "id": "let:ha2",
@@ -703,7 +878,14 @@
           "y": 0.55
         }
       }
-    ]
+    ],
+    "level": "A0",
+    "skills": [
+      "reading",
+      "writing",
+      "pronunciation"
+    ],
+    "prereqs": []
   },
   {
     "id": "let:waw",
@@ -729,7 +911,14 @@
           "y": 0.7
         }
       }
-    ]
+    ],
+    "level": "A0",
+    "skills": [
+      "reading",
+      "writing",
+      "pronunciation"
+    ],
+    "prereqs": []
   },
   {
     "id": "let:ya",
@@ -755,6 +944,13 @@
           "y": 0.65
         }
       }
-    ]
+    ],
+    "level": "A0",
+    "skills": [
+      "reading",
+      "writing",
+      "pronunciation"
+    ],
+    "prereqs": []
   }
 ]
