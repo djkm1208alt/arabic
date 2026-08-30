@@ -736,6 +736,65 @@
         padding: 2px 7px; border-radius: 999px; margin-left: 6px;
     }
 
+    /* ---------- Placement / diagnostic (M17) ---------- */
+    #view-placement .placement-choices { display: flex; flex-direction: column; gap: 12px; margin: 4px 0 20px; }
+    .placement-choice {
+        text-align: left; background: var(--panel); border: 1px solid var(--panel-border);
+        border-radius: var(--radius-md); padding: 16px; cursor: pointer;
+        display: flex; flex-direction: column; gap: 4px; font-family: var(--font-body);
+        transition: border-color 0.15s ease, transform 0.15s ease;
+    }
+    .placement-choice:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .placement-choice-t { font-weight: 700; font-size: 15px; color: var(--ink); }
+    .placement-choice-d { font-size: 12.5px; color: var(--ink-soft); }
+    .placement-strand-list { display: flex; flex-direction: column; gap: 8px; margin: 8px 0 16px; }
+    .placement-strand {
+        display: flex; align-items: center; gap: 10px; padding: 11px 14px;
+        background: var(--panel); border: 1px solid var(--panel-border); border-radius: var(--radius-md);
+        font-size: 14px; cursor: pointer;
+    }
+    .placement-strand input { width: 17px; height: 17px; accent-color: var(--accent); }
+    .placement-presets { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+    .placement-begin { display: block; width: 100%; margin-top: 4px; }
+    .placement-back { margin-top: 12px; }
+    .placement-item { background: var(--panel); border: 1px solid var(--panel-border); border-radius: var(--radius-md); padding: 20px 16px; text-align: center; }
+    .placement-item-ar { font-size: 32px; font-weight: 700; margin: 6px 0 4px; }
+    .placement-item-q { font-size: 14px; color: var(--ink-soft); margin: 8px 0 16px; }
+    .placement-options { display: flex; flex-direction: column; gap: 8px; }
+    .placement-opt {
+        padding: 12px 14px; border: 1px solid var(--panel-border); border-radius: 12px;
+        background: var(--bg-2); color: var(--ink); font-size: 14.5px; font-family: var(--font-body);
+        cursor: pointer; transition: border-color 0.12s ease;
+    }
+    .placement-opt:hover:not(:disabled) { border-color: var(--accent); }
+    .placement-opt:disabled { cursor: default; opacity: 0.75; }
+    .placement-opt.chosen-right { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); font-weight: 700; }
+    .placement-opt.chosen-wrong { border-color: var(--danger); background: var(--danger-soft); }
+    .placement-next { display: block; width: 100%; margin-top: 14px; }
+    .placement-rate-list { display: flex; flex-direction: column; gap: 8px; margin: 8px 0 18px; }
+    .placement-rate-row {
+        display: flex; gap: 10px; align-items: flex-start; padding: 12px 14px;
+        background: var(--panel); border: 1px solid var(--panel-border); border-radius: var(--radius-md);
+        font-size: 13px; line-height: 1.45; cursor: pointer;
+    }
+    .placement-rate-row input { margin-top: 3px; accent-color: var(--accent); flex-shrink: 0; }
+    .placement-results { display: flex; flex-direction: column; gap: 12px; margin: 8px 0 18px; }
+    .placement-result-row { background: var(--panel); border: 1px solid var(--panel-border); border-radius: var(--radius-md); padding: 14px 16px; }
+    .placement-result-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+    .placement-result-name { font-weight: 700; font-size: 15px; }
+    .placement-result-level { font-size: 13.5px; color: var(--accent); font-weight: 700; }
+    .placement-result-tag {
+        font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px;
+        background: var(--panel-border); color: var(--ink-soft); padding: 2px 7px; border-radius: 999px; margin-left: 4px;
+    }
+    .placement-result-can { font-size: 12.5px; color: var(--ink-soft); line-height: 1.5; margin: 8px 0 10px; }
+    .placement-result-override { font-size: 12px; color: var(--ink-soft); display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .placement-result-override select {
+        font-family: var(--font-body); font-size: 13px; padding: 5px 8px;
+        border: 1px solid var(--panel-border); border-radius: 8px; background: var(--bg-2); color: var(--ink);
+    }
+    .placement-headline { font-size: 14px; text-align: center; margin: 4px 0 16px; }
+
     /* ---------- Alphabet ---------- */
     .alphabet-grid {
         display: grid;
@@ -1239,6 +1298,11 @@
             <button class="pill show-btn" onclick="goToVocabulary('flash')">Continue Learning →</button>
         </div>
 
+        <div class="learn-placement" id="homePlacementPrompt" hidden>
+            <p>Already know some Arabic? Take a quick placement check so lessons start at the right level.</p>
+            <button class="pill placement-cta" onclick="startPlacement()">Take a placement check</button>
+        </div>
+
         <div class="stat-grid">
             <div class="stat-card">
                 <span class="stat-value" id="homeStreak">0</span>
@@ -1493,6 +1557,11 @@
                 <button class="pill show-btn" id="lessonNextBtn" onclick="lessonNext()">Next →</button>
             </div>
         </div>
+    </section>
+
+    <!-- ================= PLACEMENT (reached via startPlacement(), not the main nav) ================= -->
+    <section id="view-placement" class="view" hidden>
+        <div id="placementBody"></div>
     </section>
 
     <details class="roadmap">
@@ -3765,11 +3834,16 @@ function deriveLevel(skillId) {
     return { level: null, reason: "insufficient evidence" };
 }
 
-/* Single headline level = the min of the three load-bearing strands. */
+/* Single headline level = the min of the three load-bearing strands. A strand
+   sitting at its content ceiling ("A2 or above") is "≥ its level", not "=", so
+   it doesn't drag the headline down unless every core strand is at a ceiling —
+   in which case the best estimate is the highest of them. */
 function deriveHeadlineLevel() {
-    const core = ["reading", "vocabulary", "grammar"].map(s => deriveLevel(s).level).filter(Boolean);
+    const core = ["reading", "vocabulary", "grammar"].map(s => deriveLevel(s)).filter(d => d.level);
     if (!core.length) return null;
-    return core.reduce((min, l) => levelIndex(l) < levelIndex(min) ? l : min);
+    const nonCeiling = core.filter(d => !d.atCeiling);
+    if (nonCeiling.length) return nonCeiling.reduce((m, d) => levelIndex(d.level) < levelIndex(m) ? d.level : m, nonCeiling[0].level);
+    return core.reduce((m, d) => levelIndex(d.level) > levelIndex(m) ? d.level : m, core[0].level);
 }
 
 /* Recompute the cache on progress.skillLevels and persist. */
@@ -3866,12 +3940,13 @@ function buildPlacementItems(skillId) {
 }
 
 /* Given the batch result at the current band, decide the next band or stop.
-   Deterministic. `visited` = band indices already scored. */
-function placementStep(bandIdx, batchCorrect, batchTotal, visited) {
+   Deterministic. `visited` = band indices already scored. `topBandIdx` is the
+   highest band this strand actually has items for (default: the last band). */
+function placementStep(bandIdx, batchCorrect, batchTotal, visited, topBandIdx) {
+    const top = (typeof topBandIdx === "number") ? topBandIdx : PLACEMENT_BANDS.length - 1;
     const ratio = batchTotal ? batchCorrect / batchTotal : 0;
-    const top = PLACEMENT_BANDS.length - 1;
     if (ratio >= 0.99) {
-        if (bandIdx >= top) return { done: true, level: PLACEMENT_BANDS[top], atCeiling: true };
+        if (bandIdx >= top) return { done: true, level: PLACEMENT_BANDS[bandIdx], atCeiling: true };
         if (visited.indexOf(bandIdx + 1) !== -1) return { done: true, level: PLACEMENT_BANDS[bandIdx] };
         return { done: false, bandIdx: bandIdx + 1 };
     }
@@ -4884,7 +4959,7 @@ function initTheme() {
    markup, so even before this script runs (or if it throws)
    at most one panel can be visible.
    ============================================================ */
-const VIEW_IDS = ["home", "learn", "alphabet", "vocabulary", "practice", "progress", "lesson"];
+const VIEW_IDS = ["home", "learn", "alphabet", "vocabulary", "practice", "progress", "lesson", "placement"];
 
 function setView(id, opts) {
     opts = opts || {};
@@ -4895,6 +4970,12 @@ function setView(id, opts) {
         // render, so bounce to a safe view instead of showing a broken
         // Next/Back/Exit screen. Force the hash to resync too, even on a
         // hashchange-driven call, so the URL doesn't stay stuck on #lesson.
+        id = "home";
+        opts = { fromHash: false };
+    }
+    if (id === "placement" && !placementState) {
+        // Reached #placement directly / after a reload — no diagnostic in
+        // progress, so bounce home rather than showing an empty shell.
         id = "home";
         opts = { fromHash: false };
     }
@@ -4919,6 +5000,7 @@ function setView(id, opts) {
     if (id === "home") renderHome();
     if (id === "learn") renderLearn();
     if (id === "progress") renderProgress();
+    if (id === "placement") renderPlacement();
     if (id === "alphabet" && !alphabetRendered) renderAlphabetGrid();
 
     window.scrollTo(0, 0);
@@ -4969,6 +5051,11 @@ function renderHome() {
     const todayCount = todaysGoalCount();
     document.getElementById("homeGoalText").textContent = `${todayCount} / ${goal} reviewed today`;
     document.getElementById("homeGoalFill").style.width = Math.min(100, (todayCount / goal) * 100) + "%";
+
+    // M17 — one-time placement nudge for a brand-new profile
+    const fresh = !progress.lessonsCompleted.length && !progress.practiceLessonsCompleted.length
+        && !progress.mastered.length && !(progress.placementResult && Object.keys(progress.placementResult).length);
+    document.getElementById("homePlacementPrompt").hidden = !fresh;
 }
 
 /* ============================================================
@@ -5001,17 +5088,32 @@ function placementSuggestion() {
             : names.length === 2 ? `${names[0]} and ${names[1]}` : names[0];
         const verb = names.length === 1 ? "is" : "are";
         const anyDone = progress.lessonsCompleted.length + progress.practiceLessonsCompleted.length > 0;
-        const target = CURRICULUM.units.find(u => u.level === headline && u.status === "available" && !unitDone(u))
-                    || CURRICULUM.units.find(u => u.level === headline && u.status === "available")
-                    || CURRICULUM.units.find(u => u.status === "available");
+        // highest available unit at or below the learner's level (content stops
+        // at ~A1 today, so a B1 learner is pointed at the current frontier)
+        const li = levelIndex(headline);
+        const avail = CURRICULUM.units.filter(u => u.status === "available" && levelIndex(u.level) <= li)
+            .sort((a, b) => levelIndex(a.level) - levelIndex(b.level) || (a.order || 0) - (b.order || 0));
+        const topAvailLevel = CURRICULUM.units.filter(u => u.status === "available")
+            .reduce((m, u) => levelIndex(u.level) > levelIndex(m) ? u.level : m, "A0");
+        const beyond = levelIndex(headline) > levelIndex(topAvailLevel);
+        // beyond the content frontier -> the highest unit we have; otherwise the
+        // first not-yet-done unit at or below the learner's level
+        const target = beyond
+            ? (avail.filter(u => levelIndex(u.level) === levelIndex(topAvailLevel)).find(u => !unitDone(u))
+               || avail[avail.length - 1])
+            : (avail.find(u => !unitDone(u)) || avail[avail.length - 1])
+            || CURRICULUM.units.find(u => u.status === "available");
+        const placed = progress.placementResult && Object.keys(progress.placementResult).length;
         return {
-            text: `Your ${basis} ${verb} around <strong>${levelName(headline)}</strong>. A good place to ${anyDone ? "pick up" : "start"} is <strong>${target ? target.title : "the next unit"}</strong>.`,
-            cta: null,
+            text: beyond
+                ? `Your ${basis} ${verb} around <strong>${levelName(headline)}</strong>. Lessons currently reach <strong>${levelName(topAvailLevel)}</strong> — start with <strong>${target ? target.title : "the latest unit"}</strong> while we build further.`
+                : `Your ${basis} ${verb} around <strong>${levelName(headline)}</strong>. A good place to ${anyDone ? "pick up" : "start"} is <strong>${target ? target.title : "the next unit"}</strong>.`,
+            cta: placed ? null : { label: "Take a placement check", onclick: "startPlacement()" },
         };
     }
     return {
-        text: "New to Arabic? Start at <strong>The Arabic Alphabet</strong>. Already know some? A placement check is coming soon — for now, jump to whichever level fits.",
-        cta: null,
+        text: "New to Arabic? Start at <strong>The Arabic Alphabet</strong>. Already know some Arabic? Take a quick placement check.",
+        cta: { label: "Take a placement check", onclick: "startPlacement()" },
     };
 }
 
@@ -5126,6 +5228,283 @@ function toggleLessonComplete(lessonId) {
     saveProgress();
     refreshSkillLevels();
     renderLearn();
+}
+
+/* ============================================================
+   MILESTONE 17 — PLACEMENT / DIAGNOSTIC (the flow)
+   A self-contained controller for #view-placement. Reuses
+   buildPlacementItems / placementStep (pure, above) and
+   buildAudioControl; renders its own minimal MCQ so a diagnostic
+   never inflates the "reviewed today" goal. Not in the main nav.
+   ============================================================ */
+let placementState = null;
+
+function descriptorText(skillId, levelId) {
+    const d = DESCRIPTORS.find(x => x.skill === skillId && x.level === levelId);
+    return d ? d.canDo : "";
+}
+
+function startPlacement(onlyStrand) {
+    placementState = { phase: "intro", measured: [], selfRate: [], queue: [], qi: 0, results: {}, run: null };
+    if (onlyStrand) {
+        placementState.measured = PLACEMENT_MEASURED.indexOf(onlyStrand) !== -1 ? [onlyStrand] : [];
+        placementState.selfRate = PLACEMENT_SELF_RATE.indexOf(onlyStrand) !== -1 ? [onlyStrand] : [];
+        placementState.queue = placementState.measured.concat(placementState.selfRate);
+        placementState.phase = placementState.measured.length ? "run" : "selfrate";
+        if (placementState.phase === "run") placementBeginStrand();
+    }
+    setView("placement");
+    renderPlacement();
+}
+
+function exitPlacement(toView) {
+    placementState = null;
+    setView(toView || "learn");
+}
+
+function renderPlacement() {
+    const body = document.getElementById("placementBody");
+    if (!body) return;
+    const st = placementState;
+    if (!st) { setView("home"); return; }
+    if (st.phase === "intro") return placementRenderIntro(body);
+    if (st.phase === "picker") return placementRenderPicker(body);
+    if (st.phase === "run") return placementRenderItem(body);
+    if (st.phase === "selfrate") return placementRenderSelfRate(body);
+    if (st.phase === "results") return placementRenderResults(body);
+}
+
+function placementHeader(title, sub) {
+    return `<h2 class="view-title">${title}</h2>${sub ? `<p class="view-sub">${sub}</p>` : ""}`;
+}
+
+function placementRenderIntro(body) {
+    body.innerHTML = placementHeader("Find your level", "A short check — a few questions per skill. Nothing is timed, and you can change any result afterwards.") + `
+        <div class="placement-choices">
+            <button class="placement-choice" onclick="exitPlacement('learn'); startCurriculumLesson('l1','learn');">
+                <span class="placement-choice-t">I'm completely new to Arabic</span>
+                <span class="placement-choice-d">Start from the alphabet — no check needed.</span>
+            </button>
+            <button class="placement-choice" onclick="placementState.phase='picker'; renderPlacement();">
+                <span class="placement-choice-t">I already know some Arabic</span>
+                <span class="placement-choice-d">Check my level in each skill.</span>
+            </button>
+        </div>
+        <button class="pill next-btn placement-back" onclick="exitPlacement('learn')">← Back to Learn</button>`;
+}
+
+function placementRenderPicker(body) {
+    const st = placementState;
+    const labelOf = id => (SKILLS.find(s => s.id === id) || {}).name || id;
+    const measRows = PLACEMENT_MEASURED.map(id => {
+        const on = st.measured.length ? st.measured.indexOf(id) !== -1 : ["reading", "vocabulary", "grammar"].indexOf(id) !== -1;
+        return `<label class="placement-strand"><input type="checkbox" data-strand="${id}" ${on ? "checked" : ""}> <span>${labelOf(id)}</span></label>`;
+    }).join("");
+    body.innerHTML = placementHeader("Which skills?", "Pick what to check. Writing, pronunciation and speaking are always self-assessed — you'll rate those yourself at the end.") + `
+        <div class="placement-strand-list">${measRows}</div>
+        <div class="placement-presets">
+            <button class="pill next-btn" onclick="placementPreset('core')">Just the essentials</button>
+            <button class="pill next-btn" onclick="placementPreset('all')">Check everything</button>
+        </div>
+        <button class="pill show-btn placement-begin" onclick="placementBegin()">Begin →</button>
+        <button class="pill next-btn placement-back" onclick="placementState.phase='intro'; renderPlacement();">← Back</button>`;
+}
+
+function placementPreset(which) {
+    document.querySelectorAll("#placementBody input[data-strand]").forEach(cb => {
+        cb.checked = which === "all" || ["reading", "vocabulary", "grammar"].indexOf(cb.dataset.strand) !== -1;
+    });
+}
+
+function placementBegin() {
+    const st = placementState;
+    st.measured = [...document.querySelectorAll("#placementBody input[data-strand]:checked")].map(cb => cb.dataset.strand);
+    st.selfRate = PLACEMENT_SELF_RATE.slice();
+    st.queue = st.measured.concat(st.selfRate);
+    st.qi = 0;
+    st.results = {};
+    if (st.measured.length) { st.phase = "run"; placementBeginStrand(); }
+    else st.phase = "selfrate";
+    renderPlacement();
+}
+
+function placementBeginStrand() {
+    const st = placementState;
+    const strand = st.measured[st.qi];
+    const items = buildPlacementItems(strand);
+    let topBandIdx = 0;
+    for (let i = 0; i < PLACEMENT_BANDS.length; i++) if ((items[PLACEMENT_BANDS[i]] || []).length) topBandIdx = i;
+    let bandIdx = Math.min(PLACEMENT_START_BAND, topBandIdx);
+    while (bandIdx > 0 && !(items[PLACEMENT_BANDS[bandIdx]] || []).length) bandIdx--;  // start where there are items
+    st.run = {
+        strand, items, topBandIdx, bandIdx,
+        visited: [], asked: 0, used: [],
+        batch: [], batchCorrect: 0, batchAsked: 0,
+    };
+    placementFillBatch();
+}
+
+/* Evaluate the batch just answered, decide the next band, and load the next
+   batch of items. Ends the strand when the walk says done or we run dry. */
+function placementFillBatch() {
+    const r = placementState.run;
+    if (r.batchAsked > 0) {
+        r.visited.push(r.bandIdx);
+        const step = placementStep(r.bandIdx, r.batchCorrect, r.batchAsked, r.visited, r.topBandIdx);
+        r.batchCorrect = 0; r.batchAsked = 0;
+        if (step.done || r.asked >= PLACEMENT_MAX_ITEMS)
+            return placementFinishStrand(step.level || PLACEMENT_BANDS[r.bandIdx], step.atCeiling);
+        r.bandIdx = step.bandIdx;
+    }
+    let guard = 0;
+    while (guard++ < PLACEMENT_BANDS.length + 1) {
+        const pool = (r.items[PLACEMENT_BANDS[r.bandIdx]] || []).filter(it => r.used.indexOf(it) === -1);
+        if (pool.length) {
+            r.batch = pool.slice(0, PLACEMENT_BATCH);
+            r.batch.forEach(it => r.used.push(it));
+            return;
+        }
+        // nothing left at this band — let the walk decide where to go (or stop)
+        r.visited.push(r.bandIdx);
+        const step = placementStep(r.bandIdx, 0, 0, r.visited, r.topBandIdx);
+        if (step.done) return placementFinishStrand(step.level || PLACEMENT_BANDS[r.bandIdx], step.atCeiling);
+        r.bandIdx = step.bandIdx;
+    }
+    placementFinishStrand(PLACEMENT_BANDS[r.bandIdx]);
+}
+
+function placementFinishStrand(level, atCeiling) {
+    const st = placementState, r = st.run;
+    const reason = atCeiling
+        ? "you answered every question we have correctly"
+        : "based on the words and sentences you got right";
+    recordPlacement(r.strand, level, "provisional", reason, atCeiling);
+    st.results[r.strand] = { level, confidence: "provisional", reason, atCeiling };
+    st.qi++;
+    if (st.qi < st.measured.length) { placementBeginStrand(); renderPlacement(); }
+    else { st.phase = "selfrate"; renderPlacement(); }
+}
+
+function placementRenderItem(body) {
+    const st = placementState, r = st.run;
+    if (!r.batch.length) { placementFillBatch(); if (st.phase !== "run") return renderPlacement(); }
+    const item = r.batch[0];
+    const strandName = (SKILLS.find(s => s.id === r.strand) || {}).name || r.strand;
+    const done = st.qi, total = st.measured.length;
+    body.innerHTML = placementHeader(strandName + " check", `Skill ${done + 1} of ${total} · question ${r.asked + 1}`) + `
+        <div class="placement-item" id="placementItem"></div>`;
+    const host = document.getElementById("placementItem");
+    if (item.audioText) host.appendChild(buildAudioControl(item.audioText));
+    if (item.arabicPrompt) {
+        const ar = document.createElement("div");
+        ar.className = "placement-item-ar";
+        ar.lang = "ar";
+        ar.textContent = item.arabicPrompt;
+        host.appendChild(ar);
+    }
+    const q = document.createElement("p");
+    q.className = "placement-item-q";
+    q.textContent = item.prompt;
+    host.appendChild(q);
+    const opts = document.createElement("div");
+    opts.className = "placement-options";
+    item.options.forEach(opt => {
+        const b = document.createElement("button");
+        b.className = "placement-opt";
+        b.textContent = opt.label;
+        b.onclick = () => {
+            opts.querySelectorAll("button").forEach(x => x.disabled = true);
+            b.classList.add(opt.correct ? "chosen-right" : "chosen-wrong");
+            r.asked++;
+            r.batchAsked++;
+            if (opt.correct) r.batchCorrect++;
+            r.batch.shift();
+            const nextBtn = document.createElement("button");
+            nextBtn.className = "pill show-btn placement-next";
+            nextBtn.textContent = "Next →";
+            nextBtn.onclick = () => {
+                if (!r.batch.length) placementFillBatch();
+                if (placementState.phase === "run") renderPlacement();
+                else renderPlacement();
+            };
+            host.appendChild(nextBtn);
+        };
+        opts.appendChild(b);
+    });
+    host.appendChild(opts);
+}
+
+function placementRenderSelfRate(body) {
+    const st = placementState;
+    if (!st.selfRate.length) { st.phase = "results"; return renderPlacement(); }
+    const strand = st.selfRate[0];
+    const name = (SKILLS.find(s => s.id === strand) || {}).name || strand;
+    const note = strand === "speaking"
+        ? "Speaking is never scored by the app — this is your own honest read."
+        : strand === "pronunciation"
+        ? "Pronunciation isn't machine-graded — pick what matches how you actually sound."
+        : "Composition can't be judged from a tap — pick the description that fits your writing.";
+    const rows = ["A0", "A1", "A2", "B1"].map(lvl => `
+        <label class="placement-rate-row">
+            <input type="radio" name="selfrate" value="${lvl}">
+            <span><strong>${levelName(lvl)}</strong> — ${descriptorText(strand, lvl)}</span>
+        </label>`).join("");
+    body.innerHTML = placementHeader(name + " — rate yourself", note) + `
+        <div class="placement-rate-list">${rows}
+            <label class="placement-rate-row"><input type="radio" name="selfrate" value="none"><span>Not sure / haven't tried this yet</span></label>
+        </div>
+        <button class="pill show-btn placement-begin" onclick="placementSelfRateNext()">Continue →</button>`;
+}
+
+function placementSelfRateNext() {
+    const st = placementState;
+    const strand = st.selfRate[0];
+    const picked = (document.querySelector("#placementBody input[name=selfrate]:checked") || {}).value;
+    if (picked && picked !== "none") {
+        recordPlacement(strand, picked, "self-rated", "your own rating");
+        st.results[strand] = { level: picked, confidence: "self-rated", reason: "your own rating" };
+    }
+    st.selfRate.shift();
+    if (st.selfRate.length) renderPlacement();
+    else { st.phase = "results"; renderPlacement(); }
+}
+
+function placementRenderResults(body) {
+    const st = placementState;
+    const strands = Object.keys(st.results);
+    const rowsHtml = strands.map(sid => {
+        const res = st.results[sid];
+        const name = (SKILLS.find(s => s.id === sid) || {}).name || sid;
+        const levelLabel = res.atCeiling ? `${levelName(res.level)} or above` : levelName(res.level);
+        const tag = res.confidence === "self-rated" ? "self-assessed" : "provisional";
+        const opts = LEVEL_ORDER.map(l => `<option value="${l}" ${l === res.level ? "selected" : ""}>${levelName(l)}</option>`).join("");
+        return `
+            <div class="placement-result-row">
+                <div class="placement-result-head">
+                    <span class="placement-result-name">${name}</span>
+                    <span class="placement-result-level">${levelLabel} <span class="placement-result-tag">${tag}</span></span>
+                </div>
+                <p class="placement-result-can">${descriptorText(sid, res.level)}</p>
+                <label class="placement-result-override">Not right? Set it yourself:
+                    <select data-strand="${sid}" onchange="placementOverride(this)">${opts}</select>
+                </label>
+            </div>`;
+    }).join("");
+    const headline = deriveHeadlineLevel();
+    body.innerHTML = placementHeader("Your placement", "These seed your progress. As you learn, real practice replaces them — and you can re-check any skill anytime.") + `
+        <div class="placement-results">${rowsHtml}</div>
+        ${headline ? `<p class="placement-headline">Overall you're around <strong>${levelName(headline)}</strong>.</p>` : ""}
+        <button class="pill show-btn placement-begin" onclick="exitPlacement('learn')">Start learning →</button>`;
+}
+
+function placementOverride(sel) {
+    const sid = sel.dataset.strand;
+    const lvl = sel.value;
+    recordPlacement(sid, lvl, "self-set", "you set this yourself");
+    if (placementState && placementState.results[sid]) {
+        placementState.results[sid] = { level: lvl, confidence: "self-set", reason: "you set this yourself" };
+    }
+    renderPlacement();
 }
 
 /* ============================================================
@@ -5251,10 +5630,12 @@ function renderProgress() {
 function levelName(id) { const l = LEVELS.find(x => x.id === id); return l ? l.name : id; }
 
 function skillLevelText(d) {
-    if (d.level && d.confidence === "firm") return levelName(d.level);
-    if (d.level) return levelName(d.level) + " · provisional";
-    if (d.reason === "self-tracked") return "self-tracked";
-    return "keep going";
+    if (!d.level) return d.reason === "self-tracked" ? "self-tracked" : "keep going";
+    const name = levelName(d.level) + (d.atCeiling ? " or above" : "");
+    if (d.confidence === "firm") return name;
+    if (d.confidence === "self-rated") return name + " · self-assessed";
+    if (d.confidence === "self-set") return name + " · you set this";
+    return name + " · provisional";
 }
 
 function renderSkillsPanel() {
@@ -5280,6 +5661,18 @@ function renderSkillsPanel() {
         row.innerHTML = `<span>${s.name}</span><span>${skillLevelText(levels[s.id] || { reason: "insufficient evidence" })}</span>`;
         wrap.appendChild(row);
     });
+
+    const placed = progress.placementResult && Object.keys(progress.placementResult).length;
+    let btn = document.getElementById("progPlacementBtn");
+    if (!btn) {
+        btn = document.createElement("button");
+        btn.id = "progPlacementBtn";
+        btn.className = "pill next-btn";
+        btn.style.marginTop = "12px";
+        wrap.parentNode.appendChild(btn);
+    }
+    btn.textContent = placed ? "Re-check my level" : "Take a placement check";
+    btn.onclick = () => startPlacement();
 }
 
 /* ============================================================
