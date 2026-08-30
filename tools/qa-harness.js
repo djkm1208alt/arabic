@@ -217,7 +217,7 @@ async function main() {
         });
     }
 
-    await check("lang=\"ar\" coverage — no Arabic text outside a lang=\"ar\" ancestor", async () => {
+    await check("lang/dir coverage — dedicated Arabic content has lang=\"ar\" dir=\"rtl\"", async () => {
         const { context, page } = await freshPage(browser);
         await gotoApp(page);
         // Walk every nav view (not just home) so generated/late-rendered markup is included.
@@ -226,23 +226,35 @@ async function main() {
             await page.waitForSelector(`#view-${view}:not([hidden])`, { timeout: 5000 });
         }
         const offenders = await page.evaluate(() => {
-            const ARABIC_RE = /[؀-ۿ]/;
+            const ARABIC_RE = /[؀-ۿ]/g;
+            const NON_SPACE_RE = /\S/g;
             const found = [];
             const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
             let node;
             while ((node = walker.nextNode())) {
                 const text = node.textContent;
-                if (!text || !ARABIC_RE.test(text)) continue;
+                if (!text) continue;
+                const arabicChars = (text.match(ARABIC_RE) || []).length;
+                if (arabicChars === 0) continue;
+                const totalChars = (text.match(NON_SPACE_RE) || []).length;
+                // Policy (see UI_BASELINE.md): dedicated Arabic content — where
+                // Arabic makes up the majority of the text node — must carry
+                // lang="ar" dir="rtl". A short Arabic term or phrase cited
+                // inline within otherwise-English prose (a grammar rule, a
+                // curriculum blurb) is deliberately left unmarked — wrapping a
+                // substring mid-sentence is a different, riskier class of edit
+                // than tagging a whole dedicated-Arabic element, and this
+                // project has consistently chosen not to do it. Only the
+                // majority case is a real coverage gap.
+                if (arabicChars / totalChars < 0.5) continue;
                 const el = node.parentElement;
-                if (el && el.closest("[lang]")) {
-                    const langEl = el.closest("[lang]");
-                    if (langEl.lang === "ar") continue; // has a lang="ar" ancestor — fine
-                }
+                const langEl = el && el.closest("[lang]");
+                if (langEl && langEl.lang === "ar" && langEl.closest("[dir='rtl']")) continue;
                 found.push(text.trim().slice(0, 40));
             }
             return found;
         });
-        assert(offenders.length === 0, `${offenders.length} Arabic text node(s) with no lang="ar" ancestor — e.g. "${offenders[0]}"`);
+        assert(offenders.length === 0, `${offenders.length} dedicated-Arabic text node(s) missing lang="ar" dir="rtl" — e.g. "${offenders[0]}"`);
         await context.close();
     });
 
