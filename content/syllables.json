@@ -6,7 +6,16 @@
     "translit": "bā",
     "gloss": "long \"aa\" sound — ب + long vowel ا",
     "shape": "CVV",
-    "exampleWord": "lex:hom-06"
+    "exampleWord": "lex:hom-06",
+    "level": "A0",
+    "skills": [
+      "reading",
+      "pronunciation"
+    ],
+    "prereqs": [
+      "let:ba",
+      "mrk:madd-alif"
+    ]
   },
   {
     "id": "syl:cvv-bi",
@@ -15,7 +24,16 @@
     "translit": "bī",
     "gloss": "long \"ee\" sound — ب + long vowel ي",
     "shape": "CVV",
-    "exampleWord": "lex:adj-01"
+    "exampleWord": "lex:adj-01",
+    "level": "A0",
+    "skills": [
+      "reading",
+      "pronunciation"
+    ],
+    "prereqs": [
+      "let:ba",
+      "mrk:madd-ya"
+    ]
   },
   {
     "id": "syl:cvv-bu",
@@ -24,7 +42,16 @@
     "translit": "bū",
     "gloss": "long \"oo\" sound — ب + long vowel و",
     "shape": "CVV",
-    "exampleWord": "lex:tim-08"
+    "exampleWord": "lex:tim-08",
+    "level": "A0",
+    "skills": [
+      "reading",
+      "pronunciation"
+    ],
+    "prereqs": [
+      "let:ba",
+      "mrk:madd-waw"
+    ]
   },
   {
     "id": "syl:cvv-ma",
@@ -33,7 +60,16 @@
     "translit": "mā",
     "gloss": "long \"aa\" sound — م + long vowel ا",
     "shape": "CVV",
-    "exampleWord": "lex:foo-09"
+    "exampleWord": "lex:foo-09",
+    "level": "A0",
+    "skills": [
+      "reading",
+      "pronunciation"
+    ],
+    "prereqs": [
+      "let:mim",
+      "mrk:madd-alif"
+    ]
   },
   {
     "id": "syl:cvv-mi",
@@ -42,7 +78,16 @@
     "translit": "mī",
     "gloss": "long \"ee\" sound — م + long vowel ي",
     "shape": "CVV",
-    "exampleWord": "lex:adj-03"
+    "exampleWord": "lex:adj-03",
+    "level": "A0",
+    "skills": [
+      "reading",
+      "pronunciation"
+    ],
+    "prereqs": [
+      "let:mim",
+      "mrk:madd-ya"
+    ]
   },
   {
     "id": "syl:cvv-mu",
@@ -51,7 +96,16 @@
     "translit": "mū",
     "gloss": "long \"oo\" sound — م + long vowel و",
     "shape": "CVV",
-    "exampleWord": "lex:foo-13"
+    "exampleWord": "lex:foo-13",
+    "level": "A0",
+    "skills": [
+      "reading",
+      "pronunciation"
+    ],
+    "prereqs": [
+      "let:mim",
+      "mrk:madd-waw"
+    ]
   },
   {
     "id": "syl:cvv-ta",
@@ -60,7 +114,16 @@
     "translit": "tā",
     "gloss": "long \"aa\" sound — ت + long vowel ا",
     "shape": "CVV",
-    "exampleWord": "lex:sch-06"
+    "exampleWord": "lex:sch-06",
+    "level": "A0",
+    "skills": [
+      "reading",
+      "pronunciation"
+    ],
+    "prereqs": [
+      "let:ta1",
+      "mrk:madd-alif"
+    ]
   },
   {
     "id": "syl:cvv-ti",
@@ -69,7 +132,16 @@
     "translit": "tī",
     "gloss": "long \"ee\" sound — ت + long vowel ي",
     "shape": "CVV",
-    "exampleWord": "lex:foo-14"
+    "exampleWord": "lex:foo-14",
+    "level": "A0",
+    "skills": [
+      "reading",
+      "pronunciation"
+    ],
+    "prereqs": [
+      "let:ta1",
+      "mrk:madd-ya"
+    ]
   },
   {
     "id": "syl:cvv-tu",
@@ -78,7 +150,16 @@
     "translit": "tū",
     "gloss": "long \"oo\" sound — ت + long vowel و",
     "shape": "CVV",
-    "exampleWord": "lex:foo-15"
+    "exampleWord": "lex:foo-15",
+    "level": "A0",
+    "skills": [
+      "reading",
+      "pronunciation"
+    ],
+    "prereqs": [
+      "let:ta1",
+      "mrk:madd-waw"
+    ]
   },
   {
     "id": "syl:cvc-ba",
@@ -87,7 +168,16 @@
     "translit": "baḥ-",
     "gloss": "opens \"ba\", closes on ح + sukūn (no vowel)",
     "shape": "CVC",
-    "exampleWord": "lex:pla-11"
+    "exampleWord": "lex:pla-11",
+    "level": "A0",
+    "skills": [
+      "reading",
+      "pronunciation"
+    ],
+    "prereqs": [
+      "let:ba",
+      "mrk:sukun"
+    ]
   },
   {
     "id": "syl:cvc-bi",
@@ -96,7 +186,16 @@
     "translit": "bin-",
     "gloss": "opens \"bi\", closes on ن + sukūn (no vowel)",
     "shape": "CVC",
-    "exampleWord": "lex:peo-13"
+    "exampleWord": "lex:peo-13",
+    "level": "A0",
+    "skills": [
+      "reading",
+      "pronunciation"
+    ],
+    "prereqs": [
+      "let:ba",
+      "mrk:sukun"
+    ]
   },
   {
     "id": "syl:cvc-bu",
@@ -105,7 +204,16 @@
     "translit": "bur-",
     "gloss": "opens \"bu\", closes on ر + sukūn (no vowel)",
     "shape": "CVC",
-    "exampleWord": "lex:col-07"
+    "exampleWord": "lex:col-07",
+    "level": "A0",
+    "skills": [
+      "reading",
+      "pronunciation"
+    ],
+    "prereqs": [
+      "let:ba",
+      "mrk:sukun"
+    ]
   },
   {
     "id": "syl:cvc-ma",
@@ -114,7 +222,16 @@
     "translit": "mad-",
     "gloss": "opens \"ma\", closes on د + sukūn (no vowel)",
     "shape": "CVC",
-    "exampleWord": "lex:sch-01"
+    "exampleWord": "lex:sch-01",
+    "level": "A0",
+    "skills": [
+      "reading",
+      "pronunciation"
+    ],
+    "prereqs": [
+      "let:mim",
+      "mrk:sukun"
+    ]
   },
   {
     "id": "syl:cvc-mi",
@@ -123,7 +240,16 @@
     "translit": "mir-",
     "gloss": "opens \"mi\", closes on ر + sukūn (no vowel)",
     "shape": "CVC",
-    "exampleWord": "lex:obj-07"
+    "exampleWord": "lex:obj-07",
+    "level": "A0",
+    "skills": [
+      "reading",
+      "pronunciation"
+    ],
+    "prereqs": [
+      "let:mim",
+      "mrk:sukun"
+    ]
   },
   {
     "id": "syl:cvc-mu",
@@ -132,7 +258,16 @@
     "translit": "mus-",
     "gloss": "opens \"mu\", closes on س + sukūn (no vowel)",
     "shape": "CVC",
-    "exampleWord": "lex:pla-05"
+    "exampleWord": "lex:pla-05",
+    "level": "A0",
+    "skills": [
+      "reading",
+      "pronunciation"
+    ],
+    "prereqs": [
+      "let:mim",
+      "mrk:sukun"
+    ]
   },
   {
     "id": "syl:cvc-ta",
@@ -141,7 +276,16 @@
     "translit": "tash-",
     "gloss": "opens \"ta\", closes on ش + sukūn (no vowel)",
     "shape": "CVC",
-    "exampleWord": "lex:pla-05"
+    "exampleWord": "lex:pla-05",
+    "level": "A0",
+    "skills": [
+      "reading",
+      "pronunciation"
+    ],
+    "prereqs": [
+      "let:ta1",
+      "mrk:sukun"
+    ]
   },
   {
     "id": "syl:cvc-ti",
@@ -150,7 +294,16 @@
     "translit": "tis-",
     "gloss": "opens \"ti\", closes on س + sukūn (no vowel)",
     "shape": "CVC",
-    "exampleWord": "lex:num-09"
+    "exampleWord": "lex:num-09",
+    "level": "A0",
+    "skills": [
+      "reading",
+      "pronunciation"
+    ],
+    "prereqs": [
+      "let:ta1",
+      "mrk:sukun"
+    ]
   },
   {
     "id": "syl:cvc-tu",
@@ -159,7 +312,16 @@
     "translit": "tuṣ-",
     "gloss": "opens \"tu\", closes on ص + sukūn (no vowel)",
     "shape": "CVC",
-    "exampleWord": "lex:gre-10"
+    "exampleWord": "lex:gre-10",
+    "level": "A0",
+    "skills": [
+      "reading",
+      "pronunciation"
+    ],
+    "prereqs": [
+      "let:ta1",
+      "mrk:sukun"
+    ]
   },
   {
     "id": "syl:gem-da",
@@ -168,7 +330,16 @@
     "translit": "-dda-",
     "gloss": "doubles د — held twice as long",
     "shape": "geminated",
-    "exampleWord": "lex:peo-08"
+    "exampleWord": "lex:peo-08",
+    "level": "A0",
+    "skills": [
+      "reading",
+      "pronunciation"
+    ],
+    "prereqs": [
+      "let:dal",
+      "mrk:shadda"
+    ]
   },
   {
     "id": "syl:gem-ma",
@@ -177,7 +348,16 @@
     "translit": "-mma-",
     "gloss": "doubles م — held twice as long",
     "shape": "geminated",
-    "exampleWord": "lex:hom-05"
+    "exampleWord": "lex:hom-05",
+    "level": "A0",
+    "skills": [
+      "reading",
+      "pronunciation"
+    ],
+    "prereqs": [
+      "let:mim",
+      "mrk:shadda"
+    ]
   },
   {
     "id": "syl:gem-ta",
@@ -186,7 +366,16 @@
     "translit": "-tta-",
     "gloss": "doubles ت — held twice as long",
     "shape": "geminated",
-    "exampleWord": "lex:num-06"
+    "exampleWord": "lex:num-06",
+    "level": "A0",
+    "skills": [
+      "reading",
+      "pronunciation"
+    ],
+    "prereqs": [
+      "let:ta1",
+      "mrk:shadda"
+    ]
   },
   {
     "id": "syl:gem-ka",
@@ -195,6 +384,15 @@
     "translit": "-kka-",
     "gloss": "doubles ك — held twice as long",
     "shape": "geminated",
-    "exampleWord": "lex:foo-12"
+    "exampleWord": "lex:foo-12",
+    "level": "A0",
+    "skills": [
+      "reading",
+      "pronunciation"
+    ],
+    "prereqs": [
+      "let:kaf",
+      "mrk:shadda"
+    ]
   }
 ]

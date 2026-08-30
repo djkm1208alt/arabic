@@ -15,7 +15,11 @@
     "fr": "bonjour",
     "tags": [
       "legacy-flashcard"
-    ]
+    ],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:gre-02",
@@ -27,7 +31,11 @@
     "topic": "greetings",
     "level": "A0",
     "notes": "The traditional Islamic/Arabic greeting, used any time of day.",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:gre-03",
@@ -39,7 +47,11 @@
     "topic": "greetings",
     "level": "A0",
     "notes": "The standard reply to as-salāmu ʿalaykum.",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:gre-04",
@@ -50,7 +62,11 @@
     "pos": "phrase",
     "topic": "greetings",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:gre-05",
@@ -61,7 +77,11 @@
     "pos": "phrase",
     "topic": "greetings",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:gre-06",
@@ -72,7 +92,11 @@
     "pos": "phrase",
     "topic": "greetings",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:gre-07",
@@ -83,7 +107,11 @@
     "pos": "phrase",
     "topic": "greetings",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:gre-08",
@@ -97,7 +125,11 @@
     "fr": "au revoir",
     "tags": [
       "legacy-flashcard"
-    ]
+    ],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:gre-09",
@@ -108,7 +140,11 @@
     "pos": "phrase",
     "topic": "greetings",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:gre-10",
@@ -120,7 +156,11 @@
     "topic": "greetings",
     "level": "A0",
     "notes": "Literally \"may you wake up well\" — said when parting for the night.",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:peo-01",
@@ -134,7 +174,11 @@
     "fr": "mère",
     "tags": [
       "legacy-flashcard"
-    ]
+    ],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:peo-02",
@@ -148,7 +192,11 @@
     "fr": "père",
     "tags": [
       "legacy-flashcard"
-    ]
+    ],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:peo-03",
@@ -166,7 +214,11 @@
     "fr": "frère",
     "tags": [
       "legacy-flashcard"
-    ]
+    ],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:peo-04",
@@ -184,7 +236,11 @@
     "fr": "sœur",
     "tags": [
       "legacy-flashcard"
-    ]
+    ],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:peo-05",
@@ -199,7 +255,11 @@
       "ar": "أَبْنَاء",
       "translit": "abnāʾ"
     },
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:peo-06",
@@ -214,7 +274,11 @@
       "ar": "بَنَات",
       "translit": "banāt"
     },
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:peo-07",
@@ -225,7 +289,11 @@
     "pos": "noun",
     "topic": "people",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:peo-08",
@@ -236,7 +304,11 @@
     "pos": "noun",
     "topic": "people",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:peo-09",
@@ -247,7 +319,11 @@
     "pos": "noun",
     "topic": "people",
     "level": "A1",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:peo-10",
@@ -258,7 +334,11 @@
     "pos": "noun",
     "topic": "people",
     "level": "A1",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:peo-11",
@@ -280,7 +360,11 @@
     "fr": "ami(e)",
     "tags": [
       "legacy-flashcard"
-    ]
+    ],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:peo-12",
@@ -291,7 +375,11 @@
     "pos": "noun",
     "topic": "people",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:peo-13",
@@ -302,7 +390,11 @@
     "pos": "noun",
     "topic": "people",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:num-00",
@@ -313,7 +405,11 @@
     "pos": "number",
     "topic": "numbers",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:num-01",
@@ -327,7 +423,11 @@
     "fr": "un",
     "tags": [
       "legacy-flashcard"
-    ]
+    ],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:num-02",
@@ -341,7 +441,11 @@
     "fr": "deux",
     "tags": [
       "legacy-flashcard"
-    ]
+    ],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:num-03",
@@ -359,7 +463,11 @@
     "fr": "trois",
     "tags": [
       "legacy-flashcard"
-    ]
+    ],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:num-04",
@@ -373,7 +481,11 @@
     "fr": "quatre",
     "tags": [
       "legacy-flashcard"
-    ]
+    ],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:num-05",
@@ -387,7 +499,11 @@
     "fr": "cinq",
     "tags": [
       "legacy-flashcard"
-    ]
+    ],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:num-06",
@@ -401,7 +517,11 @@
     "fr": "six",
     "tags": [
       "legacy-flashcard"
-    ]
+    ],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:num-07",
@@ -415,7 +535,11 @@
     "fr": "sept",
     "tags": [
       "legacy-flashcard"
-    ]
+    ],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:num-08",
@@ -429,7 +553,11 @@
     "fr": "huit",
     "tags": [
       "legacy-flashcard"
-    ]
+    ],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:num-09",
@@ -443,7 +571,11 @@
     "fr": "neuf",
     "tags": [
       "legacy-flashcard"
-    ]
+    ],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:num-10",
@@ -461,7 +593,11 @@
     "fr": "dix",
     "tags": [
       "legacy-flashcard"
-    ]
+    ],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:col-01",
@@ -473,7 +609,11 @@
     "topic": "colors",
     "level": "A0",
     "notes": "Feminine form: حَمْرَاء (ḥamrāʾ) — Arabic color adjectives agree in gender with the noun they describe.",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:col-02",
@@ -484,7 +624,11 @@
     "pos": "adjective",
     "topic": "colors",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:col-03",
@@ -495,7 +639,11 @@
     "pos": "adjective",
     "topic": "colors",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:col-04",
@@ -506,7 +654,11 @@
     "pos": "adjective",
     "topic": "colors",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:col-05",
@@ -517,7 +669,11 @@
     "pos": "adjective",
     "topic": "colors",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:col-06",
@@ -528,7 +684,11 @@
     "pos": "adjective",
     "topic": "colors",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:col-07",
@@ -539,7 +699,11 @@
     "pos": "adjective",
     "topic": "colors",
     "level": "A1",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:col-08",
@@ -550,7 +714,11 @@
     "pos": "adjective",
     "topic": "colors",
     "level": "A1",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:col-09",
@@ -561,7 +729,11 @@
     "pos": "adjective",
     "topic": "colors",
     "level": "A1",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:col-10",
@@ -572,7 +744,11 @@
     "pos": "adjective",
     "topic": "colors",
     "level": "A1",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:foo-01",
@@ -586,7 +762,11 @@
     "fr": "pain",
     "tags": [
       "legacy-flashcard"
-    ]
+    ],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:foo-02",
@@ -597,7 +777,11 @@
     "pos": "noun",
     "topic": "food",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:foo-03",
@@ -608,7 +792,11 @@
     "pos": "noun",
     "topic": "food",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:foo-04",
@@ -619,7 +807,11 @@
     "pos": "noun",
     "topic": "food",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:foo-05",
@@ -630,7 +822,11 @@
     "pos": "noun",
     "topic": "food",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:foo-06",
@@ -645,7 +841,11 @@
       "ar": "أُحِبُّ الْفَاكِهَة.",
       "en": "I like fruit."
     },
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:foo-07",
@@ -656,7 +856,11 @@
     "pos": "noun",
     "topic": "food",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:foo-08",
@@ -667,7 +871,11 @@
     "pos": "noun",
     "topic": "food",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:foo-09",
@@ -681,7 +889,11 @@
     "fr": "eau",
     "tags": [
       "legacy-flashcard"
-    ]
+    ],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:foo-10",
@@ -696,7 +908,11 @@
     "fr": "café",
     "tags": [
       "legacy-flashcard"
-    ]
+    ],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:foo-11",
@@ -710,7 +926,11 @@
     "fr": "thé",
     "tags": [
       "legacy-flashcard"
-    ]
+    ],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:foo-12",
@@ -721,7 +941,11 @@
     "pos": "noun",
     "topic": "food",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:foo-13",
@@ -732,7 +956,11 @@
     "pos": "noun",
     "topic": "food",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:foo-14",
@@ -743,7 +971,11 @@
     "pos": "noun",
     "topic": "food",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:foo-15",
@@ -754,7 +986,11 @@
     "pos": "noun",
     "topic": "food",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:hom-01",
@@ -768,7 +1004,11 @@
     "fr": "maison",
     "tags": [
       "legacy-flashcard"
-    ]
+    ],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:hom-02",
@@ -779,7 +1019,11 @@
     "pos": "noun",
     "topic": "home",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:hom-03",
@@ -790,7 +1034,11 @@
     "pos": "noun",
     "topic": "home",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:hom-04",
@@ -801,7 +1049,11 @@
     "pos": "noun",
     "topic": "home",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:hom-05",
@@ -812,7 +1064,11 @@
     "pos": "noun",
     "topic": "home",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:hom-06",
@@ -826,7 +1082,11 @@
     "fr": "porte",
     "tags": [
       "legacy-flashcard"
-    ]
+    ],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:hom-07",
@@ -840,7 +1100,11 @@
     "fr": "fenêtre",
     "tags": [
       "legacy-flashcard"
-    ]
+    ],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:hom-08",
@@ -854,7 +1118,11 @@
     "fr": "table",
     "tags": [
       "legacy-flashcard"
-    ]
+    ],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:hom-09",
@@ -868,7 +1136,11 @@
     "fr": "chaise",
     "tags": [
       "legacy-flashcard"
-    ]
+    ],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:hom-10",
@@ -879,7 +1151,11 @@
     "pos": "noun",
     "topic": "home",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:hom-11",
@@ -890,7 +1166,11 @@
     "pos": "noun",
     "topic": "home",
     "level": "A1",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:hom-12",
@@ -901,7 +1181,11 @@
     "pos": "phrase",
     "topic": "home",
     "level": "A1",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:sch-01",
@@ -915,7 +1199,11 @@
     "fr": "école",
     "tags": [
       "legacy-flashcard"
-    ]
+    ],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:sch-02",
@@ -926,7 +1214,11 @@
     "pos": "noun",
     "topic": "school",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:sch-03",
@@ -937,7 +1229,11 @@
     "pos": "noun",
     "topic": "school",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:sch-04",
@@ -952,7 +1248,11 @@
       "ar": "أَنَا طَالِب فِي الْمَدْرَسَة.",
       "en": "I am a student at the school."
     },
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:sch-05",
@@ -963,7 +1263,11 @@
     "pos": "noun",
     "topic": "school",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:sch-06",
@@ -977,7 +1281,11 @@
     "fr": "livre",
     "tags": [
       "legacy-flashcard"
-    ]
+    ],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:sch-07",
@@ -991,7 +1299,11 @@
     "fr": "stylo",
     "tags": [
       "legacy-flashcard"
-    ]
+    ],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:sch-08",
@@ -1005,7 +1317,11 @@
     "fr": "carnet de notes",
     "tags": [
       "legacy-flashcard"
-    ]
+    ],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:sch-09",
@@ -1016,7 +1332,11 @@
     "pos": "noun",
     "topic": "school",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:sch-10",
@@ -1031,7 +1351,11 @@
       "ar": "أَنْهَيْتُ وَاجِبِي.",
       "en": "I finished my homework."
     },
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:obj-01",
@@ -1045,7 +1369,11 @@
     "fr": "téléphone",
     "tags": [
       "legacy-flashcard"
-    ]
+    ],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:obj-02",
@@ -1059,7 +1387,11 @@
     "fr": "ordinateur",
     "tags": [
       "legacy-flashcard"
-    ]
+    ],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:obj-03",
@@ -1070,7 +1402,11 @@
     "pos": "noun",
     "topic": "objects",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:obj-04",
@@ -1081,7 +1417,11 @@
     "pos": "noun",
     "topic": "objects",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:obj-05",
@@ -1092,7 +1432,11 @@
     "pos": "noun",
     "topic": "objects",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:obj-06",
@@ -1103,7 +1447,11 @@
     "pos": "noun",
     "topic": "objects",
     "level": "A1",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:obj-07",
@@ -1114,7 +1462,11 @@
     "pos": "noun",
     "topic": "objects",
     "level": "A1",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:obj-08",
@@ -1125,7 +1477,11 @@
     "pos": "noun",
     "topic": "objects",
     "level": "A1",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:pla-01",
@@ -1136,7 +1492,11 @@
     "pos": "noun",
     "topic": "places",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:pla-02",
@@ -1147,7 +1507,11 @@
     "pos": "noun",
     "topic": "places",
     "level": "A1",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:pla-03",
@@ -1158,7 +1522,11 @@
     "pos": "noun",
     "topic": "places",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:pla-04",
@@ -1169,7 +1537,11 @@
     "pos": "noun",
     "topic": "places",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:pla-05",
@@ -1180,7 +1552,11 @@
     "pos": "noun",
     "topic": "places",
     "level": "A1",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:pla-06",
@@ -1195,7 +1571,11 @@
       "ar": "نَذْهَبُ إِلَى الْمَطْعَم.",
       "en": "We are going to the restaurant."
     },
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:pla-07",
@@ -1206,7 +1586,11 @@
     "pos": "noun",
     "topic": "places",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:pla-08",
@@ -1217,7 +1601,11 @@
     "pos": "noun",
     "topic": "places",
     "level": "A1",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:pla-09",
@@ -1228,7 +1616,11 @@
     "pos": "noun",
     "topic": "places",
     "level": "A1",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:pla-10",
@@ -1239,7 +1631,11 @@
     "pos": "noun",
     "topic": "places",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:pla-11",
@@ -1250,7 +1646,11 @@
     "pos": "noun",
     "topic": "places",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:tim-01",
@@ -1264,7 +1664,11 @@
     "fr": "aujourd'hui",
     "tags": [
       "legacy-flashcard"
-    ]
+    ],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:tim-02",
@@ -1275,7 +1679,11 @@
     "pos": "adverb",
     "topic": "time",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:tim-03",
@@ -1286,7 +1694,11 @@
     "pos": "adverb",
     "topic": "time",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:tim-04",
@@ -1297,7 +1709,11 @@
     "pos": "adverb",
     "topic": "time",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:tim-05",
@@ -1311,7 +1727,11 @@
     "fr": "matin",
     "tags": [
       "legacy-flashcard"
-    ]
+    ],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:tim-06",
@@ -1325,7 +1745,11 @@
     "fr": "soirée",
     "tags": [
       "legacy-flashcard"
-    ]
+    ],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:tim-07",
@@ -1336,7 +1760,11 @@
     "pos": "noun",
     "topic": "time",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:tim-08",
@@ -1347,7 +1775,11 @@
     "pos": "noun",
     "topic": "time",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:tim-09",
@@ -1358,7 +1790,11 @@
     "pos": "noun",
     "topic": "time",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:tim-10",
@@ -1369,7 +1805,11 @@
     "pos": "noun",
     "topic": "time",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:tim-11",
@@ -1380,7 +1820,11 @@
     "pos": "noun",
     "topic": "time",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:tim-12",
@@ -1391,7 +1835,11 @@
     "pos": "noun",
     "topic": "time",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:tim-13",
@@ -1402,7 +1850,11 @@
     "pos": "noun",
     "topic": "time",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:tim-14",
@@ -1413,7 +1865,11 @@
     "pos": "noun",
     "topic": "time",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:tim-15",
@@ -1424,7 +1880,11 @@
     "pos": "noun",
     "topic": "time",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:tim-16",
@@ -1435,7 +1895,11 @@
     "pos": "noun",
     "topic": "time",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:tim-17",
@@ -1446,7 +1910,11 @@
     "pos": "noun",
     "topic": "time",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:tim-18",
@@ -1457,7 +1925,11 @@
     "pos": "noun",
     "topic": "time",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:tim-19",
@@ -1468,7 +1940,11 @@
     "pos": "noun",
     "topic": "time",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:ver-01",
@@ -1484,7 +1960,11 @@
       "en": "He went to school."
     },
     "notes": "Present tense: يَذْهَب (yadh-hab, \"he goes\").",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:ver-02",
@@ -1499,7 +1979,11 @@
       "ar": "أَكَلْتُ التُّفَّاح.",
       "en": "I ate the apple."
     },
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:ver-03",
@@ -1514,7 +1998,11 @@
       "ar": "شَرِبَ الْمَاء.",
       "en": "He drank the water."
     },
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:ver-04",
@@ -1525,7 +2013,11 @@
     "pos": "verb",
     "topic": "verbs",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:ver-05",
@@ -1540,7 +2032,11 @@
       "ar": "قَرَأَتِ الْكِتَاب.",
       "en": "She read the book."
     },
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:ver-06",
@@ -1552,7 +2048,11 @@
     "topic": "verbs",
     "level": "A1",
     "notes": "Present tense: يَتَكَلَّم (yatakallam, \"he speaks\").",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:ver-07",
@@ -1563,7 +2063,11 @@
     "pos": "verb",
     "topic": "verbs",
     "level": "A1",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:ver-08",
@@ -1574,7 +2078,11 @@
     "pos": "verb",
     "topic": "verbs",
     "level": "A1",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:ver-09",
@@ -1590,7 +2098,11 @@
       "en": "Did you understand the lesson?"
     },
     "notes": "Present tense: يَفْهَم (yafham, \"he understands\").",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:ver-10",
@@ -1601,7 +2113,11 @@
     "pos": "verb",
     "topic": "verbs",
     "level": "A1",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:adj-01",
@@ -1612,7 +2128,11 @@
     "pos": "adjective",
     "topic": "adjectives",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:adj-01f",
@@ -1624,7 +2144,11 @@
     "topic": "adjectives",
     "level": "A0",
     "gender": "feminine",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:adj-02",
@@ -1639,7 +2163,11 @@
       "ar": "الْبَيْتُ صَغِير.",
       "en": "The house is small."
     },
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:adj-03",
@@ -1650,7 +2178,11 @@
     "pos": "adjective",
     "topic": "adjectives",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:adj-04",
@@ -1661,7 +2193,11 @@
     "pos": "adjective",
     "topic": "adjectives",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:adj-05",
@@ -1672,7 +2208,11 @@
     "pos": "adjective",
     "topic": "adjectives",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:adj-06",
@@ -1683,7 +2223,11 @@
     "pos": "adjective",
     "topic": "adjectives",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:adj-07",
@@ -1694,7 +2238,11 @@
     "pos": "adjective",
     "topic": "adjectives",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:adj-08",
@@ -1709,7 +2257,11 @@
       "ar": "أَنَا سَعِيد الْيَوْم.",
       "en": "I am happy today."
     },
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:adj-08f",
@@ -1721,7 +2273,11 @@
     "topic": "adjectives",
     "level": "A0",
     "gender": "feminine",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:adj-09",
@@ -1732,7 +2288,11 @@
     "pos": "adjective",
     "topic": "adjectives",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:adj-10",
@@ -1743,7 +2303,11 @@
     "pos": "adjective",
     "topic": "adjectives",
     "level": "A1",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:adj-11",
@@ -1758,7 +2322,11 @@
       "ar": "هَذَا الدَّرْسُ صَعْب.",
       "en": "This lesson is difficult."
     },
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:exp-01",
@@ -1772,7 +2340,11 @@
     "fr": "s'il vous plaît",
     "tags": [
       "legacy-flashcard"
-    ]
+    ],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:exp-02",
@@ -1786,7 +2358,11 @@
     "fr": "merci",
     "tags": [
       "legacy-flashcard"
-    ]
+    ],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:exp-03",
@@ -1797,7 +2373,11 @@
     "pos": "phrase",
     "topic": "expressions",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:exp-04",
@@ -1808,7 +2388,11 @@
     "pos": "phrase",
     "topic": "expressions",
     "level": "A0",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:exp-05",
@@ -1822,7 +2406,11 @@
     "fr": "oui",
     "tags": [
       "legacy-flashcard"
-    ]
+    ],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:exp-06",
@@ -1836,7 +2424,11 @@
     "fr": "non",
     "tags": [
       "legacy-flashcard"
-    ]
+    ],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:exp-07",
@@ -1847,7 +2439,11 @@
     "pos": "phrase",
     "topic": "expressions",
     "level": "A1",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:exp-08",
@@ -1858,7 +2454,11 @@
     "pos": "phrase",
     "topic": "expressions",
     "level": "A1",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:exp-09",
@@ -1869,7 +2469,11 @@
     "pos": "phrase",
     "topic": "expressions",
     "level": "A1",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:exp-10",
@@ -1880,7 +2484,11 @@
     "pos": "phrase",
     "topic": "expressions",
     "level": "A1",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:pro-01",
@@ -1891,7 +2499,11 @@
     "pos": "pronoun",
     "topic": "pronouns",
     "level": "A1",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:pro-02",
@@ -1902,7 +2514,11 @@
     "pos": "pronoun",
     "topic": "pronouns",
     "level": "A1",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:pro-03",
@@ -1913,7 +2529,11 @@
     "pos": "pronoun",
     "topic": "pronouns",
     "level": "A1",
-    "tags": []
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:fc-3",
@@ -1927,7 +2547,11 @@
     "fr": "voiture",
     "tags": [
       "legacy-flashcard"
-    ]
+    ],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:fc-14",
@@ -1941,7 +2565,11 @@
     "fr": "nourriture",
     "tags": [
       "legacy-flashcard"
-    ]
+    ],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:fc-27",
@@ -1956,7 +2584,11 @@
     "notes": "Literally \"family and ease\" — a warm phrase meant to make a guest feel at home.",
     "tags": [
       "legacy-flashcard"
-    ]
+    ],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:fc-28",
@@ -1970,7 +2602,11 @@
     "fr": "comment ça va ?",
     "tags": [
       "legacy-flashcard"
-    ]
+    ],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:fc-29",
@@ -1984,7 +2620,11 @@
     "fr": "je m'appelle...",
     "tags": [
       "legacy-flashcard"
-    ]
+    ],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:fc-30",
@@ -1998,7 +2638,11 @@
     "fr": "enchanté(e)",
     "tags": [
       "legacy-flashcard"
-    ]
+    ],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   },
   {
     "id": "lex:fc-45",
@@ -2013,6 +2657,10 @@
     "notes": "Family and hospitality sit at the heart of Arab culture — guests are often welcomed like family.",
     "tags": [
       "legacy-flashcard"
-    ]
+    ],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   }
 ]

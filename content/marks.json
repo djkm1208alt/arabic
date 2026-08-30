@@ -7,7 +7,13 @@
     "translit": "a",
     "name": "fatḥah",
     "markClass": "short-vowel",
-    "fn": "A short, open \"a\" sound — like the \"a\" in \"cat\"."
+    "fn": "A short, open \"a\" sound — like the \"a\" in \"cat\".",
+    "level": "A0",
+    "skills": [
+      "reading",
+      "pronunciation"
+    ],
+    "prereqs": []
   },
   {
     "id": "mrk:kasra",
@@ -17,7 +23,13 @@
     "translit": "i",
     "name": "kasrah",
     "markClass": "short-vowel",
-    "fn": "A short \"i\" sound — like the \"i\" in \"sit\"."
+    "fn": "A short \"i\" sound — like the \"i\" in \"sit\".",
+    "level": "A0",
+    "skills": [
+      "reading",
+      "pronunciation"
+    ],
+    "prereqs": []
   },
   {
     "id": "mrk:damma",
@@ -27,7 +39,13 @@
     "translit": "u",
     "name": "ḍammah",
     "markClass": "short-vowel",
-    "fn": "A short \"u\" sound — like the \"u\" in \"put\"."
+    "fn": "A short \"u\" sound — like the \"u\" in \"put\".",
+    "level": "A0",
+    "skills": [
+      "reading",
+      "pronunciation"
+    ],
+    "prereqs": []
   },
   {
     "id": "mrk:fathatayn",
@@ -37,7 +55,15 @@
     "translit": "an",
     "name": "fatḥatayn",
     "markClass": "tanwin",
-    "fn": "An \"-an\" sound added at the end of a word — the most common tanwīn in everyday words."
+    "fn": "An \"-an\" sound added at the end of a word — the most common tanwīn in everyday words.",
+    "level": "A0",
+    "skills": [
+      "reading",
+      "pronunciation"
+    ],
+    "prereqs": [
+      "mrk:fatha"
+    ]
   },
   {
     "id": "mrk:kasratayn",
@@ -47,7 +73,15 @@
     "translit": "in",
     "name": "kasratayn",
     "markClass": "tanwin",
-    "fn": "An \"-in\" sound, marking a word as grammatically indefinite and genitive — often heard after a preposition like فِي (\"in\") or مِنْ (\"from\")."
+    "fn": "An \"-in\" sound, marking a word as grammatically indefinite and genitive — often heard after a preposition like فِي (\"in\") or مِنْ (\"from\").",
+    "level": "A0",
+    "skills": [
+      "reading",
+      "pronunciation"
+    ],
+    "prereqs": [
+      "mrk:kasra"
+    ]
   },
   {
     "id": "mrk:dammatayn",
@@ -57,7 +91,15 @@
     "translit": "un",
     "name": "ḍammatayn",
     "markClass": "tanwin",
-    "fn": "An \"-un\" sound, marking a word as grammatically indefinite and the subject of a sentence."
+    "fn": "An \"-un\" sound, marking a word as grammatically indefinite and the subject of a sentence.",
+    "level": "A0",
+    "skills": [
+      "reading",
+      "pronunciation"
+    ],
+    "prereqs": [
+      "mrk:damma"
+    ]
   },
   {
     "id": "mrk:madd-alif",
@@ -67,7 +109,15 @@
     "translit": "ā",
     "name": "fatḥah + alif",
     "markClass": "long-vowel",
-    "fn": "Stretches the short \"a\" into a long \"aa\", held about twice as long — like the \"a\" in \"father\"."
+    "fn": "Stretches the short \"a\" into a long \"aa\", held about twice as long — like the \"a\" in \"father\".",
+    "level": "A0",
+    "skills": [
+      "reading",
+      "pronunciation"
+    ],
+    "prereqs": [
+      "mrk:fatha"
+    ]
   },
   {
     "id": "mrk:madd-ya",
@@ -77,7 +127,15 @@
     "translit": "ī",
     "name": "kasrah + yāʾ",
     "markClass": "long-vowel",
-    "fn": "Stretches the short \"i\" into a long \"ee\" — like the \"ee\" in \"see\"."
+    "fn": "Stretches the short \"i\" into a long \"ee\" — like the \"ee\" in \"see\".",
+    "level": "A0",
+    "skills": [
+      "reading",
+      "pronunciation"
+    ],
+    "prereqs": [
+      "mrk:kasra"
+    ]
   },
   {
     "id": "mrk:madd-waw",
@@ -87,7 +145,15 @@
     "translit": "ū",
     "name": "ḍammah + wāw",
     "markClass": "long-vowel",
-    "fn": "Stretches the short \"u\" into a long \"oo\" — like the \"oo\" in \"food\"."
+    "fn": "Stretches the short \"u\" into a long \"oo\" — like the \"oo\" in \"food\".",
+    "level": "A0",
+    "skills": [
+      "reading",
+      "pronunciation"
+    ],
+    "prereqs": [
+      "mrk:damma"
+    ]
   },
   {
     "id": "mrk:sukun",
@@ -97,7 +163,17 @@
     "translit": null,
     "name": "sukūn",
     "markClass": "sukun",
-    "fn": "marks a consonant with no vowel of its own; closes a syllable"
+    "fn": "marks a consonant with no vowel of its own; closes a syllable",
+    "level": "A0",
+    "skills": [
+      "reading",
+      "pronunciation"
+    ],
+    "prereqs": [
+      "mrk:fatha",
+      "mrk:kasra",
+      "mrk:damma"
+    ]
   },
   {
     "id": "mrk:shadda",
@@ -107,6 +183,16 @@
     "translit": null,
     "name": "shaddah",
     "markClass": "shadda",
-    "fn": "doubles (geminates) the consonant; always carries a vowel or tanwīn"
+    "fn": "doubles (geminates) the consonant; always carries a vowel or tanwīn",
+    "level": "A0",
+    "skills": [
+      "reading",
+      "pronunciation"
+    ],
+    "prereqs": [
+      "mrk:fatha",
+      "mrk:kasra",
+      "mrk:damma"
+    ]
   }
 ]
