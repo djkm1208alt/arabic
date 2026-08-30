@@ -197,6 +197,17 @@ function load() {
         else for (const sk of o.skills) if (!skillIds.has(sk)) errors.push(`${o.id}: unknown skill "${sk}"`);
     }
 
+    /* M17: every measurable placement strand must have objects at ≥ 2 distinct
+       levels, or its adaptive diagnostic can't form bands. */
+    const PLACEMENT_MEASURED = ["reading", "vocabulary", "grammar", "listening", "comprehension"];
+    for (const strand of PLACEMENT_MEASURED) {
+        const levelsWithObjects = new Set();
+        for (const key of Object.keys(FILES)) for (const o of data[key])
+            if ((o.skills || []).includes(strand) && (o.level in levelIdx)) levelsWithObjects.add(o.level);
+        if (levelsWithObjects.size < 2)
+            errors.push(`placement: strand "${strand}" has objects at only ${levelsWithObjects.size} level(s) — the diagnostic needs ≥ 2`);
+    }
+
     /* prereq graph must be level-monotonic: a prereq is never a higher level than its dependent */
     const objLevel = {};
     for (const key of Object.keys(FILES)) for (const o of data[key]) objLevel[o.id] = o.level;

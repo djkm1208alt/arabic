@@ -3714,10 +3714,34 @@ function introducedForStrand(skillId) {
     return set;
 }
 
+/* M17 — the learner's placement result for a strand, if they've taken the
+   diagnostic. { level, confidence: "provisional"|"self-rated"|"self-set",
+   reason, atCeiling?, takenAt }. `level` is always a real LEVEL_ORDER id;
+   `atCeiling` means "this or above — no higher content to test yet". */
+function placementEntry(skillId) {
+    const pr = progress.placementResult;
+    if (!pr || typeof pr !== "object") return null;
+    const e = pr[skillId];
+    return (e && e.level && LEVEL_ORDER.indexOf(e.level) !== -1) ? e : null;
+}
+
 function deriveLevel(skillId) {
     const skill = SKILLS.find(s => s.id === skillId);
     if (!skill) return { level: null, reason: "unknown skill" };
-    if (skill.assess === "self-report") return { level: null, reason: "self-tracked" };
+
+    const placed = placementEntry(skillId);
+    const fromPlacement = () => ({
+        level: placed.level,
+        confidence: placed.confidence || "provisional",
+        reason: placed.reason || (placed.confidence === "self-set" ? "you set this yourself" : placed.confidence === "self-rated" ? "from your self-rating" : "from your placement check"),
+        atCeiling: !!placed.atCeiling,
+    });
+
+    // speaking — only ever a self-rating, never a machine level
+    if (skill.assess === "self-report") {
+        if (placed) return fromPlacement();
+        return { level: null, reason: "self-tracked" };
+    }
 
     const strandObjects = ALL_OBJECTS.filter(o => (o.skills || []).indexOf(skillId) !== -1);
 
@@ -3730,10 +3754,13 @@ function deriveLevel(skillId) {
     //    strand; provisional only, capped at A1.
     const introducedLevel = coverageLevel(strandObjects, introducedForStrand(skillId), INTRODUCED_LEVEL_CAP);
 
-    // Only "reliable" strands (a real graded signal) are ever called "firm".
+    // Precedence: mastery (real graded evidence) > placement (a deliberate
+    // check) > lesson bridge > nothing. Only mastery on a reliable strand is
+    // ever "firm"; placement is never "firm".
     if (masteredLevel && skill.assess === "reliable" && masteredCount >= EVIDENCE_MIN)
         return { level: masteredLevel, confidence: "firm", reason: "from mastered items" };
     if (masteredLevel) return { level: masteredLevel, confidence: "provisional", reason: "few graded items so far" };
+    if (placed) return fromPlacement();
     if (introducedLevel) return { level: introducedLevel, confidence: "provisional", reason: "from completed lessons" };
     return { level: null, reason: "insufficient evidence" };
 }
@@ -3752,6 +3779,118 @@ function refreshSkillLevels() {
     progress.skillLevels = next;
     saveProgress();
     return next;
+}
+
+/* ============================================================
+   MILESTONE 17 — PLACEMENT / DIAGNOSTIC
+   Items are generated from the existing CONTENT objects — no authored
+   question bank, no new exercise engine (each item is a renderMCQ config).
+   The adaptive walk is pure and deterministic given the answer sequence.
+   Current content reaches ~A2, so the diagnostic distinguishes A0 / A1 /
+   A2 / "A2+" and never claims a higher level than it can test.
+   ============================================================ */
+const PLACEMENT_BANDS = ["A0", "A1", "A2"];
+const PLACEMENT_START_BAND = 1;                 // start at the A1/A2 boundary
+const PLACEMENT_MAX_ITEMS = 12;                 // hard stop per strand
+const PLACEMENT_BATCH = 2;                      // items per band before re-evaluating
+const PLACEMENT_MEASURED = ["reading", "vocabulary", "grammar", "listening", "comprehension"];
+const PLACEMENT_SELF_RATE = ["writing", "pronunciation", "speaking"];
+
+function plShuffle(a) { return shuffleArray(a); }
+
+function plMeaningOptions(target, sameTopicPool, anyPool) {
+    let pool = plShuffle(sameTopicPool.filter(l => l.id !== target.id && l.en !== target.en));
+    if (pool.length < 3) pool = pool.concat(plShuffle(anyPool.filter(l => l.id !== target.id && l.en !== target.en && pool.indexOf(l) === -1)));
+    return plShuffle([target].concat(pool.slice(0, 3))).map(o => ({ label: o.en, correct: o.id === target.id }));
+}
+
+/* buildPlacementItems(skill) -> { A0:[cfg...], A1:[...], A2:[...] }.
+   Each cfg is a renderMCQ config tagged with _skill / _band. A band with
+   no possible item is simply empty. */
+function buildPlacementItems(skillId) {
+    const out = { A0: [], A1: [], A2: [] };
+    const lexAt = lvl => LEXEMES.filter(l => l.level === lvl);
+    const add = (band, cfg) => { if (cfg && out[band]) out[band].push(Object.assign({ _skill: skillId, _band: band }, cfg)); };
+
+    if (skillId === "vocabulary") {
+        for (const band of ["A0", "A1"]) for (const w of plShuffle(lexAt(band)).slice(0, 4))
+            add(band, { arabicPrompt: w.ar, prompt: "What does this word mean?", options: plMeaningOptions(w, LEXEMES.filter(l => l.topic === w.topic), LEXEMES) });
+    }
+
+    if (skillId === "reading") {
+        for (const s of plShuffle(SYLLABLE_OBJECTS).slice(0, 4)) {
+            const distr = plShuffle(SYLLABLE_OBJECTS.filter(x => x.id !== s.id && x.translit !== s.translit)).slice(0, 3);
+            add("A0", { arabicPrompt: s.ar, prompt: "How is this read?", options: plShuffle([s].concat(distr)).map(o => ({ label: o.translit, correct: o.id === s.id })) });
+        }
+        for (const w of plShuffle(lexAt("A1")).slice(0, 3)) {
+            const distr = plShuffle(LEXEMES.filter(l => l.id !== w.id && l.translit !== w.translit)).slice(0, 3);
+            add("A1", { arabicPrompt: w.ar, prompt: "How is this word read aloud?", options: plShuffle([w].concat(distr)).map(o => ({ label: o.translit, correct: o.id === w.id })) });
+        }
+        for (const t of TEXTS.filter(x => x.level === "A2")) {
+            const distr = plShuffle(TEXTS.filter(x => x.id !== t.id && x.en !== t.en)).slice(0, 3);
+            add("A2", { arabicPrompt: t.reduced || t.vowelled, prompt: "What does this say?", options: plShuffle([t].concat(distr)).map(o => ({ label: o.en, correct: o.id === t.id })) });
+        }
+    }
+
+    if (skillId === "grammar") {
+        for (const t of TEXTS) {
+            const owner = GRAMMAR_POINTS.find(g => (g.examples || []).indexOf(t.id) !== -1);
+            if (!owner) continue;
+            add(owner.level === "A2" ? "A2" : "A1", {
+                arabicPrompt: t.vowelled,
+                prompt: `“${t.en}” — what does this sentence show?`,
+                options: plShuffle([owner].concat(GRAMMAR_POINTS.filter(g => g.id !== owner.id))).map(g => ({ label: g.name, correct: g.id === owner.id })),
+            });
+        }
+    }
+
+    if (skillId === "listening") {
+        for (const band of ["A0", "A1"]) for (const w of plShuffle(lexAt(band)).slice(0, 3)) {
+            const distr = plShuffle(LEXEMES.filter(l => l.id !== w.id && l.en !== w.en)).slice(0, 3);
+            add(band, { audioText: w.ar, prompt: "Listen. What does this word mean?", options: plShuffle([w].concat(distr)).map(o => ({ label: o.en, correct: o.id === w.id })) });
+        }
+        for (const t of TEXTS) {
+            const distr = plShuffle(TEXTS.filter(x => x.id !== t.id && x.en !== t.en)).slice(0, 3);
+            add(t.level === "A2" ? "A2" : "A1", { audioText: t.audio || t.vowelled, prompt: "Listen. What does this sentence mean?", options: plShuffle([t].concat(distr)).map(o => ({ label: o.en, correct: o.id === t.id })) });
+        }
+    }
+
+    if (skillId === "comprehension") {
+        for (const t of TEXTS) {
+            const distr = plShuffle(TEXTS.filter(x => x.id !== t.id && x.en !== t.en)).slice(0, 3);
+            add(t.level === "A2" ? "A2" : "A1", { arabicPrompt: t.unvowelled || t.reduced || t.vowelled, prompt: "What does this say?", options: plShuffle([t].concat(distr)).map(o => ({ label: o.en, correct: o.id === t.id })) });
+        }
+    }
+
+    return out;
+}
+
+/* Given the batch result at the current band, decide the next band or stop.
+   Deterministic. `visited` = band indices already scored. */
+function placementStep(bandIdx, batchCorrect, batchTotal, visited) {
+    const ratio = batchTotal ? batchCorrect / batchTotal : 0;
+    const top = PLACEMENT_BANDS.length - 1;
+    if (ratio >= 0.99) {
+        if (bandIdx >= top) return { done: true, level: PLACEMENT_BANDS[top], atCeiling: true };
+        if (visited.indexOf(bandIdx + 1) !== -1) return { done: true, level: PLACEMENT_BANDS[bandIdx] };
+        return { done: false, bandIdx: bandIdx + 1 };
+    }
+    if (ratio <= 0.25) {
+        if (bandIdx <= 0) return { done: true, level: PLACEMENT_BANDS[0] };
+        if (visited.indexOf(bandIdx - 1) !== -1) return { done: true, level: PLACEMENT_BANDS[bandIdx - 1] };
+        return { done: false, bandIdx: bandIdx - 1 };
+    }
+    return { done: true, level: PLACEMENT_BANDS[bandIdx] };   // partial score — settle here
+}
+
+/* Write one strand's placement result, then refresh the derived cache. */
+function recordPlacement(skillId, level, confidence, reason, atCeiling) {
+    const pr = (progress.placementResult && typeof progress.placementResult === "object") ? progress.placementResult : {};
+    pr[skillId] = { level: level, confidence: confidence, reason: reason, atCeiling: !!atCeiling, takenAt: new Date().toISOString() };
+    progress.placementResult = pr;
+    saveProgress();
+    refreshSkillLevels();
+    return pr[skillId];
 }
 
 let progress = loadProgress();
