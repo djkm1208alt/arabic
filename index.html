@@ -1181,9 +1181,9 @@
     <header>
         <div class="title-block">
             <h1>Learn Arabic</h1>
-            <p class="ar-brand">تَعَلَّمِ الْعَرَبِيَّةَ</p>
+            <p class="ar-brand" lang="ar">تَعَلَّمِ الْعَرَبِيَّةَ</p>
             <p class="tagline">Learn to read, write, understand and speak Arabic</p>
-            <p class="tagline ar-tagline">تَعَلَّمْ قِرَاءَةَ الْعَرَبِيَّةِ وَكِتَابَتَهَا وَفَهْمَهَا وَالتَّحَدُّثَ بِهَا</p>
+            <p class="tagline ar-tagline" lang="ar">تَعَلَّمْ قِرَاءَةَ الْعَرَبِيَّةِ وَكِتَابَتَهَا وَفَهْمَهَا وَالتَّحَدُّثَ بِهَا</p>
         </div>
         <button class="icon-btn" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
     </header>
@@ -1281,7 +1281,7 @@
                 </div>
 
                 <div class="arabic-row">
-                    <span class="arabic" id="arabicWord">كِتَاب</span>
+                    <span class="arabic" id="arabicWord" lang="ar">كِتَاب</span>
                     <button class="speak-btn" id="speakBtn" onclick="speakCurrent()" aria-label="Hear pronunciation" title="Hear pronunciation">🔊</button>
                 </div>
                 <p class="translit" id="translit">kitāb</p>
@@ -1318,7 +1318,7 @@
 
                 <div class="quiz-question">
                     <span class="cat-tag" id="quizCatTag">Category</span>
-                    <div class="quiz-arabic" id="quizArabic">بَيْت</div>
+                    <div class="quiz-arabic" id="quizArabic" lang="ar">بَيْت</div>
                     <p class="translit" id="quizTranslit">bayt</p>
                 </div>
                 <p class="quiz-prompt">What does this word mean in <span id="quizLangLabel">English</span>?</p>
@@ -4432,7 +4432,7 @@ function renderWordBankGrid() {
         const btn = document.createElement("button");
         btn.className = "word-tile";
         btn.dataset.wordId = w.id;
-        btn.innerHTML = `<span class="word-tile-ar">${w.arabic}</span><span class="word-tile-en">${w.english}</span>`;
+        btn.innerHTML = `<span class="word-tile-ar" lang="ar">${w.arabic}</span><span class="word-tile-en">${w.english}</span>`;
         btn.onclick = () => selectVocabWord(w.id);
         grid.appendChild(btn);
     });
@@ -4459,7 +4459,7 @@ function selectVocabWord(id) {
     const detail = document.getElementById("wordBankDetail");
     detail.innerHTML = `
         <div class="word-detail-head">
-            <span class="word-detail-ar">${word.arabic}</span>
+            <span class="word-detail-ar" lang="ar">${word.arabic}</span>
             <div>
                 <div class="word-detail-en">${word.english}</div>
                 <div class="word-detail-translit">${word.translit}</div>
@@ -4473,11 +4473,11 @@ function selectVocabWord(id) {
             <span class="badge badge-upcoming">${vocabCatLabel[word.category] || word.category}</span>
         </div>
         ${word.plural
-            ? `<p class="word-detail-form"><b>Plural:</b> <span class="rtl-inline">${word.plural.arabic}</span> <em>(${word.plural.translit})</em></p>`
+            ? `<p class="word-detail-form"><b>Plural:</b> <span class="rtl-inline" lang="ar">${word.plural.arabic}</span> <em>(${word.plural.translit})</em></p>`
             : ""}
         ${word.example
             ? `<div class="word-detail-example">
-                   <p class="rtl-inline">${word.example.arabic}</p>
+                   <p class="rtl-inline" lang="ar">${word.example.arabic}</p>
                    <p class="example-en">${word.example.english}</p>
                </div>`
             : ""}
@@ -4682,7 +4682,7 @@ function renderAlphabetGrid() {
     arabicAlphabet.forEach(letter => {
         const btn = document.createElement("button");
         btn.className = "letter-tile";
-        btn.innerHTML = `<span class="letter-tile-ar">${letter.isolated}</span><span class="letter-tile-translit">${letter.translit}</span>`;
+        btn.innerHTML = `<span class="letter-tile-ar" lang="ar">${letter.isolated}</span><span class="letter-tile-translit">${letter.translit}</span>`;
         btn.onclick = () => selectLetter(letter.id);
         grid.appendChild(btn);
     });
@@ -4702,26 +4702,26 @@ function selectLetter(id) {
     const detail = document.getElementById("letterDetail");
     detail.innerHTML = `
         <div class="letter-detail-head">
-            <span class="letter-detail-ar">${letter.isolated}</span>
+            <span class="letter-detail-ar" lang="ar">${letter.isolated}</span>
             <div>
-                <div class="letter-detail-name">${letter.name} <span class="letter-detail-translit">(${letter.translit})</span></div>
+                <div class="letter-detail-name"><span lang="ar">${letter.name}</span> <span class="letter-detail-translit">(${letter.translit})</span></div>
                 <button class="speak-btn" id="letterSpeakBtn" aria-label="Hear pronunciation" title="Hear pronunciation">🔊</button>
             </div>
         </div>
         <p class="voice-warning">⚠️ No Arabic voice found on this device — pronunciation may sound approximate.</p>
         <table class="forms-table">
             <thead><tr><th>Isolated</th><th>Initial</th><th>Medial</th><th>Final</th></tr></thead>
-            <tbody><tr>
+            <tbody lang="ar"><tr>
                 <td>${letter.isolated}</td>
                 <td>${letter.initial}${!letter.connects ? `<span class="form-equiv">= isolated</span>` : ""}</td>
                 <td>${letter.medial}${!letter.connects ? `<span class="form-equiv">= final</span>` : ""}</td>
                 <td>${letter.final}</td>
             </tr></tbody>
         </table>
-        ${!letter.connects ? `<p class="letter-note"><span class="rtl-inline">${letter.name}</span> <span class="letter-detail-translit">(${letter.translit})</span> does not connect to the letter that follows it, so it has no separate initial or medial joining shape of its own — its initial form is written the same as its isolated form, and its medial form the same as its final form. It only ever attaches to the letter before it, never the one after.</p>` : ""}
+        ${!letter.connects ? `<p class="letter-note"><span class="rtl-inline" lang="ar">${letter.name}</span> <span class="letter-detail-translit">(${letter.translit})</span> does not connect to the letter that follows it, so it has no separate initial or medial joining shape of its own — its initial form is written the same as its isolated form, and its medial form the same as its final form. It only ever attaches to the letter before it, never the one after.</p>` : ""}
         <div class="letter-example">
             ${example
-                ? `<b>Example:</b> <span class="rtl-inline">${example.arabic}</span> <em>(${example.translit})</em> — ${example.english} <button class="speak-btn small" id="exampleSpeakBtn" aria-label="Hear example word" title="Hear example word">🔊</button>`
+                ? `<b>Example:</b> <span class="rtl-inline" lang="ar">${example.arabic}</span> <em>(${example.translit})</em> — ${example.english} <button class="speak-btn small" id="exampleSpeakBtn" aria-label="Hear example word" title="Hear example word">🔊</button>`
                 : `<span class="muted">No example word yet in the vocabulary — more coming soon.</span>`}
         </div>
         <button class="pill show-btn" style="margin-top:16px;" onclick="practiceLetterWriting('${letter.id}')">✍️ Practice Writing This Letter</button>
@@ -4938,7 +4938,7 @@ function renderLessonLetterPicker() {
             btn.className = "lesson-letter-tile";
             btn.dataset.letterId = letter.id;
             btn.setAttribute("aria-label", `${letter.translit} (${letter.name})`);
-            btn.innerHTML = `<span class="lesson-letter-tile-ar">${letter.isolated}</span><span class="lesson-letter-tile-translit">${letter.translit}</span>`;
+            btn.innerHTML = `<span class="lesson-letter-tile-ar" lang="ar">${letter.isolated}</span><span class="lesson-letter-tile-translit">${letter.translit}</span>`;
             btn.onclick = () => jumpToLetterStep(letter.id);
             grid.appendChild(btn);
         });
@@ -4979,6 +4979,10 @@ function lessonPrev() {
     }
 }
 
+function isArabicText(str) {
+    return /[؀-ۿ]/.test(str || "");
+}
+
 /* ---------- Shared multiple-choice widget ----------
    Reused by both practice-choice steps and each question
    inside a quiz step; also reuses the existing .quiz-options
@@ -4991,6 +4995,7 @@ function renderMCQ(container, cfg, onDone) {
     if (cfg.arabicPrompt) {
         const ar = document.createElement("div");
         ar.className = "lesson-mcq-arabic";
+        ar.lang = "ar";
         ar.textContent = cfg.arabicPrompt;
         container.appendChild(ar);
     }
@@ -5007,7 +5012,9 @@ function renderMCQ(container, cfg, onDone) {
 
     cfg.options.forEach(opt => {
         const btn = document.createElement("button");
-        btn.className = "quiz-opt" + (cfg.arabicOptions ? " quiz-opt-ar" : "");
+        const isArabicOpt = cfg.arabicOptions || isArabicText(opt.label);
+        btn.className = "quiz-opt" + (isArabicOpt ? " quiz-opt-ar" : "");
+        if (isArabicOpt) btn.lang = "ar";
         btn.textContent = opt.label;
         btn.onclick = () => {
             optWrap.querySelectorAll(".quiz-opt").forEach(b => b.disabled = true);
@@ -5040,7 +5047,7 @@ function renderExplainStep(step, body) {
         `<h3 class="lesson-step-title">${step.title}</h3>` +
         step.body.map(p => `<p class="lesson-step-text">${p}</p>`).join("") +
         (step.previewSymbols
-            ? `<div class="lesson-symbol-row">${step.previewSymbols.map(s => `<span class="lesson-symbol">${s}</span>`).join("")}</div>`
+            ? `<div class="lesson-symbol-row">${step.previewSymbols.map(s => `<span class="lesson-symbol" lang="ar">${s}</span>`).join("")}</div>`
             : "");
     lessonCanProceed = true;
 }
@@ -5053,10 +5060,10 @@ function renderExampleSetStep(step, body) {
         const card = document.createElement("div");
         card.className = "harakah-card";
         const examplesHtml = item.examples.length
-            ? item.examples.map(ex => `<div class="harakah-example"><span class="rtl-inline">${ex.arabic}</span> <em>(${ex.translit})</em> — ${ex.english}</div>`).join("")
+            ? item.examples.map(ex => `<div class="harakah-example"><span class="rtl-inline" lang="ar">${ex.arabic}</span> <em>(${ex.translit})</em> — ${ex.english}</div>`).join("")
             : `<span class="muted">No example yet.</span>`;
         card.innerHTML = `
-            <div class="harakah-symbol">${item.symbolWord}</div>
+            <div class="harakah-symbol" lang="ar">${item.symbolWord}</div>
             <div class="harakah-name">${item.name}${item.translit && item.translit !== item.name ? ` <span class="letter-detail-translit">(${item.translit})</span>` : ""}</div>
             <p class="harakah-sound">${item.sound}</p>
             <div class="harakah-examples">${examplesHtml}</div>
@@ -5151,7 +5158,7 @@ function renderTraceLetterStep(step, body) {
         return;
     }
     body.innerHTML = `
-        <h3 class="lesson-step-title">Trace: ${letter.name} <span class="letter-detail-translit">(${letter.translit})</span></h3>
+        <h3 class="lesson-step-title">Trace: <span lang="ar">${letter.name}</span> <span class="letter-detail-translit">(${letter.translit})</span></h3>
         <p class="lesson-step-text">Practice following the shape shown.${letter.connects === false ? " This letter does not connect to the letter that follows it." : ""}</p>
         <div class="trace-canvas-wrap">
             <canvas id="traceGuideCanvas" width="260" height="260"></canvas>
@@ -5162,7 +5169,7 @@ function renderTraceLetterStep(step, body) {
             <span class="trace-coverage" id="traceCoverage">Start tracing…</span>
         </div>
         ${example
-            ? `<div class="letter-example"><b>Example:</b> <span class="rtl-inline">${example.arabic}</span> <em>(${example.translit})</em> — ${example.english}</div>`
+            ? `<div class="letter-example"><b>Example:</b> <span class="rtl-inline" lang="ar">${example.arabic}</span> <em>(${example.translit})</em> — ${example.english}</div>`
             : ""}
     `;
     lessonCanProceed = true; // tracing never blocks progression — feedback is informational only
@@ -5416,7 +5423,7 @@ function renderStrokeGuidePhase(step, body, letter, example) {
     const strokes = step.strokes;
     const dotNote = LETTER_DOT_NOTES[letter.id] ? ` ${LETTER_DOT_NOTES[letter.id]}` : "";
     body.innerHTML = `
-        <h3 class="lesson-step-title">Trace: ${letter.name} <span class="letter-detail-translit">(${letter.translit})</span></h3>
+        <h3 class="lesson-step-title">Trace: <span lang="ar">${letter.name}</span> <span class="letter-detail-translit">(${letter.translit})</span></h3>
         <p class="lesson-step-text"><strong>${STROKE_PHASE_LABEL[traceGuidePhase]}</strong> — ${STROKE_PHASE_INSTRUCTIONS[traceGuidePhase]}${traceGuidePhase === "watch" ? dotNote : ""}</p>
         <div class="trace-canvas-wrap">
             <canvas id="traceGuideCanvas" width="260" height="260"></canvas>
@@ -5428,7 +5435,7 @@ function renderStrokeGuidePhase(step, body, letter, example) {
         </div>
         <button type="button" class="pill show-btn" id="tracePhaseBtn" style="margin-top:12px;">${STROKE_PHASE_BTN_LABEL[traceGuidePhase]}</button>
         ${example
-            ? `<div class="letter-example"><b>Example:</b> <span class="rtl-inline">${example.arabic}</span> <em>(${example.translit})</em> — ${example.english}</div>`
+            ? `<div class="letter-example"><b>Example:</b> <span class="rtl-inline" lang="ar">${example.arabic}</span> <em>(${example.translit})</em> — ${example.english}</div>`
             : ""}
     `;
     lessonCanProceed = true; // tracing never blocks progression — feedback is informational only
@@ -5457,7 +5464,7 @@ function renderReadingPracticeStep(step, body) {
         const card = document.createElement("div");
         card.className = "reading-card";
         card.innerHTML = `
-            <div class="reading-card-ar">${item.arabic}</div>
+            <div class="reading-card-ar" lang="ar">${item.arabic}</div>
             ${item.translit ? `<div class="reading-card-translit">${item.translit}</div>` : ""}
             <div class="reading-card-audio"></div>
             ${item.english ? `<button type="button" class="reading-reveal-btn pill next-btn">Show meaning</button><div class="reading-card-en" style="display:none;">${item.english}</div>` : ""}
@@ -5536,7 +5543,7 @@ function renderAudioExerciseStep(step, body) {
             panel.className = "reading-card";
             panel.style.display = "none";
             panel.innerHTML = `
-                <div class="reading-card-ar">${q.arabic}</div>
+                <div class="reading-card-ar" lang="ar">${q.arabic}</div>
                 ${q.translit ? `<div class="reading-card-translit">${q.translit}</div>` : ""}
                 ${q.english ? `<div class="reading-card-en">${q.english}</div>` : ""}
             `;
@@ -5580,7 +5587,7 @@ function renderListenRepeatStep(step, body) {
         <h3 class="lesson-step-title">Listen &amp; repeat</h3>
         <p class="lesson-step-text">Listen to the word, say it aloud yourself, then try recording your voice and playing it back.</p>
         <div class="pronounce-card">
-            <div class="reading-card-ar">${word.arabic}</div>
+            <div class="reading-card-ar" lang="ar">${word.arabic}</div>
             ${word.translit ? `<div class="reading-card-translit">${word.translit}</div>` : ""}
             ${word.english ? `<div class="reading-card-en">${word.english}</div>` : ""}
         </div>
