@@ -732,7 +732,7 @@
     .letter-example { font-size: 14px; margin-top: 10px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
     .letter-example .muted { color: var(--ink-soft); font-style: italic; }
     .rtl-inline { font-family: var(--font-arabic); direction: rtl; unicode-bidi: embed; font-size: 17px; }
-    .writing-practice-placeholder {
+    .writing-practice-cta {
         margin-top: 16px;
         padding: 12px 14px;
         background: var(--bg-2);
@@ -740,7 +740,13 @@
         border-radius: var(--radius-md);
         color: var(--ink-soft);
         font-size: 13px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        flex-wrap: wrap;
     }
+    .writing-practice-cta .pill { padding: 8px 14px; font-size: 12.5px; flex-shrink: 0; }
     .voice-warning { color: var(--gold); font-size: 12.5px; margin: 6px 0 4px; display: none; }
 
     /* ---------- Practice ---------- */
@@ -1156,7 +1162,7 @@
 
     <header>
         <div class="title-block">
-            <h1>Learn Arabic <span class="ar">تعلّم</span></h1>
+            <h1>Learn Arabic <span class="ar" lang="ar">تعلّم</span></h1>
             <p>Vocabulary for English &amp; French speakers</p>
         </div>
         <button class="icon-btn" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
@@ -1254,7 +1260,7 @@
                 </div>
 
                 <div class="arabic-row">
-                    <span class="arabic" id="arabicWord">كِتَاب</span>
+                    <span class="arabic" id="arabicWord" lang="ar">كِتَاب</span>
                     <button class="speak-btn" id="speakBtn" onclick="speakCurrent()" aria-label="Hear pronunciation" title="Hear pronunciation">🔊</button>
                 </div>
                 <p class="translit" id="translit">kitāb</p>
@@ -1291,7 +1297,7 @@
 
                 <div class="quiz-question">
                     <span class="cat-tag" id="quizCatTag">Category</span>
-                    <div class="quiz-arabic" id="quizArabic">بَيْت</div>
+                    <div class="quiz-arabic" id="quizArabic" lang="ar">بَيْت</div>
                     <p class="translit" id="quizTranslit">bayt</p>
                 </div>
                 <p class="quiz-prompt">What does this word mean in <span id="quizLangLabel">English</span>?</p>
@@ -2324,7 +2330,9 @@ function loadProgress() {
 }
 
 function saveProgress() {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+    try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+    } catch (e) { /* storage unavailable — progress still works for this session, just isn't remembered */ }
 }
 
 function bumpStreak() {
@@ -2906,7 +2914,7 @@ function renderWordBankGrid() {
         const btn = document.createElement("button");
         btn.className = "word-tile";
         btn.dataset.wordId = w.id;
-        btn.innerHTML = `<span class="word-tile-ar">${w.arabic}</span><span class="word-tile-en">${w.english}</span>`;
+        btn.innerHTML = `<span class="word-tile-ar" lang="ar">${w.arabic}</span><span class="word-tile-en">${w.english}</span>`;
         btn.onclick = () => selectVocabWord(w.id);
         grid.appendChild(btn);
     });
@@ -2933,7 +2941,7 @@ function selectVocabWord(id) {
     const detail = document.getElementById("wordBankDetail");
     detail.innerHTML = `
         <div class="word-detail-head">
-            <span class="word-detail-ar">${word.arabic}</span>
+            <span class="word-detail-ar" lang="ar">${word.arabic}</span>
             <div>
                 <div class="word-detail-en">${word.english}</div>
                 <div class="word-detail-translit">${word.translit}</div>
@@ -2947,11 +2955,11 @@ function selectVocabWord(id) {
             <span class="badge badge-upcoming">${vocabCatLabel[word.category] || word.category}</span>
         </div>
         ${word.plural
-            ? `<p class="word-detail-form"><b>Plural:</b> <span class="rtl-inline">${word.plural.arabic}</span> <em>(${word.plural.translit})</em></p>`
+            ? `<p class="word-detail-form"><b>Plural:</b> <span class="rtl-inline" lang="ar">${word.plural.arabic}</span> <em>(${word.plural.translit})</em></p>`
             : ""}
         ${word.example
             ? `<div class="word-detail-example">
-                   <p class="rtl-inline">${word.example.arabic}</p>
+                   <p class="rtl-inline" lang="ar">${word.example.arabic}</p>
                    <p class="example-en">${word.example.english}</p>
                </div>`
             : ""}
@@ -2974,11 +2982,16 @@ function toggleTheme() {
     const isDark = html.getAttribute("data-theme") === "dark";
     html.setAttribute("data-theme", isDark ? "light" : "dark");
     document.getElementById("themeToggle").textContent = isDark ? "🌙" : "☀️";
-    localStorage.setItem("learnArabic_theme", isDark ? "light" : "dark");
+    try {
+        localStorage.setItem("learnArabic_theme", isDark ? "light" : "dark");
+    } catch (e) { /* storage unavailable — theme still applies for this session, just isn't remembered */ }
 }
 
 function initTheme() {
-    const saved = localStorage.getItem("learnArabic_theme");
+    let saved = null;
+    try {
+        saved = localStorage.getItem("learnArabic_theme");
+    } catch (e) { /* storage unavailable — fall back to system preference below */ }
     const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
     const theme = saved || (prefersDark ? "dark" : "light");
     document.documentElement.setAttribute("data-theme", theme);
@@ -2997,6 +3010,10 @@ const VIEW_IDS = ["home", "learn", "alphabet", "vocabulary", "practice", "progre
 function setView(id, opts) {
     opts = opts || {};
     if (VIEW_IDS.indexOf(id) === -1) id = "home";
+    // The lesson runner has no content to show without an active lesson (e.g.
+    // a reload or a bookmarked/shared link landing directly on #lesson) —
+    // fall back to Home rather than rendering an empty, broken-looking shell.
+    if (id === "lesson" && !activeLesson) id = "home";
     currentView = id;
 
     VIEW_IDS.forEach(v => {
@@ -3147,7 +3164,7 @@ function renderAlphabetGrid() {
     arabicAlphabet.forEach(letter => {
         const btn = document.createElement("button");
         btn.className = "letter-tile";
-        btn.innerHTML = `<span class="letter-tile-ar">${letter.isolated}</span><span class="letter-tile-translit">${letter.translit}</span>`;
+        btn.innerHTML = `<span class="letter-tile-ar" lang="ar">${letter.isolated}</span><span class="letter-tile-translit">${letter.translit}</span>`;
         btn.onclick = () => selectLetter(letter.id);
         grid.appendChild(btn);
     });
@@ -3167,7 +3184,7 @@ function selectLetter(id) {
     const detail = document.getElementById("letterDetail");
     detail.innerHTML = `
         <div class="letter-detail-head">
-            <span class="letter-detail-ar">${letter.isolated}</span>
+            <span class="letter-detail-ar" lang="ar">${letter.isolated}</span>
             <div>
                 <div class="letter-detail-name">${letter.name} <span class="letter-detail-translit">(${letter.translit})</span></div>
                 <button class="speak-btn" id="letterSpeakBtn" aria-label="Hear pronunciation" title="Hear pronunciation">🔊</button>
@@ -3176,7 +3193,7 @@ function selectLetter(id) {
         <p class="voice-warning">⚠️ No Arabic voice found on this device — pronunciation may sound approximate.</p>
         <table class="forms-table">
             <thead><tr><th>Isolated</th><th>Initial</th><th>Medial</th><th>Final</th></tr></thead>
-            <tbody><tr>
+            <tbody lang="ar"><tr>
                 <td>${letter.isolated}</td>
                 <td>${letter.connects ? letter.initial : "—"}</td>
                 <td>${letter.connects ? letter.medial : "—"}</td>
@@ -3186,10 +3203,13 @@ function selectLetter(id) {
         ${!letter.connects ? `<p class="letter-note">This letter does not connect to the letter that follows it.</p>` : ""}
         <div class="letter-example">
             ${example
-                ? `<b>Example:</b> <span class="rtl-inline">${example.arabic}</span> <em>(${example.translit})</em> — ${example.english} <button class="speak-btn small" id="exampleSpeakBtn" aria-label="Hear example word" title="Hear example word">🔊</button>`
+                ? `<b>Example:</b> <span class="rtl-inline" lang="ar">${example.arabic}</span> <em>(${example.translit})</em> — ${example.english} <button class="speak-btn small" id="exampleSpeakBtn" aria-label="Hear example word" title="Hear example word">🔊</button>`
                 : `<span class="muted">No example word yet in the vocabulary — more coming soon.</span>`}
         </div>
-        <div class="writing-practice-placeholder">✍️ Writing practice — coming in a future milestone.</div>
+        <div class="writing-practice-cta">
+            <span>✍️ Want to practice writing this letter?</span>
+            <button class="pill next-btn" onclick="startLesson('alphabet-writing-1','alphabet')">Open Writing Practice</button>
+        </div>
     `;
 
     document.getElementById("letterSpeakBtn").disabled = !speechOk;
@@ -3355,7 +3375,7 @@ function renderLessonLetterPicker() {
             btn.className = "lesson-letter-tile";
             btn.dataset.letterId = letter.id;
             btn.setAttribute("aria-label", `${letter.translit} (${letter.name})`);
-            btn.innerHTML = `<span class="lesson-letter-tile-ar">${letter.isolated}</span><span class="lesson-letter-tile-translit">${letter.translit}</span>`;
+            btn.innerHTML = `<span class="lesson-letter-tile-ar" lang="ar">${letter.isolated}</span><span class="lesson-letter-tile-translit">${letter.translit}</span>`;
             btn.onclick = () => jumpToLetterStep(letter.id);
             grid.appendChild(btn);
         });
@@ -3407,6 +3427,7 @@ function renderMCQ(container, cfg, onDone) {
     if (cfg.arabicPrompt) {
         const ar = document.createElement("div");
         ar.className = "lesson-mcq-arabic";
+        ar.lang = "ar";
         ar.textContent = cfg.arabicPrompt;
         container.appendChild(ar);
     }
@@ -3424,6 +3445,7 @@ function renderMCQ(container, cfg, onDone) {
     cfg.options.forEach(opt => {
         const btn = document.createElement("button");
         btn.className = "quiz-opt" + (cfg.arabicOptions ? " quiz-opt-ar" : "");
+        if (cfg.arabicOptions) btn.lang = "ar";
         btn.textContent = opt.label;
         btn.onclick = () => {
             optWrap.querySelectorAll(".quiz-opt").forEach(b => b.disabled = true);
@@ -3456,7 +3478,7 @@ function renderExplainStep(step, body) {
         `<h3 class="lesson-step-title">${step.title}</h3>` +
         step.body.map(p => `<p class="lesson-step-text">${p}</p>`).join("") +
         (step.previewSymbols
-            ? `<div class="lesson-symbol-row">${step.previewSymbols.map(s => `<span class="lesson-symbol">${s}</span>`).join("")}</div>`
+            ? `<div class="lesson-symbol-row">${step.previewSymbols.map(s => `<span class="lesson-symbol" lang="ar">${s}</span>`).join("")}</div>`
             : "");
     lessonCanProceed = true;
 }
@@ -3469,10 +3491,10 @@ function renderExampleSetStep(step, body) {
         const card = document.createElement("div");
         card.className = "harakah-card";
         const examplesHtml = item.examples.length
-            ? item.examples.map(ex => `<div class="harakah-example"><span class="rtl-inline">${ex.arabic}</span> <em>(${ex.translit})</em> — ${ex.english}</div>`).join("")
+            ? item.examples.map(ex => `<div class="harakah-example"><span class="rtl-inline" lang="ar">${ex.arabic}</span> <em>(${ex.translit})</em> — ${ex.english}</div>`).join("")
             : `<span class="muted">No example yet.</span>`;
         card.innerHTML = `
-            <div class="harakah-symbol">${item.symbolWord}</div>
+            <div class="harakah-symbol" lang="ar">${item.symbolWord}</div>
             <div class="harakah-name">${item.name}${item.translit && item.translit !== item.name ? ` <span class="letter-detail-translit">(${item.translit})</span>` : ""}</div>
             <p class="harakah-sound">${item.sound}</p>
             <div class="harakah-examples">${examplesHtml}</div>
@@ -3569,7 +3591,7 @@ function renderTraceLetterStep(step, body) {
             <span class="trace-coverage" id="traceCoverage">Start tracing…</span>
         </div>
         ${example
-            ? `<div class="letter-example"><b>Example:</b> <span class="rtl-inline">${example.arabic}</span> <em>(${example.translit})</em> — ${example.english}</div>`
+            ? `<div class="letter-example"><b>Example:</b> <span class="rtl-inline" lang="ar">${example.arabic}</span> <em>(${example.translit})</em> — ${example.english}</div>`
             : ""}
     `;
     lessonCanProceed = true; // tracing never blocks progression — feedback is informational only
@@ -3708,7 +3730,7 @@ function renderReadingPracticeStep(step, body) {
         const card = document.createElement("div");
         card.className = "reading-card";
         card.innerHTML = `
-            <div class="reading-card-ar">${item.arabic}</div>
+            <div class="reading-card-ar" lang="ar">${item.arabic}</div>
             ${item.translit ? `<div class="reading-card-translit">${item.translit}</div>` : ""}
             <div class="reading-card-audio"></div>
             ${item.english ? `<button type="button" class="reading-reveal-btn pill next-btn">Show meaning</button><div class="reading-card-en" style="display:none;">${item.english}</div>` : ""}
@@ -3787,7 +3809,7 @@ function renderAudioExerciseStep(step, body) {
             panel.className = "reading-card";
             panel.style.display = "none";
             panel.innerHTML = `
-                <div class="reading-card-ar">${q.arabic}</div>
+                <div class="reading-card-ar" lang="ar">${q.arabic}</div>
                 ${q.translit ? `<div class="reading-card-translit">${q.translit}</div>` : ""}
                 ${q.english ? `<div class="reading-card-en">${q.english}</div>` : ""}
             `;
@@ -3831,7 +3853,7 @@ function renderListenRepeatStep(step, body) {
         <h3 class="lesson-step-title">Listen &amp; repeat</h3>
         <p class="lesson-step-text">Listen to the word, say it aloud yourself, then try recording your voice and playing it back.</p>
         <div class="pronounce-card">
-            <div class="reading-card-ar">${word.arabic}</div>
+            <div class="reading-card-ar" lang="ar">${word.arabic}</div>
             ${word.translit ? `<div class="reading-card-translit">${word.translit}</div>` : ""}
             ${word.english ? `<div class="reading-card-en">${word.english}</div>` : ""}
         </div>
