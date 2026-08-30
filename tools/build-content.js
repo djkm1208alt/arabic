@@ -88,6 +88,28 @@ function load() {
         } catch (e) { errors.push(`${file}: cannot parse — ${e.message}`); }
     }
 
+    // M16 curriculum spine — an object { levels, units, lessons }, not an array.
+    try {
+        const cur = readJSON(path.join(CONTENT_DIR, "curriculum.json"));
+        if (!cur || typeof cur !== "object" || Array.isArray(cur)) errors.push("curriculum.json: expected a JSON object");
+        else if (!Array.isArray(cur.levels) || !Array.isArray(cur.units) || !Array.isArray(cur.lessons))
+            errors.push("curriculum.json: must have array `levels`, `units`, `lessons`");
+        else data.curriculum = cur;
+    } catch (e) { errors.push(`curriculum.json: cannot parse — ${e.message}`); }
+
+    // Catalog lesson ids live in index.html (`const lessons = { ... }`); read them
+    // so `source: "steps:<id>"` can be validated. Missing/unreadable → skip that check.
+    let catalogLessonIds = null;
+    try {
+        const appHtml = fs.readFileSync(INDEX_HTML, "utf8");
+        const m = appHtml.match(/const lessons = \{([\s\S]*?)\n\};/);
+        if (m) {
+            catalogLessonIds = new Set();
+            for (const mm of m[1].matchAll(/^ {4}"([a-z0-9-]+)":\s*\{/gm)) catalogLessonIds.add(mm[1]);
+        }
+    } catch (e) { /* index.html unreadable at load time — source check skipped */ }
+    data._catalogLessonIds = catalogLessonIds;
+
     if (errors.length) return { errors };
 
     /* ids: present, prefixed, globally unique */
@@ -183,6 +205,88 @@ function load() {
             errors.push(`${id} (${objLevel[id]}) has a higher-level prereq ${p} (${objLevel[p]})`);
     }
 
+    /* -------- M16: curriculum spine — levels / units / lessons -------- */
+    if (data.curriculum) {
+        const cur = data.curriculum;
+        const objLevelOf = id => objLevel[id];   // from the M15 block above
+        const STATUS = ["available", "preview", "planned"];
+
+        /* levels: id ∈ levels.json, unique, no extras/omissions */
+        const curLevelIds = cur.levels.map(l => l.id);
+        for (const l of cur.levels) {
+            if (!(l.id in levelIdx)) errors.push(`curriculum level "${l.id}" is not in levels.json`);
+            if (!["available", "planned"].includes(l.status)) errors.push(`curriculum level ${l.id}: status "${l.status}" must be available | planned`);
+        }
+        if (new Set(curLevelIds).size !== curLevelIds.length) errors.push("curriculum.levels: duplicate level id");
+        for (const id of levelIds) if (!curLevelIds.includes(id)) errors.push(`curriculum.levels: missing level "${id}"`);
+
+        /* units: unique id, valid level, valid status, resolvable + acyclic + level-monotonic prereqs */
+        const unitIds = new Set();
+        for (const u of cur.units) {
+            if (unitIds.has(u.id)) errors.push(`curriculum unit "${u.id}": duplicate id`);
+            unitIds.add(u.id);
+            if (!(u.level in levelIdx)) errors.push(`curriculum unit ${u.id}: level "${u.level}" is not in levels.json`);
+            if (!["available", "planned"].includes(u.status)) errors.push(`curriculum unit ${u.id}: status "${u.status}" must be available | planned`);
+            if (!u.title || !u.title.trim()) errors.push(`curriculum unit ${u.id}: empty title`);
+            if (!Array.isArray(u.skills) || u.skills.some(s => !skillIds.has(s))) errors.push(`curriculum unit ${u.id}: skills must all be valid skill ids`);
+        }
+        const unitGraph = new Map();
+        for (const u of cur.units) {
+            const pr = Array.isArray(u.prereqs) ? u.prereqs : [];
+            unitGraph.set(u.id, pr);
+            for (const p of pr) {
+                if (!unitIds.has(p)) errors.push(`curriculum unit ${u.id}: prereq "${p}" does not resolve`);
+                else {
+                    const pl = cur.units.find(x => x.id === p).level;
+                    if (levelIdx[pl] > levelIdx[u.level]) errors.push(`curriculum unit ${u.id} (${u.level}): prereq ${p} is a higher level (${pl})`);
+                }
+            }
+        }
+        const unitCyc = findCycle(unitGraph);
+        if (unitCyc) errors.push(`curriculum unit prereq cycle: ${unitCyc.join(" → ")}`);
+
+        /* lessons: unique id, real unit, valid level+status, objectives resolve,
+           lesson.level ≥ every objective's level, source well-formed */
+        const lessonIds = new Set();
+        const VIEW_TARGETS = new Set(["alphabet", "vocabulary"]);
+        for (const ls of cur.lessons) {
+            if (lessonIds.has(ls.id)) errors.push(`curriculum lesson "${ls.id}": duplicate id`);
+            lessonIds.add(ls.id);
+            if (!unitIds.has(ls.unitId)) errors.push(`curriculum lesson ${ls.id}: unitId "${ls.unitId}" does not resolve`);
+            if (!(ls.level in levelIdx)) errors.push(`curriculum lesson ${ls.id}: level "${ls.level}" is not in levels.json`);
+            if (!STATUS.includes(ls.status)) errors.push(`curriculum lesson ${ls.id}: status "${ls.status}" must be available | preview | planned`);
+            if (!ls.title || !ls.title.trim()) errors.push(`curriculum lesson ${ls.id}: empty title`);
+            if (!Array.isArray(ls.skills) || ls.skills.length === 0 || ls.skills.some(s => !skillIds.has(s)))
+                errors.push(`curriculum lesson ${ls.id}: skills must be a non-empty list of valid skill ids`);
+
+            if (!Array.isArray(ls.objectives)) errors.push(`curriculum lesson ${ls.id}: objectives must be an array`);
+            else for (const oid of ls.objectives) {
+                if (!allIds.has(oid)) { errors.push(`curriculum lesson ${ls.id}: objective "${oid}" does not resolve to a learning object`); continue; }
+                if (levelIdx[objLevelOf(oid)] > levelIdx[ls.level])
+                    errors.push(`curriculum lesson ${ls.id} (${ls.level}): objective ${oid} is a higher level (${objLevelOf(oid)})`);
+            }
+
+            const src = ls.source || "";
+            if (src === "generate") {
+                if (!ls.objectives || ls.objectives.length === 0) errors.push(`curriculum lesson ${ls.id}: source "generate" needs at least one objective`);
+            } else if (src.startsWith("steps:")) {
+                const key = src.slice(6);
+                if (catalogLessonIds && !catalogLessonIds.has(key))
+                    errors.push(`curriculum lesson ${ls.id}: source "${src}" — no lesson "${key}" in the index.html catalog`);
+            } else if (src.startsWith("view:")) {
+                if (!VIEW_TARGETS.has(src.slice(5))) errors.push(`curriculum lesson ${ls.id}: source "${src}" — unknown view`);
+            } else {
+                errors.push(`curriculum lesson ${ls.id}: source "${src}" must be steps:<id> | view:alphabet | view:vocabulary | generate`);
+            }
+        }
+
+        /* every non-planned unit that sits at an available level should own ≥1 lesson */
+        for (const u of cur.units) {
+            const owned = cur.lessons.filter(l => l.unitId === u.id).length;
+            if (u.status === "available" && owned === 0) errors.push(`curriculum unit ${u.id}: status "available" but has no lessons`);
+        }
+    }
+
     /* legacy id map: keys 1..46, values are real lexeme ids, 1:1 */
     if (legacyMap) {
         const keys = Object.keys(legacyMap);
@@ -230,6 +334,14 @@ function compile(data, legacyMap) {
         const rows = data[key].map(o => "  " + JSON.stringify(o) + ",");
         return `"${key}": [\n${rows.join("\n")}\n]`;
     };
+    // curriculum is an object { levels, units, lessons }; emit each as a row list.
+    const curriculumBlock = () => {
+        const arr = (name) => {
+            const rows = (data.curriculum[name] || []).map(o => "    " + JSON.stringify(o) + ",");
+            return `  "${name}": [\n${rows.join("\n")}\n  ]`;
+        };
+        return `"curriculum": {\n${[arr("levels"), arr("units"), arr("lessons")].join(",\n")}\n}`;
+    };
     const mapRows = Object.keys(legacyMap)
         .sort((a, b) => Number(a) - Number(b))
         .map(k => `  ${JSON.stringify(k)}: ${JSON.stringify(legacyMap[k])},`);
@@ -249,6 +361,7 @@ function compile(data, legacyMap) {
         section("syllables") + ",",
         section("grammar") + ",",
         section("texts") + ",",
+        curriculumBlock() + ",",
         `"legacyFlashcardId": {\n${mapRows.join("\n")}\n}`,
         "};",
         MARKER_END,
@@ -307,6 +420,7 @@ function main() {
     for (const [k, n] of Object.entries(counts)) console.log("  " + k.padEnd(12) + n);
     console.log("  legacy id map  " + Object.keys(legacyMap).length);
     console.log("  taxonomy       " + (data.skills || []).length + " skills, " + (data.levels || []).length + " levels, " + (data.descriptors || []).length + " descriptors");
+    if (data.curriculum) console.log("  curriculum     " + data.curriculum.units.length + " units, " + data.curriculum.lessons.length + " lessons");
     if (!args.has("--write-app")) console.log("\n(run with --write-app to splice into index.html, or --check to verify)");
 }
 
