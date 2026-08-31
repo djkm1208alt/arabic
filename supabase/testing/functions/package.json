@@ -1,0 +1,14 @@
+{
+  "name": "arabic-edge-function-tests",
+  "private": true,
+  "description": "Local-only verification harness for supabase/functions/*. Not deployed anywhere. See ../../README.md.",
+  "type": "module",
+  "scripts": {
+    "test": "node run.mjs"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.112.4",
+    "esbuild": "^0.28.2",
+    "stripe": "^22.6.0"
+  }
+}
