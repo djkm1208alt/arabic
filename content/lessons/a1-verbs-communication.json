@@ -1,0 +1,31 @@
+{
+  "id": "a1-verbs-communication",
+  "unitId": "a1-u3",
+  "curriculumLessonId": null,
+  "title": "Verbs: Speaking, Hearing & Understanding",
+  "level": "A1",
+  "skills": ["vocabulary"],
+  "objectives": ["lex:ver-06", "lex:ver-07", "lex:ver-08", "lex:ver-09"],
+  "steps": [
+    {
+      "type": "explain",
+      "title": "Four everyday verbs",
+      "body": [
+        "This short lesson introduces four common A1 verbs you will use to talk about communication and perception: to speak, to hear or listen, to see, and to understand.",
+        "Each is given in its past-tense (he-) form, which is the dictionary form of an Arabic verb. The present-tense form is noted where the object carries one."
+      ]
+    },
+    {
+      "type": "example-set",
+      "title": "The verbs",
+      "intro": "Tap each card to hear it. The transliteration and meaning come straight from the vocabulary entries — nothing here is added by hand.",
+      "fromObjectives": true
+    },
+    {
+      "type": "complete",
+      "title": "Done",
+      "message": "You met four A1 verbs: to speak, to hear/listen, to see, and to understand. Practise them in the Review view to keep them.",
+      "finishLabel": "Finish"
+    }
+  ]
+}

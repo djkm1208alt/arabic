@@ -1,0 +1,11 @@
+{
+  "_comment": "Per-object-per-rule lint suppressions read by tools/content-lint.js. Shape: \"<object-id>\": [\"<rule>\", ...]. Use ONLY for deliberate, reviewed exceptions where the flag is understood and correct-to-ignore; keys starting with _ are notes, not rules. Every entry should say why below.",
+
+  "_why": {
+    "lex:hom-11": "case-ending demo, not vocabulary: بَيْتٌ (baytun) shows nominative ḍammatayn. The English gloss is a description, not a lemma, so levelfit can't match it — but 'house' is squarely A1.",
+    "lex:hom-12": "case-ending demo, not vocabulary: فِي بَيْتٍ (fī baytin) shows genitive kasratayn after a preposition. Same reason as hom-11."
+  },
+
+  "lex:hom-11": ["levelfit"],
+  "lex:hom-12": ["levelfit"]
+}

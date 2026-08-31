@@ -172,9 +172,9 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `words/exp-08.mp3` | أَيْنَ الْحَمَّام؟ | ayna l-ḥammām? | Where is the bathroom? | recording | tts |
 | `words/exp-09.mp3` | كَمِ السَّاعَة؟ | kami s-sāʿah? | What time is it? | recording | tts |
 | `words/exp-10.mp3` | بِكَمْ هَذَا؟ | bikam hādhā? | How much is this? | recording | tts |
-| `words/fc-14.mp3` | طَعَام | taʿām | food | recording | tts |
+| `words/fc-14.mp3` | طَعَام | ṭaʿām | food | recording | tts |
 | `words/fc-27.mp3` | أَهْلًا وَسَهْلًا | ahlan wa sahlan | welcome | recording | tts |
-| `words/fc-28.mp3` | كَيْفَ حَالُك؟ | kayfa hāluk | how are you? | recording | tts |
+| `words/fc-28.mp3` | كَيْفَ حَالُك؟ | kayfa ḥāluk | how are you? | recording | tts |
 | `words/fc-29.mp3` | اِسْمِي... | ismī... | my name is... | recording | tts |
 | `words/fc-3.mp3` | سَيَّارَة | sayyārah | car | recording | tts |
 | `words/fc-30.mp3` | تَشَرَّفْنَا | tasharrafnā | nice to meet you | recording | tts |
@@ -194,7 +194,7 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `words/foo-13.mp3` | مُوز | mūz | banana | recording | tts |
 | `words/foo-14.mp3` | تِين | tīn | figs | recording | tts |
 | `words/foo-15.mp3` | تُوت | tūt | berries | recording | tts |
-| `words/gre-01.mp3` | مَرْحَبًا | marhaban | hello | recording | tts |
+| `words/gre-01.mp3` | مَرْحَبًا | marḥaban | hello | recording | tts |
 | `words/gre-02.mp3` | السَّلَامُ عَلَيْكُم | as-salāmu ʿalaykum | peace be upon you (a greeting) | recording | tts |
 | `words/gre-03.mp3` | وَعَلَيْكُمُ السَّلَام | wa ʿalaykumu s-salām | and upon you be peace (the reply) | recording | tts |
 | `words/gre-04.mp3` | صَبَاحُ الْخَيْر | ṣabāḥu l-khayr | good morning | recording | tts |
