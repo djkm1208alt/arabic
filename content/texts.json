@@ -290,5 +290,385 @@
     "prereqs": [
       "gr:sun-moon"
     ]
+  },
+  {
+    "id": "txt:gram-number-dual",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "noun-number",
+    "vowelled": "الْكِتَابَانِ جَدِيدَانِ",
+    "translit": "al-kitābāni jadīdāni",
+    "en": "The two books are new.",
+    "words": [
+      { "surface": "الْكِتَابَانِ", "translit": "al-kitābāni", "gloss": "the two books (dual)", "gender": "masculine" },
+      { "surface": "جَدِيدَانِ", "translit": "jadīdāni", "gloss": "new (dual)", "gender": "masculine" }
+    ],
+    "audio": "الْكِتَابَانِ جَدِيدَانِ",
+    "level": "A1",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:noun-number" ]
+  },
+  {
+    "id": "txt:gram-number-sound-pl",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "noun-number",
+    "vowelled": "هُمْ مُعَلِّمُونَ",
+    "translit": "hum muʿallimūna",
+    "en": "They are teachers.",
+    "words": [
+      { "surface": "هُمْ", "translit": "hum", "gloss": "they", "gender": "masculine" },
+      { "surface": "مُعَلِّمُونَ", "translit": "muʿallimūna", "gloss": "teachers (sound masculine plural)", "gender": "masculine" }
+    ],
+    "audio": "هُمْ مُعَلِّمُونَ",
+    "level": "A1",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:noun-number" ]
+  },
+  {
+    "id": "txt:gram-number-broken-pl",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "noun-number",
+    "vowelled": "الْكُتُبُ جَمِيلَةٌ",
+    "translit": "al-kutubu jamīlatun",
+    "en": "The books are beautiful.",
+    "words": [
+      { "surface": "الْكُتُبُ", "translit": "al-kutubu", "gloss": "the books (broken plural)", "gender": "feminine" },
+      { "surface": "جَمِيلَةٌ", "translit": "jamīlatun", "gloss": "beautiful (feminine singular — non-human plural agreement)", "gender": "feminine" }
+    ],
+    "audio": "الْكُتُبُ جَمِيلَةٌ",
+    "level": "A1",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:noun-number" ]
+  },
+  {
+    "id": "txt:gram-def-indef",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "definiteness",
+    "vowelled": "بَابٌ",
+    "translit": "bābun",
+    "en": "a door",
+    "words": [
+      { "surface": "بَابٌ", "translit": "bābun", "gloss": "a door (indefinite — tanwīn ـٌ)", "gender": "masculine" }
+    ],
+    "audio": "بَابٌ",
+    "level": "A1",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:definiteness" ]
+  },
+  {
+    "id": "txt:gram-def-def",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "definiteness",
+    "vowelled": "الْبَابُ",
+    "translit": "al-bābu",
+    "en": "the door",
+    "words": [
+      { "surface": "الْبَابُ", "translit": "al-bābu", "gloss": "the door (definite — الـ, no tanwīn)", "gender": "masculine" }
+    ],
+    "audio": "الْبَابُ",
+    "level": "A1",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:definiteness" ]
+  },
+  {
+    "id": "txt:gram-def-sentence",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "definiteness",
+    "vowelled": "الْقَلَمُ جَدِيدٌ",
+    "translit": "al-qalamu jadīdun",
+    "en": "The pen is new.",
+    "words": [
+      { "surface": "الْقَلَمُ", "translit": "al-qalamu", "gloss": "the pen (definite)", "gender": "masculine" },
+      { "surface": "جَدِيدٌ", "translit": "jadīdun", "gloss": "new (indefinite)", "gender": "masculine" }
+    ],
+    "audio": "الْقَلَمُ جَدِيدٌ",
+    "level": "A1",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:definiteness" ]
+  },
+  {
+    "id": "txt:gram-nominal-father",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "nominal-sentence",
+    "vowelled": "الْأَبُ سَعِيدٌ",
+    "translit": "al-abu saʿīdun",
+    "en": "The father is happy.",
+    "words": [
+      { "surface": "الْأَبُ", "translit": "al-abu", "gloss": "the father (topic)", "gender": "masculine" },
+      { "surface": "سَعِيدٌ", "translit": "saʿīdun", "gloss": "happy (comment, masculine)", "gender": "masculine" }
+    ],
+    "audio": "الْأَبُ سَعِيدٌ",
+    "level": "A1",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:nominal-sentence" ]
+  },
+  {
+    "id": "txt:gram-nominal-mother",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "nominal-sentence",
+    "vowelled": "الْأُمُّ سَعِيدَةٌ",
+    "translit": "al-ummu saʿīdatun",
+    "en": "The mother is happy.",
+    "words": [
+      { "surface": "الْأُمُّ", "translit": "al-ummu", "gloss": "the mother (topic)", "gender": "feminine" },
+      { "surface": "سَعِيدَةٌ", "translit": "saʿīdatun", "gloss": "happy (comment, feminine — agrees with the topic)", "gender": "feminine" }
+    ],
+    "audio": "الْأُمُّ سَعِيدَةٌ",
+    "level": "A1",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:nominal-sentence" ]
+  },
+  {
+    "id": "txt:gram-nominal-teacher",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "nominal-sentence",
+    "vowelled": "الْمُعَلِّمُ فِي الْمَدْرَسَةِ",
+    "translit": "al-muʿallimu fī al-madrasati",
+    "en": "The teacher is in the school.",
+    "words": [
+      { "surface": "الْمُعَلِّمُ", "translit": "al-muʿallimu", "gloss": "the teacher (topic)", "gender": "masculine" },
+      { "surface": "فِي الْمَدْرَسَةِ", "translit": "fī al-madrasati", "gloss": "in the school (prepositional comment)", "gender": null }
+    ],
+    "audio": "الْمُعَلِّمُ فِي الْمَدْرَسَةِ",
+    "level": "A1",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:nominal-sentence" ]
+  },
+  {
+    "id": "txt:gram-dem-book",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "demonstratives",
+    "vowelled": "هَذَا كِتَابٌ",
+    "translit": "hādhā kitābun",
+    "en": "This is a book.",
+    "words": [
+      { "surface": "هَذَا", "translit": "hādhā", "gloss": "this (masculine)", "gender": "masculine" },
+      { "surface": "كِتَابٌ", "translit": "kitābun", "gloss": "a book", "gender": "masculine" }
+    ],
+    "audio": "هَذَا كِتَابٌ",
+    "level": "A1",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:demonstratives" ]
+  },
+  {
+    "id": "txt:gram-dem-girl",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "demonstratives",
+    "vowelled": "هَذِهِ بِنْتٌ",
+    "translit": "hādhihi bintun",
+    "en": "This is a girl.",
+    "words": [
+      { "surface": "هَذِهِ", "translit": "hādhihi", "gloss": "this (feminine)", "gender": "feminine" },
+      { "surface": "بِنْتٌ", "translit": "bintun", "gloss": "a girl", "gender": "feminine" }
+    ],
+    "audio": "هَذِهِ بِنْتٌ",
+    "level": "A1",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:demonstratives" ]
+  },
+  {
+    "id": "txt:gram-dem-the-house",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "demonstratives",
+    "vowelled": "هَذَا الْبَيْتُ كَبِيرٌ",
+    "translit": "hādhā al-baytu kabīrun",
+    "en": "This house is big.",
+    "words": [
+      { "surface": "هَذَا", "translit": "hādhā", "gloss": "this", "gender": "masculine" },
+      { "surface": "الْبَيْتُ", "translit": "al-baytu", "gloss": "the house", "gender": "masculine" },
+      { "surface": "كَبِيرٌ", "translit": "kabīrun", "gloss": "big", "gender": "masculine" }
+    ],
+    "audio": "هَذَا الْبَيْتُ كَبِيرٌ",
+    "level": "A1",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:demonstratives" ]
+  },
+  {
+    "id": "txt:gram-poss-my-book",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "attached-possessive",
+    "vowelled": "كِتَابِي جَدِيدٌ",
+    "translit": "kitābī jadīdun",
+    "en": "My book is new.",
+    "words": [
+      { "surface": "كِتَابِي", "translit": "kitābī", "gloss": "my book", "gender": "masculine" },
+      { "surface": "جَدِيدٌ", "translit": "jadīdun", "gloss": "new", "gender": "masculine" }
+    ],
+    "audio": "كِتَابِي جَدِيدٌ",
+    "level": "A1",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:attached-possessive" ]
+  },
+  {
+    "id": "txt:gram-poss-your-house",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "attached-possessive",
+    "vowelled": "بَيْتُكَ كَبِيرٌ",
+    "translit": "baytuka kabīrun",
+    "en": "Your house is big.",
+    "words": [
+      { "surface": "بَيْتُكَ", "translit": "baytuka", "gloss": "your house (to a man)", "gender": "masculine" },
+      { "surface": "كَبِيرٌ", "translit": "kabīrun", "gloss": "big", "gender": "masculine" }
+    ],
+    "audio": "بَيْتُكَ كَبِيرٌ",
+    "level": "A1",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:attached-possessive" ]
+  },
+  {
+    "id": "txt:gram-poss-her-bag",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "attached-possessive",
+    "vowelled": "حَقِيبَتُهَا جَمِيلَةٌ",
+    "translit": "ḥaqībatuhā jamīlatun",
+    "en": "Her bag is beautiful.",
+    "words": [
+      { "surface": "حَقِيبَتُهَا", "translit": "ḥaqībatuhā", "gloss": "her bag", "gender": "feminine" },
+      { "surface": "جَمِيلَةٌ", "translit": "jamīlatun", "gloss": "beautiful (feminine)", "gender": "feminine" }
+    ],
+    "audio": "حَقِيبَتُهَا جَمِيلَةٌ",
+    "level": "A1",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:attached-possessive" ]
+  },
+  {
+    "id": "txt:gram-prep-in-bag",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "core-prepositions",
+    "vowelled": "الْكِتَابُ فِي الْحَقِيبَةِ",
+    "translit": "al-kitābu fī al-ḥaqībati",
+    "en": "The book is in the bag.",
+    "words": [
+      { "surface": "الْكِتَابُ", "translit": "al-kitābu", "gloss": "the book", "gender": "masculine" },
+      { "surface": "فِي الْحَقِيبَةِ", "translit": "fī al-ḥaqībati", "gloss": "in the bag (genitive ـِ)", "gender": null }
+    ],
+    "audio": "الْكِتَابُ فِي الْحَقِيبَةِ",
+    "level": "A1",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:core-prepositions" ]
+  },
+  {
+    "id": "txt:gram-prep-on-table",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "core-prepositions",
+    "vowelled": "الْقَلَمُ عَلَى الطَّاوِلَةِ",
+    "translit": "al-qalamu ʿalā aṭ-ṭāwilati",
+    "en": "The pen is on the table.",
+    "words": [
+      { "surface": "الْقَلَمُ", "translit": "al-qalamu", "gloss": "the pen", "gender": "masculine" },
+      { "surface": "عَلَى الطَّاوِلَةِ", "translit": "ʿalā aṭ-ṭāwilati", "gloss": "on the table", "gender": null }
+    ],
+    "audio": "الْقَلَمُ عَلَى الطَّاوِلَةِ",
+    "level": "A1",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:core-prepositions" ]
+  },
+  {
+    "id": "txt:gram-prep-from-city",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "core-prepositions",
+    "vowelled": "هُوَ مِنَ الْمَدِينَةِ",
+    "translit": "huwa mina al-madīnati",
+    "en": "He is from the city.",
+    "words": [
+      { "surface": "هُوَ", "translit": "huwa", "gloss": "he", "gender": "masculine" },
+      { "surface": "مِنَ الْمَدِينَةِ", "translit": "mina al-madīnati", "gloss": "from the city (مِنْ + الـ → مِنَ)", "gender": null }
+    ],
+    "audio": "هُوَ مِنَ الْمَدِينَةِ",
+    "level": "A1",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:core-prepositions" ]
+  },
+  {
+    "id": "txt:gram-neg-not-big",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "negation-a1",
+    "vowelled": "لَيْسَ الْبَيْتُ كَبِيرًا",
+    "translit": "laysa al-baytu kabīran",
+    "en": "The house is not big.",
+    "words": [
+      { "surface": "لَيْسَ", "translit": "laysa", "gloss": "is not", "gender": null },
+      { "surface": "الْبَيْتُ", "translit": "al-baytu", "gloss": "the house", "gender": "masculine" },
+      { "surface": "كَبِيرًا", "translit": "kabīran", "gloss": "big (takes ـً after لَيْسَ)", "gender": "masculine" }
+    ],
+    "audio": "لَيْسَ الْبَيْتُ كَبِيرًا",
+    "level": "A1",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:negation-a1" ]
+  },
+  {
+    "id": "txt:gram-neg-not-book",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "negation-a1",
+    "vowelled": "هَذَا لَيْسَ كِتَابًا",
+    "translit": "hādhā laysa kitāban",
+    "en": "This is not a book.",
+    "words": [
+      { "surface": "هَذَا", "translit": "hādhā", "gloss": "this", "gender": "masculine" },
+      { "surface": "لَيْسَ", "translit": "laysa", "gloss": "is not", "gender": null },
+      { "surface": "كِتَابًا", "translit": "kitāban", "gloss": "a book (takes ـً after لَيْسَ)", "gender": "masculine" }
+    ],
+    "audio": "هَذَا لَيْسَ كِتَابًا",
+    "level": "A1",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:negation-a1" ]
+  },
+  {
+    "id": "txt:gram-neg-no-water",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "negation-a1",
+    "vowelled": "لَا مَاءَ فِي الْحَقِيبَةِ",
+    "translit": "lā māʾa fī al-ḥaqībati",
+    "en": "There is no water in the bag.",
+    "words": [
+      { "surface": "لَا", "translit": "lā", "gloss": "there is no", "gender": null },
+      { "surface": "مَاءَ", "translit": "māʾa", "gloss": "water", "gender": "masculine" },
+      { "surface": "فِي الْحَقِيبَةِ", "translit": "fī al-ḥaqībati", "gloss": "in the bag", "gender": null }
+    ],
+    "audio": "لَا مَاءَ فِي الْحَقِيبَةِ",
+    "level": "A1",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:negation-a1" ]
   }
 ]

@@ -50,5 +50,164 @@
     "prereqs": [
       "let:lam"
     ]
+  },
+  {
+    "id": "gr:noun-number",
+    "kind": "grammar",
+    "name": "Singular, dual & plural nouns",
+    "level": "A1",
+    "rule": "An Arabic noun is singular (بَيْتٌ), dual, or plural. The dual is regular — add ـَانِ to any noun: كِتَابٌ ← كِتَابَانِ (two books). Plurals are either sound — masculine ـُونَ (مُعَلِّمُونَ), feminine ـَاتٌ (طَاوِلَاتٌ) — or broken, an internal reshaping learned with each word: كِتَابٌ ← كُتُبٌ. A plural of non-human things is treated as feminine singular for agreement: كُتُبٌ جَمِيلَةٌ.",
+    "examples": [
+      "txt:gram-number-dual",
+      "txt:gram-number-sound-pl",
+      "txt:gram-number-broken-pl"
+    ],
+    "commonErrors": [
+      "Giving a non-human plural a plural adjective: كُتُبٌ كِبَارٌ instead of كُتُبٌ كَبِيرَةٌ.",
+      "Expecting one plural ending for every noun — broken plurals vary and are learned individually."
+    ],
+    "skills": [
+      "grammar",
+      "reading"
+    ],
+    "prereqs": []
+  },
+  {
+    "id": "gr:definiteness",
+    "kind": "grammar",
+    "name": "Definite & indefinite (ال and tanwīn)",
+    "level": "A1",
+    "rule": "A noun is indefinite or definite. Indefinite nouns end in tanwīn — a doubled final vowel, usually ـٌ (\"-un\"): كِتَابٌ (a book). Definite nouns take the prefix الـ and lose the tanwīn: الْكِتَابُ (the book). الـ and tanwīn never appear on the same word.",
+    "examples": [
+      "txt:gram-def-indef",
+      "txt:gram-def-def",
+      "txt:gram-def-sentence"
+    ],
+    "commonErrors": [
+      "Writing الـ and tanwīn together: الْكِتَابٌ.",
+      "Dropping the tanwīn from an indefinite noun — بَاب on its own should be بَابٌ."
+    ],
+    "skills": [
+      "grammar",
+      "reading"
+    ],
+    "prereqs": [
+      "gr:sun-moon"
+    ]
+  },
+  {
+    "id": "gr:nominal-sentence",
+    "kind": "grammar",
+    "name": "The nominal sentence (no verb \"to be\")",
+    "level": "A1",
+    "rule": "A nominal sentence has no verb. It puts a definite topic (mubtadaʾ) next to an indefinite comment (khabar): الْبَيْتُ كَبِيرٌ = \"the-house big\" = \"The house is big.\" Arabic has no present-tense word for \"is\" or \"are\". The khabar agrees with the topic in gender.",
+    "examples": [
+      "txt:gram-nominal-father",
+      "txt:gram-nominal-mother",
+      "txt:gram-nominal-teacher"
+    ],
+    "commonErrors": [
+      "Looking for a word that means \"is\" — there is none.",
+      "Making the khabar definite: الْبَيْتُ الْكَبِيرُ means \"the big house\", not a sentence."
+    ],
+    "skills": [
+      "grammar",
+      "reading"
+    ],
+    "prereqs": [
+      "gr:definiteness"
+    ]
+  },
+  {
+    "id": "gr:demonstratives",
+    "kind": "grammar",
+    "name": "Demonstratives (هَذَا / هَذِهِ / هَؤُلَاءِ)",
+    "level": "A1",
+    "rule": "هَذَا (this, m.), هَذِهِ (this, f.) and هَؤُلَاءِ (these, pl.) point at something and agree with its gender. Before an indefinite noun they form a sentence: هَذَا كِتَابٌ (this is a book). Before a definite noun they mean \"this …\": هَذَا الْكِتَابُ (this book).",
+    "examples": [
+      "txt:gram-dem-book",
+      "txt:gram-dem-girl",
+      "txt:gram-dem-the-house"
+    ],
+    "commonErrors": [
+      "Using هَذَا with a feminine noun: هَذَا بِنْتٌ should be هَذِهِ بِنْتٌ.",
+      "Reading هَذَا الْكِتَابُ as a full sentence — with the definite noun it is just \"this book\"."
+    ],
+    "skills": [
+      "grammar",
+      "reading"
+    ],
+    "prereqs": [
+      "gr:nominal-sentence"
+    ]
+  },
+  {
+    "id": "gr:attached-possessive",
+    "kind": "grammar",
+    "name": "Attached possessive pronouns (ـِي ـكَ ـهُ ـهَا)",
+    "level": "A1",
+    "rule": "Possession is shown by a suffix on the noun, not a separate word: ـِي (my), ـكَ (your, m.), ـكِ (your, f.), ـهُ (his), ـهَا (her). A noun with a possessive suffix is already definite, so it takes no الـ and no tanwīn: كِتَابِي (my book), بَيْتُهُ (his house).",
+    "examples": [
+      "txt:gram-poss-my-book",
+      "txt:gram-poss-your-house",
+      "txt:gram-poss-her-bag"
+    ],
+    "commonErrors": [
+      "Adding الـ to a possessed noun: الْكِتَابِي.",
+      "Keeping the tanwīn before the suffix: كِتَابٌي."
+    ],
+    "skills": [
+      "grammar",
+      "reading"
+    ],
+    "prereqs": [
+      "gr:definiteness"
+    ]
+  },
+  {
+    "id": "gr:core-prepositions",
+    "kind": "grammar",
+    "name": "Core prepositions (فِي عَلَى مِنْ إِلَى مَعَ بِـ لِـ)",
+    "level": "A1",
+    "rule": "The common prepositions are فِي (in), عَلَى (on), مِنْ (from), إِلَى (to), مَعَ (with), and the prefixes بِـ (with / by) and لِـ (for / to). The noun after a preposition is in the genitive — with الـ it ends ـِ (فِي الْبَيْتِ), indefinite it ends ـٍ (فِي بَيْتٍ).",
+    "examples": [
+      "txt:gram-prep-in-bag",
+      "txt:gram-prep-on-table",
+      "txt:gram-prep-from-city"
+    ],
+    "commonErrors": [
+      "Leaving a gap after بِـ or لِـ — they attach directly: بِالْقَلَمِ, not بِ الْقَلَمِ.",
+      "Using the ـُ ending after a preposition: فِي الْبَيْتُ should be فِي الْبَيْتِ."
+    ],
+    "skills": [
+      "grammar",
+      "reading"
+    ],
+    "prereqs": [
+      "gr:definiteness"
+    ]
+  },
+  {
+    "id": "gr:negation-a1",
+    "kind": "grammar",
+    "name": "Negating the nominal sentence (لَيْسَ / لَا / مَا)",
+    "level": "A1",
+    "rule": "To negate a nominal sentence use لَيْسَ (is / are not) before the comment: لَيْسَ الْبَيْتُ كَبِيرًا (the house is not big) — the comment takes ـً after لَيْسَ. لَا negates the noun that follows it (\"no …\", \"there is no …\"); مَا is a plainer \"not\" before the comment.",
+    "examples": [
+      "txt:gram-neg-not-big",
+      "txt:gram-neg-not-book",
+      "txt:gram-neg-no-water"
+    ],
+    "commonErrors": [
+      "Using لَا where لَيْسَ is needed — لَا الْبَيْتُ كَبِيرٌ is not a sentence.",
+      "Forgetting the ـً on the comment after لَيْسَ: لَيْسَ الْبَيْتُ كَبِيرٌ."
+    ],
+    "skills": [
+      "grammar",
+      "reading"
+    ],
+    "prereqs": [
+      "gr:nominal-sentence"
+    ]
   }
 ]

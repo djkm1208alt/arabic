@@ -1,0 +1,113 @@
+{
+  "id": "a1-grammar-structural",
+  "unitId": "a1-u1",
+  "curriculumLessonId": "a1-grammar-structural",
+  "title": "How Arabic Sentences Are Built",
+  "level": "A1",
+  "skills": ["grammar", "reading"],
+  "objectives": [
+    "gr:noun-number",
+    "gr:definiteness",
+    "gr:nominal-sentence",
+    "gr:negation-a1",
+    "txt:gram-number-dual",
+    "txt:gram-number-sound-pl",
+    "txt:gram-number-broken-pl",
+    "txt:gram-def-indef",
+    "txt:gram-def-def",
+    "txt:gram-def-sentence",
+    "txt:gram-nominal-father",
+    "txt:gram-nominal-mother",
+    "txt:gram-nominal-teacher",
+    "txt:gram-neg-not-big",
+    "txt:gram-neg-not-book",
+    "txt:gram-neg-no-water"
+  ],
+  "steps": [
+    {
+      "type": "explain",
+      "title": "Four patterns for reading A1 Arabic",
+      "body": [
+        "You have read real Arabic words and short sentences since the start. This lesson names four of the patterns behind them, so you can read new sentences with confidence: how nouns count, how \"a\" and \"the\" work, how a sentence can have no verb, and how to say \"not\".",
+        "Every example here uses words you already know."
+      ]
+    },
+    {
+      "type": "explain",
+      "title": "One, two, or many",
+      "body": [
+        "A noun is singular, dual (exactly two), or plural.",
+        "The dual just adds ـَانِ: كِتَابٌ (a book) → كِتَابَانِ (two books).",
+        "Plurals are either regular — ـُونَ for groups of people, ـَاتٌ for many feminine things — or \"broken\", reshaped inside the word: كِتَابٌ → كُتُبٌ. You learn broken plurals one at a time.",
+        "A plural of non-human things counts as feminine singular for its adjective: كُتُبٌ جَمِيلَةٌ."
+      ],
+      "previewSymbols": ["كِتَابٌ", "كِتَابَانِ", "كُتُبٌ"]
+    },
+    {
+      "type": "explain",
+      "title": "\"a\" and \"the\"",
+      "body": [
+        "An indefinite noun (\"a book\") ends in tanwīn — a doubled vowel, usually ـٌ, pronounced \"-un\": كِتَابٌ.",
+        "A definite noun (\"the book\") takes الـ at the front and drops the tanwīn: الْكِتَابُ.",
+        "A noun never carries الـ and tanwīn at the same time."
+      ],
+      "previewSymbols": ["بَابٌ", "الْبَابُ"]
+    },
+    {
+      "type": "explain",
+      "title": "A sentence with no verb",
+      "body": [
+        "Arabic has no present-tense word for \"is\" or \"are\". A sentence can be just a definite noun followed by an indefinite describing word:",
+        "الْبَيْتُ كَبِيرٌ — literally \"the-house big\" — means \"The house is big.\"",
+        "If you make the second word definite too (الْبَيْتُ الْكَبِيرُ) it is no longer a sentence — it just means \"the big house\"."
+      ],
+      "previewSymbols": ["الْبَيْتُ", "كَبِيرٌ"]
+    },
+    {
+      "type": "explain",
+      "title": "Saying \"not\"",
+      "body": [
+        "To negate this kind of sentence, put لَيْسَ (\"is not\") in front — and the describing word then takes ـً:",
+        "لَيْسَ الْبَيْتُ كَبِيرًا — \"The house is not big.\"",
+        "لَا before a noun means \"no …\" / \"there is no …\": لَا مَاءَ (no water)."
+      ],
+      "previewSymbols": ["لَيْسَ", "كَبِيرًا"]
+    },
+    {
+      "type": "reading-practice",
+      "title": "Read them aloud",
+      "intro": "Twelve short sentences using these four patterns. Tap 🔊 to hear each one, then reveal the meaning to check yourself.",
+      "fromObjectives": true
+    },
+    {
+      "type": "practice-choice",
+      "title": "Quick check",
+      "arabicPrompt": "الْكِتَابُ جَدِيدٌ",
+      "prompt": "Why is there no word for \"is\" in this sentence?",
+      "options": [
+        { "label": "Arabic has no present-tense \"is / are\" — the two words sit side by side", "correct": true },
+        { "label": "It was left out to keep the sentence short", "correct": false },
+        { "label": "The word for \"is\" comes only in questions", "correct": false }
+      ],
+      "explanation": "A nominal sentence joins a definite topic (الْكِتَابُ) and an indefinite comment (جَدِيدٌ) with no verb between them."
+    },
+    {
+      "type": "practice-choice",
+      "title": "Quick check",
+      "arabicPrompt": "بَابٌ  /  الْبَابُ",
+      "prompt": "Which one means \"the door\"?",
+      "options": [
+        { "label": "الْبَابُ — it has الـ and no tanwīn", "correct": true },
+        { "label": "بَابٌ — the tanwīn ـٌ marks it as definite", "correct": false },
+        { "label": "Both mean \"the door\"", "correct": false }
+      ],
+      "explanation": "الـ makes a noun definite and the tanwīn drops. بَابٌ, with tanwīn, is \"a door\"."
+    },
+    {
+      "type": "complete",
+      "title": "Well read",
+      "message": "You now know four building blocks of A1 Arabic: singular/dual/plural, definite vs. indefinite, the verbless sentence, and negation with لَيْسَ. Practise them in the Review view to keep them.",
+      "finishLabel": "Finish"
+    }
+  ]
+}
