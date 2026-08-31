@@ -4943,37 +4943,6 @@ if ("speechSynthesis" in window) {
     });
 }
 
-/* EXPERIMENTAL — TTS-only pronunciation hint for the isolated-letter sound of
-   the pharyngeal/uvular/emphatic consonants (ع غ خ ق ص ض). These have no
-   phonemic equivalent in the languages most speech-synthesis engines are
-   trained on, and a bare unvowelled consonant (no vowel nucleus to attach a
-   syllable to) is the single hardest input to render correctly — TTS
-   commonly goes silent, substitutes a nearby "easier" sound, or reads the
-   letter's name instead of its sound. Adding an explicit sukūn (no-vowel
-   marker) is a cheap, reversible attempt to nudge engines toward actually
-   articulating the bare consonant instead of guessing.
-   Deliberately scoped to only these 6 letters, not all 28: this is the
-   highest-value, most failure-prone subset (see AUDIO.md's Tier 1), and
-   keeping the change small keeps it easy to evaluate and to revert per-
-   letter if a given browser/OS voice sounds worse with the hint than
-   without. Only affects what speakText() sends to the TTS engine — never
-   changes what's displayed, and never affects RECORDED_AUDIO_MANIFEST
-   lookups (those run on the original, unmodified text in
-   resolveRecordedAudio(), before speakText() is ever called) — so this has
-   zero effect once real recordings exist for these letters.
-   Effectiveness is voice/OS-dependent and UNVERIFIED by us — Claude has no
-   audio output in its environment to confirm this actually sounds better.
-   Test on a real device (see content/tts-hard-letter-hint-experiment.md)
-   and remove any entry that doesn't help. */
-const TTS_ISOLATED_LETTER_HINTS = {
-    "ع": "عْ",   // ʿayn — pharyngeal fricative, often silent or a plain glottal stop otherwise
-    "غ": "غْ",   // ghayn — uvular fricative, often flattened to a plain g/r
-    "خ": "خْ",   // khāʾ — uvular fricative, often pulled forward to a lighter "h"/"k" sound
-    "ق": "قْ",   // qāf — uvular stop, commonly collapsed to plain ك kāf
-    "ص": "صْ",   // ṣād — emphatic/pharyngealized س, the emphasis is usually lost
-    "ض": "ضْ",   // ḍād — emphatic/pharyngealized د, the sound Arabic is nicknamed after
-};
-
 /* speakText() is the browser-speech-synthesis engine. It never talks to any
    specific button — callers pass onstart/onend/onerror so this stays reusable
    from any component (flashcards, alphabet, harakat, word bank, and the new
@@ -4985,7 +4954,7 @@ function speakText(text, opts) {
         return false;
     }
     window.speechSynthesis.cancel();
-    const utter = new SpeechSynthesisUtterance(TTS_ISOLATED_LETTER_HINTS[text] || text);
+    const utter = new SpeechSynthesisUtterance(text);
     utter.lang = "ar-SA";
     if (arabicVoice) utter.voice = arabicVoice;
     utter.rate = opts.rate || 0.85;

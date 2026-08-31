@@ -1,8 +1,9 @@
 # TTS hint for the hardest Arabic letters — experiment note
 
-**Status: unverified.** This is a small, reversible, opt-out-per-letter change to
-`speakText()`, not a milestone. It exists to test one hypothesis; it is not a
-claim that it works.
+**Status: tried, reverted.** Tested on a real Redmi 12C in Chrome — all six
+letters (ق غ ع ض ص خ) still sounded wrong with the sukūn hint applied. The
+hint has been removed from `index.html`; this note stays as a record of what
+was tried and why it didn't work, so nobody re-attempts the same idea.
 
 ## The problem
 
@@ -66,14 +67,27 @@ another. This needs a real person listening on a real device.
    exactly where results are likely to diverge (e.g. Android's Google TTS
    engine vs. desktop Chrome vs. Firefox/eSpeak-NG on Linux).
 
-## If it doesn't help
+## Result
 
-Delete the offending letter's line from `TTS_ISOLATED_LETTER_HINTS` (or the
-whole map, to revert entirely) — a one-line change, no other code depends on
-this map existing.
+Tested on a real device (Redmi 12C, Chrome) against all six letters. All six
+still sounded wrong — no audible improvement over the bare-letter baseline.
+`TTS_ISOLATED_LETTER_HINTS` and the substitution in `speakText()` have been
+reverted in full; `index.html` is back to exactly what it was before this
+experiment.
 
-## If it does help
+This is a real, useful negative result, not a wasted attempt: it confirms
+these six sounds are missing from the underlying voice model's training
+data, not just mis-cued by ambiguous input text. No amount of clever text
+formatting can make an engine produce a sound it was never trained on — the
+fix has to be a better voice, not better hints. That rules out the free,
+zero-cost path for these specific letters and points at the two remaining
+real options from `AUDIO.md`'s Tier 1 plan:
 
-It's still a stopgap, not a fix — TTS pronunciation of these six letters will
-never be fully correct without a Arabic-trained voice or (better) real
-native-speaker recordings, which is what `AUDIO.md`'s Tier 1 plan is for.
+1. **Real native-speaker recordings** for these 6 (12 files: isolated sound +
+   name each) — the actual fix, not a workaround.
+2. **A paid Arabic-capable neural TTS** (ElevenLabs, Google Cloud, Azure) as
+   a stronger stopgap, pre-generated and dropped in through the same
+   `RECORDED_AUDIO_MANIFEST` mechanism — untested here, but a categorically
+   different (and more likely to actually work) approach than a text hint to
+   a free browser engine, since these services are trained on real Arabic
+   speech data including these phonemes.
