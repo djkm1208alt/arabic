@@ -32,11 +32,16 @@
          Validate, then refresh the CONTENT block inside index.html.
 
      node tools/build-content.js --lint
-         Validate (as above — these checks are always on and always block),
-         then run additional M14.5 lint checks: ḥarakāt-coverage and
-         orphaned-object warnings. These are advisory only — content quality
-         signals for a human to review, not hard errors — so --lint never
-         exits non-zero on its own. No files written.
+         Validate (as above — always on, always blocking), then print the
+         full advisory report: M14.5 ḥarakāt-coverage + orphaned-object
+         warnings, M20.5's texts.json reduced/unvowelled drift check, and
+         M20's linguistic-lint WARNINGS (long-vowel / length / harakat /
+         level-fit). Advisory only — --lint never exits non-zero on its own.
+         No files written.
+
+         M20's linguistic-lint HARD errors (colloquial register, misplaced
+         Arabic-Indic digits, a translit/script emphatic mismatch) are not
+         advisory: they block EVERY run, --lint or not.
 
    Running it twice with no source change produces byte-identical output.
    Line-ending agnostic (see .gitattributes).
@@ -117,6 +122,26 @@ function load() {
     } catch (e) { /* index.html unreadable at load time — source check skipped */ }
     data._catalogLessonIds = catalogLessonIds;
 
+    // M20 — the linguistic linter's inputs: the controlled word lists and the
+    // deliberate-exception allow-list. Both optional.
+    data._wordlists = {};
+    try {
+        const w = readJSON(path.join(CONTENT_DIR, "wordlists", "a1.json"));
+        data._wordlists.a1 = Array.isArray(w) ? w : w.a1;
+    } catch (e) { /* not authored yet */ }
+    try { data._lintAllow = readJSON(path.join(CONTENT_DIR, "_lint-allow.json")); } catch (e) { data._lintAllow = {}; }
+
+    // M20 — lessons authored as data. content/lessons/*.json, each a
+    // { id, unitId?, title, level, skills, objectives, steps } object.
+    data.lessons = [];
+    try {
+        const dir = path.join(CONTENT_DIR, "lessons");
+        for (const f of fs.readdirSync(dir).filter(n => n.endsWith(".json")).sort()) {
+            try { data.lessons.push(readJSON(path.join(dir, f))); }
+            catch (e) { errors.push(`lessons/${f}: cannot parse — ${e.message}`); }
+        }
+    } catch (e) { /* no lessons dir yet */ }
+
     if (errors.length) return { errors };
 
     /* ids: present, prefixed, globally unique */
@@ -129,6 +154,8 @@ function load() {
             allIds.add(o.id);
         }
     }
+    data._objById = new Map();
+    for (const key of Object.keys(FILES)) for (const o of data[key]) data._objById.set(o.id, o);
 
     /* lexemes: Arabic + transliteration present */
     for (const l of data.lexemes) {
@@ -318,6 +345,51 @@ function load() {
         }
     }
 
+    /* -------- M20: lessons authored as data (content/lessons/*.json) -------- */
+    if (data.lessons && data.lessons.length) {
+        const STEP_TYPES = new Set([
+            "explain", "example-set", "practice-choice", "quiz", "trace-letter",
+            "reading-practice", "audio-exercise", "listen-repeat", "exercise", "complete",
+        ]);
+        const FROM_OBJECTIVES_OK = new Set(["example-set", "reading-practice"]);
+        const curUnitIds = new Set((data.curriculum ? data.curriculum.units : []).map(u => u.id));
+        const catalogIds = data._catalogLessonIds;   // Set or null
+        const seenLessonIds = new Set();
+        for (const [i, L] of data.lessons.entries()) {
+            const where = `lessons[${i}]` + (L && L.id ? ` (${L.id})` : "");
+            if (typeof L.id !== "string" || !/^[a-z0-9][a-z0-9-]*$/.test(L.id)) {
+                errors.push(`${where}: id must be a kebab-case string`); continue;
+            }
+            if (seenLessonIds.has(L.id)) errors.push(`lesson ${L.id}: duplicate id among content/lessons/*.json`);
+            seenLessonIds.add(L.id);
+            if (catalogIds && catalogIds.has(L.id)) errors.push(`lesson ${L.id}: id collides with an inline index.html catalog lesson`);
+            if (!L.title || !String(L.title).trim()) errors.push(`lesson ${L.id}: empty title`);
+            if (L.unitId != null && !curUnitIds.has(L.unitId)) errors.push(`lesson ${L.id}: unitId "${L.unitId}" does not resolve to a curriculum unit`);
+            if (L.curriculumLessonId != null) {
+                const cl = data.curriculum && data.curriculum.lessons.find(x => x.id === L.curriculumLessonId);
+                if (!cl) errors.push(`lesson ${L.id}: curriculumLessonId "${L.curriculumLessonId}" does not resolve`);
+            }
+            if (!L.level || !(L.level in levelIdx)) errors.push(`lesson ${L.id}: level "${L.level}" is not in levels.json`);
+            if (!Array.isArray(L.skills) || L.skills.length === 0 || L.skills.some(s => !skillIds.has(s)))
+                errors.push(`lesson ${L.id}: skills must be a non-empty list of valid skill ids`);
+            if (!Array.isArray(L.objectives)) errors.push(`lesson ${L.id}: objectives must be an array`);
+            else for (const oid of L.objectives) {
+                if (!allIds.has(oid)) { errors.push(`lesson ${L.id}: objective "${oid}" does not resolve to a learning object`); continue; }
+                if (L.level in levelIdx && levelIdx[objLevel[oid]] > levelIdx[L.level])
+                    errors.push(`lesson ${L.id} (${L.level}): objective ${oid} is a higher level (${objLevel[oid]})`);
+            }
+            if (!Array.isArray(L.steps) || L.steps.length === 0) errors.push(`lesson ${L.id}: steps must be a non-empty array`);
+            else L.steps.forEach((s, j) => {
+                if (!s || !STEP_TYPES.has(s.type))
+                    errors.push(`lesson ${L.id}: step[${j}] type "${s && s.type}" is not a known renderer`);
+                if (s && s.fromObjectives && !FROM_OBJECTIVES_OK.has(s.type))
+                    errors.push(`lesson ${L.id}: step[${j}] "fromObjectives" is only valid on ${[...FROM_OBJECTIVES_OK].join(" / ")}`);
+                if (s && s.fromObjectives && !(L.objectives || []).some(oid => { const o = data._objById.get(oid); return o && o.kind === "lexeme"; }))
+                    errors.push(`lesson ${L.id}: step[${j}] "fromObjectives" but the lesson has no lexeme objectives to expand`);
+            });
+        }
+    }
+
     /* legacy id map: keys 1..46, values are real lexeme ids, 1:1 */
     if (legacyMap) {
         const keys = Object.keys(legacyMap);
@@ -337,7 +409,7 @@ function load() {
 }
 
 /* -------------------------------------------------------------------------- */
-/* M14.5 — lint (advisory, non-blocking)                                    */
+/* M14.5 + M20.5 — advisory lint (non-blocking, --lint only)                */
 /* -------------------------------------------------------------------------- */
 // Arabic combining diacritics: the three ḥarakāt (fatḥah/kasrah/ḍammah),
 // sukūn, shaddah, tanwīn (three forms), and madd/dagger-alif. Presence of
@@ -441,6 +513,23 @@ function compile(data, legacyMap) {
         .sort((a, b) => Number(a) - Number(b))
         .map(k => `  ${JSON.stringify(k)}: ${JSON.stringify(legacyMap[k])},`);
 
+    // M20 — lessons authored as data. `fromObjectives` steps are expanded here
+    // from the referenced objects, so no Arabic is inlined in the lesson file.
+    const compiledLessons = (data.lessons || []).map(L => {
+        const obj = id => data._objById && data._objById.get(id);
+        const steps = (L.steps || []).map(s => {
+            if ((s.type === "example-set" || s.type === "reading-practice") && s.fromObjectives) {
+                const lex = (L.objectives || []).map(obj).filter(o => o && o.kind === "lexeme");
+                const out = Object.assign({}, s); delete out.fromObjectives;
+                if (s.type === "example-set") out.items = lex.map(l => ({ symbolWord: l.ar, name: l.en, translit: l.translit, sound: l.pos || "", examples: [] }));
+                else out.items = lex.map(l => ({ arabic: l.ar, translit: l.translit, english: l.en }));
+                return out;
+            }
+            return s;
+        });
+        return { id: L.id, title: L.title, curriculumLessonId: L.curriculumLessonId || null, objectives: L.objectives || [], steps };
+    });
+
     return [
         MARKER_START,
         "/* Learning-object content, compiled from content/*.json by",
@@ -457,6 +546,7 @@ function compile(data, legacyMap) {
         section("grammar") + ",",
         section("texts") + ",",
         curriculumBlock() + ",",
+        `"lessons": [\n${compiledLessons.map(o => "  " + JSON.stringify(o) + ",").join("\n")}\n]` + ",",
         `"legacyFlashcardId": {\n${mapRows.join("\n")}\n}`,
         "};",
         MARKER_END,
@@ -473,6 +563,10 @@ function extractBlock(html) {
 /* -------------------------------------------------------------------------- */
 /* Main                                                                      */
 /* -------------------------------------------------------------------------- */
+// M20's linguistic linter is a separate pure module; alias it so it doesn't
+// collide with this file's own advisory `lint()` (M14.5 + M20.5).
+const { lint: linguisticLint } = require("./content-lint.js");
+
 function main() {
     const args = new Set(process.argv.slice(2));
     const { errors, data, legacyMap } = load();
@@ -483,8 +577,22 @@ function main() {
         process.exit(1);
     }
 
+    /* M20 — linguistic lint. HARD errors block every run (a colloquialism in
+       MSA content, an Arabic-Indic digit outside the numbers topic, a
+       translit/script emphatic mismatch are never acceptable). Its WARNINGS
+       are advisory and only surface under --lint, alongside M14.5/M20.5. */
+    const ling = linguisticLint(data, data._wordlists, data._lintAllow);
+    if (ling.errors.length) {
+        console.error("linguistic lint FAILED:");
+        ling.errors.forEach(e => console.error("  - " + e));
+        process.exit(1);
+    }
+
     if (args.has("--lint")) {
-        const warnings = lint(data, legacyMap);
+        const warnings = [
+            ...ling.warnings.map(w => "linguistic — " + w),
+            ...lint(data, legacyMap),
+        ];
         if (warnings.length) {
             console.log(`content lint — ${warnings.length} advisory warning(s):`);
             warnings.forEach(w => console.log("  ! " + w));
@@ -527,6 +635,7 @@ function main() {
     console.log("  legacy id map  " + Object.keys(legacyMap).length);
     console.log("  taxonomy       " + (data.skills || []).length + " skills, " + (data.levels || []).length + " levels, " + (data.descriptors || []).length + " descriptors");
     if (data.curriculum) console.log("  curriculum     " + data.curriculum.units.length + " units, " + data.curriculum.lessons.length + " lessons");
+    console.log("  lessons (data) " + (data.lessons || []).length);
     if (!args.has("--write-app")) console.log("\n(run with --write-app to splice into index.html, or --check to verify)");
 }
 
