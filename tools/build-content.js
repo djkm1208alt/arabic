@@ -521,7 +521,10 @@ function compile(data, legacyMap) {
             if ((s.type === "example-set" || s.type === "reading-practice") && s.fromObjectives) {
                 const lex = (L.objectives || []).map(obj).filter(o => o && o.kind === "lexeme");
                 const out = Object.assign({}, s); delete out.fromObjectives;
-                if (s.type === "example-set") out.items = lex.map(l => ({ symbolWord: l.ar, name: l.en, translit: l.translit, sound: l.pos || "", examples: [] }));
+                const exOf = l => (l.example && l.example.ar)
+                    ? [{ arabic: l.example.ar, translit: l.example.translit || "", english: l.example.en || "" }]
+                    : [];
+                if (s.type === "example-set") out.items = lex.map(l => ({ symbolWord: l.ar, name: l.en, translit: l.translit, sound: l.pos || "", examples: exOf(l) }));
                 else out.items = lex.map(l => ({ arabic: l.ar, translit: l.translit, english: l.en }));
                 return out;
             }

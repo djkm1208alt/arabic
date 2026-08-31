@@ -13,6 +13,16 @@ node tools/lint-fixtures.js
 node tools/build-content.js --check
 ```
 
+> **Step-4 update (migration pass).** The 10 `levelfit` warnings this doc first
+> recorded are resolved. `levelfit` now normalises the English gloss on **both**
+> sides of the comparison — lowercase, drop `(…)` qualifiers and terminal
+> `? ! .`, split `/` and `,` compounds, and try each fragment with and without a
+> leading article / `to`. Three real A1 words were added to the word-list
+> (`umbrella`, `how much is this?`, and `grey` widened to `grey / gray`). The
+> two grammar-demo pseudo-lexemes `lex:hom-11` / `lex:hom-12` (case-ending
+> illustrations, not vocabulary) are recorded in `content/_lint-allow.json`
+> with a stated reason. **Current state: 0 errors, 0 warnings.**
+
 ---
 
 ## 1. The linter
@@ -32,7 +42,7 @@ a rule for one object where the flag is a deliberate, reviewed exception.
 | `harakat` | warning | an A0/A1 fully-vowelled field with an interior consonant carrying no ḥarakah and not acting as a long-vowel carrier (conservative heuristic: excuses alif/maddah/ة, word-final letters, و/ي after the matching short vowel, and the assimilated definite-article lām) |
 | `longvowel` | warning | translit has more long-vowel macrons than the Arabic has carriers (+1 slack) |
 | `length` | warning | gross letter-count mismatch between script and translit — a transposition or truncation |
-| `levelfit` | warning | an `A1`-tagged lexeme whose English lemma is not on `content/wordlists/a1.json` — "confirm it belongs at A1" |
+| `levelfit` | warning | an `A1`-tagged lexeme whose English gloss is not on `content/wordlists/a1.json` — "confirm it belongs at A1". Both sides are normalised the same way (`lemmaVariants()`): lowercase, drop `(…)` qualifiers and terminal `? ! .`, split `/` and `,` compounds, article/`to`-insensitive |
 
 ---
 
@@ -41,11 +51,11 @@ a rule for one object where the flag is a deliberate, reviewed exception.
 `node tools/build-content.js --lint`
 
 ```
-lint OK — 0 errors, 10 warning(s).
+lint OK — 0 errors, 0 warning(s).
 ```
 
 **0 errors.** Three genuine translit-dot inconsistencies the `emphatic` rule
-surfaced during calibration have been fixed in `content/lexemes.json`:
+surfaced during calibration were fixed in `content/lexemes.json`:
 
 | id | was | now |
 |---|---|---|
@@ -55,22 +65,25 @@ surfaced during calibration have been fixed in `content/lexemes.json`:
 
 (These three propagate to `tools/audio-manifest.json` / `.md`, regenerated.)
 
-**10 warnings, all `levelfit`** — every one is an A1 lexeme that is not yet on
-the A1 word-list spec. None is a linguistic fault; each is a "does this belong at
-A1?" question for the migration pass (step 4). They split three ways:
+**0 warnings.** The 10 `levelfit` warnings from the first gate pass are resolved:
 
-| id | English | disposition (proposed, step 4) |
+| id | English | resolution |
 |---|---|---|
-| `lex:col-07` | orange | add to word-list (`colours` are A1 extension) |
-| `lex:col-10` | gray | add to word-list |
-| `lex:obj-08` | umbrella | add to word-list (`weather`/`home`) |
-| `lex:pla-02` | village | add to word-list (`places`) |
-| `lex:ver-07` | to hear / to listen | word-list has `hear` + `listen`; `levelfit` needs to split `/`-compounds and strip `to ` — rule fix, step 4 |
-| `lex:ver-10` | to work / to do | same — `work` is on the list |
-| `lex:exp-10` | How much is this? | phrase, not a lemma — allow-list or add a `shopping` phrase entry |
-| `lex:pro-03` | they (masculine/mixed group) | pronoun; parenthetical defeats the match — normalise `en` or allow-list |
-| `lex:hom-11` | a house (subject form, ending in ḍammatayn) | grammar-demo lexeme, not real vocab → `_lint-allow.json` |
-| `lex:hom-12` | in a house (ending in kasratayn, after a preposition) | grammar-demo lexeme → `_lint-allow.json` |
+| `lex:ver-07` | to hear / to listen | `levelfit` now splits `/`-compounds → matches `to hear` |
+| `lex:ver-10` | to work / to do | → matches `to work` |
+| `lex:col-07` | orange | `levelfit` now drops `(…)` qualifiers → matches `orange (colour)` |
+| `lex:pro-03` | they (masculine/mixed group) | → both sides normalise to `they`, matches `they (m.)` |
+| `lex:pla-02` | village | → matches `town / village` |
+| `lex:col-10` | gray | word-list entry widened `grey` → `grey / gray` |
+| `lex:obj-08` | umbrella | added to word-list (`weather`, priority 3) |
+| `lex:exp-10` | How much is this? | added to word-list (`shopping`, priority 2) |
+| `lex:hom-11` | a house (subject form, ending in ḍammatayn) | grammar-demo pseudo-lexeme → `content/_lint-allow.json` |
+| `lex:hom-12` | in a house (ending in kasratayn, after a preposition) | grammar-demo pseudo-lexeme → `content/_lint-allow.json` |
+
+The `levelfit` gloss normalisation (`lemmaVariants()` in `content-lint.js`) is
+applied identically to the word-list lemmas and to each lexeme's `en`, so the
+match is symmetric. `content/_lint-allow.json` records the two grammar-demo
+exceptions with a `_why` note for each.
 
 ---
 
@@ -104,6 +117,8 @@ the corrected version is clean, and an `_lint-allow.json` entry silences it.
   ✔ [levelfit] fixture is flagged (warning)
   ✔ [levelfit] fixed version is clean
   ✔ [levelfit] _lint-allow.json silences it
+  ✔ [levelfit] compound / qualified glosses match a plain lemma
+  ✔ [levelfit] a genuinely off-level word still warns
 
 ✅ ALL LINT FIXTURES BEHAVE
 ```
@@ -113,7 +128,7 @@ the corrected version is clean, and an `_lint-allow.json` entry silences it.
 ## 4. The A1 word-list spec
 
 `content/wordlists/a1.json` — an **English-side curriculum plan**, not Arabic
-content. 261 entries across 14 topic areas, each `{ en, topic, pos, priority }`.
+content. 263 entries across 14 topic areas, each `{ en, topic, pos, priority }`.
 A0-covered items (numbers 0–10, the six basic colours, core greetings, immediate
 family, days, basic food) are deliberately omitted — the file is the A1
 *extension over A0*. Count is partial by design and grows as Phase B batches land.
@@ -124,8 +139,8 @@ Sources cited in `_meta`:
 - **Buckwalter & Parkinson** — *A Frequency Dictionary of Arabic* (Routledge, 2011) — top frequency bands, cross-checked for concreteness and beginner suitability
 
 Topic breakdown: family 23 · food 26 · home 21 · time 20 · daily-routine 23 ·
-school 23 · work 11 · places 19 · shopping 9 · travel 10 · directions 15 ·
-health 9 · social 43 · weather 9.
+school 23 · work 11 · places 19 · shopping 10 · travel 10 · directions 15 ·
+health 9 · social 43 · weather 10.
 
 ---
 
@@ -152,12 +167,19 @@ health 9 · social 43 · weather 9.
 
 A step may carry `"fromObjectives": true` (only on `example-set` /
 `reading-practice`). At **build time**, `tools/build-content.js` expands it from
-the lesson's lexeme objectives into a normal `items` array — so the lesson file
-itself contains **zero inlined Arabic**; the Arabic comes from the reviewed
-`content/lexemes.json` entries. `build-content.js` validates every rule above;
-`index.html` folds `CONTENT.lessons` into the runtime `lessons` catalog
-(`if (!lessons[L.id]) lessons[L.id] = L;` — a JSON lesson never shadows an
-inline one).
+the lesson's lexeme objectives into a normal `items` array — pulling `ar`,
+`translit`, `en`, `pos`, and the object's own `example` sentence if it has one —
+so the lesson file itself contains **zero inlined Arabic**; everything comes from
+the reviewed `content/lexemes.json` entries. `build-content.js` validates every
+rule above; `index.html` folds `CONTENT.lessons` into the runtime `lessons`
+catalog (`if (!lessons[L.id]) lessons[L.id] = L;` — a JSON lesson never shadows
+an inline one).
+
+One supporting runtime tweak: `renderExampleSetStep` now omits the `(translit)`
+parenthetical for an example sentence that has no transliteration, instead of
+rendering an empty `()`. Behaviour is identical for every pre-existing
+example-set (they all carry translit); the byte-compare confirms no data
+structure changed.
 
 ### Sample — `content/lessons/a1-verbs-communication.json`
 
@@ -174,13 +196,20 @@ string pulled from the lexeme objects, nothing hand-authored:
   "title": "The verbs",
   "intro": "Tap each card to hear it. The transliteration and meaning come straight from the vocabulary entries — nothing here is added by hand.",
   "items": [
-    { "symbolWord": "تَكَلَّمَ", "name": "to speak",            "translit": "takallama", "sound": "verb", "examples": [] },
-    { "symbolWord": "سَمِعَ",    "name": "to hear / to listen",  "translit": "samiʿa",    "sound": "verb", "examples": [] },
-    { "symbolWord": "رَأَى",     "name": "to see",              "translit": "raʾā",      "sound": "verb", "examples": [] },
-    { "symbolWord": "فَهِمَ",    "name": "to understand",       "translit": "fahima",    "sound": "verb", "examples": [] }
+    { "symbolWord": "تَكَلَّمَ", "name": "to speak",           "translit": "takallama", "sound": "verb", "examples": [] },
+    { "symbolWord": "سَمِعَ",    "name": "to hear / to listen", "translit": "samiʿa",    "sound": "verb", "examples": [] },
+    { "symbolWord": "رَأَى",     "name": "to see",             "translit": "raʾā",      "sound": "verb", "examples": [] },
+    { "symbolWord": "فَهِمَ",    "name": "to understand",      "translit": "fahima",    "sound": "verb",
+      "examples": [ { "arabic": "هَلْ فَهِمْتَ الدَّرْس؟", "translit": "", "english": "Did you understand the lesson?" } ] }
   ]
 }
 ```
+
+Live-checked: the lesson runs `explain → example-set → complete` with 0 console
+errors; the three verbs without an example sentence show "No example yet.", فَهِمَ
+shows its sentence; regression lessons (`harakat-intro` inline, `a1-colours`
+generated) still run; dark mode + 320 px clean; 0 Arabic-Indic digits in the
+rendered DOM.
 
 ---
 
@@ -201,12 +230,21 @@ one new `a1-verbs-communication` lesson.
 
 ---
 
-## 7. Open items for step 4 (the migration pass)
+## 7. Step 4 (the migration pass) — done
 
-1. Resolve the 10 `levelfit` warnings per the dispositions in §2 — extend the
-   word-list, teach `levelfit` to split `/`-compounds and strip parentheticals,
-   and create `content/_lint-allow.json` for `lex:hom-11` / `lex:hom-12`.
-2. Run the linter over the full content set with the tightened rule and confirm
-   0 errors / 0 unexplained warnings.
-3. Then Phase B: author the A1 Arabic in small cited, linted, reviewed batches
-   (grammar first, then core vocab, then texts) — each its own PR.
+1. ✅ `levelfit` gloss normalisation (`lemmaVariants()`): drop `(…)`, drop
+   terminal `? ! .`, split `/` and `,` compounds, article/`to`-insensitive —
+   applied to both sides. Regression-tested in `lint-fixtures.js`
+   ("compound / qualified glosses match a plain lemma" + "a genuinely off-level
+   word still warns").
+2. ✅ word-list: `grey` → `grey / gray`; added `umbrella`, `how much is this?`.
+3. ✅ `content/_lint-allow.json` created — `lex:hom-11` / `lex:hom-12`
+   (`levelfit`), each with a `_why` note.
+4. ✅ linter over the full content set: **0 errors, 0 warnings**.
+
+Nothing else in the existing content set triggers a rule. Next:
+
+- **Step 5–6:** this doc + the sample lesson get a live-browser QA trace, then
+  the Phase A PR.
+- **Phase B:** author the A1 Arabic in small cited, linted, reviewed batches
+  (grammar first, then core vocab, then texts) — each its own PR.

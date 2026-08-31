@@ -191,6 +191,7 @@
     { "en": "cheap", "topic": "shopping", "pos": "adjective", "priority": 2 },
     { "en": "expensive", "topic": "shopping", "pos": "adjective", "priority": 2 },
     { "en": "how much?", "topic": "shopping", "pos": "phrase", "priority": 1 },
+    { "en": "how much is this?", "topic": "shopping", "pos": "phrase", "priority": 2 },
     { "en": "a little", "topic": "shopping", "pos": "adverb", "priority": 2 },
     { "en": "a lot / many", "topic": "shopping", "pos": "adverb", "priority": 1 },
 
@@ -234,7 +235,7 @@
     { "en": "orange (colour)", "topic": "social", "pos": "adjective", "priority": 3 },
     { "en": "brown", "topic": "social", "pos": "adjective", "priority": 3 },
     { "en": "pink", "topic": "social", "pos": "adjective", "priority": 3 },
-    { "en": "grey", "topic": "social", "pos": "adjective", "priority": 3 },
+    { "en": "grey / gray", "topic": "social", "pos": "adjective", "priority": 3 },
     { "en": "I don't know", "topic": "social", "pos": "phrase", "priority": 2 },
     { "en": "where is the bathroom?", "topic": "social", "pos": "phrase", "priority": 2 },
     { "en": "what time is it?", "topic": "social", "pos": "phrase", "priority": 2 },
@@ -248,6 +249,7 @@
     { "en": "weather", "topic": "weather", "pos": "noun", "priority": 1 },
     { "en": "sky", "topic": "weather", "pos": "noun", "priority": 2 },
     { "en": "season", "topic": "weather", "pos": "noun", "priority": 3 },
+    { "en": "umbrella", "topic": "weather", "pos": "noun", "priority": 3 },
 
     { "en": "hello", "topic": "social", "pos": "phrase", "priority": 1 },
     { "en": "goodbye", "topic": "social", "pos": "phrase", "priority": 1 },

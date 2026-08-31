@@ -78,5 +78,27 @@ for (const fx of FIXTURES) {
     ok(!stillFlagged, `[${fx.rule}] _lint-allow.json silences it`);
 }
 
+/* levelfit gloss normalisation — a compound / qualified English gloss should
+   still match a plain word-list lemma (and vice-versa), so real A1 vocab
+   isn't flagged just because the gloss is worded differently. */
+const nWl = { a1: [
+    { en: "orange (colour)", topic: "colours", pos: "adjective", priority: 3 },
+    { en: "to hear",         topic: "verbs",   pos: "verb",      priority: 1 },
+    { en: "town / village",  topic: "places",  pos: "noun",      priority: 2 },
+    { en: "they (m.)",       topic: "social",  pos: "pronoun",   priority: 1 },
+] };
+const nOK = [
+    lex({ id: "lex:n1", en: "orange" }),
+    lex({ id: "lex:n2", en: "to hear / to listen" }),
+    lex({ id: "lex:n3", en: "village" }),
+    lex({ id: "lex:n4", en: "they (masculine/mixed group)" }),
+];
+const nRes = lint({ lexemes: nOK }, nWl, {});
+ok(nRes.warnings.filter(w => w.indexOf("levelfit") === 0).length === 0,
+   "[levelfit] compound / qualified glosses match a plain lemma");
+const nBad = lint({ lexemes: [lex({ id: "lex:n5", en: "photosynthesis" })] }, nWl, {});
+ok(nBad.warnings.some(w => w.indexOf("levelfit") === 0),
+   "[levelfit] a genuinely off-level word still warns");
+
 console.log("\n" + (fails === 0 ? "✅ ALL LINT FIXTURES BEHAVE" : "❌ " + fails + " FAILURE(S)"));
 process.exit(fails ? 1 : 0);

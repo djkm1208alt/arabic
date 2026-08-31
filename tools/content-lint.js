@@ -81,6 +81,28 @@ function unvowelledConsonants(word) {
     return flags;
 }
 
+/* normalise an English gloss to a set of comparable lemma fragments:
+   lowercase, drop "(…)" qualifiers and terminal ? ! . , split "/" and ","
+   compounds, and offer each fragment both with and without a leading
+   article / "to". Used on BOTH sides of the levelfit comparison so
+   "orange (colour)" ~ "orange", "to hear / to listen" ~ "to hear",
+   "they (masculine/mixed group)" ~ "they (m.)". */
+function lemmaVariants(s) {
+    const base = String(s || "").toLowerCase()
+        .replace(/\([^)]*\)/g, " ")
+        .replace(/[?!.]+/g, " ")
+        .replace(/\s+/g, " ").trim();
+    const out = new Set();
+    for (let frag of base.split(/\s*[/,]\s*/)) {
+        frag = frag.trim();
+        if (!frag) continue;
+        out.add(frag);
+        out.add(frag.replace(/^(a|an|the|to)\s+/, "").trim());
+    }
+    out.delete("");
+    return out;
+}
+
 function stripToArabic(s) { return String(s).replace(/[^؀-ۿ]/g, ""); }
 /* bare consonant skeleton — strip marks and tatweel, for register matching */
 function skeleton(s) { return String(s).replace(AR_MARK, "").replace(/[^؀-ۿ]/g, "").replace(/ـ/g, "").replace(new RegExp(AR_MARK.source, "g"), ""); }
@@ -89,10 +111,14 @@ function skeleton(s) { return String(s).replace(AR_MARK, "").replace(/[^؀-ۿ]/g
 function lint(data, wordlists, allow) {
     const errors = [], warnings = [];
     allow = allow || {};
-    const allowed = (id, rule) => (allow[id] || []).indexOf(rule) !== -1;
+    const allowed = (id, rule) => Array.isArray(allow[id]) && allow[id].indexOf(rule) !== -1;
 
     const wl = (wordlists && wordlists.a1 && Array.isArray(wordlists.a1)) ? wordlists.a1 : null;
-    const wlLemmas = wl ? new Set(wl.map(e => String(e.en || "").toLowerCase().trim())) : null;
+    const wlLemmas = wl ? (() => {
+        const s = new Set();
+        for (const e of wl) for (const v of lemmaVariants(e.en)) s.add(v);
+        return s;
+    })() : null;
 
     const rows = [];
     for (const key of ["lexemes", "letters", "marks", "syllables", "grammar", "texts"])
@@ -166,9 +192,8 @@ function lint(data, wordlists, allow) {
 
         /* --- WARN: A1 level fit against the word list --- */
         if (wlLemmas && key === "lexemes" && o.level === "A1" && !allowed(id, "levelfit")) {
-            const en = String(o.en || "").toLowerCase().trim();
-            const bare = en.replace(/^(a |an |the |to )/, "").trim();
-            if (!wlLemmas.has(en) && !wlLemmas.has(bare))
+            const hit = [...lemmaVariants(o.en)].some(v => wlLemmas.has(v));
+            if (!hit)
                 warnings.push(`levelfit  ${id}: A1 lexeme "${o.en}" is not on content/wordlists/a1.json — confirm it belongs at A1`);
         }
     }
