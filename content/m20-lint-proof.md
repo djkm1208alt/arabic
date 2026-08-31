@@ -1,9 +1,8 @@
 # M20 — linguistic lint & data-authored lessons: proof
 
-This is the review-gate artifact for M20 Phase A rollout step 3. It shows the
-linter running on the current content set, each rule firing on a deliberately
-broken fixture, and the first data-authored lesson compiling into the app with
-no hand-inlined Arabic.
+This is the M20 Phase A review artifact. It shows the linter running on the
+current content set, each rule firing on a deliberately broken fixture, and the
+first data-authored lesson compiling into the app with no hand-inlined Arabic.
 
 Regenerate the numbers here with:
 
@@ -13,26 +12,38 @@ node tools/lint-fixtures.js
 node tools/build-content.js --check
 ```
 
-> **Step-4 update (migration pass).** The 10 `levelfit` warnings this doc first
-> recorded are resolved. `levelfit` now normalises the English gloss on **both**
-> sides of the comparison — lowercase, drop `(…)` qualifiers and terminal
-> `? ! .`, split `/` and `,` compounds, and try each fragment with and without a
-> leading article / `to`. Three real A1 words were added to the word-list
-> (`umbrella`, `how much is this?`, and `grey` widened to `grey / gray`). The
-> two grammar-demo pseudo-lexemes `lex:hom-11` / `lex:hom-12` (case-ending
-> illustrations, not vocabulary) are recorded in `content/_lint-allow.json`
-> with a stated reason. **Current state: 0 errors, 0 warnings.**
+> **Rebased onto `main` (M14.1 / M14.5 / M15.5 / M19.5 / M20.5 / M21.5 landed
+> first).** M14.5 had already added a `--lint` mode (ḥarakāt-coverage + orphan
+> warnings) and M20.5 folded a `texts.json` drift check into it. The three are
+> now **one `--lint` path**: M20's linguistic linter runs as its own pure module
+> (`content-lint.js`), its **hard errors block every run**, and its **warnings**
+> print under `--lint` alongside M14.5's and M20.5's — all advisory, `--lint`
+> never exits non-zero on its own. `--check` and the default run stay quiet
+> except for a blocking linguistic hard error.
+>
+> **Step-4 migration pass.** The 10 `levelfit` warnings the first pass recorded
+> are resolved: `levelfit` now normalises the English gloss on **both** sides
+> (`lemmaVariants()` — lowercase, drop `(…)` and terminal `? ! .`, split `/` and
+> `,` compounds, article/`to`-insensitive); `umbrella` / `how much is this?`
+> added to the word-list and `grey` widened to `grey / gray`; the two
+> case-ending grammar-demo pseudo-lexemes `lex:hom-11` / `lex:hom-12` recorded
+> in `content/_lint-allow.json` with a reason. **Linguistic lint: 0 errors,
+> 0 warnings.** (`--lint` still shows M14.5's 83 pre-existing orphan warnings —
+> vocabulary authored ahead of its curriculum slot, expected, not M20's.)
 
 ---
 
 ## 1. The linter
 
 `tools/content-lint.js` — pure, zero-dependency, `lint(data, wordlists, allow) →
-{ errors, warnings }`. No file IO. Called by `tools/build-content.js` as part of
-every run; **hard errors fail the build (`exit 1`), warnings are printed only**.
-It is a safety net, not the authority — a human still verifies every piece of
-Arabic. `content/_lint-allow.json` (`{ "<object-id>": ["<rule>", …] }`) silences
-a rule for one object where the flag is a deliberate, reviewed exception.
+{ errors, warnings }`. No file IO. `tools/build-content.js` imports it as
+`linguisticLint` (its own advisory `lint()` — M14.5 ḥarakāt/orphan + M20.5 drift
+— keeps that name). **Hard errors `exit 1` on every run** (`--check` included);
+**warnings surface only under `--lint`**, merged with the M14.5/M20.5 advisory
+list. It is a safety net, not the authority — a human still verifies every piece
+of Arabic. `content/_lint-allow.json` (`{ "<object-id>": ["<rule>", …] }`;
+`_`-prefixed keys are notes) silences a rule for one object where the flag is a
+deliberate, reviewed exception.
 
 | rule | severity | catches |
 |---|---|---|
@@ -48,14 +59,25 @@ a rule for one object where the flag is a deliberate, reviewed exception.
 
 ## 2. Linter on the current content set
 
-`node tools/build-content.js --lint`
+`node tools/build-content.js` (default / `--check`) — the linguistic linter
+runs, finds **0 hard errors**, and the build proceeds silently.
+
+`node tools/build-content.js --lint` — prints the combined advisory report:
 
 ```
-lint OK — 0 errors, 0 warning(s).
+content lint — 83 advisory warning(s):
+  ! orphaned: lex:gre-02 (lexemes) is not referenced by any prereq, syllable, …
+  ! …
 ```
 
-**0 errors.** Three genuine translit-dot inconsistencies the `emphatic` rule
-surfaced during calibration were fixed in `content/lexemes.json`:
+All 83 are M14.5's orphan check (vocabulary authored ahead of its curriculum
+slot). **Zero come from M20's linguistic linter** — no `linguistic — …` line,
+no `emphatic` / `register` / `ar-indic` error, no `harakat` / `longvowel` /
+`length` / `levelfit` warning.
+
+**0 linguistic errors.** Three genuine translit-dot inconsistencies the
+`emphatic` rule surfaced during calibration were fixed in
+`content/lexemes.json`:
 
 | id | was | now |
 |---|---|---|
@@ -205,28 +227,34 @@ string pulled from the lexeme objects, nothing hand-authored:
 }
 ```
 
-Live-checked: the lesson runs `explain → example-set → complete` with 0 console
-errors; the three verbs without an example sentence show "No example yet.", فَهِمَ
-shows its sentence; regression lessons (`harakat-intro` inline, `a1-colours`
-generated) still run; dark mode + 320 px clean; 0 Arabic-Indic digits in the
-rendered DOM.
+Live-checked (post-rebase): the lesson runs `explain → example-set → complete`
+with 0 console errors; the three verbs without an example sentence show
+"No example yet.", فَهِمَ shows its sentence; regression lessons (`harakat-intro`
+inline, `a1-colours` generated) still run; every nav view renders without
+throwing (incl. M21.5's analytics panel, M19.5's IndexedDB layer present); dark
+mode + 320 px clean; 0 Arabic-Indic digits in the rendered DOM.
 
 ---
 
-## 6. Build is green and byte-stable
+## 6. Build is green and byte-stable (rebased on `main`)
 
 ```
 node tools/build-content.js --check          → content OK and index.html in sync — 234 objects
+node tools/build-content.js --write-app       → no change (byte-stable)
 node tools/build-audio-manifest.js --check    → audio manifest is up to date (359 targets)
 node tools/lint-fixtures.js                    → ✅ ALL LINT FIXTURES BEHAVE
 m14-compare2.js (vs index.pre-m15.html)        → ✅ NO UNEXPECTED DIFFERENCES
 m15/m16/m17/m18/m19-func.js                    → ✅ ALL PASS
 ```
 
+(`tools/qa-harness.js` and `tools/a11y-audit.js` — added on `main` — need a
+Playwright Chromium download this environment doesn't have; the live-browser
+trace above covers the same ground.)
+
 The byte-compare confirms every existing derived structure
 (`readingPassages`, `grammarExamples`, syllables, all pre-existing `lessons`)
-is unchanged; the only new bytes are the three approved translit fixes and the
-one new `a1-verbs-communication` lesson.
+is unchanged; the only new bytes are the three translit fixes and the one new
+`a1-verbs-communication` lesson.
 
 ---
 
