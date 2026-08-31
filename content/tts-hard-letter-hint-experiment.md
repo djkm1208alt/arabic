@@ -84,7 +84,8 @@ zero-cost path for these specific letters and points at the two remaining
 real options from `AUDIO.md`'s Tier 1 plan:
 
 1. **Real native-speaker recordings** for these 6 (12 files: isolated sound +
-   name each) — the actual fix, not a workaround.
+   name each) — the actual fix, not a workaround. Ready-to-use recording
+   brief: [`tier1-hard-letters-recording-brief.md`](tier1-hard-letters-recording-brief.md).
 2. **A paid Arabic-capable neural TTS** (ElevenLabs, Google Cloud, Azure) as
    a stronger stopgap, pre-generated and dropped in through the same
    `RECORDED_AUDIO_MANIFEST` mechanism — untested here, but a categorically
