@@ -4151,11 +4151,122 @@ function emitInteraction(objectId, skill, itemType, correct, latencyMs) {
     }
     saveProgress();
     if (typeof foldReviewState === "function") foldReviewState();   // M19 — reschedule the object
+    // M19.5 — durable, unbounded mirror in IndexedDB, alongside the capped
+    // in-memory log above (which keeps its existing role unchanged). Never
+    // awaited: emitInteraction() is called synchronously from click handlers
+    // throughout the app and must not become async.
+    if (typeof mirrorInteractionToIdb === "function") {
+        mirrorInteractionToIdb({ objectId: objectId || null, skill: skill || (objectId ? skillOfObject(objectId) : null), itemType: itemType || "choice", correct: !!correct, latencyMs: (typeof latencyMs === "number" && isFinite(latencyMs)) ? Math.round(latencyMs) : null, ts: ts });
+    }
 }
 
 function skillOfObject(objectId) {
     const o = OBJECT_BY_ID.get(objectId);
     return (o && Array.isArray(o.skills) && o.skills[0]) || null;
+}
+
+/* ============================================================
+   MILESTONE 19.5 — LOCAL LEARNER STATE (IndexedDB companion store)
+   A durable, unbounded mirror of every InteractionEvent, alongside —
+   never replacing — the capped in-memory/localStorage interactionLog
+   above. Nothing here sits on any synchronous or boot-critical path:
+   `progress` stays exactly as M19 left it, synchronous and
+   localStorage-backed. Written here because M19's actual merged shape
+   (a 400-event ring buffer + incremental cursor) already solved the
+   "unbounded blob" problem pragmatically — this fills the one real gap
+   that leaves: events older than the cap are gone. See
+   m19.5_local_learner_state_scope.md for the full reasoning.
+   ============================================================ */
+const IDB_NAME = "learnArabicLocalState";
+const IDB_VERSION = 1;
+const IDB_STORE_EVENTS = "interactionEvents";
+
+let _idbOpenPromise = null;
+function safeIdbOpen() {
+    if (_idbOpenPromise) return _idbOpenPromise;
+    _idbOpenPromise = new Promise((resolve) => {
+        if (!("indexedDB" in window)) { resolve(null); return; }
+        let req;
+        try { req = indexedDB.open(IDB_NAME, IDB_VERSION); }
+        catch (e) { resolve(null); return; }
+        req.onupgradeneeded = () => {
+            const db = req.result;
+            if (!db.objectStoreNames.contains(IDB_STORE_EVENTS)) {
+                const store = db.createObjectStore(IDB_STORE_EVENTS, { keyPath: "id", autoIncrement: true });
+                store.createIndex("objectId", "objectId", { unique: false });
+                store.createIndex("ts", "ts", { unique: false });
+            }
+        };
+        req.onsuccess = () => resolve(req.result);
+        req.onerror = () => resolve(null);
+        req.onblocked = () => resolve(null);
+    });
+    return _idbOpenPromise;
+}
+
+async function safeIdbPut(storeName, value) {
+    const db = await safeIdbOpen();
+    if (!db) return false;
+    return new Promise((resolve) => {
+        try {
+            const tx = db.transaction(storeName, "readwrite");
+            tx.objectStore(storeName).put(value);
+            tx.oncomplete = () => resolve(true);
+            tx.onerror = () => resolve(false);
+            tx.onabort = () => resolve(false);
+        } catch (e) { resolve(false); }
+    });
+}
+
+async function safeIdbGetAllByIndex(storeName, indexName, key) {
+    const db = await safeIdbOpen();
+    if (!db) return [];
+    return new Promise((resolve) => {
+        try {
+            const tx = db.transaction(storeName, "readonly");
+            const req = tx.objectStore(storeName).index(indexName).getAll(key);
+            req.onsuccess = () => resolve(req.result || []);
+            req.onerror = () => resolve([]);
+        } catch (e) { resolve([]); }
+    });
+}
+
+async function safeIdbCount(storeName) {
+    const db = await safeIdbOpen();
+    if (!db) return 0;
+    return new Promise((resolve) => {
+        try {
+            const req = db.transaction(storeName, "readonly").objectStore(storeName).count();
+            req.onsuccess = () => resolve(req.result || 0);
+            req.onerror = () => resolve(0);
+        } catch (e) { resolve(0); }
+    });
+}
+
+function mirrorInteractionToIdb(event) {
+    safeIdbPut(IDB_STORE_EVENTS, event);
+}
+
+/* Every event ever recorded for one object, not just whatever survived the
+   400-event interactionLog cap. Async; not on any synchronous path today —
+   for M21.5's future analytics work. */
+async function getFullInteractionHistory(objectId) {
+    const events = await safeIdbGetAllByIndex(IDB_STORE_EVENTS, "objectId", objectId);
+    return events.sort((a, b) => (a.ts < b.ts ? -1 : a.ts > b.ts ? 1 : 0));
+}
+
+/* One-time backfill of whatever's currently in the capped interactionLog —
+   an honest partial backfill (that's the entire history that exists).
+   Versioned via a localStorage flag so it runs once per learner; safe to
+   re-run regardless (re-puts the same rows under the same ids). */
+const IDB_BACKFILL_FLAG = "learnArabic_idbBackfillDone_v1";
+async function backfillInteractionEventsToIdb() {
+    if (safeStorageGet(IDB_BACKFILL_FLAG) === "1") return;
+    const events = Array.isArray(progress.interactionLog) ? progress.interactionLog : [];
+    for (const e of events) {
+        await safeIdbPut(IDB_STORE_EVENTS, { objectId: e.objectId, skill: e.skill, itemType: e.itemType, correct: e.correct, latencyMs: e.latencyMs, ts: e.ts });
+    }
+    safeStorageSet(IDB_BACKFILL_FLAG, "1");
 }
 
 /* ============================================================
@@ -7393,6 +7504,7 @@ renderChips();
 rebuildDeck();
 renderAlphabetGrid();
 initRouter();
+backfillInteractionEventsToIdb(); // M19.5 — fire-and-forget, never blocks boot
 
 /* PWA groundwork — cache-first service worker for offline core shell
    + fonts. Registered after load so it never competes with initial
