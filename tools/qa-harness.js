@@ -125,16 +125,65 @@ function assertNoErrors(pageErrors, consoleErrors, failedRequestUrls, label) {
     assert(realErrors.length === 0, `${label}: ${realErrors.length} console.error(s) — ${realErrors.join(" | ")}`);
 }
 
+// A step rendered by the M18 exerciseTypes registry (match/cloze/build/order —
+// choice reuses renderMCQ and is handled by the generic loop below) wraps
+// itself in .exercise-host. Each sub-type resolves its interaction a
+// different way; distinguished by markup rather than hardcoding which lesson
+// uses which, so this stays correct as the generator emits new items.
+// Returns true if it did something (caller should re-check #lessonNextBtn),
+// false if there's no exercise-host on this step at all.
+async function resolveExerciseHost(page) {
+    const host = page.locator("#lessonStepBody .exercise-host");
+    if (!(await host.count())) return false;
+
+    // match: pair each left tile with its right-side counterpart via the
+    // shared data-i the renderer already assigns — deterministic regardless
+    // of shuffle order, and never guesses at a pairing.
+    if (await host.locator(".match-tile").count()) {
+        for (let guard = 0; guard < 25; guard++) {
+            const left = host.locator(".match-tile[data-side='l']:not(.done)").first();
+            if (!(await left.count())) break;
+            const dataI = await left.getAttribute("data-i");
+            await left.click({ force: true });
+            await host.locator(`.match-tile[data-side='r'][data-i='${dataI}']`).click({ force: true });
+            await page.waitForTimeout(60);
+        }
+        return true;
+    }
+
+    // cloze: one tile click resolves the whole interaction (right or wrong).
+    if (await host.locator(".cloze-gap").count()) {
+        await host.locator(".tile-bank .tile").first().click({ force: true });
+        return true;
+    }
+
+    // build / order: both share the same tile-bank -> answer -> Check
+    // pattern. Placement order doesn't gate progression — Check resolves
+    // the interaction whether the build/order ends up correct or not.
+    const checkBtn = host.locator(".exercise-check");
+    if (await checkBtn.count()) {
+        for (let guard = 0; guard < 25 && (await host.locator(".tile-bank .tile").count()); guard++) {
+            await host.locator(".tile-bank .tile").first().click({ force: true });
+            await page.waitForTimeout(30);
+        }
+        await checkBtn.click({ force: true });
+        return true;
+    }
+
+    return false; // an exercise-host type this harness doesn't yet recognize
+}
+
 // Resolve whichever gated interaction the current lesson step exposes
-// (a quiz/practice-choice option, a "Reveal Arabic" button, or a mid-step
-// "Next question →" button) without hardcoding per-step-type logic — every
-// step renderer that gates lessonCanProceed does so through one of these
-// three UI conventions (see renderMCQ / renderQuizStep / renderAudioExerciseStep
-// in index.html).
+// (a quiz/practice-choice option, a "Reveal Arabic" button, a mid-step
+// "Next question →" button, or an M18 exerciseTypes host) without
+// hardcoding per-lesson logic — every step renderer that gates
+// lessonCanProceed does so through one of these conventions (see renderMCQ /
+// renderQuizStep / renderAudioExerciseStep / exerciseTypes.* in index.html).
 async function resolveGatedStep(page) {
     for (let i = 0; i < 25; i++) {
         const disabled = await page.locator("#lessonNextBtn").isDisabled().catch(() => true);
         if (!disabled) return;
+        if (await resolveExerciseHost(page)) continue;
         const opt = page.locator("#lessonStepBody .quiz-opt:not([disabled])").first();
         if (await opt.count()) { await opt.click(); continue; }
         const reveal = page.locator("#lessonStepBody button.show-btn:not([disabled])").first();
