@@ -838,6 +838,25 @@
         background: var(--panel-border); color: var(--ink-soft); border-radius: 6px; font-size: 12px; font-family: var(--font-body);
     }
 
+    /* ---------- Review (M19) ---------- */
+    .review-callout {
+        background: var(--accent-soft); border: 1px solid var(--accent);
+        border-radius: var(--radius-md); padding: 16px; margin-bottom: 18px;
+    }
+    .review-callout h3 { margin: 0 0 4px; font-family: var(--font-ui); font-size: 17px; }
+    .review-callout p { margin: 0 0 12px; font-size: 13px; color: var(--ink); }
+    .review-queue-btns { display: flex; flex-wrap: wrap; gap: 8px; }
+    .review-queue-btn { padding: 9px 14px; font-size: 13px; }
+    .review-count {
+        display: inline-block; min-width: 18px; text-align: center; margin-inline-start: 6px;
+        background: var(--accent-ink); color: var(--accent); border-radius: 999px; font-size: 11px; padding: 1px 6px;
+    }
+    .review-progress-track { height: 4px; background: var(--panel-border); border-radius: 999px; margin: 10px 0 18px; overflow: hidden; }
+    .review-progress-fill { height: 100%; background: var(--accent); transition: width 0.2s ease; }
+    .review-next { display: block; width: 100%; margin-top: 16px; }
+    .review-summary { background: var(--panel); border: 1px solid var(--panel-border); border-radius: var(--radius-md); padding: 18px 16px; text-align: center; }
+    .review-summary p { margin: 0 0 6px; font-size: 14px; }
+
     /* ---------- Alphabet ---------- */
     .alphabet-grid {
         display: grid;
@@ -1483,6 +1502,11 @@
     <section id="view-practice" class="view" hidden>
         <h2 class="view-title">Practice</h2>
         <p class="view-sub">Sharpen specific skills.</p>
+        <div class="review-callout" id="reviewCard" hidden>
+            <h3>Time to review</h3>
+            <p id="reviewCardSummary">You have items ready to review.</p>
+            <div class="review-queue-btns" id="reviewQueueBtns"></div>
+        </div>
         <div class="practice-grid">
             <div class="practice-card">
                 <span class="practice-icon">📇</span>
@@ -1605,6 +1629,11 @@
     <!-- ================= PLACEMENT (reached via startPlacement(), not the main nav) ================= -->
     <section id="view-placement" class="view" hidden>
         <div id="placementBody"></div>
+    </section>
+
+    <!-- ================= REVIEW (reached via startReview(), not the main nav) ================= -->
+    <section id="view-review" class="view" hidden>
+        <div id="reviewBody"></div>
     </section>
 
     <details class="roadmap">
@@ -5504,7 +5533,7 @@ function initTheme() {
    markup, so even before this script runs (or if it throws)
    at most one panel can be visible.
    ============================================================ */
-const VIEW_IDS = ["home", "learn", "alphabet", "vocabulary", "practice", "progress", "lesson", "placement"];
+const VIEW_IDS = ["home", "learn", "alphabet", "vocabulary", "practice", "progress", "lesson", "placement", "review"];
 
 function setView(id, opts) {
     opts = opts || {};
@@ -5521,6 +5550,11 @@ function setView(id, opts) {
     if (id === "placement" && !placementState) {
         // Reached #placement directly / after a reload — no diagnostic in
         // progress, so bounce home rather than showing an empty shell.
+        id = "home";
+        opts = { fromHash: false };
+    }
+    if (id === "review" && !reviewRun) {
+        // Reached #review directly / after a reload — no session in progress.
         id = "home";
         opts = { fromHash: false };
     }
@@ -5546,6 +5580,8 @@ function setView(id, opts) {
     if (id === "learn") renderLearn();
     if (id === "progress") renderProgress();
     if (id === "placement") renderPlacement();
+    if (id === "practice") renderPracticeReviewCard();
+    if (id === "review") renderReview();
     if (id === "alphabet" && !alphabetRendered) renderAlphabetGrid();
 
     window.scrollTo(0, 0);
@@ -6050,6 +6086,149 @@ function placementOverride(sel) {
         placementState.results[sid] = { level: lvl, confidence: "self-set", reason: "you set this yourself" };
     }
     renderPlacement();
+}
+
+/* ============================================================
+   MILESTONE 19 — REVIEW RUNNER (the flow)
+   A self-contained #view-review flow: pick a queue, work through
+   its objects one exercise at a time (built via M18's
+   exerciseTypes), see a plain summary. Each answer emits an
+   InteractionEvent, so the schedule updates live. Not in the nav.
+   ============================================================ */
+const REVIEW_SESSION_MAX = 12;
+let reviewRun = null;
+
+const REVIEW_QUEUE_META = {
+    due:      { label: "Due for review", blurb: "Words and rules the schedule says to see again." },
+    mistakes: { label: "Fix mistakes",   blurb: "Items you last got wrong." },
+    weak:     { label: "Weak spots",     blurb: "Things that keep slipping." },
+    stale:    { label: "Not seen lately", blurb: "You haven't touched these in a while." },
+};
+
+/* Practice-view "Time to review" card — shown only when a queue has items. */
+function renderPracticeReviewCard() {
+    const card = document.getElementById("reviewCard");
+    if (!card) return;
+    const counts = reviewQueueCounts();
+    const total = counts.due + counts.mistakes + counts.weak + counts.stale;
+    if (!total) { card.hidden = true; return; }
+    card.hidden = false;
+    document.getElementById("reviewCardSummary").textContent =
+        counts.due ? `${counts.due} item${counts.due === 1 ? "" : "s"} due, and more to firm up.` : "A few things to firm up.";
+    const wrap = document.getElementById("reviewQueueBtns");
+    wrap.innerHTML = "";
+    ["due", "mistakes", "weak", "stale"].forEach(q => {
+        if (!counts[q]) return;
+        const b = document.createElement("button");
+        b.className = "pill show-btn review-queue-btn";
+        b.innerHTML = `${REVIEW_QUEUE_META[q].label} <span class="review-count">${counts[q]}</span>`;
+        b.onclick = () => startReview(q);
+        wrap.appendChild(b);
+    });
+}
+
+/* One exercise config for a single object, built from its own fields. */
+function reviewItemFor(id) {
+    const o = OBJECT_BY_ID.get(id);
+    if (!o) return null;
+    const shuf = a => shuffleArray(a);
+
+    if (o.kind === "lexeme") {
+        const single = !/\s/.test(o.ar) && graphemeTiles(o.ar).length >= 3 && graphemeTiles(o.ar).length <= 6;
+        if (single && Math.random() < 0.35) { const b = exGenBuild(id); if (b) return b; }
+        const sameTopic = LEXEMES.filter(x => x.topic === o.topic && x.id !== id);
+        const pool = sameTopic.length >= 3 ? sameTopic : LEXEMES.filter(x => x.id !== id);
+        const distr = shuf(pool).filter((v, i, a) => a.findIndex(x => x.en === v.en) === i && v.en !== o.en).slice(0, 3);
+        return { kind: "choice", skill: "vocabulary", objectIds: [id], arabicPrompt: o.ar,
+            prompt: "What does this word mean?",
+            options: shuf([o].concat(distr)).map(x => ({ label: x.en, correct: x.id === id })) };
+    }
+    if (o.kind === "text") {
+        const cz = exGenCloze(id); if (cz) return cz;
+        const distr = shuf(TEXTS.filter(t => t.id !== id && t.en !== o.en)).slice(0, 3);
+        return { kind: "choice", skill: "comprehension", objectIds: [id], arabicPrompt: o.unvowelled || o.vowelled,
+            prompt: "What does this say?",
+            options: shuf([o].concat(distr)).map(x => ({ label: x.en, correct: x.id === id })) };
+    }
+    if (o.kind === "grammar") {
+        const t = TEXTS.find(x => (o.examples || []).indexOf(x.id) !== -1);
+        if (t) { const cz = exGenCloze(t.id); if (cz) { cz.objectIds = [id, t.id]; return cz; } }
+        return { kind: "choice", skill: "grammar", objectIds: [id],
+            prompt: `Which rule is this? “${o.rule}”`,
+            options: shuf(GRAMMAR_POINTS).map(g => ({ label: g.name, correct: g.id === id })) };
+    }
+    // letters / marks / syllables — read-it recognition
+    const pool = o.kind === "syllable" ? SYLLABLE_OBJECTS : o.kind === "letter" ? LETTERS : MARKS;
+    const lab = x => x.translit || x.name || x.en || "";
+    const cue = o.ar || o.isolated || o.symbolWord || lab(o);
+    const distr = shuf(pool.filter(x => x.id !== id && lab(x) && lab(x) !== lab(o))).slice(0, 3);
+    if (!cue || distr.length < 2) return null;
+    return { kind: "choice", skill: "reading", objectIds: [id], arabicPrompt: cue,
+        prompt: "How is this read?",
+        options: shuf([o].concat(distr)).map(x => ({ label: lab(x), correct: x.id === id })) };
+}
+
+function startReview(queueName) {
+    const q = queueName || "due";
+    const ids = reviewQueue(q).slice(0, REVIEW_SESSION_MAX);
+    const items = ids.map(reviewItemFor).map((it, i) => it && { objId: ids[i], item: it }).filter(Boolean);
+    if (!items.length) return;
+    reviewRun = { queue: q, items: items, idx: 0, results: [], t0: null };
+    setView("review");
+    renderReview();
+}
+
+function exitReview() {
+    reviewRun = null;
+    setView("practice");
+}
+
+function renderReview() {
+    const body = document.getElementById("reviewBody");
+    if (!body || !reviewRun) { setView("practice"); return; }
+    const r = reviewRun;
+    if (r.idx >= r.items.length) return renderReviewDone(body);
+
+    const { objId, item } = r.items[r.idx];
+    const def = exerciseTypes[item.kind];
+    body.innerHTML =
+        `<h2 class="view-title">${REVIEW_QUEUE_META[r.queue].label}</h2>` +
+        `<p class="view-sub">Item ${r.idx + 1} of ${r.items.length}</p>` +
+        `<div class="review-progress-track"><div class="review-progress-fill" style="width:${(r.idx / r.items.length) * 100}%"></div></div>` +
+        `<div class="exercise-host" id="reviewHost"></div>`;
+    const host = document.getElementById("reviewHost");
+    r.t0 = (typeof performance !== "undefined" && performance.now) ? performance.now() : Date.now();
+
+    def.render(item, host, (res) => {
+        res = res || {};
+        const latency = ((typeof performance !== "undefined" && performance.now) ? performance.now() : Date.now()) - r.t0;
+        if (!def.selfManaged) {
+            bumpDailyGoal();
+            const results = res.objectResults || [{ objectId: (item.objectIds || [])[0] || objId, correct: !!res.correct }];
+            results.forEach(o => emitInteraction(o.objectId || objId, item.skill || null, item.kind, o.correct, latency));
+        }
+        r.results.push({ objId: objId, correct: !!res.correct });
+        const next = document.createElement("button");
+        next.className = "pill show-btn review-next";
+        next.textContent = r.idx + 1 < r.items.length ? "Next →" : "See summary →";
+        next.onclick = () => { r.idx++; renderReview(); };
+        host.appendChild(next);
+    });
+}
+
+function renderReviewDone(body) {
+    const r = reviewRun;
+    const got = r.results.filter(x => x.correct).length;
+    const missed = r.results.length - got;
+    body.innerHTML =
+        `<h2 class="view-title">Review done</h2>` +
+        `<div class="review-summary">` +
+        `<p><strong>${r.results.length}</strong> reviewed · <strong>${got}</strong> right` +
+        (missed ? ` · <strong>${missed}</strong> to see again soon` : "") + `</p>` +
+        `<p class="view-sub">Your schedule's been updated.</p>` +
+        `</div>` +
+        `<button class="pill show-btn review-next" onclick="exitReview()">Back to Practice</button>`;
+    reviewRun = null;
 }
 
 /* ============================================================
