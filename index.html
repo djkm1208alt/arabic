@@ -971,6 +971,9 @@
     .cat-progress-row { display: flex; justify-content: space-between; font-size: 13.5px; padding: 6px 0; border-bottom: 1px solid var(--panel-border); }
     .cat-progress-row:last-child { border-bottom: none; }
     .last-studied { font-size: 13px; color: var(--ink-soft); }
+    /* M21.5 — insights-panel sub-sections (time-per-strand / trend / activity / focus areas) */
+    .insights-subhead { margin: 14px 0 8px; font-size: 12.5px; font-weight: 700; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.3px; }
+    .insights-subhead:first-child { margin-top: 0; }
 
     @media (max-width: 560px) {
         .quick-links { grid-template-columns: repeat(2, 1fr); }
@@ -1625,6 +1628,12 @@
             <h3>Your skills</h3>
             <p id="progSkillsHeadline" class="last-studied"></p>
             <div id="progSkillsBreakdown" class="cat-progress-list"></div>
+        </div>
+        <div class="panel-block">
+            <h3>📊 Your insights</h3>
+            <p id="progInsightsHeadline" class="last-studied"></p>
+            <div id="progInsightsBody"></div>
+            <button class="pill show-btn" id="progExportBtn" onclick="exportLearnerDataAsJson()" style="margin-top: 10px;">⬇️ Export your data as JSON</button>
         </div>
         <div class="panel-block">
             <h3>Mastery by category</h3>
@@ -4243,6 +4252,18 @@ async function safeIdbCount(storeName) {
     });
 }
 
+async function safeIdbGetAll(storeName) {
+    const db = await safeIdbOpen();
+    if (!db) return [];
+    return new Promise((resolve) => {
+        try {
+            const req = db.transaction(storeName, "readonly").objectStore(storeName).getAll();
+            req.onsuccess = () => resolve(req.result || []);
+            req.onerror = () => resolve([]);
+        } catch (e) { resolve([]); }
+    });
+}
+
 function mirrorInteractionToIdb(event) {
     safeIdbPut(IDB_STORE_EVENTS, event);
 }
@@ -4252,6 +4273,14 @@ function mirrorInteractionToIdb(event) {
    for M21.5's future analytics work. */
 async function getFullInteractionHistory(objectId) {
     const events = await safeIdbGetAllByIndex(IDB_STORE_EVENTS, "objectId", objectId);
+    return events.sort((a, b) => (a.ts < b.ts ? -1 : a.ts > b.ts ? 1 : 0));
+}
+
+/* M21.5 — every event ever recorded, across every object. Async; used only
+   by the "export your data" feature, never on the panel's synchronous
+   render path (see m21.5 scope doc §1 for why). */
+async function getAllInteractionEvents() {
+    const events = await safeIdbGetAll(IDB_STORE_EVENTS);
     return events.sort((a, b) => (a.ts < b.ts ? -1 : a.ts > b.ts ? 1 : 0));
 }
 
@@ -6550,6 +6579,182 @@ function selectLetter(id) {
 /* ============================================================
    PROGRESS DASHBOARD
    ============================================================ */
+/* ============================================================
+   MILESTONE 21.5 — ANALYTICS & LEARNING INSIGHTS
+   Local-first only. Every number here is computed from real
+   recorded interactions (progress.interactionLog, the same capped
+   400-event log M19 already maintains) or from M19's own
+   reviewState/reviewQueue — never fabricated, and explicitly
+   "not enough data yet" below a minimum sample. Renders
+   synchronously, matching renderProgress()'s existing pattern; only
+   the export feature reaches into M19.5's IndexedDB store for the
+   full, unbounded history. See m21.5_analytics_learning_insights_scope.md.
+   ============================================================ */
+const INSIGHTS_MIN_TREND_SAMPLE = 8;   // fewer events than this and a trend bucket chart is misleading, not just sparse
+const INSIGHTS_TREND_BUCKETS = 8;
+const INSIGHTS_ACTIVITY_DAYS = 14;
+const INSIGHTS_WEAKEST_LIMIT = 8;
+
+/* { [skillId]: { count, timeMs } } — timeMs sums only events with a known
+   latencyMs; count still includes events where it's null, so "count" is
+   always a true total even when "timeMs" understates practice time. */
+function skillPracticeTime() {
+    const out = {};
+    for (const e of progress.interactionLog || []) {
+        const skill = e.skill || (e.objectId ? skillOfObject(e.objectId) : null);
+        if (!skill) continue;
+        if (!out[skill]) out[skill] = { count: 0, timeMs: 0 };
+        out[skill].count++;
+        if (typeof e.latencyMs === "number" && isFinite(e.latencyMs)) out[skill].timeMs += e.latencyMs;
+    }
+    return out;
+}
+
+/* Chronological accuracy per bucket over the capped log. null (not an
+   empty array) below the minimum sample — the caller must render an
+   honest "not enough data yet" state, never a misleading near-empty chart. */
+function accuracyTrend() {
+    const log = progress.interactionLog || [];
+    if (log.length < INSIGHTS_MIN_TREND_SAMPLE) return null;
+    const bucketCount = Math.min(INSIGHTS_TREND_BUCKETS, log.length);
+    const size = Math.ceil(log.length / bucketCount);
+    const buckets = [];
+    for (let i = 0; i < log.length; i += size) {
+        const slice = log.slice(i, i + size);
+        const correct = slice.filter(e => e.correct).length;
+        buckets.push(Math.round((correct / slice.length) * 100));
+    }
+    return buckets;
+}
+
+/* Interactions per calendar day, for however many recent distinct days are
+   actually present in the capped log — honest about the log's own bound;
+   this is "recent activity," not a lifetime streak history. */
+function activityByDay() {
+    const byDay = {};
+    for (const e of progress.interactionLog || []) {
+        const day = new Date(e.ts).toDateString();
+        byDay[day] = (byDay[day] || 0) + 1;
+    }
+    const days = Object.keys(byDay).sort((a, b) => new Date(a) - new Date(b));
+    return days.slice(-INSIGHTS_ACTIVITY_DAYS).map(day => ({ day, count: byDay[day] }));
+}
+
+/* Reuses M19's own reviewQueue("weak") directly — no separate query layer,
+   no duplicated logic. Framed as "Focus areas," not a failure list. */
+function weakestFocusAreas(limit) {
+    return reviewQueue("weak")
+        .map(id => OBJECT_BY_ID.get(id))
+        .filter(Boolean)
+        .slice(0, limit || INSIGHTS_WEAKEST_LIMIT);
+}
+
+/* Kind-agnostic display text — a focus-area object can be a lexeme, letter,
+   mark, or syllable, and each stores its Arabic text under a different
+   field. */
+function insightsObjectDisplayText(o) {
+    if (!o) return { ar: "?", translit: "" };
+    if (o.kind === "letter") return { ar: (o.forms && o.forms.isolated) || o.ar, translit: o.translit };
+    if (o.kind === "mark") return { ar: o.symbol || o.ar, translit: o.translit };
+    return { ar: o.ar || o.name || o.id, translit: o.translit || "" };
+}
+
+/* A minimal inline-SVG bar chart. `bars`: [{ label, value, maxValue }].
+   No dependency, no animation — just enough to make a trend legible. */
+function svgBarChart(values, opts) {
+    opts = opts || {};
+    const w = opts.width || 280, h = opts.height || 60, gap = 3;
+    const max = Math.max(1, ...values);
+    const barW = (w - gap * (values.length - 1)) / values.length;
+    const bars = values.map((v, i) => {
+        const barH = Math.max(1, (v / max) * (h - 4));
+        const x = i * (barW + gap);
+        const y = h - barH;
+        return `<rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${barW.toFixed(1)}" height="${barH.toFixed(1)}" rx="2" fill="var(--accent)" />`;
+    }).join("");
+    return `<svg viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" role="img" aria-label="${opts.ariaLabel || "chart"}">${bars}</svg>`;
+}
+
+function renderInsightsPanel() {
+    const headEl = document.getElementById("progInsightsHeadline");
+    const body = document.getElementById("progInsightsBody");
+    const log = progress.interactionLog || [];
+
+    if (log.length === 0) {
+        headEl.textContent = "Practice a few words or lessons to start building your insights.";
+        body.innerHTML = "";
+        return;
+    }
+    headEl.textContent = `Based on your last ${log.length} graded answer${log.length === 1 ? "" : "s"}.`;
+
+    const parts = [];
+
+    // Time-per-strand
+    const time = skillPracticeTime();
+    const timeRows = SKILLS
+        .map(s => ({ s, t: time[s.id] }))
+        .filter(x => x.t && x.t.count > 0)
+        .map(({ s, t }) => {
+            const mins = t.timeMs > 0 ? `${Math.max(1, Math.round(t.timeMs / 60000))} min` : `${t.count} answer${t.count === 1 ? "" : "s"}`;
+            return `<div class="cat-progress-row"><span>${s.name}</span><span>${mins}</span></div>`;
+        }).join("");
+    parts.push(`<h4 class="insights-subhead">Practice time by strand</h4><div class="cat-progress-list">${timeRows || "<p class=\"last-studied\">Not enough data yet.</p>"}</div>`);
+
+    // Accuracy trend
+    const trend = accuracyTrend();
+    parts.push(`<h4 class="insights-subhead">Accuracy trend</h4>` +
+        (trend ? svgBarChart(trend, { ariaLabel: "Accuracy over recent practice, earliest to most recent", width: 280, height: 60 })
+            : `<p class="last-studied">Not enough data yet — keep practising to see a trend.</p>`));
+
+    // Recent activity
+    const activity = activityByDay();
+    parts.push(`<h4 class="insights-subhead">Recent activity</h4>` +
+        (activity.length ? svgBarChart(activity.map(a => a.count), { ariaLabel: `Answers per day over the last ${activity.length} active day(s)`, width: 280, height: 50 })
+            : `<p class="last-studied">Not enough data yet.</p>`));
+
+    // Focus areas (weakest-N)
+    const weakest = weakestFocusAreas();
+    const weakestRows = weakest.map(o => {
+        const disp = insightsObjectDisplayText(o);
+        return `<div class="cat-progress-row"><span lang="ar" dir="rtl">${disp.ar}</span><span>${disp.translit}</span></div>`;
+    }).join("");
+    parts.push(`<h4 class="insights-subhead">Focus areas</h4><div class="cat-progress-list">${weakestRows || "<p class=\"last-studied\">Nothing needs extra focus right now — nice work.</p>"}</div>`);
+
+    body.innerHTML = parts.join("");
+}
+
+/* Export the learner's own data as a downloadable JSON file. Async: reaches
+   into M19.5's IndexedDB store for the full, unbounded interaction history
+   (a strict superset of the capped in-memory log), alongside the current
+   progress snapshot. No server involved — the browser hands the learner a
+   file, nothing is sent anywhere. */
+async function exportLearnerDataAsJson() {
+    const btn = document.getElementById("progExportBtn");
+    const originalText = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = "Preparing…";
+    try {
+        const fullHistory = await getAllInteractionEvents();
+        const payload = {
+            exportedAt: new Date().toISOString(),
+            progress: progress,
+            fullInteractionHistory: fullHistory,
+        };
+        const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = `learn-arabic-data-${new Date().toISOString().slice(0, 10)}.json`;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(url);
+    } finally {
+        btn.disabled = false;
+        btn.textContent = originalText;
+    }
+}
+
 function renderProgress() {
     const { total, masteredCount } = computeMasteryStats();
     document.getElementById("progMastered").textContent = `${masteredCount}/${total}`;
@@ -6564,6 +6769,7 @@ function renderProgress() {
     document.getElementById("progGoalFill").style.width = Math.min(100, (todayCount / goal) * 100) + "%";
 
     renderSkillsPanel();
+    renderInsightsPanel();
 
     const catWrap = document.getElementById("progCategoryBreakdown");
     catWrap.innerHTML = "";
