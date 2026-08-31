@@ -54,6 +54,28 @@ Register the webhook endpoint's URL in the Stripe dashboard for at least:
 `checkout.session.completed`, `customer.subscription.updated`,
 `customer.subscription.deleted`.
 
+## Running the Edge Function verification yourself
+
+`testing/functions/` runs the **real** `functions/*/index.ts` code (bundled
+with esbuild, Deno globals shimmed) against a local mock Stripe/Supabase
+server, using the real `stripe` and `@supabase/supabase-js` npm packages —
+no network egress needed, no live credentials needed:
+
+```
+cd testing/functions
+npm install
+npm test
+```
+
+A clean run ends with `N passed, 0 failed`. This is **not** a substitute for
+a real deploy against live Supabase + Stripe test-mode projects (network
+policy in the sandbox this was built in blocks `supabase.com`,
+`api.stripe.com`, `esm.sh`, and `deno.land` outright — not a credentials
+problem, an egress one) — but it does exercise every real code path: JWT
+identity resolution, Stripe signature verification, customer reuse vs.
+creation, and the exact upsert payload written to `subscriptions` for all
+three webhook event types.
+
 ## Running the local RLS verification yourself
 
 Requires a local Postgres server (no Supabase CLI or Docker needed):

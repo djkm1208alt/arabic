@@ -40,7 +40,7 @@ Every table: `auth.uid() = user_id` (or `= id` for `profiles`) on every policy. 
 - **`create-checkout-session`** — client-invoked (with the caller's Supabase JWT). Resolves the caller's identity via `auth.getUser()` on the incoming JWT — never trusts a user id passed in the request body. Creates (or reuses) a Stripe customer, starts a Checkout session, returns the redirect URL.
 - **`stripe-webhook`** — Stripe-invoked directly (registered as a webhook endpoint, not called by the app). Verifies the Stripe signature before touching anything. Upserts `subscriptions` using the `service_role` key. Handles `checkout.session.completed`, `customer.subscription.updated`, `customer.subscription.deleted`; every other event type is ignored on purpose.
 
-Both are genuinely new code with no live Stripe/Supabase project or Deno runtime available in this sandbox to execute end-to-end — see §6 for exactly what was and wasn't verified.
+Both are genuinely new code; no live Stripe/Supabase project or Deno runtime is reachable from this sandbox (network policy, not missing credentials), so verification instead runs the real code against real SDKs via a local mock server — see §6 for exactly what was and wasn't verified.
 
 ## 6. Verification
 
@@ -56,10 +56,11 @@ Both are genuinely new code with no live Stripe/Supabase project or Deno runtime
    - `case_error` is `null`/`false` while `produced_case` is unset, becomes `true` once `expected_case ≠ produced_case`, and `false` again once they match — the generated column's logic verified through all three states, not just read from the DDL.
 3. Re-ran the whole sequence (drop DB → recreate → mock_auth → schema → smoke test) end-to-end from a clean database as a final check — passed with no manual patching, after fixing a grant-ordering bug the first attempt surfaced (`alter default privileges` needed to be set before `schema.sql` creates the tables, not after).
 
-**Edge Functions — verified by syntax check and manual review, not live execution:**
+**Edge Functions — actually executed against real SDKs via a local mock server:**
 
-- `npx esbuild` transform-only pass on both files confirms valid TypeScript syntax.
-- No Deno runtime, Supabase CLI, or live Stripe test-mode credentials are available in this sandbox, so the functions were **not** executed end-to-end against a real Stripe/Supabase project. This is stated plainly rather than glossed over — consistent with this project's own "never fabricate a result" standard. The logic (JWT-based identity resolution, signature verification before any DB write, `service_role` for the one legitimate writer of `subscriptions`) was checked against Stripe's and Supabase's own documented API shapes, but a real deploy-and-test pass against a live Supabase project is still owed before M23 ships a payment gate on top of this.
+`deno.land`/`esm.sh`/`supabase.com`/`api.stripe.com` are all blocked outright by this sandbox's egress policy (confirmed via the proxy status endpoint — a network wall, not a missing-credentials gap). Rather than stop at a syntax check, `supabase/testing/functions/` bundles the real function source (esbuild, with Deno's `esm.sh` imports redirected to the real `stripe`/`@supabase/supabase-js` npm packages) and runs it in a Node `vm` against a local mock Stripe/Supabase server — 21 assertions passing, covering identity resolution, real HMAC signature verification (via the Stripe SDK's own test-signing utility), customer reuse, and the exact `subscriptions` upsert payload for all three webhook event types. See [content/m22-backend-foundation-review.md](content/m22-backend-foundation-review.md) for detail — including a real bug the harness caught in itself (a mock-server filter gap), not in the shipped code.
+
+What remains, stated plainly: a deploy against a genuinely live Supabase project and Stripe test-mode account. That stays blocked by this sandbox's network policy specifically, not by anything in the code — `supabase/README.md` documents exactly how to do it once a real project is reachable.
 
 **Not touched, confirmed by diff:** `index.html`, every `content/*.json` file, `tools/*.js` — this milestone is additive-only under `supabase/`.
 
