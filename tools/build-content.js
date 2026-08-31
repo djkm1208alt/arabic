@@ -31,6 +31,13 @@
      node tools/build-content.js --write-app
          Validate, then refresh the CONTENT block inside index.html.
 
+     node tools/build-content.js --lint
+         Validate (as above — these checks are always on and always block),
+         then run additional M14.5 lint checks: ḥarakāt-coverage and
+         orphaned-object warnings. These are advisory only — content quality
+         signals for a human to review, not hard errors — so --lint never
+         exits non-zero on its own. No files written.
+
    Running it twice with no source change produces byte-identical output.
    Line-ending agnostic (see .gitattributes).
    ============================================================================= */
@@ -329,6 +336,70 @@ function load() {
     return { errors, data, legacyMap };
 }
 
+/* -------------------------------------------------------------------------- */
+/* M14.5 — lint (advisory, non-blocking)                                    */
+/* -------------------------------------------------------------------------- */
+// Arabic combining diacritics: the three ḥarakāt (fatḥah/kasrah/ḍammah),
+// sukūn, shaddah, tanwīn (three forms), and madd/dagger-alif. Presence of
+// any one of these is what "carries ḥarakāt" means for coverage purposes —
+// this checks *presence*, never correctness, per build-content.js's own
+// stated scope (structural/coverage only, not linguistic).
+const HARAKAT_RE = /[ً-ْٰ]/;
+
+function lint(data, legacyMap) {
+    const warnings = [];
+
+    /* ḥarakāt coverage — fields expected to carry vowel marks */
+    const checkHarakat = (label, text) => {
+        if (typeof text === "string" && text && !HARAKAT_RE.test(text)) warnings.push(`ḥarakāt coverage: ${label} has no vowel marks — "${text}"`);
+    };
+    for (const l of data.lexemes) {
+        checkHarakat(`lexeme ${l.id} (ar)`, l.ar);
+        if (l.example) checkHarakat(`lexeme ${l.id} (example.ar)`, l.example.ar);
+    }
+    for (const lt of data.letters) checkHarakat(`letter ${lt.id} (name)`, lt.name);
+    for (const s of data.syllables) checkHarakat(`syllable ${s.id} (ar)`, s.ar);
+    for (const t of data.texts) {
+        checkHarakat(`text ${t.id} (vowelled)`, t.vowelled);
+        for (const [i, w] of (t.words || []).entries()) checkHarakat(`text ${t.id} (words[${i}].surface)`, w.surface);
+    }
+
+    /* orphaned objects — never referenced by a prereq edge, a syllable's
+       exampleWord, a grammar example, a curriculum lesson objective, or the
+       legacy id map. Advisory: plenty of content is legitimately authored
+       ahead of the curriculum slot that will eventually reference it. */
+    const referenced = new Set();
+    for (const key of Object.keys(FILES)) for (const o of data[key]) for (const p of (o.prereqs || [])) referenced.add(p);
+    for (const s of data.syllables) if (s.exampleWord) referenced.add(s.exampleWord);
+    for (const g of data.grammar) for (const ref of (g.examples || [])) referenced.add(ref);
+    if (data.curriculum) for (const ls of data.curriculum.lessons) for (const oid of (ls.objectives || [])) referenced.add(oid);
+    if (legacyMap) for (const v of Object.values(legacyMap)) referenced.add(v);
+
+    const ORPHAN_KINDS = ["lexemes", "texts", "grammar"]; // reference/foundational content (letters, marks, syllables) is expected to stand alone
+    for (const key of ORPHAN_KINDS) for (const o of data[key]) {
+        if (!referenced.has(o.id)) warnings.push(`orphaned: ${o.id} (${key}) is not referenced by any prereq, syllable, grammar example, curriculum objective, or legacy map`);
+    }
+
+    /* M20.5 — texts.json's hand-authored reduced/unvowelled drift check.
+       Mirrors index.html's deriveReducedForm()/deriveUnvowelledForm()
+       exactly (same two regexes) so this can never disagree with what the
+       app itself would compute. A mismatch is a flag for human review, not
+       an auto-fix — some "reduced" choices are stylistic (see the M20.5
+       scope doc); an empty reduced/unvowelled field is unauthored, not
+       wrong, and isn't flagged. */
+    const deriveReducedForm = (v) => String(v || "").replace(/[ً-ّٰۖ-ۭ]/g, "");
+    const deriveUnvowelledForm = (v) => String(v || "").replace(/[ً-ْٰۖ-ۭ]/g, "");
+    for (const t of data.texts) {
+        if (!t.vowelled) continue;
+        if (t.reduced && deriveReducedForm(t.vowelled) !== t.reduced)
+            warnings.push(`text ${t.id}: reduced "${t.reduced}" does not match the mechanical derivation "${deriveReducedForm(t.vowelled)}" from vowelled`);
+        if (t.unvowelled && deriveUnvowelledForm(t.vowelled) !== t.unvowelled)
+            warnings.push(`text ${t.id}: unvowelled "${t.unvowelled}" does not match the mechanical derivation "${deriveUnvowelledForm(t.vowelled)}" from vowelled`);
+    }
+
+    return warnings;
+}
+
 function findCycle(graph) {
     const WHITE = 0, GREY = 1, BLACK = 2;
     const color = new Map([...graph.keys()].map(k => [k, WHITE]));
@@ -410,6 +481,17 @@ function main() {
         console.error("content validation FAILED:");
         errors.forEach(e => console.error("  - " + e));
         process.exit(1);
+    }
+
+    if (args.has("--lint")) {
+        const warnings = lint(data, legacyMap);
+        if (warnings.length) {
+            console.log(`content lint — ${warnings.length} advisory warning(s):`);
+            warnings.forEach(w => console.log("  ! " + w));
+        } else {
+            console.log("content lint — clean, no advisory warnings.");
+        }
+        return;
     }
 
     const counts = Object.fromEntries(Object.keys(FILES).map(k => [k, data[k].length]));

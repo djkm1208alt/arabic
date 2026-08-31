@@ -1,0 +1,16 @@
+{
+  "name": "arabic-learning-app",
+  "private": true,
+  "description": "Dev-time tooling for the single-file Arabic learning app. The shipped app (index.html) has zero runtime dependencies; everything here is build/QA tooling only.",
+  "scripts": {
+    "content:validate": "node tools/build-content.js",
+    "content:check": "node tools/build-content.js --check",
+    "content:lint": "node tools/build-content.js --lint",
+    "content:write": "node tools/build-content.js --write-app",
+    "audio:manifest": "node tools/build-audio-manifest.js",
+    "qa": "node tools/qa-harness.js"
+  },
+  "devDependencies": {
+    "playwright": "1.56.1"
+  }
+}
