@@ -7,13 +7,13 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 
 | | count |
 |---|---:|
-| Distinct targets | 359 |
-| — Tier 1 (foundation) | 98 |
+| Distinct targets | 380 |
+| — Tier 1 (foundation) | 119 |
 | — Tier 2 (vocabulary) | 183 |
 | — Tier 3 (stays TTS) | 78 |
-| Unique native recordings needed (Tier 1+2) | 275 |
+| Unique native recordings needed (Tier 1+2) | 296 |
 | — of those, present on disk | 0 |
-| — still missing | 275 |
+| — still missing | 296 |
 | Aliases (share another recording) | 6 |
 
 ## Tier 1 — Foundation
@@ -82,7 +82,28 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `marks/fathatayn.mp3` | فً | an | fatḥatayn on a carrier letter | recording | tts |
 | `marks/kasra.mp3` | فِ | i | kasrah on a carrier letter | recording | tts |
 | `marks/kasratayn.mp3` | فٍ | in | kasratayn on a carrier letter | recording | tts |
+| `sentences/gram-def-def.mp3` | الْبَابُ | al-bābu | the door | recording | tts |
+| `sentences/gram-def-indef.mp3` | بَابٌ | bābun | a door | recording | tts |
+| `sentences/gram-def-sentence.mp3` | الْقَلَمُ جَدِيدٌ | al-qalamu jadīdun | The pen is new. | recording | tts |
+| `sentences/gram-dem-book.mp3` | هَذَا كِتَابٌ | hādhā kitābun | This is a book. | recording | tts |
+| `sentences/gram-dem-girl.mp3` | هَذِهِ بِنْتٌ | hādhihi bintun | This is a girl. | recording | tts |
+| `sentences/gram-dem-the-house.mp3` | هَذَا الْبَيْتُ كَبِيرٌ | hādhā al-baytu kabīrun | This house is big. | recording | tts |
 | `sentences/gram-gender-bint.mp3` | الْبِنْتُ كَبِيرَةٌ | al-bintu kabīratun | The girl is big. | recording | tts |
+| `sentences/gram-neg-no-water.mp3` | لَا مَاءَ فِي الْحَقِيبَةِ | lā māʾa fī al-ḥaqībati | There is no water in the bag. | recording | tts |
+| `sentences/gram-neg-not-big.mp3` | لَيْسَ الْبَيْتُ كَبِيرًا | laysa al-baytu kabīran | The house is not big. | recording | tts |
+| `sentences/gram-neg-not-book.mp3` | هَذَا لَيْسَ كِتَابًا | hādhā laysa kitāban | This is not a book. | recording | tts |
+| `sentences/gram-nominal-father.mp3` | الْأَبُ سَعِيدٌ | al-abu saʿīdun | The father is happy. | recording | tts |
+| `sentences/gram-nominal-mother.mp3` | الْأُمُّ سَعِيدَةٌ | al-ummu saʿīdatun | The mother is happy. | recording | tts |
+| `sentences/gram-nominal-teacher.mp3` | الْمُعَلِّمُ فِي الْمَدْرَسَةِ | al-muʿallimu fī al-madrasati | The teacher is in the school. | recording | tts |
+| `sentences/gram-number-broken-pl.mp3` | الْكُتُبُ جَمِيلَةٌ | al-kutubu jamīlatun | The books are beautiful. | recording | tts |
+| `sentences/gram-number-dual.mp3` | الْكِتَابَانِ جَدِيدَانِ | al-kitābāni jadīdāni | The two books are new. | recording | tts |
+| `sentences/gram-number-sound-pl.mp3` | هُمْ مُعَلِّمُونَ | hum muʿallimūna | They are teachers. | recording | tts |
+| `sentences/gram-poss-her-bag.mp3` | حَقِيبَتُهَا جَمِيلَةٌ | ḥaqībatuhā jamīlatun | Her bag is beautiful. | recording | tts |
+| `sentences/gram-poss-my-book.mp3` | كِتَابِي جَدِيدٌ | kitābī jadīdun | My book is new. | recording | tts |
+| `sentences/gram-poss-your-house.mp3` | بَيْتُكَ كَبِيرٌ | baytuka kabīrun | Your house is big. | recording | tts |
+| `sentences/gram-prep-from-city.mp3` | هُوَ مِنَ الْمَدِينَةِ | huwa mina al-madīnati | He is from the city. | recording | tts |
+| `sentences/gram-prep-in-bag.mp3` | الْكِتَابُ فِي الْحَقِيبَةِ | al-kitābu fī al-ḥaqībati | The book is in the bag. | recording | tts |
+| `sentences/gram-prep-on-table.mp3` | الْقَلَمُ عَلَى الطَّاوِلَةِ | al-qalamu ʿalā aṭ-ṭāwilati | The pen is on the table. | recording | tts |
 | `sentences/gram-sunletter-shams.mp3` | الشَّمْسُ كَبِيرَةٌ | ash-shamsu kabīratun | The sun is big. | recording | tts |
 | `sentences/gram-verb-he.mp3` | هُوَ يَذْهَبُ إِلَى الْمَدْرَسَةِ | huwa yadhhabu ilā al-madrasati | He goes to school. | recording | tts |
 | `sentences/gram-verb-she.mp3` | هِيَ تَذْهَبُ إِلَى الْمَدْرَسَةِ | hiya tadhhabu ilā al-madrasati | She goes to school. | recording | tts |

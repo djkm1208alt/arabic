@@ -388,6 +388,22 @@
       "objectives": ["gr:gender-agreement","gr:sun-moon","gr:present-tense","txt:gram-gender-bint","txt:gram-sunletter-shams","txt:gram-verb-he","txt:gram-verb-she","txt:gram-verb-they"],
       "status": "available", "source": "steps:grammar-intro"
     },
+    {
+      "id": "a1-grammar-structural", "unitId": "a1-u1", "order": 3,
+      "title": "How Arabic Sentences Are Built",
+      "blurb": "Singular / dual / plural, definite vs. indefinite, the verbless sentence, and negation with لَيْسَ.",
+      "level": "A1", "skills": ["grammar", "reading"],
+      "objectives": ["gr:noun-number","gr:definiteness","gr:nominal-sentence","gr:negation-a1","txt:gram-number-dual","txt:gram-number-sound-pl","txt:gram-number-broken-pl","txt:gram-def-indef","txt:gram-def-def","txt:gram-def-sentence","txt:gram-nominal-father","txt:gram-nominal-mother","txt:gram-nominal-teacher","txt:gram-neg-not-big","txt:gram-neg-not-book","txt:gram-neg-no-water"],
+      "status": "available", "source": "steps:a1-grammar-structural"
+    },
+    {
+      "id": "a1-grammar-function-words", "unitId": "a1-u1", "order": 4,
+      "title": "This, That, My, In, On",
+      "blurb": "Demonstratives هَذَا / هَذِهِ, the possessive endings, and the core prepositions with their genitive ending.",
+      "level": "A1", "skills": ["grammar", "reading"],
+      "objectives": ["gr:demonstratives","gr:attached-possessive","gr:core-prepositions","txt:gram-dem-book","txt:gram-dem-girl","txt:gram-dem-the-house","txt:gram-poss-my-book","txt:gram-poss-your-house","txt:gram-poss-her-bag","txt:gram-prep-in-bag","txt:gram-prep-on-table","txt:gram-prep-from-city"],
+      "status": "available", "source": "steps:a1-grammar-function-words"
+    },
 
     {
       "id": "unvowelled-reading", "unitId": "a1-u2", "order": 1,

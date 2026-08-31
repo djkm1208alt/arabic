@@ -329,8 +329,12 @@ function load() {
                 if (!ls.objectives || ls.objectives.length === 0) errors.push(`curriculum lesson ${ls.id}: source "generate" needs at least one objective`);
             } else if (src.startsWith("steps:")) {
                 const key = src.slice(6);
-                if (catalogLessonIds && !catalogLessonIds.has(key))
-                    errors.push(`curriculum lesson ${ls.id}: source "${src}" — no lesson "${key}" in the index.html catalog`);
+                // resolves to an inline index.html catalog lesson OR a
+                // content/lessons/*.json data lesson (folded into the catalog at runtime)
+                const known = (catalogLessonIds && catalogLessonIds.has(key))
+                    || (data.lessons || []).some(L => L && L.id === key);
+                if (catalogLessonIds && !known)
+                    errors.push(`curriculum lesson ${ls.id}: source "${src}" — no lesson "${key}" in the catalog or content/lessons/`);
             } else if (src.startsWith("view:")) {
                 if (!VIEW_TARGETS.has(src.slice(5))) errors.push(`curriculum lesson ${ls.id}: source "${src}" — unknown view`);
             } else {
@@ -384,8 +388,12 @@ function load() {
                     errors.push(`lesson ${L.id}: step[${j}] type "${s && s.type}" is not a known renderer`);
                 if (s && s.fromObjectives && !FROM_OBJECTIVES_OK.has(s.type))
                     errors.push(`lesson ${L.id}: step[${j}] "fromObjectives" is only valid on ${[...FROM_OBJECTIVES_OK].join(" / ")}`);
-                if (s && s.fromObjectives && !(L.objectives || []).some(oid => { const o = data._objById.get(oid); return o && o.kind === "lexeme"; }))
-                    errors.push(`lesson ${L.id}: step[${j}] "fromObjectives" but the lesson has no lexeme objectives to expand`);
+                if (s && s.fromObjectives) {
+                    // example-set expands lexeme objectives; reading-practice expands lexeme AND text objectives
+                    const wantKinds = s.type === "example-set" ? ["lexeme"] : ["lexeme", "text"];
+                    if (!(L.objectives || []).some(oid => { const o = data._objById.get(oid); return o && wantKinds.includes(o.kind); }))
+                        errors.push(`lesson ${L.id}: step[${j}] "fromObjectives" but the lesson has no ${wantKinds.join("/")} objectives to expand`);
+                }
             });
         }
     }
@@ -519,13 +527,21 @@ function compile(data, legacyMap) {
         const obj = id => data._objById && data._objById.get(id);
         const steps = (L.steps || []).map(s => {
             if ((s.type === "example-set" || s.type === "reading-practice") && s.fromObjectives) {
-                const lex = (L.objectives || []).map(obj).filter(o => o && o.kind === "lexeme");
+                const objs = (L.objectives || []).map(obj).filter(Boolean);
+                const lex = objs.filter(o => o.kind === "lexeme");
                 const out = Object.assign({}, s); delete out.fromObjectives;
                 const exOf = l => (l.example && l.example.ar)
                     ? [{ arabic: l.example.ar, translit: l.example.translit || "", english: l.example.en || "" }]
                     : [];
-                if (s.type === "example-set") out.items = lex.map(l => ({ symbolWord: l.ar, name: l.en, translit: l.translit, sound: l.pos || "", examples: exOf(l) }));
-                else out.items = lex.map(l => ({ arabic: l.ar, translit: l.translit, english: l.en }));
+                if (s.type === "example-set") {
+                    out.items = lex.map(l => ({ symbolWord: l.ar, name: l.en, translit: l.translit, sound: l.pos || "", examples: exOf(l) }));
+                } else {
+                    // reading-practice: lexeme citation forms, then text example sentences —
+                    // both pulled from the referenced objects, no Arabic inlined in the lesson
+                    const txt = objs.filter(o => o.kind === "text");
+                    out.items = lex.map(l => ({ arabic: l.ar, translit: l.translit, english: l.en }))
+                        .concat(txt.map(t => ({ arabic: t.vowelled, translit: t.translit, english: t.en })));
+                }
                 return out;
             }
             return s;
