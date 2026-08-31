@@ -4048,6 +4048,12 @@ function loadProgress() {
            M19's review scheduler. Additive; no backfill (no historical
            per-object data to reconstruct). */
         interactionLog: Array.isArray(saved.interactionLog) ? saved.interactionLog.slice(-INTERACTION_LOG_CAP) : [],
+        /* M19 — per-object review schedule, derived + incrementally cached.
+           reviewCursor is the ts of the last interaction already folded in;
+           foldReviewState() (called on load) seeds from `mastered` then folds
+           any newer events, so the state survives the interactionLog rotation. */
+        reviewState: (saved.reviewState && typeof saved.reviewState === "object") ? saved.reviewState : {},
+        reviewCursor: saved.reviewCursor || null,
     };
 }
 
@@ -4078,11 +4084,175 @@ function emitInteraction(objectId, skill, itemType, correct, latencyMs) {
         progress.interactionLog = progress.interactionLog.slice(-INTERACTION_LOG_CAP);
     }
     saveProgress();
+    if (typeof foldReviewState === "function") foldReviewState();   // M19 — reschedule the object
 }
 
 function skillOfObject(objectId) {
     const o = OBJECT_BY_ID.get(objectId);
     return (o && Array.isArray(o.skills) && o.skills[0]) || null;
+}
+
+/* ============================================================
+   MILESTONE 19 — REVIEW & RETENTION
+
+   `scheduler` is a PURE, ISOLATED, REPLACEABLE module: the only
+   place SM-2-lite arithmetic lives. It reads nothing global,
+   mutates nothing, and `nowISO` is passed in (not read from a
+   clock). Swap it for a better algorithm without touching the
+   rest of the review system.
+
+   Grading is DETERMINISTIC and correctness-first: only an
+   incorrect answer yields "again". Latency is a bounded SECONDARY
+   signal that only chooses between a faster ("easy") and a more
+   conservative ("hard"/"good") FORWARD step — a slow-but-correct
+   answer never resets reps, never shortens the interval, and
+   never counts as a lapse.
+   ============================================================ */
+const REVIEW_FAST_MS = 3000;      // answered within 3s → confident recall → "easy"
+const REVIEW_SLOW_MS = 20000;     // over 20s → got there, but slowly → "hard"
+const REVIEW_RETAINED_REPS = 4;   // reps to call an object "retained"
+const REVIEW_STALE_DAYS = 21;     // not-due but unseen this long → "haven't seen in a while"
+const MASTERED_SEED = { reps: 2, ease: 2.5, intervalD: 4 };  // one-time seed from progress.mastered
+
+function gradeQuality(correct, latencyMs) {
+    if (!correct) return "again";
+    if (typeof latencyMs === "number" && isFinite(latencyMs)) {
+        if (latencyMs <= REVIEW_FAST_MS) return "easy";
+        if (latencyMs >= REVIEW_SLOW_MS) return "hard";
+    }
+    return "good";
+}
+
+const scheduler = Object.freeze({
+    /* SM-2-lite. state: { reps, ease, intervalD, lapses }.
+       Returns { reps, ease, intervalD, lapses, dueDate }. Pure. */
+    next(state, quality, nowISO) {
+        let reps = state.reps || 0;
+        let ease = (typeof state.ease === "number") ? state.ease : 2.5;
+        let intervalD = state.intervalD || 0;
+        let lapses = state.lapses || 0;
+
+        if (quality === "again") {
+            reps = 0;
+            lapses += 1;
+            ease = Math.max(1.3, ease - 0.2);
+            intervalD = 1;
+        } else {
+            const prev = intervalD;
+            if (quality === "hard") ease = Math.max(1.3, ease - 0.05);
+            if (quality === "easy") ease = Math.min(3.0, ease + 0.15);
+            reps += 1;
+            if (reps === 1) intervalD = 1;
+            else if (reps === 2) intervalD = quality === "easy" ? 5 : 4;
+            else {
+                const factor = quality === "hard" ? 1.2 : quality === "easy" ? ease * 1.3 : ease;
+                intervalD = Math.max(prev + 1, Math.round(prev * factor));
+            }
+            if (intervalD < prev) intervalD = prev;   // a correct answer never shortens the interval
+        }
+        ease = Math.round(ease * 100) / 100;
+        const t = new Date(nowISO);
+        const base = isNaN(t.getTime()) ? 0 : t.getTime();   // pure: never read a clock, never throw
+        const dueDate = new Date(base + intervalD * 86400000).toISOString();
+        return { reps: reps, ease: ease, intervalD: intervalD, lapses: lapses, dueDate: dueDate };
+    },
+});
+
+function newReviewState(objectId) {
+    return { objectId: objectId, skill: skillOfObject(objectId), reps: 0, ease: 2.5, intervalD: 0, lapses: 0, lastResult: null, lastSeen: null, dueDate: null };
+}
+
+/* Seed once from `mastered`, then fold every interaction newer than
+   progress.reviewCursor through the scheduler. Idempotent past the cursor,
+   so it survives the interactionLog ring-buffer rotation. */
+function foldReviewState() {
+    const rs = (progress.reviewState && typeof progress.reviewState === "object") ? progress.reviewState : {};
+
+    if (!progress.reviewCursor) {
+        const seededAt = new Date();
+        for (const id of progress.mastered || []) {
+            if (rs[id]) continue;
+            rs[id] = Object.assign(newReviewState(id), {
+                reps: MASTERED_SEED.reps, ease: MASTERED_SEED.ease, intervalD: MASTERED_SEED.intervalD,
+                lastResult: "good", lastSeen: seededAt.toISOString(),
+                dueDate: new Date(seededAt.getTime() + MASTERED_SEED.intervalD * 86400000).toISOString(),
+            });
+        }
+    }
+
+    const cursor = progress.reviewCursor;
+    let maxTs = cursor;
+    const events = (progress.interactionLog || [])
+        .filter(e => e.objectId && (!cursor || e.ts > cursor))
+        .sort((a, b) => (a.ts < b.ts ? -1 : a.ts > b.ts ? 1 : 0));
+    for (const e of events) {
+        const st = rs[e.objectId] || newReviewState(e.objectId);
+        const q = gradeQuality(e.correct, e.latencyMs);
+        Object.assign(st, scheduler.next(st, q, e.ts), {
+            lastResult: q, lastSeen: e.ts,
+            skill: st.skill || e.skill || skillOfObject(e.objectId),
+        });
+        rs[e.objectId] = st;
+        if (!maxTs || e.ts > maxTs) maxTs = e.ts;
+    }
+    progress.reviewState = rs;
+    progress.reviewCursor = maxTs || new Date(0).toISOString();
+    saveProgress();
+    return rs;
+}
+
+/* The six-state lifecycle — a pure function of the schedule fields. */
+function reviewStatus(st, nowISO) {
+    if (!st || !st.lastSeen) return "learned";
+    const now = new Date(nowISO || new Date().toISOString()).getTime();
+    const due = st.dueDate ? new Date(st.dueDate).getTime() : now;
+    const overdueDays = (now - due) / 86400000;
+    if (st.reps === 0 && (st.lapses || 0) > 0) return "forgotten";
+    if ((st.lapses || 0) >= 1 && overdueDays > (st.intervalD || 1)) return "forgotten";
+    if (now < due && (st.ease < 2.0 || st.lastResult === "again" || st.lastResult === "hard")) return "weak";
+    if (st.reps >= REVIEW_RETAINED_REPS && st.ease >= 2.3) return "retained";
+    if (st.reps >= 2) return "reviewed";
+    if (st.reps >= 1) return "practised";
+    return "learned";
+}
+
+/* Objects with a healthy graded history — the coverage signal deriveLevel
+   now uses. Unions the legacy `mastered` set so no strand loses a level. */
+function retainedSet() {
+    const now = new Date().toISOString();
+    const s = new Set(progress.mastered || []);
+    for (const id in (progress.reviewState || {})) {
+        const status = reviewStatus(progress.reviewState[id], now);
+        if (status === "retained" || status === "reviewed") s.add(id);
+    }
+    return s;
+}
+
+/* A mistake = an object whose most recent graded event was incorrect.
+   A pure view over the M18 interaction log — no separate store. */
+function mistakes() {
+    const latest = {};
+    for (const e of progress.interactionLog || []) {
+        if (e.objectId && (!latest[e.objectId] || e.ts >= latest[e.objectId].ts)) latest[e.objectId] = e;
+    }
+    return Object.keys(latest).filter(id => !latest[id].correct);
+}
+
+function reviewQueue(name) {
+    const now = new Date().toISOString();
+    const nowMs = Date.now();
+    const rs = progress.reviewState || {};
+    const ids = Object.keys(rs);
+    const isDue = st => st.dueDate && new Date(st.dueDate).getTime() <= nowMs;
+    if (name === "mistakes") return mistakes();
+    if (name === "due") return ids.filter(id => ["practised", "reviewed", "retained"].indexOf(reviewStatus(rs[id], now)) !== -1 && isDue(rs[id]));
+    if (name === "weak") return ids.filter(id => ["weak", "forgotten"].indexOf(reviewStatus(rs[id], now)) !== -1);
+    if (name === "stale") return ids.filter(id => rs[id].lastSeen && !isDue(rs[id]) && (nowMs - new Date(rs[id].lastSeen).getTime()) / 86400000 > REVIEW_STALE_DAYS);
+    return [];
+}
+
+function reviewQueueCounts() {
+    return { due: reviewQueue("due").length, mistakes: reviewQueue("mistakes").length, weak: reviewQueue("weak").length, stale: reviewQueue("stale").length };
 }
 
 function bumpStreak() {
@@ -4183,10 +4353,12 @@ function deriveLevel(skillId) {
 
     const strandObjects = ALL_OBJECTS.filter(o => (o.skills || []).indexOf(skillId) !== -1);
 
-    // 1. graded signal — mastered-item coverage; can be "firm"
-    const masteredSet = new Set(progress.mastered);
-    const masteredCount = strandObjects.filter(o => masteredSet.has(o.id)).length;
-    const masteredLevel = coverageLevel(strandObjects, masteredSet, null);
+    // 1. graded signal — coverage from objects with a healthy review history
+    //    (M19: retainedSet() unions the legacy `mastered` set, so no regression);
+    //    can be "firm".
+    const gradedSet = retainedSet();
+    const masteredCount = strandObjects.filter(o => gradedSet.has(o.id)).length;
+    const masteredLevel = coverageLevel(strandObjects, gradedSet, null);
 
     // 2. introduced signal — objects met in a completed lesson that teaches this
     //    strand; provisional only, capped at A1.
@@ -4338,6 +4510,7 @@ function recordPlacement(skillId, level, confidence, reason, atCeiling) {
 }
 
 let progress = loadProgress();
+foldReviewState();   // M19 — seed from `mastered` + fold any logged interactions
 let mode = "flash";
 let activeCategory = "all";
 let cards = [];
@@ -4424,7 +4597,8 @@ function setMode(next) {
    FLASHCARDS
    ============================================================ */
 function rebuildDeck() {
-    // Spaced-repetition-lite: words not yet mastered surface first.
+    // Ordering only: words not yet marked "known" surface first. (The real
+    // spaced-repetition schedule lives in scheduler.next / the Review view.)
     const pool = wordsInCategory(activeCategory);
     const unmastered = pool.filter(w => !progress.mastered.includes(w.id));
     const mastered = pool.filter(w => progress.mastered.includes(w.id));
@@ -4493,6 +4667,8 @@ function markCard(knewIt) {
         progress.mastered = progress.mastered.filter(id => id !== card.id);
     }
     saveProgress();
+    // M19 — a self-graded flashcard is a graded interaction; move the schedule.
+    emitInteraction(card.id, "vocabulary", "flashcard", knewIt, null);
     nextCard();
 }
 
