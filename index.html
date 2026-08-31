@@ -4101,13 +4101,19 @@ const INTERACTION_LOG_CAP = 400;
 
 function emitInteraction(objectId, skill, itemType, correct, latencyMs) {
     if (!Array.isArray(progress.interactionLog)) progress.interactionLog = [];
+    // Strictly-increasing ts: two answers in the same millisecond would
+    // otherwise collide with foldReviewState()'s `ts > reviewCursor` guard
+    // and the second event would be silently skipped.
+    const last = progress.interactionLog[progress.interactionLog.length - 1];
+    let ts = new Date().toISOString();
+    if (last && ts <= last.ts) ts = new Date(new Date(last.ts).getTime() + 1).toISOString();
     progress.interactionLog.push({
         objectId: objectId || null,
         skill: skill || (objectId ? skillOfObject(objectId) : null),
         itemType: itemType || "choice",
         correct: !!correct,
         latencyMs: (typeof latencyMs === "number" && isFinite(latencyMs)) ? Math.round(latencyMs) : null,
-        ts: new Date().toISOString(),
+        ts: ts,
     });
     if (progress.interactionLog.length > INTERACTION_LOG_CAP) {
         progress.interactionLog = progress.interactionLog.slice(-INTERACTION_LOG_CAP);
