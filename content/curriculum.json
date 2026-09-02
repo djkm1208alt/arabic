@@ -445,6 +445,54 @@
       "level": "A1", "skills": ["vocabulary"],
       "objectives": ["lex:adj-10","lex:adj-11"],
       "status": "planned", "source": "generate"
+    },
+    {
+      "id": "a1-family", "unitId": "a1-u3", "order": 5,
+      "title": "Family & People",
+      "blurb": "Child, boy, man, woman, uncle, aunt — and the word for \"name\".",
+      "level": "A1", "skills": ["vocabulary"],
+      "objectives": ["lex:peo-14","lex:peo-15","lex:peo-16","lex:peo-17","lex:peo-18","lex:peo-19","lex:peo-20"],
+      "status": "available", "source": "generate"
+    },
+    {
+      "id": "a1-food", "unitId": "a1-u3", "order": 6,
+      "title": "Food & Meals",
+      "blurb": "Juice, egg, cheese, salt, apple, the three meals, and how to say you are hungry.",
+      "level": "A1", "skills": ["vocabulary"],
+      "objectives": ["lex:foo-16","lex:foo-17","lex:foo-18","lex:foo-19","lex:foo-20","lex:foo-21","lex:foo-22","lex:foo-23","lex:foo-24","lex:foo-25","lex:foo-26","lex:foo-27"],
+      "status": "available", "source": "generate"
+    },
+    {
+      "id": "a1-home-garden", "unitId": "a1-u3", "order": 7,
+      "title": "Around the Home",
+      "blurb": "Wall, floor, garden, and the word for \"clean\".",
+      "level": "A1", "skills": ["vocabulary"],
+      "objectives": ["lex:hom-13","lex:hom-14","lex:hom-15","lex:hom-16"],
+      "status": "available", "source": "generate"
+    },
+    {
+      "id": "a1-time-words", "unitId": "a1-u3", "order": 8,
+      "title": "Telling the Time of Day",
+      "blurb": "Hour, minute, day, noon, and the adverbs early / late / always / sometimes / before / after.",
+      "level": "A1", "skills": ["vocabulary"],
+      "objectives": ["lex:tim-20","lex:tim-21","lex:tim-22","lex:tim-23","lex:tim-24","lex:tim-25","lex:tim-26","lex:tim-27","lex:tim-28","lex:tim-29"],
+      "status": "available", "source": "generate"
+    },
+    {
+      "id": "a1-daily-verbs", "unitId": "a1-u3", "order": 9,
+      "title": "Everyday Actions",
+      "blurb": "Twelve common verbs — come, sleep, wake up, study, live, want, play, open, close, sit, walk — plus \"to have\".",
+      "level": "A1", "skills": ["vocabulary"],
+      "objectives": ["lex:ver-11","lex:ver-12","lex:ver-13","lex:ver-14","lex:ver-15","lex:ver-16","lex:ver-17","lex:ver-18","lex:ver-19","lex:ver-20","lex:ver-21","lex:ver-22"],
+      "status": "available", "source": "generate"
+    },
+    {
+      "id": "a1-this-and-that", "unitId": "a1-u3", "order": 10,
+      "title": "This, That & the Little Words",
+      "blurb": "هَذَا / هَذِهِ / هَؤُلَاءِ, the core prepositions فِي عَلَى مِنْ إِلَى مَعَ, and لَيْسَ.",
+      "level": "A1", "skills": ["vocabulary", "grammar"],
+      "objectives": ["lex:pro-04","lex:pro-05","lex:pro-06","lex:prt-01","lex:prt-02","lex:prt-03","lex:prt-04","lex:prt-05","lex:prt-06"],
+      "status": "available", "source": "generate"
     }
   ]
 }
