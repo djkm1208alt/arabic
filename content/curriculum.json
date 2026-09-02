@@ -65,9 +65,9 @@
     {
       "id": "a1-u4", "level": "A1", "order": 4,
       "title": "Talking About People & Places",
-      "blurb": "Family, homes, towns, and the phrases that connect them. In development.",
+      "blurb": "Towns and shops, getting around, and asking the way.",
       "skills": ["vocabulary", "grammar", "speaking"],
-      "status": "planned", "prereqs": ["a1-u1", "a1-u3"]
+      "status": "available", "prereqs": ["a1-u1", "a1-u3"]
     },
     {
       "id": "a1-u5", "level": "A1", "order": 5,
@@ -449,9 +449,9 @@
     {
       "id": "a1-family", "unitId": "a1-u3", "order": 5,
       "title": "Family & People",
-      "blurb": "Child, boy, man, woman, uncle, aunt — and the word for \"name\".",
+      "blurb": "Child, boy, man, woman, uncle, aunt, neighbour — and the word for \"name\".",
       "level": "A1", "skills": ["vocabulary"],
-      "objectives": ["lex:peo-14","lex:peo-15","lex:peo-16","lex:peo-17","lex:peo-18","lex:peo-19","lex:peo-20"],
+      "objectives": ["lex:peo-14","lex:peo-15","lex:peo-16","lex:peo-17","lex:peo-18","lex:peo-19","lex:peo-20","lex:peo-21"],
       "status": "available", "source": "generate"
     },
     {
@@ -492,6 +492,86 @@
       "blurb": "هَذَا / هَذِهِ / هَؤُلَاءِ, the core prepositions فِي عَلَى مِنْ إِلَى مَعَ, and لَيْسَ.",
       "level": "A1", "skills": ["vocabulary", "grammar"],
       "objectives": ["lex:pro-04","lex:pro-05","lex:pro-06","lex:prt-01","lex:prt-02","lex:prt-03","lex:prt-04","lex:prt-05","lex:prt-06"],
+      "status": "available", "source": "generate"
+    },
+    {
+      "id": "a1-school", "unitId": "a1-u3", "order": 11,
+      "title": "School & Learning",
+      "blurb": "University, word, sentence, question, answer, exam — and the words for the Arabic and English languages.",
+      "level": "A1", "skills": ["vocabulary"],
+      "objectives": ["lex:sch-11","lex:sch-12","lex:sch-13","lex:sch-14","lex:sch-15","lex:sch-16","lex:sch-17","lex:sch-18","lex:sch-19","lex:sch-20","lex:sch-21"],
+      "status": "available", "source": "generate"
+    },
+    {
+      "id": "a1-work", "unitId": "a1-u3", "order": 12,
+      "title": "Work & Jobs",
+      "blurb": "Office, company, doctor, engineer, employee, money — and \"busy\" and \"important\".",
+      "level": "A1", "skills": ["vocabulary"],
+      "objectives": ["lex:wrk-01","lex:wrk-02","lex:wrk-03","lex:wrk-04","lex:wrk-05","lex:wrk-06","lex:wrk-07","lex:wrk-08","lex:wrk-09","lex:wrk-10"],
+      "status": "available", "source": "generate"
+    },
+    {
+      "id": "a1-body-health", "unitId": "a1-u3", "order": 13,
+      "title": "The Body & Feeling Unwell",
+      "blurb": "Head, hand, eye, foot — plus sick, tired, pain, and medicine.",
+      "level": "A1", "skills": ["vocabulary"],
+      "objectives": ["lex:bod-01","lex:bod-02","lex:bod-03","lex:bod-04","lex:bod-05","lex:bod-06","lex:bod-07","lex:bod-08","lex:bod-09"],
+      "status": "available", "source": "generate"
+    },
+    {
+      "id": "a1-weather", "unitId": "a1-u3", "order": 14,
+      "title": "Weather & Nature",
+      "blurb": "Hot, cold, warm, rain, wind, sky, season — and the word for \"weather\".",
+      "level": "A1", "skills": ["vocabulary"],
+      "objectives": ["lex:wea-01","lex:wea-02","lex:wea-03","lex:wea-04","lex:wea-05","lex:wea-06","lex:wea-07","lex:wea-08"],
+      "status": "available", "source": "generate"
+    },
+    {
+      "id": "a1-question-words", "unitId": "a1-u3", "order": 15,
+      "title": "Asking Questions",
+      "blurb": "مَنْ / مَا / أَيْنَ / مَتَى / لِمَاذَا / كَيْفَ / كَمْ — the seven question words.",
+      "level": "A1", "skills": ["vocabulary", "grammar"],
+      "objectives": ["lex:prt-18","lex:prt-19","lex:prt-20","lex:prt-21","lex:prt-22","lex:prt-23","lex:prt-24"],
+      "status": "available", "source": "generate"
+    },
+    {
+      "id": "a1-connectors", "unitId": "a1-u3", "order": 16,
+      "title": "Joining Words & Subject Pronouns",
+      "blurb": "وَ / أَوْ / لَكِنْ / لِأَنَّ, the pronouns أَنَا / أَنْتَ / أَنْتِ / نَحْنُ, ذَلِكَ, and good / bad / fine.",
+      "level": "A1", "skills": ["vocabulary", "grammar"],
+      "objectives": ["lex:prt-14","lex:prt-15","lex:prt-16","lex:prt-17","lex:pro-08","lex:pro-09","lex:pro-10","lex:pro-11","lex:pro-07","lex:adj-14","lex:adj-15","lex:exp-11"],
+      "status": "available", "source": "generate"
+    },
+    {
+      "id": "a1-places", "unitId": "a1-u4", "order": 1,
+      "title": "Around Town",
+      "blurb": "Country, shop, bank, station — and here / there / near / far.",
+      "level": "A1", "skills": ["vocabulary"],
+      "objectives": ["lex:pla-12","lex:pla-13","lex:pla-14","lex:pla-15","lex:pla-16","lex:pla-17","lex:pla-18","lex:pla-19"],
+      "status": "available", "source": "generate"
+    },
+    {
+      "id": "a1-directions", "unitId": "a1-u4", "order": 2,
+      "title": "Asking the Way",
+      "blurb": "Right, left, straight ahead — and the position words under / in front of / behind / next to / between / inside / outside.",
+      "level": "A1", "skills": ["vocabulary", "grammar"],
+      "objectives": ["lex:dir-01","lex:dir-02","lex:dir-03","lex:prt-07","lex:prt-08","lex:prt-09","lex:prt-10","lex:prt-11","lex:prt-12","lex:prt-13"],
+      "status": "available", "source": "generate"
+    },
+    {
+      "id": "a1-travel", "unitId": "a1-u4", "order": 3,
+      "title": "Getting Around",
+      "blurb": "Bus, train, plane, taxi, ticket, trip — and to travel / arrive / return.",
+      "level": "A1", "skills": ["vocabulary"],
+      "objectives": ["lex:trv-01","lex:trv-02","lex:trv-03","lex:trv-04","lex:trv-05","lex:trv-06","lex:ver-26","lex:ver-27","lex:ver-28"],
+      "status": "available", "source": "generate"
+    },
+    {
+      "id": "a1-shopping", "unitId": "a1-u4", "order": 4,
+      "title": "Shopping & Money",
+      "blurb": "Price, cheap, expensive, how much — a little / a lot — and to buy / sell / pay.",
+      "level": "A1", "skills": ["vocabulary"],
+      "objectives": ["lex:shp-01","lex:shp-02","lex:shp-03","lex:shp-04","lex:shp-05","lex:shp-06","lex:ver-23","lex:ver-24","lex:ver-25"],
       "status": "available", "source": "generate"
     }
   ]
