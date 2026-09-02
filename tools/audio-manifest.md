@@ -7,19 +7,23 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 
 | | count |
 |---|---:|
-| Distinct targets | 545 |
-| — Tier 1 (foundation) | 119 |
+| Distinct targets | 565 |
+| — Tier 1 (foundation) | 139 |
 | — Tier 2 (vocabulary) | 349 |
 | — Tier 3 (stays TTS) | 77 |
-| Unique native recordings needed (Tier 1+2) | 459 |
+| Unique native recordings needed (Tier 1+2) | 479 |
 | — of those, present on disk | 0 |
-| — still missing | 459 |
+| — still missing | 479 |
 | Aliases (share another recording) | 9 |
 
 ## Tier 1 — Foundation
 
 | file | Arabic | translit | English | role | playback |
 |---|---|---|---|---|---|
+| `sentences/read-dlg-asking-way.mp3` | أَيْنَ الْمَحَطَّةُ؟ — الْمَحَطَّةُ هُنَاكَ، عَلَى الْيَمِينِ | ayna al-maḥaṭṭatu? — al-maḥaṭṭatu hunāka, ʿalā al-yamīni | — Where is the station? — The station is over there, on the right. | recording | tts |
+| `sentences/read-dlg-greeting.mp3` | السَّلَامُ عَلَيْكُمْ — وَعَلَيْكُمُ السَّلَامُ — كَيْفَ حَالُكَ؟ — أَنَا بِخَيْرٍ، شُكْرًا | as-salāmu ʿalaykum — wa-ʿalaykumu s-salāmu — kayfa ḥāluka? — anā bikhayrin, shukran | — Peace be upon you. — And upon you be peace. — How are you? — I'm fine, thank you. | recording | tts |
+| `sentences/read-dlg-name.mp3` | مَا اسْمُكِ؟ — اسْمِي سَارَةُ — تَشَرَّفْنَا | mā ismuki? — ismī sāratu — tasharrafnā | — What is your name? — My name is Sara. — Nice to meet you. | recording | tts |
+| `sentences/read-dlg-who-is-this.mp3` | مَنْ هَذَا؟ — هَذَا صَدِيقِي مُحَمَّدٌ — أَهْلًا وَسَهْلًا | man hādhā? — hādhā ṣadīqī muḥammadun — ahlan wa-sahlan | — Who is this? — This is my friend Muhammad. — Welcome. | recording | tts |
 | `letters/alif.mp3` | ا | alif | letter “alif” (isolated form) | recording | tts |
 | `letters/ayn.mp3` | ع | ʿayn | letter “ʿayn” (isolated form) | recording | tts |
 | `letters/ba.mp3` | ب | bāʾ | letter “bāʾ” (isolated form) | recording | tts |
@@ -108,6 +112,22 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `sentences/gram-verb-he.mp3` | هُوَ يَذْهَبُ إِلَى الْمَدْرَسَةِ | huwa yadhhabu ilā al-madrasati | He goes to school. | recording | tts |
 | `sentences/gram-verb-she.mp3` | هِيَ تَذْهَبُ إِلَى الْمَدْرَسَةِ | hiya tadhhabu ilā al-madrasati | She goes to school. | recording | tts |
 | `sentences/gram-verb-they.mp3` | هُمْ يَذْهَبُونَ إِلَى الْمَدْرَسَةِ | hum yadhhabūna ilā al-madrasati | They go to school. | recording | tts |
+| `sentences/read-bag-new.mp3` | الْحَقِيبَةُ جَدِيدَةٌ | al-ḥaqībatu jadīdatun | The bag is new. | recording | tts |
+| `sentences/read-bag-under-chair.mp3` | الْحَقِيبَةُ تَحْتَ الْكُرْسِيِّ | al-ḥaqībatu taḥta al-kursiyyi | The bag is under the chair. | recording | tts |
+| `sentences/read-book-on-table.mp3` | الْكِتَابُ عَلَى الطَّاوِلَةِ | al-kitābu ʿalā aṭ-ṭāwilati | The book is on the table. | recording | tts |
+| `sentences/read-coffee-delicious.mp3` | الْقَهْوَةُ لَذِيذَةٌ | al-qahwatu ladhīdhatun | The coffee is delicious. | recording | tts |
+| `sentences/read-friend-university.mp3` | صَدِيقِي فِي الْجَامِعَةِ | ṣadīqī fī al-jāmiʿati | My friend is at the university. | recording | tts |
+| `sentences/read-he-engineer.mp3` | هُوَ مُهَنْدِسٌ | huwa muhandisun | He is an engineer. | recording | tts |
+| `sentences/read-i-student.mp3` | أَنَا طَالِبٌ | anā ṭālibun | I am a student. | recording | tts |
+| `sentences/read-not-cold-today.mp3` | لَيْسَ الطَّقْسُ بَارِدًا الْيَوْمَ | laysa aṭ-ṭaqsu bāridan al-yawma | The weather is not cold today. | recording | tts |
+| `sentences/read-parents-office-home.mp3` | الْأَبُ فِي الْمَكْتَبِ وَالْأُمُّ فِي الْبَيْتِ | al-abu fī al-maktabi wa-al-ummu fī al-bayti | The father is in the office and the mother is at home. | recording | tts |
+| `sentences/read-room-clean.mp3` | الْغُرْفَةُ نَظِيفَةٌ | al-ghurfatu naẓīfatun | The room is clean. | recording | tts |
+| `sentences/read-that-man-doctor.mp3` | ذَلِكَ الرَّجُلُ طَبِيبٌ | dhālika ar-rajulu ṭabībun | That man is a doctor. | recording | tts |
+| `sentences/read-this-my-bag.mp3` | هَذِهِ حَقِيبَتِي | hādhihi ḥaqībatī | This is my bag. | recording | tts |
+| `sentences/read-this-my-house.mp3` | هَذَا بَيْتِي | hādhā baytī | This is my house. | recording | tts |
+| `sentences/read-this-not-my-pen.mp3` | هَذَا لَيْسَ قَلَمِي | hādhā laysa qalamī | This is not my pen. | recording | tts |
+| `sentences/read-tired-but-happy.mp3` | أَنَا مُتْعَبٌ لَكِنْ سَعِيدٌ | anā mutʿabun lākin saʿīdun | I am tired but happy. | recording | tts |
+| `sentences/read-weather-hot.mp3` | الطَّقْسُ حَارٌّ | aṭ-ṭaqsu ḥārrun | The weather is hot. | recording | tts |
 | `sentences/sent-book-beautiful.mp3` | الْكِتَابُ جَمِيلٌ | al-kitābu jamīlun | The book is beautiful. | recording | tts |
 | `sentences/sent-book-beautiful.mp3` | الْكتاب جميل | al-kitābu jamīlun | The book is beautiful. | alias | tts |
 | `sentences/sent-book-beautiful.mp3` | الكتاب جميل | al-kitābu jamīlun | The book is beautiful. | alias | tts |

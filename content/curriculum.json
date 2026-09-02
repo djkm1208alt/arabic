@@ -404,6 +404,22 @@
       "objectives": ["gr:demonstratives","gr:attached-possessive","gr:core-prepositions","txt:gram-dem-book","txt:gram-dem-girl","txt:gram-dem-the-house","txt:gram-poss-my-book","txt:gram-poss-your-house","txt:gram-poss-her-bag","txt:gram-prep-in-bag","txt:gram-prep-on-table","txt:gram-prep-from-city"],
       "status": "available", "source": "steps:a1-grammar-function-words"
     },
+    {
+      "id": "a1-reading-sentences", "unitId": "a1-u1", "order": 5,
+      "title": "Reading Whole Sentences",
+      "blurb": "Twelve short A1 sentences — the topic, then the comment — read for meaning.",
+      "level": "A1", "skills": ["reading", "comprehension"],
+      "objectives": ["gr:nominal-sentence","gr:gender-agreement","gr:core-prepositions","gr:demonstratives","gr:attached-possessive","txt:read-weather-hot","txt:read-i-student","txt:read-room-clean","txt:read-he-engineer","txt:read-coffee-delicious","txt:read-bag-new","txt:read-book-on-table","txt:read-this-my-house","txt:read-friend-university","txt:read-that-man-doctor","txt:read-bag-under-chair","txt:read-this-my-bag"],
+      "status": "available", "source": "steps:a1-reading-sentences"
+    },
+    {
+      "id": "a1-reading-connected", "unitId": "a1-u1", "order": 6,
+      "title": "Joining Two Ideas",
+      "blurb": "Four longer sentences joined by وَ, لَكِنْ, or لَيْسَ.",
+      "level": "A1", "skills": ["reading", "comprehension"],
+      "objectives": ["gr:nominal-sentence","gr:core-prepositions","gr:negation-a1","txt:read-parents-office-home","txt:read-tired-but-happy","txt:read-not-cold-today","txt:read-this-not-my-pen"],
+      "status": "available", "source": "steps:a1-reading-connected"
+    },
 
     {
       "id": "unvowelled-reading", "unitId": "a1-u2", "order": 1,
@@ -573,6 +589,14 @@
       "level": "A1", "skills": ["vocabulary"],
       "objectives": ["lex:shp-01","lex:shp-02","lex:shp-03","lex:shp-04","lex:shp-05","lex:shp-06","lex:ver-23","lex:ver-24","lex:ver-25"],
       "status": "available", "source": "generate"
+    },
+    {
+      "id": "a1-listening-dialogues", "unitId": "a1-u4", "order": 5,
+      "title": "Short Exchanges",
+      "blurb": "Four 2–3-turn dialogues — a greeting, a name, \"who is this?\", asking the way — heard and read.",
+      "level": "A1", "skills": ["listening", "comprehension"],
+      "objectives": ["gr:nominal-sentence","gr:demonstratives","gr:attached-possessive","gr:core-prepositions","txt:read-dlg-greeting","txt:read-dlg-name","txt:read-dlg-who-is-this","txt:read-dlg-asking-way"],
+      "status": "available", "source": "steps:a1-listening-dialogues"
     }
   ]
 }

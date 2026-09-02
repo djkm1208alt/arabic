@@ -670,5 +670,209 @@
     "level": "A1",
     "skills": [ "reading", "comprehension", "listening", "grammar" ],
     "prereqs": [ "gr:negation-a1" ]
-  }
+  },
+
+  { "id": "txt:read-weather-hot", "kind": "text", "textType": "sentence", "source": "m20",
+    "vowelled": "الطَّقْسُ حَارٌّ", "translit": "aṭ-ṭaqsu ḥārrun", "en": "The weather is hot.",
+    "words": [
+      { "surface": "الطَّقْسُ", "translit": "aṭ-ṭaqsu", "gloss": "the weather", "gender": "masculine" },
+      { "surface": "حَارٌّ", "translit": "ḥārrun", "gloss": "hot", "gender": "masculine" }
+    ],
+    "audio": "الطَّقْسُ حَارٌّ", "level": "A1", "skills": [ "reading", "listening", "comprehension" ],
+    "prereqs": [ "gr:nominal-sentence", "gr:sun-moon" ] },
+
+  { "id": "txt:read-i-student", "kind": "text", "textType": "sentence", "source": "m20",
+    "vowelled": "أَنَا طَالِبٌ", "translit": "anā ṭālibun", "en": "I am a student.",
+    "words": [
+      { "surface": "أَنَا", "translit": "anā", "gloss": "I", "gender": null },
+      { "surface": "طَالِبٌ", "translit": "ṭālibun", "gloss": "a student", "gender": "masculine" }
+    ],
+    "audio": "أَنَا طَالِبٌ", "level": "A1", "skills": [ "reading", "listening", "comprehension" ],
+    "prereqs": [ "gr:nominal-sentence" ] },
+
+  { "id": "txt:read-room-clean", "kind": "text", "textType": "sentence", "source": "m20",
+    "vowelled": "الْغُرْفَةُ نَظِيفَةٌ", "translit": "al-ghurfatu naẓīfatun", "en": "The room is clean.",
+    "words": [
+      { "surface": "الْغُرْفَةُ", "translit": "al-ghurfatu", "gloss": "the room", "gender": "feminine" },
+      { "surface": "نَظِيفَةٌ", "translit": "naẓīfatun", "gloss": "clean (feminine — agrees with the room)", "gender": "feminine" }
+    ],
+    "audio": "الْغُرْفَةُ نَظِيفَةٌ", "level": "A1", "skills": [ "reading", "listening", "comprehension" ],
+    "prereqs": [ "gr:nominal-sentence", "gr:gender-agreement" ] },
+
+  { "id": "txt:read-he-engineer", "kind": "text", "textType": "sentence", "source": "m20",
+    "vowelled": "هُوَ مُهَنْدِسٌ", "translit": "huwa muhandisun", "en": "He is an engineer.",
+    "words": [
+      { "surface": "هُوَ", "translit": "huwa", "gloss": "he", "gender": "masculine" },
+      { "surface": "مُهَنْدِسٌ", "translit": "muhandisun", "gloss": "an engineer", "gender": "masculine" }
+    ],
+    "audio": "هُوَ مُهَنْدِسٌ", "level": "A1", "skills": [ "reading", "listening", "comprehension" ],
+    "prereqs": [ "gr:nominal-sentence" ] },
+
+  { "id": "txt:read-coffee-delicious", "kind": "text", "textType": "sentence", "source": "m20",
+    "vowelled": "الْقَهْوَةُ لَذِيذَةٌ", "translit": "al-qahwatu ladhīdhatun", "en": "The coffee is delicious.",
+    "words": [
+      { "surface": "الْقَهْوَةُ", "translit": "al-qahwatu", "gloss": "the coffee", "gender": "feminine" },
+      { "surface": "لَذِيذَةٌ", "translit": "ladhīdhatun", "gloss": "delicious (feminine)", "gender": "feminine" }
+    ],
+    "audio": "الْقَهْوَةُ لَذِيذَةٌ", "level": "A1", "skills": [ "reading", "listening", "comprehension" ],
+    "prereqs": [ "gr:nominal-sentence", "gr:gender-agreement" ] },
+
+  { "id": "txt:read-bag-new", "kind": "text", "textType": "sentence", "source": "m20",
+    "vowelled": "الْحَقِيبَةُ جَدِيدَةٌ", "translit": "al-ḥaqībatu jadīdatun", "en": "The bag is new.",
+    "words": [
+      { "surface": "الْحَقِيبَةُ", "translit": "al-ḥaqībatu", "gloss": "the bag", "gender": "feminine" },
+      { "surface": "جَدِيدَةٌ", "translit": "jadīdatun", "gloss": "new (feminine)", "gender": "feminine" }
+    ],
+    "audio": "الْحَقِيبَةُ جَدِيدَةٌ", "level": "A1", "skills": [ "reading", "listening", "comprehension" ],
+    "prereqs": [ "gr:nominal-sentence", "gr:gender-agreement" ] },
+
+  { "id": "txt:read-book-on-table", "kind": "text", "textType": "sentence", "source": "m20",
+    "vowelled": "الْكِتَابُ عَلَى الطَّاوِلَةِ", "translit": "al-kitābu ʿalā aṭ-ṭāwilati", "en": "The book is on the table.",
+    "words": [
+      { "surface": "الْكِتَابُ", "translit": "al-kitābu", "gloss": "the book", "gender": "masculine" },
+      { "surface": "عَلَى الطَّاوِلَةِ", "translit": "ʿalā aṭ-ṭāwilati", "gloss": "on the table (genitive)", "gender": null }
+    ],
+    "audio": "الْكِتَابُ عَلَى الطَّاوِلَةِ", "level": "A1", "skills": [ "reading", "listening", "comprehension" ],
+    "prereqs": [ "gr:core-prepositions" ] },
+
+  { "id": "txt:read-this-my-house", "kind": "text", "textType": "sentence", "source": "m20",
+    "vowelled": "هَذَا بَيْتِي", "translit": "hādhā baytī", "en": "This is my house.",
+    "words": [
+      { "surface": "هَذَا", "translit": "hādhā", "gloss": "this", "gender": "masculine" },
+      { "surface": "بَيْتِي", "translit": "baytī", "gloss": "my house", "gender": "masculine" }
+    ],
+    "audio": "هَذَا بَيْتِي", "level": "A1", "skills": [ "reading", "listening", "comprehension" ],
+    "prereqs": [ "gr:demonstratives", "gr:attached-possessive" ] },
+
+  { "id": "txt:read-friend-university", "kind": "text", "textType": "sentence", "source": "m20",
+    "vowelled": "صَدِيقِي فِي الْجَامِعَةِ", "translit": "ṣadīqī fī al-jāmiʿati", "en": "My friend is at the university.",
+    "words": [
+      { "surface": "صَدِيقِي", "translit": "ṣadīqī", "gloss": "my friend", "gender": "masculine" },
+      { "surface": "فِي الْجَامِعَةِ", "translit": "fī al-jāmiʿati", "gloss": "at the university (genitive)", "gender": null }
+    ],
+    "audio": "صَدِيقِي فِي الْجَامِعَةِ", "level": "A1", "skills": [ "reading", "listening", "comprehension" ],
+    "prereqs": [ "gr:attached-possessive", "gr:core-prepositions" ] },
+
+  { "id": "txt:read-that-man-doctor", "kind": "text", "textType": "sentence", "source": "m20",
+    "vowelled": "ذَلِكَ الرَّجُلُ طَبِيبٌ", "translit": "dhālika ar-rajulu ṭabībun", "en": "That man is a doctor.",
+    "words": [
+      { "surface": "ذَلِكَ", "translit": "dhālika", "gloss": "that", "gender": "masculine" },
+      { "surface": "الرَّجُلُ", "translit": "ar-rajulu", "gloss": "the man", "gender": "masculine" },
+      { "surface": "طَبِيبٌ", "translit": "ṭabībun", "gloss": "a doctor", "gender": "masculine" }
+    ],
+    "audio": "ذَلِكَ الرَّجُلُ طَبِيبٌ", "level": "A1", "skills": [ "reading", "listening", "comprehension" ],
+    "prereqs": [ "gr:demonstratives", "gr:nominal-sentence", "gr:sun-moon" ] },
+
+  { "id": "txt:read-bag-under-chair", "kind": "text", "textType": "sentence", "source": "m20",
+    "vowelled": "الْحَقِيبَةُ تَحْتَ الْكُرْسِيِّ", "translit": "al-ḥaqībatu taḥta al-kursiyyi", "en": "The bag is under the chair.",
+    "words": [
+      { "surface": "الْحَقِيبَةُ", "translit": "al-ḥaqībatu", "gloss": "the bag", "gender": "feminine" },
+      { "surface": "تَحْتَ الْكُرْسِيِّ", "translit": "taḥta al-kursiyyi", "gloss": "under the chair (genitive)", "gender": null }
+    ],
+    "audio": "الْحَقِيبَةُ تَحْتَ الْكُرْسِيِّ", "level": "A1", "skills": [ "reading", "listening", "comprehension" ],
+    "prereqs": [ "gr:core-prepositions" ] },
+
+  { "id": "txt:read-this-my-bag", "kind": "text", "textType": "sentence", "source": "m20",
+    "vowelled": "هَذِهِ حَقِيبَتِي", "translit": "hādhihi ḥaqībatī", "en": "This is my bag.",
+    "words": [
+      { "surface": "هَذِهِ", "translit": "hādhihi", "gloss": "this (feminine)", "gender": "feminine" },
+      { "surface": "حَقِيبَتِي", "translit": "ḥaqībatī", "gloss": "my bag", "gender": "feminine" }
+    ],
+    "audio": "هَذِهِ حَقِيبَتِي", "level": "A1", "skills": [ "reading", "listening", "comprehension" ],
+    "prereqs": [ "gr:demonstratives", "gr:attached-possessive" ] },
+
+  { "id": "txt:read-parents-office-home", "kind": "text", "textType": "sentence", "source": "m20",
+    "vowelled": "الْأَبُ فِي الْمَكْتَبِ وَالْأُمُّ فِي الْبَيْتِ", "translit": "al-abu fī al-maktabi wa-al-ummu fī al-bayti", "en": "The father is in the office and the mother is at home.",
+    "words": [
+      { "surface": "الْأَبُ", "translit": "al-abu", "gloss": "the father", "gender": "masculine" },
+      { "surface": "فِي الْمَكْتَبِ", "translit": "fī al-maktabi", "gloss": "in the office", "gender": null },
+      { "surface": "وَالْأُمُّ", "translit": "wa-al-ummu", "gloss": "and the mother", "gender": "feminine" },
+      { "surface": "فِي الْبَيْتِ", "translit": "fī al-bayti", "gloss": "at home", "gender": null }
+    ],
+    "audio": "الْأَبُ فِي الْمَكْتَبِ وَالْأُمُّ فِي الْبَيْتِ", "level": "A1", "skills": [ "reading", "listening", "comprehension" ],
+    "prereqs": [ "gr:core-prepositions", "gr:nominal-sentence" ] },
+
+  { "id": "txt:read-tired-but-happy", "kind": "text", "textType": "sentence", "source": "m20",
+    "vowelled": "أَنَا مُتْعَبٌ لَكِنْ سَعِيدٌ", "translit": "anā mutʿabun lākin saʿīdun", "en": "I am tired but happy.",
+    "words": [
+      { "surface": "أَنَا", "translit": "anā", "gloss": "I", "gender": null },
+      { "surface": "مُتْعَبٌ", "translit": "mutʿabun", "gloss": "tired", "gender": "masculine" },
+      { "surface": "لَكِنْ", "translit": "lākin", "gloss": "but", "gender": null },
+      { "surface": "سَعِيدٌ", "translit": "saʿīdun", "gloss": "happy", "gender": "masculine" }
+    ],
+    "audio": "أَنَا مُتْعَبٌ لَكِنْ سَعِيدٌ", "level": "A1", "skills": [ "reading", "listening", "comprehension" ],
+    "prereqs": [ "gr:nominal-sentence" ] },
+
+  { "id": "txt:read-not-cold-today", "kind": "text", "textType": "sentence", "source": "m20",
+    "vowelled": "لَيْسَ الطَّقْسُ بَارِدًا الْيَوْمَ", "translit": "laysa aṭ-ṭaqsu bāridan al-yawma", "en": "The weather is not cold today.",
+    "words": [
+      { "surface": "لَيْسَ", "translit": "laysa", "gloss": "is not", "gender": null },
+      { "surface": "الطَّقْسُ", "translit": "aṭ-ṭaqsu", "gloss": "the weather", "gender": "masculine" },
+      { "surface": "بَارِدًا", "translit": "bāridan", "gloss": "cold (accusative after لَيْسَ)", "gender": "masculine" },
+      { "surface": "الْيَوْمَ", "translit": "al-yawma", "gloss": "today (adverb)", "gender": null }
+    ],
+    "audio": "لَيْسَ الطَّقْسُ بَارِدًا الْيَوْمَ", "level": "A1", "skills": [ "reading", "listening", "comprehension" ],
+    "prereqs": [ "gr:negation-a1", "gr:sun-moon" ] },
+
+  { "id": "txt:read-this-not-my-pen", "kind": "text", "textType": "sentence", "source": "m20",
+    "vowelled": "هَذَا لَيْسَ قَلَمِي", "translit": "hādhā laysa qalamī", "en": "This is not my pen.",
+    "words": [
+      { "surface": "هَذَا", "translit": "hādhā", "gloss": "this", "gender": "masculine" },
+      { "surface": "لَيْسَ", "translit": "laysa", "gloss": "is not", "gender": null },
+      { "surface": "قَلَمِي", "translit": "qalamī", "gloss": "my pen", "gender": "masculine" }
+    ],
+    "audio": "هَذَا لَيْسَ قَلَمِي", "level": "A1", "skills": [ "reading", "listening", "comprehension" ],
+    "prereqs": [ "gr:demonstratives", "gr:negation-a1", "gr:attached-possessive" ] },
+
+  { "id": "txt:read-dlg-greeting", "kind": "text", "textType": "dialogue", "source": "m20",
+    "vowelled": "السَّلَامُ عَلَيْكُمْ — وَعَلَيْكُمُ السَّلَامُ — كَيْفَ حَالُكَ؟ — أَنَا بِخَيْرٍ، شُكْرًا",
+    "translit": "as-salāmu ʿalaykum — wa-ʿalaykumu s-salāmu — kayfa ḥāluka? — anā bikhayrin, shukran",
+    "en": "— Peace be upon you. — And upon you be peace. — How are you? — I'm fine, thank you.",
+    "turns": [
+      { "ar": "السَّلَامُ عَلَيْكُمْ", "translit": "as-salāmu ʿalaykum", "en": "Peace be upon you." },
+      { "ar": "وَعَلَيْكُمُ السَّلَامُ", "translit": "wa-ʿalaykumu s-salāmu", "en": "And upon you be peace." },
+      { "ar": "كَيْفَ حَالُكَ؟", "translit": "kayfa ḥāluka?", "en": "How are you?" },
+      { "ar": "أَنَا بِخَيْرٍ، شُكْرًا", "translit": "anā bikhayrin, shukran", "en": "I'm fine, thank you." }
+    ],
+    "audio": "السَّلَامُ عَلَيْكُمْ. وَعَلَيْكُمُ السَّلَامُ. كَيْفَ حَالُكَ؟ أَنَا بِخَيْرٍ، شُكْرًا.",
+    "level": "A1", "skills": [ "listening", "reading", "comprehension" ],
+    "prereqs": [ "gr:nominal-sentence" ] },
+
+  { "id": "txt:read-dlg-name", "kind": "text", "textType": "dialogue", "source": "m20",
+    "vowelled": "مَا اسْمُكِ؟ — اسْمِي سَارَةُ — تَشَرَّفْنَا",
+    "translit": "mā ismuki? — ismī sāratu — tasharrafnā",
+    "en": "— What is your name? — My name is Sara. — Nice to meet you.",
+    "turns": [
+      { "ar": "مَا اسْمُكِ؟", "translit": "mā ismuki?", "en": "What is your name? (to a woman)" },
+      { "ar": "اسْمِي سَارَةُ", "translit": "ismī sāratu", "en": "My name is Sara." },
+      { "ar": "تَشَرَّفْنَا", "translit": "tasharrafnā", "en": "Nice to meet you." }
+    ],
+    "audio": "مَا اسْمُكِ؟ اسْمِي سَارَةُ. تَشَرَّفْنَا.",
+    "level": "A1", "skills": [ "listening", "reading", "comprehension" ],
+    "prereqs": [ "gr:attached-possessive" ] },
+
+  { "id": "txt:read-dlg-who-is-this", "kind": "text", "textType": "dialogue", "source": "m20",
+    "vowelled": "مَنْ هَذَا؟ — هَذَا صَدِيقِي مُحَمَّدٌ — أَهْلًا وَسَهْلًا",
+    "translit": "man hādhā? — hādhā ṣadīqī muḥammadun — ahlan wa-sahlan",
+    "en": "— Who is this? — This is my friend Muhammad. — Welcome.",
+    "turns": [
+      { "ar": "مَنْ هَذَا؟", "translit": "man hādhā?", "en": "Who is this?" },
+      { "ar": "هَذَا صَدِيقِي مُحَمَّدٌ", "translit": "hādhā ṣadīqī muḥammadun", "en": "This is my friend Muhammad." },
+      { "ar": "أَهْلًا وَسَهْلًا", "translit": "ahlan wa-sahlan", "en": "Welcome." }
+    ],
+    "audio": "مَنْ هَذَا؟ هَذَا صَدِيقِي مُحَمَّدٌ. أَهْلًا وَسَهْلًا.",
+    "level": "A1", "skills": [ "listening", "reading", "comprehension" ],
+    "prereqs": [ "gr:demonstratives", "gr:attached-possessive" ] },
+
+  { "id": "txt:read-dlg-asking-way", "kind": "text", "textType": "dialogue", "source": "m20",
+    "vowelled": "أَيْنَ الْمَحَطَّةُ؟ — الْمَحَطَّةُ هُنَاكَ، عَلَى الْيَمِينِ",
+    "translit": "ayna al-maḥaṭṭatu? — al-maḥaṭṭatu hunāka, ʿalā al-yamīni",
+    "en": "— Where is the station? — The station is over there, on the right.",
+    "turns": [
+      { "ar": "أَيْنَ الْمَحَطَّةُ؟", "translit": "ayna al-maḥaṭṭatu?", "en": "Where is the station?" },
+      { "ar": "الْمَحَطَّةُ هُنَاكَ، عَلَى الْيَمِينِ", "translit": "al-maḥaṭṭatu hunāka, ʿalā al-yamīni", "en": "The station is over there, on the right." }
+    ],
+    "audio": "أَيْنَ الْمَحَطَّةُ؟ الْمَحَطَّةُ هُنَاكَ، عَلَى الْيَمِينِ.",
+    "level": "A1", "skills": [ "listening", "reading", "comprehension" ],
+    "prereqs": [ "gr:core-prepositions" ] }
 ]
