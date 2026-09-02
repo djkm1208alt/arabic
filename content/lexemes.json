@@ -2662,5 +2662,66 @@
       "vocabulary"
     ],
     "prereqs": []
-  }
+  },
+
+  { "id": "lex:peo-14", "kind": "lexeme", "ar": "طِفْل", "translit": "ṭifl", "en": "child", "pos": "noun", "topic": "people", "level": "A1", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:peo-15", "kind": "lexeme", "ar": "وَلَد", "translit": "walad", "en": "boy", "pos": "noun", "topic": "people", "level": "A1", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:peo-16", "kind": "lexeme", "ar": "رَجُل", "translit": "rajul", "en": "man", "pos": "noun", "topic": "people", "level": "A1", "notes": "Plural: رِجَال (rijāl).", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:peo-17", "kind": "lexeme", "ar": "اِمْرَأَة", "translit": "imraʾah", "en": "woman", "pos": "noun", "topic": "people", "level": "A1", "notes": "Plural: نِسَاء (nisāʾ), an unrelated word.", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:peo-18", "kind": "lexeme", "ar": "عَمّ", "translit": "ʿamm", "en": "uncle (paternal)", "pos": "noun", "topic": "people", "level": "A1", "notes": "Father's brother. Mother's brother is خَال (khāl).", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:peo-19", "kind": "lexeme", "ar": "عَمَّة", "translit": "ʿammah", "en": "aunt (paternal)", "pos": "noun", "topic": "people", "level": "A1", "notes": "Father's sister. Mother's sister is خَالَة (khālah).", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:peo-20", "kind": "lexeme", "ar": "اِسْم", "translit": "ism", "en": "name", "pos": "noun", "topic": "people", "level": "A1", "notes": "\"My name\" = اِسْمِي (ismī).", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+
+  { "id": "lex:foo-16", "kind": "lexeme", "ar": "عَصِير", "translit": "ʿaṣīr", "en": "juice", "pos": "noun", "topic": "food", "level": "A1", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:foo-17", "kind": "lexeme", "ar": "بَيْضَة", "translit": "bayḍah", "en": "egg", "pos": "noun", "topic": "food", "level": "A1", "notes": "بَيْضَة is one egg; the collective is بَيْض (bayḍ).", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:foo-18", "kind": "lexeme", "ar": "جُبْن", "translit": "jubn", "en": "cheese", "pos": "noun", "topic": "food", "level": "A1", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:foo-19", "kind": "lexeme", "ar": "مِلْح", "translit": "milḥ", "en": "salt", "pos": "noun", "topic": "food", "level": "A1", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:foo-20", "kind": "lexeme", "ar": "تُفَّاح", "translit": "tuffāḥ", "en": "apple", "pos": "noun", "topic": "food", "level": "A1", "notes": "Collective; \"an apple\" = تُفَّاحَة (tuffāḥah).", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:foo-21", "kind": "lexeme", "ar": "وَجْبَة", "translit": "wajbah", "en": "meal", "pos": "noun", "topic": "food", "level": "A1", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:foo-22", "kind": "lexeme", "ar": "فَطُور", "translit": "faṭūr", "en": "breakfast", "pos": "noun", "topic": "food", "level": "A1", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:foo-23", "kind": "lexeme", "ar": "غَدَاء", "translit": "ghadāʾ", "en": "lunch", "pos": "noun", "topic": "food", "level": "A1", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:foo-24", "kind": "lexeme", "ar": "عَشَاء", "translit": "ʿashāʾ", "en": "dinner", "pos": "noun", "topic": "food", "level": "A1", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:foo-25", "kind": "lexeme", "ar": "جَائِع", "translit": "jāʾiʿ", "en": "hungry", "pos": "adjective", "topic": "food", "level": "A1", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:foo-26", "kind": "lexeme", "ar": "عَطْشَان", "translit": "ʿaṭshān", "en": "thirsty", "pos": "adjective", "topic": "food", "level": "A1", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:foo-27", "kind": "lexeme", "ar": "لَذِيذ", "translit": "ladhīdh", "en": "delicious", "pos": "adjective", "topic": "food", "level": "A1", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+
+  { "id": "lex:hom-13", "kind": "lexeme", "ar": "جِدَار", "translit": "jidār", "en": "wall", "pos": "noun", "topic": "home", "level": "A1", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:hom-14", "kind": "lexeme", "ar": "أَرْض", "translit": "arḍ", "en": "floor", "pos": "noun", "topic": "home", "level": "A1", "notes": "Also \"ground\" or \"land\".", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:hom-15", "kind": "lexeme", "ar": "حَدِيقَة", "translit": "ḥadīqah", "en": "garden", "pos": "noun", "topic": "home", "level": "A1", "notes": "Also \"park\".", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:hom-16", "kind": "lexeme", "ar": "نَظِيف", "translit": "naẓīf", "en": "clean", "pos": "adjective", "topic": "home", "level": "A1", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+
+  { "id": "lex:tim-20", "kind": "lexeme", "ar": "سَاعَة", "translit": "sāʿah", "en": "hour", "pos": "noun", "topic": "time", "level": "A1", "notes": "Also \"clock\" / \"watch\".", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:tim-21", "kind": "lexeme", "ar": "دَقِيقَة", "translit": "daqīqah", "en": "minute", "pos": "noun", "topic": "time", "level": "A1", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:tim-22", "kind": "lexeme", "ar": "يَوْم", "translit": "yawm", "en": "day", "pos": "noun", "topic": "time", "level": "A1", "notes": "Plural: أَيَّام (ayyām).", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:tim-23", "kind": "lexeme", "ar": "ظُهْر", "translit": "ẓuhr", "en": "noon", "pos": "noun", "topic": "time", "level": "A1", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:tim-24", "kind": "lexeme", "ar": "مُبَكِّرًا", "translit": "mubakkiran", "en": "early", "pos": "adverb", "topic": "time", "level": "A1", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:tim-25", "kind": "lexeme", "ar": "مُتَأَخِّرًا", "translit": "mutaʾakhkhiran", "en": "late", "pos": "adverb", "topic": "time", "level": "A1", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:tim-26", "kind": "lexeme", "ar": "دَائِمًا", "translit": "dāʾiman", "en": "always", "pos": "adverb", "topic": "time", "level": "A1", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:tim-27", "kind": "lexeme", "ar": "أَحْيَانًا", "translit": "aḥyānan", "en": "sometimes", "pos": "adverb", "topic": "time", "level": "A1", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:tim-28", "kind": "lexeme", "ar": "قَبْلَ", "translit": "qabla", "en": "before", "pos": "preposition", "topic": "time", "level": "A1", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:tim-29", "kind": "lexeme", "ar": "بَعْدَ", "translit": "baʿda", "en": "after", "pos": "preposition", "topic": "time", "level": "A1", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+
+  { "id": "lex:ver-11", "kind": "lexeme", "ar": "جَاءَ", "translit": "jāʾa", "en": "to come", "pos": "verb", "topic": "verbs", "level": "A1", "example": { "ar": "جَاءَ إِلَى الْبَيْت.", "en": "He came home." }, "notes": "Present tense: يَجِيء (yajīʾ).", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:ver-12", "kind": "lexeme", "ar": "نَامَ", "translit": "nāma", "en": "to sleep", "pos": "verb", "topic": "verbs", "level": "A1", "example": { "ar": "نَامَ الطِّفْل.", "en": "The child slept." }, "notes": "Present tense: يَنَام (yanām).", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:ver-13", "kind": "lexeme", "ar": "اِسْتَيْقَظَ", "translit": "istayqaẓa", "en": "to wake up", "pos": "verb", "topic": "verbs", "level": "A1", "example": { "ar": "اِسْتَيْقَظْتُ مُبَكِّرًا.", "en": "I woke up early." }, "notes": "Present tense: يَسْتَيْقِظ (yastayqiẓ).", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:ver-14", "kind": "lexeme", "ar": "دَرَسَ", "translit": "darasa", "en": "to study", "pos": "verb", "topic": "verbs", "level": "A1", "example": { "ar": "دَرَسَ الطَّالِبُ الدَّرْس.", "en": "The student studied the lesson." }, "notes": "Present tense: يَدْرُس (yadrus).", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:ver-15", "kind": "lexeme", "ar": "سَكَنَ", "translit": "sakana", "en": "to live (reside)", "pos": "verb", "topic": "verbs", "level": "A1", "example": { "ar": "يَسْكُنُ فِي الْمَدِينَة.", "en": "He lives in the city." }, "notes": "Present tense: يَسْكُن (yaskun).", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:ver-16", "kind": "lexeme", "ar": "أَرَادَ", "translit": "arāda", "en": "to want", "pos": "verb", "topic": "verbs", "level": "A1", "example": { "ar": "أُرِيدُ الْمَاء.", "en": "I want water." }, "notes": "Present tense: يُرِيد (yurīd).", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:ver-17", "kind": "lexeme", "ar": "عِنْدَ", "translit": "ʿinda", "en": "to have (possess)", "pos": "particle", "topic": "verbs", "level": "A1", "example": { "ar": "عِنْدِي أَخ.", "en": "I have a brother." }, "notes": "Arabic has no verb \"to have\": عِنْدَ (\"at / with\") takes a possessive suffix — عِنْدِي (I have), عِنْدَهُ (he has).", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:ver-18", "kind": "lexeme", "ar": "لَعِبَ", "translit": "laʿiba", "en": "to play", "pos": "verb", "topic": "verbs", "level": "A1", "example": { "ar": "لَعِبَ الْوَلَد.", "en": "The boy played." }, "notes": "Present tense: يَلْعَب (yalʿab).", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:ver-19", "kind": "lexeme", "ar": "فَتَحَ", "translit": "fataḥa", "en": "to open", "pos": "verb", "topic": "verbs", "level": "A1", "example": { "ar": "فَتَحَ الْبَاب.", "en": "He opened the door." }, "notes": "Present tense: يَفْتَح (yaftaḥ).", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:ver-20", "kind": "lexeme", "ar": "أَغْلَقَ", "translit": "aghlaqa", "en": "to close", "pos": "verb", "topic": "verbs", "level": "A1", "example": { "ar": "أَغْلَقْتُ النَّافِذَة.", "en": "I closed the window." }, "notes": "Present tense: يُغْلِق (yughliq).", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:ver-21", "kind": "lexeme", "ar": "جَلَسَ", "translit": "jalasa", "en": "to sit", "pos": "verb", "topic": "verbs", "level": "A1", "example": { "ar": "جَلَسَ عَلَى الْكُرْسِيّ.", "en": "He sat on the chair." }, "notes": "Present tense: يَجْلِس (yajlis).", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:ver-22", "kind": "lexeme", "ar": "مَشَى", "translit": "mashā", "en": "to walk", "pos": "verb", "topic": "verbs", "level": "A1", "example": { "ar": "مَشَى إِلَى الْمَدْرَسَة.", "en": "He walked to school." }, "notes": "Present tense: يَمْشِي (yamshī).", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+
+  { "id": "lex:pro-04", "kind": "lexeme", "ar": "هَذَا", "translit": "hādhā", "en": "this (m.)", "pos": "demonstrative", "topic": "pronouns", "level": "A1", "notes": "Points at something masculine. See the grammar point gr:demonstratives.", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:pro-05", "kind": "lexeme", "ar": "هَذِهِ", "translit": "hādhihi", "en": "this (f.)", "pos": "demonstrative", "topic": "pronouns", "level": "A1", "notes": "Points at something feminine.", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:pro-06", "kind": "lexeme", "ar": "هَؤُلَاءِ", "translit": "hāʾulāʾi", "en": "these", "pos": "demonstrative", "topic": "pronouns", "level": "A1", "notes": "Plural of هَذَا / هَذِهِ, for people and things.", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+
+  { "id": "lex:prt-01", "kind": "lexeme", "ar": "فِي", "translit": "fī", "en": "in / at", "pos": "preposition", "topic": "particles", "level": "A1", "notes": "The noun after it takes the genitive ending. See gr:core-prepositions.", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:prt-02", "kind": "lexeme", "ar": "عَلَى", "translit": "ʿalā", "en": "on", "pos": "preposition", "topic": "particles", "level": "A1", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:prt-03", "kind": "lexeme", "ar": "مِنْ", "translit": "min", "en": "from", "pos": "preposition", "topic": "particles", "level": "A1", "notes": "Before الـ it becomes مِنَ (mina).", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:prt-04", "kind": "lexeme", "ar": "إِلَى", "translit": "ilā", "en": "to / towards", "pos": "preposition", "topic": "particles", "level": "A1", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:prt-05", "kind": "lexeme", "ar": "مَعَ", "translit": "maʿa", "en": "with", "pos": "preposition", "topic": "particles", "level": "A1", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:prt-06", "kind": "lexeme", "ar": "لَيْسَ", "translit": "laysa", "en": "is not / are not", "pos": "particle", "topic": "particles", "level": "A1", "notes": "Negates a nominal sentence; the comment after it takes the accusative. See gr:negation-a1.", "tags": [], "skills": ["vocabulary"], "prereqs": [] }
 ]
