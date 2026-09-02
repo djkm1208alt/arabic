@@ -183,7 +183,10 @@ function load() {
         }
     }
     for (const t of data.texts) {
-        if (!["m8", "m11"].includes(t.source)) errors.push(`text ${t.id}: source "${t.source}" must be m8 or m11`);
+        // m8 = M8 reading passage (carries reduced/unvowelled, feeds readingPassages);
+        // m11 = grammar-demo sentence (carries concept, feeds grammarExamples);
+        // m20 = M20 Phase B reading/dialogue text (reaches lessons only via data-authored lessons).
+        if (!["m8", "m11", "m20"].includes(t.source)) errors.push(`text ${t.id}: source "${t.source}" must be m8, m11 or m20`);
     }
 
     /* prereq graph: every edge resolves, no cycles (M14 has no prereqs — kept for later) */
