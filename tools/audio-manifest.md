@@ -7,14 +7,14 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 
 | | count |
 |---|---:|
-| Distinct targets | 545 |
+| Distinct targets | 553 |
 | — Tier 1 (foundation) | 119 |
-| — Tier 2 (vocabulary) | 349 |
+| — Tier 2 (vocabulary) | 357 |
 | — Tier 3 (stays TTS) | 77 |
-| Unique native recordings needed (Tier 1+2) | 459 |
+| Unique native recordings needed (Tier 1+2) | 464 |
 | — of those, present on disk | 0 |
-| — still missing | 459 |
-| Aliases (share another recording) | 9 |
+| — still missing | 464 |
+| Aliases (share another recording) | 12 |
 
 ## Tier 1 — Foundation
 
@@ -178,6 +178,7 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `sentences/ver-26-ex.mp3` | سَافَرَ إِلَى مِصْر. |  | He travelled to Egypt. | recording | tts |
 | `sentences/ver-27-ex.mp3` | وَصَلَ الْقِطَار. |  | The train arrived. | recording | tts |
 | `sentences/ver-28-ex.mp3` | رَجَعَ إِلَى الْبَيْت. |  | He returned home. | recording | tts |
+| `sentences/ver-29-ex.mp3` | هُوَ يَفْعَلُ الْوَاجِب. |  | He is doing the homework. | recording | tts |
 | `words/adj-01.mp3` | كَبِير | kabīr | big | recording | tts |
 | `words/adj-01f.mp3` | كَبِيرَة | kabīrah | big (feminine) | recording | tts |
 | `words/adj-02.mp3` | صَغِير | ṣaghīr | small | recording | tts |
@@ -215,6 +216,7 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `words/dir-01.mp3` | يَمِين | yamīn | right (direction) | recording | tts |
 | `words/dir-02.mp3` | يَسَار | yasār | left (direction) | recording | tts |
 | `words/dir-03.mp3` | إِلَى الْأَمَام | ilā al-amām | straight ahead | recording | tts |
+| `words/dir-04.mp3` | فَوْقَ | fawqa | above / on | recording | tts |
 | `words/exp-01.mp3` | مِنْ فَضْلِك | min faḍlik | please | recording | tts |
 | `words/exp-02.mp3` | شُكْرًا | shukran | thank you | recording | tts |
 | `words/exp-03.mp3` | عَفْوًا | ʿafwan | you're welcome / excuse me | recording | tts |
@@ -286,6 +288,7 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `words/hom-14.mp3` | أَرْض | arḍ | floor | recording | tts |
 | `words/hom-15.mp3` | حَدِيقَة | ḥadīqah | garden | recording | tts |
 | `words/hom-16.mp3` | نَظِيف | naẓīf | clean | recording | tts |
+| `words/adj-07.mp3` | قَدِيم | qadīm | old (thing) | alias | tts |
 | `words/num-00.mp3` | صِفْر | ṣifr | zero | recording | tts |
 | `words/num-01.mp3` | وَاحِد | wāḥid | one | recording | tts |
 | `words/num-02.mp3` | اِثْنَان | ithnān | two | recording | tts |
@@ -326,6 +329,8 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `words/peo-19.mp3` | عَمَّة | ʿammah | aunt (paternal) | recording | tts |
 | `words/peo-20.mp3` | اِسْم | ism | name | recording | tts |
 | `words/peo-21.mp3` | جَار | jār | neighbour | recording | tts |
+| `words/adj-02.mp3` | صَغِير | ṣaghīr | young | alias | tts |
+| `words/adj-01.mp3` | كَبِير | kabīr | old (person) | alias | tts |
 | `words/pla-01.mp3` | مَدِينَة | madīnah | city | recording | tts |
 | `words/pla-02.mp3` | قَرْيَة | qaryah | village | recording | tts |
 | `words/pla-03.mp3` | شَارِع | shāriʿ | street | recording | tts |
@@ -345,6 +350,7 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `words/pla-17.mp3` | هُنَاكَ | hunāka | there | recording | tts |
 | `words/pla-18.mp3` | قَرِيب | qarīb | near | recording | tts |
 | `words/pla-19.mp3` | بَعِيد | baʿīd | far | recording | tts |
+| `words/pla-20.mp3` | مُتَنَزَّه | mutanazzah | park | recording | tts |
 | `words/pro-01.mp3` | هُوَ | huwa | he | recording | tts |
 | `words/pro-02.mp3` | هِيَ | hiya | she | recording | tts |
 | `words/pro-03.mp3` | هُمْ | hum | they (masculine/mixed group) | recording | tts |
@@ -470,6 +476,7 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `words/ver-26.mp3` | سَافَرَ | sāfara | to travel | recording | tts |
 | `words/ver-27.mp3` | وَصَلَ | waṣala | to arrive | recording | tts |
 | `words/ver-28.mp3` | رَجَعَ | rajaʿa | to return | recording | tts |
+| `words/ver-29.mp3` | فَعَلَ | faʿala | to do / to make | recording | tts |
 | `words/wea-01.mp3` | حَارّ | ḥārr | hot (weather) | recording | tts |
 | `words/wea-02.mp3` | بَارِد | bārid | cold (weather) | recording | tts |
 | `words/wea-03.mp3` | دَافِئ | dāfiʾ | warm | recording | tts |
@@ -488,6 +495,7 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `words/wrk-08.mp3` | زَمِيل | zamīl | colleague | recording | tts |
 | `words/wrk-09.mp3` | مَشْغُول | mashghūl | busy | recording | tts |
 | `words/wrk-10.mp3` | مُهِمّ | muhimm | important | recording | tts |
+| `words/wrk-11.mp3` | عَمَل | ʿamal | work / job | recording | tts |
 | `words/peo-03-pl.mp3` | إِخْوَة | ikhwah | brother (plural) | recording | tts |
 | `words/peo-04-pl.mp3` | أَخَوَات | akhawāt | sister (plural) | recording | tts |
 | `words/peo-05-pl.mp3` | أَبْنَاء | abnāʾ | son (plural) | recording | tts |
