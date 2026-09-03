@@ -2,8 +2,9 @@
 
 **Status:** scope, held for approval. No implementation yet.
 **Parent:** [m20_content_pipeline_scope.md](m20_content_pipeline_scope.md) §"PHASE B" item 5.
-**Base:** `main` @ `958946c` (batch 4 merged, live — A1 vocabulary + texts complete).
-**Branch (created):** `feature/m20-a1-writing`.
+**Base:** cut from `main` @ `958946c`; **rebased onto `origin/main`** (PRs #24/#26 —
+the B3 residual-cleanup lexemes + a 3-blurb lang/dir fix — landed mid-batch).
+**Branch:** `feature/m20-a1-writing`.
 
 ---
 
