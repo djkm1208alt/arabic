@@ -505,7 +505,7 @@
     {
       "id": "a1-this-and-that", "unitId": "a1-u3", "order": 10,
       "title": "This, That & the Little Words",
-      "blurb": "هَذَا / هَذِهِ / هَؤُلَاءِ, the core prepositions فِي عَلَى مِنْ إِلَى مَعَ, and لَيْسَ.",
+      "blurb": "Demonstratives (هَذَا / هَذِهِ / هَؤُلَاءِ — this, these) and the core prepositions (فِي عَلَى مِنْ إِلَى مَعَ — in, on, from, to, with), plus negation with لَيْسَ.",
       "level": "A1", "skills": ["vocabulary", "grammar"],
       "objectives": ["lex:pro-04","lex:pro-05","lex:pro-06","lex:prt-01","lex:prt-02","lex:prt-03","lex:prt-04","lex:prt-05","lex:prt-06"],
       "status": "available", "source": "generate"
@@ -545,7 +545,7 @@
     {
       "id": "a1-question-words", "unitId": "a1-u3", "order": 15,
       "title": "Asking Questions",
-      "blurb": "مَنْ / مَا / أَيْنَ / مَتَى / لِمَاذَا / كَيْفَ / كَمْ — the seven question words.",
+      "blurb": "The seven question words — مَنْ / مَا / أَيْنَ / مَتَى / لِمَاذَا / كَيْفَ / كَمْ — for asking who, what, where, when, why, how, and how many.",
       "level": "A1", "skills": ["vocabulary", "grammar"],
       "objectives": ["lex:prt-18","lex:prt-19","lex:prt-20","lex:prt-21","lex:prt-22","lex:prt-23","lex:prt-24"],
       "status": "available", "source": "generate"
@@ -553,7 +553,7 @@
     {
       "id": "a1-connectors", "unitId": "a1-u3", "order": 16,
       "title": "Joining Words & Subject Pronouns",
-      "blurb": "وَ / أَوْ / لَكِنْ / لِأَنَّ, the pronouns أَنَا / أَنْتَ / أَنْتِ / نَحْنُ, ذَلِكَ, and good / bad / fine.",
+      "blurb": "The joining words وَ / أَوْ / لَكِنْ / لِأَنَّ (and, or, but, because), the subject pronouns أَنَا / أَنْتَ / أَنْتِ / نَحْنُ (I, you m., you f., we) plus ذَلِكَ (that), and the adjectives good / bad / fine.",
       "level": "A1", "skills": ["vocabulary", "grammar"],
       "objectives": ["lex:prt-14","lex:prt-15","lex:prt-16","lex:prt-17","lex:pro-08","lex:pro-09","lex:pro-10","lex:pro-11","lex:pro-07","lex:adj-14","lex:adj-15","lex:exp-11"],
       "status": "available", "source": "generate"
