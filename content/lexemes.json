@@ -2689,6 +2689,7 @@
   { "id": "lex:hom-14", "kind": "lexeme", "ar": "أَرْض", "translit": "arḍ", "en": "floor", "pos": "noun", "topic": "home", "level": "A1", "notes": "Also \"ground\" or \"land\".", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
   { "id": "lex:hom-15", "kind": "lexeme", "ar": "حَدِيقَة", "translit": "ḥadīqah", "en": "garden", "pos": "noun", "topic": "home", "level": "A1", "notes": "Also \"park\".", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
   { "id": "lex:hom-16", "kind": "lexeme", "ar": "نَظِيف", "translit": "naẓīf", "en": "clean", "pos": "adjective", "topic": "home", "level": "A1", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:hom-17", "kind": "lexeme", "ar": "قَدِيم", "translit": "qadīm", "en": "old (thing)", "pos": "adjective", "topic": "home", "level": "A1", "notes": "Pairs with the existing جَدِيد (jadīd) \"new\" — قَدِيم/جَدِيد describes objects; كَبِير/صَغِير (see \"old (person)\"/\"young\") describes a person's age.", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
 
   { "id": "lex:tim-20", "kind": "lexeme", "ar": "سَاعَة", "translit": "sāʿah", "en": "hour", "pos": "noun", "topic": "time", "level": "A1", "notes": "Also \"clock\" / \"watch\".", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
   { "id": "lex:tim-21", "kind": "lexeme", "ar": "دَقِيقَة", "translit": "daqīqah", "en": "minute", "pos": "noun", "topic": "time", "level": "A1", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
@@ -2726,6 +2727,8 @@
   { "id": "lex:prt-06", "kind": "lexeme", "ar": "لَيْسَ", "translit": "laysa", "en": "is not / are not", "pos": "particle", "topic": "particles", "level": "A1", "notes": "Negates a nominal sentence; the comment after it takes the accusative. See gr:negation-a1.", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
 
   { "id": "lex:peo-21", "kind": "lexeme", "ar": "جَار", "translit": "jār", "en": "neighbour", "pos": "noun", "topic": "people", "level": "A1", "notes": "Feminine: جَارَة (jārah). Plural: جِيرَان (jīrān).", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:peo-22", "kind": "lexeme", "ar": "صَغِير", "translit": "ṣaghīr", "en": "young", "pos": "adjective", "topic": "people", "level": "A1", "notes": "Same word as the existing \"small\" (size) adjective — صَغِير covers both a person's age and an object's size, same as كَبِير for \"old (person)\" / \"big\".", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:peo-23", "kind": "lexeme", "ar": "كَبِير", "translit": "kabīr", "en": "old (person)", "pos": "adjective", "topic": "people", "level": "A1", "notes": "Same word as the existing \"big\" (size) adjective — see the note on \"young\".", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
 
   { "id": "lex:sch-11", "kind": "lexeme", "ar": "جَامِعَة", "translit": "jāmiʿah", "en": "university", "pos": "noun", "topic": "school", "level": "A1", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
   { "id": "lex:sch-12", "kind": "lexeme", "ar": "قَلَم رَصَاص", "translit": "qalam raṣāṣ", "en": "pencil", "pos": "noun", "topic": "school", "level": "A1", "notes": "Literally \"lead pen\".", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
@@ -2749,6 +2752,7 @@
   { "id": "lex:wrk-08", "kind": "lexeme", "ar": "زَمِيل", "translit": "zamīl", "en": "colleague", "pos": "noun", "topic": "work", "level": "A1", "notes": "Also \"classmate\". Feminine: زَمِيلَة (zamīlah).", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
   { "id": "lex:wrk-09", "kind": "lexeme", "ar": "مَشْغُول", "translit": "mashghūl", "en": "busy", "pos": "adjective", "topic": "work", "level": "A1", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
   { "id": "lex:wrk-10", "kind": "lexeme", "ar": "مُهِمّ", "translit": "muhimm", "en": "important", "pos": "adjective", "topic": "work", "level": "A1", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:wrk-11", "kind": "lexeme", "ar": "عَمَل", "translit": "ʿamal", "en": "work / job", "pos": "noun", "topic": "work", "level": "A1", "notes": "Noun form of the existing عَمِلَ (ʿamila) \"to work\" verb.", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
 
   { "id": "lex:pla-12", "kind": "lexeme", "ar": "بَلَد", "translit": "balad", "en": "country", "pos": "noun", "topic": "places", "level": "A1", "notes": "Plural: بِلَاد (bilād) or بُلْدَان (buldān).", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
   { "id": "lex:pla-13", "kind": "lexeme", "ar": "مَتْجَر", "translit": "matjar", "en": "shop / store", "pos": "noun", "topic": "places", "level": "A1", "notes": "Also دُكَّان (dukkān).", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
@@ -2758,6 +2762,7 @@
   { "id": "lex:pla-17", "kind": "lexeme", "ar": "هُنَاكَ", "translit": "hunāka", "en": "there", "pos": "adverb", "topic": "places", "level": "A1", "notes": "Also means \"there is / there are\".", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
   { "id": "lex:pla-18", "kind": "lexeme", "ar": "قَرِيب", "translit": "qarīb", "en": "near", "pos": "adjective", "topic": "places", "level": "A1", "notes": "قَرِيب مِنْ = near to.", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
   { "id": "lex:pla-19", "kind": "lexeme", "ar": "بَعِيد", "translit": "baʿīd", "en": "far", "pos": "adjective", "topic": "places", "level": "A1", "notes": "بَعِيد عَنْ = far from.", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:pla-20", "kind": "lexeme", "ar": "مُتَنَزَّه", "translit": "mutanazzah", "en": "park", "pos": "noun", "topic": "places", "level": "A1", "notes": "Distinct from the existing حَدِيقَة (ḥadīqah) \"garden\" — مُتَنَزَّه is specifically a public park / recreation area.", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
 
   { "id": "lex:shp-01", "kind": "lexeme", "ar": "سِعْر", "translit": "siʿr", "en": "price", "pos": "noun", "topic": "shopping", "level": "A1", "notes": "Also ثَمَن (thaman).", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
   { "id": "lex:shp-02", "kind": "lexeme", "ar": "رَخِيص", "translit": "rakhīṣ", "en": "cheap", "pos": "adjective", "topic": "shopping", "level": "A1", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
@@ -2776,6 +2781,7 @@
   { "id": "lex:dir-01", "kind": "lexeme", "ar": "يَمِين", "translit": "yamīn", "en": "right (direction)", "pos": "noun", "topic": "directions", "level": "A1", "notes": "عَلَى الْيَمِين = on the right.", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
   { "id": "lex:dir-02", "kind": "lexeme", "ar": "يَسَار", "translit": "yasār", "en": "left (direction)", "pos": "noun", "topic": "directions", "level": "A1", "notes": "عَلَى الْيَسَار = on the left.", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
   { "id": "lex:dir-03", "kind": "lexeme", "ar": "إِلَى الْأَمَام", "translit": "ilā al-amām", "en": "straight ahead", "pos": "adverb", "topic": "directions", "level": "A1", "notes": "Literally \"to the front\".", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:dir-04", "kind": "lexeme", "ar": "فَوْقَ", "translit": "fawqa", "en": "above / on", "pos": "preposition", "topic": "directions", "level": "A1", "notes": "Distinct from the existing عَلَى (ʿalā) \"on\" (lex:prt-02) — فَوْقَ is spatial \"above/over\"; عَلَى is the general locative \"on/at\".", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
 
   { "id": "lex:bod-01", "kind": "lexeme", "ar": "رَأْس", "translit": "raʾs", "en": "head", "pos": "noun", "topic": "body", "level": "A1", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
   { "id": "lex:bod-02", "kind": "lexeme", "ar": "يَد", "translit": "yad", "en": "hand", "pos": "noun", "topic": "body", "level": "A1", "notes": "Feminine. Dual: يَدَانِ (yadāni).", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
@@ -2804,6 +2810,7 @@
   { "id": "lex:ver-26", "kind": "lexeme", "ar": "سَافَرَ", "translit": "sāfara", "en": "to travel", "pos": "verb", "topic": "verbs", "level": "A1", "example": { "ar": "سَافَرَ إِلَى مِصْر.", "en": "He travelled to Egypt." }, "notes": "Present tense: يُسَافِر (yusāfir).", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
   { "id": "lex:ver-27", "kind": "lexeme", "ar": "وَصَلَ", "translit": "waṣala", "en": "to arrive", "pos": "verb", "topic": "verbs", "level": "A1", "example": { "ar": "وَصَلَ الْقِطَار.", "en": "The train arrived." }, "notes": "Present tense: يَصِل (yaṣil).", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
   { "id": "lex:ver-28", "kind": "lexeme", "ar": "رَجَعَ", "translit": "rajaʿa", "en": "to return", "pos": "verb", "topic": "verbs", "level": "A1", "example": { "ar": "رَجَعَ إِلَى الْبَيْت.", "en": "He returned home." }, "notes": "Present tense: يَرْجِع (yarjiʿ).", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:ver-29", "kind": "lexeme", "ar": "فَعَلَ", "translit": "faʿala", "en": "to do / to make", "pos": "verb", "topic": "verbs", "level": "A1", "example": { "ar": "هُوَ يَفْعَلُ الْوَاجِب.", "en": "He is doing the homework." }, "notes": "Near-synonym of the existing عَمِلَ (ʿamila) \"to work / to do\" — فَعَلَ is the more general \"do/make\" verb, and the paradigm verb Arabic grammar references cite by root ف-ع-ل. Present tense: يَفْعَل (yafʿal).", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
 
   { "id": "lex:adj-14", "kind": "lexeme", "ar": "جَيِّد", "translit": "jayyid", "en": "good", "pos": "adjective", "topic": "adjectives", "level": "A1", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
   { "id": "lex:adj-15", "kind": "lexeme", "ar": "سَيِّئ", "translit": "sayyiʾ", "en": "bad", "pos": "adjective", "topic": "adjectives", "level": "A1", "tags": [], "skills": ["vocabulary"], "prereqs": [] },

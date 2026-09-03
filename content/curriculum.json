@@ -465,9 +465,9 @@
     {
       "id": "a1-family", "unitId": "a1-u3", "order": 5,
       "title": "Family & People",
-      "blurb": "Child, boy, man, woman, uncle, aunt, neighbour — and the word for \"name\".",
+      "blurb": "Child, boy, man, woman, uncle, aunt, neighbour, young, old — and the word for \"name\".",
       "level": "A1", "skills": ["vocabulary"],
-      "objectives": ["lex:peo-14","lex:peo-15","lex:peo-16","lex:peo-17","lex:peo-18","lex:peo-19","lex:peo-20","lex:peo-21"],
+      "objectives": ["lex:peo-14","lex:peo-15","lex:peo-16","lex:peo-17","lex:peo-18","lex:peo-19","lex:peo-20","lex:peo-21","lex:peo-22","lex:peo-23"],
       "status": "available", "source": "generate"
     },
     {
@@ -481,9 +481,9 @@
     {
       "id": "a1-home-garden", "unitId": "a1-u3", "order": 7,
       "title": "Around the Home",
-      "blurb": "Wall, floor, garden, and the word for \"clean\".",
+      "blurb": "Wall, floor, garden, old — and the word for \"clean\".",
       "level": "A1", "skills": ["vocabulary"],
-      "objectives": ["lex:hom-13","lex:hom-14","lex:hom-15","lex:hom-16"],
+      "objectives": ["lex:hom-13","lex:hom-14","lex:hom-15","lex:hom-16","lex:hom-17"],
       "status": "available", "source": "generate"
     },
     {
@@ -497,9 +497,9 @@
     {
       "id": "a1-daily-verbs", "unitId": "a1-u3", "order": 9,
       "title": "Everyday Actions",
-      "blurb": "Twelve common verbs — come, sleep, wake up, study, live, want, play, open, close, sit, walk — plus \"to have\".",
+      "blurb": "Thirteen common verbs — come, sleep, wake up, study, live, want, play, open, close, sit, walk, to do/make — plus \"to have\".",
       "level": "A1", "skills": ["vocabulary"],
-      "objectives": ["lex:ver-11","lex:ver-12","lex:ver-13","lex:ver-14","lex:ver-15","lex:ver-16","lex:ver-17","lex:ver-18","lex:ver-19","lex:ver-20","lex:ver-21","lex:ver-22"],
+      "objectives": ["lex:ver-11","lex:ver-12","lex:ver-13","lex:ver-14","lex:ver-15","lex:ver-16","lex:ver-17","lex:ver-18","lex:ver-19","lex:ver-20","lex:ver-21","lex:ver-22","lex:ver-29"],
       "status": "available", "source": "generate"
     },
     {
@@ -521,9 +521,9 @@
     {
       "id": "a1-work", "unitId": "a1-u3", "order": 12,
       "title": "Work & Jobs",
-      "blurb": "Office, company, doctor, engineer, employee, money — and \"busy\" and \"important\".",
+      "blurb": "Work/job, office, company, doctor, engineer, employee, money — and \"busy\" and \"important\".",
       "level": "A1", "skills": ["vocabulary"],
-      "objectives": ["lex:wrk-01","lex:wrk-02","lex:wrk-03","lex:wrk-04","lex:wrk-05","lex:wrk-06","lex:wrk-07","lex:wrk-08","lex:wrk-09","lex:wrk-10"],
+      "objectives": ["lex:wrk-01","lex:wrk-02","lex:wrk-03","lex:wrk-04","lex:wrk-05","lex:wrk-06","lex:wrk-07","lex:wrk-08","lex:wrk-09","lex:wrk-10","lex:wrk-11"],
       "status": "available", "source": "generate"
     },
     {
@@ -561,17 +561,17 @@
     {
       "id": "a1-places", "unitId": "a1-u4", "order": 1,
       "title": "Around Town",
-      "blurb": "Country, shop, bank, station — and here / there / near / far.",
+      "blurb": "Country, shop, bank, station, park — and here / there / near / far.",
       "level": "A1", "skills": ["vocabulary"],
-      "objectives": ["lex:pla-12","lex:pla-13","lex:pla-14","lex:pla-15","lex:pla-16","lex:pla-17","lex:pla-18","lex:pla-19"],
+      "objectives": ["lex:pla-12","lex:pla-13","lex:pla-14","lex:pla-15","lex:pla-16","lex:pla-17","lex:pla-18","lex:pla-19","lex:pla-20"],
       "status": "available", "source": "generate"
     },
     {
       "id": "a1-directions", "unitId": "a1-u4", "order": 2,
       "title": "Asking the Way",
-      "blurb": "Right, left, straight ahead — and the position words under / in front of / behind / next to / between / inside / outside.",
+      "blurb": "Right, left, straight ahead, above — and the position words under / in front of / behind / next to / between / inside / outside.",
       "level": "A1", "skills": ["vocabulary", "grammar"],
-      "objectives": ["lex:dir-01","lex:dir-02","lex:dir-03","lex:prt-07","lex:prt-08","lex:prt-09","lex:prt-10","lex:prt-11","lex:prt-12","lex:prt-13"],
+      "objectives": ["lex:dir-01","lex:dir-02","lex:dir-03","lex:dir-04","lex:prt-07","lex:prt-08","lex:prt-09","lex:prt-10","lex:prt-11","lex:prt-12","lex:prt-13"],
       "status": "available", "source": "generate"
     },
     {
