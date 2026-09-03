@@ -503,7 +503,7 @@
     ],
     "audio": "هَذَا الْبَيْتُ كَبِيرٌ",
     "level": "A1",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "skills": [ "reading", "comprehension", "listening", "grammar", "writing" ],
     "prereqs": [ "gr:demonstratives" ]
   },
   {
@@ -678,7 +678,7 @@
       { "surface": "الطَّقْسُ", "translit": "aṭ-ṭaqsu", "gloss": "the weather", "gender": "masculine" },
       { "surface": "حَارٌّ", "translit": "ḥārrun", "gloss": "hot", "gender": "masculine" }
     ],
-    "audio": "الطَّقْسُ حَارٌّ", "level": "A1", "skills": [ "reading", "listening", "comprehension" ],
+    "audio": "الطَّقْسُ حَارٌّ", "level": "A1", "skills": [ "reading", "listening", "comprehension", "writing" ],
     "prereqs": [ "gr:nominal-sentence", "gr:sun-moon" ] },
 
   { "id": "txt:read-i-student", "kind": "text", "textType": "sentence", "source": "m20",
@@ -696,7 +696,7 @@
       { "surface": "الْغُرْفَةُ", "translit": "al-ghurfatu", "gloss": "the room", "gender": "feminine" },
       { "surface": "نَظِيفَةٌ", "translit": "naẓīfatun", "gloss": "clean (feminine — agrees with the room)", "gender": "feminine" }
     ],
-    "audio": "الْغُرْفَةُ نَظِيفَةٌ", "level": "A1", "skills": [ "reading", "listening", "comprehension" ],
+    "audio": "الْغُرْفَةُ نَظِيفَةٌ", "level": "A1", "skills": [ "reading", "listening", "comprehension", "writing" ],
     "prereqs": [ "gr:nominal-sentence", "gr:gender-agreement" ] },
 
   { "id": "txt:read-he-engineer", "kind": "text", "textType": "sentence", "source": "m20",
@@ -732,7 +732,7 @@
       { "surface": "الْكِتَابُ", "translit": "al-kitābu", "gloss": "the book", "gender": "masculine" },
       { "surface": "عَلَى الطَّاوِلَةِ", "translit": "ʿalā aṭ-ṭāwilati", "gloss": "on the table (genitive)", "gender": null }
     ],
-    "audio": "الْكِتَابُ عَلَى الطَّاوِلَةِ", "level": "A1", "skills": [ "reading", "listening", "comprehension" ],
+    "audio": "الْكِتَابُ عَلَى الطَّاوِلَةِ", "level": "A1", "skills": [ "reading", "listening", "comprehension", "writing" ],
     "prereqs": [ "gr:core-prepositions" ] },
 
   { "id": "txt:read-this-my-house", "kind": "text", "textType": "sentence", "source": "m20",
@@ -741,7 +741,7 @@
       { "surface": "هَذَا", "translit": "hādhā", "gloss": "this", "gender": "masculine" },
       { "surface": "بَيْتِي", "translit": "baytī", "gloss": "my house", "gender": "masculine" }
     ],
-    "audio": "هَذَا بَيْتِي", "level": "A1", "skills": [ "reading", "listening", "comprehension" ],
+    "audio": "هَذَا بَيْتِي", "level": "A1", "skills": [ "reading", "listening", "comprehension", "writing" ],
     "prereqs": [ "gr:demonstratives", "gr:attached-possessive" ] },
 
   { "id": "txt:read-friend-university", "kind": "text", "textType": "sentence", "source": "m20",
@@ -760,7 +760,7 @@
       { "surface": "الرَّجُلُ", "translit": "ar-rajulu", "gloss": "the man", "gender": "masculine" },
       { "surface": "طَبِيبٌ", "translit": "ṭabībun", "gloss": "a doctor", "gender": "masculine" }
     ],
-    "audio": "ذَلِكَ الرَّجُلُ طَبِيبٌ", "level": "A1", "skills": [ "reading", "listening", "comprehension" ],
+    "audio": "ذَلِكَ الرَّجُلُ طَبِيبٌ", "level": "A1", "skills": [ "reading", "listening", "comprehension", "writing" ],
     "prereqs": [ "gr:demonstratives", "gr:nominal-sentence", "gr:sun-moon" ] },
 
   { "id": "txt:read-bag-under-chair", "kind": "text", "textType": "sentence", "source": "m20",
@@ -800,7 +800,7 @@
       { "surface": "لَكِنْ", "translit": "lākin", "gloss": "but", "gender": null },
       { "surface": "سَعِيدٌ", "translit": "saʿīdun", "gloss": "happy", "gender": "masculine" }
     ],
-    "audio": "أَنَا مُتْعَبٌ لَكِنْ سَعِيدٌ", "level": "A1", "skills": [ "reading", "listening", "comprehension" ],
+    "audio": "أَنَا مُتْعَبٌ لَكِنْ سَعِيدٌ", "level": "A1", "skills": [ "reading", "listening", "comprehension", "writing" ],
     "prereqs": [ "gr:nominal-sentence" ] },
 
   { "id": "txt:read-not-cold-today", "kind": "text", "textType": "sentence", "source": "m20",

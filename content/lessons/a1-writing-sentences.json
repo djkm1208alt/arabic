@@ -1,0 +1,56 @@
+{
+  "id": "a1-writing-sentences",
+  "unitId": "a1-u1",
+  "curriculumLessonId": "a1-writing-sentences",
+  "title": "Writing a Whole Sentence",
+  "level": "A1",
+  "skills": ["writing", "grammar"],
+  "objectives": [
+    "gr:nominal-sentence", "gr:gender-agreement", "gr:demonstratives",
+    "gr:attached-possessive", "gr:core-prepositions",
+    "txt:read-weather-hot", "txt:read-room-clean", "txt:read-this-my-house",
+    "txt:gram-dem-the-house", "txt:read-that-man-doctor",
+    "txt:read-book-on-table", "txt:read-tired-but-happy"
+  ],
+  "steps": [
+    {
+      "type": "explain",
+      "title": "Topic first, then the comment",
+      "body": [
+        "An A1 sentence has two parts: the topic (what you are talking about) and the comment (what you say about it). There is no verb — no word for \"is\".",
+        "So to write one, put the topic first — usually the word with الـ — then the comment: a describing word, a place, or something pointed at.",
+        "In the next step the tiles are whole words, not letters. Put the topic word on the right, then build left from there."
+      ],
+      "previewSymbols": ["الطَّقْسُ", "حَارٌّ"]
+    },
+    {
+      "type": "reading-practice",
+      "title": "Hear the seven sentences",
+      "intro": "Listen to each sentence and read along. Notice the order: topic, then comment. You will rebuild these from word tiles next.",
+      "fromObjectives": true
+    },
+    {
+      "type": "exercise",
+      "title": "Build each sentence",
+      "fromObjectives": true,
+      "exercise": { "kind": "build", "unit": "word" }
+    },
+    {
+      "type": "practice-choice",
+      "title": "Find the topic",
+      "arabicPrompt": "الطَّقْسُ حَارٌّ",
+      "prompt": "Which word is the topic — what the sentence is about?",
+      "options": [
+        { "label": "الطَّقْسُ", "correct": true },
+        { "label": "حَارٌّ", "correct": false }
+      ],
+      "explanation": "الطَّقْسُ (\"the weather\") is the topic; حَارٌّ (\"hot\") is the comment about it."
+    },
+    {
+      "type": "complete",
+      "title": "You wrote whole sentences",
+      "message": "You put the topic first and the comment after, with no verb between them, and built seven A1 sentences from word tiles. Practise them in the Review view.",
+      "finishLabel": "Finish"
+    }
+  ]
+}

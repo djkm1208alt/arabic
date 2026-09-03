@@ -1,0 +1,54 @@
+{
+  "id": "a1-writing-dictation",
+  "unitId": "a1-u3",
+  "curriculumLessonId": "a1-writing-dictation",
+  "title": "Spelling From Dictation",
+  "level": "A1",
+  "skills": ["writing", "listening"],
+  "objectives": [
+    "lex:peo-14", "lex:peo-19", "lex:peo-21",
+    "lex:foo-16", "lex:foo-17", "lex:foo-19", "lex:foo-20", "lex:foo-27",
+    "lex:hom-13", "lex:hom-16"
+  ],
+  "steps": [
+    {
+      "type": "explain",
+      "title": "Listen, then write",
+      "body": [
+        "Dictation is writing down a word you hear. You do not see it first — you turn the sounds into letters.",
+        "For each word: tap 🔊 Listen as many times as you need, say the word to yourself, then build it from the letter tiles. Use 🐢 Slower if the sounds run together.",
+        "Every word here is one you have already met, so you are spelling from memory, not guessing."
+      ]
+    },
+    {
+      "type": "reading-practice",
+      "title": "Hear the ten words",
+      "intro": "Listen to each word first and read along. In the next step you will spell them with only the sound to go on.",
+      "fromObjectives": true
+    },
+    {
+      "type": "exercise",
+      "title": "Spell what you hear",
+      "fromObjectives": true,
+      "exercise": { "kind": "build", "unit": "grapheme", "audio": true }
+    },
+    {
+      "type": "practice-choice",
+      "title": "Which word was it?",
+      "audioText": "عَصِير",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        { "label": "عَصِير", "correct": true },
+        { "label": "بَيْضَة", "correct": false },
+        { "label": "مِلْح", "correct": false }
+      ],
+      "explanation": "عَصِير (ʿaṣīr) means \"juice\"."
+    },
+    {
+      "type": "complete",
+      "title": "You took ten words from dictation",
+      "message": "You heard ten A1 words and spelled each one from the sound alone. That is the writing you use to take notes and send a message.",
+      "finishLabel": "Finish"
+    }
+  ]
+}
