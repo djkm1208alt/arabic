@@ -7,13 +7,13 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 
 | | count |
 |---|---:|
-| Distinct targets | 573 |
-| — Tier 1 (foundation) | 139 |
+| Distinct targets | 576 |
+| — Tier 1 (foundation) | 142 |
 | — Tier 2 (vocabulary) | 357 |
 | — Tier 3 (stays TTS) | 77 |
-| Unique native recordings needed (Tier 1+2) | 484 |
+| Unique native recordings needed (Tier 1+2) | 487 |
 | — of those, present on disk | 0 |
-| — still missing | 484 |
+| — still missing | 487 |
 | Aliases (share another recording) | 12 |
 
 ## Tier 1 — Foundation
@@ -86,6 +86,9 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `marks/fathatayn.mp3` | فً | an | fatḥatayn on a carrier letter | recording | tts |
 | `marks/kasra.mp3` | فِ | i | kasrah on a carrier letter | recording | tts |
 | `marks/kasratayn.mp3` | فٍ | in | kasratayn on a carrier letter | recording | tts |
+| `sentences/gram-count-one.mp3` | عِنْدِي كِتَابٌ وَاحِدٌ | ʿindī kitābun wāḥidun | I have one book. | recording | tts |
+| `sentences/gram-count-three.mp3` | عِنْدِي ثَلَاثَةُ كُتُبٍ | ʿindī thalāthatu kutubin | I have three books. | recording | tts |
+| `sentences/gram-count-two.mp3` | عِنْدِي كِتَابَانِ | ʿindī kitābāni | I have two books. | recording | tts |
 | `sentences/gram-def-def.mp3` | الْبَابُ | al-bābu | the door | recording | tts |
 | `sentences/gram-def-indef.mp3` | بَابٌ | bābun | a door | recording | tts |
 | `sentences/gram-def-sentence.mp3` | الْقَلَمُ جَدِيدٌ | al-qalamu jadīdun | The pen is new. | recording | tts |

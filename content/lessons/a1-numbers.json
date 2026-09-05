@@ -1,0 +1,74 @@
+{
+  "id": "a1-numbers",
+  "unitId": "a1-u5",
+  "curriculumLessonId": "a1-numbers",
+  "title": "Counting 1-10",
+  "level": "A1",
+  "skills": ["vocabulary", "grammar", "reading"],
+  "objectives": [
+    "lex:num-00", "lex:num-01", "lex:num-02", "lex:num-03", "lex:num-04",
+    "lex:num-05", "lex:num-06", "lex:num-07", "lex:num-08", "lex:num-09", "lex:num-10",
+    "gr:counted-noun-intro",
+    "txt:gram-count-one", "txt:gram-count-two", "txt:gram-count-three"
+  ],
+  "steps": [
+    {
+      "type": "explain",
+      "title": "Numbers don't work quite like English",
+      "body": [
+        "صِفْر (zero) through عَشَرَة (ten) — eleven words, same as any language. But once you start counting things with them, Arabic does something English doesn't.",
+        "For \"one\" and \"two\" you barely need the number at all: a singular noun already means one, and the dual ending already means two. For three and up, the number is followed by the noun in its plural form.",
+        "You'll read all eleven numbers first, then three short sentences that show counting in action."
+      ],
+      "previewSymbols": ["١", "٢", "٣"]
+    },
+    {
+      "type": "reading-practice",
+      "title": "Zero to ten, then counting for real",
+      "intro": "Read each number aloud, then the three sentences after them. Tap 🔊 to hear any line.",
+      "fromObjectives": true
+    },
+    {
+      "type": "practice-choice",
+      "title": "Which number?",
+      "arabicPrompt": "سَبْعَة",
+      "prompt": "Which number is this?",
+      "options": [
+        { "label": "Seven", "correct": true },
+        { "label": "Five", "correct": false },
+        { "label": "Nine", "correct": false }
+      ],
+      "explanation": "سَبْعَة (sabʿah) is \"seven\"."
+    },
+    {
+      "type": "practice-choice",
+      "title": "One, two, or three+?",
+      "arabicPrompt": "عِنْدِي كِتَابَانِ",
+      "prompt": "How many books, and how do you know?",
+      "options": [
+        { "label": "Two — the dual ending on كِتَابَانِ says so, no number word needed", "correct": true },
+        { "label": "One — كِتَاب means \"book\"", "correct": false },
+        { "label": "Three — the sentence must be using a plural", "correct": false }
+      ],
+      "explanation": "The ـَانِ ending is the dual (see the singular/dual/plural rule) — it already means \"two\", the way the plain singular كِتَابٌ already means \"one\"."
+    },
+    {
+      "type": "practice-choice",
+      "title": "Spot the plural",
+      "arabicPrompt": "عِنْدِي ثَلَاثَةُ كُتُبٍ",
+      "prompt": "What form is كُتُبٍ, and why?",
+      "options": [
+        { "label": "The plural of كِتَاب, because 3-10 are followed by a plural noun", "correct": true },
+        { "label": "The dual of كِتَاب, because ثَلَاثَة sounds like \"two\"", "correct": false },
+        { "label": "A different word for \"book\" that only appears after numbers", "correct": false }
+      ],
+      "explanation": "كُتُبٍ is كِتَاب's own (broken) plural — the same one from the singular/dual/plural rule — now in the genitive because it follows a number 3-10."
+    },
+    {
+      "type": "complete",
+      "title": "You can count in Arabic",
+      "message": "You read all eleven numbers 0-10, and saw why Arabic counting isn't just \"number + noun\" — the noun's own form already carries \"one\" or \"two\", and 3-10 take their own plural. The full agreement rule for 3-10 is worth its own lesson later — this is the shape of it.",
+      "finishLabel": "Finish"
+    }
+  ]
+}
