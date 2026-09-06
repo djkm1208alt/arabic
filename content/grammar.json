@@ -209,5 +209,28 @@
     "prereqs": [
       "gr:nominal-sentence"
     ]
+  },
+  {
+    "id": "gr:counted-noun-intro",
+    "kind": "grammar",
+    "name": "Counting nouns: 1-2 vs. 3-10",
+    "level": "A1",
+    "rule": "وَاحِد (one) and اِثْنَان (two) don't count a noun the way English does — the noun itself already shows the number: كِتَابٌ (a book) is already singular, كِتَابَانِ (two books) is already dual (see gr:noun-number) — وَاحِد only gets added for emphasis, agreeing with the noun. From ثَلَاثَة (three) to عَشَرَة (ten), the number is followed by the noun in its plural, genitive form: ثَلَاثَةُ كُتُبٍ (three books). The reversed masculine/feminine agreement you can already see on ثَلَاثَةُ (a \"feminine-form\" number counting a masculine noun) is a real rule, saved for a later, dedicated unit rather than rushed here.",
+    "examples": [
+      "txt:gram-count-one",
+      "txt:gram-count-two",
+      "txt:gram-count-three"
+    ],
+    "commonErrors": [
+      "Treating اِثْنَان + noun like 3-10 and reaching for a plural instead of the dual.",
+      "Expecting the counted noun after 3-10 to look like an English plural rather than the noun's own (often broken) plural, in the genitive."
+    ],
+    "skills": [
+      "grammar",
+      "reading"
+    ],
+    "prereqs": [
+      "gr:noun-number"
+    ]
   }
 ]

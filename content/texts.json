@@ -874,5 +874,62 @@
     ],
     "audio": "أَيْنَ الْمَحَطَّةُ؟ الْمَحَطَّةُ هُنَاكَ، عَلَى الْيَمِينِ.",
     "level": "A1", "skills": [ "listening", "reading", "comprehension" ],
-    "prereqs": [ "gr:core-prepositions" ] }
+    "prereqs": [ "gr:core-prepositions" ] },
+
+  {
+    "id": "txt:gram-count-one",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "counted-noun-intro",
+    "vowelled": "عِنْدِي كِتَابٌ وَاحِدٌ",
+    "translit": "ʿindī kitābun wāḥidun",
+    "en": "I have one book.",
+    "words": [
+      { "surface": "عِنْدِي", "translit": "ʿindī", "gloss": "I have (lit. \"at me\")", "gender": null },
+      { "surface": "كِتَابٌ", "translit": "kitābun", "gloss": "a book", "gender": "masculine" },
+      { "surface": "وَاحِدٌ", "translit": "wāḥidun", "gloss": "one — the singular noun already says this; وَاحِد just adds emphasis", "gender": "masculine" }
+    ],
+    "audio": "عِنْدِي كِتَابٌ وَاحِدٌ",
+    "level": "A1",
+    "skills": [ "reading", "comprehension", "grammar" ],
+    "prereqs": [ "gr:counted-noun-intro" ]
+  },
+  {
+    "id": "txt:gram-count-two",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "counted-noun-intro",
+    "vowelled": "عِنْدِي كِتَابَانِ",
+    "translit": "ʿindī kitābāni",
+    "en": "I have two books.",
+    "words": [
+      { "surface": "عِنْدِي", "translit": "ʿindī", "gloss": "I have (lit. \"at me\")", "gender": null },
+      { "surface": "كِتَابَانِ", "translit": "kitābāni", "gloss": "two books — the dual ending alone says \"two\", no separate number word needed", "gender": "masculine" }
+    ],
+    "audio": "عِنْدِي كِتَابَانِ",
+    "level": "A1",
+    "skills": [ "reading", "comprehension", "grammar" ],
+    "prereqs": [ "gr:counted-noun-intro" ]
+  },
+  {
+    "id": "txt:gram-count-three",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "counted-noun-intro",
+    "vowelled": "عِنْدِي ثَلَاثَةُ كُتُبٍ",
+    "translit": "ʿindī thalāthatu kutubin",
+    "en": "I have three books.",
+    "words": [
+      { "surface": "عِنْدِي", "translit": "ʿindī", "gloss": "I have (lit. \"at me\")", "gender": null },
+      { "surface": "ثَلَاثَةُ", "translit": "thalāthatu", "gloss": "three (feminine-form number, counting a masculine noun — the reversal rule for later)", "gender": "feminine" },
+      { "surface": "كُتُبٍ", "translit": "kutubin", "gloss": "books (plural, genitive after the number)", "gender": "masculine" }
+    ],
+    "audio": "عِنْدِي ثَلَاثَةُ كُتُبٍ",
+    "level": "A1",
+    "skills": [ "reading", "comprehension", "grammar" ],
+    "prereqs": [ "gr:counted-noun-intro" ]
+  }
 ]

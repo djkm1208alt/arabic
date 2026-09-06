@@ -72,9 +72,9 @@
     {
       "id": "a1-u5", "level": "A1", "order": 5,
       "title": "Numbers 1–10",
-      "blurb": "Counting, the counted noun, and telling the time — the start of the numbers strand. In development.",
+      "blurb": "Counting 1-10, and how Arabic nouns change after a number — full agreement rules come later.",
       "skills": ["vocabulary", "grammar"],
-      "status": "planned", "prereqs": ["a1-u3"]
+      "status": "available", "prereqs": ["a1-u3"]
     },
 
     {
@@ -621,6 +621,14 @@
       "level": "A1", "skills": ["listening", "comprehension"],
       "objectives": ["gr:nominal-sentence","gr:demonstratives","gr:attached-possessive","gr:core-prepositions","txt:read-dlg-greeting","txt:read-dlg-name","txt:read-dlg-who-is-this","txt:read-dlg-asking-way"],
       "status": "available", "source": "steps:a1-listening-dialogues"
+    },
+    {
+      "id": "a1-numbers", "unitId": "a1-u5", "order": 1,
+      "title": "Counting 1-10",
+      "blurb": "Zero through ten, and why Arabic counting isn't just \"number + noun\" the way English is.",
+      "level": "A1", "skills": ["vocabulary", "grammar", "reading"],
+      "objectives": ["lex:num-00","lex:num-01","lex:num-02","lex:num-03","lex:num-04","lex:num-05","lex:num-06","lex:num-07","lex:num-08","lex:num-09","lex:num-10","gr:counted-noun-intro","txt:gram-count-one","txt:gram-count-two","txt:gram-count-three"],
+      "status": "available", "source": "steps:a1-numbers"
     }
   ]
 }
