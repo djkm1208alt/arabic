@@ -80,16 +80,16 @@
     {
       "id": "a2-u1", "level": "A2", "order": 1,
       "title": "The Verbal Sentence",
-      "blurb": "Past and present tense of Form I, VSO word order, and كان. In development.",
+      "blurb": "Past tense of Form I, VSO word order, and كان.",
       "skills": ["grammar", "reading"],
-      "status": "planned", "prereqs": ["a1-u1"]
+      "status": "available", "prereqs": ["a1-u1"]
     },
     {
       "id": "a2-u2", "level": "A2", "order": 2,
       "title": "The Genitive Construct (Iḍāfa)",
-      "blurb": "Noun-to-noun possession, the backbone of Arabic phrasing. In development.",
+      "blurb": "Noun-to-noun possession, the backbone of Arabic phrasing.",
       "skills": ["grammar", "reading"],
-      "status": "planned", "prereqs": ["a1-u1"]
+      "status": "available", "prereqs": ["a1-u1"]
     },
     {
       "id": "a2-u3", "level": "A2", "order": 3,
@@ -629,6 +629,22 @@
       "level": "A1", "skills": ["vocabulary", "grammar", "reading"],
       "objectives": ["lex:num-00","lex:num-01","lex:num-02","lex:num-03","lex:num-04","lex:num-05","lex:num-06","lex:num-07","lex:num-08","lex:num-09","lex:num-10","gr:counted-noun-intro","txt:gram-count-one","txt:gram-count-two","txt:gram-count-three"],
       "status": "available", "source": "steps:a1-numbers"
+    },
+    {
+      "id": "a2-verbal-sentence", "unitId": "a2-u1", "order": 1,
+      "title": "The Verbal Sentence: Past Tense & كَانَ",
+      "blurb": "Verb-first word order, the full past-tense paradigm on a verb you already know, and كَانَ for putting a description in the past.",
+      "level": "A2", "skills": ["grammar", "reading"],
+      "objectives": ["gr:verbal-sentence","gr:kana","txt:gram-past-vso","txt:gram-past-1sg","txt:gram-past-2sg-f","txt:gram-kana-house","txt:gram-kana-fem","txt:gram-kana-1sg"],
+      "status": "available", "source": "steps:a2-verbal-sentence"
+    },
+    {
+      "id": "a2-idafa", "unitId": "a2-u2", "order": 1,
+      "title": "The Genitive Construct (Iḍāfa)",
+      "blurb": "How two nouns side by side express possession, with no word for \"of\" needed.",
+      "level": "A2", "skills": ["grammar", "reading"],
+      "objectives": ["gr:idafa","txt:gram-idafa-phrase","txt:gram-idafa-sentence","txt:gram-idafa-pen-student"],
+      "status": "available", "source": "steps:a2-idafa"
     }
   ]
 }

@@ -100,5 +100,23 @@ const nBad = lint({ lexemes: [lex({ id: "lex:n5", en: "photosynthesis" })] }, nW
 ok(nBad.warnings.some(w => w.indexOf("levelfit") === 0),
    "[levelfit] a genuinely off-level word still warns");
 
+/* M21 batch 1: harakat and levelfit both now also cover A2, checked against
+   wordlists.a2 the same way A1 is checked against wordlists.a1. */
+const a2Wl = { a1: wordlists.a1, a2: [
+    { en: "yesterday", topic: "verbal-sentence", pos: "adverb", priority: 1 },
+] };
+
+const a2HrkBad = lint({ lexemes: [lex({ id: "lex:a2hrk", ar: "بيت", translit: "bayt", en: "house", level: "A2" })] }, a2Wl, {});
+ok(a2HrkBad.warnings.some(w => w.indexOf("harakat") === 0),
+   "[harakat] now also fires on A2 content");
+
+const a2LfOK = lint({ lexemes: [lex({ id: "lex:a2lf1", en: "yesterday", topic: "verbal-sentence", level: "A2" })] }, a2Wl, {});
+ok(a2LfOK.warnings.filter(w => w.indexOf("levelfit") === 0).length === 0,
+   "[levelfit] an A2 lexeme on wordlists.a2 doesn't warn");
+
+const a2LfBad = lint({ lexemes: [lex({ id: "lex:a2lf2", en: "photosynthesis", topic: "verbal-sentence", level: "A2" })] }, a2Wl, {});
+ok(a2LfBad.warnings.some(w => w.indexOf("levelfit") === 0 && w.indexOf("A2") !== -1 && w.indexOf("wordlists/a2.json") !== -1),
+   "[levelfit] an A2 lexeme missing from wordlists.a2 warns, citing a2.json");
+
 console.log("\n" + (fails === 0 ? "✅ ALL LINT FIXTURES BEHAVE" : "❌ " + fails + " FAILURE(S)"));
 process.exit(fails ? 1 : 0);

@@ -931,5 +931,250 @@
     "level": "A1",
     "skills": [ "reading", "comprehension", "grammar" ],
     "prereqs": [ "gr:counted-noun-intro" ]
+  },
+  {
+    "id": "txt:gram-past-vso",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "verbal-sentence",
+    "vowelled": "ذَهَبَ الرَّجُلُ إِلَى الْمَدْرَسَةِ",
+    "translit": "dhahaba ar-rajulu ilā al-madrasati",
+    "en": "The man went to school.",
+    "words": [
+      { "surface": "ذَهَبَ", "translit": "dhahaba", "gloss": "went (he)", "gender": "masculine" },
+      { "surface": "الرَّجُلُ", "translit": "ar-rajulu", "gloss": "the man (subject, following the verb — VSO order)", "gender": "masculine" },
+      { "surface": "إِلَى الْمَدْرَسَةِ", "translit": "ilā al-madrasati", "gloss": "to school", "gender": null }
+    ],
+    "audio": "ذَهَبَ الرَّجُلُ إِلَى الْمَدْرَسَةِ",
+    "level": "A2",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:verbal-sentence" ]
+  },
+  {
+    "id": "txt:gram-past-1sg",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "verbal-sentence",
+    "vowelled": "أَنَا قَرَأْتُ الْكِتَابَ",
+    "translit": "anā qaraʾtu al-kitāba",
+    "en": "I read the book.",
+    "words": [
+      { "surface": "أَنَا", "translit": "anā", "gloss": "I", "gender": null },
+      { "surface": "قَرَأْتُ", "translit": "qaraʾtu", "gloss": "read (I) — the 1st-person past-tense ending, no gender marking", "gender": null },
+      { "surface": "الْكِتَابَ", "translit": "al-kitāba", "gloss": "the book (object, accusative)", "gender": "masculine" }
+    ],
+    "audio": "أَنَا قَرَأْتُ الْكِتَابَ",
+    "level": "A2",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:verbal-sentence" ]
+  },
+  {
+    "id": "txt:gram-past-2sg-f",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "verbal-sentence",
+    "vowelled": "أَنْتِ ذَهَبْتِ إِلَى الْبَيْتِ",
+    "translit": "anti dhahabti ilā al-bayti",
+    "en": "You (f.) went home.",
+    "words": [
+      { "surface": "أَنْتِ", "translit": "anti", "gloss": "you (f.)", "gender": "feminine" },
+      { "surface": "ذَهَبْتِ", "translit": "dhahabti", "gloss": "went (you, f.)", "gender": "feminine" },
+      { "surface": "إِلَى الْبَيْتِ", "translit": "ilā al-bayti", "gloss": "home (lit. \"to the house\")", "gender": null }
+    ],
+    "audio": "أَنْتِ ذَهَبْتِ إِلَى الْبَيْتِ",
+    "level": "A2",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:verbal-sentence" ]
+  },
+  {
+    "id": "txt:gram-kana-house",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "kana",
+    "vowelled": "كَانَ الْبَيْتُ كَبِيرًا",
+    "translit": "kāna al-baytu kabīran",
+    "en": "The house was big.",
+    "words": [
+      { "surface": "كَانَ", "translit": "kāna", "gloss": "was", "gender": "masculine" },
+      { "surface": "الْبَيْتُ", "translit": "al-baytu", "gloss": "the house (اسم كان, nominative)", "gender": "masculine" },
+      { "surface": "كَبِيرًا", "translit": "kabīran", "gloss": "big (خبر كان, accusative — not the nominative ٌ a nominal sentence would use)", "gender": "masculine" }
+    ],
+    "audio": "كَانَ الْبَيْتُ كَبِيرًا",
+    "level": "A2",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:kana" ]
+  },
+  {
+    "id": "txt:gram-kana-fem",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "kana",
+    "vowelled": "كَانَتِ الْمَرْأَةُ كَبِيرَةً",
+    "translit": "kānati al-marʾatu kabīratan",
+    "en": "The woman was old.",
+    "words": [
+      { "surface": "كَانَتِ", "translit": "kānati", "gloss": "was (feminine — a helping kasra appears before الـ)", "gender": "feminine" },
+      { "surface": "الْمَرْأَةُ", "translit": "al-marʾatu", "gloss": "the woman (اسم كان, nominative)", "gender": "feminine" },
+      { "surface": "كَبِيرَةً", "translit": "kabīratan", "gloss": "old (خبر كان, accusative, feminine)", "gender": "feminine" }
+    ],
+    "audio": "كَانَتِ الْمَرْأَةُ كَبِيرَةً",
+    "level": "A2",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:kana" ]
+  },
+  {
+    "id": "txt:gram-kana-1sg",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "kana",
+    "vowelled": "كُنْتُ فِي الْبَيْتِ",
+    "translit": "kuntu fī al-bayti",
+    "en": "I was at home.",
+    "words": [
+      { "surface": "كُنْتُ", "translit": "kuntu", "gloss": "I was — كان's irregular 1st-person form", "gender": null },
+      { "surface": "فِي الْبَيْتِ", "translit": "fī al-bayti", "gloss": "at home (lit. \"in the house\")", "gender": null }
+    ],
+    "audio": "كُنْتُ فِي الْبَيْتِ",
+    "level": "A2",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:kana" ]
+  },
+  {
+    "id": "txt:gram-idafa-phrase",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "idafa",
+    "vowelled": "بَابُ الْبَيْتِ",
+    "translit": "bābu al-bayti",
+    "en": "the door of the house",
+    "words": [
+      { "surface": "بَابُ", "translit": "bābu", "gloss": "door (of — مُضَاف, no الـ or tanwīn of its own)", "gender": "masculine" },
+      { "surface": "الْبَيْتِ", "translit": "al-bayti", "gloss": "the house (مُضَاف إِلَيْهِ — genitive, carries the phrase's definiteness)", "gender": "masculine" }
+    ],
+    "audio": "بَابُ الْبَيْتِ",
+    "level": "A2",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:idafa" ]
+  },
+  {
+    "id": "txt:gram-idafa-sentence",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "idafa",
+    "vowelled": "بَيْتُ الرَّجُلِ كَبِيرٌ",
+    "translit": "baytu ar-rajuli kabīrun",
+    "en": "The man's house is big.",
+    "words": [
+      { "surface": "بَيْتُ", "translit": "baytu", "gloss": "house (of — مُضَاف, here the nominative topic of the sentence)", "gender": "masculine" },
+      { "surface": "الرَّجُلِ", "translit": "ar-rajuli", "gloss": "the man (مُضَاف إِلَيْهِ — genitive)", "gender": "masculine" },
+      { "surface": "كَبِيرٌ", "translit": "kabīrun", "gloss": "big (comment, indefinite)", "gender": "masculine" }
+    ],
+    "audio": "بَيْتُ الرَّجُلِ كَبِيرٌ",
+    "level": "A2",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:idafa" ]
+  },
+  {
+    "id": "txt:gram-idafa-pen-student",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "idafa",
+    "vowelled": "قَلَمُ الطَّالِبِ جَدِيدٌ",
+    "translit": "qalamu aṭ-ṭālibi jadīdun",
+    "en": "The student's pen is new.",
+    "words": [
+      { "surface": "قَلَمُ", "translit": "qalamu", "gloss": "pen (of — مُضَاف, nominative topic)", "gender": "masculine" },
+      { "surface": "الطَّالِبِ", "translit": "aṭ-ṭālibi", "gloss": "the student (مُضَاف إِلَيْهِ — genitive)", "gender": "masculine" },
+      { "surface": "جَدِيدٌ", "translit": "jadīdun", "gloss": "new (comment, indefinite)", "gender": "masculine" }
+    ],
+    "audio": "قَلَمُ الطَّالِبِ جَدِيدٌ",
+    "level": "A2",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:idafa" ]
+  },
+  {
+    "id": "txt:gram-verb-ana",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "present-tense",
+    "vowelled": "أَنَا أَذْهَبُ إِلَى الْمَدْرَسَةِ",
+    "translit": "anā adhhabu ilā al-madrasati",
+    "en": "I go to school.",
+    "words": [
+      { "surface": "أَنَا", "translit": "anā", "gloss": "I", "gender": null },
+      { "surface": "أَذْهَبُ", "translit": "adhhabu", "gloss": "go (I) — the أَـ prefix", "gender": null },
+      { "surface": "إِلَى الْمَدْرَسَةِ", "translit": "ilā al-madrasati", "gloss": "to school", "gender": null }
+    ],
+    "audio": "أَنَا أَذْهَبُ إِلَى الْمَدْرَسَةِ",
+    "level": "A2",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:present-tense" ]
+  },
+  {
+    "id": "txt:gram-verb-anta",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "present-tense",
+    "vowelled": "أَنْتَ تَذْهَبُ إِلَى الْمَدْرَسَةِ",
+    "translit": "anta tadhhabu ilā al-madrasati",
+    "en": "You (m.) go to school.",
+    "words": [
+      { "surface": "أَنْتَ", "translit": "anta", "gloss": "you (m.)", "gender": "masculine" },
+      { "surface": "تَذْهَبُ", "translit": "tadhhabu", "gloss": "go (you, m.) — the same تَـ prefix-form as \"she goes\"; only the pronoun tells them apart", "gender": "masculine" },
+      { "surface": "إِلَى الْمَدْرَسَةِ", "translit": "ilā al-madrasati", "gloss": "to school", "gender": null }
+    ],
+    "audio": "أَنْتَ تَذْهَبُ إِلَى الْمَدْرَسَةِ",
+    "level": "A2",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:present-tense" ]
+  },
+  {
+    "id": "txt:gram-verb-anti",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "present-tense",
+    "vowelled": "أَنْتِ تَذْهَبِينَ إِلَى الْمَدْرَسَةِ",
+    "translit": "anti tadhhabīna ilā al-madrasati",
+    "en": "You (f.) go to school.",
+    "words": [
+      { "surface": "أَنْتِ", "translit": "anti", "gloss": "you (f.)", "gender": "feminine" },
+      { "surface": "تَذْهَبِينَ", "translit": "tadhhabīna", "gloss": "go (you, f.) — تَـ plus the feminine ـِينَ ending", "gender": "feminine" },
+      { "surface": "إِلَى الْمَدْرَسَةِ", "translit": "ilā al-madrasati", "gloss": "to school", "gender": null }
+    ],
+    "audio": "أَنْتِ تَذْهَبِينَ إِلَى الْمَدْرَسَةِ",
+    "level": "A2",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:present-tense" ]
+  },
+  {
+    "id": "txt:gram-verb-nahnu",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "present-tense",
+    "vowelled": "نَحْنُ نَذْهَبُ إِلَى الْمَدْرَسَةِ",
+    "translit": "naḥnu nadhhabu ilā al-madrasati",
+    "en": "We go to school.",
+    "words": [
+      { "surface": "نَحْنُ", "translit": "naḥnu", "gloss": "we", "gender": null },
+      { "surface": "نَذْهَبُ", "translit": "nadhhabu", "gloss": "go (we) — the نَـ prefix", "gender": null },
+      { "surface": "إِلَى الْمَدْرَسَةِ", "translit": "ilā al-madrasati", "gloss": "to school", "gender": null }
+    ],
+    "audio": "نَحْنُ نَذْهَبُ إِلَى الْمَدْرَسَةِ",
+    "level": "A2",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:present-tense" ]
   }
 ]

@@ -1,0 +1,72 @@
+{
+  "id": "a2-idafa",
+  "unitId": "a2-u2",
+  "curriculumLessonId": "a2-idafa",
+  "title": "The Genitive Construct (Iḍāfa)",
+  "level": "A2",
+  "skills": ["grammar", "reading"],
+  "objectives": [
+    "gr:idafa",
+    "txt:gram-idafa-phrase", "txt:gram-idafa-sentence", "txt:gram-idafa-pen-student"
+  ],
+  "steps": [
+    {
+      "type": "explain",
+      "title": "Two nouns, no word for \"of\"",
+      "body": [
+        "English says \"the man's house\" or \"the house of the man\". Arabic just puts the two nouns next to each other: بَيْتُ الرَّجُلِ — literally \"house-of the-man\". No possessive word, no extra particle.",
+        "The two nouns don't behave the same way. The first (مُضَاف) takes whatever case its role in the larger sentence needs, but it drops its own الـ and tanwīn — it can never carry either, even though the phrase as a whole ends up definite. The second noun (مُضَاف إِلَيْهِ) is always genitive, keeps its الـ, and is what makes the whole phrase definite: بَيْتُ الرَّجُلِ is \"the man's house\", definite, even though بَيْتُ itself has no الـ.",
+        "This is called إِضَافَة (iḍāfa) — \"the backbone of Arabic phrasing\", because it's how Arabic expresses almost every possessive relationship: a country's capital, a book's title, a student's pen."
+      ],
+      "previewSymbols": ["بَيْتُ", "الرَّجُلِ"]
+    },
+    {
+      "type": "reading-practice",
+      "title": "House, man, pen, student",
+      "intro": "Read the bare phrase first, then the two full sentences that use it. Tap 🔊 to hear any line.",
+      "fromObjectives": true
+    },
+    {
+      "type": "practice-choice",
+      "title": "Which noun loses الـ?",
+      "arabicPrompt": "بَابُ الْبَيْتِ",
+      "prompt": "Why doesn't بَابُ carry الـ, even though \"the door of the house\" is definite?",
+      "options": [
+        { "label": "The first noun in an iḍāfa never takes الـ — definiteness comes from the second noun", "correct": true },
+        { "label": "بَاب is always indefinite and can never take الـ", "correct": false },
+        { "label": "It's a typo — it should be الْبَابُ", "correct": false }
+      ],
+      "explanation": "بَابُ (مُضَاف) drops الـ and tanwīn no matter what; الْبَيْتِ (مُضَاف إِلَيْهِ) keeps الـ and carries the definiteness for the whole phrase."
+    },
+    {
+      "type": "practice-choice",
+      "title": "Spot the genitive",
+      "arabicPrompt": "بَيْتُ الرَّجُلِ كَبِيرٌ",
+      "prompt": "What case is الرَّجُلِ in, and why?",
+      "options": [
+        { "label": "Genitive — the second noun in an iḍāfa is always genitive", "correct": true },
+        { "label": "Nominative — it's the subject of the sentence", "correct": false },
+        { "label": "Accusative — it's the object of a verb", "correct": false }
+      ],
+      "explanation": "الرَّجُلِ ends ـِ because it's مُضَاف إِلَيْهِ — the second noun of an iḍāfa is genitive regardless of what role the phrase as a whole plays in the sentence."
+    },
+    {
+      "type": "practice-choice",
+      "title": "A different pair",
+      "arabicPrompt": "قَلَمُ الطَّالِبِ جَدِيدٌ",
+      "prompt": "Which word is مُضَاف (the possessed thing, no الـ of its own)?",
+      "options": [
+        { "label": "قَلَمُ — the pen", "correct": true },
+        { "label": "الطَّالِبِ — the student", "correct": false },
+        { "label": "جَدِيدٌ — new", "correct": false }
+      ],
+      "explanation": "قَلَمُ carries no الـ or tanwīn of its own, exactly like بَيْتُ and بَابُ before it — the same iḍāfa pattern, a different pair of nouns."
+    },
+    {
+      "type": "complete",
+      "title": "You can read Arabic possession",
+      "message": "You've seen iḍāfa three times now — بَابُ الْبَيْتِ، بَيْتُ الرَّجُلِ، قَلَمُ الطَّالِبِ — always the same shape: the first noun bare, the second definite and genitive. This one pattern covers most of how Arabic expresses possession.",
+      "finishLabel": "Finish"
+    }
+  ]
+}

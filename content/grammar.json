@@ -24,7 +24,11 @@
     "examples": [
       "txt:gram-verb-he",
       "txt:gram-verb-she",
-      "txt:gram-verb-they"
+      "txt:gram-verb-they",
+      "txt:gram-verb-ana",
+      "txt:gram-verb-anta",
+      "txt:gram-verb-anti",
+      "txt:gram-verb-nahnu"
     ],
     "commonErrors": [],
     "skills": [
@@ -231,6 +235,78 @@
     ],
     "prereqs": [
       "gr:noun-number"
+    ]
+  },
+  {
+    "id": "gr:verbal-sentence",
+    "kind": "grammar",
+    "name": "The verbal sentence & past tense (Form I)",
+    "level": "A2",
+    "rule": "Arabic's other sentence type starts with a verb, not a topic: فِعْل – فَاعِل – مَفْعُول (verb – subject – object) is the neutral word order (VSO) — فَعَلَ الْوَلَدُ ذَلِكَ (the boy did that). A subject-first order is also grammatical and common, especially for emphasis or when the subject opens the sentence as a topic. The past tense of a Form I verb like ذَهَبَ (dhahaba, \"he went\" — every verb lexeme's own citation form) conjugates by changing its ending: هُوَ ذَهَبَ، هِيَ ذَهَبَتْ، هُمْ ذَهَبُوا، أَنَا ذَهَبْتُ، أَنْتَ ذَهَبْتَ، أَنْتِ ذَهَبْتِ، نَحْنُ ذَهَبْنَا.",
+    "examples": [
+      "txt:gram-past-vso",
+      "txt:gram-past-1sg",
+      "txt:gram-past-2sg-f"
+    ],
+    "commonErrors": [
+      "Expecting a fixed subject-verb-object order like English — Arabic's default is verb-first, and the verb still agrees with a subject that comes after it.",
+      "Reusing the dictionary form (هو ذَهَبَ) for every person instead of changing the ending — the ending alone carries \"I\", \"you\", \"we\", etc."
+    ],
+    "skills": [
+      "grammar",
+      "reading"
+    ],
+    "prereqs": [
+      "gr:noun-number",
+      "gr:nominal-sentence"
+    ]
+  },
+  {
+    "id": "gr:kana",
+    "kind": "grammar",
+    "name": "كَانَ — the nominal sentence in the past",
+    "level": "A2",
+    "rule": "كَانَ (kāna, \"was / were\") moves a nominal sentence into the past. It works like the nominal sentence's own topic-comment pair, except the comment (خَبَر كَانَ) becomes accusative: الْبَيْتُ كَبِيرٌ (the house is big) → كَانَ الْبَيْتُ كَبِيرًا (the house was big) — بَيْتُ stays nominative as كان's own subject (اِسْم كَانَ), and كَبِيرٌ's tanwīn shifts from ـٌ to ـًا. كان's own conjugation is irregular (a hollow root, و, that disappears in some forms): كَانَ (he was), كَانَتْ (she was), كَانُوا (they were), كُنْتُ (I was).",
+    "examples": [
+      "txt:gram-kana-house",
+      "txt:gram-kana-fem",
+      "txt:gram-kana-1sg"
+    ],
+    "commonErrors": [
+      "Leaving the comment nominative after كان: كَانَ الْبَيْتُ كَبِيرٌ should be كَانَ الْبَيْتُ كَبِيرًا.",
+      "Conjugating كان like a regular Form I verb — its middle radical (و) drops out in several forms, so it must be learned as its own irregular pattern."
+    ],
+    "skills": [
+      "grammar",
+      "reading"
+    ],
+    "prereqs": [
+      "gr:nominal-sentence",
+      "gr:gender-agreement"
+    ]
+  },
+  {
+    "id": "gr:idafa",
+    "kind": "grammar",
+    "name": "The genitive construct (إِضَافَة / iḍāfa)",
+    "level": "A2",
+    "rule": "Two nouns in sequence express possession — no word for \"of\" is needed: بَيْتُ الرَّجُلِ (the man's house, literally \"house-of the-man\"). The first noun (مُضَاف) takes whatever case its role in the sentence needs but drops its own الـ and tanwīn; the second noun (مُضَاف إِلَيْهِ) is always genitive and carries the definiteness for the whole phrase — the first noun is never written with الـ even though the phrase as a whole is definite.",
+    "examples": [
+      "txt:gram-idafa-phrase",
+      "txt:gram-idafa-sentence",
+      "txt:gram-idafa-pen-student"
+    ],
+    "commonErrors": [
+      "Adding الـ to the first noun: الْبَيْتُ الرَّجُلِ is wrong — only the second noun takes الـ.",
+      "Forgetting the genitive on the second noun — بَيْتُ الرَّجُلُ should be بَيْتُ الرَّجُلِ.",
+      "Inserting an adjective between the two nouns — a describing word goes after the whole iḍāfa, not inside it."
+    ],
+    "skills": [
+      "grammar",
+      "reading"
+    ],
+    "prereqs": [
+      "gr:definiteness"
     ]
   }
 ]
