@@ -936,6 +936,61 @@
     .rtl-inline { font-family: var(--font-arabic); direction: rtl; unicode-bidi: embed; font-size: 17px; }
     .voice-warning { color: var(--gold); font-size: 12.5px; margin: 6px 0 4px; display: none; }
 
+    /* ---------- M20.9: Alphabet articulation diagrams ---------- */
+    .articulation-toggle, .overview-toggle {
+        margin-top: 16px;
+        border: 1px solid var(--panel-border);
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        background: var(--panel);
+    }
+    .overview-toggle { margin: 4px 0 20px; }
+    .articulation-toggle > summary, .overview-toggle > summary {
+        cursor: pointer;
+        list-style: none;
+        padding: 12px 16px;
+        font-weight: 600;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        user-select: none;
+    }
+    .articulation-toggle > summary::-webkit-details-marker,
+    .overview-toggle > summary::-webkit-details-marker { display: none; }
+    .articulation-toggle > summary::after, .overview-toggle > summary::after {
+        content: "▾"; margin-left: auto; color: var(--ink-soft); transition: transform 0.2s ease;
+    }
+    .articulation-toggle[open] > summary::after, .overview-toggle[open] > summary::after { transform: rotate(180deg); }
+    .articulation-body, .overview-body { padding: 0 16px 16px; border-top: 1px solid var(--panel-border); padding-top: 16px; }
+    .overview-body p.overview-sub { font-size: 13px; color: var(--ink-soft); margin: 0 0 12px; }
+    .articulation-frame, .overview-frame {
+        background: var(--bg-2);
+        border: 1px solid var(--panel-border);
+        border-radius: var(--radius-md);
+        padding: 10px;
+    }
+    .articulation-frame svg, .overview-frame svg { display: block; width: 100%; height: auto; }
+    .articulation-caption { font-size: 13px; color: var(--ink-soft); line-height: 1.55; margin: 10px 0 0; }
+    .articulation-caption b { color: var(--ink); font-weight: 600; }
+    .articulation-caption .pair-note { display: block; margin-top: 6px; font-size: 12px; opacity: 0.85; }
+    .articulation-zone-list { display: flex; flex-direction: column; gap: 12px; margin-top: 16px; }
+    .articulation-zone-group { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; }
+    .articulation-zone-title {
+        flex: 0 0 130px;
+        font-size: 11px; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase;
+        color: var(--ink-soft);
+    }
+    .articulation-zone-letters { display: flex; flex-wrap: wrap; gap: 6px; }
+    .articulation-zone-letter {
+        display: flex; align-items: center; justify-content: center;
+        min-width: 44px; min-height: 44px;
+        background: var(--panel); border: 1px solid var(--panel-border); border-radius: var(--radius-md);
+        font-family: var(--font-arabic); font-size: 20px; color: var(--danger);
+        text-decoration: none; cursor: pointer;
+    }
+    .articulation-zone-letter:hover { border-color: var(--danger); background: var(--danger-soft); }
+
     /* ---------- Practice ---------- */
     .practice-grid {
         display: grid;
@@ -984,6 +1039,7 @@
         .nav-btn span { display: none; }
         .nav-btn { padding: 10px 12px; }
         .stat-grid { grid-template-columns: repeat(2, 1fr); }
+        .articulation-zone-title { flex-basis: 100%; }
     }
 
     /* ============================================================
@@ -1443,6 +1499,14 @@
     <section id="view-alphabet" class="view" hidden>
         <h2 class="view-title">The Arabic Alphabet</h2>
         <p class="view-sub">28 letters. Tap a letter to see its forms and hear it spoken.</p>
+        <details class="overview-toggle">
+            <summary>🗣️ Where each sound is made — an overview</summary>
+            <div class="overview-body">
+                <p class="overview-sub">A map, not a lesson: nine real places of articulation. Tap a letter below to jump to its own diagram. الف isn't on the wall at all — that's the point.</p>
+                <div class="overview-frame" id="articulationOverviewFrame"></div>
+                <div class="articulation-zone-list" id="articulationZoneList"></div>
+            </div>
+        </details>
         <div class="alphabet-grid" id="alphabetGrid"></div>
         <div class="letter-detail" id="letterDetail"></div>
     </section>
@@ -2492,6 +2556,293 @@ const arabicAlphabet = LETTERS.map(l => ({
 
 const strokeOrderData = {};
 LETTERS.forEach(l => { if (l.strokeOrder) strokeOrderData[l.id.replace(/^let:/, "")] = { strokes: l.strokeOrder }; });
+
+/* ============================================================
+   MILESTONE 20.9 — ALPHABET ARTICULATION DIAGRAMS
+   Real anatomical photo (user-supplied, DALL-E generated, reviewed and
+   approved in a private design-review artifact this project session)
+   used as the background for a per-letter "where it's made" diagram and
+   a whole-alphabet overview map. Ported in as-is from that artifact per
+   the M20.9 scope doc (m20.9_alphabet_articulation_diagrams_scope.md):
+   hand-authored data living directly here, not round-tripped through
+   content/letters.json (it's bespoke SVG geometry, not linguistic data
+   the content linter could meaningfully check). Every caption/tag below
+   is unchanged from the reviewed artifact -- this milestone is "wire it
+   into the app," not "write new content."
+   Loaded from assets/articulation-vocal-tract.webp (a relative,
+   same-origin path -- resolved on GitHub Pages the same way
+   icons/icon-512.png and manifest.json already are) rather than
+   inlined as a data: URI. Inlining this 265KB photo as base64 text
+   would have added ~370KB (base64's ~33% overhead) to index.html
+   itself on every page load, with no HTTP caching across visits.
+   A same-origin static file is still zero external dependencies and
+   zero build step -- what standing rule 5 protects against is a CDN
+   or third-party API this app would break without, not a sibling
+   file already part of this project's own convention.
+   Does not touch buildAudioControl()/playArabicAudio() or the 🔊 button.
+   ============================================================ */
+const ARTICULATION_PHOTO_SRC = "assets/articulation-vocal-tract.webp";
+const ART_PHOTO_NATIVE_W = 1024, ART_PHOTO_NATIVE_H = 1536;
+const ART_PHOTO_SCALE = 480 / ART_PHOTO_NATIVE_W;
+const ART_PHOTO_W = ART_PHOTO_NATIVE_W * ART_PHOTO_SCALE, ART_PHOTO_H = ART_PHOTO_NATIVE_H * ART_PHOTO_SCALE;
+const ART_PAD_TOP = 16, ART_PAD_BOTTOM = 16;
+
+function articulationLetterGlyph(id) {
+    const l = arabicAlphabet.find(x => x.id === id);
+    return l ? l.isolated : "?";
+}
+function articulationChipLetters(ids) { return ids.map(id => ({ id, ar: articulationLetterGlyph(id) })); }
+
+/* ---- overview map: nine real places of articulation ---- */
+const ART_OV_MARGIN_L = 240, ART_OV_MARGIN_R = 240;
+const ART_OV_IMAGE_X = ART_OV_MARGIN_L, ART_OV_IMAGE_Y = ART_PAD_TOP;
+const ART_OV_VB_W = ART_OV_MARGIN_L + ART_PHOTO_W + ART_OV_MARGIN_R;
+const ART_OV_VB_H = ART_PAD_TOP + ART_PHOTO_H + ART_PAD_BOTTOM;
+function articulationPhotoAnchor(nx, ny) {
+    return { x: ART_OV_IMAGE_X + nx * ART_PHOTO_SCALE, y: ART_OV_IMAGE_Y + ny * ART_PHOTO_SCALE };
+}
+const ARTICULATION_ZONES = [
+    { side: "left", row: 0, place: "Bilabial", letters: articulationChipLetters(["ba", "mim"]), anchor: articulationPhotoAnchor(90, 600) },
+    { side: "left", row: 1, place: "Labiodental", letters: articulationChipLetters(["fa"]), anchor: articulationPhotoAnchor(170, 570) },
+    { side: "left", row: 2, place: "Interdental", letters: articulationChipLetters(["tha", "dhal", "za2"]), anchor: articulationPhotoAnchor(235, 590) },
+    { side: "right", row: 0, place: "Alveolar", letters: articulationChipLetters(["ta1", "dal", "nun", "lam", "ra", "sin", "zay", "ta2", "sad", "dad"]), anchor: articulationPhotoAnchor(285, 545) },
+    { side: "right", row: 1, place: "Postalveolar / Palatal", letters: articulationChipLetters(["shin", "jim", "ya"]), anchor: articulationPhotoAnchor(420, 495) },
+    { side: "right", row: 2, place: "Velar", letters: articulationChipLetters(["kaf", "waw"]), anchor: articulationPhotoAnchor(560, 485) },
+    { side: "right", row: 3, place: "Uvular", letters: articulationChipLetters(["kha", "ghayn", "qaf"]), anchor: articulationPhotoAnchor(630, 545) },
+    { side: "right", row: 4, place: "Pharyngeal", letters: articulationChipLetters(["ha1", "ayn"]), anchor: articulationPhotoAnchor(655, 690) },
+    { side: "right", row: 5, place: "Glottal", letters: articulationChipLetters(["ha2"]), anchor: articulationPhotoAnchor(680, 955) },
+];
+function renderArticulationChip(zone) {
+    // Visual-only on the photo: a dot + leader line + place name. The actual
+    // 28 jump-links live in renderArticulationZoneList() below as real HTML
+    // buttons -- a diagram this dense can't give each glyph a genuine 44x44
+    // touch target without either overlapping neighbors or ballooning the
+    // whole map, so the clickable letters are a normal, fully-accessible
+    // list instead of text crammed inside the SVG.
+    const rowH = zone.side === "left" ? 110 : 95;
+    const top = zone.side === "left" ? 200 : 150;
+    const y = top + zone.row * rowH;
+    const w = 150, h = 36;
+    const x = zone.side === "right" ? (ART_OV_VB_W - 16 - w) : 16;
+    const midX = zone.side === "right" ? (zone.anchor.x + x) / 2 + 20 : (zone.anchor.x + (x + w)) / 2 - 20;
+    const leaderStartX = zone.side === "right" ? x : x + w;
+    const cy = y + h / 2;
+    const path = `M ${zone.anchor.x},${zone.anchor.y} C ${midX},${zone.anchor.y} ${midX},${cy} ${leaderStartX},${cy}`;
+    const dot = `<circle cx="${zone.anchor.x}" cy="${zone.anchor.y}" r="3" fill="var(--danger)" opacity="0.85" />`;
+    const leader = `<path d="${path}" fill="none" stroke="var(--danger)" stroke-width="1" opacity="0.4" />`;
+    const box = `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="8" fill="var(--bg-1)" stroke="var(--panel-border)" stroke-width="1.2" />`;
+    const label = `<text x="${x + w / 2}" y="${y + 22}" text-anchor="middle" font-size="11" font-weight="600" letter-spacing="0.03em" fill="var(--ink-soft)">${zone.place.toUpperCase()}</text>`;
+    return dot + leader + box + label;
+}
+function renderArticulationOverview() {
+    const chips = ARTICULATION_ZONES.map(renderArticulationChip).join("\n");
+    const photo = `<image href="${ARTICULATION_PHOTO_SRC}" x="${ART_OV_IMAGE_X}" y="${ART_OV_IMAGE_Y}" width="${ART_PHOTO_W}" height="${ART_PHOTO_H}" />`;
+    const frame = `<rect x="${ART_OV_IMAGE_X - 1}" y="${ART_OV_IMAGE_Y - 1}" width="${ART_PHOTO_W + 2}" height="${ART_PHOTO_H + 2}" rx="6" fill="none" stroke="var(--panel-border)" stroke-width="1.5" />`;
+    return `<svg class="overview-diagram-svg" viewBox="0 0 ${ART_OV_VB_W} ${ART_OV_VB_H}" role="img" aria-label="Photographic sagittal cross-section of the head and neck, marked with the nine places of articulation from the lips to the glottis.">
+    ${photo}
+    ${frame}
+    ${chips}
+    <g font-family="var(--font-body)" font-size="12" fill="var(--danger)" opacity="0.85">
+      <rect x="16" y="${ART_OV_VB_H - 60}" width="200" height="52" rx="8" fill="var(--bg-1)" stroke="var(--danger)" stroke-width="1.4" stroke-dasharray="3 3" />
+      <text x="26" y="${ART_OV_VB_H - 42}" font-size="10.5" font-weight="600" letter-spacing="0.03em">NOT A FIXED PLACE</text>
+      <text x="26" y="${ART_OV_VB_H - 22}" font-size="16" font-weight="600">alif — a long vowel, or hamza's seat</text>
+    </g>
+  </svg>`;
+}
+function renderArticulationZoneList() {
+    const groups = ARTICULATION_ZONES.map(zone => {
+        const letters = zone.letters.map(L => `<a href="javascript:void(0)" class="articulation-zone-letter" onclick="jumpToArticulationLetter('${L.id}')" lang="ar" dir="rtl">${L.ar}</a>`).join("");
+        return `<div class="articulation-zone-group">
+            <div class="articulation-zone-title">${zone.place}</div>
+            <div class="articulation-zone-letters">${letters}</div>
+        </div>`;
+    }).join("\n");
+    const alifGroup = `<div class="articulation-zone-group">
+        <div class="articulation-zone-title">Not a fixed place</div>
+        <div class="articulation-zone-letters"><a href="javascript:void(0)" class="articulation-zone-letter" onclick="jumpToArticulationLetter('alif')" lang="ar" dir="rtl">${articulationLetterGlyph("alif")}</a></div>
+    </div>`;
+    return groups + "\n" + alifGroup;
+}
+function jumpToArticulationLetter(id) {
+    if (currentView !== "alphabet") setView("alphabet");
+    selectLetter(id);
+    const detail = document.getElementById("letterDetail");
+    if (detail) detail.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+/* ---- per-letter diagram: one marked-up photo + caption per letter ---- */
+const ART_LETTER_MARGIN = 220, ART_LETTER_PAD = 16;
+const ART_LETTER_VB_W = ART_LETTER_PAD + ART_PHOTO_W + ART_LETTER_MARGIN;
+const ART_LETTER_VB_H = ART_PAD_TOP + ART_PHOTO_H + ART_PAD_BOTTOM;
+function articulationSide(nx) { return nx < 400 ? "left" : "right"; }
+
+const ARTICULATION = {
+    ayn: { primary: [655, 690], voiced: true,
+        calloutTitle: "ʿAyn is made here", calloutLines: ["root meets pharyngeal wall"],
+        caption: "The <b>tongue root</b> draws back and narrows against the <b>pharyngeal wall</b>, well below the uvula, while the <b>vocal folds vibrate</b> throughout. No equivalent gesture in English." },
+    ghayn: { primary: [630, 545], voiced: true,
+        calloutTitle: "Ghayn is made here", calloutLines: ["narrow gap at the uvula"],
+        caption: "The <b>back of the tongue</b> rises toward the <b>uvula</b>, leaving a narrow gap — air rasps through it while the <b>vocal folds vibrate</b>.",
+        pairNote: "Pairs with خ khāʾ: identical tongue position, this one voiced." },
+    kha: { primary: [630, 545], voiced: false,
+        calloutTitle: "Khāʾ is made here", calloutLines: ["same spot as غ, no voicing"],
+        caption: "Same narrow gap at the <b>uvula</b> as غ ghayn — the <b>only</b> difference is the vocal folds stay open, so there's no vibration, just breath rasping through.",
+        pairNote: "Like the English s/z pair: same mouth shape, one buzzes, one doesn't." },
+    qaf: { primary: [630, 545], voiced: false, burst: true,
+        calloutTitle: "Qāf is made here", calloutLines: ["full closure at the uvula,", "released in a burst"],
+        caption: "The back of the tongue makes <b>full contact</b> with the uvula — airflow stops completely, then releases in a small burst. Compare to ك kāf, made the same way but further forward (velar, not uvular) — swap the two and قلب \"heart\" becomes كلب \"dog.\"" },
+    sad: { primary: [285, 545], secondary: [610, 660], voiced: false,
+        calloutTitle: "Ṣād — two places at once", calloutLines: ["① tip at the ridge — like س", "② root pulled back — emphatic"],
+        caption: "Two constrictions <b>at once</b>: the tip narrows at the alveolar ridge exactly like plain س sīn, while the tongue <b>root also pulls back</b> toward the pharynx — that second, simultaneous retraction is what \"emphatic\" means, and it's what a plain س doesn't have.",
+        pairNote: "Pairs with ض ḍād: same dual gesture, ص is a narrow gap (fricative), ض is a full stop." },
+    dad: { primary: [285, 545], secondary: [610, 660], voiced: true, burst: true,
+        calloutTitle: "Ḍād — two places at once", calloutLines: ["① full closure at the teeth", "② root pulled back — emphatic"],
+        caption: "Like ص, <b>two constrictions at once</b> — but the front one is a full stop (tongue tip sealing at the teeth, like د dāl) rather than a narrow gap, and the <b>vocal folds vibrate</b>. Considered unique enough to Arabic that the language calls itself <span lang=\"ar\" dir=\"rtl\">لغة الضاد</span>, \"the language of ḍād.\"" },
+    ba: { primary: [90, 600], voiced: true, burst: true,
+        calloutTitle: "Bāʾ is made here", calloutLines: ["both lips pressed shut"],
+        caption: "The <b>lips press fully shut</b>, air stops, then releases — the tongue does nothing here. Voiced." },
+    mim: { primary: [90, 600], voiced: true, nasalArrow: true,
+        calloutTitle: "Mīm is made here", calloutLines: ["lips shut, air exits the nose"],
+        caption: "Same lip closure as ب — but the soft palate <b>drops</b>, opening the passage to the nose, so air escapes there instead of building pressure in the mouth." },
+    fa: { primary: [170, 570], voiced: false,
+        calloutTitle: "Fāʾ is made here", calloutLines: ["lower lip meets upper teeth"],
+        caption: "The <b>lower lip</b> rests lightly against the <b>upper teeth</b>, narrow enough for air to hiss through. Same mechanism as English “f.”" },
+    tha: { primary: [235, 590], voiced: false,
+        calloutTitle: "Thāʾ is made here", calloutLines: ["tip pokes between the teeth"],
+        caption: "The tongue <b>tip pokes out</b> between the front teeth — identical to the “th” in English “think,” just voiceless here too." },
+    dhal: { primary: [235, 590], voiced: true,
+        calloutTitle: "Dhāl is made here", calloutLines: ["same spot as ث, voiced"],
+        caption: "Same interdental gap as ث — voiced, like the “th” in English “this” rather than “think.”" },
+    ta1: { primary: [285, 545], voiced: false, burst: true,
+        calloutTitle: "Tāʾ is made here", calloutLines: ["full closure at the ridge"],
+        caption: "The tongue <b>tip seals</b> against the ridge just behind the upper teeth, air stops fully, then releases — like English “t.”" },
+    dal: { primary: [285, 545], voiced: true, burst: true,
+        calloutTitle: "Dāl is made here", calloutLines: ["same spot as ت, voiced"],
+        caption: "Same closure as ت at the ridge — voiced, like English “d.”" },
+    ta2: { primary: [285, 545], secondary: [610, 660], voiced: false, burst: true,
+        calloutTitle: "Ṭāʾ — two places at once", calloutLines: ["① full closure at the ridge — like ت", "② root pulled back — emphatic"],
+        caption: "Like ت, but the tongue <b>root also retracts</b> toward the pharynx at the same time — the pharyngealized, “heavier” counterpart. Voiceless, unlike its pair ض.",
+        pairNote: "Pairs with ض ḍād: identical dual gesture, ط voiceless, ض voiced." },
+    za2: { primary: [235, 590], secondary: [610, 660], voiced: true,
+        calloutTitle: "Ẓāʾ — two places at once", calloutLines: ["① gap between the teeth — like ذ", "② root pulled back — emphatic"],
+        caption: "Like ذ's interdental gap, with the tongue <b>root also retracted</b> toward the pharynx — the emphatic pair of ذ, and the rarest letter in the alphabet." },
+    sin: { primary: [285, 545], voiced: false,
+        calloutTitle: "Sīn is made here", calloutLines: ["narrow gap at the ridge only"],
+        caption: "A narrow gap at the ridge — <b>one</b> constriction, not two. This is the plain sound ص adds pharyngealization on top of." },
+    zay: { primary: [285, 545], voiced: true,
+        calloutTitle: "Zāy is made here", calloutLines: ["same spot as س, voiced"],
+        caption: "Same gap as س at the ridge — voiced, like English “z.”" },
+    nun: { primary: [285, 545], voiced: true, nasalArrow: true,
+        calloutTitle: "Nūn is made here", calloutLines: ["ridge closure, air exits the nose"],
+        caption: "Tip seals at the ridge like ت/د, but the soft palate drops so air escapes through the <b>nose</b> instead — the nasal counterpart at this spot." },
+    lam: { primary: [285, 545], voiced: true,
+        calloutTitle: "Lām is made here", calloutLines: ["tip down, sides let air past"],
+        caption: "The tip touches the ridge, but the <b>sides</b> of the tongue drop, letting air flow around it rather than through the center." },
+    ra: { primary: [285, 545], voiced: true,
+        calloutTitle: "Rāʾ is made here", calloutLines: ["a quick tap, not a hold"],
+        caption: "Same spot as ت/د/ل, but the tip only <b>taps</b> the ridge briefly (or trills — several quick taps) instead of holding a closure." },
+    shin: { primary: [400, 510], voiced: false,
+        calloutTitle: "Shīn is made here", calloutLines: ["gap just behind the ridge"],
+        caption: "A wider, slightly further-back gap than س — the same place and manner as English “sh.”" },
+    jim: { primary: [400, 510], voiced: true, burst: true,
+        calloutTitle: "Jīm is made here", calloutLines: ["closure, then released as a", "hiss — like English “j”"],
+        caption: "Starts as a full closure near where ش is made, then releases into a brief hiss rather than a clean burst — an affricate, like the “j” in “judge.” This is the citation-form pronunciation; formal spoken MSA varies by region ([ʒ] in much of the Levant and Gulf, [g] in Egypt)." },
+    ya: { primary: [450, 470], voiced: true,
+        calloutTitle: "Yāʾ is made here", calloutLines: ["mid-tongue raised, wide gap"],
+        caption: "The <b>body</b> of the tongue (not just the tip) rises toward the hard palate — a wide-open approximant, like English “y” in “yes.”" },
+    kaf: { primary: [560, 485], voiced: false, burst: true,
+        calloutTitle: "Kāf is made here", calloutLines: ["closure at the soft palate"],
+        caption: "Full closure where the back of the tongue meets the <b>soft palate</b> — the same manner as ق qāf, made further forward. Swapping the two changes the word." },
+    waw: { primary: [560, 485], voiced: true,
+        calloutTitle: "Wāw is made here", calloutLines: ["lips round + back tongue raised"],
+        caption: "Two gestures <b>at once</b>: the back of the tongue rises toward the soft palate (like ك, but a gap not a closure) while the lips round — remove either half and it stops sounding right." },
+    ha1: { primary: [655, 690], voiced: false,
+        calloutTitle: "Ḥāʾ is made here", calloutLines: ["same spot as ع, no voicing"],
+        caption: "The <b>same broad region</b> as ع — root toward the pharyngeal wall — with the vocal folds open instead of vibrating. Not quite the same gesture, though: ح is a genuine fricative (real turbulence), while ع is usually looser, closer to an approximant. As hard for TTS as ع, for the same reason." },
+    ha2: { voiced: false, glottalHighlight: true, side: "right",
+        calloutTitle: "Hāʾ is made here", calloutLines: ["at the voice box itself"],
+        caption: "The tongue stays completely <b>neutral</b> — the entire constriction is at the vocal folds, which stay open and let breath rasp through. Nothing in the mouth is involved." },
+    alif: { voiced: true, side: "left", calloutDashed: true, calloutW: 190,
+        calloutTitle: "Alif isn't made “here”", calloutLines: ["it's the long vowel “ā,” or a seat", "hamza (ء) sits on — see below"],
+        caption: "Alif is <b>not itself a consonant</b> — most of the time it simply marks a long “ā” vowel, with the tongue low and the mouth open, no constriction anywhere. Its other job is as a <b>seat</b>: when a word needs the glottal stop /ʔ/ at the start (أ / إ), that consonant is <b>hamza</b> (ء) — a true glottal stop, made by sealing the vocal folds shut and releasing them, the catch in the middle of English “uh-oh.” Alif carries it; alif isn't it." },
+};
+
+function renderArticulationDiagram(letterId) {
+    const L = ARTICULATION[letterId];
+    if (!L) return "";
+    const side = L.side || (L.primary ? articulationSide(L.primary[0]) : "left");
+    const imageX = side === "left" ? ART_LETTER_MARGIN : ART_LETTER_PAD;
+    const toDisp = (nx, ny) => ({ x: imageX + nx * ART_PHOTO_SCALE, y: ART_PAD_TOP + ny * ART_PHOTO_SCALE });
+
+    const photo = `<image href="${ARTICULATION_PHOTO_SRC}" x="${imageX}" y="${ART_PAD_TOP}" width="${ART_PHOTO_W}" height="${ART_PHOTO_H}" />`;
+    const frame = `<rect x="${imageX - 1}" y="${ART_PAD_TOP - 1}" width="${ART_PHOTO_W + 2}" height="${ART_PHOTO_H + 2}" rx="6" fill="none" stroke="var(--panel-border)" stroke-width="1.5" />`;
+
+    let marks = "";
+    let calloutAnchor = null;
+
+    if (L.primary) {
+        const p = toDisp(L.primary[0], L.primary[1]);
+        calloutAnchor = p;
+        marks += `<circle cx="${p.x}" cy="${p.y}" r="6" fill="var(--bg-1)" opacity="0.85" /><circle cx="${p.x}" cy="${p.y}" r="5" fill="var(--danger)" stroke="var(--bg-1)" stroke-width="1.2" />`;
+        if (L.burst) {
+            marks += `<path d="M ${p.x},${p.y - 8} L ${p.x + 5},${p.y - 17} M ${p.x + 6},${p.y - 2} L ${p.x + 15},${p.y - 7} M ${p.x - 6},${p.y - 4} L ${p.x - 11},${p.y - 13}" fill="none" stroke="var(--danger)" stroke-width="1.8" stroke-linecap="round" />`;
+        }
+        if (L.nasalArrow) {
+            const nasal = toDisp(300, 200);
+            marks += `<defs><marker id="art-arrow-${letterId}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--danger)" /></marker></defs>
+      <path d="M ${p.x - 6},${p.y - 8} C ${nasal.x - 20},${(p.y + nasal.y) / 2} ${nasal.x},${nasal.y + 24} ${nasal.x},${nasal.y}" fill="none" stroke="var(--danger)" stroke-width="1.8" stroke-dasharray="1 5" stroke-linecap="round" marker-end="url(#art-arrow-${letterId})" />`;
+        }
+    }
+    if (L.secondary) {
+        const s2 = toDisp(L.secondary[0], L.secondary[1]);
+        marks += `<circle cx="${s2.x}" cy="${s2.y}" r="4.5" fill="var(--bg-1)" opacity="0.8" /><circle cx="${s2.x}" cy="${s2.y}" r="3.5" fill="var(--danger)" opacity="0.75" stroke="var(--bg-1)" stroke-width="0.8" />`;
+    }
+
+    const glottal = toDisp(680, 955);
+    const foldsGlyph = L.voiced
+        ? `<path d="M ${glottal.x - 13},${glottal.y} q4,-4.5 7.5,0 q3.5,4.5 7.5,0 q4,-4.5 7.5,0" fill="none" stroke="var(--danger)" stroke-width="1.6" opacity="${L.glottalHighlight ? 1 : 0.7}" />`
+        : `<line x1="${glottal.x - 13}" y1="${glottal.y}" x2="${glottal.x + 15}" y2="${glottal.y}" stroke="var(--danger)" stroke-width="1.6" opacity="${L.glottalHighlight ? 1 : 0.6}" stroke-dasharray="2 2" />`;
+    const foldsBox = `<rect x="${glottal.x - 17}" y="${glottal.y - 8}" width="36" height="16" rx="4" fill="var(--bg-1)" stroke="var(--danger)" stroke-width="${L.glottalHighlight ? 2.2 : 1.4}" opacity="${L.glottalHighlight ? 1 : 0.75}" />`;
+    marks += foldsBox + foldsGlyph;
+    if (L.glottalHighlight) calloutAnchor = glottal;
+
+    const lines = L.calloutLines || [];
+    const boxW = L.calloutW || (lines.length >= 2 ? 180 : 150);
+    const boxH = 26 + lines.length * 14;
+    const anchorY = calloutAnchor ? calloutAnchor.y : ART_PAD_TOP + ART_PHOTO_H / 2;
+    const boxY = L.calloutY != null ? L.calloutY : Math.min(Math.max(anchorY - boxH / 2, ART_PAD_TOP + 6), ART_PAD_TOP + ART_PHOTO_H - 6 - boxH);
+    const boxX = side === "left" ? ART_LETTER_PAD : imageX + ART_PHOTO_W + 16;
+    const boxCy = boxY + boxH / 2;
+
+    let leader = "";
+    if (calloutAnchor) {
+        const leaderStartX = side === "left" ? boxX + boxW : boxX;
+        const midX = side === "left" ? (calloutAnchor.x + boxX + boxW) / 2 - 20 : (calloutAnchor.x + boxX) / 2 + 20;
+        leader = `<path d="M ${calloutAnchor.x},${calloutAnchor.y} C ${midX},${calloutAnchor.y} ${midX},${boxCy} ${leaderStartX},${boxCy}" fill="none" stroke="var(--danger)" stroke-width="1" opacity="0.5" />`;
+    }
+    const titleEl = `<text x="${boxX + boxW / 2}" y="${boxY + 18}" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--danger)">${L.calloutTitle || ""}</text>`;
+    const lineEls = lines.map((t, i) => `<text x="${boxX + boxW / 2}" y="${boxY + 33 + i * 14}" text-anchor="middle" font-size="11" fill="var(--danger)" opacity="0.9">${t}</text>`).join("\n");
+    const boxEl = L.calloutDashed
+        ? `<rect x="${boxX}" y="${boxY}" width="${boxW}" height="${boxH}" rx="8" fill="var(--bg-1)" stroke="var(--danger)" stroke-width="1.4" stroke-dasharray="3 3" />`
+        : `<rect x="${boxX}" y="${boxY}" width="${boxW}" height="${boxH}" rx="8" fill="var(--panel)" stroke="var(--danger)" stroke-width="1.4" />`;
+    const callout = leader + boxEl + titleEl + lineEls;
+
+    const letterName = arabicAlphabet.find(x => x.id === letterId) || {};
+    return `<details class="articulation-toggle">
+    <summary>🗣️ How it's made</summary>
+    <div class="articulation-body">
+        <div class="articulation-frame">
+            <svg viewBox="0 0 ${ART_LETTER_VB_W} ${ART_LETTER_VB_H}" role="img" aria-label="Photograph of the head and neck with the articulation point for ${letterName.name || letterId} marked.">
+                ${photo}
+                ${frame}
+                ${marks}
+                ${callout}
+            </svg>
+        </div>
+        <p class="articulation-caption">${L.caption}${L.pairNote ? `<span class="pair-note">${L.pairNote}</span>` : ""}</p>
+    </div>
+</details>`;
+}
 
 function markToLegacy(m) {
     return { id: m.id.replace(/^mrk:/, ""), mark: m.symbol, symbolWord: m.ar, name: m.name, translit: m.translit, sound: m.fn };
@@ -7007,6 +7358,8 @@ function renderAlphabetGrid() {
         btn.onclick = () => selectLetter(letter.id);
         grid.appendChild(btn);
     });
+    document.getElementById("articulationOverviewFrame").innerHTML = renderArticulationOverview();
+    document.getElementById("articulationZoneList").innerHTML = renderArticulationZoneList();
     alphabetRendered = true;
     selectLetter(arabicAlphabet[0].id);
 }
@@ -7045,6 +7398,7 @@ function selectLetter(id) {
                 ? `<b>Example:</b> <span class="rtl-inline" lang="ar" dir="rtl">${example.arabic}</span> <em>(${example.translit})</em> — ${example.english} <button class="speak-btn small" id="exampleSpeakBtn" aria-label="Hear example word" title="Hear example word">🔊</button>`
                 : `<span class="muted">No example word yet in the vocabulary — more coming soon.</span>`}
         </div>
+        ${renderArticulationDiagram(letter.id)}
         <button class="pill show-btn" style="margin-top:16px;" onclick="practiceLetterWriting('${letter.id}')">✍️ Practice Writing This Letter</button>
     `;
 
