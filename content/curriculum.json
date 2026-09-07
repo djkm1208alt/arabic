@@ -101,7 +101,7 @@
     {
       "id": "a2-u4", "level": "A2", "order": 4,
       "title": "Numbers, Counting & Time",
-      "blurb": "11–99 and their gender-polarity rules, and how to tell the time. Dates and prices come later.",
+      "blurb": "11–99 and their gender-polarity rules, how to tell the time, and prices. Dates come later.",
       "skills": ["vocabulary", "grammar"],
       "status": "available", "prereqs": ["a1-u5"]
     },
@@ -661,6 +661,14 @@
       "level": "A2", "skills": ["vocabulary", "grammar", "reading"],
       "objectives": ["lex:num-01f","lex:tim-30","lex:tim-31","lex:tim-32","lex:tim-33","lex:tim-34","lex:tim-35","lex:tim-36","lex:tim-37","lex:tim-38","lex:tim-39","lex:tim-40","lex:prt-25","lex:num-half","lex:num-quarter","gr:telling-time","txt:gram-time-one","txt:gram-time-two","txt:gram-time-twelve","txt:gram-time-half","txt:gram-time-quarter-past","txt:gram-time-quarter-to"],
       "status": "available", "source": "steps:a2-telling-time"
+    },
+    {
+      "id": "a2-prices", "unitId": "a2-u4", "order": 3,
+      "title": "Prices",
+      "blurb": "Four currencies, and the same 3-10 / 11-99 / مِائَة counting rules applied to money.",
+      "level": "A2", "skills": ["vocabulary", "reading"],
+      "objectives": ["lex:shp-07","lex:shp-08","lex:shp-09","lex:shp-10","txt:gram-price-ten","txt:gram-price-twenty","txt:gram-price-hundred"],
+      "status": "available", "source": "steps:a2-prices"
     }
   ]
 }
