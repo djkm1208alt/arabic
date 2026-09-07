@@ -101,9 +101,9 @@
     {
       "id": "a2-u4", "level": "A2", "order": 4,
       "title": "Numbers, Counting & Time",
-      "blurb": "11–99, gender polarity, dates, prices, and the clock. In development.",
+      "blurb": "11–99 and the gender-polarity rules that come with them. Telling time, dates, and prices come later.",
       "skills": ["vocabulary", "grammar"],
-      "status": "planned", "prereqs": ["a1-u5"]
+      "status": "available", "prereqs": ["a1-u5"]
     },
     {
       "id": "a2-u5", "level": "A2", "order": 5,
@@ -645,6 +645,14 @@
       "level": "A2", "skills": ["grammar", "reading"],
       "objectives": ["gr:idafa","txt:gram-idafa-phrase","txt:gram-idafa-sentence","txt:gram-idafa-pen-student"],
       "status": "available", "source": "steps:a2-idafa"
+    },
+    {
+      "id": "a2-numbers-11-99", "unitId": "a2-u4", "order": 1,
+      "title": "Counting 11-99",
+      "blurb": "Eleven through a hundred, and the three different ways Arabic agrees a number with its noun.",
+      "level": "A2", "skills": ["vocabulary", "grammar", "reading"],
+      "objectives": ["lex:num-11","lex:num-12","lex:num-13","lex:num-14","lex:num-15","lex:num-16","lex:num-17","lex:num-18","lex:num-19","lex:num-20","lex:num-30","lex:num-40","lex:num-50","lex:num-60","lex:num-70","lex:num-80","lex:num-90","lex:num-100","gr:numbers-11-99","txt:gram-num-11m","txt:gram-num-11f","txt:gram-num-15m","txt:gram-num-15f","txt:gram-num-20","txt:gram-num-21","txt:gram-num-100"],
+      "status": "available", "source": "steps:a2-numbers-11-99"
     }
   ]
 }

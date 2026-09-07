@@ -1,0 +1,77 @@
+{
+  "id": "a2-numbers-11-99",
+  "unitId": "a2-u4",
+  "curriculumLessonId": "a2-numbers-11-99",
+  "title": "Counting 11-99",
+  "level": "A2",
+  "skills": ["vocabulary", "grammar", "reading"],
+  "objectives": [
+    "lex:num-11", "lex:num-12", "lex:num-13", "lex:num-14", "lex:num-15",
+    "lex:num-16", "lex:num-17", "lex:num-18", "lex:num-19",
+    "lex:num-20", "lex:num-30", "lex:num-40", "lex:num-50",
+    "lex:num-60", "lex:num-70", "lex:num-80", "lex:num-90", "lex:num-100",
+    "gr:numbers-11-99",
+    "txt:gram-num-11m", "txt:gram-num-11f", "txt:gram-num-15m", "txt:gram-num-15f",
+    "txt:gram-num-20", "txt:gram-num-21", "txt:gram-num-100"
+  ],
+  "steps": [
+    {
+      "type": "explain",
+      "title": "Past twenty, the rules change again",
+      "body": [
+        "You already know 1-10, and that 3-10 take a plural noun in an unusual reversed-gender form (see the counting rule from earlier). From eleven on, the whole system shifts once more: the counted noun goes back to singular — but now in the accusative case, not the noun's usual form.",
+        "أَحَدَ عَشَرَ (11) and اثْنَا عَشَرَ (12) are irregular compounds, best learned as their own pair. From 13 to 19 there's a real system: the ones-digit keeps the reversed agreement you already know from 3-10, while the \"-teen\" part (عَشَر/عَشْرَة) agrees normally with the noun instead — the two halves point in opposite directions on purpose.",
+        "20 through 90 stop caring about gender entirely — عِشْرُونَ counts anything. Compounds like 21 just glue a ones-digit onto a tens word with وَ. And مِائَة (100) breaks pattern a third time: it takes a genitive noun, the same government 3-10 use, not the accusative 11-99 use."
+      ],
+      "previewSymbols": ["١١", "٢٠", "١٠٠"]
+    },
+    {
+      "type": "reading-practice",
+      "title": "Eleven to a hundred",
+      "intro": "Read each number, then the seven example sentences. Tap 🔊 to hear any line.",
+      "fromObjectives": true
+    },
+    {
+      "type": "practice-choice",
+      "title": "Singular, not plural",
+      "arabicPrompt": "عِنْدِي أَحَدَ عَشَرَ كِتَابًا",
+      "prompt": "Why is كِتَابًا singular here, not a plural like كُتُب?",
+      "options": [
+        { "label": "11-99 take a singular accusative noun, unlike 3-10's plural", "correct": true },
+        { "label": "\"Book\" has no plural form in Arabic", "correct": false },
+        { "label": "It's a mistake — plurals are always used after a number", "correct": false }
+      ],
+      "explanation": "From 11 up, the counted noun switches to singular accusative (تمييز) — كِتَابًا, not the plural genitive كُتُبٍ that 3-10 use."
+    },
+    {
+      "type": "practice-choice",
+      "title": "Does twenty change?",
+      "arabicPrompt": "عِشْرُونَ",
+      "prompt": "Does عِشْرُونَ change when counting a feminine noun?",
+      "options": [
+        { "label": "No — 20 through 90 are invariant for gender", "correct": true },
+        { "label": "Yes, it takes a feminine ending", "correct": false },
+        { "label": "Yes, it becomes a completely different word", "correct": false }
+      ],
+      "explanation": "عِشْرُونَ counts طَالِبَة and كِتَاب alike — the tens words stopped caring about gender entirely, the first number words in the course to do so."
+    },
+    {
+      "type": "practice-choice",
+      "title": "Hundred breaks the pattern again",
+      "arabicPrompt": "عِنْدِي مِائَةُ كِتَابٍ",
+      "prompt": "What case is كِتَابٍ in, and why?",
+      "options": [
+        { "label": "Genitive — مِائَة governs a genitive noun through iḍāfa, the same government 3-10 use", "correct": true },
+        { "label": "Accusative — every number from 11 up uses accusative", "correct": false },
+        { "label": "Nominative — كِتَابٍ is the subject of the sentence", "correct": false }
+      ],
+      "explanation": "مِائَة doesn't follow 11-99's own rule — it takes a singular genitive noun via iḍāfa (مِائَةُ كِتَابٍ), a third pattern alongside 3-10's plural genitive and 11-99's singular accusative."
+    },
+    {
+      "type": "complete",
+      "title": "You can count to a hundred",
+      "message": "You've now met all three of Arabic's counting patterns: 1-2 use the noun's own form, 3-10 take a reversed-gender plural, and 11-99 take a singular accusative noun instead — with 11, 12, and مِائَة each bending the rule in their own way. Telling time, dates, and prices build on this later.",
+      "finishLabel": "Finish"
+    }
+  ]
+}

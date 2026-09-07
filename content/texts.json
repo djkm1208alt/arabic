@@ -1176,5 +1176,138 @@
     "level": "A2",
     "skills": [ "reading", "comprehension", "listening", "grammar" ],
     "prereqs": [ "gr:present-tense" ]
+  },
+  {
+    "id": "txt:gram-num-11m",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "numbers-11-99",
+    "vowelled": "عِنْدِي أَحَدَ عَشَرَ كِتَابًا",
+    "translit": "ʿindī aḥada ʿashara kitāban",
+    "en": "I have eleven books.",
+    "words": [
+      { "surface": "عِنْدِي", "translit": "ʿindī", "gloss": "I have (lit. \"at me\")", "gender": null },
+      { "surface": "أَحَدَ عَشَرَ", "translit": "aḥada ʿashara", "gloss": "eleven (masculine, irregular compound)", "gender": "masculine" },
+      { "surface": "كِتَابًا", "translit": "kitāban", "gloss": "book (singular, accusative — not a plural)", "gender": "masculine" }
+    ],
+    "audio": "عِنْدِي أَحَدَ عَشَرَ كِتَابًا",
+    "level": "A2",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:numbers-11-99" ]
+  },
+  {
+    "id": "txt:gram-num-11f",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "numbers-11-99",
+    "vowelled": "عِنْدِي إِحْدَى عَشْرَةَ طَالِبَةً",
+    "translit": "ʿindī iḥdā ʿashrata ṭālibatan",
+    "en": "I have eleven female students.",
+    "words": [
+      { "surface": "عِنْدِي", "translit": "ʿindī", "gloss": "I have (lit. \"at me\")", "gender": null },
+      { "surface": "إِحْدَى عَشْرَةَ", "translit": "iḥdā ʿashrata", "gloss": "eleven (feminine — a different word from the masculine, not just a changed ending)", "gender": "feminine" },
+      { "surface": "طَالِبَةً", "translit": "ṭālibatan", "gloss": "student (singular feminine, accusative)", "gender": "feminine" }
+    ],
+    "audio": "عِنْدِي إِحْدَى عَشْرَةَ طَالِبَةً",
+    "level": "A2",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:numbers-11-99" ]
+  },
+  {
+    "id": "txt:gram-num-15m",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "numbers-11-99",
+    "vowelled": "عِنْدِي خَمْسَةَ عَشَرَ كِتَابًا",
+    "translit": "ʿindī khamsata ʿashara kitāban",
+    "en": "I have fifteen books.",
+    "words": [
+      { "surface": "عِنْدِي", "translit": "ʿindī", "gloss": "I have (lit. \"at me\")", "gender": null },
+      { "surface": "خَمْسَةَ عَشَرَ", "translit": "khamsata ʿashara", "gloss": "fifteen — خَمْسَةَ keeps the reversed agreement already known from 3-10, عَشَرَ agrees normally (masculine)", "gender": "masculine" },
+      { "surface": "كِتَابًا", "translit": "kitāban", "gloss": "book (singular, accusative)", "gender": "masculine" }
+    ],
+    "audio": "عِنْدِي خَمْسَةَ عَشَرَ كِتَابًا",
+    "level": "A2",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:numbers-11-99" ]
+  },
+  {
+    "id": "txt:gram-num-15f",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "numbers-11-99",
+    "vowelled": "عِنْدِي خَمْسَ عَشْرَةَ طَالِبَةً",
+    "translit": "ʿindī khamsa ʿashrata ṭālibatan",
+    "en": "I have fifteen female students.",
+    "words": [
+      { "surface": "عِنْدِي", "translit": "ʿindī", "gloss": "I have (lit. \"at me\")", "gender": null },
+      { "surface": "خَمْسَ عَشْرَةَ", "translit": "khamsa ʿashrata", "gloss": "fifteen, feminine — both halves flip from the masculine: خَمْسَ loses its ة, عَشْرَةَ gains one", "gender": "feminine" },
+      { "surface": "طَالِبَةً", "translit": "ṭālibatan", "gloss": "student (singular feminine, accusative)", "gender": "feminine" }
+    ],
+    "audio": "عِنْدِي خَمْسَ عَشْرَةَ طَالِبَةً",
+    "level": "A2",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:numbers-11-99" ]
+  },
+  {
+    "id": "txt:gram-num-20",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "numbers-11-99",
+    "vowelled": "عِنْدِي عِشْرُونَ كِتَابًا",
+    "translit": "ʿindī ʿishrūna kitāban",
+    "en": "I have twenty books.",
+    "words": [
+      { "surface": "عِنْدِي", "translit": "ʿindī", "gloss": "I have (lit. \"at me\")", "gender": null },
+      { "surface": "عِشْرُونَ", "translit": "ʿishrūna", "gloss": "twenty — invariant, the same form for a masculine or feminine noun", "gender": null },
+      { "surface": "كِتَابًا", "translit": "kitāban", "gloss": "book (singular, accusative)", "gender": "masculine" }
+    ],
+    "audio": "عِنْدِي عِشْرُونَ كِتَابًا",
+    "level": "A2",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:numbers-11-99" ]
+  },
+  {
+    "id": "txt:gram-num-21",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "numbers-11-99",
+    "vowelled": "عِنْدِي وَاحِدٌ وَعِشْرُونَ كِتَابًا",
+    "translit": "ʿindī wāḥidun wa-ʿishrūna kitāban",
+    "en": "I have twenty-one books.",
+    "words": [
+      { "surface": "عِنْدِي", "translit": "ʿindī", "gloss": "I have (lit. \"at me\")", "gender": null },
+      { "surface": "وَاحِدٌ وَعِشْرُونَ", "translit": "wāḥidun wa-ʿishrūna", "gloss": "twenty-one — ones-digit وَ tens; وَاحِدٌ agrees normally with the noun, exactly as it would alone", "gender": "masculine" },
+      { "surface": "كِتَابًا", "translit": "kitāban", "gloss": "book (singular, accusative)", "gender": "masculine" }
+    ],
+    "audio": "عِنْدِي وَاحِدٌ وَعِشْرُونَ كِتَابًا",
+    "level": "A2",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:numbers-11-99" ]
+  },
+  {
+    "id": "txt:gram-num-100",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "numbers-11-99",
+    "vowelled": "عِنْدِي مِائَةُ كِتَابٍ",
+    "translit": "ʿindī miʾatu kitābin",
+    "en": "I have a hundred books.",
+    "words": [
+      { "surface": "عِنْدِي", "translit": "ʿindī", "gloss": "I have (lit. \"at me\")", "gender": null },
+      { "surface": "مِائَةُ", "translit": "miʾatu", "gloss": "hundred (مُضَاف — governs a genitive noun, like an iḍāfa)", "gender": "feminine" },
+      { "surface": "كِتَابٍ", "translit": "kitābin", "gloss": "book (singular, genitive — not accusative)", "gender": "masculine" }
+    ],
+    "audio": "عِنْدِي مِائَةُ كِتَابٍ",
+    "level": "A2",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:numbers-11-99" ]
   }
 ]

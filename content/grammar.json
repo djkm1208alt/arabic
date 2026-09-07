@@ -308,5 +308,33 @@
     "prereqs": [
       "gr:definiteness"
     ]
+  },
+  {
+    "id": "gr:numbers-11-99",
+    "kind": "grammar",
+    "name": "Counting 11-99 and كِتَابًا vs. كُتُبٍ",
+    "level": "A2",
+    "rule": "11 through 99 share one big difference from 3-10: the counted noun is singular and accusative (تمييز), not plural genitive — عِنْدِي خَمْسَةَ عَشَرَ كِتَابًا (fifteen books), never a plural. أَحَدَ عَشَرَ (11) and اثْنَا عَشَرَ (12) are irregular compounds, each with its own feminine (إِحْدَى عَشْرَةَ، اثْنَتَا عَشْرَةَ) — best learned as a pair rather than derived from a rule. From 13 to 19 the pattern is systematic: the ones-digit keeps the reversed agreement already known from 3-10 (ثَلَاثَةَ عَشَرَ), while عَشَر/عَشْرَة agrees normally with the noun's gender instead. 20 through 90 are invariant — the same word counts a masculine or feminine noun alike (عِشْرُونَ) — though they still change for case: عِشْرُونَ (nominative), عِشْرِينَ (accusative/genitive), unlike 11-19 which stay fixed regardless of case. 21-99 compound as ones-digit + وَ + tens (وَاحِدٌ وَعِشْرُونَ, 21) — the ones-digit behaves exactly as it would alone. مِائَة (100) is different again: it governs a singular GENITIVE noun through iḍāfa, not accusative — مِائَةُ كِتَابٍ.",
+    "examples": [
+      "txt:gram-num-11m",
+      "txt:gram-num-11f",
+      "txt:gram-num-15m",
+      "txt:gram-num-15f",
+      "txt:gram-num-20",
+      "txt:gram-num-21",
+      "txt:gram-num-100"
+    ],
+    "commonErrors": [
+      "Using a plural noun after 11-99 the way 3-10 do: أَحَدَ عَشَرَ كُتُبٍ is wrong — it should be أَحَدَ عَشَرَ كِتَابًا.",
+      "Changing عِشْرُونَ (or any tens word) for gender — it's invariant; only a compound's ones-digit (like the وَاحِدٌ in 21) changes.",
+      "Treating مِائَة like 11-99 and giving it an accusative noun — مِائَة takes a genitive noun instead, the same government as 3-10."
+    ],
+    "skills": [
+      "grammar",
+      "reading"
+    ],
+    "prereqs": [
+      "gr:counted-noun-intro"
+    ]
   }
 ]
