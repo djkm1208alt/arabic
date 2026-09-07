@@ -1477,5 +1477,82 @@
     "level": "A2",
     "skills": [ "reading", "comprehension", "listening", "vocabulary" ],
     "prereqs": [ "gr:numbers-11-99" ]
+  },
+  {
+    "id": "txt:gram-date-first",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "dates",
+    "vowelled": "الْأَوَّلُ مِنْ يَنَايِر",
+    "translit": "al-awwalu min yanāyir",
+    "en": "the first of January",
+    "words": [
+      { "surface": "الْأَوَّلُ", "translit": "al-awwalu", "gloss": "the first (irregular, not built on the shared ordinal pattern)", "gender": "masculine" },
+      { "surface": "مِنْ", "translit": "min", "gloss": "of", "gender": null },
+      { "surface": "يَنَايِر", "translit": "yanāyir", "gloss": "January", "gender": null }
+    ],
+    "audio": "الْأَوَّلُ مِنْ يَنَايِر",
+    "level": "A2",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:dates" ]
+  },
+  {
+    "id": "txt:gram-date-third",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "dates",
+    "vowelled": "الثَّالِثُ مِنْ سِبْتَمْبِر",
+    "translit": "ath-thālithu min sibtambir",
+    "en": "the third of September",
+    "words": [
+      { "surface": "الثَّالِثُ", "translit": "ath-thālithu", "gloss": "the third (masculine — the same root as the feminine ordinal for telling time)", "gender": "masculine" },
+      { "surface": "مِنْ", "translit": "min", "gloss": "of", "gender": null },
+      { "surface": "سِبْتَمْبِر", "translit": "sibtambir", "gloss": "September", "gender": null }
+    ],
+    "audio": "الثَّالِثُ مِنْ سِبْتَمْبِر",
+    "level": "A2",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:dates" ]
+  },
+  {
+    "id": "txt:gram-date-tenth",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "dates",
+    "vowelled": "الْعَاشِرُ مِنْ دِيسِمْبِر",
+    "translit": "al-ʿāshiru min dīsimbir",
+    "en": "the tenth of December",
+    "words": [
+      { "surface": "الْعَاشِرُ", "translit": "al-ʿāshiru", "gloss": "the tenth (masculine)", "gender": "masculine" },
+      { "surface": "مِنْ", "translit": "min", "gloss": "of", "gender": null },
+      { "surface": "دِيسِمْبِر", "translit": "dīsimbir", "gloss": "December", "gender": null }
+    ],
+    "audio": "الْعَاشِرُ مِنْ دِيسِمْبِر",
+    "level": "A2",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:dates" ]
+  },
+  {
+    "id": "txt:gram-date-sentence",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "dates",
+    "vowelled": "الْيَوْمَ هُوَ الْخَامِسُ مِنْ مَارِس",
+    "translit": "al-yawma huwa al-khāmisu min māris",
+    "en": "Today is the fifth of March.",
+    "words": [
+      { "surface": "الْيَوْمَ", "translit": "al-yawma", "gloss": "today (accusative — the normal case for a time adverbial)", "gender": null },
+      { "surface": "هُوَ", "translit": "huwa", "gloss": "it (referring back to \"day\", masculine)", "gender": "masculine" },
+      { "surface": "الْخَامِسُ", "translit": "al-khāmisu", "gloss": "the fifth", "gender": "masculine" },
+      { "surface": "مِنْ مَارِس", "translit": "min māris", "gloss": "of March", "gender": null }
+    ],
+    "audio": "الْيَوْمَ هُوَ الْخَامِسُ مِنْ مَارِس",
+    "level": "A2",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:dates" ]
   }
 ]

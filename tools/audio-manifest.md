@@ -7,13 +7,13 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 
 | | count |
 |---|---:|
-| Distinct targets | 642 |
-| — Tier 1 (foundation) | 171 |
-| — Tier 2 (vocabulary) | 394 |
+| Distinct targets | 670 |
+| — Tier 1 (foundation) | 175 |
+| — Tier 2 (vocabulary) | 418 |
 | — Tier 3 (stays TTS) | 77 |
-| Unique native recordings needed (Tier 1+2) | 553 |
+| Unique native recordings needed (Tier 1+2) | 581 |
 | — of those, present on disk | 0 |
-| — still missing | 553 |
+| — still missing | 581 |
 | Aliases (share another recording) | 12 |
 
 ## Tier 1 — Foundation
@@ -89,6 +89,10 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `sentences/gram-count-one.mp3` | عِنْدِي كِتَابٌ وَاحِدٌ | ʿindī kitābun wāḥidun | I have one book. | recording | tts |
 | `sentences/gram-count-three.mp3` | عِنْدِي ثَلَاثَةُ كُتُبٍ | ʿindī thalāthatu kutubin | I have three books. | recording | tts |
 | `sentences/gram-count-two.mp3` | عِنْدِي كِتَابَانِ | ʿindī kitābāni | I have two books. | recording | tts |
+| `sentences/gram-date-first.mp3` | الْأَوَّلُ مِنْ يَنَايِر | al-awwalu min yanāyir | the first of January | recording | tts |
+| `sentences/gram-date-sentence.mp3` | الْيَوْمَ هُوَ الْخَامِسُ مِنْ مَارِس | al-yawma huwa al-khāmisu min māris | Today is the fifth of March. | recording | tts |
+| `sentences/gram-date-tenth.mp3` | الْعَاشِرُ مِنْ دِيسِمْبِر | al-ʿāshiru min dīsimbir | the tenth of December | recording | tts |
+| `sentences/gram-date-third.mp3` | الثَّالِثُ مِنْ سِبْتَمْبِر | ath-thālithu min sibtambir | the third of September | recording | tts |
 | `sentences/gram-def-def.mp3` | الْبَابُ | al-bābu | the door | recording | tts |
 | `sentences/gram-def-indef.mp3` | بَابٌ | bābun | a door | recording | tts |
 | `sentences/gram-def-sentence.mp3` | الْقَلَمُ جَدِيدٌ | al-qalamu jadīdun | The pen is new. | recording | tts |
@@ -280,6 +284,7 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `words/exp-09.mp3` | كَمِ السَّاعَة؟ | kami s-sāʿah? | What time is it? | recording | tts |
 | `words/exp-10.mp3` | بِكَمْ هَذَا؟ | bikam hādhā? | How much is this? | recording | tts |
 | `words/exp-11.mp3` | بِخَيْر | bikhayr | fine / good | recording | tts |
+| `words/exp-12.mp3` | مَا التَّارِيخُ الْيَوْمَ؟ | mā at-tārīkhu al-yawma? | What's the date today? | recording | tts |
 | `words/fc-14.mp3` | طَعَام | ṭaʿām | food | recording | tts |
 | `words/fc-27.mp3` | أَهْلًا وَسَهْلًا | ahlan wa sahlan | welcome | recording | tts |
 | `words/fc-28.mp3` | كَيْفَ حَالُك؟ | kayfa ḥāluk | how are you? | recording | tts |
@@ -531,6 +536,29 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `words/tim-38.mp3` | عَاشِرَة | ʿāshirah | tenth (10th, feminine) | recording | tts |
 | `words/tim-39.mp3` | حَادِيَةَ عَشْرَةَ | ḥādiyata ʿashrata | eleventh (11th, feminine) | recording | tts |
 | `words/tim-40.mp3` | ثَانِيَةَ عَشْرَةَ | thāniyata ʿashrata | twelfth (12th, feminine) | recording | tts |
+| `words/tim-41.mp3` | أَوَّل | awwal | first (1st, masculine) | recording | tts |
+| `words/tim-42.mp3` | ثَانِي | thānī | second (2nd, masculine) | recording | tts |
+| `words/tim-43.mp3` | ثَالِث | thālith | third (3rd, masculine) | recording | tts |
+| `words/tim-44.mp3` | رَابِع | rābiʿ | fourth (4th, masculine) | recording | tts |
+| `words/tim-45.mp3` | خَامِس | khāmis | fifth (5th, masculine) | recording | tts |
+| `words/tim-46.mp3` | سَادِس | sādis | sixth (6th, masculine) | recording | tts |
+| `words/tim-47.mp3` | سَابِع | sābiʿ | seventh (7th, masculine) | recording | tts |
+| `words/tim-48.mp3` | ثَامِن | thāmin | eighth (8th, masculine) | recording | tts |
+| `words/tim-49.mp3` | تَاسِع | tāsiʿ | ninth (9th, masculine) | recording | tts |
+| `words/tim-50.mp3` | عَاشِر | ʿāshir | tenth (10th, masculine) | recording | tts |
+| `words/tim-51.mp3` | يَنَايِر | yanāyir | January | recording | tts |
+| `words/tim-52.mp3` | فِبْرَايِر | fibrāyir | February | recording | tts |
+| `words/tim-53.mp3` | مَارِس | māris | March | recording | tts |
+| `words/tim-54.mp3` | أَبْرِيل | abrīl | April | recording | tts |
+| `words/tim-55.mp3` | مَايُو | māyū | May | recording | tts |
+| `words/tim-56.mp3` | يُونِيُو | yūniyū | June | recording | tts |
+| `words/tim-57.mp3` | يُولِيُو | yūliyū | July | recording | tts |
+| `words/tim-58.mp3` | أَغُسْطُس | aghusṭus | August | recording | tts |
+| `words/tim-59.mp3` | سِبْتَمْبِر | sibtambir | September | recording | tts |
+| `words/tim-60.mp3` | أُكْتُوبِر | uktūbir | October | recording | tts |
+| `words/tim-61.mp3` | نُوفِمْبِر | nūfimbir | November | recording | tts |
+| `words/tim-62.mp3` | دِيسِمْبِر | dīsimbir | December | recording | tts |
+| `words/tim-63.mp3` | تَارِيخ | tārīkh | date | recording | tts |
 | `words/trv-01.mp3` | حَافِلَة | ḥāfilah | bus | recording | tts |
 | `words/trv-02.mp3` | قِطَار | qiṭār | train | recording | tts |
 | `words/trv-03.mp3` | طَائِرَة | ṭāʾirah | plane | recording | tts |
