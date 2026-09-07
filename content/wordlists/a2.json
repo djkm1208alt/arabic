@@ -98,6 +98,8 @@
     { "en": "credit card", "topic": "everyday-exchanges", "pos": "noun", "priority": 3 },
     { "en": "size (clothing)", "topic": "everyday-exchanges", "pos": "noun", "priority": 2 },
     { "en": "to try on (clothing)", "topic": "everyday-exchanges", "pos": "verb", "priority": 2 },
-    { "en": "discount", "topic": "everyday-exchanges", "pos": "noun", "priority": 3 }
+    { "en": "discount", "topic": "everyday-exchanges", "pos": "noun", "priority": 3 },
+
+    { "en": "thing", "topic": "everyday-exchanges", "pos": "noun", "priority": 2 }
   ]
 }
