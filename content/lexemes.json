@@ -430,6 +430,22 @@
     "prereqs": []
   },
   {
+    "id": "lex:num-01f",
+    "kind": "lexeme",
+    "ar": "وَاحِدَة",
+    "translit": "wāḥidah",
+    "en": "one (feminine)",
+    "pos": "number",
+    "topic": "numbers",
+    "level": "A2",
+    "notes": "One o'clock is the exception in telling time — it uses this cardinal, not an ordinal, agreeing with the feminine السَّاعَة. See gr:telling-time.",
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
+  },
+  {
     "id": "lex:num-02",
     "kind": "lexeme",
     "ar": "اِثْنَان",
@@ -881,6 +897,38 @@
     "topic": "numbers",
     "level": "A2",
     "notes": "Governs a singular genitive noun via iḍāfa (مِائَةُ كِتَابٍ, a hundred books) — a different pattern from both 3-10 and 11-99. Traditional spelling مِائَة (with the silent alif) rather than the simplified modern مِئَة.",
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
+  },
+  {
+    "id": "lex:num-half",
+    "kind": "lexeme",
+    "ar": "نِصْف",
+    "translit": "niṣf",
+    "en": "half",
+    "pos": "noun",
+    "topic": "numbers",
+    "level": "A2",
+    "notes": "Used for telling time (السَّاعَةُ الثَّانِيَةُ وَالنِّصْف, half past two) — see gr:telling-time.",
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
+  },
+  {
+    "id": "lex:num-quarter",
+    "kind": "lexeme",
+    "ar": "رُبْع",
+    "translit": "rubʿ",
+    "en": "quarter",
+    "pos": "noun",
+    "topic": "numbers",
+    "level": "A2",
+    "notes": "Used for telling time (السَّاعَةُ الثَّالِثَةُ وَالرُّبْع, quarter past three) — see gr:telling-time.",
     "tags": [],
     "skills": [
       "vocabulary"
@@ -2989,6 +3037,17 @@
   { "id": "lex:tim-27", "kind": "lexeme", "ar": "أَحْيَانًا", "translit": "aḥyānan", "en": "sometimes", "pos": "adverb", "topic": "time", "level": "A1", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
   { "id": "lex:tim-28", "kind": "lexeme", "ar": "قَبْلَ", "translit": "qabla", "en": "before", "pos": "preposition", "topic": "time", "level": "A1", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
   { "id": "lex:tim-29", "kind": "lexeme", "ar": "بَعْدَ", "translit": "baʿda", "en": "after", "pos": "preposition", "topic": "time", "level": "A1", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:tim-30", "kind": "lexeme", "ar": "ثَانِيَة", "translit": "thāniyah", "en": "second (2nd, feminine)", "pos": "adjective", "topic": "time", "level": "A2", "notes": "For telling time only — feminine ordinal, agreeing with السَّاعَة. The masculine form (ثَانٍ) is for other contexts (dates, sequence), out of scope here. See gr:telling-time.", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:tim-31", "kind": "lexeme", "ar": "ثَالِثَة", "translit": "thālithah", "en": "third (3rd, feminine)", "pos": "adjective", "topic": "time", "level": "A2", "notes": "For telling time only — see lex:tim-30 and gr:telling-time.", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:tim-32", "kind": "lexeme", "ar": "رَابِعَة", "translit": "rābiʿah", "en": "fourth (4th, feminine)", "pos": "adjective", "topic": "time", "level": "A2", "notes": "For telling time only — see lex:tim-30 and gr:telling-time.", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:tim-33", "kind": "lexeme", "ar": "خَامِسَة", "translit": "khāmisah", "en": "fifth (5th, feminine)", "pos": "adjective", "topic": "time", "level": "A2", "notes": "For telling time only — see lex:tim-30 and gr:telling-time.", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:tim-34", "kind": "lexeme", "ar": "سَادِسَة", "translit": "sādisah", "en": "sixth (6th, feminine)", "pos": "adjective", "topic": "time", "level": "A2", "notes": "For telling time only — see lex:tim-30 and gr:telling-time.", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:tim-35", "kind": "lexeme", "ar": "سَابِعَة", "translit": "sābiʿah", "en": "seventh (7th, feminine)", "pos": "adjective", "topic": "time", "level": "A2", "notes": "For telling time only — see lex:tim-30 and gr:telling-time.", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:tim-36", "kind": "lexeme", "ar": "ثَامِنَة", "translit": "thāminah", "en": "eighth (8th, feminine)", "pos": "adjective", "topic": "time", "level": "A2", "notes": "For telling time only — see lex:tim-30 and gr:telling-time.", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:tim-37", "kind": "lexeme", "ar": "تَاسِعَة", "translit": "tāsiʿah", "en": "ninth (9th, feminine)", "pos": "adjective", "topic": "time", "level": "A2", "notes": "For telling time only — see lex:tim-30 and gr:telling-time.", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:tim-38", "kind": "lexeme", "ar": "عَاشِرَة", "translit": "ʿāshirah", "en": "tenth (10th, feminine)", "pos": "adjective", "topic": "time", "level": "A2", "notes": "For telling time only — see lex:tim-30 and gr:telling-time.", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:tim-39", "kind": "lexeme", "ar": "حَادِيَةَ عَشْرَةَ", "translit": "ḥādiyata ʿashrata", "en": "eleventh (11th, feminine)", "pos": "adjective", "topic": "time", "level": "A2", "notes": "Compounds an ordinal ones-word with the teen-marker, the same way cardinal 11-19 compound (gr:numbers-11-99). For telling time only; see gr:telling-time.", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:tim-40", "kind": "lexeme", "ar": "ثَانِيَةَ عَشْرَةَ", "translit": "thāniyata ʿashrata", "en": "twelfth (12th, feminine)", "pos": "adjective", "topic": "time", "level": "A2", "notes": "Same word as \"second\" (lex:tim-30) plus the teen-marker — context tells them apart. For telling time only; see gr:telling-time.", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
 
   { "id": "lex:ver-11", "kind": "lexeme", "ar": "جَاءَ", "translit": "jāʾa", "en": "to come", "pos": "verb", "topic": "verbs", "level": "A1", "example": { "ar": "جَاءَ إِلَى الْبَيْت.", "en": "He came home." }, "notes": "Present tense: يَجِيء (yajīʾ).", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
   { "id": "lex:ver-12", "kind": "lexeme", "ar": "نَامَ", "translit": "nāma", "en": "to sleep", "pos": "verb", "topic": "verbs", "level": "A1", "example": { "ar": "نَامَ الطِّفْل.", "en": "The child slept." }, "notes": "Present tense: يَنَام (yanām).", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
@@ -3126,5 +3185,6 @@
   { "id": "lex:prt-21", "kind": "lexeme", "ar": "مَتَى", "translit": "matā", "en": "when?", "pos": "interrogative", "topic": "particles", "level": "A1", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
   { "id": "lex:prt-22", "kind": "lexeme", "ar": "لِمَاذَا", "translit": "limādhā", "en": "why?", "pos": "interrogative", "topic": "particles", "level": "A1", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
   { "id": "lex:prt-23", "kind": "lexeme", "ar": "كَيْفَ", "translit": "kayfa", "en": "how?", "pos": "interrogative", "topic": "particles", "level": "A1", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
-  { "id": "lex:prt-24", "kind": "lexeme", "ar": "كَمْ", "translit": "kam", "en": "how many?", "pos": "interrogative", "topic": "particles", "level": "A1", "notes": "The counted noun after كَمْ is singular and accusative: كَمْ كِتَابًا؟", "tags": [], "skills": ["vocabulary"], "prereqs": [] }
+  { "id": "lex:prt-24", "kind": "lexeme", "ar": "كَمْ", "translit": "kam", "en": "how many?", "pos": "interrogative", "topic": "particles", "level": "A1", "notes": "The counted noun after كَمْ is singular and accusative: كَمْ كِتَابًا؟", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:prt-25", "kind": "lexeme", "ar": "إِلَّا", "translit": "illā", "en": "except / minus", "pos": "particle", "topic": "particles", "level": "A2", "notes": "Used for \"quarter to\" the hour when telling time: السَّاعَةُ الرَّابِعَةُ إِلَّا رُبْعًا (quarter to four). See gr:telling-time.", "tags": [], "skills": ["vocabulary"], "prereqs": [] }
 ]

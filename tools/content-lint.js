@@ -74,8 +74,10 @@ function unvowelledConsonants(word) {
         // definite-article lām: الْ before a moon letter carries sukūn (covered
         // above); before a sun letter it is deliberately unmarked (assimilated,
         // the next letter takes shadda). Excuse an unmarked ل right after a
-        // word-initial alif.
-        if (t.letter === "ل" && i === 1 && toks[0].letter === ALIF) continue;
+        // word-initial alif, or after a single attachable prefix (وَ, فَ, بِ,
+        // لِ, كَ) glued directly onto the definite article (وَالْبَيْتُ).
+        if (t.letter === "ل" && i > 0 && toks[i - 1].letter === ALIF &&
+            (i === 1 || (i === 2 && /^[وفبلك]$/.test(toks[0].letter)))) continue;
         flags.push(t.letter);
     }
     return flags;

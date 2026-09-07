@@ -1309,5 +1309,116 @@
     "level": "A2",
     "skills": [ "reading", "comprehension", "listening", "grammar" ],
     "prereqs": [ "gr:numbers-11-99" ]
+  },
+  {
+    "id": "txt:gram-time-one",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "telling-time",
+    "vowelled": "السَّاعَةُ الْوَاحِدَةُ",
+    "translit": "as-sāʿatu al-wāḥidatu",
+    "en": "It's one o'clock.",
+    "words": [
+      { "surface": "السَّاعَةُ", "translit": "as-sāʿatu", "gloss": "the hour / clock", "gender": "feminine" },
+      { "surface": "الْوَاحِدَةُ", "translit": "al-wāḥidatu", "gloss": "the one (feminine cardinal — one o'clock is the exception, not an ordinal)", "gender": "feminine" }
+    ],
+    "audio": "السَّاعَةُ الْوَاحِدَةُ",
+    "level": "A2",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:telling-time" ]
+  },
+  {
+    "id": "txt:gram-time-two",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "telling-time",
+    "vowelled": "السَّاعَةُ الثَّانِيَةُ",
+    "translit": "as-sāʿatu ath-thāniyatu",
+    "en": "It's two o'clock.",
+    "words": [
+      { "surface": "السَّاعَةُ", "translit": "as-sāʿatu", "gloss": "the hour / clock", "gender": "feminine" },
+      { "surface": "الثَّانِيَةُ", "translit": "ath-thāniyatu", "gloss": "the second (ordinal, agreeing with the hour)", "gender": "feminine" }
+    ],
+    "audio": "السَّاعَةُ الثَّانِيَةُ",
+    "level": "A2",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:telling-time" ]
+  },
+  {
+    "id": "txt:gram-time-twelve",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "telling-time",
+    "vowelled": "السَّاعَةُ الثَّانِيَةَ عَشْرَةَ",
+    "translit": "as-sāʿatu ath-thāniyata ʿashrata",
+    "en": "It's twelve o'clock.",
+    "words": [
+      { "surface": "السَّاعَةُ", "translit": "as-sāʿatu", "gloss": "the hour / clock", "gender": "feminine" },
+      { "surface": "الثَّانِيَةَ عَشْرَةَ", "translit": "ath-thāniyata ʿashrata", "gloss": "the twelfth — an ordinal teen-compound, fixed on ـَ regardless of case, same as the cardinal teens", "gender": "feminine" }
+    ],
+    "audio": "السَّاعَةُ الثَّانِيَةَ عَشْرَةَ",
+    "level": "A2",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:telling-time" ]
+  },
+  {
+    "id": "txt:gram-time-half",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "telling-time",
+    "vowelled": "السَّاعَةُ الثَّانِيَةُ وَالنِّصْفُ",
+    "translit": "as-sāʿatu ath-thāniyatu wa-n-niṣfu",
+    "en": "It's half past two.",
+    "words": [
+      { "surface": "السَّاعَةُ", "translit": "as-sāʿatu", "gloss": "the hour / clock", "gender": "feminine" },
+      { "surface": "الثَّانِيَةُ", "translit": "ath-thāniyatu", "gloss": "the second (two o'clock)", "gender": "feminine" },
+      { "surface": "وَالنِّصْفُ", "translit": "wa-n-niṣfu", "gloss": "and the half — \"past\" uses وَ", "gender": null }
+    ],
+    "audio": "السَّاعَةُ الثَّانِيَةُ وَالنِّصْفُ",
+    "level": "A2",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:telling-time" ]
+  },
+  {
+    "id": "txt:gram-time-quarter-past",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "telling-time",
+    "vowelled": "السَّاعَةُ الثَّالِثَةُ وَالرُّبْعُ",
+    "translit": "as-sāʿatu ath-thālithatu wa-r-rubʿu",
+    "en": "It's quarter past three.",
+    "words": [
+      { "surface": "السَّاعَةُ", "translit": "as-sāʿatu", "gloss": "the hour / clock", "gender": "feminine" },
+      { "surface": "الثَّالِثَةُ", "translit": "ath-thālithatu", "gloss": "the third (three o'clock)", "gender": "feminine" },
+      { "surface": "وَالرُّبْعُ", "translit": "wa-r-rubʿu", "gloss": "and the quarter — \"past\" uses وَ, same as the half", "gender": null }
+    ],
+    "audio": "السَّاعَةُ الثَّالِثَةُ وَالرُّبْعُ",
+    "level": "A2",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:telling-time" ]
+  },
+  {
+    "id": "txt:gram-time-quarter-to",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "telling-time",
+    "vowelled": "السَّاعَةُ الرَّابِعَةُ إِلَّا رُبْعًا",
+    "translit": "as-sāʿatu ar-rābiʿatu illā rubʿan",
+    "en": "It's quarter to four.",
+    "words": [
+      { "surface": "السَّاعَةُ", "translit": "as-sāʿatu", "gloss": "the hour / clock", "gender": "feminine" },
+      { "surface": "الرَّابِعَةُ", "translit": "ar-rābiʿatu", "gloss": "the fourth (four o'clock)", "gender": "feminine" },
+      { "surface": "إِلَّا رُبْعًا", "translit": "illā rubʿan", "gloss": "minus a quarter — \"to\" uses إِلَّا, not وَ", "gender": null }
+    ],
+    "audio": "السَّاعَةُ الرَّابِعَةُ إِلَّا رُبْعًا",
+    "level": "A2",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:telling-time" ]
   }
 ]

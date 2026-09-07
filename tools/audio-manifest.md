@@ -7,13 +7,13 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 
 | | count |
 |---|---:|
-| Distinct targets | 614 |
-| — Tier 1 (foundation) | 162 |
-| — Tier 2 (vocabulary) | 375 |
+| Distinct targets | 635 |
+| — Tier 1 (foundation) | 168 |
+| — Tier 2 (vocabulary) | 390 |
 | — Tier 3 (stays TTS) | 77 |
-| Unique native recordings needed (Tier 1+2) | 525 |
+| Unique native recordings needed (Tier 1+2) | 546 |
 | — of those, present on disk | 0 |
-| — still missing | 525 |
+| — still missing | 546 |
 | Aliases (share another recording) | 12 |
 
 ## Tier 1 — Foundation
@@ -128,6 +128,12 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `sentences/gram-prep-in-bag.mp3` | الْكِتَابُ فِي الْحَقِيبَةِ | al-kitābu fī al-ḥaqībati | The book is in the bag. | recording | tts |
 | `sentences/gram-prep-on-table.mp3` | الْقَلَمُ عَلَى الطَّاوِلَةِ | al-qalamu ʿalā aṭ-ṭāwilati | The pen is on the table. | recording | tts |
 | `sentences/gram-sunletter-shams.mp3` | الشَّمْسُ كَبِيرَةٌ | ash-shamsu kabīratun | The sun is big. | recording | tts |
+| `sentences/gram-time-half.mp3` | السَّاعَةُ الثَّانِيَةُ وَالنِّصْفُ | as-sāʿatu ath-thāniyatu wa-n-niṣfu | It's half past two. | recording | tts |
+| `sentences/gram-time-one.mp3` | السَّاعَةُ الْوَاحِدَةُ | as-sāʿatu al-wāḥidatu | It's one o'clock. | recording | tts |
+| `sentences/gram-time-quarter-past.mp3` | السَّاعَةُ الثَّالِثَةُ وَالرُّبْعُ | as-sāʿatu ath-thālithatu wa-r-rubʿu | It's quarter past three. | recording | tts |
+| `sentences/gram-time-quarter-to.mp3` | السَّاعَةُ الرَّابِعَةُ إِلَّا رُبْعًا | as-sāʿatu ar-rābiʿatu illā rubʿan | It's quarter to four. | recording | tts |
+| `sentences/gram-time-twelve.mp3` | السَّاعَةُ الثَّانِيَةَ عَشْرَةَ | as-sāʿatu ath-thāniyata ʿashrata | It's twelve o'clock. | recording | tts |
+| `sentences/gram-time-two.mp3` | السَّاعَةُ الثَّانِيَةُ | as-sāʿatu ath-thāniyatu | It's two o'clock. | recording | tts |
 | `sentences/gram-verb-ana.mp3` | أَنَا أَذْهَبُ إِلَى الْمَدْرَسَةِ | anā adhhabu ilā al-madrasati | I go to school. | recording | tts |
 | `sentences/gram-verb-anta.mp3` | أَنْتَ تَذْهَبُ إِلَى الْمَدْرَسَةِ | anta tadhhabu ilā al-madrasati | You (m.) go to school. | recording | tts |
 | `sentences/gram-verb-anti.mp3` | أَنْتِ تَذْهَبِينَ إِلَى الْمَدْرَسَةِ | anti tadhhabīna ilā al-madrasati | You (f.) go to school. | recording | tts |
@@ -334,6 +340,7 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `words/adj-07.mp3` | قَدِيم | qadīm | old (thing) | alias | tts |
 | `words/num-00.mp3` | صِفْر | ṣifr | zero | recording | tts |
 | `words/num-01.mp3` | وَاحِد | wāḥid | one | recording | tts |
+| `words/num-01f.mp3` | وَاحِدَة | wāḥidah | one (feminine) | recording | tts |
 | `words/num-02.mp3` | اِثْنَان | ithnān | two | recording | tts |
 | `words/num-03.mp3` | ثَلَاثَة | thalāthah | three | recording | tts |
 | `words/num-04.mp3` | أَرْبَعَة | arbaʿah | four | recording | tts |
@@ -361,6 +368,8 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `words/num-70.mp3` | سَبْعُونَ | sabʿūn | seventy | recording | tts |
 | `words/num-80.mp3` | ثَمَانُونَ | thamānūn | eighty | recording | tts |
 | `words/num-90.mp3` | تِسْعُونَ | tisʿūn | ninety | recording | tts |
+| `words/num-half.mp3` | نِصْف | niṣf | half | recording | tts |
+| `words/num-quarter.mp3` | رُبْع | rubʿ | quarter | recording | tts |
 | `words/obj-01.mp3` | هَاتِف | hātif | phone | recording | tts |
 | `words/obj-02.mp3` | حَاسُوب | ḥāsūb | computer | recording | tts |
 | `words/obj-03.mp3` | سَاعَة | sāʿah | clock / watch | recording | tts |
@@ -447,6 +456,7 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `words/prt-22.mp3` | لِمَاذَا | limādhā | why? | recording | tts |
 | `words/prt-23.mp3` | كَيْفَ | kayfa | how? | recording | tts |
 | `words/prt-24.mp3` | كَمْ | kam | how many? | recording | tts |
+| `words/prt-25.mp3` | إِلَّا | illā | except / minus | recording | tts |
 | `words/sch-01.mp3` | مَدْرَسَة | madrasah | school | recording | tts |
 | `words/sch-02.mp3` | مُعَلِّم | muʿallim | teacher (male) | recording | tts |
 | `words/sch-03.mp3` | مُعَلِّمَة | muʿallimah | teacher (female) | recording | tts |
@@ -503,6 +513,17 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `words/tim-27.mp3` | أَحْيَانًا | aḥyānan | sometimes | recording | tts |
 | `words/tim-28.mp3` | قَبْلَ | qabla | before | recording | tts |
 | `words/tim-29.mp3` | بَعْدَ | baʿda | after | recording | tts |
+| `words/tim-30.mp3` | ثَانِيَة | thāniyah | second (2nd, feminine) | recording | tts |
+| `words/tim-31.mp3` | ثَالِثَة | thālithah | third (3rd, feminine) | recording | tts |
+| `words/tim-32.mp3` | رَابِعَة | rābiʿah | fourth (4th, feminine) | recording | tts |
+| `words/tim-33.mp3` | خَامِسَة | khāmisah | fifth (5th, feminine) | recording | tts |
+| `words/tim-34.mp3` | سَادِسَة | sādisah | sixth (6th, feminine) | recording | tts |
+| `words/tim-35.mp3` | سَابِعَة | sābiʿah | seventh (7th, feminine) | recording | tts |
+| `words/tim-36.mp3` | ثَامِنَة | thāminah | eighth (8th, feminine) | recording | tts |
+| `words/tim-37.mp3` | تَاسِعَة | tāsiʿah | ninth (9th, feminine) | recording | tts |
+| `words/tim-38.mp3` | عَاشِرَة | ʿāshirah | tenth (10th, feminine) | recording | tts |
+| `words/tim-39.mp3` | حَادِيَةَ عَشْرَةَ | ḥādiyata ʿashrata | eleventh (11th, feminine) | recording | tts |
+| `words/tim-40.mp3` | ثَانِيَةَ عَشْرَةَ | thāniyata ʿashrata | twelfth (12th, feminine) | recording | tts |
 | `words/trv-01.mp3` | حَافِلَة | ḥāfilah | bus | recording | tts |
 | `words/trv-02.mp3` | قِطَار | qiṭār | train | recording | tts |
 | `words/trv-03.mp3` | طَائِرَة | ṭāʾirah | plane | recording | tts |
