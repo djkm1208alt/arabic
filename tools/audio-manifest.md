@@ -7,13 +7,13 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 
 | | count |
 |---|---:|
-| Distinct targets | 635 |
-| — Tier 1 (foundation) | 168 |
-| — Tier 2 (vocabulary) | 390 |
+| Distinct targets | 642 |
+| — Tier 1 (foundation) | 171 |
+| — Tier 2 (vocabulary) | 394 |
 | — Tier 3 (stays TTS) | 77 |
-| Unique native recordings needed (Tier 1+2) | 546 |
+| Unique native recordings needed (Tier 1+2) | 553 |
 | — of those, present on disk | 0 |
-| — still missing | 546 |
+| — still missing | 553 |
 | Aliases (share another recording) | 12 |
 
 ## Tier 1 — Foundation
@@ -127,6 +127,9 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `sentences/gram-prep-from-city.mp3` | هُوَ مِنَ الْمَدِينَةِ | huwa mina al-madīnati | He is from the city. | recording | tts |
 | `sentences/gram-prep-in-bag.mp3` | الْكِتَابُ فِي الْحَقِيبَةِ | al-kitābu fī al-ḥaqībati | The book is in the bag. | recording | tts |
 | `sentences/gram-prep-on-table.mp3` | الْقَلَمُ عَلَى الطَّاوِلَةِ | al-qalamu ʿalā aṭ-ṭāwilati | The pen is on the table. | recording | tts |
+| `sentences/gram-price-hundred.mp3` | هَذِهِ السَّاعَةُ بِمِائَةِ رِيَالٍ | hādhihi as-sāʿatu bi-miʾati riyālin | This watch is for a hundred riyals. | recording | tts |
+| `sentences/gram-price-ten.mp3` | هَذَا الْكِتَابُ بِعَشَرَةِ دُولَارَاتٍ | hādhā al-kitābu bi-ʿasharati dūlārātin | This book is for ten dollars. | recording | tts |
+| `sentences/gram-price-twenty.mp3` | هَذَا الْقَلَمُ بِعِشْرِينَ دِينَارًا | hādhā al-qalamu bi-ʿishrīna dīnāran | This pen is for twenty dinars. | recording | tts |
 | `sentences/gram-sunletter-shams.mp3` | الشَّمْسُ كَبِيرَةٌ | ash-shamsu kabīratun | The sun is big. | recording | tts |
 | `sentences/gram-time-half.mp3` | السَّاعَةُ الثَّانِيَةُ وَالنِّصْفُ | as-sāʿatu ath-thāniyatu wa-n-niṣfu | It's half past two. | recording | tts |
 | `sentences/gram-time-one.mp3` | السَّاعَةُ الْوَاحِدَةُ | as-sāʿatu al-wāḥidatu | It's one o'clock. | recording | tts |
@@ -484,6 +487,10 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `words/shp-04.mp3` | بِكَمْ | bikam | how much? | recording | tts |
 | `words/shp-05.mp3` | قَلِيل | qalīl | a little | recording | tts |
 | `words/shp-06.mp3` | كَثِير | kathīr | a lot / many | recording | tts |
+| `words/shp-07.mp3` | دُولَار | dūlār | dollar | recording | tts |
+| `words/shp-08.mp3` | رِيَال | riyāl | riyal | recording | tts |
+| `words/shp-09.mp3` | دِينَار | dīnār | dinar | recording | tts |
+| `words/shp-10.mp3` | جُنَيْه | junayh | pound | recording | tts |
 | `words/tim-01.mp3` | الْيَوْم | al-yawm | today | recording | tts |
 | `words/tim-02.mp3` | غَدًا | ghadan | tomorrow | recording | tts |
 | `words/tim-03.mp3` | أَمْس | ams | yesterday | recording | tts |

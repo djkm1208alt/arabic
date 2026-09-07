@@ -1420,5 +1420,62 @@
     "level": "A2",
     "skills": [ "reading", "comprehension", "listening", "grammar" ],
     "prereqs": [ "gr:telling-time" ]
+  },
+  {
+    "id": "txt:gram-price-ten",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "prices",
+    "vowelled": "هَذَا الْكِتَابُ بِعَشَرَةِ دُولَارَاتٍ",
+    "translit": "hādhā al-kitābu bi-ʿasharati dūlārātin",
+    "en": "This book is for ten dollars.",
+    "words": [
+      { "surface": "هَذَا الْكِتَابُ", "translit": "hādhā al-kitābu", "gloss": "this book", "gender": "masculine" },
+      { "surface": "بِعَشَرَةِ", "translit": "bi-ʿasharati", "gloss": "for ten (بِ marks the price, same as بِكَمْ)", "gender": null },
+      { "surface": "دُولَارَاتٍ", "translit": "dūlārātin", "gloss": "dollars (plural, genitive — the same 3-10 rule as any counted noun)", "gender": null }
+    ],
+    "audio": "هَذَا الْكِتَابُ بِعَشَرَةِ دُولَارَاتٍ",
+    "level": "A2",
+    "skills": [ "reading", "comprehension", "listening", "vocabulary" ],
+    "prereqs": [ "gr:counted-noun-intro" ]
+  },
+  {
+    "id": "txt:gram-price-twenty",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "prices",
+    "vowelled": "هَذَا الْقَلَمُ بِعِشْرِينَ دِينَارًا",
+    "translit": "hādhā al-qalamu bi-ʿishrīna dīnāran",
+    "en": "This pen is for twenty dinars.",
+    "words": [
+      { "surface": "هَذَا الْقَلَمُ", "translit": "hādhā al-qalamu", "gloss": "this pen", "gender": "masculine" },
+      { "surface": "بِعِشْرِينَ", "translit": "bi-ʿishrīna", "gloss": "for twenty (عِشْرِينَ — the genitive form after a preposition)", "gender": null },
+      { "surface": "دِينَارًا", "translit": "dīnāran", "gloss": "dinars (singular, accusative — the 11-99 rule)", "gender": null }
+    ],
+    "audio": "هَذَا الْقَلَمُ بِعِشْرِينَ دِينَارًا",
+    "level": "A2",
+    "skills": [ "reading", "comprehension", "listening", "vocabulary" ],
+    "prereqs": [ "gr:numbers-11-99" ]
+  },
+  {
+    "id": "txt:gram-price-hundred",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "prices",
+    "vowelled": "هَذِهِ السَّاعَةُ بِمِائَةِ رِيَالٍ",
+    "translit": "hādhihi as-sāʿatu bi-miʾati riyālin",
+    "en": "This watch is for a hundred riyals.",
+    "words": [
+      { "surface": "هَذِهِ السَّاعَةُ", "translit": "hādhihi as-sāʿatu", "gloss": "this watch (سَاعَة also means \"watch/clock\")", "gender": "feminine" },
+      { "surface": "بِمِائَةِ", "translit": "bi-miʾati", "gloss": "for a hundred (of — مُضَاف)", "gender": null },
+      { "surface": "رِيَالٍ", "translit": "riyālin", "gloss": "riyal (singular, genitive — مِائَة's own iḍāfa government)", "gender": null }
+    ],
+    "audio": "هَذِهِ السَّاعَةُ بِمِائَةِ رِيَالٍ",
+    "level": "A2",
+    "skills": [ "reading", "comprehension", "listening", "vocabulary" ],
+    "prereqs": [ "gr:numbers-11-99" ]
   }
 ]

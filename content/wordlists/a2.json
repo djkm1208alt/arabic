@@ -44,6 +44,11 @@
     { "en": "tenth (10th, feminine)", "topic": "telling-time", "pos": "adjective", "priority": 1 },
     { "en": "eleventh (11th, feminine)", "topic": "telling-time", "pos": "adjective", "priority": 1 },
     { "en": "twelfth (12th, feminine)", "topic": "telling-time", "pos": "adjective", "priority": 1 },
+
+    { "en": "dollar", "topic": "everyday-exchanges", "pos": "noun", "priority": 1 },
+    { "en": "riyal", "topic": "everyday-exchanges", "pos": "noun", "priority": 2 },
+    { "en": "dinar", "topic": "everyday-exchanges", "pos": "noun", "priority": 2 },
+    { "en": "pound", "topic": "everyday-exchanges", "pos": "noun", "priority": 2 },
     { "en": "except / minus", "topic": "telling-time", "pos": "particle", "priority": 1 },
 
     { "en": "then / next", "topic": "narrative", "pos": "adverb", "priority": 1 },
