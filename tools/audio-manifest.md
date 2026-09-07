@@ -7,13 +7,13 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 
 | | count |
 |---|---:|
-| Distinct targets | 589 |
-| — Tier 1 (foundation) | 155 |
-| — Tier 2 (vocabulary) | 357 |
+| Distinct targets | 614 |
+| — Tier 1 (foundation) | 162 |
+| — Tier 2 (vocabulary) | 375 |
 | — Tier 3 (stays TTS) | 77 |
-| Unique native recordings needed (Tier 1+2) | 500 |
+| Unique native recordings needed (Tier 1+2) | 525 |
 | — of those, present on disk | 0 |
-| — still missing | 500 |
+| — still missing | 525 |
 | Aliases (share another recording) | 12 |
 
 ## Tier 1 — Foundation
@@ -108,6 +108,13 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `sentences/gram-nominal-father.mp3` | الْأَبُ سَعِيدٌ | al-abu saʿīdun | The father is happy. | recording | tts |
 | `sentences/gram-nominal-mother.mp3` | الْأُمُّ سَعِيدَةٌ | al-ummu saʿīdatun | The mother is happy. | recording | tts |
 | `sentences/gram-nominal-teacher.mp3` | الْمُعَلِّمُ فِي الْمَدْرَسَةِ | al-muʿallimu fī al-madrasati | The teacher is in the school. | recording | tts |
+| `sentences/gram-num-100.mp3` | عِنْدِي مِائَةُ كِتَابٍ | ʿindī miʾatu kitābin | I have a hundred books. | recording | tts |
+| `sentences/gram-num-11f.mp3` | عِنْدِي إِحْدَى عَشْرَةَ طَالِبَةً | ʿindī iḥdā ʿashrata ṭālibatan | I have eleven female students. | recording | tts |
+| `sentences/gram-num-11m.mp3` | عِنْدِي أَحَدَ عَشَرَ كِتَابًا | ʿindī aḥada ʿashara kitāban | I have eleven books. | recording | tts |
+| `sentences/gram-num-15f.mp3` | عِنْدِي خَمْسَ عَشْرَةَ طَالِبَةً | ʿindī khamsa ʿashrata ṭālibatan | I have fifteen female students. | recording | tts |
+| `sentences/gram-num-15m.mp3` | عِنْدِي خَمْسَةَ عَشَرَ كِتَابًا | ʿindī khamsata ʿashara kitāban | I have fifteen books. | recording | tts |
+| `sentences/gram-num-20.mp3` | عِنْدِي عِشْرُونَ كِتَابًا | ʿindī ʿishrūna kitāban | I have twenty books. | recording | tts |
+| `sentences/gram-num-21.mp3` | عِنْدِي وَاحِدٌ وَعِشْرُونَ كِتَابًا | ʿindī wāḥidun wa-ʿishrūna kitāban | I have twenty-one books. | recording | tts |
 | `sentences/gram-number-broken-pl.mp3` | الْكُتُبُ جَمِيلَةٌ | al-kutubu jamīlatun | The books are beautiful. | recording | tts |
 | `sentences/gram-number-dual.mp3` | الْكِتَابَانِ جَدِيدَانِ | al-kitābāni jadīdāni | The two books are new. | recording | tts |
 | `sentences/gram-number-sound-pl.mp3` | هُمْ مُعَلِّمُونَ | hum muʿallimūna | They are teachers. | recording | tts |
@@ -336,6 +343,24 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `words/num-08.mp3` | ثَمَانِيَة | thamāniyah | eight | recording | tts |
 | `words/num-09.mp3` | تِسْعَة | tisʿah | nine | recording | tts |
 | `words/num-10.mp3` | عَشَرَة | ʿasharah | ten | recording | tts |
+| `words/num-100.mp3` | مِائَة | miʾah | hundred | recording | tts |
+| `words/num-11.mp3` | أَحَدَ عَشَرَ | aḥada ʿashara | eleven | recording | tts |
+| `words/num-12.mp3` | اثْنَا عَشَرَ | ithnā ʿashara | twelve | recording | tts |
+| `words/num-13.mp3` | ثَلَاثَةَ عَشَرَ | thalāthata ʿashara | thirteen | recording | tts |
+| `words/num-14.mp3` | أَرْبَعَةَ عَشَرَ | arbaʿata ʿashara | fourteen | recording | tts |
+| `words/num-15.mp3` | خَمْسَةَ عَشَرَ | khamsata ʿashara | fifteen | recording | tts |
+| `words/num-16.mp3` | سِتَّةَ عَشَرَ | sittata ʿashara | sixteen | recording | tts |
+| `words/num-17.mp3` | سَبْعَةَ عَشَرَ | sabʿata ʿashara | seventeen | recording | tts |
+| `words/num-18.mp3` | ثَمَانِيَةَ عَشَرَ | thamāniyata ʿashara | eighteen | recording | tts |
+| `words/num-19.mp3` | تِسْعَةَ عَشَرَ | tisʿata ʿashara | nineteen | recording | tts |
+| `words/num-20.mp3` | عِشْرُونَ | ʿishrūn | twenty | recording | tts |
+| `words/num-30.mp3` | ثَلَاثُونَ | thalāthūn | thirty | recording | tts |
+| `words/num-40.mp3` | أَرْبَعُونَ | arbaʿūn | forty | recording | tts |
+| `words/num-50.mp3` | خَمْسُونَ | khamsūn | fifty | recording | tts |
+| `words/num-60.mp3` | سِتُّونَ | sittūn | sixty | recording | tts |
+| `words/num-70.mp3` | سَبْعُونَ | sabʿūn | seventy | recording | tts |
+| `words/num-80.mp3` | ثَمَانُونَ | thamānūn | eighty | recording | tts |
+| `words/num-90.mp3` | تِسْعُونَ | tisʿūn | ninety | recording | tts |
 | `words/obj-01.mp3` | هَاتِف | hātif | phone | recording | tts |
 | `words/obj-02.mp3` | حَاسُوب | ḥāsūb | computer | recording | tts |
 | `words/obj-03.mp3` | سَاعَة | sāʿah | clock / watch | recording | tts |

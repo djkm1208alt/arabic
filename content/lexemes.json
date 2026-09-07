@@ -600,6 +600,294 @@
     "prereqs": []
   },
   {
+    "id": "lex:num-11",
+    "kind": "lexeme",
+    "ar": "أَحَدَ عَشَرَ",
+    "translit": "aḥada ʿashara",
+    "en": "eleven",
+    "pos": "number",
+    "topic": "numbers",
+    "level": "A2",
+    "notes": "Masculine citation form — an irregular compound, not built from the regular pattern 13-19 use. See gr:numbers-11-99 for the feminine إِحْدَى عَشْرَةَ.",
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
+  },
+  {
+    "id": "lex:num-12",
+    "kind": "lexeme",
+    "ar": "اثْنَا عَشَرَ",
+    "translit": "ithnā ʿashara",
+    "en": "twelve",
+    "pos": "number",
+    "topic": "numbers",
+    "level": "A2",
+    "notes": "Masculine citation form — the construct-state dual of اِثْنَان (two), dropping ن before عَشَرَ. See gr:numbers-11-99 for the feminine اثْنَتَا عَشْرَةَ.",
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
+  },
+  {
+    "id": "lex:num-13",
+    "kind": "lexeme",
+    "ar": "ثَلَاثَةَ عَشَرَ",
+    "translit": "thalāthata ʿashara",
+    "en": "thirteen",
+    "pos": "number",
+    "topic": "numbers",
+    "level": "A2",
+    "notes": "Masculine citation form. The ones-digit keeps the reversed gender agreement already taught for 3-10 (gr:counted-noun-intro); see gr:numbers-11-99 for the feminine ثَلَاثَ عَشْرَةَ.",
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
+  },
+  {
+    "id": "lex:num-14",
+    "kind": "lexeme",
+    "ar": "أَرْبَعَةَ عَشَرَ",
+    "translit": "arbaʿata ʿashara",
+    "en": "fourteen",
+    "pos": "number",
+    "topic": "numbers",
+    "level": "A2",
+    "notes": "Masculine citation form — same reversed-agreement pattern as thirteen; see gr:numbers-11-99.",
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
+  },
+  {
+    "id": "lex:num-15",
+    "kind": "lexeme",
+    "ar": "خَمْسَةَ عَشَرَ",
+    "translit": "khamsata ʿashara",
+    "en": "fifteen",
+    "pos": "number",
+    "topic": "numbers",
+    "level": "A2",
+    "notes": "Masculine citation form — same reversed-agreement pattern as thirteen; see gr:numbers-11-99.",
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
+  },
+  {
+    "id": "lex:num-16",
+    "kind": "lexeme",
+    "ar": "سِتَّةَ عَشَرَ",
+    "translit": "sittata ʿashara",
+    "en": "sixteen",
+    "pos": "number",
+    "topic": "numbers",
+    "level": "A2",
+    "notes": "Masculine citation form — same reversed-agreement pattern as thirteen; see gr:numbers-11-99.",
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
+  },
+  {
+    "id": "lex:num-17",
+    "kind": "lexeme",
+    "ar": "سَبْعَةَ عَشَرَ",
+    "translit": "sabʿata ʿashara",
+    "en": "seventeen",
+    "pos": "number",
+    "topic": "numbers",
+    "level": "A2",
+    "notes": "Masculine citation form — same reversed-agreement pattern as thirteen; see gr:numbers-11-99.",
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
+  },
+  {
+    "id": "lex:num-18",
+    "kind": "lexeme",
+    "ar": "ثَمَانِيَةَ عَشَرَ",
+    "translit": "thamāniyata ʿashara",
+    "en": "eighteen",
+    "pos": "number",
+    "topic": "numbers",
+    "level": "A2",
+    "notes": "Masculine citation form — same reversed-agreement pattern as thirteen; see gr:numbers-11-99.",
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
+  },
+  {
+    "id": "lex:num-19",
+    "kind": "lexeme",
+    "ar": "تِسْعَةَ عَشَرَ",
+    "translit": "tisʿata ʿashara",
+    "en": "nineteen",
+    "pos": "number",
+    "topic": "numbers",
+    "level": "A2",
+    "notes": "Masculine citation form — same reversed-agreement pattern as thirteen; see gr:numbers-11-99.",
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
+  },
+  {
+    "id": "lex:num-20",
+    "kind": "lexeme",
+    "ar": "عِشْرُونَ",
+    "translit": "ʿishrūn",
+    "en": "twenty",
+    "pos": "number",
+    "topic": "numbers",
+    "level": "A2",
+    "notes": "Invariant for gender (unlike 3-19) — the same form counts both masculine and feminine nouns. Declines for case: عِشْرُونَ nominative, عِشْرِينَ accusative/genitive.",
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
+  },
+  {
+    "id": "lex:num-30",
+    "kind": "lexeme",
+    "ar": "ثَلَاثُونَ",
+    "translit": "thalāthūn",
+    "en": "thirty",
+    "pos": "number",
+    "topic": "numbers",
+    "level": "A2",
+    "notes": "Invariant for gender, like twenty; see gr:numbers-11-99.",
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
+  },
+  {
+    "id": "lex:num-40",
+    "kind": "lexeme",
+    "ar": "أَرْبَعُونَ",
+    "translit": "arbaʿūn",
+    "en": "forty",
+    "pos": "number",
+    "topic": "numbers",
+    "level": "A2",
+    "notes": "Invariant for gender, like twenty; see gr:numbers-11-99.",
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
+  },
+  {
+    "id": "lex:num-50",
+    "kind": "lexeme",
+    "ar": "خَمْسُونَ",
+    "translit": "khamsūn",
+    "en": "fifty",
+    "pos": "number",
+    "topic": "numbers",
+    "level": "A2",
+    "notes": "Invariant for gender, like twenty; see gr:numbers-11-99.",
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
+  },
+  {
+    "id": "lex:num-60",
+    "kind": "lexeme",
+    "ar": "سِتُّونَ",
+    "translit": "sittūn",
+    "en": "sixty",
+    "pos": "number",
+    "topic": "numbers",
+    "level": "A2",
+    "notes": "Invariant for gender, like twenty; see gr:numbers-11-99.",
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
+  },
+  {
+    "id": "lex:num-70",
+    "kind": "lexeme",
+    "ar": "سَبْعُونَ",
+    "translit": "sabʿūn",
+    "en": "seventy",
+    "pos": "number",
+    "topic": "numbers",
+    "level": "A2",
+    "notes": "Invariant for gender, like twenty; see gr:numbers-11-99.",
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
+  },
+  {
+    "id": "lex:num-80",
+    "kind": "lexeme",
+    "ar": "ثَمَانُونَ",
+    "translit": "thamānūn",
+    "en": "eighty",
+    "pos": "number",
+    "topic": "numbers",
+    "level": "A2",
+    "notes": "Invariant for gender, like twenty; see gr:numbers-11-99.",
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
+  },
+  {
+    "id": "lex:num-90",
+    "kind": "lexeme",
+    "ar": "تِسْعُونَ",
+    "translit": "tisʿūn",
+    "en": "ninety",
+    "pos": "number",
+    "topic": "numbers",
+    "level": "A2",
+    "notes": "Invariant for gender, like twenty; see gr:numbers-11-99.",
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
+  },
+  {
+    "id": "lex:num-100",
+    "kind": "lexeme",
+    "ar": "مِائَة",
+    "translit": "miʾah",
+    "en": "hundred",
+    "pos": "number",
+    "topic": "numbers",
+    "level": "A2",
+    "notes": "Governs a singular genitive noun via iḍāfa (مِائَةُ كِتَابٍ, a hundred books) — a different pattern from both 3-10 and 11-99. Traditional spelling مِائَة (with the silent alif) rather than the simplified modern مِئَة.",
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
+  },
+  {
     "id": "lex:col-01",
     "kind": "lexeme",
     "ar": "أَحْمَر",
