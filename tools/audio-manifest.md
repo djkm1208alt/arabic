@@ -7,13 +7,13 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 
 | | count |
 |---|---:|
-| Distinct targets | 695 |
-| — Tier 1 (foundation) | 179 |
+| Distinct targets | 697 |
+| — Tier 1 (foundation) | 181 |
 | — Tier 2 (vocabulary) | 439 |
 | — Tier 3 (stays TTS) | 77 |
-| Unique native recordings needed (Tier 1+2) | 606 |
+| Unique native recordings needed (Tier 1+2) | 608 |
 | — of those, present on disk | 0 |
-| — still missing | 606 |
+| — still missing | 608 |
 | Aliases (share another recording) | 12 |
 
 ## Tier 1 — Foundation
@@ -160,6 +160,8 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `sentences/read-he-engineer.mp3` | هُوَ مُهَنْدِسٌ | huwa muhandisun | He is an engineer. | recording | tts |
 | `sentences/read-i-student.mp3` | أَنَا طَالِبٌ | anā ṭālibun | I am a student. | recording | tts |
 | `sentences/read-not-cold-today.mp3` | لَيْسَ الطَّقْسُ بَارِدًا الْيَوْمَ | laysa aṭ-ṭaqsu bāridan al-yawma | The weather is not cold today. | recording | tts |
+| `sentences/read-para-garden.mp3` | ذَاتَ يَوْمٍ، كَانَ الطَّقْسُ جَمِيلًا. بَيْنَمَا كَانَ الرَّجُلُ فِي الْحَدِيقَةِ، رَأَى طَائِرَةً فِي السَّمَاءِ فَجْأَةً. طَبْعًا، كَانَ سَعِيدًا. | dhāta yawmin, kāna aṭ-ṭaqsu jamīlan. baynamā kāna ar-rajulu fī al-ḥadīqati, raʾā ṭāʾiratan fī as-samāʾi fajʾatan. ṭabʿan, kāna saʿīdan. | One day, the weather was beautiful. While the man was in the garden, he suddenly saw a plane in the sky. Of course, he was happy. | recording | tts |
+| `sentences/read-para-trip.mp3` | أَوَّلًا، اشْتَرَى الطَّالِبُ تَذْكِرَةً. ثُمَّ سَافَرَ بِالْقِطَارِ إِلَى الْمَدِينَةِ. أَثْنَاءَ الرِّحْلَةِ، قَرَأَ كِتَابًا. أَخِيرًا، وَصَلَ الْقِطَارُ، وَرَجَعَ الطَّالِبُ إِلَى الْبَيْتِ. كَانَ سَعِيدًا. | awwalan, ishtarā aṭ-ṭālibu tadhkiratan. thumma sāfara bi-al-qiṭāri ilā al-madīnati. athnāʾa ar-riḥlati, qaraʾa kitāban. akhīran, waṣala al-qiṭāru, wa-rajaʿa aṭ-ṭālibu ilā al-bayti. kāna saʿīdan. | First, the student bought a ticket. Then he traveled by train to the city. During the trip, he read a book. Finally, the train arrived, and the student returned home. He was happy. | recording | tts |
 | `sentences/read-parents-office-home.mp3` | الْأَبُ فِي الْمَكْتَبِ وَالْأُمُّ فِي الْبَيْتِ | al-abu fī al-maktabi wa-al-ummu fī al-bayti | The father is in the office and the mother is at home. | recording | tts |
 | `sentences/read-room-clean.mp3` | الْغُرْفَةُ نَظِيفَةٌ | al-ghurfatu naẓīfatun | The room is clean. | recording | tts |
 | `sentences/read-that-man-doctor.mp3` | ذَلِكَ الرَّجُلُ طَبِيبٌ | dhālika ar-rajulu ṭabībun | That man is a doctor. | recording | tts |

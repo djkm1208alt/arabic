@@ -108,9 +108,9 @@
     {
       "id": "a2-u5", "level": "A2", "order": 5,
       "title": "Reading Short Paragraphs",
-      "blurb": "Fully-vowelled connected text on familiar topics; separating main idea from detail. In development.",
+      "blurb": "Fully-vowelled connected text on familiar topics; separating main idea from detail.",
       "skills": ["reading", "comprehension"],
-      "status": "planned", "prereqs": ["a1-u2"]
+      "status": "available", "prereqs": ["a1-u2"]
     },
     {
       "id": "a2-u6", "level": "A2", "order": 6,
@@ -685,6 +685,14 @@
       "level": "A2", "skills": ["vocabulary", "grammar", "reading"],
       "objectives": ["lex:tim-41","lex:tim-42","lex:tim-43","lex:tim-44","lex:tim-45","lex:tim-46","lex:tim-47","lex:tim-48","lex:tim-49","lex:tim-50","lex:tim-51","lex:tim-52","lex:tim-53","lex:tim-54","lex:tim-55","lex:tim-56","lex:tim-57","lex:tim-58","lex:tim-59","lex:tim-60","lex:tim-61","lex:tim-62","lex:tim-63","lex:exp-12","gr:dates","txt:gram-date-first","txt:gram-date-third","txt:gram-date-tenth","txt:gram-date-sentence"],
       "status": "available", "source": "steps:a2-dates"
+    },
+    {
+      "id": "a2-reading-paragraphs", "unitId": "a2-u5", "order": 1,
+      "title": "Reading Short Paragraphs",
+      "blurb": "Two short connected stories — a train trip and a sudden plane in the sky — putting eight new connectors to work.",
+      "level": "A2", "skills": ["reading", "comprehension"],
+      "objectives": ["gr:verbal-sentence", "gr:kana", "gr:core-prepositions", "txt:read-para-trip", "txt:read-para-garden"],
+      "status": "available", "source": "steps:a2-reading-paragraphs"
     }
   ]
 }

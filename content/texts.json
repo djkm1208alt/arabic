@@ -1631,5 +1631,45 @@
     "level": "A2",
     "skills": [ "reading", "comprehension", "listening", "grammar" ],
     "prereqs": [ "gr:root-pattern" ]
+  },
+  {
+    "id": "txt:read-para-trip",
+    "kind": "text",
+    "textType": "paragraph",
+    "source": "m11",
+    "concept": "narrative",
+    "vowelled": "أَوَّلًا، اشْتَرَى الطَّالِبُ تَذْكِرَةً. ثُمَّ سَافَرَ بِالْقِطَارِ إِلَى الْمَدِينَةِ. أَثْنَاءَ الرِّحْلَةِ، قَرَأَ كِتَابًا. أَخِيرًا، وَصَلَ الْقِطَارُ، وَرَجَعَ الطَّالِبُ إِلَى الْبَيْتِ. كَانَ سَعِيدًا.",
+    "translit": "awwalan, ishtarā aṭ-ṭālibu tadhkiratan. thumma sāfara bi-al-qiṭāri ilā al-madīnati. athnāʾa ar-riḥlati, qaraʾa kitāban. akhīran, waṣala al-qiṭāru, wa-rajaʿa aṭ-ṭālibu ilā al-bayti. kāna saʿīdan.",
+    "en": "First, the student bought a ticket. Then he traveled by train to the city. During the trip, he read a book. Finally, the train arrived, and the student returned home. He was happy.",
+    "sentences": [
+      { "ar": "أَوَّلًا، اشْتَرَى الطَّالِبُ تَذْكِرَةً.", "translit": "awwalan, ishtarā aṭ-ṭālibu tadhkiratan.", "en": "First, the student bought a ticket." },
+      { "ar": "ثُمَّ سَافَرَ بِالْقِطَارِ إِلَى الْمَدِينَةِ.", "translit": "thumma sāfara bi-al-qiṭāri ilā al-madīnati.", "en": "Then he traveled by train to the city." },
+      { "ar": "أَثْنَاءَ الرِّحْلَةِ، قَرَأَ كِتَابًا.", "translit": "athnāʾa ar-riḥlati, qaraʾa kitāban.", "en": "During the trip, he read a book." },
+      { "ar": "أَخِيرًا، وَصَلَ الْقِطَارُ، وَرَجَعَ الطَّالِبُ إِلَى الْبَيْتِ.", "translit": "akhīran, waṣala al-qiṭāru, wa-rajaʿa aṭ-ṭālibu ilā al-bayti.", "en": "Finally, the train arrived, and the student returned home." },
+      { "ar": "كَانَ سَعِيدًا.", "translit": "kāna saʿīdan.", "en": "He was happy." }
+    ],
+    "audio": "أَوَّلًا، اشْتَرَى الطَّالِبُ تَذْكِرَةً. ثُمَّ سَافَرَ بِالْقِطَارِ إِلَى الْمَدِينَةِ. أَثْنَاءَ الرِّحْلَةِ، قَرَأَ كِتَابًا. أَخِيرًا، وَصَلَ الْقِطَارُ، وَرَجَعَ الطَّالِبُ إِلَى الْبَيْتِ. كَانَ سَعِيدًا.",
+    "level": "A2",
+    "skills": [ "reading", "comprehension", "listening" ],
+    "prereqs": [ "gr:verbal-sentence", "gr:kana" ]
+  },
+  {
+    "id": "txt:read-para-garden",
+    "kind": "text",
+    "textType": "paragraph",
+    "source": "m11",
+    "concept": "narrative",
+    "vowelled": "ذَاتَ يَوْمٍ، كَانَ الطَّقْسُ جَمِيلًا. بَيْنَمَا كَانَ الرَّجُلُ فِي الْحَدِيقَةِ، رَأَى طَائِرَةً فِي السَّمَاءِ فَجْأَةً. طَبْعًا، كَانَ سَعِيدًا.",
+    "translit": "dhāta yawmin, kāna aṭ-ṭaqsu jamīlan. baynamā kāna ar-rajulu fī al-ḥadīqati, raʾā ṭāʾiratan fī as-samāʾi fajʾatan. ṭabʿan, kāna saʿīdan.",
+    "en": "One day, the weather was beautiful. While the man was in the garden, he suddenly saw a plane in the sky. Of course, he was happy.",
+    "sentences": [
+      { "ar": "ذَاتَ يَوْمٍ، كَانَ الطَّقْسُ جَمِيلًا.", "translit": "dhāta yawmin, kāna aṭ-ṭaqsu jamīlan.", "en": "One day, the weather was beautiful." },
+      { "ar": "بَيْنَمَا كَانَ الرَّجُلُ فِي الْحَدِيقَةِ، رَأَى طَائِرَةً فِي السَّمَاءِ فَجْأَةً.", "translit": "baynamā kāna ar-rajulu fī al-ḥadīqati, raʾā ṭāʾiratan fī as-samāʾi fajʾatan.", "en": "While the man was in the garden, he suddenly saw a plane in the sky." },
+      { "ar": "طَبْعًا، كَانَ سَعِيدًا.", "translit": "ṭabʿan, kāna saʿīdan.", "en": "Of course, he was happy." }
+    ],
+    "audio": "ذَاتَ يَوْمٍ، كَانَ الطَّقْسُ جَمِيلًا. بَيْنَمَا كَانَ الرَّجُلُ فِي الْحَدِيقَةِ، رَأَى طَائِرَةً فِي السَّمَاءِ فَجْأَةً. طَبْعًا، كَانَ سَعِيدًا.",
+    "level": "A2",
+    "skills": [ "reading", "comprehension", "listening" ],
+    "prereqs": [ "gr:verbal-sentence", "gr:kana" ]
   }
 ]
