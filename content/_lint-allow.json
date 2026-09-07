@@ -3,9 +3,11 @@
 
   "_why": {
     "lex:hom-11": "case-ending demo, not vocabulary: بَيْتٌ (baytun) shows nominative ḍammatayn. The English gloss is a description, not a lemma, so levelfit can't match it — but 'house' is squarely A1.",
-    "lex:hom-12": "case-ending demo, not vocabulary: فِي بَيْتٍ (fī baytin) shows genitive kasratayn after a preposition. Same reason as hom-11."
+    "lex:hom-12": "case-ending demo, not vocabulary: فِي بَيْتٍ (fī baytin) shows genitive kasratayn after a preposition. Same reason as hom-11.",
+    "lex:prt-26": "ثُمَّ (thumma) is correctly spelled and vowelled — a basic, extremely common MSA conjunction. The length heuristic only counts base Arabic letters (2: ث, م) and misses that ث conventionally needs a 2-character Latin digraph (th) and the shadda on م genuinely doubles its transliteration (mm) without itself counting as a letter, inflating translit length relative to arLen for this short a word."
   },
 
   "lex:hom-11": ["levelfit"],
-  "lex:hom-12": ["levelfit"]
+  "lex:hom-12": ["levelfit"],
+  "lex:prt-26": ["length"]
 }

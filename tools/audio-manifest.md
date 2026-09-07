@@ -7,13 +7,13 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 
 | | count |
 |---|---:|
-| Distinct targets | 674 |
+| Distinct targets | 695 |
 | — Tier 1 (foundation) | 179 |
-| — Tier 2 (vocabulary) | 418 |
+| — Tier 2 (vocabulary) | 439 |
 | — Tier 3 (stays TTS) | 77 |
-| Unique native recordings needed (Tier 1+2) | 585 |
+| Unique native recordings needed (Tier 1+2) | 606 |
 | — of those, present on disk | 0 |
-| — still missing | 585 |
+| — still missing | 606 |
 | Aliases (share another recording) | 12 |
 
 ## Tier 1 — Foundation
@@ -289,6 +289,16 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `words/exp-10.mp3` | بِكَمْ هَذَا؟ | bikam hādhā? | How much is this? | recording | tts |
 | `words/exp-11.mp3` | بِخَيْر | bikhayr | fine / good | recording | tts |
 | `words/exp-12.mp3` | مَا التَّارِيخُ الْيَوْمَ؟ | mā at-tārīkhu al-yawma? | What's the date today? | recording | tts |
+| `words/exp-13.mp3` | أَيْضًا | ayḍan | also / too | recording | tts |
+| `words/exp-14.mp3` | أَخِيرًا | akhīran | finally / at last | recording | tts |
+| `words/exp-15.mp3` | فَجْأَةً | fajʾatan | suddenly | recording | tts |
+| `words/exp-16.mp3` | أَوَّلًا | awwalan | first / firstly | recording | tts |
+| `words/exp-17.mp3` | ذَاتَ يَوْمٍ | dhāta yawmin | one day (story opener) | recording | tts |
+| `words/exp-18.mp3` | طَبْعًا | ṭabʿan | of course | recording | tts |
+| `words/exp-19.mp3` | لَا بَأْسَ | lā baʾsa | no problem / never mind | recording | tts |
+| `words/exp-20.mp3` | هَلْ عِنْدَكَ...؟ | hal ʿindaka...? | do you have...? | recording | tts |
+| `words/exp-21.mp3` | مُمْكِن...؟ | mumkin...? | may I...? / is it possible...? | recording | tts |
+| `words/exp-22.mp3` | هَذَا كُلُّ شَيْءٍ | hādhā kullu shayʾin | that's all / nothing else | recording | tts |
 | `words/fc-14.mp3` | طَعَام | ṭaʿām | food | recording | tts |
 | `words/fc-27.mp3` | أَهْلًا وَسَهْلًا | ahlan wa sahlan | welcome | recording | tts |
 | `words/fc-28.mp3` | كَيْفَ حَالُك؟ | kayfa ḥāluk | how are you? | recording | tts |
@@ -390,6 +400,7 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `words/obj-06.mp3` | مِصْبَاح | miṣbāḥ | lamp | recording | tts |
 | `words/obj-07.mp3` | مِرْآة | mirʾāh | mirror | recording | tts |
 | `words/obj-08.mp3` | مِظَلَّة | miẓallah | umbrella | recording | tts |
+| `words/obj-09.mp3` | شَيْء | shayʾ | thing | recording | tts |
 | `words/peo-01.mp3` | أُمّ | umm | mother | recording | tts |
 | `words/peo-02.mp3` | أَب | ab | father | recording | tts |
 | `words/peo-03.mp3` | أَخ | akh | brother | recording | tts |
@@ -469,6 +480,10 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `words/prt-23.mp3` | كَيْفَ | kayfa | how? | recording | tts |
 | `words/prt-24.mp3` | كَمْ | kam | how many? | recording | tts |
 | `words/prt-25.mp3` | إِلَّا | illā | except / minus | recording | tts |
+| `words/prt-26.mp3` | ثُمَّ | thumma | then / next | recording | tts |
+| `words/prt-27.mp3` | أَثْنَاءَ | athnāʾa | during | recording | tts |
+| `words/prt-28.mp3` | بَيْنَمَا | baynamā | while | recording | tts |
+| `words/prt-29.mp3` | كُلّ | kull | every / each / all | recording | tts |
 | `words/sch-01.mp3` | مَدْرَسَة | madrasah | school | recording | tts |
 | `words/sch-02.mp3` | مُعَلِّم | muʿallim | teacher (male) | recording | tts |
 | `words/sch-03.mp3` | مُعَلِّمَة | muʿallimah | teacher (female) | recording | tts |
@@ -490,6 +505,7 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `words/sch-19.mp3` | لُغَة | lughah | language | recording | tts |
 | `words/sch-20.mp3` | الْعَرَبِيَّة | al-ʿarabiyyah | Arabic (language) | recording | tts |
 | `words/sch-21.mp3` | الْإِنْجِلِيزِيَّة | al-injilīziyyah | English (language) | recording | tts |
+| `words/sch-22.mp3` | قِصَّة | qiṣṣah | story | recording | tts |
 | `words/shp-01.mp3` | سِعْر | siʿr | price | recording | tts |
 | `words/shp-02.mp3` | رَخِيص | rakhīṣ | cheap | recording | tts |
 | `words/shp-03.mp3` | غَالٍ | ghālin | expensive | recording | tts |
@@ -500,6 +516,10 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `words/shp-08.mp3` | رِيَال | riyāl | riyal | recording | tts |
 | `words/shp-09.mp3` | دِينَار | dīnār | dinar | recording | tts |
 | `words/shp-10.mp3` | جُنَيْه | junayh | pound | recording | tts |
+| `words/shp-11.mp3` | نَقْد | naqd | cash | recording | tts |
+| `words/shp-12.mp3` | بِطَاقَة اِئْتِمَان | biṭāqat iʾtimān | credit card | recording | tts |
+| `words/shp-13.mp3` | مَقَاس | maqās | size (clothing) | recording | tts |
+| `words/shp-14.mp3` | خَصْم | khaṣm | discount | recording | tts |
 | `words/tim-01.mp3` | الْيَوْم | al-yawm | today | recording | tts |
 | `words/tim-02.mp3` | غَدًا | ghadan | tomorrow | recording | tts |
 | `words/tim-03.mp3` | أَمْس | ams | yesterday | recording | tts |
@@ -598,6 +618,7 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `words/ver-27.mp3` | وَصَلَ | waṣala | to arrive | recording | tts |
 | `words/ver-28.mp3` | رَجَعَ | rajaʿa | to return | recording | tts |
 | `words/ver-29.mp3` | فَعَلَ | faʿala | to do / to make | recording | tts |
+| `words/ver-30.mp3` | جَرَّبَ | jarraba | to try / to try on | recording | tts |
 | `words/wea-01.mp3` | حَارّ | ḥārr | hot (weather) | recording | tts |
 | `words/wea-02.mp3` | بَارِد | bārid | cold (weather) | recording | tts |
 | `words/wea-03.mp3` | دَافِئ | dāfiʾ | warm | recording | tts |

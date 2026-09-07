@@ -1820,6 +1820,22 @@
     "prereqs": []
   },
   {
+    "id": "lex:obj-09",
+    "kind": "lexeme",
+    "ar": "شَيْء",
+    "translit": "shayʾ",
+    "en": "thing",
+    "pos": "noun",
+    "topic": "objects",
+    "level": "A2",
+    "notes": "Added to support the fixed phrase هَذَا كُلُّ شَيْءٍ (\"that's all\", lex:exp-22) — independently useful, high-frequency vocabulary on its own.",
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
+  },
+  {
     "id": "lex:pla-01",
     "kind": "lexeme",
     "ar": "مَدِينَة",
@@ -3111,6 +3127,7 @@
   { "id": "lex:sch-19", "kind": "lexeme", "ar": "لُغَة", "translit": "lughah", "en": "language", "pos": "noun", "topic": "school", "level": "A1", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
   { "id": "lex:sch-20", "kind": "lexeme", "ar": "الْعَرَبِيَّة", "translit": "al-ʿarabiyyah", "en": "Arabic (language)", "pos": "noun", "topic": "school", "level": "A1", "notes": "Short for اللُّغَة الْعَرَبِيَّة.", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
   { "id": "lex:sch-21", "kind": "lexeme", "ar": "الْإِنْجِلِيزِيَّة", "translit": "al-injilīziyyah", "en": "English (language)", "pos": "noun", "topic": "school", "level": "A1", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:sch-22", "kind": "lexeme", "ar": "قِصَّة", "translit": "qiṣṣah", "en": "story", "pos": "noun", "topic": "school", "level": "A2", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
 
   { "id": "lex:wrk-01", "kind": "lexeme", "ar": "مَكْتَب", "translit": "maktab", "en": "office", "pos": "noun", "topic": "work", "level": "A1", "notes": "Also \"desk\". Plural: مَكَاتِب (makātib).", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
   { "id": "lex:wrk-02", "kind": "lexeme", "ar": "شَرِكَة", "translit": "sharikah", "en": "company", "pos": "noun", "topic": "work", "level": "A1", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
@@ -3144,6 +3161,10 @@
   { "id": "lex:shp-08", "kind": "lexeme", "ar": "رِيَال", "translit": "riyāl", "en": "riyal", "pos": "noun", "topic": "shopping", "level": "A2", "notes": "Currency of Saudi Arabia, Qatar, Yemen, and others. Counts the same way as دُولَار.", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
   { "id": "lex:shp-09", "kind": "lexeme", "ar": "دِينَار", "translit": "dīnār", "en": "dinar", "pos": "noun", "topic": "shopping", "level": "A2", "notes": "Currency of Jordan, Kuwait, Iraq, Bahrain, Tunisia, and others. Counts the same way as دُولَار.", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
   { "id": "lex:shp-10", "kind": "lexeme", "ar": "جُنَيْه", "translit": "junayh", "en": "pound", "pos": "noun", "topic": "shopping", "level": "A2", "notes": "Currency of Egypt (and historically Sudan). Counts the same way as دُولَار.", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:shp-11", "kind": "lexeme", "ar": "نَقْد", "translit": "naqd", "en": "cash", "pos": "noun", "topic": "shopping", "level": "A2", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:shp-12", "kind": "lexeme", "ar": "بِطَاقَة اِئْتِمَان", "translit": "biṭāqat iʾtimān", "en": "credit card", "pos": "noun", "topic": "shopping", "level": "A2", "notes": "An iḍāfa compound (بِطَاقَة \"card\" + اِئْتِمَان \"credit/trust\") — see gr:idafa.", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:shp-13", "kind": "lexeme", "ar": "مَقَاس", "translit": "maqās", "en": "size (clothing)", "pos": "noun", "topic": "shopping", "level": "A2", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:shp-14", "kind": "lexeme", "ar": "خَصْم", "translit": "khaṣm", "en": "discount", "pos": "noun", "topic": "shopping", "level": "A2", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
 
   { "id": "lex:trv-01", "kind": "lexeme", "ar": "حَافِلَة", "translit": "ḥāfilah", "en": "bus", "pos": "noun", "topic": "travel", "level": "A1", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
   { "id": "lex:trv-02", "kind": "lexeme", "ar": "قِطَار", "translit": "qiṭār", "en": "train", "pos": "noun", "topic": "travel", "level": "A1", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
@@ -3178,6 +3199,16 @@
 
   { "id": "lex:exp-11", "kind": "lexeme", "ar": "بِخَيْر", "translit": "bikhayr", "en": "fine / good", "pos": "phrase", "topic": "expressions", "level": "A1", "notes": "The usual answer to كَيْفَ حَالُك؟ — أَنَا بِخَيْر.", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
   { "id": "lex:exp-12", "kind": "lexeme", "ar": "مَا التَّارِيخُ الْيَوْمَ؟", "translit": "mā at-tārīkhu al-yawma?", "en": "What's the date today?", "pos": "phrase", "topic": "expressions", "level": "A2", "notes": "Mirrors the shape of كَمِ السَّاعَة؟ — see gr:dates.", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:exp-13", "kind": "lexeme", "ar": "أَيْضًا", "translit": "ayḍan", "en": "also / too", "pos": "adverb", "topic": "expressions", "level": "A2", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:exp-14", "kind": "lexeme", "ar": "أَخِيرًا", "translit": "akhīran", "en": "finally / at last", "pos": "adverb", "topic": "expressions", "level": "A2", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:exp-15", "kind": "lexeme", "ar": "فَجْأَةً", "translit": "fajʾatan", "en": "suddenly", "pos": "adverb", "topic": "expressions", "level": "A2", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:exp-16", "kind": "lexeme", "ar": "أَوَّلًا", "translit": "awwalan", "en": "first / firstly", "pos": "adverb", "topic": "expressions", "level": "A2", "notes": "Built on أَوَّل (\"1st\", lex:tim-41) — same word, adverbial role instead of ordinal-adjective role.", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:exp-17", "kind": "lexeme", "ar": "ذَاتَ يَوْمٍ", "translit": "dhāta yawmin", "en": "one day (story opener)", "pos": "phrase", "topic": "expressions", "level": "A2", "notes": "A fixed time-adverbial (ذَات accusative + يَوْمٍ genitive), cited whole — the traditional Arabic narrative opener, like English \"once upon a time\".", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:exp-18", "kind": "lexeme", "ar": "طَبْعًا", "translit": "ṭabʿan", "en": "of course", "pos": "adverb", "topic": "expressions", "level": "A2", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:exp-19", "kind": "lexeme", "ar": "لَا بَأْسَ", "translit": "lā baʾsa", "en": "no problem / never mind", "pos": "phrase", "topic": "expressions", "level": "A2", "notes": "لا + accusative noun with no tanwīn (لا النافية للجنس) — the same family of لَا already introduced in gr:negation-a1 (\"لَا negates the noun that follows it\"). بَأْسَ, not بَأْسًا.", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:exp-20", "kind": "lexeme", "ar": "هَلْ عِنْدَكَ...؟", "translit": "hal ʿindaka...?", "en": "do you have...?", "pos": "phrase", "topic": "expressions", "level": "A2", "notes": "Built directly on عِنْدَ (lex:ver-17) + the same possessive-suffix paradigm already documented there (عِنْدِي، عِنْدَهُ…) — عِنْدَكَ is \"you (m.) have\".", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:exp-21", "kind": "lexeme", "ar": "مُمْكِن...؟", "translit": "mumkin...?", "en": "may I...? / is it possible...?", "pos": "phrase", "topic": "expressions", "level": "A2", "notes": "A fixed conversational opener, cited without analysing what mood a following verb would take — the subjunctive itself is a B1 topic.", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:exp-22", "kind": "lexeme", "ar": "هَذَا كُلُّ شَيْءٍ", "translit": "hādhā kullu shayʾin", "en": "that's all / nothing else", "pos": "phrase", "topic": "expressions", "level": "A2", "notes": "كُلُّ (lex:prt-29) + شَيْء (lex:obj-09) as an iḍāfa — literally \"this is all of a thing\".", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
 
   { "id": "lex:ver-23", "kind": "lexeme", "ar": "اِشْتَرَى", "translit": "ishtarā", "en": "to buy", "pos": "verb", "topic": "verbs", "level": "A1", "example": { "ar": "اِشْتَرَى كِتَابًا.", "en": "He bought a book." }, "notes": "Present tense: يَشْتَرِي (yashtarī).", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
   { "id": "lex:ver-24", "kind": "lexeme", "ar": "بَاعَ", "translit": "bāʿa", "en": "to sell", "pos": "verb", "topic": "verbs", "level": "A1", "example": { "ar": "بَاعَ السَّيَّارَة.", "en": "He sold the car." }, "notes": "Present tense: يَبِيع (yabīʿ).", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
@@ -3214,5 +3245,10 @@
   { "id": "lex:prt-22", "kind": "lexeme", "ar": "لِمَاذَا", "translit": "limādhā", "en": "why?", "pos": "interrogative", "topic": "particles", "level": "A1", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
   { "id": "lex:prt-23", "kind": "lexeme", "ar": "كَيْفَ", "translit": "kayfa", "en": "how?", "pos": "interrogative", "topic": "particles", "level": "A1", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
   { "id": "lex:prt-24", "kind": "lexeme", "ar": "كَمْ", "translit": "kam", "en": "how many?", "pos": "interrogative", "topic": "particles", "level": "A1", "notes": "The counted noun after كَمْ is singular and accusative: كَمْ كِتَابًا؟", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
-  { "id": "lex:prt-25", "kind": "lexeme", "ar": "إِلَّا", "translit": "illā", "en": "except / minus", "pos": "particle", "topic": "particles", "level": "A2", "notes": "Used for \"quarter to\" the hour when telling time: السَّاعَةُ الرَّابِعَةُ إِلَّا رُبْعًا (quarter to four). See gr:telling-time.", "tags": [], "skills": ["vocabulary"], "prereqs": [] }
+  { "id": "lex:prt-25", "kind": "lexeme", "ar": "إِلَّا", "translit": "illā", "en": "except / minus", "pos": "particle", "topic": "particles", "level": "A2", "notes": "Used for \"quarter to\" the hour when telling time: السَّاعَةُ الرَّابِعَةُ إِلَّا رُبْعًا (quarter to four). See gr:telling-time.", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:prt-26", "kind": "lexeme", "ar": "ثُمَّ", "translit": "thumma", "en": "then / next", "pos": "conjunction", "topic": "particles", "level": "A2", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:prt-27", "kind": "lexeme", "ar": "أَثْنَاءَ", "translit": "athnāʾa", "en": "during", "pos": "preposition", "topic": "particles", "level": "A2", "notes": "Governs a genitive noun, like the existing قَبْلَ (\"before\").", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:prt-28", "kind": "lexeme", "ar": "بَيْنَمَا", "translit": "baynamā", "en": "while", "pos": "conjunction", "topic": "particles", "level": "A2", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:prt-29", "kind": "lexeme", "ar": "كُلّ", "translit": "kull", "en": "every / each / all", "pos": "particle", "topic": "particles", "level": "A2", "notes": "+ indefinite singular noun = \"every X\" (كُلُّ يَوْمٍ, \"every day\"); + definite noun or attached pronoun = \"all of / the whole of X\" (كُلُّ النَّاسِ, كُلُّهُ). Either way it's the first term of an iḍāfa — see gr:idafa.", "tags": [], "skills": ["vocabulary"], "prereqs": [] },
+  { "id": "lex:ver-30", "kind": "lexeme", "ar": "جَرَّبَ", "translit": "jarraba", "en": "to try / to try on", "pos": "verb", "topic": "verbs", "level": "A2", "notes": "Form II verb, cited in the same dictionary (3rd-person-past) form every verb in this lexicon uses — its Form II derivational pattern itself is formally taught in B1's \"Derived Verb Forms II–X\" unit, not here.", "tags": [], "skills": ["vocabulary"], "prereqs": [] }
 ]
