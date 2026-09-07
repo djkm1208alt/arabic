@@ -1554,5 +1554,82 @@
     "level": "A2",
     "skills": [ "reading", "comprehension", "listening", "grammar" ],
     "prereqs": [ "gr:dates" ]
+  },
+  {
+    "id": "txt:gram-root-katab",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "root-pattern",
+    "vowelled": "هَذَا كِتَابٌ مِنَ الْمَكْتَبَةِ",
+    "translit": "hādhā kitābun mina al-maktabati",
+    "en": "This is a book from the library.",
+    "words": [
+      { "surface": "هَذَا", "translit": "hādhā", "gloss": "this (masculine)", "gender": "masculine" },
+      { "surface": "كِتَابٌ", "translit": "kitābun", "gloss": "a book (predicate, indefinite) — root ك-ت-ب", "gender": "masculine" },
+      { "surface": "مِنَ الْمَكْتَبَةِ", "translit": "mina al-maktabati", "gloss": "from the library (مِنْ + الـ → مِنَ) — same root ك-ت-ب", "gender": null }
+    ],
+    "audio": "هَذَا كِتَابٌ مِنَ الْمَكْتَبَةِ",
+    "level": "A2",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:root-pattern" ]
+  },
+  {
+    "id": "txt:gram-root-taam",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "root-pattern",
+    "vowelled": "الطَّعَامُ فِي الْمَطْعَمِ لَذِيذٌ",
+    "translit": "aṭ-ṭaʿāmu fī al-maṭʿami ladhīdhun",
+    "en": "The food in the restaurant is delicious.",
+    "words": [
+      { "surface": "الطَّعَامُ", "translit": "aṭ-ṭaʿāmu", "gloss": "the food (topic, nominative) — root ط-ع-م", "gender": "masculine" },
+      { "surface": "فِي الْمَطْعَمِ", "translit": "fī al-maṭʿami", "gloss": "in the restaurant — same root ط-ع-م", "gender": null },
+      { "surface": "لَذِيذٌ", "translit": "ladhīdhun", "gloss": "delicious (predicate, indefinite)", "gender": "masculine" }
+    ],
+    "audio": "الطَّعَامُ فِي الْمَطْعَمِ لَذِيذٌ",
+    "level": "A2",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:root-pattern" ]
+  },
+  {
+    "id": "txt:gram-root-jadid",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "root-pattern",
+    "vowelled": "بَيْتُ جَدِّي جَدِيدٌ",
+    "translit": "baytu jaddī jadīdun",
+    "en": "My grandfather's house is new.",
+    "words": [
+      { "surface": "بَيْتُ", "translit": "baytu", "gloss": "house (of — مُضَاف, nominative topic)", "gender": "masculine" },
+      { "surface": "جَدِّي", "translit": "jaddī", "gloss": "my grandfather (مُضَاف إِلَيْهِ — genitive, with attached possessive) — root ج-د-د", "gender": "masculine" },
+      { "surface": "جَدِيدٌ", "translit": "jadīdun", "gloss": "new (comment, indefinite) — same root ج-د-د, though unrelated in translation", "gender": "masculine" }
+    ],
+    "audio": "بَيْتُ جَدِّي جَدِيدٌ",
+    "level": "A2",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:root-pattern" ]
+  },
+  {
+    "id": "txt:gram-root-khamis",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "root-pattern",
+    "vowelled": "الْخَمِيسُ هُوَ الْيَوْمُ الْخَامِسُ",
+    "translit": "al-khamīsu huwa al-yawmu al-khāmisu",
+    "en": "Thursday is the fifth day.",
+    "words": [
+      { "surface": "الْخَمِيسُ", "translit": "al-khamīsu", "gloss": "Thursday (topic, nominative) — root خ-م-س", "gender": "masculine" },
+      { "surface": "هُوَ", "translit": "huwa", "gloss": "it (referring back to \"Thursday\", masculine)", "gender": "masculine" },
+      { "surface": "الْيَوْمُ", "translit": "al-yawmu", "gloss": "the day", "gender": "masculine" },
+      { "surface": "الْخَامِسُ", "translit": "al-khāmisu", "gloss": "the fifth (ordinal, agreeing with the day) — same root خ-م-س as خَمْسَة \"five\"", "gender": "masculine" }
+    ],
+    "audio": "الْخَمِيسُ هُوَ الْيَوْمُ الْخَامِسُ",
+    "level": "A2",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:root-pattern" ]
   }
 ]

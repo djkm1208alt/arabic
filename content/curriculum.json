@@ -94,9 +94,9 @@
     {
       "id": "a2-u3", "level": "A2", "order": 3,
       "title": "Root & Pattern — First Look",
-      "blurb": "How ك-ت-ب gives كِتَاب, كَاتِب, مَكْتَب — recognising word families. In development.",
+      "blurb": "How ك-ت-ب gives كِتَاب, كَتَبَ, مَكْتَبَة — recognising word families across eleven root clusters you already half-know.",
       "skills": ["grammar", "vocabulary"],
-      "status": "planned", "prereqs": ["a2-u1"]
+      "status": "available", "prereqs": ["a2-u1"]
     },
     {
       "id": "a2-u4", "level": "A2", "order": 4,
@@ -645,6 +645,14 @@
       "level": "A2", "skills": ["grammar", "reading"],
       "objectives": ["gr:idafa","txt:gram-idafa-phrase","txt:gram-idafa-sentence","txt:gram-idafa-pen-student"],
       "status": "available", "source": "steps:a2-idafa"
+    },
+    {
+      "id": "a2-root-pattern", "unitId": "a2-u3", "order": 1,
+      "title": "Root & Pattern — First Look",
+      "blurb": "Eleven pairs of words you already know, revealed to share a root — كِتَاب/كَتَبَ/مَكْتَبَة and ten more.",
+      "level": "A2", "skills": ["grammar", "vocabulary", "reading"],
+      "objectives": ["lex:sch-06","lex:ver-04","lex:pla-10","lex:pla-06","lex:fc-14","lex:obj-06","lex:tim-05","lex:sch-01","lex:sch-09","lex:adj-06","lex:peo-07","lex:peo-08","lex:ver-08","lex:obj-07","lex:num-01","lex:tim-11","lex:num-02","lex:tim-12","lex:num-03","lex:tim-13","lex:num-04","lex:tim-14","lex:num-05","lex:tim-15","gr:root-pattern","txt:gram-root-katab","txt:gram-root-taam","txt:gram-root-jadid","txt:gram-root-khamis"],
+      "status": "available", "source": "steps:a2-root-pattern"
     },
     {
       "id": "a2-numbers-11-99", "unitId": "a2-u4", "order": 1,

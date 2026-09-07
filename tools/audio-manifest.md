@@ -7,13 +7,13 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 
 | | count |
 |---|---:|
-| Distinct targets | 670 |
-| — Tier 1 (foundation) | 175 |
+| Distinct targets | 674 |
+| — Tier 1 (foundation) | 179 |
 | — Tier 2 (vocabulary) | 418 |
 | — Tier 3 (stays TTS) | 77 |
-| Unique native recordings needed (Tier 1+2) | 581 |
+| Unique native recordings needed (Tier 1+2) | 585 |
 | — of those, present on disk | 0 |
-| — still missing | 581 |
+| — still missing | 585 |
 | Aliases (share another recording) | 12 |
 
 ## Tier 1 — Foundation
@@ -134,6 +134,10 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `sentences/gram-price-hundred.mp3` | هَذِهِ السَّاعَةُ بِمِائَةِ رِيَالٍ | hādhihi as-sāʿatu bi-miʾati riyālin | This watch is for a hundred riyals. | recording | tts |
 | `sentences/gram-price-ten.mp3` | هَذَا الْكِتَابُ بِعَشَرَةِ دُولَارَاتٍ | hādhā al-kitābu bi-ʿasharati dūlārātin | This book is for ten dollars. | recording | tts |
 | `sentences/gram-price-twenty.mp3` | هَذَا الْقَلَمُ بِعِشْرِينَ دِينَارًا | hādhā al-qalamu bi-ʿishrīna dīnāran | This pen is for twenty dinars. | recording | tts |
+| `sentences/gram-root-jadid.mp3` | بَيْتُ جَدِّي جَدِيدٌ | baytu jaddī jadīdun | My grandfather's house is new. | recording | tts |
+| `sentences/gram-root-katab.mp3` | هَذَا كِتَابٌ مِنَ الْمَكْتَبَةِ | hādhā kitābun mina al-maktabati | This is a book from the library. | recording | tts |
+| `sentences/gram-root-khamis.mp3` | الْخَمِيسُ هُوَ الْيَوْمُ الْخَامِسُ | al-khamīsu huwa al-yawmu al-khāmisu | Thursday is the fifth day. | recording | tts |
+| `sentences/gram-root-taam.mp3` | الطَّعَامُ فِي الْمَطْعَمِ لَذِيذٌ | aṭ-ṭaʿāmu fī al-maṭʿami ladhīdhun | The food in the restaurant is delicious. | recording | tts |
 | `sentences/gram-sunletter-shams.mp3` | الشَّمْسُ كَبِيرَةٌ | ash-shamsu kabīratun | The sun is big. | recording | tts |
 | `sentences/gram-time-half.mp3` | السَّاعَةُ الثَّانِيَةُ وَالنِّصْفُ | as-sāʿatu ath-thāniyatu wa-n-niṣfu | It's half past two. | recording | tts |
 | `sentences/gram-time-one.mp3` | السَّاعَةُ الْوَاحِدَةُ | as-sāʿatu al-wāḥidatu | It's one o'clock. | recording | tts |

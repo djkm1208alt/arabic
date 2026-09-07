@@ -1,0 +1,83 @@
+{
+  "id": "a2-root-pattern",
+  "unitId": "a2-u3",
+  "curriculumLessonId": "a2-root-pattern",
+  "title": "Root & Pattern — First Look",
+  "level": "A2",
+  "skills": ["grammar", "vocabulary", "reading"],
+  "objectives": [
+    "lex:sch-06", "lex:ver-04", "lex:pla-10",
+    "lex:pla-06", "lex:fc-14",
+    "lex:obj-06", "lex:tim-05",
+    "lex:sch-01", "lex:sch-09",
+    "lex:adj-06", "lex:peo-07", "lex:peo-08",
+    "lex:ver-08", "lex:obj-07",
+    "lex:num-01", "lex:tim-11",
+    "lex:num-02", "lex:tim-12",
+    "lex:num-03", "lex:tim-13",
+    "lex:num-04", "lex:tim-14",
+    "lex:num-05", "lex:tim-15",
+    "gr:root-pattern",
+    "txt:gram-root-katab", "txt:gram-root-taam", "txt:gram-root-jadid", "txt:gram-root-khamis"
+  ],
+  "steps": [
+    {
+      "type": "explain",
+      "title": "Same three letters, related meanings",
+      "body": [
+        "Most Arabic words are built from a root — usually three consonants carrying a core meaning — poured into a pattern that shapes it into a verb, a place, an instrument, or a doer. كَتَبَ (he wrote), كِتَاب (book), and مَكْتَبَة (library) all share the root ك-ت-ب ('write'). The vowels and extra letters around those three consonants belong to the pattern, not the root.",
+        "A bare root isn't itself a word you can say out loud — د-ر-س only becomes pronounceable once a pattern is applied: دَرْس (lesson), مَدْرَسَة (school, literally 'the place where studying happens'). You already know both halves of eleven such pairs — this lesson just points out the shared DNA you haven't been told about yet.",
+        "Sharing a root doesn't always predict an obvious connection in translation — جَدّ (grandfather) and جَدِيد (new) look completely unrelated in English, but they're a real, documented root family in Arabic. Recognising a root is a shortcut to guessing a new word's rough meaning, not a guarantee of the exact sense."
+      ],
+      "previewSymbols": ["ك-ت-ب", "كِتَاب", "مَكْتَبَة"]
+    },
+    {
+      "type": "reading-practice",
+      "title": "Eleven root families",
+      "intro": "Read each pair (or trio) of words sharing a root, then the four example sentences. Tap 🔊 to hear any line.",
+      "fromObjectives": true
+    },
+    {
+      "type": "practice-choice",
+      "title": "Spot the shared root",
+      "arabicPrompt": "كِتَاب",
+      "prompt": "Which of these words shares a root with كِتَاب (book)?",
+      "options": [
+        { "label": "مَكْتَبَة (library) — same root ك-ت-ب", "correct": true },
+        { "label": "مَدْرَسَة (school) — a different root", "correct": false },
+        { "label": "طَعَام (food) — a different root", "correct": false }
+      ],
+      "explanation": "كِتَاب and مَكْتَبَة both come from ك-ت-ب ('write') — a book is a written thing, a library is where written things are kept."
+    },
+    {
+      "type": "practice-choice",
+      "title": "Numbers hiding in the weekdays",
+      "arabicPrompt": "الْأَحَد / وَاحِد",
+      "prompt": "الْأَحَد (Sunday) and وَاحِد (one) share a root. What does that root mean?",
+      "options": [
+        { "label": "One, alone", "correct": true },
+        { "label": "Morning", "correct": false },
+        { "label": "Write", "correct": false }
+      ],
+      "explanation": "Sunday is literally 'the first day' — five of the seven Arabic weekday names are built directly on the numbers 1–5, the same way الْخَمِيس (Thursday) is built on خَمْسَة (five)."
+    },
+    {
+      "type": "practice-choice",
+      "title": "Not every pairing is obvious",
+      "arabicPrompt": "جَدّ / جَدِيد",
+      "prompt": "جَدّ (grandfather) and جَدِيد (new) share the same root letters ج-د-د. Are they really related?",
+      "options": [
+        { "label": "Not obvious from the translation, but yes — a real, documented root family", "correct": true },
+        { "label": "No — this is just a coincidence of spelling", "correct": false },
+        { "label": "Yes — جَدِيد literally means \"newly born person\"", "correct": false }
+      ],
+      "explanation": "Shared roots don't always predict an obvious sense in English — this pairing is genuine (cross-checked against Hans Wehr and Wiktionary), it just doesn't translate into a visible connection the way كِتَاب/مَكْتَبَة does."
+    },
+    {
+      "type": "complete",
+      "title": "You've had your first look at root & pattern",
+      "message": "Eleven root families, all built from words you already knew — the same shared-DNA pattern behind كِتَاب/كَتَبَ/مَكْتَبَة runs through most of the Arabic vocabulary still ahead of you.",
+      "finishLabel": "Finish"
+    }
+  ]
+}

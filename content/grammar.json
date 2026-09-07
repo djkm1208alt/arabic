@@ -388,5 +388,31 @@
     "prereqs": [
       "gr:numbers-11-99"
     ]
+  },
+  {
+    "id": "gr:root-pattern",
+    "kind": "grammar",
+    "name": "Root & pattern (الجَذْر وَالوَزْن)",
+    "level": "A2",
+    "rule": "Most Arabic words are built from a root (جَذْر) — usually three consonants carrying a core, abstract meaning — poured into a pattern (وَزْن) that adds a grammatical role: a place, an instrument, an action, a doer. كَتَبَ (he wrote), كِتَاب (book), and مَكْتَبَة (library) all share the root ك-ت-ب (\"write\"); the vowels and extra letters around those three consonants belong to the pattern, not the root. A bare root isn't itself a pronounceable word — د-ر-س only becomes sayable once a pattern is applied: دَرْس (lesson), مَدْرَسَة (school, literally \"the place where studying happens\"). Recognising a shared root is a shortcut to guessing an unfamiliar word's rough meaning long before you know the whole vocabulary.",
+    "examples": [
+      "txt:gram-root-katab",
+      "txt:gram-root-taam",
+      "txt:gram-root-jadid",
+      "txt:gram-root-khamis"
+    ],
+    "commonErrors": [
+      "Assuming any two words that merely look alike share a root — root-sharing means the same three consonants in the same order, not surface resemblance.",
+      "Expecting one pattern to always carry one fixed meaning — patterns are strong tendencies (مَفْعَل often marks \"place of,\" مِفْعَال often marks \"instrument\"), not absolute rules; the same pattern surfaces different senses on different roots.",
+      "Treating the root like an English base word that gets prefixes/suffixes stuck on it — the root is an abstract three-consonant skeleton that never stands alone as a word; it gets its vowels and shape entirely from the pattern poured into it."
+    ],
+    "skills": [
+      "grammar",
+      "vocabulary",
+      "reading"
+    ],
+    "prereqs": [
+      "gr:idafa"
+    ]
   }
 ]
