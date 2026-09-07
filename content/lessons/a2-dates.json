@@ -1,0 +1,77 @@
+{
+  "id": "a2-dates",
+  "unitId": "a2-u4",
+  "curriculumLessonId": "a2-dates",
+  "title": "Dates",
+  "level": "A2",
+  "skills": ["vocabulary", "grammar", "reading"],
+  "objectives": [
+    "lex:tim-41", "lex:tim-42", "lex:tim-43", "lex:tim-44", "lex:tim-45",
+    "lex:tim-46", "lex:tim-47", "lex:tim-48", "lex:tim-49", "lex:tim-50",
+    "lex:tim-51", "lex:tim-52", "lex:tim-53", "lex:tim-54", "lex:tim-55",
+    "lex:tim-56", "lex:tim-57", "lex:tim-58", "lex:tim-59", "lex:tim-60",
+    "lex:tim-61", "lex:tim-62", "lex:tim-63", "lex:exp-12",
+    "gr:dates",
+    "txt:gram-date-first", "txt:gram-date-third", "txt:gram-date-tenth", "txt:gram-date-sentence"
+  ],
+  "steps": [
+    {
+      "type": "explain",
+      "title": "Same ordinals, different gender",
+      "body": [
+        "Telling time used feminine ordinals because السَّاعَة is feminine. Dates use the exact same roots — ثَانِي، ثَالِث، رَابِع، خَامِس… — but in their masculine form, because يَوْم (day) is masculine. أَوَّل (1st) breaks the pattern on purpose: it's its own irregular word, not built the way the others are.",
+        "A date is just [ordinal] + مِنْ + [month]: الثَّالِثُ مِنْ سِبْتَمْبِر (the third of September) — a complete phrase, no verb needed, the same shape telling time already used. Add هُوَ to make it a full sentence: الْيَوْمَ هُوَ الْخَامِسُ مِنْ مَارِس (today is the fifth of March).",
+        "The twelve month names here are the ones used across most of the Arab world — Egypt, the Gulf, the Maghreb. Some countries (the Levant, Iraq) use an older, different set of names instead."
+      ],
+      "previewSymbols": ["١", "يناير", "مارس"]
+    },
+    {
+      "type": "reading-practice",
+      "title": "First to tenth, January to December",
+      "intro": "Read the ten ordinals and twelve months, then the four date examples. Tap 🔊 to hear any line.",
+      "fromObjectives": true
+    },
+    {
+      "type": "practice-choice",
+      "title": "Masculine, not feminine",
+      "arabicPrompt": "الثَّالِثُ مِنْ سِبْتَمْبِر",
+      "prompt": "Why الثَّالِثُ (masculine) here, not الثَّالِثَة (the feminine form used for telling time)?",
+      "options": [
+        { "label": "يَوْم (day) is masculine, unlike السَّاعَة", "correct": true },
+        { "label": "Months are always grammatically masculine", "correct": false },
+        { "label": "Both forms are interchangeable", "correct": false }
+      ],
+      "explanation": "The ordinal agrees with whatever noun it's really describing — السَّاعَة (feminine) for time, يَوْم (masculine) for dates. Same roots, different gender."
+    },
+    {
+      "type": "practice-choice",
+      "title": "The one irregular one",
+      "arabicPrompt": "الْأَوَّلُ مِنْ يَنَايِر",
+      "prompt": "Does أَوَّل follow the same pattern as ثَانِي، ثَالِث، رَابِع…؟",
+      "options": [
+        { "label": "No — it's irregular, its own separate word", "correct": true },
+        { "label": "Yes, exactly the same فَاعِل pattern", "correct": false },
+        { "label": "أَوَّل is the feminine form", "correct": false }
+      ],
+      "explanation": "أَوَّل doesn't come from the same root-pattern as the others — it's simply memorized on its own, the way a1 و12 were for cardinal numbers."
+    },
+    {
+      "type": "practice-choice",
+      "title": "What does هُوَ point to?",
+      "arabicPrompt": "الْيَوْمَ هُوَ الْخَامِسُ مِنْ مَارِس",
+      "prompt": "What does هُوَ refer back to?",
+      "options": [
+        { "label": "الْيَوْمَ — \"today\" / \"the day\", masculine", "correct": true },
+        { "label": "مَارِس — March", "correct": false },
+        { "label": "الْخَامِسُ — the fifth", "correct": false }
+      ],
+      "explanation": "هُوَ agrees with يَوْم (day), the masculine noun اليوم implicitly stands for — the same way a pronoun always refers back to something already established."
+    },
+    {
+      "type": "complete",
+      "title": "You've finished Numbers, Counting & Time",
+      "message": "Counting, the clock, prices, and now dates — all four pieces of this unit are done. You've seen Arabic's numbers work in three different ways (1-2, 3-10, 11-99) and its ordinals in two genders, all built from the same small set of roots.",
+      "finishLabel": "Finish"
+    }
+  ]
+}

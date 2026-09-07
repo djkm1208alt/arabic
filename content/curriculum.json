@@ -101,7 +101,7 @@
     {
       "id": "a2-u4", "level": "A2", "order": 4,
       "title": "Numbers, Counting & Time",
-      "blurb": "11–99 and their gender-polarity rules, how to tell the time, and prices. Dates come later.",
+      "blurb": "11–99 and their gender-polarity rules, how to tell the time, prices, and dates.",
       "skills": ["vocabulary", "grammar"],
       "status": "available", "prereqs": ["a1-u5"]
     },
@@ -669,6 +669,14 @@
       "level": "A2", "skills": ["vocabulary", "reading"],
       "objectives": ["lex:shp-07","lex:shp-08","lex:shp-09","lex:shp-10","txt:gram-price-ten","txt:gram-price-twenty","txt:gram-price-hundred"],
       "status": "available", "source": "steps:a2-prices"
+    },
+    {
+      "id": "a2-dates", "unitId": "a2-u4", "order": 4,
+      "title": "Dates",
+      "blurb": "The masculine ordinals (reusing telling time's own roots), the twelve months, and [ordinal] + مِنْ + [month].",
+      "level": "A2", "skills": ["vocabulary", "grammar", "reading"],
+      "objectives": ["lex:tim-41","lex:tim-42","lex:tim-43","lex:tim-44","lex:tim-45","lex:tim-46","lex:tim-47","lex:tim-48","lex:tim-49","lex:tim-50","lex:tim-51","lex:tim-52","lex:tim-53","lex:tim-54","lex:tim-55","lex:tim-56","lex:tim-57","lex:tim-58","lex:tim-59","lex:tim-60","lex:tim-61","lex:tim-62","lex:tim-63","lex:exp-12","gr:dates","txt:gram-date-first","txt:gram-date-third","txt:gram-date-tenth","txt:gram-date-sentence"],
+      "status": "available", "source": "steps:a2-dates"
     }
   ]
 }

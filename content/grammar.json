@@ -363,5 +363,30 @@
     "prereqs": [
       "gr:numbers-11-99"
     ]
+  },
+  {
+    "id": "gr:dates",
+    "kind": "grammar",
+    "name": "Dates (the ordinal + مِنْ + the month)",
+    "level": "A2",
+    "rule": "A date pairs a definite ordinal with the month via مِنْ: الثَّالِثُ مِنْ سِبْتَمْبِر (the third of September) — a complete phrase on its own, the same elliptical pattern already used for telling time. Because يَوْم (day) is masculine, unlike السَّاعَة, dates use the masculine ordinals — the exact same roots already known from telling time's feminine set (ثَانِي، ثَالِث، رَابِع…), just without the ة. أَوَّل (1st) is irregular, its own word rather than built on that shared pattern. ثَانِي (2nd) is a defective noun (نَاقِص): its true indefinite form drops the ي with tanwīn (ثَانٍ), while the definite form used in dates keeps it (الثَّانِي). Month names are transliterated loanwords and, like other such proper nouns, are treated here without extra case marking of their own. To turn the bare date-phrase into a full sentence, add هُوَ, referring back to الْيَوْمَ (today, accusative — the normal case for a time adverbial): الْيَوْمَ هُوَ الْخَامِسُ مِنْ مَارِس (today is the fifth of March).",
+    "examples": [
+      "txt:gram-date-first",
+      "txt:gram-date-third",
+      "txt:gram-date-tenth",
+      "txt:gram-date-sentence"
+    ],
+    "commonErrors": [
+      "Using a cardinal instead of an ordinal for the day: خَمْسَة مِنْ مَارِس instead of الْخَامِسُ مِنْ مَارِس.",
+      "Reaching for the feminine ordinal used for telling time instead of the masculine — يَوْم is masculine, unlike السَّاعَة.",
+      "Treating أَوَّل like the other ordinals — it doesn't follow the فَاعِل pattern the rest share."
+    ],
+    "skills": [
+      "grammar",
+      "reading"
+    ],
+    "prereqs": [
+      "gr:numbers-11-99"
+    ]
   }
 ]
