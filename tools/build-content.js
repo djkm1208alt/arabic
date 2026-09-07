@@ -143,6 +143,10 @@ function load() {
         const w = readJSON(path.join(CONTENT_DIR, "wordlists", "a1.json"));
         data._wordlists.a1 = Array.isArray(w) ? w : w.a1;
     } catch (e) { /* not authored yet */ }
+    try {
+        const w = readJSON(path.join(CONTENT_DIR, "wordlists", "a2.json"));
+        data._wordlists.a2 = Array.isArray(w) ? w : w.a2;
+    } catch (e) { /* not authored yet */ }
     try { data._lintAllow = readJSON(path.join(CONTENT_DIR, "_lint-allow.json")); } catch (e) { data._lintAllow = {}; }
 
     // M20 — lessons authored as data. content/lessons/*.json, each a

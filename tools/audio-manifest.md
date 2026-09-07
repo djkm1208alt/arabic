@@ -7,13 +7,13 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 
 | | count |
 |---|---:|
-| Distinct targets | 576 |
-| — Tier 1 (foundation) | 142 |
+| Distinct targets | 589 |
+| — Tier 1 (foundation) | 155 |
 | — Tier 2 (vocabulary) | 357 |
 | — Tier 3 (stays TTS) | 77 |
-| Unique native recordings needed (Tier 1+2) | 487 |
+| Unique native recordings needed (Tier 1+2) | 500 |
 | — of those, present on disk | 0 |
-| — still missing | 487 |
+| — still missing | 500 |
 | Aliases (share another recording) | 12 |
 
 ## Tier 1 — Foundation
@@ -96,6 +96,12 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `sentences/gram-dem-girl.mp3` | هَذِهِ بِنْتٌ | hādhihi bintun | This is a girl. | recording | tts |
 | `sentences/gram-dem-the-house.mp3` | هَذَا الْبَيْتُ كَبِيرٌ | hādhā al-baytu kabīrun | This house is big. | recording | tts |
 | `sentences/gram-gender-bint.mp3` | الْبِنْتُ كَبِيرَةٌ | al-bintu kabīratun | The girl is big. | recording | tts |
+| `sentences/gram-idafa-pen-student.mp3` | قَلَمُ الطَّالِبِ جَدِيدٌ | qalamu aṭ-ṭālibi jadīdun | The student's pen is new. | recording | tts |
+| `sentences/gram-idafa-phrase.mp3` | بَابُ الْبَيْتِ | bābu al-bayti | the door of the house | recording | tts |
+| `sentences/gram-idafa-sentence.mp3` | بَيْتُ الرَّجُلِ كَبِيرٌ | baytu ar-rajuli kabīrun | The man's house is big. | recording | tts |
+| `sentences/gram-kana-1sg.mp3` | كُنْتُ فِي الْبَيْتِ | kuntu fī al-bayti | I was at home. | recording | tts |
+| `sentences/gram-kana-fem.mp3` | كَانَتِ الْمَرْأَةُ كَبِيرَةً | kānati al-marʾatu kabīratan | The woman was old. | recording | tts |
+| `sentences/gram-kana-house.mp3` | كَانَ الْبَيْتُ كَبِيرًا | kāna al-baytu kabīran | The house was big. | recording | tts |
 | `sentences/gram-neg-no-water.mp3` | لَا مَاءَ فِي الْحَقِيبَةِ | lā māʾa fī al-ḥaqībati | There is no water in the bag. | recording | tts |
 | `sentences/gram-neg-not-big.mp3` | لَيْسَ الْبَيْتُ كَبِيرًا | laysa al-baytu kabīran | The house is not big. | recording | tts |
 | `sentences/gram-neg-not-book.mp3` | هَذَا لَيْسَ كِتَابًا | hādhā laysa kitāban | This is not a book. | recording | tts |
@@ -105,6 +111,9 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `sentences/gram-number-broken-pl.mp3` | الْكُتُبُ جَمِيلَةٌ | al-kutubu jamīlatun | The books are beautiful. | recording | tts |
 | `sentences/gram-number-dual.mp3` | الْكِتَابَانِ جَدِيدَانِ | al-kitābāni jadīdāni | The two books are new. | recording | tts |
 | `sentences/gram-number-sound-pl.mp3` | هُمْ مُعَلِّمُونَ | hum muʿallimūna | They are teachers. | recording | tts |
+| `sentences/gram-past-1sg.mp3` | أَنَا قَرَأْتُ الْكِتَابَ | anā qaraʾtu al-kitāba | I read the book. | recording | tts |
+| `sentences/gram-past-2sg-f.mp3` | أَنْتِ ذَهَبْتِ إِلَى الْبَيْتِ | anti dhahabti ilā al-bayti | You (f.) went home. | recording | tts |
+| `sentences/gram-past-vso.mp3` | ذَهَبَ الرَّجُلُ إِلَى الْمَدْرَسَةِ | dhahaba ar-rajulu ilā al-madrasati | The man went to school. | recording | tts |
 | `sentences/gram-poss-her-bag.mp3` | حَقِيبَتُهَا جَمِيلَةٌ | ḥaqībatuhā jamīlatun | Her bag is beautiful. | recording | tts |
 | `sentences/gram-poss-my-book.mp3` | كِتَابِي جَدِيدٌ | kitābī jadīdun | My book is new. | recording | tts |
 | `sentences/gram-poss-your-house.mp3` | بَيْتُكَ كَبِيرٌ | baytuka kabīrun | Your house is big. | recording | tts |
@@ -112,7 +121,11 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `sentences/gram-prep-in-bag.mp3` | الْكِتَابُ فِي الْحَقِيبَةِ | al-kitābu fī al-ḥaqībati | The book is in the bag. | recording | tts |
 | `sentences/gram-prep-on-table.mp3` | الْقَلَمُ عَلَى الطَّاوِلَةِ | al-qalamu ʿalā aṭ-ṭāwilati | The pen is on the table. | recording | tts |
 | `sentences/gram-sunletter-shams.mp3` | الشَّمْسُ كَبِيرَةٌ | ash-shamsu kabīratun | The sun is big. | recording | tts |
+| `sentences/gram-verb-ana.mp3` | أَنَا أَذْهَبُ إِلَى الْمَدْرَسَةِ | anā adhhabu ilā al-madrasati | I go to school. | recording | tts |
+| `sentences/gram-verb-anta.mp3` | أَنْتَ تَذْهَبُ إِلَى الْمَدْرَسَةِ | anta tadhhabu ilā al-madrasati | You (m.) go to school. | recording | tts |
+| `sentences/gram-verb-anti.mp3` | أَنْتِ تَذْهَبِينَ إِلَى الْمَدْرَسَةِ | anti tadhhabīna ilā al-madrasati | You (f.) go to school. | recording | tts |
 | `sentences/gram-verb-he.mp3` | هُوَ يَذْهَبُ إِلَى الْمَدْرَسَةِ | huwa yadhhabu ilā al-madrasati | He goes to school. | recording | tts |
+| `sentences/gram-verb-nahnu.mp3` | نَحْنُ نَذْهَبُ إِلَى الْمَدْرَسَةِ | naḥnu nadhhabu ilā al-madrasati | We go to school. | recording | tts |
 | `sentences/gram-verb-she.mp3` | هِيَ تَذْهَبُ إِلَى الْمَدْرَسَةِ | hiya tadhhabu ilā al-madrasati | She goes to school. | recording | tts |
 | `sentences/gram-verb-they.mp3` | هُمْ يَذْهَبُونَ إِلَى الْمَدْرَسَةِ | hum yadhhabūna ilā al-madrasati | They go to school. | recording | tts |
 | `sentences/read-bag-new.mp3` | الْحَقِيبَةُ جَدِيدَةٌ | al-ḥaqībatu jadīdatun | The bag is new. | recording | tts |

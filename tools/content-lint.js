@@ -10,7 +10,7 @@
    HARD errors are unambiguous (a colloquialism in MSA content, an
    Arabic-Indic digit outside the numbers topic, a translit emphatic with
    no matching script emphatic, an unvowelled consonant cluster in an
-   A0/A1 word). WARNINGS are for cases a human should glance at.
+   A0/A1/A2 word). WARNINGS are for cases a human should glance at.
 
    Every rule has a fixture in tools/lint-fixtures.js proving it fires.
    ============================================================================= */
@@ -113,12 +113,16 @@ function lint(data, wordlists, allow) {
     allow = allow || {};
     const allowed = (id, rule) => Array.isArray(allow[id]) && allow[id].indexOf(rule) !== -1;
 
-    const wl = (wordlists && wordlists.a1 && Array.isArray(wordlists.a1)) ? wordlists.a1 : null;
-    const wlLemmas = wl ? (() => {
-        const s = new Set();
-        for (const e of wl) for (const v of lemmaVariants(e.en)) s.add(v);
-        return s;
-    })() : null;
+    /* per-level word-list lemma sets — one per level the levelfit rule checks */
+    const wlLemmasByLevel = {};
+    for (const lvl of ["a1", "a2"]) {
+        const wl = (wordlists && wordlists[lvl] && Array.isArray(wordlists[lvl])) ? wordlists[lvl] : null;
+        wlLemmasByLevel[lvl] = wl ? (() => {
+            const s = new Set();
+            for (const e of wl) for (const v of lemmaVariants(e.en)) s.add(v);
+            return s;
+        })() : null;
+    }
 
     const rows = [];
     for (const key of ["lexemes", "letters", "marks", "syllables", "grammar", "texts"])
@@ -178,8 +182,8 @@ function lint(data, wordlists, allow) {
                 warnings.push(`length  ${id}: ar has ${arLen} letters, translit "${o.translit}" ~${tLen} — check for a transposition or truncation`);
         }
 
-        /* --- WARN: ḥarakāt coverage on A0/A1 fully-vowelled fields --- */
-        if ((o.level === "A0" || o.level === "A1") && !allowed(id, "harakat")) {
+        /* --- WARN: ḥarakāt coverage on A0/A1/A2 fully-vowelled fields --- */
+        if ((o.level === "A0" || o.level === "A1" || o.level === "A2") && !allowed(id, "harakat")) {
             const vowelledFields = arFields.filter(([f]) => f === "ar" || f === "vowelled" || /words\[/.test(f) || /previewSymbols/.test(f));
             for (const [f, s] of vowelledFields) {
                 for (const word of String(s).split(/\s+/)) {
@@ -190,11 +194,12 @@ function lint(data, wordlists, allow) {
             }
         }
 
-        /* --- WARN: A1 level fit against the word list --- */
-        if (wlLemmas && key === "lexemes" && o.level === "A1" && !allowed(id, "levelfit")) {
-            const hit = [...lemmaVariants(o.en)].some(v => wlLemmas.has(v));
+        /* --- WARN: A1/A2 level fit against the matching word list --- */
+        const wlKey = o.level === "A1" ? "a1" : o.level === "A2" ? "a2" : null;
+        if (wlKey && wlLemmasByLevel[wlKey] && key === "lexemes" && !allowed(id, "levelfit")) {
+            const hit = [...lemmaVariants(o.en)].some(v => wlLemmasByLevel[wlKey].has(v));
             if (!hit)
-                warnings.push(`levelfit  ${id}: A1 lexeme "${o.en}" is not on content/wordlists/a1.json — confirm it belongs at A1`);
+                warnings.push(`levelfit  ${id}: ${o.level} lexeme "${o.en}" is not on content/wordlists/${wlKey}.json — confirm it belongs at ${o.level}`);
         }
     }
 
