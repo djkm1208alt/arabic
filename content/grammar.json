@@ -336,5 +336,32 @@
     "prereqs": [
       "gr:counted-noun-intro"
     ]
+  },
+  {
+    "id": "gr:telling-time",
+    "kind": "grammar",
+    "name": "Telling time (السَّاعَة + the ordinal)",
+    "level": "A2",
+    "rule": "Telling time pairs a definite noun, السَّاعَة (the hour/clock), with a definite ordinal agreeing with it — a complete phrase on its own, the same way English can just answer \"two o'clock\" with no verb: السَّاعَةُ الثَّانِيَةُ (it's two o'clock). One o'clock is the one exception: it uses the cardinal الْوَاحِدَة (feminine \"one\"), not an ordinal — there's no \"الأُولَى o'clock\". Two through ten use the plain ordinal (الثَّانِيَة، الثَّالِثَة، الرَّابِعَة…); eleven and twelve compound an ordinal ones-word with the teen-marker exactly the way cardinal numbers do (الْحَادِيَةَ عَشْرَةَ، الثَّانِيَةَ عَشْرَةَ) — and stay fixed on ـَ regardless of case, the same indeclinable pattern the cardinal teens already showed. Minutes attach with وَ for \"past\" (السَّاعَةُ الثَّانِيَةُ وَالنِّصْفُ, half past two) or إِلَّا for \"to\" (السَّاعَةُ الرَّابِعَةُ إِلَّا رُبْعًا, quarter to four).",
+    "examples": [
+      "txt:gram-time-one",
+      "txt:gram-time-two",
+      "txt:gram-time-twelve",
+      "txt:gram-time-half",
+      "txt:gram-time-quarter-past",
+      "txt:gram-time-quarter-to"
+    ],
+    "commonErrors": [
+      "Using the cardinal (اثنان) instead of the ordinal (الثَّانِيَة) for two o'clock and beyond.",
+      "Reaching for الأُولَى (the ordinal \"first\") for one o'clock — it's the one hour that keeps the cardinal, الْوَاحِدَة.",
+      "Using وَ where إِلَّا is needed — quarter TO the hour is إِلَّا, not وَ: السَّاعَةُ الرَّابِعَةُ إِلَّا رُبْعًا, not وَرُبْع."
+    ],
+    "skills": [
+      "grammar",
+      "reading"
+    ],
+    "prereqs": [
+      "gr:numbers-11-99"
+    ]
   }
 ]

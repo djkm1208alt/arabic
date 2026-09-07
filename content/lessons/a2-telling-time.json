@@ -1,0 +1,76 @@
+{
+  "id": "a2-telling-time",
+  "unitId": "a2-u4",
+  "curriculumLessonId": "a2-telling-time",
+  "title": "Telling Time",
+  "level": "A2",
+  "skills": ["vocabulary", "grammar", "reading"],
+  "objectives": [
+    "lex:num-01f", "lex:tim-30", "lex:tim-31", "lex:tim-32", "lex:tim-33",
+    "lex:tim-34", "lex:tim-35", "lex:tim-36", "lex:tim-37", "lex:tim-38",
+    "lex:tim-39", "lex:tim-40", "lex:prt-25", "lex:num-half", "lex:num-quarter",
+    "gr:telling-time",
+    "txt:gram-time-one", "txt:gram-time-two", "txt:gram-time-twelve",
+    "txt:gram-time-half", "txt:gram-time-quarter-past", "txt:gram-time-quarter-to"
+  ],
+  "steps": [
+    {
+      "type": "explain",
+      "title": "The clock uses different numbers",
+      "body": [
+        "Counting 11-99 used cardinal numbers. Telling time switches to ordinals instead — second, third, fourth — agreeing with السَّاعَة (the hour), which is feminine: السَّاعَةُ الثَّانِيَةُ, \"it's two o'clock\", literally \"the hour, the second one\". No verb needed, the same way English can just answer \"two o'clock\".",
+        "One o'clock breaks the pattern on purpose: there's no \"الأُولَى o'clock\" — it uses الْوَاحِدَة, the ordinary cardinal \"one\", instead. Eleven and twelve compound an ordinal with the teen-marker exactly like the cardinal numbers did, and stay fixed on the same ending no matter what — one more place the two systems echo each other.",
+        "For minutes, وَ means \"past\" (السَّاعَةُ الثَّانِيَةُ وَالنِّصْف, half past two) and إِلَّا means \"to\" (السَّاعَةُ الرَّابِعَةُ إِلَّا رُبْعًا, quarter to four) — two small words carrying real weight."
+      ],
+      "previewSymbols": ["١:٠٠", "٢:٣٠", "٤:٤٥"]
+    },
+    {
+      "type": "reading-practice",
+      "title": "One o'clock to quarter to four",
+      "intro": "Read each ordinal, then the six clock-time sentences. Tap 🔊 to hear any line.",
+      "fromObjectives": true
+    },
+    {
+      "type": "practice-choice",
+      "title": "The one exception",
+      "arabicPrompt": "السَّاعَةُ الْوَاحِدَةُ",
+      "prompt": "Why الْوَاحِدَة here, not an ordinal like the other hours?",
+      "options": [
+        { "label": "One o'clock is the exception — it uses the cardinal, not an ordinal", "correct": true },
+        { "label": "الْوَاحِدَة is itself the ordinal \"first\"", "correct": false },
+        { "label": "It's a mistake — it should be الأُولَى", "correct": false }
+      ],
+      "explanation": "Every other hour uses an ordinal (الثَّانِيَة، الثَّالِثَة…), but one o'clock keeps the cardinal الْوَاحِدَة — there's no \"الأُولَى o'clock\"."
+    },
+    {
+      "type": "practice-choice",
+      "title": "Past or to?",
+      "arabicPrompt": "السَّاعَةُ الرَّابِعَةُ إِلَّا رُبْعًا",
+      "prompt": "What time does this describe?",
+      "options": [
+        { "label": "Quarter TO four — إِلَّا means \"minus\"", "correct": true },
+        { "label": "Quarter PAST four — إِلَّا means \"and\"", "correct": false },
+        { "label": "Exactly four o'clock", "correct": false }
+      ],
+      "explanation": "إِلَّا (\"except / minus\") subtracts from the hour — الرَّابِعَةُ إِلَّا رُبْعًا is \"four minus a quarter\", i.e. quarter to four. وَ would mean \"past\" instead."
+    },
+    {
+      "type": "practice-choice",
+      "title": "Why ـَ, not ـُ?",
+      "arabicPrompt": "السَّاعَةُ الثَّانِيَةَ عَشْرَةَ",
+      "prompt": "Two o'clock was السَّاعَةُ الثَّانِيَةُ, ending ـُ. Why does twelve o'clock end ـَ instead?",
+      "options": [
+        { "label": "11th/12th are indeclinable, fixed on ـَ regardless of case — like the cardinal teens", "correct": true },
+        { "label": "Twelve o'clock is plural", "correct": false },
+        { "label": "It's a typo — it should also end ـُ", "correct": false }
+      ],
+      "explanation": "Just like the cardinal teens (11-19) stay fixed on ـَ no matter their case, the ordinal teen-compounds الْحَادِيَةَ عَشْرَةَ and الثَّانِيَةَ عَشْرَةَ do too — one more place counting numbers and clock numbers rhyme."
+    },
+    {
+      "type": "complete",
+      "title": "You can tell the time",
+      "message": "You've now met all three of Arabic's number systems: cardinals for counting, and ordinals for the clock — with one o'clock, eleven, and twelve each bending the pattern in their own small way. Dates and prices build on these same ordinals and cardinals later.",
+      "finishLabel": "Finish"
+    }
+  ]
+}

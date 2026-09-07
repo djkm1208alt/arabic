@@ -118,5 +118,17 @@ const a2LfBad = lint({ lexemes: [lex({ id: "lex:a2lf2", en: "photosynthesis", to
 ok(a2LfBad.warnings.some(w => w.indexOf("levelfit") === 0 && w.indexOf("A2") !== -1 && w.indexOf("wordlists/a2.json") !== -1),
    "[levelfit] an A2 lexeme missing from wordlists.a2 warns, citing a2.json");
 
+/* M21 batch 3: a single attachable prefix (وَ, فَ, بِ, لِ, كَ) glued directly
+   onto the definite article — وَالنِّصْفُ, "and the half" — must not trip the
+   harakat check on the assimilated ل, the same way word-initial الـ already
+   doesn't. A genuinely bare ل elsewhere still has to warn. */
+const prefixDefOK = lint({ lexemes: [lex({ id: "lex:pfx1", ar: "وَالنِّصْفُ", translit: "wa-n-niṣfu", en: "and the half", level: "A2" })] }, a2Wl, {});
+ok(prefixDefOK.warnings.filter(w => w.indexOf("harakat") === 0).length === 0,
+   "[harakat] وَالنِّصْفُ (prefix + assimilated definite article) doesn't warn");
+
+const bareLamBad = lint({ lexemes: [lex({ id: "lex:pfx2", ar: "بلغ", translit: "balagha", en: "he reached", level: "A2" })] }, a2Wl, {});
+ok(bareLamBad.warnings.some(w => w.indexOf("harakat") === 0),
+   "[harakat] a genuinely unvowelled ل elsewhere still warns");
+
 console.log("\n" + (fails === 0 ? "✅ ALL LINT FIXTURES BEHAVE" : "❌ " + fails + " FAILURE(S)"));
 process.exit(fails ? 1 : 0);
