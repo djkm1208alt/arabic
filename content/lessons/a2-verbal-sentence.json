@@ -1,0 +1,73 @@
+{
+  "id": "a2-verbal-sentence",
+  "unitId": "a2-u1",
+  "curriculumLessonId": "a2-verbal-sentence",
+  "title": "The Verbal Sentence: Past Tense & كَانَ",
+  "level": "A2",
+  "skills": ["grammar", "reading"],
+  "objectives": [
+    "gr:verbal-sentence", "gr:kana",
+    "txt:gram-past-vso", "txt:gram-past-1sg", "txt:gram-past-2sg-f",
+    "txt:gram-kana-house", "txt:gram-kana-fem", "txt:gram-kana-1sg"
+  ],
+  "steps": [
+    {
+      "type": "explain",
+      "title": "A sentence that starts with a verb",
+      "body": [
+        "Every sentence so far has been nominal — a topic next to a comment, no verb, no word for \"is\". Arabic has a second sentence type too, and it starts with a verb: فِعْل – فَاعِل – مَفْعُول (verb – subject – object). ذَهَبَ الرَّجُلُ (\"went the-man\") is completely normal Arabic — the subject comes after the verb, not before it. A subject-first order is also fine, especially for emphasis, but verb-first is the neutral default.",
+        "The verb itself changes its ending for the person doing the action — the same ending pattern works on any Form I verb you already know: هُوَ ذَهَبَ، هِيَ ذَهَبَتْ، هُمْ ذَهَبُوا، أَنَا ذَهَبْتُ، أَنْتَ ذَهَبْتَ، أَنْتِ ذَهَبْتِ، نَحْنُ ذَهَبْنَا. Every \"to X\" word you've learned is already the \"he did X\" form — dhahaba doesn't just mean \"to go\", it means \"he went\".",
+        "There's one more piece: كَانَ (\"was / were\") takes a nominal sentence into the past. الْبَيْتُ كَبِيرٌ (the house is big) becomes كَانَ الْبَيْتُ كَبِيرًا (the house was big) — and the description afterward switches from ـٌ to ـًا. كان conjugates irregularly, so كَانَ، كَانَتْ، كَانُوا، كُنْتُ are worth learning as their own small set."
+      ],
+      "previewSymbols": ["فَعَلَ", "فَاعِل", "كَانَ"]
+    },
+    {
+      "type": "reading-practice",
+      "title": "Verbs first, then كان",
+      "intro": "Read each sentence aloud. The first three are plain past tense; the last three use كان. Tap 🔊 to hear any line.",
+      "fromObjectives": true
+    },
+    {
+      "type": "practice-choice",
+      "title": "Verb, then subject",
+      "arabicPrompt": "ذَهَبَ الرَّجُلُ إِلَى الْمَدْرَسَةِ",
+      "prompt": "What word order is this?",
+      "options": [
+        { "label": "Verb first, then subject — Arabic's neutral order (VSO)", "correct": true },
+        { "label": "Subject first, then verb, the way English works", "correct": false },
+        { "label": "There's no subject in this sentence", "correct": false }
+      ],
+      "explanation": "ذَهَبَ (the verb) comes before الرَّجُلُ (the subject) — verb-subject-object is Arabic's default, unlike English."
+    },
+    {
+      "type": "practice-choice",
+      "title": "Who's speaking?",
+      "arabicPrompt": "أَنَا ذَهَبْتُ إِلَى الْمَدْرَسَةِ",
+      "prompt": "Which ending tells you who did the going?",
+      "options": [
+        { "label": "ـتُ — first person, \"I\"", "correct": true },
+        { "label": "ـَ — third person, \"he\"", "correct": false },
+        { "label": "ـْنَا — first person plural, \"we\"", "correct": false }
+      ],
+      "explanation": "ذَهَبْتُ (dhahabtu) is the same root, ذهب, with the ـتُ ending — that ending alone means \"I\", no separate word needed."
+    },
+    {
+      "type": "practice-choice",
+      "title": "Why كَبِيرًا, not كَبِيرٌ?",
+      "arabicPrompt": "كَانَ الْبَيْتُ كَبِيرًا",
+      "prompt": "Why does the description end in ـًا here instead of the ـٌ a plain nominal sentence would use?",
+      "options": [
+        { "label": "Because خَبَر كَانَ (كان's comment) is accusative, not nominative", "correct": true },
+        { "label": "Because الْبَيْتُ is plural", "correct": false },
+        { "label": "ـًا and ـٌ are interchangeable spellings of the same thing", "correct": false }
+      ],
+      "explanation": "كان pushes its comment into the accusative case — الْبَيْتُ كَبِيرٌ (nominal sentence) becomes كَانَ الْبَيْتُ كَبِيرًا once كان makes it past tense."
+    },
+    {
+      "type": "complete",
+      "title": "You can read Arabic's other sentence type",
+      "message": "You've now seen both of Arabic's sentence types: nominal (topic + comment, no verb) and verbal (verb first, then subject). You conjugated a Form I verb across all seven persons in the past tense, and used كَانَ to put a description in the past — including its own irregular conjugation.",
+      "finishLabel": "Finish"
+    }
+  ]
+}

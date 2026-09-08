@@ -1,0 +1,63 @@
+{
+  "id": "a1-reading-sentences",
+  "unitId": "a1-u1",
+  "curriculumLessonId": "a1-reading-sentences",
+  "title": "Reading Whole Sentences",
+  "level": "A1",
+  "skills": ["reading", "comprehension"],
+  "objectives": [
+    "gr:nominal-sentence", "gr:gender-agreement", "gr:core-prepositions",
+    "gr:demonstratives", "gr:attached-possessive",
+    "txt:read-weather-hot", "txt:read-i-student", "txt:read-room-clean",
+    "txt:read-he-engineer", "txt:read-coffee-delicious", "txt:read-bag-new",
+    "txt:read-book-on-table", "txt:read-this-my-house", "txt:read-friend-university",
+    "txt:read-that-man-doctor", "txt:read-bag-under-chair", "txt:read-this-my-bag"
+  ],
+  "steps": [
+    {
+      "type": "explain",
+      "title": "Read a sentence in two moves",
+      "body": [
+        "Every short Arabic sentence here has the same shape: a topic, then a comment about it. There is no verb — Arabic has no present-tense \"is\".",
+        "So read in two moves: first find the topic (usually the word with الـ), then read the comment. الطَّقْسُ حَارٌّ — \"the-weather / hot\" = \"the weather is hot.\"",
+        "The comment can be a describing word (حَارٌّ), a place (فِي الْبَيْتِ), or a pointed-at thing (هَذَا بَيْتِي)."
+      ],
+      "previewSymbols": ["الطَّقْسُ حَارٌّ"]
+    },
+    {
+      "type": "reading-practice",
+      "title": "Twelve sentences",
+      "intro": "Read each one aloud, decide what the topic is, then reveal the meaning. Tap 🔊 to hear it.",
+      "fromObjectives": true
+    },
+    {
+      "type": "practice-choice",
+      "title": "Comprehension",
+      "prompt": "Which sentence tells you about the weather?",
+      "options": [
+        { "label": "الطَّقْسُ حَارٌّ", "correct": true },
+        { "label": "أَنَا طَالِبٌ", "correct": false },
+        { "label": "هَذِهِ حَقِيبَتِي", "correct": false }
+      ],
+      "explanation": "الطَّقْسُ means \"the weather\"; حَارٌّ means \"hot\"."
+    },
+    {
+      "type": "practice-choice",
+      "title": "Comprehension",
+      "arabicPrompt": "الْحَقِيبَةُ تَحْتَ الْكُرْسِيِّ",
+      "prompt": "Where is the bag?",
+      "options": [
+        { "label": "Under the chair", "correct": true },
+        { "label": "On the table", "correct": false },
+        { "label": "In the room", "correct": false }
+      ],
+      "explanation": "تَحْتَ means \"under\"; الْكُرْسِيّ is \"the chair\"."
+    },
+    {
+      "type": "complete",
+      "title": "You read whole sentences",
+      "message": "You read twelve A1 sentences and pulled out the meaning — the topic, then the comment. Keep them in the Review view.",
+      "finishLabel": "Finish"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "id": "a2-prices",
+  "unitId": "a2-u4",
+  "curriculumLessonId": "a2-prices",
+  "title": "Prices",
+  "level": "A2",
+  "skills": ["vocabulary", "reading"],
+  "objectives": [
+    "lex:shp-07", "lex:shp-08", "lex:shp-09", "lex:shp-10",
+    "txt:gram-price-ten", "txt:gram-price-twenty", "txt:gram-price-hundred"
+  ],
+  "steps": [
+    {
+      "type": "explain",
+      "title": "No new rules — just new nouns",
+      "body": [
+        "بِكَمْ هَذَا؟ (\"how much is this?\") is already something you can ask. Answering it just applies the counting rules you already know to a new kind of noun: money.",
+        "دُولَار (dollar), رِيَال (riyal), دِينَار (dinar), and جُنَيْه (pound) — four of the currencies you'll actually see across the Arab world — all count exactly like كِتَاب or أَخ or any other noun: 3-10 takes the plural, genitive (عَشَرَةُ دُولَارَاتٍ), 11-99 takes the singular, accusative (عِشْرُونَ دِينَارًا), and مِائَة takes a singular genitive noun the same way it always has."
+      ],
+      "previewSymbols": ["$", "﷼", "١٠٠"]
+    },
+    {
+      "type": "reading-practice",
+      "title": "Ten dollars to a hundred riyals",
+      "intro": "Read the four currencies, then the three price sentences. Tap 🔊 to hear any line.",
+      "fromObjectives": true
+    },
+    {
+      "type": "practice-choice",
+      "title": "Plural, or singular?",
+      "arabicPrompt": "هَذَا الْكِتَابُ بِعَشَرَةِ دُولَارَاتٍ",
+      "prompt": "Why دُولَارَاتٍ (plural) here, not a singular?",
+      "options": [
+        { "label": "Ten follows the same 3-10 rule as any counted noun — plural, genitive", "correct": true },
+        { "label": "Prices always use plurals, no matter the number", "correct": false },
+        { "label": "دُولَار has no singular form", "correct": false }
+      ],
+      "explanation": "Nothing new here — عَشَرَةُ دُولَارَاتٍ follows the exact same 3-10 rule as عَشَرَةُ كُتُبٍ."
+    },
+    {
+      "type": "practice-choice",
+      "title": "Now singular?",
+      "arabicPrompt": "هَذَا الْقَلَمُ بِعِشْرِينَ دِينَارًا",
+      "prompt": "Why دِينَارًا (singular) here, not plural?",
+      "options": [
+        { "label": "Twenty follows the 11-99 rule — singular, accusative, same as any counted noun", "correct": true },
+        { "label": "دِينَار has no plural form", "correct": false },
+        { "label": "Twenty is a special exception just for money", "correct": false }
+      ],
+      "explanation": "Once the number passes ten, the counted noun switches to singular accusative — the same rule that already applies to عِشْرُونَ كِتَابًا."
+    },
+    {
+      "type": "practice-choice",
+      "title": "And a hundred?",
+      "arabicPrompt": "هَذِهِ السَّاعَةُ بِمِائَةِ رِيَالٍ",
+      "prompt": "What governs رِيَالٍ here?",
+      "options": [
+        { "label": "مِائَة governs a genitive noun via iḍāfa, exactly as it does for any noun", "correct": true },
+        { "label": "A special price-only rule that only applies to مِائَة", "correct": false },
+        { "label": "رِيَال changes its spelling after مِائَة", "correct": false }
+      ],
+      "explanation": "مِائَةُ رِيَالٍ works exactly like مِائَةُ كِتَابٍ — nothing about money changes the rule."
+    },
+    {
+      "type": "complete",
+      "title": "You can talk about prices",
+      "message": "No new grammar this time — you just proved the counting rules you already know (3-10 plural, 11-99 singular, مِائَة's genitive) work for any noun at all, money included.",
+      "finishLabel": "Finish"
+    }
+  ]
+}

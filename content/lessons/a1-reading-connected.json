@@ -1,0 +1,61 @@
+{
+  "id": "a1-reading-connected",
+  "unitId": "a1-u1",
+  "curriculumLessonId": "a1-reading-connected",
+  "title": "Joining Two Ideas",
+  "level": "A1",
+  "skills": ["reading", "comprehension"],
+  "objectives": [
+    "gr:nominal-sentence", "gr:core-prepositions", "gr:negation-a1",
+    "txt:read-parents-office-home", "txt:read-tired-but-happy",
+    "txt:read-not-cold-today", "txt:read-this-not-my-pen"
+  ],
+  "steps": [
+    {
+      "type": "explain",
+      "title": "وَ, لَكِنْ, and لَيْسَ",
+      "body": [
+        "A slightly longer text joins two short ideas. وَ (\"and\") attaches to the next word: وَالْأُمُّ. لَكِنْ means \"but\".",
+        "لَيْسَ turns a sentence negative and puts the comment in the -an form: لَيْسَ الطَّقْسُ بَارِدًا = \"the weather is not cold.\"",
+        "Read each half on its own, then put them together."
+      ],
+      "previewSymbols": ["وَ", "لَكِنْ", "لَيْسَ"]
+    },
+    {
+      "type": "reading-practice",
+      "title": "Four longer sentences",
+      "intro": "Each one has two parts. Read the first part, then the joining word, then the second part.",
+      "fromObjectives": true
+    },
+    {
+      "type": "practice-choice",
+      "title": "Comprehension",
+      "arabicPrompt": "الْأَبُ فِي الْمَكْتَبِ وَالْأُمُّ فِي الْبَيْتِ",
+      "prompt": "Where is the mother?",
+      "options": [
+        { "label": "At home", "correct": true },
+        { "label": "In the office", "correct": false },
+        { "label": "At the university", "correct": false }
+      ],
+      "explanation": "The second half — وَالْأُمُّ فِي الْبَيْتِ — says the mother is فِي الْبَيْتِ, at home."
+    },
+    {
+      "type": "practice-choice",
+      "title": "Comprehension",
+      "arabicPrompt": "أَنَا مُتْعَبٌ لَكِنْ سَعِيدٌ",
+      "prompt": "How does the speaker feel?",
+      "options": [
+        { "label": "Tired, but happy", "correct": true },
+        { "label": "Tired and sad", "correct": false },
+        { "label": "Happy and not tired", "correct": false }
+      ],
+      "explanation": "لَكِنْ (\"but\") joins مُتْعَب (tired) and سَعِيد (happy)."
+    },
+    {
+      "type": "complete",
+      "title": "Two ideas, one sentence",
+      "message": "You read four sentences that join two ideas with وَ, لَكِنْ, or لَيْسَ. Practise them in Review.",
+      "finishLabel": "Finish"
+    }
+  ]
+}

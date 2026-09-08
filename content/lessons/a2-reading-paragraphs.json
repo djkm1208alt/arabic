@@ -1,0 +1,71 @@
+{
+  "id": "a2-reading-paragraphs",
+  "unitId": "a2-u5",
+  "curriculumLessonId": "a2-reading-paragraphs",
+  "title": "Reading Short Paragraphs",
+  "level": "A2",
+  "skills": ["reading", "comprehension"],
+  "objectives": [
+    "gr:verbal-sentence", "gr:kana", "gr:core-prepositions",
+    "txt:read-para-trip", "txt:read-para-garden"
+  ],
+  "steps": [
+    {
+      "type": "explain",
+      "title": "Reading more than one sentence at a time",
+      "body": [
+        "Every text you've read so far has been one sentence. A paragraph is several sentences working together — and the connectors you just learned (أَوَّلًا، ثُمَّ، أَثْنَاءَ، أَخِيرًا، ذَاتَ يَوْمٍ، بَيْنَمَا، فَجْأَةً، طَبْعًا) are what tell you the order events happened in, not just that they happened.",
+        "Reading for comprehension means holding the whole passage in mind, not just the sentence in front of you — a question might ask what happened first, what happened while something else was going on, or what the paragraph is mainly about."
+      ],
+      "previewSymbols": ["أَوَّلًا", "ثُمَّ", "أَخِيرًا"]
+    },
+    {
+      "type": "reading-practice",
+      "title": "Two short paragraphs",
+      "intro": "Read each paragraph sentence by sentence. Tap 🔊 to hear any line.",
+      "fromObjectives": true
+    },
+    {
+      "type": "practice-choice",
+      "title": "The main idea",
+      "arabicPrompt": "أَوَّلًا، اشْتَرَى الطَّالِبُ تَذْكِرَةً...",
+      "prompt": "What is the first paragraph mainly about?",
+      "options": [
+        { "label": "A student's train trip", "correct": true },
+        { "label": "A student buying a house", "correct": false },
+        { "label": "A student learning to read", "correct": false }
+      ],
+      "explanation": "The paragraph follows one connected event — buying a ticket, traveling, reading on the way, arriving, and returning home — all part of one trip."
+    },
+    {
+      "type": "practice-choice",
+      "title": "Tracking the details",
+      "arabicPrompt": "أَثْنَاءَ الرِّحْلَةِ...",
+      "prompt": "According to the paragraph, what did the student do أَثْنَاءَ (during) the trip?",
+      "options": [
+        { "label": "He read a book", "correct": true },
+        { "label": "He bought a ticket", "correct": false },
+        { "label": "He returned home", "correct": false }
+      ],
+      "explanation": "Buying the ticket happened first (أَوَّلًا) and returning home happened last (أَخِيرًا) — reading the book is specifically what أَثْنَاءَ الرِّحْلَة (during the trip) describes."
+    },
+    {
+      "type": "practice-choice",
+      "title": "What happened while...",
+      "arabicPrompt": "بَيْنَمَا كَانَ الرَّجُلُ فِي الْحَدِيقَةِ...",
+      "prompt": "What happened بَيْنَمَا (while) the man was in the garden?",
+      "options": [
+        { "label": "He suddenly saw a plane in the sky", "correct": true },
+        { "label": "It started raining", "correct": false },
+        { "label": "He went to buy a ticket", "correct": false }
+      ],
+      "explanation": "The second paragraph's event is the plane in the sky — the ticket-buying belongs to the first paragraph, not this one."
+    },
+    {
+      "type": "complete",
+      "title": "You've read your first connected paragraphs",
+      "message": "Two short stories, eight new connectors put to work, and a first look at reading for the main idea instead of just word-by-word. Fully-vowelled paragraphs like these are exactly what real Arabic reading looks like next.",
+      "finishLabel": "Finish"
+    }
+  ]
+}

@@ -71,6 +71,20 @@ const FILES = {
 function lf(s) { return s == null ? s : s.replace(/\r\n/g, "\n"); }
 function readJSON(p) { return JSON.parse(fs.readFileSync(p, "utf8")); }
 
+/* M20-B5: grapheme tiles — one base character plus any trailing combining
+   marks (ḥarakāt / sukūn / shaddah / maddah / dagger-alif). Kept byte-identical
+   to the runtime graphemeTiles() in index.html so a compiled `build` exercise's
+   target array is exactly what exerciseTypes.build expects; the compile step
+   also asserts target.join("") === the source string. */
+const B5_AR_MARKS = "ؐ-ًؚ-ٰٟۖ-ۭ";
+const B5_GRAPHEME_RE = new RegExp("[^\\s" + B5_AR_MARKS + "][" + B5_AR_MARKS + "]*", "g");
+function graphemeTiles(ar) { return (String(ar || "").match(B5_GRAPHEME_RE) || []); }
+function isSpellable(ar) {
+    if (!ar || /\s/.test(ar)) return false;
+    const n = graphemeTiles(ar).length;
+    return n >= 3 && n <= 6;
+}
+
 /* -------------------------------------------------------------------------- */
 /* Load + validate                                                           */
 /* -------------------------------------------------------------------------- */
@@ -129,6 +143,10 @@ function load() {
         const w = readJSON(path.join(CONTENT_DIR, "wordlists", "a1.json"));
         data._wordlists.a1 = Array.isArray(w) ? w : w.a1;
     } catch (e) { /* not authored yet */ }
+    try {
+        const w = readJSON(path.join(CONTENT_DIR, "wordlists", "a2.json"));
+        data._wordlists.a2 = Array.isArray(w) ? w : w.a2;
+    } catch (e) { /* not authored yet */ }
     try { data._lintAllow = readJSON(path.join(CONTENT_DIR, "_lint-allow.json")); } catch (e) { data._lintAllow = {}; }
 
     // M20 — lessons authored as data. content/lessons/*.json, each a
@@ -183,7 +201,10 @@ function load() {
         }
     }
     for (const t of data.texts) {
-        if (!["m8", "m11"].includes(t.source)) errors.push(`text ${t.id}: source "${t.source}" must be m8 or m11`);
+        // m8 = M8 reading passage (carries reduced/unvowelled, feeds readingPassages);
+        // m11 = grammar-demo sentence (carries concept, feeds grammarExamples);
+        // m20 = M20 Phase B reading/dialogue text (reaches lessons only via data-authored lessons).
+        if (!["m8", "m11", "m20"].includes(t.source)) errors.push(`text ${t.id}: source "${t.source}" must be m8, m11 or m20`);
     }
 
     /* prereq graph: every edge resolves, no cycles (M14 has no prereqs — kept for later) */
@@ -329,8 +350,12 @@ function load() {
                 if (!ls.objectives || ls.objectives.length === 0) errors.push(`curriculum lesson ${ls.id}: source "generate" needs at least one objective`);
             } else if (src.startsWith("steps:")) {
                 const key = src.slice(6);
-                if (catalogLessonIds && !catalogLessonIds.has(key))
-                    errors.push(`curriculum lesson ${ls.id}: source "${src}" — no lesson "${key}" in the index.html catalog`);
+                // resolves to an inline index.html catalog lesson OR a
+                // content/lessons/*.json data lesson (folded into the catalog at runtime)
+                const known = (catalogLessonIds && catalogLessonIds.has(key))
+                    || (data.lessons || []).some(L => L && L.id === key);
+                if (catalogLessonIds && !known)
+                    errors.push(`curriculum lesson ${ls.id}: source "${src}" — no lesson "${key}" in the catalog or content/lessons/`);
             } else if (src.startsWith("view:")) {
                 if (!VIEW_TARGETS.has(src.slice(5))) errors.push(`curriculum lesson ${ls.id}: source "${src}" — unknown view`);
             } else {
@@ -351,7 +376,9 @@ function load() {
             "explain", "example-set", "practice-choice", "quiz", "trace-letter",
             "reading-practice", "audio-exercise", "listen-repeat", "exercise", "complete",
         ]);
-        const FROM_OBJECTIVES_OK = new Set(["example-set", "reading-practice"]);
+        // M20-B5: `exercise` steps may also expand from objectives — one `build`
+        // exercise per eligible objective, tiles generated at compile time.
+        const FROM_OBJECTIVES_OK = new Set(["example-set", "reading-practice", "exercise"]);
         const curUnitIds = new Set((data.curriculum ? data.curriculum.units : []).map(u => u.id));
         const catalogIds = data._catalogLessonIds;   // Set or null
         const seenLessonIds = new Set();
@@ -384,8 +411,36 @@ function load() {
                     errors.push(`lesson ${L.id}: step[${j}] type "${s && s.type}" is not a known renderer`);
                 if (s && s.fromObjectives && !FROM_OBJECTIVES_OK.has(s.type))
                     errors.push(`lesson ${L.id}: step[${j}] "fromObjectives" is only valid on ${[...FROM_OBJECTIVES_OK].join(" / ")}`);
-                if (s && s.fromObjectives && !(L.objectives || []).some(oid => { const o = data._objById.get(oid); return o && o.kind === "lexeme"; }))
-                    errors.push(`lesson ${L.id}: step[${j}] "fromObjectives" but the lesson has no lexeme objectives to expand`);
+                if (s && s.fromObjectives) {
+                    // example-set expands lexeme objectives; reading-practice expands
+                    // lexeme AND text objectives; exercise (build) expands lexemes for
+                    // unit "grapheme" and texts for unit "word".
+                    let wantKinds;
+                    if (s.type === "example-set") wantKinds = ["lexeme"];
+                    else if (s.type === "reading-practice") wantKinds = ["lexeme", "text"];
+                    else {
+                        const ex = s.exercise || {};
+                        if (ex.kind !== "build" || !["grapheme", "word"].includes(ex.unit))
+                            errors.push(`lesson ${L.id}: step[${j}] fromObjectives exercise needs exercise.kind "build" and exercise.unit "grapheme" | "word"`);
+                        wantKinds = ex.unit === "word" ? ["text"] : ["lexeme"];
+                    }
+                    const eligible = (L.objectives || [])
+                        .map(oid => data._objById.get(oid))
+                        .filter(o => o && wantKinds.includes(o.kind));
+                    if (!eligible.length)
+                        errors.push(`lesson ${L.id}: step[${j}] "fromObjectives" but the lesson has no ${wantKinds.join("/")} objectives to expand`);
+                    if (s.type === "exercise" && (s.exercise || {}).unit === "grapheme") {
+                        const spellable = eligible.filter(o => isSpellable(o.ar));
+                        if (eligible.length && !spellable.length)
+                            errors.push(`lesson ${L.id}: step[${j}] build/grapheme — no lexeme objective spells to 3–6 tiles`);
+                        for (const o of spellable)
+                            if (graphemeTiles(o.ar).join("") !== o.ar)
+                                errors.push(`lesson ${L.id}: step[${j}] build/grapheme — tiles for ${o.id} do not reconstruct "${o.ar}"`);
+                    }
+                    if (s.type === "exercise" && (s.exercise || {}).unit === "word"
+                        && eligible.length && !eligible.some(o => Array.isArray(o.words) && o.words.length >= 2 && o.words.length <= 6))
+                        errors.push(`lesson ${L.id}: step[${j}] build/word — no text objective has 2–6 words`);
+                }
             });
         }
     }
@@ -517,16 +572,50 @@ function compile(data, legacyMap) {
     // from the referenced objects, so no Arabic is inlined in the lesson file.
     const compiledLessons = (data.lessons || []).map(L => {
         const obj = id => data._objById && data._objById.get(id);
-        const steps = (L.steps || []).map(s => {
+        const steps = (L.steps || []).flatMap(s => {
             if ((s.type === "example-set" || s.type === "reading-practice") && s.fromObjectives) {
-                const lex = (L.objectives || []).map(obj).filter(o => o && o.kind === "lexeme");
+                const objs = (L.objectives || []).map(obj).filter(Boolean);
+                const lex = objs.filter(o => o.kind === "lexeme");
                 const out = Object.assign({}, s); delete out.fromObjectives;
                 const exOf = l => (l.example && l.example.ar)
                     ? [{ arabic: l.example.ar, translit: l.example.translit || "", english: l.example.en || "" }]
                     : [];
-                if (s.type === "example-set") out.items = lex.map(l => ({ symbolWord: l.ar, name: l.en, translit: l.translit, sound: l.pos || "", examples: exOf(l) }));
-                else out.items = lex.map(l => ({ arabic: l.ar, translit: l.translit, english: l.en }));
+                if (s.type === "example-set") {
+                    out.items = lex.map(l => ({ symbolWord: l.ar, name: l.en, translit: l.translit, sound: l.pos || "", examples: exOf(l) }));
+                } else {
+                    // reading-practice: lexeme citation forms, then text example sentences —
+                    // both pulled from the referenced objects, no Arabic inlined in the lesson
+                    const txt = objs.filter(o => o.kind === "text");
+                    out.items = lex.map(l => ({ arabic: l.ar, translit: l.translit, english: l.en }))
+                        .concat(txt.map(t => ({ arabic: t.vowelled, translit: t.translit, english: t.en })));
+                }
                 return out;
+            }
+            // M20-B5: `exercise` + fromObjectives → one `build` exercise step per
+            // eligible objective. Tiles come from graphemeTiles() (grapheme) or the
+            // text's own words[] (word), so no Arabic is inlined in the lesson file.
+            if (s.type === "exercise" && s.fromObjectives) {
+                const ex = s.exercise || {};
+                const objs = (L.objectives || []).map(obj).filter(Boolean);
+                const withAudio = !!ex.audio;
+                const mk = (extra) => ({ type: "exercise", title: s.title, exercise: Object.assign({
+                    kind: "build", unit: ex.unit, skill: "writing",
+                    hint: ex.unit === "word" ? "Tap the words in order, right to left." : "Tap the letters in order, right to left.",
+                }, extra) });
+                if (ex.unit === "grapheme") {
+                    return objs.filter(o => o.kind === "lexeme" && isSpellable(o.ar)).map(l => mk({
+                        objectId: l.id, objectIds: [l.id],
+                        prompt: `Spell “${l.en}” (${l.translit})`,
+                        target: graphemeTiles(l.ar),
+                        ...(withAudio ? { audio: l.ar } : {}),
+                    }));
+                }
+                return objs.filter(o => o.kind === "text" && Array.isArray(o.words) && o.words.length >= 2 && o.words.length <= 6).map(t => mk({
+                    objectId: t.id, objectIds: [t.id],
+                    prompt: `Build the sentence: “${t.en}”`,
+                    target: t.words.map(w => w.surface),
+                    ...(withAudio ? { audio: t.vowelled } : {}),
+                }));
             }
             return s;
         });

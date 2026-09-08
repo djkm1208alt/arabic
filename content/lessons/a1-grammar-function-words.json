@@ -1,0 +1,96 @@
+{
+  "id": "a1-grammar-function-words",
+  "unitId": "a1-u1",
+  "curriculumLessonId": "a1-grammar-function-words",
+  "title": "This, That, My, In, On",
+  "level": "A1",
+  "skills": ["grammar", "reading"],
+  "objectives": [
+    "gr:demonstratives",
+    "gr:attached-possessive",
+    "gr:core-prepositions",
+    "txt:gram-dem-book",
+    "txt:gram-dem-girl",
+    "txt:gram-dem-the-house",
+    "txt:gram-poss-my-book",
+    "txt:gram-poss-your-house",
+    "txt:gram-poss-her-bag",
+    "txt:gram-prep-in-bag",
+    "txt:gram-prep-on-table",
+    "txt:gram-prep-from-city"
+  ],
+  "steps": [
+    {
+      "type": "explain",
+      "title": "The small words that connect things",
+      "body": [
+        "This lesson covers three sets of everyday connecting words: \"this / that\", the endings that mean \"my / your / his / her\", and the common prepositions.",
+        "All the examples use nouns you already know."
+      ]
+    },
+    {
+      "type": "explain",
+      "title": "\"This\"",
+      "body": [
+        "هَذَا points at something masculine, هَذِهِ at something feminine.",
+        "Before an indefinite noun they make a sentence: هَذَا كِتَابٌ — \"This is a book.\"",
+        "Before a definite noun they just mean \"this …\": هَذَا الْكِتَابُ — \"this book\"."
+      ],
+      "previewSymbols": ["هَذَا", "هَذِهِ"]
+    },
+    {
+      "type": "explain",
+      "title": "\"My\", \"your\", \"his\", \"her\"",
+      "body": [
+        "Possession is an ending on the noun, not a separate word: ـِي (my), ـكَ (your, to a man), ـكِ (your, to a woman), ـهُ (his), ـهَا (her).",
+        "كِتَابٌ (a book) → كِتَابِي (my book). A noun with one of these endings is already definite, so it takes no الـ and no tanwīn."
+      ],
+      "previewSymbols": ["كِتَابِي", "بَيْتُكَ", "حَقِيبَتُهَا"]
+    },
+    {
+      "type": "explain",
+      "title": "\"in\", \"on\", \"from\", \"to\"",
+      "body": [
+        "The common prepositions are فِي (in), عَلَى (on), مِنْ (from), إِلَى (to), مَعَ (with), plus بِـ and لِـ which attach to the next word.",
+        "The noun after a preposition changes its ending to ـِ (with الـ) or ـٍ (without): فِي الْبَيْتِ — \"in the house\"."
+      ],
+      "previewSymbols": ["فِي", "عَلَى", "مِنْ"]
+    },
+    {
+      "type": "reading-practice",
+      "title": "Read them aloud",
+      "intro": "Nine short sentences using these connecting words. Tap 🔊 to hear each one, then reveal the meaning.",
+      "fromObjectives": true
+    },
+    {
+      "type": "practice-choice",
+      "title": "Quick check",
+      "arabicPrompt": "هَذِهِ بِنْتٌ",
+      "prompt": "Why هَذِهِ and not هَذَا here?",
+      "options": [
+        { "label": "بِنْت (girl) is feminine, so the demonstrative is feminine too", "correct": true },
+        { "label": "هَذِهِ is used at the start of every sentence", "correct": false },
+        { "label": "هَذِهِ means \"these\", pointing at more than one", "correct": false }
+      ],
+      "explanation": "هَذَا and هَذِهِ agree with the gender of the noun. بِنْت is feminine → هَذِهِ."
+    },
+    {
+      "type": "practice-choice",
+      "title": "Quick check",
+      "arabicPrompt": "الْقَلَمُ عَلَى الطَّاوِلَةِ",
+      "prompt": "Why does الطَّاوِلَةِ end in ـِ, not ـُ?",
+      "options": [
+        { "label": "It follows the preposition عَلَى, which puts the noun in the genitive (ـِ)", "correct": true },
+        { "label": "Feminine nouns always end in ـِ", "correct": false },
+        { "label": "It is a spelling mistake for ـُ", "correct": false }
+      ],
+      "explanation": "A noun right after a preposition takes the genitive ending — ـِ when it has الـ."
+    },
+    {
+      "type": "complete",
+      "title": "Nicely done",
+      "message": "You can now recognise هَذَا / هَذِهِ, the possessive endings, and the core prepositions with their genitive ending. Review them to keep them fresh.",
+      "finishLabel": "Finish"
+    }
+  ]
+}

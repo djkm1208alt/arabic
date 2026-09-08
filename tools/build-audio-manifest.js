@@ -133,6 +133,8 @@ function loadAppData(html) {
         if (!Array.isArray(globalThis[k])) throw new Error(`Expected data array '${k}' was not found — index.html structure changed?`);
         data[k] = globalThis[k];
     }
+    // optional views (added by later milestones); absent-tolerant
+    data.readingTexts = Array.isArray(globalThis.readingTexts) ? globalThis.readingTexts : [];
     return data;
 }
 
@@ -267,6 +269,14 @@ function buildTargets(data) {
         arabic: g.sentence, translit: g.transliteration, english: g.meaning,
         category: "grammar", source: "grammarExamples", sourceId: g.id,
         file: `sentences/${g.id}.mp3`, nativeTarget: true,
+    }));
+
+    // 3.5b sentences + dialogues: M20 Phase B A1 reading/listening texts — Tier 1
+    (data.readingTexts || []).forEach(t => push({
+        id: `sentences/${t.id}`, type: t.textType === "dialogue" ? "dialogue" : "sentence", tier: 1,
+        arabic: t.sentence, translit: t.transliteration, english: t.meaning,
+        category: "reading", source: "readingTexts", sourceId: t.id,
+        file: `sentences/${t.id}.mp3`, nativeTarget: true,
     }));
 
     // 3.6 vocabulary headwords — Tier 2

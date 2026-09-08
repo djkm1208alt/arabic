@@ -24,7 +24,11 @@
     "examples": [
       "txt:gram-verb-he",
       "txt:gram-verb-she",
-      "txt:gram-verb-they"
+      "txt:gram-verb-they",
+      "txt:gram-verb-ana",
+      "txt:gram-verb-anta",
+      "txt:gram-verb-anti",
+      "txt:gram-verb-nahnu"
     ],
     "commonErrors": [],
     "skills": [
@@ -49,6 +53,366 @@
     ],
     "prereqs": [
       "let:lam"
+    ]
+  },
+  {
+    "id": "gr:noun-number",
+    "kind": "grammar",
+    "name": "Singular, dual & plural nouns",
+    "level": "A1",
+    "rule": "An Arabic noun is singular (بَيْتٌ), dual, or plural. The dual is regular — add ـَانِ to any noun: كِتَابٌ ← كِتَابَانِ (two books). Plurals are either sound — masculine ـُونَ (مُعَلِّمُونَ), feminine ـَاتٌ (طَاوِلَاتٌ) — or broken, an internal reshaping learned with each word: كِتَابٌ ← كُتُبٌ. A plural of non-human things is treated as feminine singular for agreement: كُتُبٌ جَمِيلَةٌ.",
+    "examples": [
+      "txt:gram-number-dual",
+      "txt:gram-number-sound-pl",
+      "txt:gram-number-broken-pl"
+    ],
+    "commonErrors": [
+      "Giving a non-human plural a plural adjective: كُتُبٌ كِبَارٌ instead of كُتُبٌ كَبِيرَةٌ.",
+      "Expecting one plural ending for every noun — broken plurals vary and are learned individually."
+    ],
+    "skills": [
+      "grammar",
+      "reading"
+    ],
+    "prereqs": []
+  },
+  {
+    "id": "gr:definiteness",
+    "kind": "grammar",
+    "name": "Definite & indefinite (ال and tanwīn)",
+    "level": "A1",
+    "rule": "A noun is indefinite or definite. Indefinite nouns end in tanwīn — a doubled final vowel, usually ـٌ (\"-un\"): كِتَابٌ (a book). Definite nouns take the prefix الـ and lose the tanwīn: الْكِتَابُ (the book). الـ and tanwīn never appear on the same word.",
+    "examples": [
+      "txt:gram-def-indef",
+      "txt:gram-def-def",
+      "txt:gram-def-sentence"
+    ],
+    "commonErrors": [
+      "Writing الـ and tanwīn together: الْكِتَابٌ.",
+      "Dropping the tanwīn from an indefinite noun — بَاب on its own should be بَابٌ."
+    ],
+    "skills": [
+      "grammar",
+      "reading"
+    ],
+    "prereqs": [
+      "gr:sun-moon"
+    ]
+  },
+  {
+    "id": "gr:nominal-sentence",
+    "kind": "grammar",
+    "name": "The nominal sentence (no verb \"to be\")",
+    "level": "A1",
+    "rule": "A nominal sentence has no verb. It puts a definite topic (mubtadaʾ) next to an indefinite comment (khabar): الْبَيْتُ كَبِيرٌ = \"the-house big\" = \"The house is big.\" Arabic has no present-tense word for \"is\" or \"are\". The khabar agrees with the topic in gender.",
+    "examples": [
+      "txt:gram-nominal-father",
+      "txt:gram-nominal-mother",
+      "txt:gram-nominal-teacher"
+    ],
+    "commonErrors": [
+      "Looking for a word that means \"is\" — there is none.",
+      "Making the khabar definite: الْبَيْتُ الْكَبِيرُ means \"the big house\", not a sentence."
+    ],
+    "skills": [
+      "grammar",
+      "reading"
+    ],
+    "prereqs": [
+      "gr:definiteness"
+    ]
+  },
+  {
+    "id": "gr:demonstratives",
+    "kind": "grammar",
+    "name": "Demonstratives (هَذَا / هَذِهِ / هَؤُلَاءِ)",
+    "level": "A1",
+    "rule": "هَذَا (this, m.), هَذِهِ (this, f.) and هَؤُلَاءِ (these, pl.) point at something and agree with its gender. Before an indefinite noun they form a sentence: هَذَا كِتَابٌ (this is a book). Before a definite noun they mean \"this …\": هَذَا الْكِتَابُ (this book).",
+    "examples": [
+      "txt:gram-dem-book",
+      "txt:gram-dem-girl",
+      "txt:gram-dem-the-house"
+    ],
+    "commonErrors": [
+      "Using هَذَا with a feminine noun: هَذَا بِنْتٌ should be هَذِهِ بِنْتٌ.",
+      "Reading هَذَا الْكِتَابُ as a full sentence — with the definite noun it is just \"this book\"."
+    ],
+    "skills": [
+      "grammar",
+      "reading"
+    ],
+    "prereqs": [
+      "gr:nominal-sentence"
+    ]
+  },
+  {
+    "id": "gr:attached-possessive",
+    "kind": "grammar",
+    "name": "Attached possessive pronouns (ـِي ـكَ ـهُ ـهَا)",
+    "level": "A1",
+    "rule": "Possession is shown by a suffix on the noun, not a separate word: ـِي (my), ـكَ (your, m.), ـكِ (your, f.), ـهُ (his), ـهَا (her). A noun with a possessive suffix is already definite, so it takes no الـ and no tanwīn: كِتَابِي (my book), بَيْتُهُ (his house).",
+    "examples": [
+      "txt:gram-poss-my-book",
+      "txt:gram-poss-your-house",
+      "txt:gram-poss-her-bag"
+    ],
+    "commonErrors": [
+      "Adding الـ to a possessed noun: الْكِتَابِي.",
+      "Keeping the tanwīn before the suffix: كِتَابٌي."
+    ],
+    "skills": [
+      "grammar",
+      "reading"
+    ],
+    "prereqs": [
+      "gr:definiteness"
+    ]
+  },
+  {
+    "id": "gr:core-prepositions",
+    "kind": "grammar",
+    "name": "Core prepositions (فِي عَلَى مِنْ إِلَى مَعَ بِـ لِـ)",
+    "level": "A1",
+    "rule": "The common prepositions are فِي (in), عَلَى (on), مِنْ (from), إِلَى (to), مَعَ (with), and the prefixes بِـ (with / by) and لِـ (for / to). The noun after a preposition is in the genitive — with الـ it ends ـِ (فِي الْبَيْتِ), indefinite it ends ـٍ (فِي بَيْتٍ).",
+    "examples": [
+      "txt:gram-prep-in-bag",
+      "txt:gram-prep-on-table",
+      "txt:gram-prep-from-city"
+    ],
+    "commonErrors": [
+      "Leaving a gap after بِـ or لِـ — they attach directly: بِالْقَلَمِ, not بِ الْقَلَمِ.",
+      "Using the ـُ ending after a preposition: فِي الْبَيْتُ should be فِي الْبَيْتِ."
+    ],
+    "skills": [
+      "grammar",
+      "reading"
+    ],
+    "prereqs": [
+      "gr:definiteness"
+    ]
+  },
+  {
+    "id": "gr:negation-a1",
+    "kind": "grammar",
+    "name": "Negating the nominal sentence (لَيْسَ / لَا / مَا)",
+    "level": "A1",
+    "rule": "To negate a nominal sentence use لَيْسَ (is / are not) before the comment: لَيْسَ الْبَيْتُ كَبِيرًا (the house is not big) — the comment takes ـً after لَيْسَ. لَا negates the noun that follows it (\"no …\", \"there is no …\"); مَا is a plainer \"not\" before the comment.",
+    "examples": [
+      "txt:gram-neg-not-big",
+      "txt:gram-neg-not-book",
+      "txt:gram-neg-no-water"
+    ],
+    "commonErrors": [
+      "Using لَا where لَيْسَ is needed — لَا الْبَيْتُ كَبِيرٌ is not a sentence.",
+      "Forgetting the ـً on the comment after لَيْسَ: لَيْسَ الْبَيْتُ كَبِيرٌ."
+    ],
+    "skills": [
+      "grammar",
+      "reading"
+    ],
+    "prereqs": [
+      "gr:nominal-sentence"
+    ]
+  },
+  {
+    "id": "gr:counted-noun-intro",
+    "kind": "grammar",
+    "name": "Counting nouns: 1-2 vs. 3-10",
+    "level": "A1",
+    "rule": "وَاحِد (one) and اِثْنَان (two) don't count a noun the way English does — the noun itself already shows the number: كِتَابٌ (a book) is already singular, كِتَابَانِ (two books) is already dual (see gr:noun-number) — وَاحِد only gets added for emphasis, agreeing with the noun. From ثَلَاثَة (three) to عَشَرَة (ten), the number is followed by the noun in its plural, genitive form: ثَلَاثَةُ كُتُبٍ (three books). The reversed masculine/feminine agreement you can already see on ثَلَاثَةُ (a \"feminine-form\" number counting a masculine noun) is a real rule, saved for a later, dedicated unit rather than rushed here.",
+    "examples": [
+      "txt:gram-count-one",
+      "txt:gram-count-two",
+      "txt:gram-count-three"
+    ],
+    "commonErrors": [
+      "Treating اِثْنَان + noun like 3-10 and reaching for a plural instead of the dual.",
+      "Expecting the counted noun after 3-10 to look like an English plural rather than the noun's own (often broken) plural, in the genitive."
+    ],
+    "skills": [
+      "grammar",
+      "reading"
+    ],
+    "prereqs": [
+      "gr:noun-number"
+    ]
+  },
+  {
+    "id": "gr:verbal-sentence",
+    "kind": "grammar",
+    "name": "The verbal sentence & past tense (Form I)",
+    "level": "A2",
+    "rule": "Arabic's other sentence type starts with a verb, not a topic: فِعْل – فَاعِل – مَفْعُول (verb – subject – object) is the neutral word order (VSO) — فَعَلَ الْوَلَدُ ذَلِكَ (the boy did that). A subject-first order is also grammatical and common, especially for emphasis or when the subject opens the sentence as a topic. The past tense of a Form I verb like ذَهَبَ (dhahaba, \"he went\" — every verb lexeme's own citation form) conjugates by changing its ending: هُوَ ذَهَبَ، هِيَ ذَهَبَتْ، هُمْ ذَهَبُوا، أَنَا ذَهَبْتُ، أَنْتَ ذَهَبْتَ، أَنْتِ ذَهَبْتِ، نَحْنُ ذَهَبْنَا.",
+    "examples": [
+      "txt:gram-past-vso",
+      "txt:gram-past-1sg",
+      "txt:gram-past-2sg-f"
+    ],
+    "commonErrors": [
+      "Expecting a fixed subject-verb-object order like English — Arabic's default is verb-first, and the verb still agrees with a subject that comes after it.",
+      "Reusing the dictionary form (هو ذَهَبَ) for every person instead of changing the ending — the ending alone carries \"I\", \"you\", \"we\", etc."
+    ],
+    "skills": [
+      "grammar",
+      "reading"
+    ],
+    "prereqs": [
+      "gr:noun-number",
+      "gr:nominal-sentence"
+    ]
+  },
+  {
+    "id": "gr:kana",
+    "kind": "grammar",
+    "name": "كَانَ — the nominal sentence in the past",
+    "level": "A2",
+    "rule": "كَانَ (kāna, \"was / were\") moves a nominal sentence into the past. It works like the nominal sentence's own topic-comment pair, except the comment (خَبَر كَانَ) becomes accusative: الْبَيْتُ كَبِيرٌ (the house is big) → كَانَ الْبَيْتُ كَبِيرًا (the house was big) — بَيْتُ stays nominative as كان's own subject (اِسْم كَانَ), and كَبِيرٌ's tanwīn shifts from ـٌ to ـًا. كان's own conjugation is irregular (a hollow root, و, that disappears in some forms): كَانَ (he was), كَانَتْ (she was), كَانُوا (they were), كُنْتُ (I was).",
+    "examples": [
+      "txt:gram-kana-house",
+      "txt:gram-kana-fem",
+      "txt:gram-kana-1sg"
+    ],
+    "commonErrors": [
+      "Leaving the comment nominative after كان: كَانَ الْبَيْتُ كَبِيرٌ should be كَانَ الْبَيْتُ كَبِيرًا.",
+      "Conjugating كان like a regular Form I verb — its middle radical (و) drops out in several forms, so it must be learned as its own irregular pattern."
+    ],
+    "skills": [
+      "grammar",
+      "reading"
+    ],
+    "prereqs": [
+      "gr:nominal-sentence",
+      "gr:gender-agreement"
+    ]
+  },
+  {
+    "id": "gr:idafa",
+    "kind": "grammar",
+    "name": "The genitive construct (إِضَافَة / iḍāfa)",
+    "level": "A2",
+    "rule": "Two nouns in sequence express possession — no word for \"of\" is needed: بَيْتُ الرَّجُلِ (the man's house, literally \"house-of the-man\"). The first noun (مُضَاف) takes whatever case its role in the sentence needs but drops its own الـ and tanwīn; the second noun (مُضَاف إِلَيْهِ) is always genitive and carries the definiteness for the whole phrase — the first noun is never written with الـ even though the phrase as a whole is definite.",
+    "examples": [
+      "txt:gram-idafa-phrase",
+      "txt:gram-idafa-sentence",
+      "txt:gram-idafa-pen-student"
+    ],
+    "commonErrors": [
+      "Adding الـ to the first noun: الْبَيْتُ الرَّجُلِ is wrong — only the second noun takes الـ.",
+      "Forgetting the genitive on the second noun — بَيْتُ الرَّجُلُ should be بَيْتُ الرَّجُلِ.",
+      "Inserting an adjective between the two nouns — a describing word goes after the whole iḍāfa, not inside it."
+    ],
+    "skills": [
+      "grammar",
+      "reading"
+    ],
+    "prereqs": [
+      "gr:definiteness"
+    ]
+  },
+  {
+    "id": "gr:numbers-11-99",
+    "kind": "grammar",
+    "name": "Counting 11-99 and كِتَابًا vs. كُتُبٍ",
+    "level": "A2",
+    "rule": "11 through 99 share one big difference from 3-10: the counted noun is singular and accusative (تمييز), not plural genitive — عِنْدِي خَمْسَةَ عَشَرَ كِتَابًا (fifteen books), never a plural. أَحَدَ عَشَرَ (11) and اثْنَا عَشَرَ (12) are irregular compounds, each with its own feminine (إِحْدَى عَشْرَةَ، اثْنَتَا عَشْرَةَ) — best learned as a pair rather than derived from a rule. From 13 to 19 the pattern is systematic: the ones-digit keeps the reversed agreement already known from 3-10 (ثَلَاثَةَ عَشَرَ), while عَشَر/عَشْرَة agrees normally with the noun's gender instead. 20 through 90 are invariant — the same word counts a masculine or feminine noun alike (عِشْرُونَ) — though they still change for case: عِشْرُونَ (nominative), عِشْرِينَ (accusative/genitive), unlike 11-19 which stay fixed regardless of case. 21-99 compound as ones-digit + وَ + tens (وَاحِدٌ وَعِشْرُونَ, 21) — the ones-digit behaves exactly as it would alone. مِائَة (100) is different again: it governs a singular GENITIVE noun through iḍāfa, not accusative — مِائَةُ كِتَابٍ.",
+    "examples": [
+      "txt:gram-num-11m",
+      "txt:gram-num-11f",
+      "txt:gram-num-15m",
+      "txt:gram-num-15f",
+      "txt:gram-num-20",
+      "txt:gram-num-21",
+      "txt:gram-num-100"
+    ],
+    "commonErrors": [
+      "Using a plural noun after 11-99 the way 3-10 do: أَحَدَ عَشَرَ كُتُبٍ is wrong — it should be أَحَدَ عَشَرَ كِتَابًا.",
+      "Changing عِشْرُونَ (or any tens word) for gender — it's invariant; only a compound's ones-digit (like the وَاحِدٌ in 21) changes.",
+      "Treating مِائَة like 11-99 and giving it an accusative noun — مِائَة takes a genitive noun instead, the same government as 3-10."
+    ],
+    "skills": [
+      "grammar",
+      "reading"
+    ],
+    "prereqs": [
+      "gr:counted-noun-intro"
+    ]
+  },
+  {
+    "id": "gr:telling-time",
+    "kind": "grammar",
+    "name": "Telling time (السَّاعَة + the ordinal)",
+    "level": "A2",
+    "rule": "Telling time pairs a definite noun, السَّاعَة (the hour/clock), with a definite ordinal agreeing with it — a complete phrase on its own, the same way English can just answer \"two o'clock\" with no verb: السَّاعَةُ الثَّانِيَةُ (it's two o'clock). One o'clock is the one exception: it uses the cardinal الْوَاحِدَة (feminine \"one\"), not an ordinal — there's no \"الأُولَى o'clock\". Two through ten use the plain ordinal (الثَّانِيَة، الثَّالِثَة، الرَّابِعَة…); eleven and twelve compound an ordinal ones-word with the teen-marker exactly the way cardinal numbers do (الْحَادِيَةَ عَشْرَةَ، الثَّانِيَةَ عَشْرَةَ) — and stay fixed on ـَ regardless of case, the same indeclinable pattern the cardinal teens already showed. Minutes attach with وَ for \"past\" (السَّاعَةُ الثَّانِيَةُ وَالنِّصْفُ, half past two) or إِلَّا for \"to\" (السَّاعَةُ الرَّابِعَةُ إِلَّا رُبْعًا, quarter to four).",
+    "examples": [
+      "txt:gram-time-one",
+      "txt:gram-time-two",
+      "txt:gram-time-twelve",
+      "txt:gram-time-half",
+      "txt:gram-time-quarter-past",
+      "txt:gram-time-quarter-to"
+    ],
+    "commonErrors": [
+      "Using the cardinal (اثنان) instead of the ordinal (الثَّانِيَة) for two o'clock and beyond.",
+      "Reaching for الأُولَى (the ordinal \"first\") for one o'clock — it's the one hour that keeps the cardinal, الْوَاحِدَة.",
+      "Using وَ where إِلَّا is needed — quarter TO the hour is إِلَّا, not وَ: السَّاعَةُ الرَّابِعَةُ إِلَّا رُبْعًا, not وَرُبْع."
+    ],
+    "skills": [
+      "grammar",
+      "reading"
+    ],
+    "prereqs": [
+      "gr:numbers-11-99"
+    ]
+  },
+  {
+    "id": "gr:dates",
+    "kind": "grammar",
+    "name": "Dates (the ordinal + مِنْ + the month)",
+    "level": "A2",
+    "rule": "A date pairs a definite ordinal with the month via مِنْ: الثَّالِثُ مِنْ سِبْتَمْبِر (the third of September) — a complete phrase on its own, the same elliptical pattern already used for telling time. Because يَوْم (day) is masculine, unlike السَّاعَة, dates use the masculine ordinals — the exact same roots already known from telling time's feminine set (ثَانِي، ثَالِث، رَابِع…), just without the ة. أَوَّل (1st) is irregular, its own word rather than built on that shared pattern. ثَانِي (2nd) is a defective noun (نَاقِص): its true indefinite form drops the ي with tanwīn (ثَانٍ), while the definite form used in dates keeps it (الثَّانِي). Month names are transliterated loanwords and, like other such proper nouns, are treated here without extra case marking of their own. To turn the bare date-phrase into a full sentence, add هُوَ, referring back to الْيَوْمَ (today, accusative — the normal case for a time adverbial): الْيَوْمَ هُوَ الْخَامِسُ مِنْ مَارِس (today is the fifth of March).",
+    "examples": [
+      "txt:gram-date-first",
+      "txt:gram-date-third",
+      "txt:gram-date-tenth",
+      "txt:gram-date-sentence"
+    ],
+    "commonErrors": [
+      "Using a cardinal instead of an ordinal for the day: خَمْسَة مِنْ مَارِس instead of الْخَامِسُ مِنْ مَارِس.",
+      "Reaching for the feminine ordinal used for telling time instead of the masculine — يَوْم is masculine, unlike السَّاعَة.",
+      "Treating أَوَّل like the other ordinals — it doesn't follow the فَاعِل pattern the rest share."
+    ],
+    "skills": [
+      "grammar",
+      "reading"
+    ],
+    "prereqs": [
+      "gr:numbers-11-99"
+    ]
+  },
+  {
+    "id": "gr:root-pattern",
+    "kind": "grammar",
+    "name": "Root & pattern (الجَذْر وَالوَزْن)",
+    "level": "A2",
+    "rule": "Most Arabic words are built from a root (جَذْر) — usually three consonants carrying a core, abstract meaning — poured into a pattern (وَزْن) that adds a grammatical role: a place, an instrument, an action, a doer. كَتَبَ (he wrote), كِتَاب (book), and مَكْتَبَة (library) all share the root ك-ت-ب (\"write\"); the vowels and extra letters around those three consonants belong to the pattern, not the root. A bare root isn't itself a pronounceable word — د-ر-س only becomes sayable once a pattern is applied: دَرْس (lesson), مَدْرَسَة (school, literally \"the place where studying happens\"). Recognising a shared root is a shortcut to guessing an unfamiliar word's rough meaning long before you know the whole vocabulary.",
+    "examples": [
+      "txt:gram-root-katab",
+      "txt:gram-root-taam",
+      "txt:gram-root-jadid",
+      "txt:gram-root-khamis"
+    ],
+    "commonErrors": [
+      "Assuming any two words that merely look alike share a root — root-sharing means the same three consonants in the same order, not surface resemblance.",
+      "Expecting one pattern to always carry one fixed meaning — patterns are strong tendencies (مَفْعَل often marks \"place of,\" مِفْعَال often marks \"instrument\"), not absolute rules; the same pattern surfaces different senses on different roots.",
+      "Treating the root like an English base word that gets prefixes/suffixes stuck on it — the root is an abstract three-consonant skeleton that never stands alone as a word; it gets its vowels and shape entirely from the pattern poured into it."
+    ],
+    "skills": [
+      "grammar",
+      "vocabulary",
+      "reading"
+    ],
+    "prereqs": [
+      "gr:idafa"
     ]
   }
 ]

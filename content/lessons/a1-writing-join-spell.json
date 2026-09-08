@@ -1,0 +1,63 @@
+{
+  "id": "a1-writing-join-spell",
+  "unitId": "a1-u1",
+  "curriculumLessonId": "a1-writing-join-spell",
+  "title": "Joining Letters, Spelling Words",
+  "level": "A1",
+  "skills": ["writing", "reading"],
+  "objectives": [
+    "lex:peo-20", "lex:peo-15", "lex:peo-16",
+    "lex:pla-14", "lex:foo-18", "lex:tim-22"
+  ],
+  "steps": [
+    {
+      "type": "explain",
+      "title": "A letter changes shape by position",
+      "body": [
+        "Most Arabic letters have four shapes: on their own, at the start of a word, in the middle, and at the end. The core of the letter stays the same — only the connecting strokes change.",
+        "Take ب: on its own it is بـ at the start, ـبـ in the middle, ـب at the end. Same dot, same bowl — it just grows a joining tail.",
+        "When you write a word, you are really writing one connected shape, not separate letters with gaps."
+      ],
+      "previewSymbols": ["بـ", "ـبـ", "ـب"]
+    },
+    {
+      "type": "explain",
+      "title": "Six letters that never join forward",
+      "body": [
+        "Six letters — ا د ذ ر ز و — connect to the letter before them but never to the letter after them. They have no start or middle shape, only on-its-own and end.",
+        "So after one of these six, the next letter starts fresh as if it were the beginning of the word. In وَلَد (walad, \"boy\"), the و stands alone, then لَد joins up.",
+        "Every other letter joins on both sides when it can."
+      ],
+      "previewSymbols": ["ا", "د", "ذ", "ر", "ز", "و"]
+    },
+    {
+      "type": "reading-practice",
+      "title": "Six short words",
+      "intro": "Read each word, then tap 🔊 to hear it. Notice which letters join and which stand apart. Reveal the meaning to check yourself.",
+      "fromObjectives": true
+    },
+    {
+      "type": "exercise",
+      "title": "Spell each word",
+      "fromObjectives": true,
+      "exercise": { "kind": "build", "unit": "grapheme" }
+    },
+    {
+      "type": "practice-choice",
+      "title": "Quick check",
+      "prompt": "Which of these letters does NOT join to the letter that follows it?",
+      "options": [
+        { "label": "د", "correct": true },
+        { "label": "ب", "correct": false },
+        { "label": "ن", "correct": false }
+      ],
+      "explanation": "د is one of the six non-connectors (ا د ذ ر ز و). ب and ن join on both sides."
+    },
+    {
+      "type": "complete",
+      "title": "You spelled six words",
+      "message": "You saw how a letter changes shape by position, which six letters never join forward, and you spelled six A1 words letter by letter. Keep them in the Review view.",
+      "finishLabel": "Finish"
+    }
+  ]
+}

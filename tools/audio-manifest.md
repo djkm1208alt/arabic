@@ -7,19 +7,23 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 
 | | count |
 |---|---:|
-| Distinct targets | 359 |
-| — Tier 1 (foundation) | 98 |
-| — Tier 2 (vocabulary) | 183 |
-| — Tier 3 (stays TTS) | 78 |
-| Unique native recordings needed (Tier 1+2) | 275 |
+| Distinct targets | 697 |
+| — Tier 1 (foundation) | 181 |
+| — Tier 2 (vocabulary) | 439 |
+| — Tier 3 (stays TTS) | 77 |
+| Unique native recordings needed (Tier 1+2) | 608 |
 | — of those, present on disk | 0 |
-| — still missing | 275 |
-| Aliases (share another recording) | 6 |
+| — still missing | 608 |
+| Aliases (share another recording) | 12 |
 
 ## Tier 1 — Foundation
 
 | file | Arabic | translit | English | role | playback |
 |---|---|---|---|---|---|
+| `sentences/read-dlg-asking-way.mp3` | أَيْنَ الْمَحَطَّةُ؟ — الْمَحَطَّةُ هُنَاكَ، عَلَى الْيَمِينِ | ayna al-maḥaṭṭatu? — al-maḥaṭṭatu hunāka, ʿalā al-yamīni | — Where is the station? — The station is over there, on the right. | recording | tts |
+| `sentences/read-dlg-greeting.mp3` | السَّلَامُ عَلَيْكُمْ — وَعَلَيْكُمُ السَّلَامُ — كَيْفَ حَالُكَ؟ — أَنَا بِخَيْرٍ، شُكْرًا | as-salāmu ʿalaykum — wa-ʿalaykumu s-salāmu — kayfa ḥāluka? — anā bikhayrin, shukran | — Peace be upon you. — And upon you be peace. — How are you? — I'm fine, thank you. | recording | tts |
+| `sentences/read-dlg-name.mp3` | مَا اسْمُكِ؟ — اسْمِي سَارَةُ — تَشَرَّفْنَا | mā ismuki? — ismī sāratu — tasharrafnā | — What is your name? — My name is Sara. — Nice to meet you. | recording | tts |
+| `sentences/read-dlg-who-is-this.mp3` | مَنْ هَذَا؟ — هَذَا صَدِيقِي مُحَمَّدٌ — أَهْلًا وَسَهْلًا | man hādhā? — hādhā ṣadīqī muḥammadun — ahlan wa-sahlan | — Who is this? — This is my friend Muhammad. — Welcome. | recording | tts |
 | `letters/alif.mp3` | ا | alif | letter “alif” (isolated form) | recording | tts |
 | `letters/ayn.mp3` | ع | ʿayn | letter “ʿayn” (isolated form) | recording | tts |
 | `letters/ba.mp3` | ب | bāʾ | letter “bāʾ” (isolated form) | recording | tts |
@@ -82,11 +86,90 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `marks/fathatayn.mp3` | فً | an | fatḥatayn on a carrier letter | recording | tts |
 | `marks/kasra.mp3` | فِ | i | kasrah on a carrier letter | recording | tts |
 | `marks/kasratayn.mp3` | فٍ | in | kasratayn on a carrier letter | recording | tts |
+| `sentences/gram-count-one.mp3` | عِنْدِي كِتَابٌ وَاحِدٌ | ʿindī kitābun wāḥidun | I have one book. | recording | tts |
+| `sentences/gram-count-three.mp3` | عِنْدِي ثَلَاثَةُ كُتُبٍ | ʿindī thalāthatu kutubin | I have three books. | recording | tts |
+| `sentences/gram-count-two.mp3` | عِنْدِي كِتَابَانِ | ʿindī kitābāni | I have two books. | recording | tts |
+| `sentences/gram-date-first.mp3` | الْأَوَّلُ مِنْ يَنَايِر | al-awwalu min yanāyir | the first of January | recording | tts |
+| `sentences/gram-date-sentence.mp3` | الْيَوْمَ هُوَ الْخَامِسُ مِنْ مَارِس | al-yawma huwa al-khāmisu min māris | Today is the fifth of March. | recording | tts |
+| `sentences/gram-date-tenth.mp3` | الْعَاشِرُ مِنْ دِيسِمْبِر | al-ʿāshiru min dīsimbir | the tenth of December | recording | tts |
+| `sentences/gram-date-third.mp3` | الثَّالِثُ مِنْ سِبْتَمْبِر | ath-thālithu min sibtambir | the third of September | recording | tts |
+| `sentences/gram-def-def.mp3` | الْبَابُ | al-bābu | the door | recording | tts |
+| `sentences/gram-def-indef.mp3` | بَابٌ | bābun | a door | recording | tts |
+| `sentences/gram-def-sentence.mp3` | الْقَلَمُ جَدِيدٌ | al-qalamu jadīdun | The pen is new. | recording | tts |
+| `sentences/gram-dem-book.mp3` | هَذَا كِتَابٌ | hādhā kitābun | This is a book. | recording | tts |
+| `sentences/gram-dem-girl.mp3` | هَذِهِ بِنْتٌ | hādhihi bintun | This is a girl. | recording | tts |
+| `sentences/gram-dem-the-house.mp3` | هَذَا الْبَيْتُ كَبِيرٌ | hādhā al-baytu kabīrun | This house is big. | recording | tts |
 | `sentences/gram-gender-bint.mp3` | الْبِنْتُ كَبِيرَةٌ | al-bintu kabīratun | The girl is big. | recording | tts |
+| `sentences/gram-idafa-pen-student.mp3` | قَلَمُ الطَّالِبِ جَدِيدٌ | qalamu aṭ-ṭālibi jadīdun | The student's pen is new. | recording | tts |
+| `sentences/gram-idafa-phrase.mp3` | بَابُ الْبَيْتِ | bābu al-bayti | the door of the house | recording | tts |
+| `sentences/gram-idafa-sentence.mp3` | بَيْتُ الرَّجُلِ كَبِيرٌ | baytu ar-rajuli kabīrun | The man's house is big. | recording | tts |
+| `sentences/gram-kana-1sg.mp3` | كُنْتُ فِي الْبَيْتِ | kuntu fī al-bayti | I was at home. | recording | tts |
+| `sentences/gram-kana-fem.mp3` | كَانَتِ الْمَرْأَةُ كَبِيرَةً | kānati al-marʾatu kabīratan | The woman was old. | recording | tts |
+| `sentences/gram-kana-house.mp3` | كَانَ الْبَيْتُ كَبِيرًا | kāna al-baytu kabīran | The house was big. | recording | tts |
+| `sentences/gram-neg-no-water.mp3` | لَا مَاءَ فِي الْحَقِيبَةِ | lā māʾa fī al-ḥaqībati | There is no water in the bag. | recording | tts |
+| `sentences/gram-neg-not-big.mp3` | لَيْسَ الْبَيْتُ كَبِيرًا | laysa al-baytu kabīran | The house is not big. | recording | tts |
+| `sentences/gram-neg-not-book.mp3` | هَذَا لَيْسَ كِتَابًا | hādhā laysa kitāban | This is not a book. | recording | tts |
+| `sentences/gram-nominal-father.mp3` | الْأَبُ سَعِيدٌ | al-abu saʿīdun | The father is happy. | recording | tts |
+| `sentences/gram-nominal-mother.mp3` | الْأُمُّ سَعِيدَةٌ | al-ummu saʿīdatun | The mother is happy. | recording | tts |
+| `sentences/gram-nominal-teacher.mp3` | الْمُعَلِّمُ فِي الْمَدْرَسَةِ | al-muʿallimu fī al-madrasati | The teacher is in the school. | recording | tts |
+| `sentences/gram-num-100.mp3` | عِنْدِي مِائَةُ كِتَابٍ | ʿindī miʾatu kitābin | I have a hundred books. | recording | tts |
+| `sentences/gram-num-11f.mp3` | عِنْدِي إِحْدَى عَشْرَةَ طَالِبَةً | ʿindī iḥdā ʿashrata ṭālibatan | I have eleven female students. | recording | tts |
+| `sentences/gram-num-11m.mp3` | عِنْدِي أَحَدَ عَشَرَ كِتَابًا | ʿindī aḥada ʿashara kitāban | I have eleven books. | recording | tts |
+| `sentences/gram-num-15f.mp3` | عِنْدِي خَمْسَ عَشْرَةَ طَالِبَةً | ʿindī khamsa ʿashrata ṭālibatan | I have fifteen female students. | recording | tts |
+| `sentences/gram-num-15m.mp3` | عِنْدِي خَمْسَةَ عَشَرَ كِتَابًا | ʿindī khamsata ʿashara kitāban | I have fifteen books. | recording | tts |
+| `sentences/gram-num-20.mp3` | عِنْدِي عِشْرُونَ كِتَابًا | ʿindī ʿishrūna kitāban | I have twenty books. | recording | tts |
+| `sentences/gram-num-21.mp3` | عِنْدِي وَاحِدٌ وَعِشْرُونَ كِتَابًا | ʿindī wāḥidun wa-ʿishrūna kitāban | I have twenty-one books. | recording | tts |
+| `sentences/gram-number-broken-pl.mp3` | الْكُتُبُ جَمِيلَةٌ | al-kutubu jamīlatun | The books are beautiful. | recording | tts |
+| `sentences/gram-number-dual.mp3` | الْكِتَابَانِ جَدِيدَانِ | al-kitābāni jadīdāni | The two books are new. | recording | tts |
+| `sentences/gram-number-sound-pl.mp3` | هُمْ مُعَلِّمُونَ | hum muʿallimūna | They are teachers. | recording | tts |
+| `sentences/gram-past-1sg.mp3` | أَنَا قَرَأْتُ الْكِتَابَ | anā qaraʾtu al-kitāba | I read the book. | recording | tts |
+| `sentences/gram-past-2sg-f.mp3` | أَنْتِ ذَهَبْتِ إِلَى الْبَيْتِ | anti dhahabti ilā al-bayti | You (f.) went home. | recording | tts |
+| `sentences/gram-past-vso.mp3` | ذَهَبَ الرَّجُلُ إِلَى الْمَدْرَسَةِ | dhahaba ar-rajulu ilā al-madrasati | The man went to school. | recording | tts |
+| `sentences/gram-poss-her-bag.mp3` | حَقِيبَتُهَا جَمِيلَةٌ | ḥaqībatuhā jamīlatun | Her bag is beautiful. | recording | tts |
+| `sentences/gram-poss-my-book.mp3` | كِتَابِي جَدِيدٌ | kitābī jadīdun | My book is new. | recording | tts |
+| `sentences/gram-poss-your-house.mp3` | بَيْتُكَ كَبِيرٌ | baytuka kabīrun | Your house is big. | recording | tts |
+| `sentences/gram-prep-from-city.mp3` | هُوَ مِنَ الْمَدِينَةِ | huwa mina al-madīnati | He is from the city. | recording | tts |
+| `sentences/gram-prep-in-bag.mp3` | الْكِتَابُ فِي الْحَقِيبَةِ | al-kitābu fī al-ḥaqībati | The book is in the bag. | recording | tts |
+| `sentences/gram-prep-on-table.mp3` | الْقَلَمُ عَلَى الطَّاوِلَةِ | al-qalamu ʿalā aṭ-ṭāwilati | The pen is on the table. | recording | tts |
+| `sentences/gram-price-hundred.mp3` | هَذِهِ السَّاعَةُ بِمِائَةِ رِيَالٍ | hādhihi as-sāʿatu bi-miʾati riyālin | This watch is for a hundred riyals. | recording | tts |
+| `sentences/gram-price-ten.mp3` | هَذَا الْكِتَابُ بِعَشَرَةِ دُولَارَاتٍ | hādhā al-kitābu bi-ʿasharati dūlārātin | This book is for ten dollars. | recording | tts |
+| `sentences/gram-price-twenty.mp3` | هَذَا الْقَلَمُ بِعِشْرِينَ دِينَارًا | hādhā al-qalamu bi-ʿishrīna dīnāran | This pen is for twenty dinars. | recording | tts |
+| `sentences/gram-root-jadid.mp3` | بَيْتُ جَدِّي جَدِيدٌ | baytu jaddī jadīdun | My grandfather's house is new. | recording | tts |
+| `sentences/gram-root-katab.mp3` | هَذَا كِتَابٌ مِنَ الْمَكْتَبَةِ | hādhā kitābun mina al-maktabati | This is a book from the library. | recording | tts |
+| `sentences/gram-root-khamis.mp3` | الْخَمِيسُ هُوَ الْيَوْمُ الْخَامِسُ | al-khamīsu huwa al-yawmu al-khāmisu | Thursday is the fifth day. | recording | tts |
+| `sentences/gram-root-taam.mp3` | الطَّعَامُ فِي الْمَطْعَمِ لَذِيذٌ | aṭ-ṭaʿāmu fī al-maṭʿami ladhīdhun | The food in the restaurant is delicious. | recording | tts |
 | `sentences/gram-sunletter-shams.mp3` | الشَّمْسُ كَبِيرَةٌ | ash-shamsu kabīratun | The sun is big. | recording | tts |
+| `sentences/gram-time-half.mp3` | السَّاعَةُ الثَّانِيَةُ وَالنِّصْفُ | as-sāʿatu ath-thāniyatu wa-n-niṣfu | It's half past two. | recording | tts |
+| `sentences/gram-time-one.mp3` | السَّاعَةُ الْوَاحِدَةُ | as-sāʿatu al-wāḥidatu | It's one o'clock. | recording | tts |
+| `sentences/gram-time-quarter-past.mp3` | السَّاعَةُ الثَّالِثَةُ وَالرُّبْعُ | as-sāʿatu ath-thālithatu wa-r-rubʿu | It's quarter past three. | recording | tts |
+| `sentences/gram-time-quarter-to.mp3` | السَّاعَةُ الرَّابِعَةُ إِلَّا رُبْعًا | as-sāʿatu ar-rābiʿatu illā rubʿan | It's quarter to four. | recording | tts |
+| `sentences/gram-time-twelve.mp3` | السَّاعَةُ الثَّانِيَةَ عَشْرَةَ | as-sāʿatu ath-thāniyata ʿashrata | It's twelve o'clock. | recording | tts |
+| `sentences/gram-time-two.mp3` | السَّاعَةُ الثَّانِيَةُ | as-sāʿatu ath-thāniyatu | It's two o'clock. | recording | tts |
+| `sentences/gram-verb-ana.mp3` | أَنَا أَذْهَبُ إِلَى الْمَدْرَسَةِ | anā adhhabu ilā al-madrasati | I go to school. | recording | tts |
+| `sentences/gram-verb-anta.mp3` | أَنْتَ تَذْهَبُ إِلَى الْمَدْرَسَةِ | anta tadhhabu ilā al-madrasati | You (m.) go to school. | recording | tts |
+| `sentences/gram-verb-anti.mp3` | أَنْتِ تَذْهَبِينَ إِلَى الْمَدْرَسَةِ | anti tadhhabīna ilā al-madrasati | You (f.) go to school. | recording | tts |
 | `sentences/gram-verb-he.mp3` | هُوَ يَذْهَبُ إِلَى الْمَدْرَسَةِ | huwa yadhhabu ilā al-madrasati | He goes to school. | recording | tts |
+| `sentences/gram-verb-nahnu.mp3` | نَحْنُ نَذْهَبُ إِلَى الْمَدْرَسَةِ | naḥnu nadhhabu ilā al-madrasati | We go to school. | recording | tts |
 | `sentences/gram-verb-she.mp3` | هِيَ تَذْهَبُ إِلَى الْمَدْرَسَةِ | hiya tadhhabu ilā al-madrasati | She goes to school. | recording | tts |
 | `sentences/gram-verb-they.mp3` | هُمْ يَذْهَبُونَ إِلَى الْمَدْرَسَةِ | hum yadhhabūna ilā al-madrasati | They go to school. | recording | tts |
+| `sentences/read-bag-new.mp3` | الْحَقِيبَةُ جَدِيدَةٌ | al-ḥaqībatu jadīdatun | The bag is new. | recording | tts |
+| `sentences/read-bag-under-chair.mp3` | الْحَقِيبَةُ تَحْتَ الْكُرْسِيِّ | al-ḥaqībatu taḥta al-kursiyyi | The bag is under the chair. | recording | tts |
+| `sentences/read-book-on-table.mp3` | الْكِتَابُ عَلَى الطَّاوِلَةِ | al-kitābu ʿalā aṭ-ṭāwilati | The book is on the table. | recording | tts |
+| `sentences/read-coffee-delicious.mp3` | الْقَهْوَةُ لَذِيذَةٌ | al-qahwatu ladhīdhatun | The coffee is delicious. | recording | tts |
+| `sentences/read-friend-university.mp3` | صَدِيقِي فِي الْجَامِعَةِ | ṣadīqī fī al-jāmiʿati | My friend is at the university. | recording | tts |
+| `sentences/read-he-engineer.mp3` | هُوَ مُهَنْدِسٌ | huwa muhandisun | He is an engineer. | recording | tts |
+| `sentences/read-i-student.mp3` | أَنَا طَالِبٌ | anā ṭālibun | I am a student. | recording | tts |
+| `sentences/read-not-cold-today.mp3` | لَيْسَ الطَّقْسُ بَارِدًا الْيَوْمَ | laysa aṭ-ṭaqsu bāridan al-yawma | The weather is not cold today. | recording | tts |
+| `sentences/read-para-garden.mp3` | ذَاتَ يَوْمٍ، كَانَ الطَّقْسُ جَمِيلًا. بَيْنَمَا كَانَ الرَّجُلُ فِي الْحَدِيقَةِ، رَأَى طَائِرَةً فِي السَّمَاءِ فَجْأَةً. طَبْعًا، كَانَ سَعِيدًا. | dhāta yawmin, kāna aṭ-ṭaqsu jamīlan. baynamā kāna ar-rajulu fī al-ḥadīqati, raʾā ṭāʾiratan fī as-samāʾi fajʾatan. ṭabʿan, kāna saʿīdan. | One day, the weather was beautiful. While the man was in the garden, he suddenly saw a plane in the sky. Of course, he was happy. | recording | tts |
+| `sentences/read-para-trip.mp3` | أَوَّلًا، اشْتَرَى الطَّالِبُ تَذْكِرَةً. ثُمَّ سَافَرَ بِالْقِطَارِ إِلَى الْمَدِينَةِ. أَثْنَاءَ الرِّحْلَةِ، قَرَأَ كِتَابًا. أَخِيرًا، وَصَلَ الْقِطَارُ، وَرَجَعَ الطَّالِبُ إِلَى الْبَيْتِ. كَانَ سَعِيدًا. | awwalan, ishtarā aṭ-ṭālibu tadhkiratan. thumma sāfara bi-al-qiṭāri ilā al-madīnati. athnāʾa ar-riḥlati, qaraʾa kitāban. akhīran, waṣala al-qiṭāru, wa-rajaʿa aṭ-ṭālibu ilā al-bayti. kāna saʿīdan. | First, the student bought a ticket. Then he traveled by train to the city. During the trip, he read a book. Finally, the train arrived, and the student returned home. He was happy. | recording | tts |
+| `sentences/read-parents-office-home.mp3` | الْأَبُ فِي الْمَكْتَبِ وَالْأُمُّ فِي الْبَيْتِ | al-abu fī al-maktabi wa-al-ummu fī al-bayti | The father is in the office and the mother is at home. | recording | tts |
+| `sentences/read-room-clean.mp3` | الْغُرْفَةُ نَظِيفَةٌ | al-ghurfatu naẓīfatun | The room is clean. | recording | tts |
+| `sentences/read-that-man-doctor.mp3` | ذَلِكَ الرَّجُلُ طَبِيبٌ | dhālika ar-rajulu ṭabībun | That man is a doctor. | recording | tts |
+| `sentences/read-this-my-bag.mp3` | هَذِهِ حَقِيبَتِي | hādhihi ḥaqībatī | This is my bag. | recording | tts |
+| `sentences/read-this-my-house.mp3` | هَذَا بَيْتِي | hādhā baytī | This is my house. | recording | tts |
+| `sentences/read-this-not-my-pen.mp3` | هَذَا لَيْسَ قَلَمِي | hādhā laysa qalamī | This is not my pen. | recording | tts |
+| `sentences/read-tired-but-happy.mp3` | أَنَا مُتْعَبٌ لَكِنْ سَعِيدٌ | anā mutʿabun lākin saʿīdun | I am tired but happy. | recording | tts |
+| `sentences/read-weather-hot.mp3` | الطَّقْسُ حَارٌّ | aṭ-ṭaqsu ḥārrun | The weather is hot. | recording | tts |
 | `sentences/sent-book-beautiful.mp3` | الْكِتَابُ جَمِيلٌ | al-kitābu jamīlun | The book is beautiful. | recording | tts |
 | `sentences/sent-book-beautiful.mp3` | الْكتاب جميل | al-kitābu jamīlun | The book is beautiful. | alias | tts |
 | `sentences/sent-book-beautiful.mp3` | الكتاب جميل | al-kitābu jamīlun | The book is beautiful. | alias | tts |
@@ -139,6 +222,25 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `sentences/ver-03-ex.mp3` | شَرِبَ الْمَاء. |  | He drank the water. | recording | tts |
 | `sentences/ver-05-ex.mp3` | قَرَأَتِ الْكِتَاب. |  | She read the book. | recording | tts |
 | `sentences/ver-09-ex.mp3` | هَلْ فَهِمْتَ الدَّرْس؟ |  | Did you understand the lesson? | recording | tts |
+| `sentences/ver-11-ex.mp3` | جَاءَ إِلَى الْبَيْت. |  | He came home. | recording | tts |
+| `sentences/ver-12-ex.mp3` | نَامَ الطِّفْل. |  | The child slept. | recording | tts |
+| `sentences/ver-13-ex.mp3` | اِسْتَيْقَظْتُ مُبَكِّرًا. |  | I woke up early. | recording | tts |
+| `sentences/ver-14-ex.mp3` | دَرَسَ الطَّالِبُ الدَّرْس. |  | The student studied the lesson. | recording | tts |
+| `sentences/ver-15-ex.mp3` | يَسْكُنُ فِي الْمَدِينَة. |  | He lives in the city. | recording | tts |
+| `sentences/ver-16-ex.mp3` | أُرِيدُ الْمَاء. |  | I want water. | recording | tts |
+| `sentences/ver-17-ex.mp3` | عِنْدِي أَخ. |  | I have a brother. | recording | tts |
+| `sentences/ver-18-ex.mp3` | لَعِبَ الْوَلَد. |  | The boy played. | recording | tts |
+| `sentences/ver-19-ex.mp3` | فَتَحَ الْبَاب. |  | He opened the door. | recording | tts |
+| `sentences/ver-20-ex.mp3` | أَغْلَقْتُ النَّافِذَة. |  | I closed the window. | recording | tts |
+| `sentences/ver-21-ex.mp3` | جَلَسَ عَلَى الْكُرْسِيّ. |  | He sat on the chair. | recording | tts |
+| `sentences/ver-22-ex.mp3` | مَشَى إِلَى الْمَدْرَسَة. |  | He walked to school. | recording | tts |
+| `sentences/ver-23-ex.mp3` | اِشْتَرَى كِتَابًا. |  | He bought a book. | recording | tts |
+| `sentences/ver-24-ex.mp3` | بَاعَ السَّيَّارَة. |  | He sold the car. | recording | tts |
+| `sentences/ver-25-ex.mp3` | دَفَعْتُ الْمَال. |  | I paid the money. | recording | tts |
+| `sentences/ver-26-ex.mp3` | سَافَرَ إِلَى مِصْر. |  | He travelled to Egypt. | recording | tts |
+| `sentences/ver-27-ex.mp3` | وَصَلَ الْقِطَار. |  | The train arrived. | recording | tts |
+| `sentences/ver-28-ex.mp3` | رَجَعَ إِلَى الْبَيْت. |  | He returned home. | recording | tts |
+| `sentences/ver-29-ex.mp3` | هُوَ يَفْعَلُ الْوَاجِب. |  | He is doing the homework. | recording | tts |
 | `words/adj-01.mp3` | كَبِير | kabīr | big | recording | tts |
 | `words/adj-01f.mp3` | كَبِيرَة | kabīrah | big (feminine) | recording | tts |
 | `words/adj-02.mp3` | صَغِير | ṣaghīr | small | recording | tts |
@@ -152,6 +254,17 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `words/adj-09.mp3` | حَزِين | ḥazīn | sad | recording | tts |
 | `words/adj-10.mp3` | سَهْل | sahl | easy | recording | tts |
 | `words/adj-11.mp3` | صَعْب | ṣaʿb | difficult | recording | tts |
+| `words/adj-14.mp3` | جَيِّد | jayyid | good | recording | tts |
+| `words/adj-15.mp3` | سَيِّئ | sayyiʾ | bad | recording | tts |
+| `words/bod-01.mp3` | رَأْس | raʾs | head | recording | tts |
+| `words/bod-02.mp3` | يَد | yad | hand | recording | tts |
+| `names/ayn.mp3` | عَيْن | ʿayn | eye | alias | tts |
+| `words/bod-04.mp3` | قَدَم | qadam | foot / leg | recording | tts |
+| `words/bod-05.mp3` | مَرِيض | marīḍ | sick / ill | recording | tts |
+| `words/bod-06.mp3` | صَحِّيّ | ṣaḥḥī | healthy / well | recording | tts |
+| `words/bod-07.mp3` | مُتْعَب | mutʿab | tired | recording | tts |
+| `words/bod-08.mp3` | أَلَم | alam | pain / ache | recording | tts |
+| `words/bod-09.mp3` | دَوَاء | dawāʾ | medicine | recording | tts |
 | `words/col-01.mp3` | أَحْمَر | aḥmar | red | recording | tts |
 | `words/col-02.mp3` | أَزْرَق | azraq | blue | recording | tts |
 | `words/col-03.mp3` | أَخْضَر | akhḍar | green | recording | tts |
@@ -162,6 +275,10 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `words/col-08.mp3` | بُنِّيّ | bunniyy | brown | recording | tts |
 | `words/col-09.mp3` | وَرْدِيّ | wardiyy | pink | recording | tts |
 | `words/col-10.mp3` | رَمَادِيّ | ramādiyy | gray | recording | tts |
+| `words/dir-01.mp3` | يَمِين | yamīn | right (direction) | recording | tts |
+| `words/dir-02.mp3` | يَسَار | yasār | left (direction) | recording | tts |
+| `words/dir-03.mp3` | إِلَى الْأَمَام | ilā al-amām | straight ahead | recording | tts |
+| `words/dir-04.mp3` | فَوْقَ | fawqa | above / on | recording | tts |
 | `words/exp-01.mp3` | مِنْ فَضْلِك | min faḍlik | please | recording | tts |
 | `words/exp-02.mp3` | شُكْرًا | shukran | thank you | recording | tts |
 | `words/exp-03.mp3` | عَفْوًا | ʿafwan | you're welcome / excuse me | recording | tts |
@@ -172,6 +289,18 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `words/exp-08.mp3` | أَيْنَ الْحَمَّام؟ | ayna l-ḥammām? | Where is the bathroom? | recording | tts |
 | `words/exp-09.mp3` | كَمِ السَّاعَة؟ | kami s-sāʿah? | What time is it? | recording | tts |
 | `words/exp-10.mp3` | بِكَمْ هَذَا؟ | bikam hādhā? | How much is this? | recording | tts |
+| `words/exp-11.mp3` | بِخَيْر | bikhayr | fine / good | recording | tts |
+| `words/exp-12.mp3` | مَا التَّارِيخُ الْيَوْمَ؟ | mā at-tārīkhu al-yawma? | What's the date today? | recording | tts |
+| `words/exp-13.mp3` | أَيْضًا | ayḍan | also / too | recording | tts |
+| `words/exp-14.mp3` | أَخِيرًا | akhīran | finally / at last | recording | tts |
+| `words/exp-15.mp3` | فَجْأَةً | fajʾatan | suddenly | recording | tts |
+| `words/exp-16.mp3` | أَوَّلًا | awwalan | first / firstly | recording | tts |
+| `words/exp-17.mp3` | ذَاتَ يَوْمٍ | dhāta yawmin | one day (story opener) | recording | tts |
+| `words/exp-18.mp3` | طَبْعًا | ṭabʿan | of course | recording | tts |
+| `words/exp-19.mp3` | لَا بَأْسَ | lā baʾsa | no problem / never mind | recording | tts |
+| `words/exp-20.mp3` | هَلْ عِنْدَكَ...؟ | hal ʿindaka...? | do you have...? | recording | tts |
+| `words/exp-21.mp3` | مُمْكِن...؟ | mumkin...? | may I...? / is it possible...? | recording | tts |
+| `words/exp-22.mp3` | هَذَا كُلُّ شَيْءٍ | hādhā kullu shayʾin | that's all / nothing else | recording | tts |
 | `words/fc-14.mp3` | طَعَام | ṭaʿām | food | recording | tts |
 | `words/fc-27.mp3` | أَهْلًا وَسَهْلًا | ahlan wa sahlan | welcome | recording | tts |
 | `words/fc-28.mp3` | كَيْفَ حَالُك؟ | kayfa ḥāluk | how are you? | recording | tts |
@@ -194,6 +323,18 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `words/foo-13.mp3` | مُوز | mūz | banana | recording | tts |
 | `words/foo-14.mp3` | تِين | tīn | figs | recording | tts |
 | `words/foo-15.mp3` | تُوت | tūt | berries | recording | tts |
+| `words/foo-16.mp3` | عَصِير | ʿaṣīr | juice | recording | tts |
+| `words/foo-17.mp3` | بَيْضَة | bayḍah | egg | recording | tts |
+| `words/foo-18.mp3` | جُبْن | jubn | cheese | recording | tts |
+| `words/foo-19.mp3` | مِلْح | milḥ | salt | recording | tts |
+| `words/foo-20.mp3` | تُفَّاح | tuffāḥ | apple | recording | tts |
+| `words/foo-21.mp3` | وَجْبَة | wajbah | meal | recording | tts |
+| `words/foo-22.mp3` | فَطُور | faṭūr | breakfast | recording | tts |
+| `words/foo-23.mp3` | غَدَاء | ghadāʾ | lunch | recording | tts |
+| `words/foo-24.mp3` | عَشَاء | ʿashāʾ | dinner | recording | tts |
+| `words/foo-25.mp3` | جَائِع | jāʾiʿ | hungry | recording | tts |
+| `words/foo-26.mp3` | عَطْشَان | ʿaṭshān | thirsty | recording | tts |
+| `words/foo-27.mp3` | لَذِيذ | ladhīdh | delicious | recording | tts |
 | `words/gre-01.mp3` | مَرْحَبًا | marḥaban | hello | recording | tts |
 | `words/gre-02.mp3` | السَّلَامُ عَلَيْكُم | as-salāmu ʿalaykum | peace be upon you (a greeting) | recording | tts |
 | `words/gre-03.mp3` | وَعَلَيْكُمُ السَّلَام | wa ʿalaykumu s-salām | and upon you be peace (the reply) | recording | tts |
@@ -216,8 +357,14 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `words/hom-10.mp3` | سَرِير | sarīr | bed | recording | tts |
 | `words/hom-11.mp3` | بَيْتٌ | baytun | a house (subject form, ending in ḍammatayn) | recording | tts |
 | `words/hom-12.mp3` | فِي بَيْتٍ | fī baytin | in a house (ending in kasratayn, after a preposition) | recording | tts |
+| `words/hom-13.mp3` | جِدَار | jidār | wall | recording | tts |
+| `words/hom-14.mp3` | أَرْض | arḍ | floor | recording | tts |
+| `words/hom-15.mp3` | حَدِيقَة | ḥadīqah | garden | recording | tts |
+| `words/hom-16.mp3` | نَظِيف | naẓīf | clean | recording | tts |
+| `words/adj-07.mp3` | قَدِيم | qadīm | old (thing) | alias | tts |
 | `words/num-00.mp3` | صِفْر | ṣifr | zero | recording | tts |
 | `words/num-01.mp3` | وَاحِد | wāḥid | one | recording | tts |
+| `words/num-01f.mp3` | وَاحِدَة | wāḥidah | one (feminine) | recording | tts |
 | `words/num-02.mp3` | اِثْنَان | ithnān | two | recording | tts |
 | `words/num-03.mp3` | ثَلَاثَة | thalāthah | three | recording | tts |
 | `words/num-04.mp3` | أَرْبَعَة | arbaʿah | four | recording | tts |
@@ -227,6 +374,26 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `words/num-08.mp3` | ثَمَانِيَة | thamāniyah | eight | recording | tts |
 | `words/num-09.mp3` | تِسْعَة | tisʿah | nine | recording | tts |
 | `words/num-10.mp3` | عَشَرَة | ʿasharah | ten | recording | tts |
+| `words/num-100.mp3` | مِائَة | miʾah | hundred | recording | tts |
+| `words/num-11.mp3` | أَحَدَ عَشَرَ | aḥada ʿashara | eleven | recording | tts |
+| `words/num-12.mp3` | اثْنَا عَشَرَ | ithnā ʿashara | twelve | recording | tts |
+| `words/num-13.mp3` | ثَلَاثَةَ عَشَرَ | thalāthata ʿashara | thirteen | recording | tts |
+| `words/num-14.mp3` | أَرْبَعَةَ عَشَرَ | arbaʿata ʿashara | fourteen | recording | tts |
+| `words/num-15.mp3` | خَمْسَةَ عَشَرَ | khamsata ʿashara | fifteen | recording | tts |
+| `words/num-16.mp3` | سِتَّةَ عَشَرَ | sittata ʿashara | sixteen | recording | tts |
+| `words/num-17.mp3` | سَبْعَةَ عَشَرَ | sabʿata ʿashara | seventeen | recording | tts |
+| `words/num-18.mp3` | ثَمَانِيَةَ عَشَرَ | thamāniyata ʿashara | eighteen | recording | tts |
+| `words/num-19.mp3` | تِسْعَةَ عَشَرَ | tisʿata ʿashara | nineteen | recording | tts |
+| `words/num-20.mp3` | عِشْرُونَ | ʿishrūn | twenty | recording | tts |
+| `words/num-30.mp3` | ثَلَاثُونَ | thalāthūn | thirty | recording | tts |
+| `words/num-40.mp3` | أَرْبَعُونَ | arbaʿūn | forty | recording | tts |
+| `words/num-50.mp3` | خَمْسُونَ | khamsūn | fifty | recording | tts |
+| `words/num-60.mp3` | سِتُّونَ | sittūn | sixty | recording | tts |
+| `words/num-70.mp3` | سَبْعُونَ | sabʿūn | seventy | recording | tts |
+| `words/num-80.mp3` | ثَمَانُونَ | thamānūn | eighty | recording | tts |
+| `words/num-90.mp3` | تِسْعُونَ | tisʿūn | ninety | recording | tts |
+| `words/num-half.mp3` | نِصْف | niṣf | half | recording | tts |
+| `words/num-quarter.mp3` | رُبْع | rubʿ | quarter | recording | tts |
 | `words/obj-01.mp3` | هَاتِف | hātif | phone | recording | tts |
 | `words/obj-02.mp3` | حَاسُوب | ḥāsūb | computer | recording | tts |
 | `words/obj-03.mp3` | سَاعَة | sāʿah | clock / watch | recording | tts |
@@ -235,6 +402,7 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `words/obj-06.mp3` | مِصْبَاح | miṣbāḥ | lamp | recording | tts |
 | `words/obj-07.mp3` | مِرْآة | mirʾāh | mirror | recording | tts |
 | `words/obj-08.mp3` | مِظَلَّة | miẓallah | umbrella | recording | tts |
+| `words/obj-09.mp3` | شَيْء | shayʾ | thing | recording | tts |
 | `words/peo-01.mp3` | أُمّ | umm | mother | recording | tts |
 | `words/peo-02.mp3` | أَب | ab | father | recording | tts |
 | `words/peo-03.mp3` | أَخ | akh | brother | recording | tts |
@@ -248,6 +416,16 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `words/peo-11.mp3` | صَدِيق | ṣadīq | friend (male) | recording | tts |
 | `words/peo-12.mp3` | صَدِيقَة | ṣadīqah | friend (female) | recording | tts |
 | `words/peo-13.mp3` | بِنْت | bint | girl | recording | tts |
+| `words/peo-14.mp3` | طِفْل | ṭifl | child | recording | tts |
+| `words/peo-15.mp3` | وَلَد | walad | boy | recording | tts |
+| `words/peo-16.mp3` | رَجُل | rajul | man | recording | tts |
+| `words/peo-17.mp3` | اِمْرَأَة | imraʾah | woman | recording | tts |
+| `words/peo-18.mp3` | عَمّ | ʿamm | uncle (paternal) | recording | tts |
+| `words/peo-19.mp3` | عَمَّة | ʿammah | aunt (paternal) | recording | tts |
+| `words/peo-20.mp3` | اِسْم | ism | name | recording | tts |
+| `words/peo-21.mp3` | جَار | jār | neighbour | recording | tts |
+| `words/adj-02.mp3` | صَغِير | ṣaghīr | young | alias | tts |
+| `words/adj-01.mp3` | كَبِير | kabīr | old (person) | alias | tts |
 | `words/pla-01.mp3` | مَدِينَة | madīnah | city | recording | tts |
 | `words/pla-02.mp3` | قَرْيَة | qaryah | village | recording | tts |
 | `words/pla-03.mp3` | شَارِع | shāriʿ | street | recording | tts |
@@ -259,9 +437,55 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `words/pla-09.mp3` | فُنْدُق | funduq | hotel | recording | tts |
 | `words/pla-10.mp3` | مَكْتَبَة | maktabah | library / bookstore | recording | tts |
 | `words/pla-11.mp3` | بَحْر | baḥr | sea | recording | tts |
+| `words/pla-12.mp3` | بَلَد | balad | country | recording | tts |
+| `words/pla-13.mp3` | مَتْجَر | matjar | shop / store | recording | tts |
+| `words/pla-14.mp3` | بَنْك | bank | bank | recording | tts |
+| `words/pla-15.mp3` | مَحَطَّة | maḥaṭṭah | station | recording | tts |
+| `words/pla-16.mp3` | هُنَا | hunā | here | recording | tts |
+| `words/pla-17.mp3` | هُنَاكَ | hunāka | there | recording | tts |
+| `words/pla-18.mp3` | قَرِيب | qarīb | near | recording | tts |
+| `words/pla-19.mp3` | بَعِيد | baʿīd | far | recording | tts |
+| `words/pla-20.mp3` | مُتَنَزَّه | mutanazzah | park | recording | tts |
 | `words/pro-01.mp3` | هُوَ | huwa | he | recording | tts |
 | `words/pro-02.mp3` | هِيَ | hiya | she | recording | tts |
 | `words/pro-03.mp3` | هُمْ | hum | they (masculine/mixed group) | recording | tts |
+| `words/pro-04.mp3` | هَذَا | hādhā | this (m.) | recording | tts |
+| `words/pro-05.mp3` | هَذِهِ | hādhihi | this (f.) | recording | tts |
+| `words/pro-06.mp3` | هَؤُلَاءِ | hāʾulāʾi | these | recording | tts |
+| `words/pro-07.mp3` | ذَلِكَ | dhālika | that (m.) | recording | tts |
+| `words/pro-08.mp3` | أَنَا | anā | I | recording | tts |
+| `words/pro-09.mp3` | أَنْتَ | anta | you (m.) | recording | tts |
+| `words/pro-10.mp3` | أَنْتِ | anti | you (f.) | recording | tts |
+| `words/pro-11.mp3` | نَحْنُ | naḥnu | we | recording | tts |
+| `words/prt-01.mp3` | فِي | fī | in / at | recording | tts |
+| `words/prt-02.mp3` | عَلَى | ʿalā | on | recording | tts |
+| `words/prt-03.mp3` | مِنْ | min | from | recording | tts |
+| `words/prt-04.mp3` | إِلَى | ilā | to / towards | recording | tts |
+| `words/prt-05.mp3` | مَعَ | maʿa | with | recording | tts |
+| `words/prt-06.mp3` | لَيْسَ | laysa | is not / are not | recording | tts |
+| `words/prt-07.mp3` | تَحْتَ | taḥta | under / below | recording | tts |
+| `words/prt-08.mp3` | أَمَامَ | amāma | in front of | recording | tts |
+| `words/prt-09.mp3` | خَلْفَ | khalfa | behind | recording | tts |
+| `words/prt-10.mp3` | بِجَانِبِ | bijānibi | next to / beside | recording | tts |
+| `words/prt-11.mp3` | بَيْنَ | bayna | between | recording | tts |
+| `words/prt-12.mp3` | دَاخِلَ | dākhila | inside | recording | tts |
+| `words/prt-13.mp3` | خَارِجَ | khārija | outside | recording | tts |
+| `words/prt-14.mp3` | وَ | wa | and | recording | tts |
+| `words/prt-15.mp3` | أَوْ | aw | or | recording | tts |
+| `words/prt-16.mp3` | لَكِنْ | lākin | but | recording | tts |
+| `words/prt-17.mp3` | لِأَنَّ | liʾanna | because | recording | tts |
+| `words/prt-18.mp3` | مَنْ | man | who? | recording | tts |
+| `syllables/cvv-ma.mp3` | مَا | mā | what? | alias | tts |
+| `words/prt-20.mp3` | أَيْنَ | ayna | where? | recording | tts |
+| `words/prt-21.mp3` | مَتَى | matā | when? | recording | tts |
+| `words/prt-22.mp3` | لِمَاذَا | limādhā | why? | recording | tts |
+| `words/prt-23.mp3` | كَيْفَ | kayfa | how? | recording | tts |
+| `words/prt-24.mp3` | كَمْ | kam | how many? | recording | tts |
+| `words/prt-25.mp3` | إِلَّا | illā | except / minus | recording | tts |
+| `words/prt-26.mp3` | ثُمَّ | thumma | then / next | recording | tts |
+| `words/prt-27.mp3` | أَثْنَاءَ | athnāʾa | during | recording | tts |
+| `words/prt-28.mp3` | بَيْنَمَا | baynamā | while | recording | tts |
+| `words/prt-29.mp3` | كُلّ | kull | every / each / all | recording | tts |
 | `words/sch-01.mp3` | مَدْرَسَة | madrasah | school | recording | tts |
 | `words/sch-02.mp3` | مُعَلِّم | muʿallim | teacher (male) | recording | tts |
 | `words/sch-03.mp3` | مُعَلِّمَة | muʿallimah | teacher (female) | recording | tts |
@@ -272,6 +496,32 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `words/sch-08.mp3` | دَفْتَر | daftar | notebook | recording | tts |
 | `words/sch-09.mp3` | دَرْس | dars | lesson | recording | tts |
 | `words/sch-10.mp3` | وَاجِب | wājib | homework | recording | tts |
+| `words/sch-11.mp3` | جَامِعَة | jāmiʿah | university | recording | tts |
+| `words/sch-12.mp3` | قَلَم رَصَاص | qalam raṣāṣ | pencil | recording | tts |
+| `words/sch-13.mp3` | وَرَقَة | waraqah | paper | recording | tts |
+| `words/sch-14.mp3` | كَلِمَة | kalimah | word | recording | tts |
+| `words/sch-15.mp3` | جُمْلَة | jumlah | sentence | recording | tts |
+| `words/sch-16.mp3` | سُؤَال | suʾāl | question | recording | tts |
+| `words/sch-17.mp3` | جَوَاب | jawāb | answer | recording | tts |
+| `words/sch-18.mp3` | اِمْتِحَان | imtiḥān | exam | recording | tts |
+| `words/sch-19.mp3` | لُغَة | lughah | language | recording | tts |
+| `words/sch-20.mp3` | الْعَرَبِيَّة | al-ʿarabiyyah | Arabic (language) | recording | tts |
+| `words/sch-21.mp3` | الْإِنْجِلِيزِيَّة | al-injilīziyyah | English (language) | recording | tts |
+| `words/sch-22.mp3` | قِصَّة | qiṣṣah | story | recording | tts |
+| `words/shp-01.mp3` | سِعْر | siʿr | price | recording | tts |
+| `words/shp-02.mp3` | رَخِيص | rakhīṣ | cheap | recording | tts |
+| `words/shp-03.mp3` | غَالٍ | ghālin | expensive | recording | tts |
+| `words/shp-04.mp3` | بِكَمْ | bikam | how much? | recording | tts |
+| `words/shp-05.mp3` | قَلِيل | qalīl | a little | recording | tts |
+| `words/shp-06.mp3` | كَثِير | kathīr | a lot / many | recording | tts |
+| `words/shp-07.mp3` | دُولَار | dūlār | dollar | recording | tts |
+| `words/shp-08.mp3` | رِيَال | riyāl | riyal | recording | tts |
+| `words/shp-09.mp3` | دِينَار | dīnār | dinar | recording | tts |
+| `words/shp-10.mp3` | جُنَيْه | junayh | pound | recording | tts |
+| `words/shp-11.mp3` | نَقْد | naqd | cash | recording | tts |
+| `words/shp-12.mp3` | بِطَاقَة اِئْتِمَان | biṭāqat iʾtimān | credit card | recording | tts |
+| `words/shp-13.mp3` | مَقَاس | maqās | size (clothing) | recording | tts |
+| `words/shp-14.mp3` | خَصْم | khaṣm | discount | recording | tts |
 | `words/tim-01.mp3` | الْيَوْم | al-yawm | today | recording | tts |
 | `words/tim-02.mp3` | غَدًا | ghadan | tomorrow | recording | tts |
 | `words/tim-03.mp3` | أَمْس | ams | yesterday | recording | tts |
@@ -291,6 +541,56 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `words/tim-17.mp3` | السَّبْت | as-sabt | Saturday | recording | tts |
 | `words/tim-18.mp3` | شَمْس | shams | sun | recording | tts |
 | `words/tim-19.mp3` | قَمَر | qamar | moon | recording | tts |
+| `words/obj-03.mp3` | سَاعَة | sāʿah | hour | alias | tts |
+| `words/tim-21.mp3` | دَقِيقَة | daqīqah | minute | recording | tts |
+| `words/tim-22.mp3` | يَوْم | yawm | day | recording | tts |
+| `words/tim-23.mp3` | ظُهْر | ẓuhr | noon | recording | tts |
+| `words/tim-24.mp3` | مُبَكِّرًا | mubakkiran | early | recording | tts |
+| `words/tim-25.mp3` | مُتَأَخِّرًا | mutaʾakhkhiran | late | recording | tts |
+| `words/tim-26.mp3` | دَائِمًا | dāʾiman | always | recording | tts |
+| `words/tim-27.mp3` | أَحْيَانًا | aḥyānan | sometimes | recording | tts |
+| `words/tim-28.mp3` | قَبْلَ | qabla | before | recording | tts |
+| `words/tim-29.mp3` | بَعْدَ | baʿda | after | recording | tts |
+| `words/tim-30.mp3` | ثَانِيَة | thāniyah | second (2nd, feminine) | recording | tts |
+| `words/tim-31.mp3` | ثَالِثَة | thālithah | third (3rd, feminine) | recording | tts |
+| `words/tim-32.mp3` | رَابِعَة | rābiʿah | fourth (4th, feminine) | recording | tts |
+| `words/tim-33.mp3` | خَامِسَة | khāmisah | fifth (5th, feminine) | recording | tts |
+| `words/tim-34.mp3` | سَادِسَة | sādisah | sixth (6th, feminine) | recording | tts |
+| `words/tim-35.mp3` | سَابِعَة | sābiʿah | seventh (7th, feminine) | recording | tts |
+| `words/tim-36.mp3` | ثَامِنَة | thāminah | eighth (8th, feminine) | recording | tts |
+| `words/tim-37.mp3` | تَاسِعَة | tāsiʿah | ninth (9th, feminine) | recording | tts |
+| `words/tim-38.mp3` | عَاشِرَة | ʿāshirah | tenth (10th, feminine) | recording | tts |
+| `words/tim-39.mp3` | حَادِيَةَ عَشْرَةَ | ḥādiyata ʿashrata | eleventh (11th, feminine) | recording | tts |
+| `words/tim-40.mp3` | ثَانِيَةَ عَشْرَةَ | thāniyata ʿashrata | twelfth (12th, feminine) | recording | tts |
+| `words/tim-41.mp3` | أَوَّل | awwal | first (1st, masculine) | recording | tts |
+| `words/tim-42.mp3` | ثَانِي | thānī | second (2nd, masculine) | recording | tts |
+| `words/tim-43.mp3` | ثَالِث | thālith | third (3rd, masculine) | recording | tts |
+| `words/tim-44.mp3` | رَابِع | rābiʿ | fourth (4th, masculine) | recording | tts |
+| `words/tim-45.mp3` | خَامِس | khāmis | fifth (5th, masculine) | recording | tts |
+| `words/tim-46.mp3` | سَادِس | sādis | sixth (6th, masculine) | recording | tts |
+| `words/tim-47.mp3` | سَابِع | sābiʿ | seventh (7th, masculine) | recording | tts |
+| `words/tim-48.mp3` | ثَامِن | thāmin | eighth (8th, masculine) | recording | tts |
+| `words/tim-49.mp3` | تَاسِع | tāsiʿ | ninth (9th, masculine) | recording | tts |
+| `words/tim-50.mp3` | عَاشِر | ʿāshir | tenth (10th, masculine) | recording | tts |
+| `words/tim-51.mp3` | يَنَايِر | yanāyir | January | recording | tts |
+| `words/tim-52.mp3` | فِبْرَايِر | fibrāyir | February | recording | tts |
+| `words/tim-53.mp3` | مَارِس | māris | March | recording | tts |
+| `words/tim-54.mp3` | أَبْرِيل | abrīl | April | recording | tts |
+| `words/tim-55.mp3` | مَايُو | māyū | May | recording | tts |
+| `words/tim-56.mp3` | يُونِيُو | yūniyū | June | recording | tts |
+| `words/tim-57.mp3` | يُولِيُو | yūliyū | July | recording | tts |
+| `words/tim-58.mp3` | أَغُسْطُس | aghusṭus | August | recording | tts |
+| `words/tim-59.mp3` | سِبْتَمْبِر | sibtambir | September | recording | tts |
+| `words/tim-60.mp3` | أُكْتُوبِر | uktūbir | October | recording | tts |
+| `words/tim-61.mp3` | نُوفِمْبِر | nūfimbir | November | recording | tts |
+| `words/tim-62.mp3` | دِيسِمْبِر | dīsimbir | December | recording | tts |
+| `words/tim-63.mp3` | تَارِيخ | tārīkh | date | recording | tts |
+| `words/trv-01.mp3` | حَافِلَة | ḥāfilah | bus | recording | tts |
+| `words/trv-02.mp3` | قِطَار | qiṭār | train | recording | tts |
+| `words/trv-03.mp3` | طَائِرَة | ṭāʾirah | plane | recording | tts |
+| `words/trv-04.mp3` | سَيَّارَة أُجْرَة | sayyārat ujrah | taxi | recording | tts |
+| `words/trv-05.mp3` | تَذْكِرَة | tadhkirah | ticket | recording | tts |
+| `words/trv-06.mp3` | رِحْلَة | riḥlah | trip / journey | recording | tts |
 | `words/ver-01.mp3` | ذَهَبَ | dhahaba | to go | recording | tts |
 | `words/ver-02.mp3` | أَكَلَ | akala | to eat | recording | tts |
 | `words/ver-03.mp3` | شَرِبَ | shariba | to drink | recording | tts |
@@ -301,6 +601,45 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `words/ver-08.mp3` | رَأَى | raʾā | to see | recording | tts |
 | `words/ver-09.mp3` | فَهِمَ | fahima | to understand | recording | tts |
 | `words/ver-10.mp3` | عَمِلَ | ʿamila | to work / to do | recording | tts |
+| `words/ver-11.mp3` | جَاءَ | jāʾa | to come | recording | tts |
+| `words/ver-12.mp3` | نَامَ | nāma | to sleep | recording | tts |
+| `words/ver-13.mp3` | اِسْتَيْقَظَ | istayqaẓa | to wake up | recording | tts |
+| `words/ver-14.mp3` | دَرَسَ | darasa | to study | recording | tts |
+| `words/ver-15.mp3` | سَكَنَ | sakana | to live (reside) | recording | tts |
+| `words/ver-16.mp3` | أَرَادَ | arāda | to want | recording | tts |
+| `words/ver-17.mp3` | عِنْدَ | ʿinda | to have (possess) | recording | tts |
+| `words/ver-18.mp3` | لَعِبَ | laʿiba | to play | recording | tts |
+| `words/ver-19.mp3` | فَتَحَ | fataḥa | to open | recording | tts |
+| `words/ver-20.mp3` | أَغْلَقَ | aghlaqa | to close | recording | tts |
+| `words/ver-21.mp3` | جَلَسَ | jalasa | to sit | recording | tts |
+| `words/ver-22.mp3` | مَشَى | mashā | to walk | recording | tts |
+| `words/ver-23.mp3` | اِشْتَرَى | ishtarā | to buy | recording | tts |
+| `words/ver-24.mp3` | بَاعَ | bāʿa | to sell | recording | tts |
+| `words/ver-25.mp3` | دَفَعَ | dafaʿa | to pay | recording | tts |
+| `words/ver-26.mp3` | سَافَرَ | sāfara | to travel | recording | tts |
+| `words/ver-27.mp3` | وَصَلَ | waṣala | to arrive | recording | tts |
+| `words/ver-28.mp3` | رَجَعَ | rajaʿa | to return | recording | tts |
+| `words/ver-29.mp3` | فَعَلَ | faʿala | to do / to make | recording | tts |
+| `words/ver-30.mp3` | جَرَّبَ | jarraba | to try / to try on | recording | tts |
+| `words/wea-01.mp3` | حَارّ | ḥārr | hot (weather) | recording | tts |
+| `words/wea-02.mp3` | بَارِد | bārid | cold (weather) | recording | tts |
+| `words/wea-03.mp3` | دَافِئ | dāfiʾ | warm | recording | tts |
+| `words/wea-04.mp3` | مَطَر | maṭar | rain | recording | tts |
+| `words/wea-05.mp3` | رِيح | rīḥ | wind | recording | tts |
+| `words/wea-06.mp3` | طَقْس | ṭaqs | weather | recording | tts |
+| `words/wea-07.mp3` | سَمَاء | samāʾ | sky | recording | tts |
+| `words/wea-08.mp3` | فَصْل | faṣl | season | recording | tts |
+| `words/wrk-01.mp3` | مَكْتَب | maktab | office | recording | tts |
+| `words/wrk-02.mp3` | شَرِكَة | sharikah | company | recording | tts |
+| `words/wrk-03.mp3` | طَبِيب | ṭabīb | doctor (male) | recording | tts |
+| `words/wrk-04.mp3` | طَبِيبَة | ṭabībah | doctor (female) | recording | tts |
+| `words/wrk-05.mp3` | مُهَنْدِس | muhandis | engineer | recording | tts |
+| `words/wrk-06.mp3` | مُوَظَّف | muwaẓẓaf | employee | recording | tts |
+| `words/wrk-07.mp3` | مَال | māl | money | recording | tts |
+| `words/wrk-08.mp3` | زَمِيل | zamīl | colleague | recording | tts |
+| `words/wrk-09.mp3` | مَشْغُول | mashghūl | busy | recording | tts |
+| `words/wrk-10.mp3` | مُهِمّ | muhimm | important | recording | tts |
+| `words/wrk-11.mp3` | عَمَل | ʿamal | work / job | recording | tts |
 | `words/peo-03-pl.mp3` | إِخْوَة | ikhwah | brother (plural) | recording | tts |
 | `words/peo-04-pl.mp3` | أَخَوَات | akhawāt | sister (plural) | recording | tts |
 | `words/peo-05-pl.mp3` | أَبْنَاء | abnāʾ | son (plural) | recording | tts |
@@ -378,7 +717,6 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | — | ثَ | thāʾa | thāʾ + a | tts-only | tts |
 | — | ثِ | thāʾi | thāʾ + i | tts-only | tts |
 | — | وُ | wāwu | wāw + u | tts-only | tts |
-| — | وَ | wāwa | wāw + a | tts-only | tts |
 | — | وِ | wāwi | wāw + i | tts-only | tts |
 | — | يُ | yāʾu | yāʾ + u | tts-only | tts |
 | — | يَ | yāʾa | yāʾ + a | tts-only | tts |

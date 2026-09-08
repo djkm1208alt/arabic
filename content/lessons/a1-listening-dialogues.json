@@ -1,0 +1,60 @@
+{
+  "id": "a1-listening-dialogues",
+  "unitId": "a1-u4",
+  "curriculumLessonId": "a1-listening-dialogues",
+  "title": "Short Exchanges",
+  "level": "A1",
+  "skills": ["listening", "comprehension"],
+  "objectives": [
+    "gr:nominal-sentence", "gr:demonstratives", "gr:attached-possessive", "gr:core-prepositions",
+    "txt:read-dlg-greeting", "txt:read-dlg-name",
+    "txt:read-dlg-who-is-this", "txt:read-dlg-asking-way"
+  ],
+  "steps": [
+    {
+      "type": "explain",
+      "title": "Two speakers, one answer",
+      "body": [
+        "A short exchange has two people taking turns. When you listen, you do not need every word — you listen for the one thing being asked: a name, a place, how someone is.",
+        "مَا اسْمُكِ؟ — اسْمِي سَارَةُ. The question asks for a name; the answer gives it: سَارَة."
+      ],
+      "previewSymbols": ["مَا اسْمُكِ؟", "اسْمِي سَارَةُ"]
+    },
+    {
+      "type": "reading-practice",
+      "title": "Four exchanges",
+      "intro": "Tap 🔊 and listen first, before you read. Then reveal the meaning and check what was asked and answered.",
+      "fromObjectives": true
+    },
+    {
+      "type": "practice-choice",
+      "title": "Listen for the answer",
+      "arabicPrompt": "مَا اسْمُكِ؟ — اسْمِي سَارَةُ",
+      "prompt": "What is the second speaker's name?",
+      "options": [
+        { "label": "Sara", "correct": true },
+        { "label": "Muhammad", "correct": false },
+        { "label": "She does not say", "correct": false }
+      ],
+      "explanation": "اسْمِي سَارَةُ = \"my name is Sara.\""
+    },
+    {
+      "type": "practice-choice",
+      "title": "Listen for the answer",
+      "arabicPrompt": "أَيْنَ الْمَحَطَّةُ؟ — الْمَحَطَّةُ هُنَاكَ، عَلَى الْيَمِينِ",
+      "prompt": "Where is the station?",
+      "options": [
+        { "label": "Over there, on the right", "correct": true },
+        { "label": "On the left", "correct": false },
+        { "label": "Straight ahead", "correct": false }
+      ],
+      "explanation": "هُنَاكَ = \"over there\"; عَلَى الْيَمِينِ = \"on the right.\""
+    },
+    {
+      "type": "complete",
+      "title": "You followed an exchange",
+      "message": "You listened to four short exchanges and picked out what was asked and answered — a name, a place, a greeting. That is A1 listening.",
+      "finishLabel": "Finish"
+    }
+  ]
+}
