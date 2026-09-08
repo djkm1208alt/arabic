@@ -7,13 +7,13 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 
 | | count |
 |---|---:|
-| Distinct targets | 697 |
-| — Tier 1 (foundation) | 181 |
+| Distinct targets | 700 |
+| — Tier 1 (foundation) | 184 |
 | — Tier 2 (vocabulary) | 439 |
 | — Tier 3 (stays TTS) | 77 |
-| Unique native recordings needed (Tier 1+2) | 608 |
+| Unique native recordings needed (Tier 1+2) | 611 |
 | — of those, present on disk | 0 |
-| — still missing | 608 |
+| — still missing | 611 |
 | Aliases (share another recording) | 12 |
 
 ## Tier 1 — Foundation
@@ -21,8 +21,11 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | file | Arabic | translit | English | role | playback |
 |---|---|---|---|---|---|
 | `sentences/read-dlg-asking-way.mp3` | أَيْنَ الْمَحَطَّةُ؟ — الْمَحَطَّةُ هُنَاكَ، عَلَى الْيَمِينِ | ayna al-maḥaṭṭatu? — al-maḥaṭṭatu hunāka, ʿalā al-yamīni | — Where is the station? — The station is over there, on the right. | recording | tts |
+| `sentences/read-dlg-directions.mp3` | عَفْوًا، أَيْنَ الْبَنْكُ؟ — الْبَنْكُ قَرِيبٌ، بِجَانِبِ الْمَطْعَمِ. — هَلْ هُوَ بَعِيدٌ مِنْ هُنَا؟ — لَا، هُوَ قَرِيبٌ. الْبَنْكُ أَمَامَ الْمَكْتَبَةِ. — شُكْرًا! — عَفْوًا! | ʿafwan, ayna al-banku? — al-banku qarībun, bijānibi al-maṭʿami. — hal huwa baʿīdun min hunā? — lā, huwa qarībun. al-banku amāma al-maktabati. — shukran! — ʿafwan! | — Excuse me, where is the bank? — The bank is near, next to the restaurant. — Is it far from here? — No, it's near. The bank is in front of the library. — Thank you! — You're welcome! | recording | tts |
 | `sentences/read-dlg-greeting.mp3` | السَّلَامُ عَلَيْكُمْ — وَعَلَيْكُمُ السَّلَامُ — كَيْفَ حَالُكَ؟ — أَنَا بِخَيْرٍ، شُكْرًا | as-salāmu ʿalaykum — wa-ʿalaykumu s-salāmu — kayfa ḥāluka? — anā bikhayrin, shukran | — Peace be upon you. — And upon you be peace. — How are you? — I'm fine, thank you. | recording | tts |
 | `sentences/read-dlg-name.mp3` | مَا اسْمُكِ؟ — اسْمِي سَارَةُ — تَشَرَّفْنَا | mā ismuki? — ismī sāratu — tasharrafnā | — What is your name? — My name is Sara. — Nice to meet you. | recording | tts |
+| `sentences/read-dlg-permission.mp3` | مُمْكِن؟ هَلْ عِنْدَكَ قَلَمٌ؟ — طَبْعًا! — شُكْرًا! — لَا بَأْسَ. | mumkin? hal ʿindaka qalamun? — ṭabʿan! — shukran! — lā baʾsa. | — May I? Do you have a pen? — Of course! — Thank you! — No problem. | recording | tts |
+| `sentences/read-dlg-shopping.mp3` | بِكَمْ هَذَا؟ — بِعِشْرِينَ دُولَارًا. — هَلْ عِنْدَكَ مَقَاسٌ صَغِيرٌ؟ — نَعَمْ، هَذَا مَقَاسٌ صَغِيرٌ. — هَذَا كُلُّ شَيْءٍ، شُكْرًا. — نَقْدٌ أَوْ بِطَاقَةُ اِئْتِمَانٍ؟ — بِطَاقَةُ اِئْتِمَانٍ، مِنْ فَضْلِك. | bikam hādhā? — biʿishrīna dūlāran. — hal ʿindaka maqāsun ṣaghīrun? — naʿam, hādhā maqāsun ṣaghīrun. — hādhā kullu shayʾin, shukran. — naqdun aw biṭāqatu iʾtimānin? — biṭāqatu iʾtimānin, min faḍlik. | — How much is this? — For twenty dollars. — Do you have a small size? — Yes, this is a small size. — That's all, thank you. — Cash or credit card? — Credit card, please. | recording | tts |
 | `sentences/read-dlg-who-is-this.mp3` | مَنْ هَذَا؟ — هَذَا صَدِيقِي مُحَمَّدٌ — أَهْلًا وَسَهْلًا | man hādhā? — hādhā ṣadīqī muḥammadun — ahlan wa-sahlan | — Who is this? — This is my friend Muhammad. — Welcome. | recording | tts |
 | `letters/alif.mp3` | ا | alif | letter “alif” (isolated form) | recording | tts |
 | `letters/ayn.mp3` | ع | ʿayn | letter “ʿayn” (isolated form) | recording | tts |
