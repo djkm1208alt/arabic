@@ -123,9 +123,9 @@
     {
       "id": "b1-u1", "level": "B1", "order": 1,
       "title": "Derived Verb Forms II–X",
-      "blurb": "The ten forms, their meaning tendencies, and how to recognise them in text. In development.",
+      "blurb": "Forms II, III, V, VIII, and X, and their meaning tendencies, in verbs you already know how to write. Forms IV, VI, VII, and IX are still ahead.",
       "skills": ["grammar", "vocabulary"],
-      "status": "planned", "prereqs": ["a2-u1", "a2-u3"]
+      "status": "available", "prereqs": ["a2-u1", "a2-u3"]
     },
     {
       "id": "b1-u2", "level": "B1", "order": 2,
@@ -717,6 +717,14 @@
       "level": "A2", "skills": ["listening", "speaking", "comprehension"],
       "objectives": ["gr:idafa", "gr:core-prepositions", "gr:negation-a1", "txt:read-dlg-shopping", "txt:read-dlg-directions", "txt:read-dlg-permission"],
       "status": "available", "source": "steps:a2-shopping-routine"
+    },
+    {
+      "id": "b1-derived-verb-forms", "unitId": "b1-u1", "order": 1,
+      "title": "Derived Verb Forms — First Look",
+      "blurb": "Five patterns hiding in verbs you already know — جَرَّبَ, سَافَرَ, تَكَلَّمَ, اِشْتَرَى, اِسْتَيْقَظَ — and what each form's shape tends to mean.",
+      "level": "B1", "skills": ["grammar", "vocabulary", "reading"],
+      "objectives": ["lex:ver-30", "lex:ver-26", "lex:ver-06", "lex:ver-23", "lex:ver-13", "gr:derived-verb-forms", "txt:gram-form2-jarraba", "txt:gram-form3-safara", "txt:gram-form5-takallama", "txt:gram-form8-ishtara", "txt:gram-form10-istayqaza"],
+      "status": "available", "source": "steps:b1-derived-verb-forms"
     }
   ]
 }

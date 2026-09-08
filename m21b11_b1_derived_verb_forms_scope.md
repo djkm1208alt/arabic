@@ -1,12 +1,15 @@
 # M21 — Batch 11: B1 Derived Verb Forms (II, III, V, VIII, X)
 
-**Status:** scope, held for approval. No implementation yet.
+**Status:** implemented — see the branch wiring this into the app. `tools/qa-harness.js` 70/70
+(including the new lesson walking to completion by name), `tools/a11y-audit.js` clean, `node
+tools/lint-fixtures.js` 33/33, `npm run content:check` shows exactly the planned deltas: +5 texts
+(94→99), +1 grammar point (18→19), +1 lesson, lexeme count unchanged at 399.
 **Parent:** [ROADMAP.md](ROADMAP.md) M21 row · [m21_content_scaleout_scope.md](m21_content_scaleout_scope.md)
 §1 ("A2 → B1 → B2 → C1 → C2... this doc scopes A2 concretely and names the shape for what comes
 after... B1's own scope doc is written when A2 is done"). A2 closed with batch 10 (PR #42). This is
 that doc — **the first B1 content this project has ever authored.**
 **Base:** `main` (post batch 10 / PR #42, post M21.6 / PR #41).
-**Branch:** `claude/m21b11-b1-derived-verb-forms`.
+**Branch:** `claude/m21b11-derived-verb-forms-impl`.
 
 ---
 
@@ -148,3 +151,33 @@ Plan → this branch → draft PR → review → implementation only on explicit
 Standards (same shape as every prior M21 batch). This is B1's first batch — worth a closer read
 than usual before approval, since every wording/example choice here sets the precedent the next
 five B1 units follow.
+
+## 10. Implementation notes
+
+Shipped exactly as designed in §3 — no deviations. The 4 lexeme `notes` additions match `lex:ver-30`'s
+existing voice exactly; `gr:derived-verb-forms` mirrors `gr:root-pattern`'s shape (`rule` names all
+nine derived patterns for reading recognition, `examples` point at the 5 worked texts,
+`commonErrors` carries the same "tendency, not a rule" caveat plus two new errors specific to verb
+forms). The 5 example sentences (§3) reuse zero new vocabulary — `الرَّجُلُ`/`الْمَرْأَةُ`/`الطَّالِبَةُ`/
+`الْوَلَدُ`/`الطَّعَامَ`/`الْمَدِينَةِ`/`الْعَرَبِيَّةِ`/`صَبَاح` were all already-taught A0/A1 vocabulary,
+confirmed by direct lookup before writing a single sentence.
+
+`b1-u1`'s blurb was narrowed to name exactly what ships (Forms II/III/V/VIII/X) rather than kept as
+the original "the ten forms" placeholder — the same honesty-about-scope correction `a2-u4`'s and
+`a2-u6`'s blurbs already got once their real content existed to check them against. `b1-u1` flips
+`"planned"` → `"available"` — **B1's first available unit.**
+
+One deliberate non-change, checked and confirmed correct rather than assumed: `content/curriculum.json`'s
+top-level `levels[]` array still lists `A2` as `"status": "planned"` even though all six `a2-uN`
+units have been `"available"` for two batches now — that field is evidently not kept in sync with
+unit-level completion by this project's own established convention (nothing in the A2 batches ever
+touched it either). Left untouched for B1 too, for consistency with that precedent; not this
+batch's job to relitigate.
+
+`node tools/build-content.js --write-app` then `--check`: 578 objects, exactly the planned deltas
+(+5 texts, +1 grammar point, +1 lesson, lexemes unchanged at 399). `npm run content:lint`: 84
+advisory warnings (down from the pre-existing baseline of 90 — the 4 edited lexemes are now
+referenced by the new lesson's `objectives` and dropped out of the orphaned-lexeme list; zero new
+warnings introduced). `node tools/lint-fixtures.js`: 33/33. `npm run qa`: 70/70, including
+`catalog lesson "b1-derived-verb-forms" walks to completion` by name. `node tools/a11y-audit.js`:
+clean.

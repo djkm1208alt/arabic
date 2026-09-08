@@ -414,5 +414,32 @@
     "prereqs": [
       "gr:idafa"
     ]
+  },
+  {
+    "id": "gr:derived-verb-forms",
+    "kind": "grammar",
+    "name": "Derived verb forms (الأَوْزَان)",
+    "level": "B1",
+    "rule": "A root can be poured into more than one verb pattern, not just Form I's bare فَعَلَ — nine more patterns (Forms II–X) build related but distinct verbs from the same three consonants: II فَعَّلَ (doubled middle letter), III فَاعَلَ (a long ا after the first letter), IV أَفْعَلَ (أَ prefixed), V تَفَعَّلَ (تَ + Form II's pattern), VI تَفَاعَلَ (تَ + Form III's pattern), VII اِنْفَعَلَ (اِنْ prefixed), VIII اِفْتَعَلَ (a ت infixed after the first letter), IX اِفْعَلَّ (doubled final letter, colors and physical defects), X اِسْتَفْعَلَ (اِسْتَ prefixed). Four of these appear in verbs you already know: جَرَّبَ (II, \"to try\"), سَافَرَ (III, \"to travel\"), تَكَلَّمَ (V, \"to speak\"), اِشْتَرَى (VIII, \"to buy\"), اِسْتَيْقَظَ (X, \"to wake up\") — same discipline as gr:root-pattern, applied to verbs instead of nouns. The forms carry real tendencies: II often causative/intensive (\"to make X happen\" or \"to X thoroughly\"), III often reciprocal or effort directed at someone, V the reflexive of II (\"to become X'd,\" or to do II's action to yourself), VIII a reflexive/middle-voice sense (\"to do X for yourself\"), X \"to seek/consider X\" or a reflexive-causative sense (\"to render yourself X\").",
+    "examples": [
+      "txt:gram-form2-jarraba",
+      "txt:gram-form3-safara",
+      "txt:gram-form5-takallama",
+      "txt:gram-form8-ishtara",
+      "txt:gram-form10-istayqaza"
+    ],
+    "commonErrors": [
+      "Expecting a fixed meaning for every form on every root — like noun patterns in gr:root-pattern, these are strong tendencies, not rules a dictionary enforces: اِشْتَرَى doesn't transparently mean \"to seek to sell\" from ش-ر-ي's buy/sell sense, it's simply lexicalized as \"to buy.\"",
+      "Assuming a derived form's Form I counterpart always exists as an actual word — تَكَلَّمَ (V) has no attested Form II كَلَّمَ used the same way in everyday MSA; the *pattern's* meaning tendency still holds even when the \"paired\" form isn't itself a common word.",
+      "Confusing the doubled middle letter of Form II (فَعَّلَ, e.g. جَرَّبَ) with the long ا after the first letter of Form III (فَاعَلَ, e.g. سَافَرَ) — they look similar in translit but are written and pronounced differently."
+    ],
+    "skills": [
+      "grammar",
+      "vocabulary",
+      "reading"
+    ],
+    "prereqs": [
+      "gr:root-pattern"
+    ]
   }
 ]
