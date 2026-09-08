@@ -123,7 +123,7 @@
     {
       "id": "b1-u1", "level": "B1", "order": 1,
       "title": "Derived Verb Forms II–X",
-      "blurb": "Forms II, III, V, VIII, and X, and their meaning tendencies, in verbs you already know how to write. Forms IV, VI, VII, and IX are still ahead.",
+      "blurb": "Forms II through VIII and X, and their meaning tendencies, in a mix of verbs you already knew and a few chosen to fit naturally beside them. Form IX (colours and physical defects) is rare enough to stay ahead, past B1.",
       "skills": ["grammar", "vocabulary"],
       "status": "available", "prereqs": ["a2-u1", "a2-u3"]
     },
@@ -725,6 +725,14 @@
       "level": "B1", "skills": ["grammar", "vocabulary", "reading"],
       "objectives": ["lex:ver-30", "lex:ver-26", "lex:ver-06", "lex:ver-23", "lex:ver-13", "gr:derived-verb-forms", "txt:gram-form2-jarraba", "txt:gram-form3-safara", "txt:gram-form5-takallama", "txt:gram-form8-ishtara", "txt:gram-form10-istayqaza"],
       "status": "available", "source": "steps:b1-derived-verb-forms"
+    },
+    {
+      "id": "b1-derived-verb-forms-2", "unitId": "b1-u1", "order": 2,
+      "title": "Derived Verb Forms — Completing the Set",
+      "blurb": "Form IV was hiding too (أَرَادَ, أَغْلَقَ); Forms VI and VII each get one new word, chosen to fit naturally beside verbs you already know.",
+      "level": "B1", "skills": ["grammar", "vocabulary", "reading"],
+      "objectives": ["lex:ver-16", "lex:ver-20", "lex:ver-31", "lex:ver-32", "lex:ver-33", "gr:derived-verb-forms", "txt:gram-form4-aghlaqa", "txt:gram-form6-takataba", "txt:gram-form7-infataha"],
+      "status": "available", "source": "steps:b1-derived-verb-forms-2"
     }
   ]
 }
