@@ -1828,5 +1828,61 @@
     "level": "B1",
     "skills": [ "reading", "comprehension", "grammar" ],
     "prereqs": [ "gr:derived-verb-forms" ]
+  },
+  {
+    "id": "txt:gram-form4-aghlaqa",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "derived-verb-forms",
+    "vowelled": "أَغْلَقَ الرَّجُلُ الْبَابَ",
+    "translit": "aghlaqa ar-rajulu al-bāba",
+    "en": "The man closed the door.",
+    "words": [
+      { "surface": "أَغْلَقَ", "translit": "aghlaqa", "gloss": "he closed (Form IV أَفْعَلَ — أَ prefixed)" },
+      { "surface": "الرَّجُلُ", "translit": "ar-rajulu", "gloss": "the man (subject, nominative)" },
+      { "surface": "الْبَابَ", "translit": "al-bāba", "gloss": "the door (object, accusative)" }
+    ],
+    "audio": "أَغْلَقَ الرَّجُلُ الْبَابَ",
+    "level": "B1",
+    "skills": [ "reading", "comprehension", "grammar" ],
+    "prereqs": [ "gr:derived-verb-forms" ]
+  },
+  {
+    "id": "txt:gram-form6-takataba",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "derived-verb-forms",
+    "vowelled": "تَكَاتَبَ الطَّالِبَانِ",
+    "translit": "takātaba aṭ-ṭālibāni",
+    "en": "The two students wrote to each other.",
+    "words": [
+      { "surface": "تَكَاتَبَ", "translit": "takātaba", "gloss": "they (two) corresponded (Form VI تَفَاعَلَ — تَ + Form III's pattern; the verb stays singular here since it precedes a dual subject in VSO order)" },
+      { "surface": "الطَّالِبَانِ", "translit": "aṭ-ṭālibāni", "gloss": "the two students (dual subject, nominative)" }
+    ],
+    "audio": "تَكَاتَبَ الطَّالِبَانِ",
+    "level": "B1",
+    "skills": [ "reading", "comprehension", "grammar" ],
+    "prereqs": [ "gr:derived-verb-forms" ]
+  },
+  {
+    "id": "txt:gram-form7-infataha",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "derived-verb-forms",
+    "vowelled": "اِنْفَتَحَ الْبَابُ فَجْأَةً",
+    "translit": "infataḥa al-bābu fajʾatan",
+    "en": "The door opened suddenly.",
+    "words": [
+      { "surface": "اِنْفَتَحَ", "translit": "infataḥa", "gloss": "it opened, by itself (Form VII اِنْفَعَلَ — اِنْ prefixed; no human subject)" },
+      { "surface": "الْبَابُ", "translit": "al-bābu", "gloss": "the door (subject, nominative)" },
+      { "surface": "فَجْأَةً", "translit": "fajʾatan", "gloss": "suddenly" }
+    ],
+    "audio": "اِنْفَتَحَ الْبَابُ فَجْأَةً",
+    "level": "B1",
+    "skills": [ "reading", "comprehension", "grammar" ],
+    "prereqs": [ "gr:derived-verb-forms" ]
   }
 ]

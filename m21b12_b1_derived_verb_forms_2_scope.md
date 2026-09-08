@@ -1,12 +1,16 @@
 # M21 — Batch 12: B1 Derived Verb Forms IV, VI, VII (completing `b1-u1`)
 
-**Status:** scope, held for approval. No implementation yet.
+**Status:** implemented — see the branch wiring this into the app. `tools/qa-harness.js` 71/71
+(including the new lesson walking to completion by name), `tools/a11y-audit.js` clean, `node
+tools/lint-fixtures.js` 33/33, `npm run content:check` shows exactly the planned deltas: +3 lexemes
+(399→402), +3 texts (99→102), grammar object count unchanged (extended in place, per §3's own
+decision), +1 lesson.
 **Parent:** [ROADMAP.md](ROADMAP.md) M21 row · [m21b11_b1_derived_verb_forms_scope.md](m21b11_b1_derived_verb_forms_scope.md)
 §8 ("Proposed follow-up batch... Forms IV, VI, VII... have no existing example in the lexicon —
 unlike this batch, that follow-up would need 2–3 new verb lexemes, checked against
 `wordlists/a1.json`/`a2.json` first"). This is that follow-up.
 **Base:** `main` (post batch 11 / PR #44).
-**Branch:** `claude/m21b12-b1-derived-verb-forms-2`.
+**Branch:** `claude/m21b12-derived-verb-forms-2-impl`.
 
 ---
 
@@ -128,3 +132,35 @@ functionally complete for B1's purposes, and the next open item is `b1-u2` (rela
 إنّ وأخواتها) — the unit the earlier iʿrāb audit specifically named as where case-marking
 recognition first becomes teachable, and the first real content M21.6's dormant `label` exercise
 type would have something to grade.
+
+## 9. Implementation notes
+
+Shipped exactly as designed in §3 — no deviations. `lex:ver-31`/`ver-32`/`ver-33` follow the
+established `notes` voice, each naming its form, root, and (for the VII pair) the already-known
+verb it's paired with. `gr:derived-verb-forms`'s `rule` text was extended in place as planned
+(added IV/VI/VII tendencies, corrected a small pre-existing miscount — batch 11's own text said
+"Four of these appear in verbs you already know" while actually naming five; fixed to "Seven" now
+that IV's two verbs are folded into the same sentence), its `examples` array grew from 5 to 8
+entries, and one new `commonErrors` entry was added specifically for Form VII's no-human-subject
+rule. No second grammar-point id was created.
+
+The three new example texts reuse only already-taught vocabulary beyond the batch's own 3 new
+lexemes: `الرَّجُلُ`/`الْبَابَ`/`الطَّالِبَانِ`(dual)/`فَجْأَةً` were all already in the lexicon. One
+grammar point worth flagging (not a content error, a real MSA rule, documented in the new text's own
+`words[].gloss`): `تَكَاتَبَ الطَّالِبَانِ` keeps the verb in singular form even though its subject is
+dual — standard MSA verb-subject agreement drops number agreement whenever the verb precedes its
+subject (VSO order), a rule this project hasn't formally taught yet but that's simply how any VSO
+sentence with a dual/plural subject is correctly written; the gloss makes this explicit rather than
+leaving it looking like an error.
+
+`node tools/build-content.js --write-app` then `--check`: 584 objects, exactly the planned deltas
+(+3 lexemes, +3 texts, grammar count unchanged, +1 lesson). `npm run content:lint`: 84 advisory
+warnings — identical to the batch-11 baseline (the 5 new/edited lexemes were never orphaned: the 3
+new ones are referenced by the new lesson's own `objectives`, and `lex:ver-16`/`ver-20` were
+already referenced elsewhere before this batch touched their `notes`). `node
+tools/lint-fixtures.js`: 33/33. `npm run qa`: 71/71, including `catalog lesson
+"b1-derived-verb-forms-2" walks to completion` by name. `node tools/a11y-audit.js`: clean.
+
+`b1-u1`'s blurb narrows to name all eight covered forms collectively rather than listing each one
+(the growing list was becoming unwieldy across two lessons) and names Form IX as the one
+deliberately-deferred form, matching batch 11's own honesty-about-scope precedent.

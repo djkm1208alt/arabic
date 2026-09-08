@@ -420,18 +420,22 @@
     "kind": "grammar",
     "name": "Derived verb forms (الأَوْزَان)",
     "level": "B1",
-    "rule": "A root can be poured into more than one verb pattern, not just Form I's bare فَعَلَ — nine more patterns (Forms II–X) build related but distinct verbs from the same three consonants: II فَعَّلَ (doubled middle letter), III فَاعَلَ (a long ا after the first letter), IV أَفْعَلَ (أَ prefixed), V تَفَعَّلَ (تَ + Form II's pattern), VI تَفَاعَلَ (تَ + Form III's pattern), VII اِنْفَعَلَ (اِنْ prefixed), VIII اِفْتَعَلَ (a ت infixed after the first letter), IX اِفْعَلَّ (doubled final letter, colors and physical defects), X اِسْتَفْعَلَ (اِسْتَ prefixed). Four of these appear in verbs you already know: جَرَّبَ (II, \"to try\"), سَافَرَ (III, \"to travel\"), تَكَلَّمَ (V, \"to speak\"), اِشْتَرَى (VIII, \"to buy\"), اِسْتَيْقَظَ (X, \"to wake up\") — same discipline as gr:root-pattern, applied to verbs instead of nouns. The forms carry real tendencies: II often causative/intensive (\"to make X happen\" or \"to X thoroughly\"), III often reciprocal or effort directed at someone, V the reflexive of II (\"to become X'd,\" or to do II's action to yourself), VIII a reflexive/middle-voice sense (\"to do X for yourself\"), X \"to seek/consider X\" or a reflexive-causative sense (\"to render yourself X\").",
+    "rule": "A root can be poured into more than one verb pattern, not just Form I's bare فَعَلَ — nine more patterns (Forms II–X) build related but distinct verbs from the same three consonants: II فَعَّلَ (doubled middle letter), III فَاعَلَ (a long ا after the first letter), IV أَفْعَلَ (أَ prefixed), V تَفَعَّلَ (تَ + Form II's pattern), VI تَفَاعَلَ (تَ + Form III's pattern), VII اِنْفَعَلَ (اِنْ prefixed), VIII اِفْتَعَلَ (a ت infixed after the first letter), IX اِفْعَلَّ (doubled final letter, colors and physical defects), X اِسْتَفْعَلَ (اِسْتَ prefixed). Seven of these appear in verbs you already knew before this lesson: جَرَّبَ (II, \"to try\"), سَافَرَ (III, \"to travel\"), أَرَادَ and أَغْلَقَ (IV, \"to want\" and \"to close\"), تَكَلَّمَ (V, \"to speak\"), اِشْتَرَى (VIII, \"to buy\"), اِسْتَيْقَظَ (X, \"to wake up\") — same discipline as gr:root-pattern, applied to verbs instead of nouns. Forms VI and VII each needed one genuinely new word: تَكَاتَبَ (VI, \"to correspond,\" built on the same root ك-ت-ب as كَتَبَ/كِتَاب/مَكْتَبَة), and اِنْفَتَحَ/اِنْغَلَقَ (VII, \"to open/close by itself\") taught as minimal pairs with the already-known فَتَحَ/أَغْلَقَ (\"to open/close [something]\"). The forms carry real tendencies: II often causative/intensive (\"to make X happen\" or \"to X thoroughly\"), III often reciprocal or effort directed at someone, IV often causative (similar to II, but often built from a plain noun or adjective rather than another verb), V the reflexive of II (\"to become X'd,\" or to do II's action to yourself), VI the reciprocal of III (\"to do X to/with each other\"), VII the passive/reflexive of Form I (\"for something to become X'd\" — it never takes a human agent as its subject, which is exactly why اِنْفَتَحَ/اِنْغَلَقَ pair so naturally with \"the door opened/closed\" rather than \"someone opened/closed it\"), VIII a reflexive/middle-voice sense (\"to do X for yourself\"), X \"to seek/consider X\" or a reflexive-causative sense (\"to render yourself X\").",
     "examples": [
       "txt:gram-form2-jarraba",
       "txt:gram-form3-safara",
       "txt:gram-form5-takallama",
       "txt:gram-form8-ishtara",
-      "txt:gram-form10-istayqaza"
+      "txt:gram-form10-istayqaza",
+      "txt:gram-form4-aghlaqa",
+      "txt:gram-form6-takataba",
+      "txt:gram-form7-infataha"
     ],
     "commonErrors": [
       "Expecting a fixed meaning for every form on every root — like noun patterns in gr:root-pattern, these are strong tendencies, not rules a dictionary enforces: اِشْتَرَى doesn't transparently mean \"to seek to sell\" from ش-ر-ي's buy/sell sense, it's simply lexicalized as \"to buy.\"",
       "Assuming a derived form's Form I counterpart always exists as an actual word — تَكَلَّمَ (V) has no attested Form II كَلَّمَ used the same way in everyday MSA; the *pattern's* meaning tendency still holds even when the \"paired\" form isn't itself a common word.",
-      "Confusing the doubled middle letter of Form II (فَعَّلَ, e.g. جَرَّبَ) with the long ا after the first letter of Form III (فَاعَلَ, e.g. سَافَرَ) — they look similar in translit but are written and pronounced differently."
+      "Confusing the doubled middle letter of Form II (فَعَّلَ, e.g. جَرَّبَ) with the long ا after the first letter of Form III (فَاعَلَ, e.g. سَافَرَ) — they look similar in translit but are written and pronounced differently.",
+      "Giving a Form VII verb a human subject — اِنْفَتَحَ الْبَابُ (\"the door opened\") is natural, but a person doesn't اِنْفَتَحَ; Form VII describes something undergoing an action, not someone performing one."
     ],
     "skills": [
       "grammar",

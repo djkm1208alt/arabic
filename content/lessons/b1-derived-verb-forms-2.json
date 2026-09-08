@@ -1,0 +1,73 @@
+{
+  "id": "b1-derived-verb-forms-2",
+  "unitId": "b1-u1",
+  "curriculumLessonId": "b1-derived-verb-forms-2",
+  "title": "Derived Verb Forms — Completing the Set",
+  "level": "B1",
+  "skills": ["grammar", "vocabulary", "reading"],
+  "objectives": [
+    "lex:ver-16", "lex:ver-20", "lex:ver-31", "lex:ver-32", "lex:ver-33",
+    "gr:derived-verb-forms",
+    "txt:gram-form4-aghlaqa", "txt:gram-form6-takataba", "txt:gram-form7-infataha"
+  ],
+  "steps": [
+    {
+      "type": "explain",
+      "title": "Three more patterns — one hiding, two brand new",
+      "body": [
+        "Form IV was hiding in your vocabulary the whole time, the same way II, III, V, VIII, and X were: أَرَادَ (to want) and أَغْلَقَ (to close) are both Form IV — أَفْعَلَ, أَ prefixed to the root. You've been using أَرَادَ's present tense, أُرِيدُ, since your very first \"I would like...\" phrase.",
+        "Form VI and Form VII needed one genuinely new word each. تَكَاتَبَ (to correspond) is Form VI — تَفَاعَلَ, the reciprocal of Form III — built on ك-ت-ب, the same root as كَتَبَ, كِتَاب, and مَكْتَبَة.",
+        "Form VII is the odd one out: اِنْفَتَحَ (it opened) and اِنْغَلَقَ (it closed) never take a person as their subject — a door اِنْفَتَحَ by itself; a person doesn't. That's exactly why they pair so naturally with verbs you already know: فَتَحَ الرَّجُلُ الْبَابَ (\"the man opened the door\") describes someone doing it; اِنْفَتَحَ الْبَابُ (\"the door opened\") describes it happening, with no one named as the doer."
+      ],
+      "previewSymbols": ["أَغْلَقَ", "تَكَاتَبَ", "اِنْفَتَحَ"]
+    },
+    {
+      "type": "reading-practice",
+      "title": "Three more patterns",
+      "intro": "Read each sentence, then check which verb form it uses. Tap 🔊 to hear any line.",
+      "fromObjectives": true
+    },
+    {
+      "type": "practice-choice",
+      "title": "A form you already knew",
+      "arabicPrompt": "أَرَادَ",
+      "prompt": "أَرَادَ (to want) starts with أَ. Which form is that?",
+      "options": [
+        { "label": "Form IV — أَفْعَلَ", "correct": true },
+        { "label": "Form VII — اِنْفَعَلَ", "correct": false },
+        { "label": "Form VI — تَفَاعَلَ", "correct": false }
+      ],
+      "explanation": "أَفْعَلَ prefixes أَ to the root — you've said أُرِيدُ (its present tense) many times without naming this pattern until now."
+    },
+    {
+      "type": "practice-choice",
+      "title": "No one did it",
+      "arabicPrompt": "اِنْفَتَحَ الْبَابُ فَجْأَةً",
+      "prompt": "اِنْفَتَحَ الْبَابُ فَجْأَةً — who opened the door?",
+      "options": [
+        { "label": "No one is named — it just happened", "correct": true },
+        { "label": "الرَّجُلُ (the man)", "correct": false },
+        { "label": "The sentence doesn't say, but someone must have", "correct": false }
+      ],
+      "explanation": "Form VII (اِنْفَعَلَ) describes something undergoing an action, not someone performing one — that's the whole point of the pattern, not a gap in the sentence."
+    },
+    {
+      "type": "practice-choice",
+      "title": "Reciprocal action",
+      "arabicPrompt": "تَكَاتَبَ (Form VI)",
+      "prompt": "تَكَاتَبَ is Form VI — تَ added to Form III's own pattern. What does Form VI often mean?",
+      "options": [
+        { "label": "Doing the action to/with each other", "correct": true },
+        { "label": "Something undergoing an action, with no one performing it", "correct": false },
+        { "label": "Seeking or considering something to be true", "correct": false }
+      ],
+      "explanation": "Form VI's تَ is the reciprocal counterpart of Form III, the same way Form V's تَ is the reflexive counterpart of Form II — تَكَاتَبَ literally means the two sides wrote to each other."
+    },
+    {
+      "type": "complete",
+      "title": "b1-u1 is complete",
+      "message": "Eight of the ten derived forms, all built from a mix of words you already knew and three new ones chosen to fit naturally beside them. Only Form IX — colours and physical defects, a genuinely rare pattern — is still ahead, and it's staying there until much later.",
+      "finishLabel": "Finish"
+    }
+  ]
+}
