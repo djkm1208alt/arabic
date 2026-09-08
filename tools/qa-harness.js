@@ -157,6 +157,14 @@ async function resolveExerciseHost(page) {
         return true;
     }
 
+    // label (M21.6): one option click resolves the interaction, same shape
+    // as cloze. Only reachable once a future content batch adds a `parse`
+    // array to a real text — no current lesson can trigger this branch.
+    if (await host.locator(".label-option").count()) {
+        await host.locator(".label-option").first().click({ force: true });
+        return true;
+    }
+
     // build / order: both share the same tile-bank -> answer -> Check
     // pattern. Placement order doesn't gate progression — Check resolves
     // the interaction whether the build/order ends up correct or not.
@@ -371,6 +379,66 @@ async function main() {
             await context.close();
         });
     }
+
+    // M21.6 — the label exercise type, driven end-to-end against a synthetic
+    // fixture pushed into TEXTS/OBJECT_BY_ID at runtime and popped back out
+    // immediately after. Never touches content/texts.json — this milestone
+    // ships no real curriculum content (see m21.6_parse_label_exercise_type_scope.md).
+    await check("M21.6 — label exercise type renders and grades (role-only + role+case)", async () => {
+        const { context, page, pageErrors } = await freshPage(browser);
+        await gotoApp(page);
+        const outcomes = await page.evaluate(() => {
+            const fixtures = [
+                {
+                    id: "txt:qa-fixture-label-role", kind: "text", textType: "sentence", source: "m20",
+                    vowelled: "الطَّالِبُ فِي الْمَدْرَسَةِ", translit: "aṭ-ṭālibu fī al-madrasati",
+                    en: "The student is at school.", level: "A2", skills: ["grammar"],
+                    parse: [{ word: "الطَّالِبُ", role: "mubtada" }],
+                },
+                {
+                    id: "txt:qa-fixture-label-case", kind: "text", textType: "sentence", source: "m20",
+                    vowelled: "الطَّالِبُ فِي الْمَدْرَسَةِ", translit: "aṭ-ṭālibu fī al-madrasati",
+                    en: "The student is at school.", level: "A2", skills: ["grammar"],
+                    parse: [{ word: "الطَّالِبُ", role: "mubtada", case: "raf" }],
+                },
+            ];
+            return fixtures.map((fixture) => {
+                TEXTS.push(fixture);
+                OBJECT_BY_ID.set(fixture.id, fixture);
+                try {
+                    const item = exGenLabel(fixture.id);
+                    if (!item) return { ok: false, reason: "exGenLabel returned null" };
+                    const hasMark = item.sentenceHtml.indexOf('class="label-target"') !== -1
+                        && item.sentenceHtml.indexOf(fixture.parse[0].word) !== -1;
+                    const answerOpt = item.options.find(o => o.key === item.answer);
+                    const host = document.createElement("div");
+                    document.body.appendChild(host);
+                    let resultSeen = null;
+                    exerciseTypes.label.render(item, host, (res) => { resultSeen = res; });
+                    const buttons = [...host.querySelectorAll(".label-option")];
+                    const correctBtn = buttons.find(b => b.querySelector(".label-ar").textContent === answerOpt.ar);
+                    const outcome = {
+                        hasMark, optionCount: item.options.length, hasAnswerOption: !!answerOpt,
+                        buttonCount: buttons.length, foundCorrectBtn: !!correctBtn,
+                    };
+                    if (correctBtn) correctBtn.click();
+                    host.remove();
+                    outcome.resultSeen = resultSeen;
+                    outcome.ok = hasMark && item.options.length >= 2 && !!answerOpt
+                        && buttons.length === item.options.length && !!correctBtn
+                        && !!resultSeen && resultSeen.correct === true;
+                    return outcome;
+                } finally {
+                    TEXTS.pop();
+                    OBJECT_BY_ID.delete(fixture.id);
+                }
+            });
+        });
+        assert(outcomes.length === 2, `expected 2 fixture outcomes, got ${outcomes.length}`);
+        outcomes.forEach((o, i) => assert(o.ok, `label fixture ${i} (${i === 0 ? "role-only" : "role+case"}) failed: ${JSON.stringify(o)}`));
+        assert(pageErrors.length === 0, `${pageErrors.length} pageerror(s) during label exercise-type test — ${pageErrors.join(" | ")}`);
+        await context.close();
+    });
 
     await browser.close();
 

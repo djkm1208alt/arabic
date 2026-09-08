@@ -840,6 +840,13 @@
     .cloze-gap { display: inline-block; min-width: 60px; border-bottom: 2px dashed var(--ink-soft); margin: 0 6px; color: var(--ink-soft); }
     .cloze-gap.right { border-color: var(--accent); color: var(--accent); }
     .cloze-gap.wrong { border-color: var(--danger); color: var(--danger); }
+    .label-sentence { font-family: var(--font-arabic); font-size: 24px; text-align: center; margin: 0 0 18px; line-height: 1.9; direction: rtl; }
+    .label-sentence .label-target { background: var(--accent-soft); color: var(--accent); border-radius: 4px; padding: 0 3px; }
+    .label-option { display: flex; flex-direction: column; align-items: center; gap: 2px; min-width: 100px; min-height: 44px; justify-content: center; }
+    .label-option .label-ar { font-size: 17px; }
+    .label-option .label-en { font-size: 11px; color: var(--ink-soft); font-family: var(--font-body); }
+    .label-option.right { border-color: var(--accent); background: var(--accent-soft); }
+    .label-option.wrong { border-color: var(--danger); background: var(--danger-soft); }
     .build-answer, .order-answer {
         min-height: 48px; display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
         padding: 10px; border: 1px dashed var(--panel-border); border-radius: 10px; margin-bottom: 14px;
@@ -4512,6 +4519,13 @@ function generateLessonSteps(node) {
             if (od) steps.push({ type: "exercise", title: "Put the words in order", exercise: od });
         }
     }
+    /* M21.6 — only fires once a future content batch adds a `parse` array to
+       one of a lesson's objective texts; no current text carries one. */
+    const parseText = objs.find(o => o.kind === "text" && Array.isArray(o.parse) && o.parse.length);
+    if (parseText) {
+        const lb = exGenLabel(parseText.id);
+        if (lb) steps.push({ type: "exercise", title: "Label the word", exercise: lb });
+    }
 
     /* 7. Application / recap */
     steps.push({
@@ -4745,6 +4759,49 @@ exerciseTypes.order = {
     },
 };
 
+/* M21.6 — the closed role/case vocabulary a `label` item's options are drawn
+   from. Extending this list (B2's five objects, the tawābiʿ, etc.) is a
+   future content batch's job, not this engine milestone's — see
+   m21.6_parse_label_exercise_type_scope.md §4.2/§8. */
+const LABEL_ROLES = {
+    mubtada:     { ar: "مُبْتَدَأ",       en: "subject (mubtadaʾ)" },
+    khabar:      { ar: "خَبَر",          en: "predicate (khabar)" },
+    fail:        { ar: "فَاعِل",         en: "doer (fāʿil)" },
+    mafulbih:    { ar: "مَفْعُول بِهِ",     en: "object (mafʿūl bih)" },
+    mudafilayhi: { ar: "مُضَاف إِلَيْهِ",   en: "possessor (muḍāf ilayhi)" },
+};
+const LABEL_CASES = {
+    raf:  { ar: "مَرْفُوع", en: "nominative (rafʿ)" },
+    nasb: { ar: "مَنْصُوب", en: "accusative (naṣb)" },
+    jarr: { ar: "مَجْرُور", en: "genitive (jarr)" },
+};
+
+exerciseTypes.label = {
+    strands: ["grammar", "reading"],
+    render(item, host, onResult) {
+        host.innerHTML = `<p class="exercise-prompt">${item.prompt || "What role does the marked word play?"}</p>`;
+        const sentence = document.createElement("div");
+        sentence.className = "label-sentence"; sentence.lang = "ar"; sentence.dir = "rtl";
+        sentence.innerHTML = item.sentenceHtml;
+        host.appendChild(sentence);
+        const bank = document.createElement("div");
+        bank.className = "tile-bank";
+        exShuffle(item.options.slice()).forEach(opt => {
+            const b = document.createElement("button");
+            b.className = "tile label-option";
+            b.innerHTML = `<span class="label-ar ar" lang="ar">${opt.ar}</span><span class="label-en">${opt.en}</span>`;
+            b.onclick = () => {
+                bank.querySelectorAll("button").forEach(x => x.disabled = true);
+                const correct = opt.key === item.answer;
+                b.classList.add(correct ? "right" : "wrong");
+                onResult({ correct, objectResults: [{ objectId: item.objectId || null, correct }] });
+            };
+            bank.appendChild(b);
+        });
+        host.appendChild(bank);
+    },
+};
+
 /* ---- item generators — build one exercise from an object's own fields ---- */
 function exGenMatch(skillOrLexemes) {
     let set;
@@ -4809,6 +4866,46 @@ function exGenOrder(textId) {
         kind: "order", skill: "grammar", objectId: t.id, objectIds: [t.id],
         prompt: `Put the words in order: “${t.en}”`,
         items: t.words.map((w, i) => ({ label: w.surface, pos: i })),
+    };
+}
+
+/* M21.6 — built from a text's own optional `parse` array (word/role/case),
+   the same "generated from an existing object's own fields" rule every
+   other v1 item type already follows (see M18 §2.2). One schema, two
+   difficulty tiers: role-only when a `parse` entry has no `case`, role+case
+   when it does — no separate exercise type needed for either (scope §4.5). */
+function exGenLabel(textId) {
+    const t = textId ? OBJECT_BY_ID.get(textId) : exShuffle(TEXTS.filter(x => Array.isArray(x.parse) && x.parse.length))[0];
+    if (!t || !Array.isArray(t.parse) || !t.parse.length) return null;
+    const p = exShuffle(t.parse.slice())[0];
+    if (!p || !p.word || !LABEL_ROLES[p.role]) return null;
+    const withCase = p.case && LABEL_CASES[p.case];
+    const escapeHtml = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    const escapedSentence = escapeHtml(t.vowelled || "");
+    const escapedWord = escapeHtml(p.word);
+    if (escapedSentence.indexOf(escapedWord) === -1) return null;
+    const sentenceHtml = escapedSentence.replace(escapedWord, `<mark class="label-target">${escapedWord}</mark>`);
+    const roleKeys = Object.keys(LABEL_ROLES);
+    const caseKeys = Object.keys(LABEL_CASES);
+    let options, answer;
+    if (withCase) {
+        answer = p.role + "+" + p.case;
+        const all = [];
+        roleKeys.forEach(r => caseKeys.forEach(c => all.push(r + "+" + c)));
+        const distractors = exShuffle(all.filter(k => k !== answer)).slice(0, 3);
+        options = exShuffle([answer].concat(distractors)).map(k => {
+            const [r, c] = k.split("+");
+            return { key: k, ar: LABEL_ROLES[r].ar + " — " + LABEL_CASES[c].ar, en: LABEL_ROLES[r].en + ", " + LABEL_CASES[c].en };
+        });
+    } else {
+        answer = p.role;
+        const distractors = exShuffle(roleKeys.filter(r => r !== p.role)).slice(0, 3);
+        options = exShuffle([p.role].concat(distractors)).map(r => ({ key: r, ar: LABEL_ROLES[r].ar, en: LABEL_ROLES[r].en }));
+    }
+    return {
+        kind: "label", skill: "grammar", objectId: t.id, objectIds: [t.id],
+        prompt: withCase ? "What role and case does the marked word have?" : "What role does the marked word play?",
+        sentenceHtml, options, answer,
     };
 }
 
