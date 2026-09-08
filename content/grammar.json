@@ -445,5 +445,31 @@
     "prereqs": [
       "gr:root-pattern"
     ]
+  },
+  {
+    "id": "gr:relative-clauses",
+    "kind": "grammar",
+    "name": "Relative clauses (الَّذِي / الَّتِي)",
+    "level": "B1",
+    "rule": "الَّذِي (masculine) and الَّتِي (feminine) mean \"who / which / that\" and introduce a relative clause — but only after a DEFINITE antecedent. الرَّجُلُ الَّذِي سَافَرَ إِلَى الْمَدِينَةِ (\"the man who traveled to the city\") is definite (الرَّجُلُ carries الـ), so الَّذِي is required. Drop the antecedent's الـ and الَّذِي disappears too: رَجُلٌ سَافَرَ إِلَى الْمَدِينَةِ (\"a man [who] traveled to the city\") — Arabic doesn't mark an indefinite relative clause with any pronoun at all; the clause just follows the noun directly. الَّذِي/الَّتِي agree with the antecedent's gender, never the clause's own internal grammar — الَّتِي is chosen because الْمَرْأَةُ (the woman) is feminine, whatever gender the verb after it happens to be. The clause that follows — جملة الصلة — has no case role of its own; that's a fuller idea only formally parsed much later (C1), mentioned here just so the term isn't left unexplained. This lesson covers only SUBJECT-relative clauses, where the antecedent is also the clause's own subject (الرَّجُلُ الَّذِي سَافَرَ..., \"the man who [he] traveled...\" — the verb's built-in subject already is the antecedent, so nothing extra is needed). OBJECT-relative clauses (\"the book that I read [it]\") need an extra pronoun suffix on the clause's verb referring back to the antecedent — a separate rule, covered in a later unit.",
+    "examples": [
+      "txt:gram-relclause-safara",
+      "txt:gram-relclause-takallamat",
+      "txt:gram-relclause-istayqaza",
+      "txt:gram-relclause-indefinite"
+    ],
+    "commonErrors": [
+      "Using الَّذِي/الَّتِي after an indefinite antecedent — رَجُلٌ الَّذِي سَافَرَ is wrong; drop الَّذِي entirely once the antecedent loses its الـ.",
+      "Matching الَّذِي/الَّتِي to the wrong gender — they agree with the antecedent noun (الرَّجُلُ → الَّذِي, الْمَرْأَةُ → الَّتِي), not with anything inside the clause that follows.",
+      "Trying to use الَّذِي/الَّتِي on an object-relative clause (\"the book that I read\") without a resumptive pronoun — that construction needs an extra step this lesson doesn't cover yet."
+    ],
+    "skills": [
+      "grammar",
+      "reading"
+    ],
+    "prereqs": [
+      "gr:definiteness",
+      "gr:verbal-sentence"
+    ]
   }
 ]
