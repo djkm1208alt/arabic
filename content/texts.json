@@ -1671,5 +1671,67 @@
     "level": "A2",
     "skills": [ "reading", "comprehension", "listening" ],
     "prereqs": [ "gr:verbal-sentence", "gr:kana" ]
+  },
+  {
+    "id": "txt:read-dlg-shopping",
+    "kind": "text",
+    "textType": "dialogue",
+    "source": "m20",
+    "vowelled": "بِكَمْ هَذَا؟ — بِعِشْرِينَ دُولَارًا. — هَلْ عِنْدَكَ مَقَاسٌ صَغِيرٌ؟ — نَعَمْ، هَذَا مَقَاسٌ صَغِيرٌ. — هَذَا كُلُّ شَيْءٍ، شُكْرًا. — نَقْدٌ أَوْ بِطَاقَةُ اِئْتِمَانٍ؟ — بِطَاقَةُ اِئْتِمَانٍ، مِنْ فَضْلِك.",
+    "translit": "bikam hādhā? — biʿishrīna dūlāran. — hal ʿindaka maqāsun ṣaghīrun? — naʿam, hādhā maqāsun ṣaghīrun. — hādhā kullu shayʾin, shukran. — naqdun aw biṭāqatu iʾtimānin? — biṭāqatu iʾtimānin, min faḍlik.",
+    "en": "— How much is this? — For twenty dollars. — Do you have a small size? — Yes, this is a small size. — That's all, thank you. — Cash or credit card? — Credit card, please.",
+    "turns": [
+      { "ar": "بِكَمْ هَذَا؟", "translit": "bikam hādhā?", "en": "How much is this?" },
+      { "ar": "بِعِشْرِينَ دُولَارًا.", "translit": "biʿishrīna dūlāran.", "en": "For twenty dollars." },
+      { "ar": "هَلْ عِنْدَكَ مَقَاسٌ صَغِيرٌ؟", "translit": "hal ʿindaka maqāsun ṣaghīrun?", "en": "Do you have a small size?" },
+      { "ar": "نَعَمْ، هَذَا مَقَاسٌ صَغِيرٌ.", "translit": "naʿam, hādhā maqāsun ṣaghīrun.", "en": "Yes, this is a small size." },
+      { "ar": "هَذَا كُلُّ شَيْءٍ، شُكْرًا.", "translit": "hādhā kullu shayʾin, shukran.", "en": "That's all, thank you." },
+      { "ar": "نَقْدٌ أَوْ بِطَاقَةُ اِئْتِمَانٍ؟", "translit": "naqdun aw biṭāqatu iʾtimānin?", "en": "Cash or credit card?" },
+      { "ar": "بِطَاقَةُ اِئْتِمَانٍ، مِنْ فَضْلِك.", "translit": "biṭāqatu iʾtimānin, min faḍlik.", "en": "Credit card, please." }
+    ],
+    "audio": "بِكَمْ هَذَا؟ بِعِشْرِينَ دُولَارًا. هَلْ عِنْدَكَ مَقَاسٌ صَغِيرٌ؟ نَعَمْ، هَذَا مَقَاسٌ صَغِيرٌ. هَذَا كُلُّ شَيْءٍ، شُكْرًا. نَقْدٌ أَوْ بِطَاقَةُ اِئْتِمَانٍ؟ بِطَاقَةُ اِئْتِمَانٍ، مِنْ فَضْلِك.",
+    "level": "A2",
+    "skills": [ "listening", "speaking", "comprehension" ],
+    "prereqs": [ "gr:idafa" ]
+  },
+  {
+    "id": "txt:read-dlg-directions",
+    "kind": "text",
+    "textType": "dialogue",
+    "source": "m20",
+    "vowelled": "عَفْوًا، أَيْنَ الْبَنْكُ؟ — الْبَنْكُ قَرِيبٌ، بِجَانِبِ الْمَطْعَمِ. — هَلْ هُوَ بَعِيدٌ مِنْ هُنَا؟ — لَا، هُوَ قَرِيبٌ. الْبَنْكُ أَمَامَ الْمَكْتَبَةِ. — شُكْرًا! — عَفْوًا!",
+    "translit": "ʿafwan, ayna al-banku? — al-banku qarībun, bijānibi al-maṭʿami. — hal huwa baʿīdun min hunā? — lā, huwa qarībun. al-banku amāma al-maktabati. — shukran! — ʿafwan!",
+    "en": "— Excuse me, where is the bank? — The bank is near, next to the restaurant. — Is it far from here? — No, it's near. The bank is in front of the library. — Thank you! — You're welcome!",
+    "turns": [
+      { "ar": "عَفْوًا، أَيْنَ الْبَنْكُ؟", "translit": "ʿafwan, ayna al-banku?", "en": "Excuse me, where is the bank?" },
+      { "ar": "الْبَنْكُ قَرِيبٌ، بِجَانِبِ الْمَطْعَمِ.", "translit": "al-banku qarībun, bijānibi al-maṭʿami.", "en": "The bank is near, next to the restaurant." },
+      { "ar": "هَلْ هُوَ بَعِيدٌ مِنْ هُنَا؟", "translit": "hal huwa baʿīdun min hunā?", "en": "Is it far from here?" },
+      { "ar": "لَا، هُوَ قَرِيبٌ. الْبَنْكُ أَمَامَ الْمَكْتَبَةِ.", "translit": "lā, huwa qarībun. al-banku amāma al-maktabati.", "en": "No, it's near. The bank is in front of the library." },
+      { "ar": "شُكْرًا!", "translit": "shukran!", "en": "Thank you!" },
+      { "ar": "عَفْوًا!", "translit": "ʿafwan!", "en": "You're welcome!" }
+    ],
+    "audio": "عَفْوًا، أَيْنَ الْبَنْكُ؟ الْبَنْكُ قَرِيبٌ، بِجَانِبِ الْمَطْعَمِ. هَلْ هُوَ بَعِيدٌ مِنْ هُنَا؟ لَا، هُوَ قَرِيبٌ. الْبَنْكُ أَمَامَ الْمَكْتَبَةِ. شُكْرًا! عَفْوًا!",
+    "level": "A2",
+    "skills": [ "listening", "speaking", "comprehension" ],
+    "prereqs": [ "gr:core-prepositions" ]
+  },
+  {
+    "id": "txt:read-dlg-permission",
+    "kind": "text",
+    "textType": "dialogue",
+    "source": "m20",
+    "vowelled": "مُمْكِن؟ هَلْ عِنْدَكَ قَلَمٌ؟ — طَبْعًا! — شُكْرًا! — لَا بَأْسَ.",
+    "translit": "mumkin? hal ʿindaka qalamun? — ṭabʿan! — shukran! — lā baʾsa.",
+    "en": "— May I? Do you have a pen? — Of course! — Thank you! — No problem.",
+    "turns": [
+      { "ar": "مُمْكِن؟ هَلْ عِنْدَكَ قَلَمٌ؟", "translit": "mumkin? hal ʿindaka qalamun?", "en": "May I? Do you have a pen?" },
+      { "ar": "طَبْعًا!", "translit": "ṭabʿan!", "en": "Of course!" },
+      { "ar": "شُكْرًا!", "translit": "shukran!", "en": "Thank you!" },
+      { "ar": "لَا بَأْسَ.", "translit": "lā baʾsa.", "en": "No problem." }
+    ],
+    "audio": "مُمْكِن؟ هَلْ عِنْدَكَ قَلَمٌ؟ طَبْعًا! شُكْرًا! لَا بَأْسَ.",
+    "level": "A2",
+    "skills": [ "listening", "speaking", "comprehension" ],
+    "prereqs": [ "gr:negation-a1" ]
   }
 ]

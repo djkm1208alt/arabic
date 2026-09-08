@@ -12,7 +12,7 @@ The standing plan for the Arabic-learning platform. Every milestone scope doc ci
 
 ## Position
 
-`main` @ `c915959`. **M6–M19 + the .5 batch (M14.1 / M14.5 / M15.5 / M19.5 / M20.5 / M21.5) + M20 (complete) + M20.9 merged and live.** M21 batches 1–7 merged: A2 grammar, numbers 11–99, telling time, prices, dates, root & pattern, and narrative/everyday-exchanges vocabulary — `a2-u1`/`a2-u2`/`a2-u3`/`a2-u4` are all fully complete. In review: **M21 batch 8** — `a2-u5` ("Reading Short Paragraphs"): the first connected multi-sentence texts in the project (a new `paragraph` `textType`), two short narrative paragraphs putting 8 of batch 7's connectors to work, comprehension-style practice questions, zero new lexemes or grammar. Once this lands `a2-u5` is the fourth A2 unit to close out completely.
+`main` @ `ccded10`. **M6–M19 + the .5 batch (M14.1 / M14.5 / M15.5 / M19.5 / M20.5 / M21.5) + M20 (complete) + M20.9 merged and live.** M21 batches 1–8 merged: A2 grammar, numbers 11–99, telling time, prices, dates, root & pattern, narrative/everyday-exchanges vocabulary, and reading short paragraphs — `a2-u1` through `a2-u5` are all fully complete. In review: **M21 batch 9** — `a2-u6` ("Everyday Exchanges"): three dialogues (shopping/paying, asking the way, a small polite request) reusing batch 7's stocked vocabulary, comprehension-style practice questions, zero new lexemes or grammar. Once this lands, **A2 is fully closed** — all six `a2-uN` units complete.
 
 Phases 1–2 (M13–M15) build the frame. Phase 3 (M16) fills it. Phases 4–6 (M17–M19) make learning findable, provable, and durable. Phase 7 (M20–M21) produces content. Phase 8 (M22–M23) adds accounts and monetisation. Then the UI/UX pass, the AI tutor layer, and the long tail of content.
 
