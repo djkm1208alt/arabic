@@ -203,6 +203,25 @@ function lint(data, wordlists, allow) {
             if (!hit)
                 warnings.push(`levelfit  ${id}: ${o.level} lexeme "${o.en}" is not on content/wordlists/${wlKey}.json — confirm it belongs at ${o.level}`);
         }
+
+        /* --- HARD: M21.6 `parse` field (label exercise-type source data) ---
+           Each entry names a word to highlight, its grammatical role from a
+           closed vocabulary, and an optional case from a closed vocabulary —
+           see m21.6_parse_label_exercise_type_scope.md §4.2. */
+        if (key === "texts" && Array.isArray(o.parse)) {
+            const LABEL_ROLE_IDS = ["mubtada", "khabar", "fail", "mafulbih", "mudafilayhi"];
+            const LABEL_CASE_IDS = ["raf", "nasb", "jarr"];
+            const haystack = [o.vowelled, ...(o.turns || []).map(t => t.ar), ...(o.sentences || []).map(s => s.ar)]
+                .filter(Boolean).join(" ");
+            o.parse.forEach((p, i) => {
+                if ((!p.word || haystack.indexOf(p.word) === -1) && !allowed(id, "parseword"))
+                    errors.push(`parseword  ${id}.parse[${i}]: word "${p.word}" not found in the text's vowelled/turns/sentences`);
+                if (!LABEL_ROLE_IDS.includes(p.role) && !allowed(id, "parserole"))
+                    errors.push(`parserole  ${id}.parse[${i}]: role "${p.role}" is not in the allowed vocabulary (${LABEL_ROLE_IDS.join("/")})`);
+                if (p.case !== undefined && !LABEL_CASE_IDS.includes(p.case) && !allowed(id, "parsecase"))
+                    errors.push(`parsecase  ${id}.parse[${i}]: case "${p.case}" is not one of ${LABEL_CASE_IDS.join("/")}`);
+            });
+        }
     }
 
     return { errors, warnings };

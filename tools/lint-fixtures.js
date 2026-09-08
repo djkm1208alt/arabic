@@ -16,6 +16,13 @@ const lex = (over) => Object.assign({
     pos: "noun", topic: "school", level: "A1", skills: ["vocabulary"], prereqs: [],
 }, over);
 
+/* helper: one text object with sane defaults, overridden per fixture */
+const txt = (over) => Object.assign({
+    id: "txt:fix", kind: "text", textType: "sentence", source: "m20",
+    vowelled: "الطَّالِبُ فِي الْمَدْرَسَةِ", translit: "aṭ-ṭālibu fī al-madrasati",
+    en: "The student is at school.", level: "A2", skills: ["reading"],
+}, over);
+
 const FIXTURES = [
     {
         rule: "register",
@@ -59,6 +66,25 @@ const FIXTURES = [
         broken: { lexemes: [lex({ id: "lex:lf", en: "epistemology", topic: "school", level: "A1" })] },
         fixed:  { lexemes: [lex({ id: "lex:lf", en: "book", topic: "school", level: "A1" })] },
     },
+    {
+        rule: "parseword",
+        kind: "error",
+        // "الْمُعَلِّمُ" (the teacher) never appears in the fixture sentence
+        broken: { texts: [txt({ id: "txt:pw", parse: [{ word: "الْمُعَلِّمُ", role: "fail" }] })] },
+        fixed:  { texts: [txt({ id: "txt:pw", parse: [{ word: "الطَّالِبُ", role: "fail" }] })] },
+    },
+    {
+        rule: "parserole",
+        kind: "error",
+        broken: { texts: [txt({ id: "txt:pr", parse: [{ word: "الطَّالِبُ", role: "subject" }] })] },   // not in the closed vocabulary
+        fixed:  { texts: [txt({ id: "txt:pr", parse: [{ word: "الطَّالِبُ", role: "mubtada" }] })] },
+    },
+    {
+        rule: "parsecase",
+        kind: "error",
+        broken: { texts: [txt({ id: "txt:pc", parse: [{ word: "الطَّالِبُ", role: "mubtada", case: "nominative" }] })] },   // not in the closed vocabulary
+        fixed:  { texts: [txt({ id: "txt:pc", parse: [{ word: "الطَّالِبُ", role: "mubtada", case: "raf" }] })] },
+    },
 ];
 
 let fails = 0;
@@ -72,8 +98,13 @@ for (const fx of FIXTURES) {
     ok(hit, `[${fx.rule}] fixture is flagged (${fx.kind})`);
     const fixedClean = f.errors.length === 0 && f.warnings.filter(x => x.indexOf(fx.rule) === 0).length === 0;
     ok(fixedClean, `[${fx.rule}] fixed version is clean`);
-    // allow-list silences it
-    const allowed = lint(fx.broken, wordlists, { [Object.values(fx.broken)[0][0].id]: [fx.rule === "harakat" ? "harakat" : fx.rule === "levelfit" ? "levelfit" : fx.rule === "longvowel" ? "longvowel" : fx.rule === "length" ? "length" : fx.rule === "emphatic" ? "emphatic" : fx.rule === "ar-indic" ? "ar-indic" : "register"] });
+    // allow-list silences it — the allow-listed rule name is always exactly
+    // fx.rule (M21.6: simplified from a hand-enumerated ternary chain that
+    // silently fell back to "register" for any rule name it didn't already
+    // know about — dead code for the 7 rules that predate it, since each of
+    // those branches just mapped fx.rule back to itself, but a real bug for
+    // parseword/parserole/parsecase below, which it would have mis-tested).
+    const allowed = lint(fx.broken, wordlists, { [Object.values(fx.broken)[0][0].id]: [fx.rule] });
     const stillFlagged = (fx.kind === "error" ? allowed.errors : allowed.warnings).some(x => x.indexOf(fx.rule) === 0);
     ok(!stillFlagged, `[${fx.rule}] _lint-allow.json silences it`);
 }
