@@ -130,9 +130,9 @@
     {
       "id": "b1-u2", "level": "B1", "order": 2,
       "title": "Relative Clauses & Longer Sentences",
-      "blurb": "الَّذِي and its family, إنّ وأخواتها, and joining ideas into paragraphs. In development.",
+      "blurb": "الَّذِي and الَّتِي for subject-relative clauses, definite and indefinite. إنّ وأخواتها and object-relative clauses are still in development.",
       "skills": ["grammar", "reading"],
-      "status": "planned", "prereqs": ["a2-u2"]
+      "status": "available", "prereqs": ["a2-u2"]
     },
     {
       "id": "b1-u3", "level": "B1", "order": 3,
@@ -733,6 +733,14 @@
       "level": "B1", "skills": ["grammar", "vocabulary", "reading"],
       "objectives": ["lex:ver-16", "lex:ver-20", "lex:ver-31", "lex:ver-32", "lex:ver-33", "gr:derived-verb-forms", "txt:gram-form4-aghlaqa", "txt:gram-form6-takataba", "txt:gram-form7-infataha"],
       "status": "available", "source": "steps:b1-derived-verb-forms-2"
+    },
+    {
+      "id": "b1-relative-clauses", "unitId": "b1-u2", "order": 1,
+      "title": "Relative Clauses — الَّذِي / الَّتِي",
+      "blurb": "The relative pronouns الَّذِي and الَّتِي — required after a definite noun, dropped entirely after an indefinite one — in four worked sentences.",
+      "level": "B1", "skills": ["grammar", "reading"],
+      "objectives": ["lex:prt-30", "lex:prt-31", "gr:relative-clauses", "txt:gram-relclause-safara", "txt:gram-relclause-takallamat", "txt:gram-relclause-istayqaza", "txt:gram-relclause-indefinite"],
+      "status": "available", "source": "steps:b1-relative-clauses"
     }
   ]
 }

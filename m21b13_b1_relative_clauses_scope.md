@@ -1,6 +1,9 @@
 # M21 — Batch 13: B1 Relative Clauses (الَّذِي / الَّتِي, subject-relative only)
 
-**Status:** scope, held for approval. No implementation yet.
+**Status:** implemented — `npm run content:check` 591 objects (404 lexemes, 20 grammar, 106 texts,
+57 curriculum lessons, exactly the §6 deltas); `npm run content:lint` clean (84 pre-existing advisory
+warnings, none new); `node tools/lint-fixtures.js` 33/33; `tools/qa-harness.js` and
+`tools/a11y-audit.js` clean (see Implementation notes below).
 **Parent:** [ROADMAP.md](ROADMAP.md) M21 row · `b1-u2` ("Relative Clauses & Longer Sentences" —
 `الَّذِي and its family, إنّ وأخواتها, and joining ideas into paragraphs`) ·
 [CURRICULUM_ARCHITECTURE.md](CURRICULUM_ARCHITECTURE.md) §10.2 B1 grammar spine ("relative clauses
@@ -125,3 +128,29 @@ None. Purely additive.
 
 Plan → this branch → draft PR → review → implementation only on explicit approval, per Master
 Standards (same shape as every prior M21 batch).
+
+## 10. Implementation notes
+
+Shipped essentially as scoped in §3, with one small correction found by the linter rather than by
+hand-checking: `lex:prt-30`'s transliteration was first written `allathī` (following the ذ→"th"
+habit from `allathī`/`allatī`'s common informal romanization); `content-lint.js`'s emphatic-letter
+check correctly flagged it — this project's convention (already used consistently in every other
+lexeme with a ذ) is "dh," not "th." Corrected to `alladhī`; the four example texts already used
+`alladhī` in their own `translit` fields, so this was a same-file inconsistency, not a design change.
+
+Everything else matched §3 exactly: 2 new lexemes (`lex:prt-30` الَّذِي, `lex:prt-31` الَّتِي), 1 new
+grammar point (`gr:relative-clauses`, `prereqs: ["gr:definiteness", "gr:verbal-sentence"]`), 4 new
+example texts (masculine/feminine definite-antecedent pairs reusing batch 11's `سَافَرَ`/`تَكَلَّمَ`/
+`اِسْتَيْقَظَ`, plus the indefinite-antecedent contrast case), and 1 new lesson
+(`b1-relative-clauses`, `explain` → `reading-practice` → 3× `practice-choice` → `complete`).
+`b1-u2` flips `planned` → `available`; its blurb now names only subject-relative الَّذِي/الَّتِي,
+with إنّ وأخواتها and object-relative clauses explicitly still "in development."
+
+Verification: `node tools/build-content.js --write-app` then `--check` — 591 objects, exactly the §6
+deltas (402→404 lexemes, 19→20 grammar, 102→106 texts, 56→57 lessons). `npm run content:lint` — 84
+advisory warnings, all pre-existing orphaned-lexeme notices unrelated to this batch, zero errors.
+`node tools/lint-fixtures.js` — 33/33 (unchanged from batch 12, confirming this batch touched no
+lint-rule logic). `npm run qa` — 72/72 checks passed, including the new `b1-relative-clauses` catalog
+lesson walking to completion. `node tools/a11y-audit.js` — clean: 2520 interactive-control renders
+and 9602 text-node renders across 2 themes × 6 breakpoints × 6 views, every touch target ≥ 44×44px,
+every text node meeting WCAG AA contrast.

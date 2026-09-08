@@ -1,0 +1,74 @@
+{
+  "id": "b1-relative-clauses",
+  "unitId": "b1-u2",
+  "curriculumLessonId": "b1-relative-clauses",
+  "title": "Relative Clauses — الَّذِي / الَّتِي",
+  "level": "B1",
+  "skills": ["grammar", "reading"],
+  "objectives": [
+    "lex:prt-30", "lex:prt-31",
+    "gr:relative-clauses",
+    "txt:gram-relclause-safara", "txt:gram-relclause-takallamat",
+    "txt:gram-relclause-istayqaza", "txt:gram-relclause-indefinite"
+  ],
+  "steps": [
+    {
+      "type": "explain",
+      "title": "\"Who,\" \"which,\" \"that\" — but only sometimes",
+      "body": [
+        "الَّذِي (masculine) and الَّتِي (feminine) both mean \"who / which / that,\" and they join a description onto a noun: الرَّجُلُ الَّذِي سَافَرَ إِلَى الْمَدِينَةِ — \"the man who traveled to the city.\" They agree with the noun they describe, not with anything in the description itself.",
+        "The one rule that matters most: الَّذِي/الَّتِي only appear after a DEFINITE noun — one with الـ. Take the الـ away, and the relative pronoun disappears completely, not just its own الـ: رَأَيْتُ طَالِبًا يَدْرُسُ الْعَرَبِيَّةَ — \"I saw a student who studies Arabic\" has no الَّذِي anywhere, because طَالِبًا is indefinite.",
+        "This lesson only covers the simplest shape: the noun being described is also the one doing the action in the description (الرَّجُلُ... سَافَرَ — the man is the one who traveled). Descriptions where the noun is instead the *object* (\"the book that I read\") need one more piece — a pronoun suffix pointing back to it — and that's its own lesson, later."
+      ],
+      "previewSymbols": ["الَّذِي", "الَّتِي", "طَالِبًا يَدْرُسُ"]
+    },
+    {
+      "type": "reading-practice",
+      "title": "Four relative clauses",
+      "intro": "Read each sentence, then check whether it uses الَّذِي, الَّتِي, or no relative pronoun at all. Tap 🔊 to hear any line.",
+      "fromObjectives": true
+    },
+    {
+      "type": "practice-choice",
+      "title": "Definite needs a pronoun",
+      "arabicPrompt": "الرَّجُلُ الَّذِي سَافَرَ إِلَى الْمَدِينَةِ",
+      "prompt": "الرَّجُلُ (the man) is definite. Which word must follow it to start the description?",
+      "options": [
+        { "label": "الَّذِي", "correct": true },
+        { "label": "الَّتِي", "correct": false },
+        { "label": "Nothing — descriptions never need a linking word", "correct": false }
+      ],
+      "explanation": "الرَّجُلُ is masculine and definite, so الَّذِي is required before the description that follows."
+    },
+    {
+      "type": "practice-choice",
+      "title": "Indefinite needs nothing",
+      "arabicPrompt": "رَأَيْتُ طَالِبًا يَدْرُسُ الْعَرَبِيَّةَ",
+      "prompt": "طَالِبًا (a student) is indefinite. What comes right before يَدْرُسُ (studies)?",
+      "options": [
+        { "label": "Nothing — the description just follows directly", "correct": true },
+        { "label": "الَّذِي", "correct": false },
+        { "label": "الَّتِي", "correct": false }
+      ],
+      "explanation": "Because طَالِبًا has no الـ, no relative pronoun appears at all — this is the single most common mistake to watch for in the other direction."
+    },
+    {
+      "type": "practice-choice",
+      "title": "Agreement follows the noun",
+      "arabicPrompt": "الْمَرْأَةُ الَّتِي تَتَكَلَّمُ الْعَرَبِيَّةَ",
+      "prompt": "Why is it الَّتِي here, and not الَّذِي?",
+      "options": [
+        { "label": "الْمَرْأَةُ (the woman) is feminine, and الَّتِي agrees with the antecedent, not the verb", "correct": true },
+        { "label": "تَتَكَلَّمُ (she speaks) happens to be a feminine-sounding verb", "correct": false },
+        { "label": "الَّتِي and الَّذِي are interchangeable", "correct": false }
+      ],
+      "explanation": "الَّذِي/الَّتِي always match the gender of the noun being described — here that's الْمَرْأَةُ, feminine, so الَّتِي."
+    },
+    {
+      "type": "complete",
+      "title": "You can build your first relative clauses",
+      "message": "Definite noun + الَّذِي/الَّتِي + a clause describing it, or indefinite noun + the clause with no pronoun at all — the two shapes that cover most everyday descriptions. Descriptions of an object (\"the book that I read\") are still ahead.",
+      "finishLabel": "Finish"
+    }
+  ]
+}

@@ -1884,5 +1884,84 @@
     "level": "B1",
     "skills": [ "reading", "comprehension", "grammar" ],
     "prereqs": [ "gr:derived-verb-forms" ]
+  },
+  {
+    "id": "txt:gram-relclause-safara",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "relative-clauses",
+    "vowelled": "هَذَا هُوَ الرَّجُلُ الَّذِي سَافَرَ إِلَى الْمَدِينَةِ",
+    "translit": "hādhā huwa ar-rajulu alladhī sāfara ilā al-madīnati",
+    "en": "This is the man who traveled to the city.",
+    "words": [
+      { "surface": "هَذَا هُوَ", "translit": "hādhā huwa", "gloss": "this is (هُوَ links مبتدأ to its definite خبر)" },
+      { "surface": "الرَّجُلُ", "translit": "ar-rajulu", "gloss": "the man (definite antecedent, nominative)" },
+      { "surface": "الَّذِي", "translit": "alladhī", "gloss": "who (masculine relative pronoun — required, since الرَّجُلُ is definite)" },
+      { "surface": "سَافَرَ إِلَى الْمَدِينَةِ", "translit": "sāfara ilā al-madīnati", "gloss": "traveled to the city (subject-relative: الرَّجُلُ is also this verb's subject)" }
+    ],
+    "audio": "هَذَا هُوَ الرَّجُلُ الَّذِي سَافَرَ إِلَى الْمَدِينَةِ",
+    "level": "B1",
+    "skills": [ "reading", "comprehension", "grammar" ],
+    "prereqs": [ "gr:relative-clauses" ]
+  },
+  {
+    "id": "txt:gram-relclause-takallamat",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "relative-clauses",
+    "vowelled": "هَذِهِ هِيَ الْمَرْأَةُ الَّتِي تَتَكَلَّمُ الْعَرَبِيَّةَ",
+    "translit": "hādhihi hiya al-marʾatu allatī tatakallamu al-ʿarabiyyata",
+    "en": "This is the woman who speaks Arabic.",
+    "words": [
+      { "surface": "هَذِهِ هِيَ", "translit": "hādhihi hiya", "gloss": "this is (feminine)" },
+      { "surface": "الْمَرْأَةُ", "translit": "al-marʾatu", "gloss": "the woman (definite antecedent, nominative)" },
+      { "surface": "الَّتِي", "translit": "allatī", "gloss": "who (feminine relative pronoun — agrees with الْمَرْأَةُ)" },
+      { "surface": "تَتَكَلَّمُ الْعَرَبِيَّةَ", "translit": "tatakallamu al-ʿarabiyyata", "gloss": "speaks Arabic (subject-relative: الْمَرْأَةُ is also this verb's subject)" }
+    ],
+    "audio": "هَذِهِ هِيَ الْمَرْأَةُ الَّتِي تَتَكَلَّمُ الْعَرَبِيَّةَ",
+    "level": "B1",
+    "skills": [ "reading", "comprehension", "grammar" ],
+    "prereqs": [ "gr:relative-clauses" ]
+  },
+  {
+    "id": "txt:gram-relclause-istayqaza",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "relative-clauses",
+    "vowelled": "هَذَا هُوَ الْوَلَدُ الَّذِي اِسْتَيْقَظَ فِي الصَّبَاحِ",
+    "translit": "hādhā huwa al-waladu alladhī istayqaẓa fī aṣ-ṣabāḥi",
+    "en": "This is the boy who woke up in the morning.",
+    "words": [
+      { "surface": "هَذَا هُوَ", "translit": "hādhā huwa", "gloss": "this is" },
+      { "surface": "الْوَلَدُ", "translit": "al-waladu", "gloss": "the boy (definite antecedent, nominative)" },
+      { "surface": "الَّذِي", "translit": "alladhī", "gloss": "who (masculine relative pronoun)" },
+      { "surface": "اِسْتَيْقَظَ فِي الصَّبَاحِ", "translit": "istayqaẓa fī aṣ-ṣabāḥi", "gloss": "woke up in the morning (subject-relative)" }
+    ],
+    "audio": "هَذَا هُوَ الْوَلَدُ الَّذِي اِسْتَيْقَظَ فِي الصَّبَاحِ",
+    "level": "B1",
+    "skills": [ "reading", "comprehension", "grammar" ],
+    "prereqs": [ "gr:relative-clauses" ]
+  },
+  {
+    "id": "txt:gram-relclause-indefinite",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "relative-clauses",
+    "vowelled": "رَأَيْتُ طَالِبًا يَدْرُسُ الْعَرَبِيَّةَ",
+    "translit": "raʾaytu ṭāliban yadrusu al-ʿarabiyyata",
+    "en": "I saw a student who studies Arabic.",
+    "words": [
+      { "surface": "رَأَيْتُ", "translit": "raʾaytu", "gloss": "I saw" },
+      { "surface": "طَالِبًا", "translit": "ṭāliban", "gloss": "a student (INDEFINITE antecedent, accusative object — no ال and no tanwīn dropped)" },
+      { "surface": "يَدْرُسُ الْعَرَبِيَّةَ", "translit": "yadrusu al-ʿarabiyyata", "gloss": "studies Arabic — no الَّذِي at all: an indefinite antecedent takes no relative pronoun" }
+    ],
+    "audio": "رَأَيْتُ طَالِبًا يَدْرُسُ الْعَرَبِيَّةَ",
+    "level": "B1",
+    "skills": [ "reading", "comprehension", "grammar" ],
+    "prereqs": [ "gr:relative-clauses" ]
   }
 ]
