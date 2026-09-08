@@ -639,6 +639,14 @@
       "status": "available", "source": "steps:a2-verbal-sentence"
     },
     {
+      "id": "a2-writing-sentences", "unitId": "a2-u1", "order": 2,
+      "title": "Writing A2 Sentences",
+      "blurb": "Building verb-first sentences, كَانَ, and iḍāfa phrases from word tiles — A2's own version of A1's sentence-building lesson.",
+      "level": "A2", "skills": ["writing", "grammar"],
+      "objectives": ["gr:verbal-sentence","gr:kana","gr:idafa","txt:gram-past-vso","txt:gram-past-1sg","txt:gram-kana-house","txt:gram-kana-fem","txt:gram-idafa-phrase","txt:gram-idafa-sentence","txt:gram-idafa-pen-student"],
+      "status": "available", "source": "steps:a2-writing-sentences"
+    },
+    {
       "id": "a2-idafa", "unitId": "a2-u2", "order": 1,
       "title": "The Genitive Construct (Iḍāfa)",
       "blurb": "How two nouns side by side express possession, with no word for \"of\" needed.",
@@ -685,6 +693,14 @@
       "level": "A2", "skills": ["vocabulary", "grammar", "reading"],
       "objectives": ["lex:tim-41","lex:tim-42","lex:tim-43","lex:tim-44","lex:tim-45","lex:tim-46","lex:tim-47","lex:tim-48","lex:tim-49","lex:tim-50","lex:tim-51","lex:tim-52","lex:tim-53","lex:tim-54","lex:tim-55","lex:tim-56","lex:tim-57","lex:tim-58","lex:tim-59","lex:tim-60","lex:tim-61","lex:tim-62","lex:tim-63","lex:exp-12","gr:dates","txt:gram-date-first","txt:gram-date-third","txt:gram-date-tenth","txt:gram-date-sentence"],
       "status": "available", "source": "steps:a2-dates"
+    },
+    {
+      "id": "a2-writing-dictation", "unitId": "a2-u4", "order": 5,
+      "title": "Spelling A2 Words From Dictation",
+      "blurb": "Eight A2 words — numbers, a month, and shopping vocabulary — spelled from sound alone.",
+      "level": "A2", "skills": ["writing", "listening"],
+      "objectives": ["lex:num-20","lex:num-half","lex:num-quarter","lex:tim-62","lex:sch-22","lex:prt-27","lex:shp-13","lex:shp-14"],
+      "status": "available", "source": "steps:a2-writing-dictation"
     },
     {
       "id": "a2-reading-paragraphs", "unitId": "a2-u5", "order": 1,
