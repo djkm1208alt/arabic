@@ -1,0 +1,71 @@
+{
+  "id": "a2-shopping-routine",
+  "unitId": "a2-u6",
+  "curriculumLessonId": "a2-shopping-routine",
+  "title": "Shopping, Directions & Everyday Exchanges",
+  "level": "A2",
+  "skills": ["listening", "speaking", "comprehension"],
+  "objectives": [
+    "gr:idafa", "gr:core-prepositions", "gr:negation-a1",
+    "txt:read-dlg-shopping", "txt:read-dlg-directions", "txt:read-dlg-permission"
+  ],
+  "steps": [
+    {
+      "type": "explain",
+      "title": "Three everyday exchanges",
+      "body": [
+        "A1 gave you the basics — greetings, asking where something is, saying please and thank you. A2 puts those together into fuller, more natural exchanges: paying for something, giving directions with more than one landmark, and the small polite phrases that smooth over any request.",
+        "مُمْكِن؟ ... طَبْعًا! — a request and an easy \"of course\" is the shape of most everyday Arabic exchanges."
+      ],
+      "previewSymbols": ["بِكَمْ هَذَا؟", "أَيْنَ الْبَنْكُ؟", "مُمْكِن؟"]
+    },
+    {
+      "type": "reading-practice",
+      "title": "Three exchanges",
+      "intro": "Tap 🔊 and listen first, before you read. Then reveal the meaning and check what was asked and answered.",
+      "fromObjectives": true
+    },
+    {
+      "type": "practice-choice",
+      "title": "At the shop",
+      "arabicPrompt": "بِكَمْ هَذَا؟ — بِعِشْرِينَ دُولَارًا.",
+      "prompt": "How much does the item cost?",
+      "options": [
+        { "label": "Twenty dollars", "correct": true },
+        { "label": "Twenty riyals", "correct": false },
+        { "label": "Ten dollars", "correct": false }
+      ],
+      "explanation": "بِعِشْرِينَ دُولَارًا = \"for twenty dollars.\""
+    },
+    {
+      "type": "practice-choice",
+      "title": "Paying",
+      "arabicPrompt": "نَقْدٌ أَوْ بِطَاقَةُ اِئْتِمَانٍ؟ — بِطَاقَةُ اِئْتِمَانٍ، مِنْ فَضْلِك.",
+      "prompt": "How does the customer choose to pay?",
+      "options": [
+        { "label": "By credit card", "correct": true },
+        { "label": "In cash", "correct": false },
+        { "label": "The customer doesn't say", "correct": false }
+      ],
+      "explanation": "بِطَاقَةُ اِئْتِمَانٍ = \"a credit card\" — بِطَاقَة (card) + اِئْتِمَان (credit), an iḍāfa."
+    },
+    {
+      "type": "practice-choice",
+      "title": "Asking the way",
+      "arabicPrompt": "أَيْنَ الْبَنْكُ؟ — الْبَنْكُ قَرِيبٌ، بِجَانِبِ الْمَطْعَمِ.",
+      "prompt": "Where is the bank, according to the passerby?",
+      "options": [
+        { "label": "Next to the restaurant", "correct": true },
+        { "label": "Next to the library", "correct": false },
+        { "label": "Far from here", "correct": false }
+      ],
+      "explanation": "بِجَانِبِ الْمَطْعَمِ = \"next to the restaurant.\" The bank is later placed أَمَامَ الْمَكْتَبَةِ (in front of the library), too — two landmarks, not one."
+    },
+    {
+      "type": "complete",
+      "title": "You've handled three real exchanges",
+      "message": "Shopping, asking the way, and a small polite request — the everyday conversations A2 is really for. Every word and phrase here was already in your vocabulary; this lesson just put them to work together.",
+      "finishLabel": "Finish"
+    }
+  ]
+}

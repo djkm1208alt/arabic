@@ -115,9 +115,9 @@
     {
       "id": "a2-u6", "level": "A2", "order": 6,
       "title": "Everyday Exchanges",
-      "blurb": "Shopping, directions, and routine conversation — listening and speaking. In development.",
+      "blurb": "Shopping, directions, and routine conversation — listening and speaking.",
       "skills": ["listening", "speaking", "comprehension"],
-      "status": "planned", "prereqs": ["a1-u3"]
+      "status": "available", "prereqs": ["a2-u4"]
     },
 
     {
@@ -693,6 +693,14 @@
       "level": "A2", "skills": ["reading", "comprehension"],
       "objectives": ["gr:verbal-sentence", "gr:kana", "gr:core-prepositions", "txt:read-para-trip", "txt:read-para-garden"],
       "status": "available", "source": "steps:a2-reading-paragraphs"
+    },
+    {
+      "id": "a2-shopping-routine", "unitId": "a2-u6", "order": 1,
+      "title": "Shopping, Directions & Everyday Exchanges",
+      "blurb": "Three real exchanges — paying for something, asking the way, and a small polite request — putting A1 and A2 vocabulary to work together.",
+      "level": "A2", "skills": ["listening", "speaking", "comprehension"],
+      "objectives": ["gr:idafa", "gr:core-prepositions", "gr:negation-a1", "txt:read-dlg-shopping", "txt:read-dlg-directions", "txt:read-dlg-permission"],
+      "status": "available", "source": "steps:a2-shopping-routine"
     }
   ]
 }
