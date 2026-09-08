@@ -1733,5 +1733,100 @@
     "level": "A2",
     "skills": [ "listening", "speaking", "comprehension" ],
     "prereqs": [ "gr:negation-a1" ]
+  },
+  {
+    "id": "txt:gram-form2-jarraba",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "derived-verb-forms",
+    "vowelled": "جَرَّبَ الرَّجُلُ الطَّعَامَ",
+    "translit": "jarraba ar-rajulu aṭ-ṭaʿāma",
+    "en": "The man tried the food.",
+    "words": [
+      { "surface": "جَرَّبَ", "translit": "jarraba", "gloss": "he tried (Form II فَعَّلَ — doubled middle letter)" },
+      { "surface": "الرَّجُلُ", "translit": "ar-rajulu", "gloss": "the man (subject, nominative)" },
+      { "surface": "الطَّعَامَ", "translit": "aṭ-ṭaʿāma", "gloss": "the food (object, accusative)" }
+    ],
+    "audio": "جَرَّبَ الرَّجُلُ الطَّعَامَ",
+    "level": "B1",
+    "skills": [ "reading", "comprehension", "grammar" ],
+    "prereqs": [ "gr:derived-verb-forms" ]
+  },
+  {
+    "id": "txt:gram-form3-safara",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "derived-verb-forms",
+    "vowelled": "سَافَرَ الرَّجُلُ إِلَى الْمَدِينَةِ",
+    "translit": "sāfara ar-rajulu ilā al-madīnati",
+    "en": "The man traveled to the city.",
+    "words": [
+      { "surface": "سَافَرَ", "translit": "sāfara", "gloss": "he traveled (Form III فَاعَلَ — long ا after the first letter)" },
+      { "surface": "الرَّجُلُ", "translit": "ar-rajulu", "gloss": "the man (subject, nominative)" },
+      { "surface": "إِلَى الْمَدِينَةِ", "translit": "ilā al-madīnati", "gloss": "to the city (genitive after إِلَى)" }
+    ],
+    "audio": "سَافَرَ الرَّجُلُ إِلَى الْمَدِينَةِ",
+    "level": "B1",
+    "skills": [ "reading", "comprehension", "grammar" ],
+    "prereqs": [ "gr:derived-verb-forms" ]
+  },
+  {
+    "id": "txt:gram-form5-takallama",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "derived-verb-forms",
+    "vowelled": "تَكَلَّمَتِ الْمَرْأَةُ بِالْعَرَبِيَّةِ",
+    "translit": "takallamati al-marʾatu bi-al-ʿarabiyyati",
+    "en": "The woman spoke in Arabic.",
+    "words": [
+      { "surface": "تَكَلَّمَتِ", "translit": "takallamati", "gloss": "she spoke (Form V تَفَعَّلَ — تَ + Form II's pattern)" },
+      { "surface": "الْمَرْأَةُ", "translit": "al-marʾatu", "gloss": "the woman (subject, nominative)" },
+      { "surface": "بِالْعَرَبِيَّةِ", "translit": "bi-al-ʿarabiyyati", "gloss": "in Arabic (بِـ attaches directly)" }
+    ],
+    "audio": "تَكَلَّمَتِ الْمَرْأَةُ بِالْعَرَبِيَّةِ",
+    "level": "B1",
+    "skills": [ "reading", "comprehension", "grammar" ],
+    "prereqs": [ "gr:derived-verb-forms" ]
+  },
+  {
+    "id": "txt:gram-form8-ishtara",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "derived-verb-forms",
+    "vowelled": "اِشْتَرَتِ الطَّالِبَةُ كِتَابًا",
+    "translit": "ishtarati aṭ-ṭālibatu kitāban",
+    "en": "The student (f.) bought a book.",
+    "words": [
+      { "surface": "اِشْتَرَتِ", "translit": "ishtarati", "gloss": "she bought (Form VIII اِفْتَعَلَ — ت infixed after the first letter)" },
+      { "surface": "الطَّالِبَةُ", "translit": "aṭ-ṭālibatu", "gloss": "the student, f. (subject, nominative)" },
+      { "surface": "كِتَابًا", "translit": "kitāban", "gloss": "a book (object, indefinite accusative)" }
+    ],
+    "audio": "اِشْتَرَتِ الطَّالِبَةُ كِتَابًا",
+    "level": "B1",
+    "skills": [ "reading", "comprehension", "grammar" ],
+    "prereqs": [ "gr:derived-verb-forms" ]
+  },
+  {
+    "id": "txt:gram-form10-istayqaza",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "derived-verb-forms",
+    "vowelled": "اِسْتَيْقَظَ الْوَلَدُ فِي الصَّبَاحِ",
+    "translit": "istayqaẓa al-waladu fī aṣ-ṣabāḥi",
+    "en": "The boy woke up in the morning.",
+    "words": [
+      { "surface": "اِسْتَيْقَظَ", "translit": "istayqaẓa", "gloss": "he woke up (Form X اِسْتَفْعَلَ — اِسْتَ prefixed)" },
+      { "surface": "الْوَلَدُ", "translit": "al-waladu", "gloss": "the boy (subject, nominative)" },
+      { "surface": "فِي الصَّبَاحِ", "translit": "fī aṣ-ṣabāḥi", "gloss": "in the morning (genitive after فِي)" }
+    ],
+    "audio": "اِسْتَيْقَظَ الْوَلَدُ فِي الصَّبَاحِ",
+    "level": "B1",
+    "skills": [ "reading", "comprehension", "grammar" ],
+    "prereqs": [ "gr:derived-verb-forms" ]
   }
 ]

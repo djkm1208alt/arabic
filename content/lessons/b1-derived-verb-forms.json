@@ -1,0 +1,74 @@
+{
+  "id": "b1-derived-verb-forms",
+  "unitId": "b1-u1",
+  "curriculumLessonId": "b1-derived-verb-forms",
+  "title": "Derived Verb Forms — First Look",
+  "level": "B1",
+  "skills": ["grammar", "vocabulary", "reading"],
+  "objectives": [
+    "lex:ver-30", "lex:ver-26", "lex:ver-06", "lex:ver-23", "lex:ver-13",
+    "gr:derived-verb-forms",
+    "txt:gram-form2-jarraba", "txt:gram-form3-safara", "txt:gram-form5-takallama",
+    "txt:gram-form8-ishtara", "txt:gram-form10-istayqaza"
+  ],
+  "steps": [
+    {
+      "type": "explain",
+      "title": "The same root, poured into a different pattern",
+      "body": [
+        "You already know that a root can carry more than one word — ك-ت-ب gives you كَتَبَ, كِتَاب, and مَكْتَبَة. A verb's root works the same way, except here the different \"pattern\" changes the verb itself, not just the part of speech: the same three consonants can build ten distinct verb patterns, each with its own tendency of meaning.",
+        "Five of the ten patterns are already sitting in words you know how to write: جَرَّبَ (to try), سَافَرَ (to travel), تَكَلَّمَ (to speak), اِشْتَرَى (to buy), and اِسْتَيْقَظَ (to wake up). You've been using all five since A1/A2 — this lesson just names the pattern underneath each one.",
+        "Patterns aren't fixed rules — they're strong tendencies. Form II often makes a verb causative or intensive, Form III often adds a reciprocal or effort-toward-someone sense, Form V is often the reflexive of Form II, Form VIII often a middle-voice/reflexive sense, Form X often \"to seek or consider X.\" A specific root can drift from the textbook tendency into its own lexicalized meaning — اِشْتَرَى just means \"to buy,\" not something more literally reflexive."
+      ],
+      "previewSymbols": ["جَرَّبَ", "سَافَرَ", "تَكَلَّمَ"]
+    },
+    {
+      "type": "reading-practice",
+      "title": "Five patterns you already know",
+      "intro": "Read each sentence, then check which verb form it uses. Tap 🔊 to hear any line.",
+      "fromObjectives": true
+    },
+    {
+      "type": "practice-choice",
+      "title": "Spot the pattern",
+      "arabicPrompt": "جَرَّبَ",
+      "prompt": "جَرَّبَ (to try) has a doubled middle letter. Which form is that?",
+      "options": [
+        { "label": "Form II — فَعَّلَ", "correct": true },
+        { "label": "Form I — فَعَلَ", "correct": false },
+        { "label": "Form X — اِسْتَفْعَلَ", "correct": false }
+      ],
+      "explanation": "فَعَّلَ doubles the middle root letter (the shaddah on the ر in جَرَّبَ) — the mark of Form II."
+    },
+    {
+      "type": "practice-choice",
+      "title": "Spot the pattern",
+      "arabicPrompt": "اِسْتَيْقَظَ",
+      "prompt": "اِسْتَيْقَظَ (to wake up) starts with اِسْتَ. Which form is that?",
+      "options": [
+        { "label": "Form X — اِسْتَفْعَلَ", "correct": true },
+        { "label": "Form VIII — اِفْتَعَلَ", "correct": false },
+        { "label": "Form III — فَاعَلَ", "correct": false }
+      ],
+      "explanation": "اِسْتَفْعَلَ prefixes اِسْتَ to the root — the same prefix you can see on اِسْتَيْقَظَ."
+    },
+    {
+      "type": "practice-choice",
+      "title": "Meaning tendencies",
+      "arabicPrompt": "تَكَلَّمَ (Form V)",
+      "prompt": "تَكَلَّمَ is Form V — تَ added to Form II's own pattern. What does Form V often mean?",
+      "options": [
+        { "label": "The reflexive of Form II — doing (or becoming) that action to/for yourself", "correct": true },
+        { "label": "Seeking or considering something to be true", "correct": false },
+        { "label": "A color or a physical defect", "correct": false }
+      ],
+      "explanation": "Form V's تَ prefix is the same reflexive تَ you'll see again on Form VI — Form V takes Form II's causative/intensive sense and turns it back on the subject."
+    },
+    {
+      "type": "complete",
+      "title": "You've had your first look at derived verb forms",
+      "message": "Five forms, all built from verbs you already knew how to write — the same shared-DNA idea as root & pattern, now applied to how a verb itself changes shape. The other four forms (IV, VI, VII, IX) are still ahead.",
+      "finishLabel": "Finish"
+    }
+  ]
+}
