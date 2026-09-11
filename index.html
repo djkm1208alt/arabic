@@ -854,6 +854,56 @@
         background: var(--panel-border); color: var(--ink-soft); border-radius: 6px; font-size: 12px; font-family: var(--font-body);
     }
 
+    /* ---------- M27.0 SPIKE (WIP — not for merge) — parse exercise ---------- */
+    .parse-sentence {
+        font-family: var(--font-arabic); font-size: 26px; line-height: 2.6;
+        text-align: center; direction: rtl; margin: 0 0 16px;
+    }
+    .parse-word { color: var(--ink); padding: 0 2px; }
+    .parse-token {
+        font-family: var(--font-arabic); font-size: 26px; cursor: pointer;
+        display: inline-flex; flex-direction: column; align-items: center; gap: 2px;
+        min-height: 44px; padding: 4px 10px; margin: 0 3px; border-radius: 10px;
+        border: 2px solid var(--panel-border); background: var(--panel); color: var(--ink);
+        vertical-align: top;
+    }
+    .parse-token:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+    .parse-token.tagged { border-color: var(--accent); background: var(--accent-soft); }
+    .parse-token.active { border-color: var(--gold); background: var(--gold-soft); }
+    .parse-token.right { border-color: var(--accent); background: var(--accent-soft); }
+    .parse-token.wrong { border-color: var(--danger); background: var(--danger-soft); }
+    .parse-token[disabled] { cursor: default; }
+    .parse-token-tag {
+        font-family: var(--font-ui); font-size: 11px; color: var(--ink-soft);
+        display: flex; flex-direction: column; gap: 1px; direction: rtl;
+    }
+    .parse-fb-line { white-space: nowrap; }
+    .parse-fb-line.bad { color: var(--danger); }
+    .parse-fb-line.ok { color: var(--accent); }
+    .parse-picker {
+        border: 1px solid var(--panel-border); border-radius: var(--radius-md);
+        background: var(--panel); padding: 12px; margin: 0 0 14px;
+    }
+    .parse-chipgroup { margin-bottom: 10px; }
+    .parse-chipgroup-label {
+        font-family: var(--font-ui); font-size: 12px; color: var(--ink-soft);
+        margin-bottom: 6px; letter-spacing: 0.03em;
+    }
+    .parse-chiprow { display: flex; flex-wrap: wrap; gap: 6px; }
+    .parse-chip {
+        display: inline-flex; flex-direction: column; align-items: center; gap: 2px;
+        min-height: 44px; padding: 6px 12px; border-radius: 999px; cursor: pointer;
+        border: 1px solid var(--panel-border); background: var(--bg-2); color: var(--ink);
+    }
+    .parse-chip:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+    .parse-chip[aria-checked="true"], .parse-chip.sel {
+        border-color: var(--accent); background: var(--accent-soft); color: var(--accent);
+    }
+    .parse-chip-ar { font-family: var(--font-arabic); font-size: 16px; }
+    .parse-chip-en { font-family: var(--font-ui); font-size: 10px; color: var(--ink-soft); }
+    .parse-picker-done { margin-top: 4px; }
+    .parse-check[disabled] { opacity: 0.5; cursor: not-allowed; }
+
     /* ---------- Review (M19) ---------- */
     .review-callout {
         background: var(--accent-soft); border: 1px solid var(--accent);
@@ -4806,6 +4856,315 @@ function exGenOrder(textId) {
         items: t.words.map((w, i) => ({ label: w.surface, pos: i })),
     };
 }
+
+/* ============================================================================
+   M27.0 SPIKE (WIP — NOT FOR MERGE) — PARSE EXERCISE ENGINE
+   ----------------------------------------------------------------------------
+   exerciseTypes.parse: tag a highlighted word in a sentence with its
+   grammatical role (الموقع الإعرابي) and its case. Graded from an `iʿrab`
+   annotation array authored on a text entry. See m27.0_parse-engine_scope.md.
+   Everything between here and END SPIKE is self-contained and removable.
+   Enums below are the single source of truth; tools/lint-irab.js checks
+   annotations against the same lists.
+   ============================================================================ */
+const IRAB_ROLES = {
+    "mubtada":     { ar: "مُبْتَدَأ",       en: "topic" },
+    "khabar":      { ar: "خَبَر",           en: "predicate" },
+    "fiʿl":        { ar: "فِعْل",           en: "verb" },
+    "faʿil":       { ar: "فَاعِل",          en: "subject" },
+    "naʾib-faʿil": { ar: "نَائِب الفَاعِل", en: "deputy subj." },
+    "mafʿul-bih":  { ar: "مَفْعُول بِهِ",   en: "object" },
+    "mudaf-ilayh": { ar: "مُضَاف إِلَيْهِ", en: "possessor" },
+    "naʿt":        { ar: "نَعْت",           en: "adjective" },
+    "jarr-majrur": { ar: "جَارّ ومَجْرُور", en: "prep. phrase" },
+    "harf":        { ar: "حَرْف",           en: "particle" },
+    "ism-inna":    { ar: "اسْم إِنَّ",       en: "noun of inna" },
+    "khabar-inna": { ar: "خَبَر إِنَّ",      en: "pred. of inna" },
+    "ism-kana":    { ar: "اسْم كَانَ",       en: "noun of kana" },
+    "khabar-kana": { ar: "خَبَر كَانَ",      en: "pred. of kana" },
+};
+const IRAB_CASES = {
+    "raf":   { ar: "رَفْع",    en: "nominative" },
+    "nasb":  { ar: "نَصْب",    en: "accusative" },
+    "jarr":  { ar: "جَرّ",     en: "genitive" },
+    "jazm":  { ar: "جَزْم",    en: "jussive" },
+    "mabni": { ar: "مَبْنِيّ", en: "built — no case" },
+};
+const IRAB_MARKERS = {
+    "damma": "ḍamma", "fatha": "fatḥa", "kasra": "kasra", "sukun": "sukūn",
+    "waw": "wāw", "alif": "alif", "ya": "yāʾ",
+    "nun": "thabāt an-nūn", "hadhf-nun": "ḥadhf an-nūn", "hadhf-illa": "ḥadhf ḥarf al-ʿilla",
+    "damma-muqaddara": "ḍamma muqaddara", "fatha-muqaddara": "fatḥa muqaddara",
+    "kasra-muqaddara": "kasra muqaddara", "na": "—",
+};
+
+/* Spike fixtures — original, A1-level, fully vowelled. Used only when no real
+   text carries an `iʿrab` array (which is every text today, by design). */
+const PARSE_SPIKE_FIXTURES = [
+    {
+        id: "txt:spike-house-big", en: "The house is big.",
+        sentence: "الْبَيْتُ كَبِيرٌ",
+        words: ["الْبَيْتُ", "كَبِيرٌ"],
+        "iʿrab": [
+            { w: 0, role: "mubtada", "case": "raf", marker: "damma" },
+            { w: 1, role: "khabar",  "case": "raf", marker: "damma" },
+        ],
+    },
+    {
+        id: "txt:spike-boy-wrote", en: "The boy wrote the lesson.",
+        sentence: "كَتَبَ الْوَلَدُ الدَّرْسَ",
+        words: ["كَتَبَ", "الْوَلَدُ", "الدَّرْسَ"],
+        "iʿrab": [
+            { w: 0, role: "fiʿl",       "case": "mabni", marker: "na", mahall: null },
+            { w: 1, role: "faʿil",      "case": "raf",   marker: "damma" },
+            { w: 2, role: "mafʿul-bih", "case": "nasb",  marker: "fatha" },
+        ],
+    },
+    {
+        id: "txt:spike-door-house", en: "The door of the house is big.",
+        sentence: "بَابُ الْبَيْتِ كَبِيرٌ",
+        words: ["بَابُ", "الْبَيْتِ", "كَبِيرٌ"],
+        "iʿrab": [
+            { w: 0, role: "mubtada",     "case": "raf",  marker: "damma" },
+            { w: 1, role: "mudaf-ilayh", "case": "jarr", marker: "kasra" },
+            { w: 2, role: "khabar",      "case": "raf",  marker: "damma" },
+        ],
+    },
+];
+
+function irabAnnotatedTexts() {
+    const real = (typeof TEXTS !== "undefined" ? TEXTS : [])
+        .filter(t => Array.isArray(t["iʿrab"]) && t["iʿrab"].length && t.textType === "sentence");
+    return real.length ? real : PARSE_SPIKE_FIXTURES;
+}
+
+exerciseTypes.parse = {
+    strands: ["grammar"],
+    /* pure scorer — a token is correct iff role AND case both match the key */
+    score(item, response) {
+        const per = item.key.map(k => {
+            const got = response[k.i] || {};
+            const roleOk = got.role === k.role;
+            const caseOk = got["case"] === k["case"];
+            const tok = item.tokens.find(t => t.i === k.i) || {};
+            return { i: k.i, objectId: tok.obj || item.objectId || null, correct: roleOk && caseOk, roleOk, caseOk };
+        });
+        return {
+            correct: per.every(p => p.correct),
+            objectResults: per.map(p => ({ objectId: p.objectId, correct: p.correct })),
+        };
+    },
+    render(item, host, onResult) {
+        host.innerHTML = `<p class="exercise-prompt">${item.prompt || "Tag each highlighted word with its role and case."}</p>`;
+        const answers = {};        // tokenIndex -> { role, case }
+        const tokenEls = {};
+        const askByIndex = {};
+        item.tokens.forEach(t => { askByIndex[t.i] = t; });
+
+        const sent = document.createElement("div");
+        sent.className = "parse-sentence"; sent.lang = "ar"; sent.dir = "rtl";
+        String(item.sentence).split(/\s+/).forEach((w, i) => {
+            if (askByIndex[i]) {
+                const b = document.createElement("button");
+                b.type = "button";
+                b.className = "parse-token";
+                b.setAttribute("aria-pressed", "false");
+                b.setAttribute("aria-label", `Tag the word ${w}`);
+                b.innerHTML = `<span class="parse-token-ar">${w}</span><span class="parse-token-tag" hidden></span>`;
+                b.onclick = () => openPicker(i, b);
+                tokenEls[i] = b;
+                sent.appendChild(b);
+            } else {
+                const s = document.createElement("span");
+                s.className = "parse-word"; s.textContent = w;
+                sent.appendChild(s);
+            }
+            sent.appendChild(document.createTextNode(" "));
+        });
+        host.appendChild(sent);
+
+        const picker = document.createElement("div");
+        picker.className = "parse-picker"; picker.hidden = true;
+        host.appendChild(picker);
+
+        const check = document.createElement("button");
+        check.className = "pill show-btn exercise-check parse-check";
+        check.textContent = "Check";
+        check.disabled = true;
+        host.appendChild(check);
+
+        let openFor = null;
+
+        function selectChip(row, chip, value, onPick) {
+            row.querySelectorAll(".parse-chip").forEach(x => {
+                x.setAttribute("aria-checked", "false"); x.tabIndex = -1; x.classList.remove("sel");
+            });
+            chip.setAttribute("aria-checked", "true"); chip.tabIndex = 0; chip.classList.add("sel");
+            chip.focus();
+            onPick(value);
+        }
+
+        function chipGroup(labelText, options, current, onPick) {
+            const wrap = document.createElement("div");
+            wrap.className = "parse-chipgroup";
+            wrap.setAttribute("role", "radiogroup");
+            wrap.setAttribute("aria-label", labelText);
+            wrap.innerHTML = `<div class="parse-chipgroup-label">${labelText}</div>`;
+            const row = document.createElement("div");
+            row.className = "parse-chiprow";
+            options.forEach((opt, oi) => {
+                const c = document.createElement("button");
+                c.type = "button";
+                c.className = "parse-chip" + (current === opt.value ? " sel" : "");
+                c.setAttribute("role", "radio");
+                const checked = current === opt.value;
+                c.setAttribute("aria-checked", checked ? "true" : "false");
+                c.tabIndex = (checked || (!current && oi === 0)) ? 0 : -1;
+                c.innerHTML = `<span class="parse-chip-ar" lang="ar">${opt.ar}</span><span class="parse-chip-en">${opt.en}</span>`;
+                c.onclick = () => selectChip(row, c, opt.value, onPick);
+                c.onkeydown = (e) => {
+                    const chips = [...row.querySelectorAll(".parse-chip")];
+                    const idx = chips.indexOf(c);
+                    if (e.key === "ArrowRight" || e.key === "ArrowDown") { e.preventDefault(); chips[(idx + 1) % chips.length].focus(); }
+                    else if (e.key === "ArrowLeft" || e.key === "ArrowUp") { e.preventDefault(); chips[(idx - 1 + chips.length) % chips.length].focus(); }
+                    else if (e.key === " " || e.key === "Enter") { e.preventDefault(); selectChip(row, c, opt.value, onPick); }
+                };
+                row.appendChild(c);
+            });
+            wrap.appendChild(row);
+            return wrap;
+        }
+
+        function refreshToken(i) {
+            const a = answers[i] || {};
+            const btn = tokenEls[i];
+            const tag = btn.querySelector(".parse-token-tag");
+            const both = !!(a.role && a["case"]);
+            if (a.role || a["case"]) {
+                tag.hidden = false;
+                tag.textContent = [a.role && IRAB_ROLES[a.role].ar, a["case"] && IRAB_CASES[a["case"]].ar].filter(Boolean).join(" · ");
+            }
+            btn.setAttribute("aria-pressed", both ? "true" : "false");
+            btn.classList.toggle("tagged", both);
+            check.disabled = !item.tokens.every(t => answers[t.i] && answers[t.i].role && answers[t.i]["case"]);
+        }
+
+        function openPicker(i, btn) {
+            openFor = i;
+            sent.querySelectorAll(".parse-token").forEach(e => e.classList.remove("active"));
+            btn.classList.add("active");
+            picker.hidden = false;
+            picker.innerHTML = "";
+            const cur = answers[i] || {};
+            const roleOpts = item.roleOptions.map(v => ({ value: v, ar: (IRAB_ROLES[v] || {}).ar || v, en: (IRAB_ROLES[v] || {}).en || "" }));
+            const caseOpts = item.caseOptions.map(v => ({ value: v, ar: (IRAB_CASES[v] || {}).ar || v, en: (IRAB_CASES[v] || {}).en || "" }));
+            picker.appendChild(chipGroup("Role — الموقع الإعرابي", roleOpts, cur.role, (v) => {
+                answers[i] = answers[i] || {}; answers[i].role = v; refreshToken(i);
+            }));
+            picker.appendChild(chipGroup("Case — الحالة", caseOpts, cur["case"], (v) => {
+                answers[i] = answers[i] || {}; answers[i]["case"] = v; refreshToken(i);
+            }));
+            const done = document.createElement("button");
+            done.type = "button"; done.className = "pill parse-picker-done"; done.textContent = "Done";
+            done.onclick = () => { picker.hidden = true; btn.classList.remove("active"); openFor = null; btn.focus(); };
+            picker.appendChild(done);
+            const firstChip = picker.querySelector('.parse-chip[tabindex="0"]');
+            if (firstChip) firstChip.focus();
+        }
+
+        check.onclick = () => {
+            picker.hidden = true;
+            check.disabled = true;
+            const scored = exerciseTypes.parse.score(item, answers);
+            item.key.forEach(k => {
+                const btn = tokenEls[k.i];
+                const got = answers[k.i] || {};
+                const roleOk = got.role === k.role;
+                const caseOk = got["case"] === k["case"];
+                btn.classList.remove("active", "tagged");
+                btn.classList.add(roleOk && caseOk ? "right" : "wrong");
+                btn.disabled = true;
+                const tag = btn.querySelector(".parse-token-tag");
+                tag.hidden = false;
+                if (roleOk && caseOk) {
+                    tag.textContent = `${IRAB_ROLES[k.role].ar} · ${IRAB_CASES[k["case"]].ar}`;
+                } else {
+                    const markerTxt = (k.marker && k.marker !== "na") ? ` · ${IRAB_MARKERS[k.marker] || k.marker}` : "";
+                    tag.innerHTML =
+                        `<span class="parse-fb-line ${roleOk ? "ok" : "bad"}">${IRAB_ROLES[k.role].ar} — ${IRAB_ROLES[k.role].en}</span>` +
+                        `<span class="parse-fb-line ${caseOk ? "ok" : "bad"}">${IRAB_CASES[k["case"]].ar}${markerTxt}</span>`;
+                }
+            });
+            sent.querySelectorAll(".parse-token").forEach(e => { e.disabled = true; });
+            onResult({ correct: scored.correct, objectResults: scored.objectResults });
+        };
+    },
+};
+
+/* build one `parse` item from an annotated text — same shape as exGenCloze /
+   exGenOrder. Returns null when nothing annotated is available. */
+function exGenParse(textId) {
+    const pool = irabAnnotatedTexts();
+    if (!pool.length) return null;
+    const t = textId ? pool.find(x => x.id === textId) : exShuffle(pool.slice())[0];
+    if (!t || !Array.isArray(t["iʿrab"]) || !t["iʿrab"].length) return null;
+    const ann = t["iʿrab"];
+    const words = Array.isArray(t.words)
+        ? t.words.map(w => (w && w.surface) || w)
+        : String(t.vowelled || t.sentence).split(/\s+/);
+    const sentence = t.vowelled || t.sentence || words.join(" ");
+    const uniq = arr => arr.filter((v, i, a) => v && a.indexOf(v) === i);
+    const sibs = pool.filter(x => x !== t);
+    const roleOptions = uniq(
+        ann.map(a => a.role)
+            .concat(exShuffle(sibs.flatMap(x => (x["iʿrab"] || []).map(a => a.role))))
+            .concat(["khabar", "faʿil", "mafʿul-bih", "mudaf-ilayh"])
+    ).slice(0, 6);
+    const caseOptions = uniq(
+        ann.map(a => a["case"])
+            .concat(sibs.flatMap(x => (x["iʿrab"] || []).map(a => a["case"])))
+            .concat(["raf", "nasb", "jarr"])
+    ).slice(0, 4);
+    ann.forEach(a => {
+        if (roleOptions.indexOf(a.role) === -1) roleOptions.push(a.role);
+        if (caseOptions.indexOf(a["case"]) === -1) caseOptions.push(a["case"]);
+    });
+    return {
+        kind: "parse", skill: "grammar",
+        objectId: t.id || null, objectIds: t.id ? [t.id] : [],
+        prompt: `Tag each highlighted word — “${t.en}”`,
+        sentence,
+        tokens: ann.map(a => ({ i: a.w, surface: words[a.w], ask: ["role", "case"], obj: a.obj || null })),
+        roleOptions: exShuffle(roleOptions),
+        caseOptions: exShuffle(caseOptions),
+        key: ann.map(a => ({ i: a.w, role: a.role, "case": a["case"], marker: a.marker || null })),
+    };
+}
+
+/* dev-only preview entry — `__m27ParseSpike()` in the console opens the
+   exercise in an overlay. No route, no menu item; removed with the spike. */
+window.__m27ParseSpike = function (textId) {
+    const item = exGenParse(textId);
+    if (!item) { console.warn("[m27 spike] no parse item available"); return; }
+    const existing = document.getElementById("m27SpikeOverlay");
+    if (existing) existing.remove();
+    const ov = document.createElement("div");
+    ov.id = "m27SpikeOverlay";
+    ov.style.cssText = "position:fixed;inset:0;z-index:9999;overflow:auto;background:var(--bg-1);"
+        + "padding:24px;box-shadow:inset 0 0 0 100vmax rgba(0,0,0,.35)";
+    ov.innerHTML = '<div style="max-width:560px;margin:0 auto">'
+        + '<button id="m27SpikeClose" class="pill" style="float:right">Close &times;</button>'
+        + '<h2 style="font-family:var(--font-ui)">M27.0 parse spike</h2>'
+        + '<div class="exercise-host" id="m27SpikeHost"></div>'
+        + '<pre id="m27SpikeOut" style="white-space:pre-wrap;font-size:12px;color:var(--ink-soft);margin-top:16px"></pre>'
+        + '</div>';
+    document.body.appendChild(ov);
+    document.getElementById("m27SpikeClose").onclick = () => ov.remove();
+    exerciseTypes.parse.render(item, document.getElementById("m27SpikeHost"), (res) => {
+        document.getElementById("m27SpikeOut").textContent = "onResult → " + JSON.stringify(res, null, 2);
+    });
+};
+/* ===== END SPIKE (M27.0 parse engine) ===== */
 
 /* ============================================================
    STATE + PERSISTENCE

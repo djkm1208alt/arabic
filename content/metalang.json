@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "status": "DRAFT STUB — not wired into build-content.js. Pending M27.0 approval (see m27.0_parse-engine_scope.md). Compiling this file, adding the `term` object kind, and shipping the {{term:…}} tooltip is M27.0's job; until then this is a curriculum plan only.",
+    "status": "DRAFT — term list complete (43), pending M27.0 approval + reference-check of every ar/def before compile. Not wired into build-content.js; compiling this file, adding the `term` object kind, and shipping the {{term:…}} tooltip is M27.0's job (see m27.0_parse-engine_scope.md). Until then this is a curriculum plan only.",
     "purpose": "The naḥw metalanguage needed for B1 iʿrāb role-labelling (M27.b1) and the nawāsikh batch (M27.b2). Each entry's `ar` is a STANDARD grammatical term, not invented Arabic — verified against the cited references below on approval; `def` is an English gloss to be finalised in review.",
     "sources": [
       "Karin C. Ryding — A Reference Grammar of Modern Standard Arabic (Cambridge, 2005)",

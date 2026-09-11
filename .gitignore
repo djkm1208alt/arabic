@@ -1,7 +1,1 @@
 node_modules/
-.claude/
-
-# Personal reference material (textbooks, grammar PDFs, etc.) kept locally
-# to consult while writing curriculum content. Never shipped, never part of
-# the app, and never committed — may be copyrighted.
-reference/
