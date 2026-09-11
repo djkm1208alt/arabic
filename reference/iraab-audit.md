@@ -109,7 +109,7 @@ Key: **[AT]** already taught · **[PP]** partially present (functional, not anal
 | أساليب: التعجب / الإغراء / التحذير / الاختصاص | Absent | **ADV (C1)** |
 | الترخيم / الندبة / الاستغاثة | Absent | **NI** (C2 curiosity) |
 | لاتَ / إنْ النافية / باء زائدة edge cases | Absent | **NI** |
-| Multiple valid parses ("أو نقول… / الإعراب الأول أشهر") | Not applicable below C1 | **NI** |
+| Multiple validnote parses ("أو نقول… / الإعراب الأول أشهر") | Not applicable below C1 | **NI** |
 | Qur'anic āyāt, poetry, proverbs, philosopher names as examples | Violates "Never invent Arabic / real checked sources"; register far above A2–B1 | **NI** |
 
 ---
