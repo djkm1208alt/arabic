@@ -1,0 +1,77 @@
+{
+  "id": "b1-derived-forms-ii",
+  "unitId": "b1-u1",
+  "curriculumLessonId": "b1-derived-forms-ii",
+  "title": "Derived Verb Forms — Form II (تَفْعِيل)",
+  "level": "B1",
+  "skills": ["grammar", "vocabulary"],
+  "objectives": [
+    "lex:ver-14", "lex:ver-31",
+    "lex:hom-16", "lex:ver-32",
+    "lex:sch-14", "lex:ver-33",
+    "lex:ver-30",
+    "lex:peo-13", "lex:peo-15", "lex:peo-11", "lex:fc-14", "lex:sch-02", "lex:sch-04",
+    "gr:derived-verb-forms",
+    "txt:gram-form2-darrasa", "txt:gram-form2-nazzafa", "txt:gram-form2-kallama", "txt:gram-form2-jarraba"
+  ],
+  "steps": [
+    {
+      "type": "explain",
+      "title": "One root, ten possible shapes",
+      "body": [
+        "You already know that a root's three consonants carry a core meaning, and a pattern poured into them adds a grammatical role — كِتَاب, كَتَبَ, and مَكْتَبَة all share ك-ت-ب. Verbs work the same way, but Arabic recognises ten distinct verb patterns (traditionally numbered I–X) that can be poured over the same root, each systematically shifting, intensifying, or redirecting the plain \"Form I\" meaning. This unit starts with the most common of the nine derived forms: Form II.",
+        "Form II's signature is a doubled middle root consonant — a shaddah on the second radical — giving the shape فَعَّلَ. It most often adds a causative sense to a Form I verb: دَرَسَ (\"he studied\") becomes دَرَّسَ (\"he taught,\" literally \"he made [someone] study\"). The same root, the same three consonants, just poured into a different mold.",
+        "Form II can also turn a noun or adjective directly into a verb, with no Form I verb behind it at all — a denominative. نَظِيف (\"clean\") becomes نَظَّفَ (\"to clean\"); كَلِمَة (\"word\") becomes كَلَّمَ (\"to speak to / address\"). The present tense keeps the doubling and adds a يُـ prefix: يُدَرِّسُ, يُنَظِّفُ, يُكَلِّمُ."
+      ],
+      "previewSymbols": ["دَرَسَ", "دَرَّسَ", "فَعَّلَ"]
+    },
+    {
+      "type": "reading-practice",
+      "title": "Form II in four sentences",
+      "intro": "Read each sentence, then compare the Form II verb to what you already know. Tap 🔊 to hear any line.",
+      "fromObjectives": true
+    },
+    {
+      "type": "practice-choice",
+      "title": "Spot the Form II verb",
+      "arabicPrompt": "دَرَسَ / دَرَّسَ",
+      "prompt": "Which of these is the Form II verb — doubled middle consonant, dictionary shape فَعَّلَ?",
+      "options": [
+        { "label": "دَرَّسَ (darrasa) — doubled ر", "correct": true },
+        { "label": "دَرَسَ (darasa) — plain Form I", "correct": false },
+        { "label": "كَتَبَ (kataba) — plain Form I", "correct": false }
+      ],
+      "explanation": "دَرَّسَ doubles the root's middle consonant (ر) with a shaddah — that doubling is the entire signal that marks Form II and separates it from the plain Form I دَرَسَ."
+    },
+    {
+      "type": "practice-choice",
+      "title": "Causative: study → teach",
+      "arabicPrompt": "دَرَسَ ← دَرَّسَ",
+      "prompt": "دَرَسَ means \"he studied.\" What does the Form II دَرَّسَ mean?",
+      "options": [
+        { "label": "He taught (he made someone study)", "correct": true },
+        { "label": "He wrote", "correct": false },
+        { "label": "He tried", "correct": false }
+      ],
+      "explanation": "Form II's causative sense turns \"he studied\" into \"he caused [someone] to study\" — that is, \"he taught.\" جَرَّبَ (\"to try\"), which you already know from A2, is also Form II, though it doesn't have a Form I verb behind it."
+    },
+    {
+      "type": "practice-choice",
+      "title": "Denominative: clean → to clean",
+      "arabicPrompt": "نَظِيف ← نَظَّفَ",
+      "prompt": "نَظِيف is the adjective \"clean.\" What does the Form II verb نَظَّفَ mean?",
+      "options": [
+        { "label": "To clean (to make something نَظِيف)", "correct": true },
+        { "label": "To be clean", "correct": false },
+        { "label": "Cleanliness (a noun)", "correct": false }
+      ],
+      "explanation": "نَظَّفَ is denominative — built straight from the adjective نَظِيف with no Form I verb in between. كَلَّمَ (\"to speak to,\" from كَلِمَة, \"word\") works the same way."
+    },
+    {
+      "type": "complete",
+      "title": "You've met your first derived verb form",
+      "message": "Form II's doubled middle consonant, its causative and denominative tendencies, and four worked examples — دَرَّسَ, نَظَّفَ, كَلَّمَ, and جَرَّبَ. Forms III–X are still ahead.",
+      "finishLabel": "Finish"
+    }
+  ]
+}

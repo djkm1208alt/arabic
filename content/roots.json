@@ -23,8 +23,8 @@
   {
     "root": "د-ر-س",
     "gloss": "study",
-    "lexemes": ["lex:sch-01", "lex:sch-09"],
-    "note": "مَدْرَسَة (school) / دَرْس (lesson) — a place-noun (مفعل pattern) built on the same root as what happens there.",
+    "lexemes": ["lex:sch-01", "lex:sch-09", "lex:ver-14", "lex:ver-31"],
+    "note": "مَدْرَسَة (school) / دَرْس (lesson) — a place-noun (مفعل pattern) built on the same root as what happens there. Also a verb pair across two derived forms: دَرَسَ (Form I, \"he studied\") / دَرَّسَ (Form II, \"he taught\" — see gr:derived-verb-forms, B1).",
     "source": "Standard MSA root morphology (Hans Wehr root د ر س)."
   },
   {

@@ -1717,5 +1717,82 @@
     "level": "A2",
     "skills": [ "listening", "speaking", "comprehension" ],
     "prereqs": [ "gr:core-prepositions", "gr:nominal-sentence", "gr:demonstratives" ]
+  },
+  {
+    "id": "txt:gram-form2-darrasa",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "derived-verb-forms",
+    "vowelled": "الطَّالِبُ يَدْرُسُ وَالْمُعَلِّمُ يُدَرِّسُ",
+    "translit": "aṭ-ṭālibu yadrusu wa-al-muʿallimu yudarrisu",
+    "en": "The student studies, and the teacher teaches.",
+    "words": [
+      { "surface": "الطَّالِبُ", "translit": "aṭ-ṭālibu", "gloss": "the student (subject, nominative)", "gender": "masculine" },
+      { "surface": "يَدْرُسُ", "translit": "yadrusu", "gloss": "studies — Form I present, root د-ر-س", "gender": null },
+      { "surface": "وَالْمُعَلِّمُ", "translit": "wa-al-muʿallimu", "gloss": "and the teacher", "gender": "masculine" },
+      { "surface": "يُدَرِّسُ", "translit": "yudarrisu", "gloss": "teaches — Form II present, same root د-ر-س with the middle consonant doubled", "gender": null }
+    ],
+    "audio": "الطَّالِبُ يَدْرُسُ وَالْمُعَلِّمُ يُدَرِّسُ",
+    "level": "B1",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:derived-verb-forms" ]
+  },
+  {
+    "id": "txt:gram-form2-nazzafa",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "derived-verb-forms",
+    "vowelled": "نَظَّفَتِ الْبِنْتُ الْبَيْتَ",
+    "translit": "naẓẓafati al-bintu al-bayta",
+    "en": "The girl cleaned the house.",
+    "words": [
+      { "surface": "نَظَّفَتِ", "translit": "naẓẓafati", "gloss": "cleaned (she) — Form II, denominative from نَظِيف (\"clean\")", "gender": "feminine" },
+      { "surface": "الْبِنْتُ", "translit": "al-bintu", "gloss": "the girl (subject, nominative)", "gender": "feminine" },
+      { "surface": "الْبَيْتَ", "translit": "al-bayta", "gloss": "the house (object, accusative)", "gender": "masculine" }
+    ],
+    "audio": "نَظَّفَتِ الْبِنْتُ الْبَيْتَ",
+    "level": "B1",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:derived-verb-forms" ]
+  },
+  {
+    "id": "txt:gram-form2-kallama",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "derived-verb-forms",
+    "vowelled": "كَلَّمَ الْوَلَدُ صَدِيقَهُ",
+    "translit": "kallama al-waladu ṣadīqahu",
+    "en": "The boy spoke to his friend.",
+    "words": [
+      { "surface": "كَلَّمَ", "translit": "kallama", "gloss": "spoke to / addressed — Form II, denominative-leaning from كَلِمَة (\"word\"); takes a direct object, no preposition", "gender": null },
+      { "surface": "الْوَلَدُ", "translit": "al-waladu", "gloss": "the boy (subject, nominative)", "gender": "masculine" },
+      { "surface": "صَدِيقَهُ", "translit": "ṣadīqahu", "gloss": "his friend (object, accusative + possessive suffix هُ)", "gender": "masculine" }
+    ],
+    "audio": "كَلَّمَ الْوَلَدُ صَدِيقَهُ",
+    "level": "B1",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:derived-verb-forms" ]
+  },
+  {
+    "id": "txt:gram-form2-jarraba",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "derived-verb-forms",
+    "vowelled": "جَرَّبَتِ الْبِنْتُ الطَّعَامَ",
+    "translit": "jarrabati al-bintu aṭ-ṭaʿāma",
+    "en": "The girl tried the food.",
+    "words": [
+      { "surface": "جَرَّبَتِ", "translit": "jarrabati", "gloss": "tried (she) — Form II, the same doubled-middle-consonant pattern as دَرَّسَ / نَظَّفَ / كَلَّمَ", "gender": "feminine" },
+      { "surface": "الْبِنْتُ", "translit": "al-bintu", "gloss": "the girl (subject, nominative)", "gender": "feminine" },
+      { "surface": "الطَّعَامَ", "translit": "aṭ-ṭaʿāma", "gloss": "the food (object, accusative)", "gender": "masculine" }
+    ],
+    "audio": "جَرَّبَتِ الْبِنْتُ الطَّعَامَ",
+    "level": "B1",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:derived-verb-forms" ]
   }
 ]

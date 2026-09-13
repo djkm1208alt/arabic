@@ -123,9 +123,9 @@
     {
       "id": "b1-u1", "level": "B1", "order": 1,
       "title": "Derived Verb Forms II–X",
-      "blurb": "The ten forms, their meaning tendencies, and how to recognise them in text. In development.",
+      "blurb": "Form II (تَفْعِيل) — a first derived pattern and its causative/intensive meaning tendency.",
       "skills": ["grammar", "vocabulary"],
-      "status": "planned", "prereqs": ["a2-u1", "a2-u3"]
+      "status": "available", "prereqs": ["a2-u1", "a2-u3"]
     },
     {
       "id": "b1-u2", "level": "B1", "order": 2,
@@ -701,6 +701,14 @@
       "level": "A2", "skills": ["listening", "speaking", "comprehension"],
       "objectives": ["gr:nominal-sentence", "gr:demonstratives", "gr:attached-possessive", "gr:core-prepositions", "gr:numbers-11-99", "gr:idafa", "txt:read-dlg-shopping", "txt:read-dlg-directions"],
       "status": "available", "source": "steps:a2-everyday-exchanges"
+    },
+    {
+      "id": "b1-derived-forms-ii", "unitId": "b1-u1", "order": 1,
+      "title": "Derived Verb Forms — Form II (تَفْعِيل)",
+      "blurb": "The doubled-middle-consonant pattern that turns دَرَسَ (to study) into دَرَّسَ (to teach) — a first derived verb form and its causative/denominative meaning tendency.",
+      "level": "B1", "skills": ["grammar", "vocabulary"],
+      "objectives": ["lex:ver-14", "lex:ver-31", "lex:hom-16", "lex:ver-32", "lex:sch-14", "lex:ver-33", "lex:ver-30", "lex:peo-13", "lex:peo-15", "lex:peo-11", "lex:fc-14", "lex:sch-02", "lex:sch-04", "gr:derived-verb-forms", "txt:gram-form2-darrasa", "txt:gram-form2-nazzafa", "txt:gram-form2-kallama", "txt:gram-form2-jarraba"],
+      "status": "available", "source": "steps:b1-derived-forms-ii"
     }
   ]
 }

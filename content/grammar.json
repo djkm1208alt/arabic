@@ -414,5 +414,31 @@
     "prereqs": [
       "gr:idafa"
     ]
+  },
+  {
+    "id": "gr:derived-verb-forms",
+    "kind": "grammar",
+    "name": "Derived verb forms (الْأَوْزَان الْمَزِيدَة) — Form II (تَفْعِيل)",
+    "level": "B1",
+    "rule": "Arabic verbs aren't limited to the plain three-consonant \"Form I\" shape (دَرَسَ, \"he studied\"). Ten recognised patterns — traditionally numbered I–X — can be poured over the same root, each one systematically shifting, intensifying, or redirecting the base meaning; this is the same root-and-pattern idea from gr:root-pattern applied specifically to verbs. Form II (وَزْن فَعَّلَ) doubles the middle root consonant (a shaddah on the second radical) and most often adds a causative or intensive sense to a Form I verb, or turns a noun/adjective directly into a verb (a denominative). دَرَسَ (\"he studied\") becomes دَرَّسَ (\"he taught\" — literally \"he made [someone] study\"); نَظِيف (\"clean,\" adjective) becomes نَظَّفَ (\"he cleaned\"); كَلِمَة (\"word,\" noun) becomes كَلَّمَ (\"he spoke to / addressed [someone]\"). The present tense keeps the doubling and prefixes يُـ: يُدَرِّسُ, يُنَظِّفُ, يُكَلِّمُ.",
+    "examples": [
+      "txt:gram-form2-darrasa",
+      "txt:gram-form2-nazzafa",
+      "txt:gram-form2-kallama",
+      "txt:gram-form2-jarraba"
+    ],
+    "commonErrors": [
+      "Reading a doubled middle consonant as a spelling mistake or added emphasis rather than a distinct verb pattern — the shaddah on the second radical is the whole grammatical signal that marks Form II.",
+      "Assuming Form II always means \"cause to do the Form I action\" — كَلَّمَ and نَظَّفَ are denominative (built directly from a noun/adjective, with no Form I verb behind them at all), not causatives of some other verb.",
+      "Trying to master every person's conjugation before recognising the pattern itself — this batch focuses on recognising فَعَّلَ / يُفَعِّلُ in context; producing it across persons follows the same present-tense pattern already taught in gr:present-tense."
+    ],
+    "skills": [
+      "grammar",
+      "vocabulary",
+      "reading"
+    ],
+    "prereqs": [
+      "gr:root-pattern"
+    ]
   }
 ]
