@@ -1671,5 +1671,51 @@
     "level": "A2",
     "skills": [ "reading", "comprehension", "listening" ],
     "prereqs": [ "gr:verbal-sentence", "gr:kana" ]
+  },
+  {
+    "id": "txt:read-dlg-shopping",
+    "kind": "text",
+    "textType": "dialogue",
+    "source": "m20",
+    "vowelled": "بِكَمْ هَذِهِ السَّاعَةُ؟ — بِعِشْرِينَ دِينَارًا — مُمْكِن أُجَرِّبُ هَذِهِ؟ — طَبْعًا! هَلْ هَذَا مَقَاسُكَ؟ — نَعَمْ. هَلْ عِنْدَكَ خَصْمٌ؟ — نَعَمْ، بِخَمْسَةَ عَشَرَ دِينَارًا مَعَ الْخَصْمِ. هَلْ عِنْدَكَ نَقْدٌ أَوْ بِطَاقَةُ اِئْتِمَانٍ؟ — عِنْدِي نَقْدٌ — هَلْ هَذَا كُلُّ شَيْءٍ؟ — نَعَمْ، هَذَا كُلُّ شَيْءٍ. شُكْرًا! — عَفْوًا",
+    "translit": "bikam hādhihi as-sāʿatu? — bi-ʿishrīna dīnāran — mumkin ujarribu hādhihi? — ṭabʿan! hal hādhā maqāsuka? — naʿam. hal ʿindaka khaṣmun? — naʿam, bi-khamsata ʿashara dīnāran maʿa al-khaṣmi. hal ʿindaka naqdun aw biṭāqatu iʾtimānin? — ʿindī naqdun — hal hādhā kullu shayʾin? — naʿam, hādhā kullu shayʾin. shukran! — ʿafwan",
+    "en": "— How much is this watch? — Twenty dinars. — May I try this on? — Of course! Is this your size? — Yes. Do you have a discount? — Yes, for fifteen dinars with the discount. Do you have cash or a credit card? — I have cash. — Is that everything? — Yes, that's everything. Thank you! — You're welcome!",
+    "turns": [
+      { "ar": "بِكَمْ هَذِهِ السَّاعَةُ؟", "translit": "bikam hādhihi as-sāʿatu?", "en": "How much is this watch?" },
+      { "ar": "بِعِشْرِينَ دِينَارًا", "translit": "bi-ʿishrīna dīnāran", "en": "Twenty dinars." },
+      { "ar": "مُمْكِن أُجَرِّبُ هَذِهِ؟", "translit": "mumkin ujarribu hādhihi?", "en": "May I try this on?" },
+      { "ar": "طَبْعًا! هَلْ هَذَا مَقَاسُكَ؟", "translit": "ṭabʿan! hal hādhā maqāsuka?", "en": "Of course! Is this your size?" },
+      { "ar": "نَعَمْ. هَلْ عِنْدَكَ خَصْمٌ؟", "translit": "naʿam. hal ʿindaka khaṣmun?", "en": "Yes. Do you have a discount?" },
+      { "ar": "نَعَمْ، بِخَمْسَةَ عَشَرَ دِينَارًا مَعَ الْخَصْمِ. هَلْ عِنْدَكَ نَقْدٌ أَوْ بِطَاقَةُ اِئْتِمَانٍ؟", "translit": "naʿam, bi-khamsata ʿashara dīnāran maʿa al-khaṣmi. hal ʿindaka naqdun aw biṭāqatu iʾtimānin?", "en": "Yes, for fifteen dinars with the discount. Do you have cash or a credit card?" },
+      { "ar": "عِنْدِي نَقْدٌ", "translit": "ʿindī naqdun", "en": "I have cash." },
+      { "ar": "هَلْ هَذَا كُلُّ شَيْءٍ؟", "translit": "hal hādhā kullu shayʾin?", "en": "Is that everything?" },
+      { "ar": "نَعَمْ، هَذَا كُلُّ شَيْءٍ. شُكْرًا!", "translit": "naʿam, hādhā kullu shayʾin. shukran!", "en": "Yes, that's everything. Thank you!" },
+      { "ar": "عَفْوًا!", "translit": "ʿafwan!", "en": "You're welcome!" }
+    ],
+    "audio": "بِكَمْ هَذِهِ السَّاعَةُ؟ بِعِشْرِينَ دِينَارًا. مُمْكِن أُجَرِّبُ هَذِهِ؟ طَبْعًا! هَلْ هَذَا مَقَاسُكَ؟ نَعَمْ. هَلْ عِنْدَكَ خَصْمٌ؟ نَعَمْ، بِخَمْسَةَ عَشَرَ دِينَارًا مَعَ الْخَصْمِ. هَلْ عِنْدَكَ نَقْدٌ أَوْ بِطَاقَةُ اِئْتِمَانٍ؟ عِنْدِي نَقْدٌ. هَلْ هَذَا كُلُّ شَيْءٍ؟ نَعَمْ، هَذَا كُلُّ شَيْءٍ. شُكْرًا! عَفْوًا!",
+    "level": "A2",
+    "skills": [ "listening", "speaking", "comprehension" ],
+    "prereqs": [ "gr:attached-possessive", "gr:core-prepositions", "gr:numbers-11-99", "gr:idafa" ]
+  },
+  {
+    "id": "txt:read-dlg-directions",
+    "kind": "text",
+    "textType": "dialogue",
+    "source": "m20",
+    "vowelled": "عَفْوًا، أَيْنَ الْبَنْكُ؟ — هُوَ قَرِيبٌ. الْبَنْكُ فِي هَذَا الشَّارِعِ، عَلَى الْيَسَارِ. — وَأَيْنَ الْمَكْتَبَةُ؟ هَلْ هِيَ بَعِيدَةٌ؟ — نَعَمْ، هِيَ بَعِيدَةٌ عَنْ هُنَا. هِيَ إِلَى الْأَمَامِ، فِي الشَّارِعِ الثَّانِي. — شُكْرًا! — عَفْوًا",
+    "translit": "ʿafwan, ayna al-banku? — huwa qarībun. al-banku fī hādhā ash-shāriʿi, ʿalā al-yasāri. — wa-ayna al-maktabatu? hal hiya baʿīdatun? — naʿam, hiya baʿīdatun ʿan hunā. hiya ilā al-amāmi, fī ash-shāriʿi ath-thānī. — shukran! — ʿafwan",
+    "en": "— Excuse me, where is the bank? — It's near. The bank is on this street, on the left. — And where is the library? Is it far? — Yes, it's far from here. It's straight ahead, on the second street. — Thank you! — You're welcome!",
+    "turns": [
+      { "ar": "عَفْوًا، أَيْنَ الْبَنْكُ؟", "translit": "ʿafwan, ayna al-banku?", "en": "Excuse me, where is the bank?" },
+      { "ar": "هُوَ قَرِيبٌ. الْبَنْكُ فِي هَذَا الشَّارِعِ، عَلَى الْيَسَارِ.", "translit": "huwa qarībun. al-banku fī hādhā ash-shāriʿi, ʿalā al-yasāri.", "en": "It's near. The bank is on this street, on the left." },
+      { "ar": "وَأَيْنَ الْمَكْتَبَةُ؟ هَلْ هِيَ بَعِيدَةٌ؟", "translit": "wa-ayna al-maktabatu? hal hiya baʿīdatun?", "en": "And where is the library? Is it far?" },
+      { "ar": "نَعَمْ، هِيَ بَعِيدَةٌ عَنْ هُنَا. هِيَ إِلَى الْأَمَامِ، فِي الشَّارِعِ الثَّانِي.", "translit": "naʿam, hiya baʿīdatun ʿan hunā. hiya ilā al-amāmi, fī ash-shāriʿi ath-thānī.", "en": "Yes, it's far from here. It's straight ahead, on the second street." },
+      { "ar": "شُكْرًا!", "translit": "shukran!", "en": "Thank you!" },
+      { "ar": "عَفْوًا!", "translit": "ʿafwan!", "en": "You're welcome!" }
+    ],
+    "audio": "عَفْوًا، أَيْنَ الْبَنْكُ؟ هُوَ قَرِيبٌ. الْبَنْكُ فِي هَذَا الشَّارِعِ، عَلَى الْيَسَارِ. وَأَيْنَ الْمَكْتَبَةُ؟ هَلْ هِيَ بَعِيدَةٌ؟ نَعَمْ، هِيَ بَعِيدَةٌ عَنْ هُنَا. هِيَ إِلَى الْأَمَامِ، فِي الشَّارِعِ الثَّانِي. شُكْرًا! عَفْوًا!",
+    "level": "A2",
+    "skills": [ "listening", "speaking", "comprehension" ],
+    "prereqs": [ "gr:core-prepositions", "gr:nominal-sentence", "gr:demonstratives" ]
   }
 ]
