@@ -413,7 +413,10 @@
     "audio": "الْأَبُ سَعِيدٌ",
     "level": "A1",
     "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:nominal-sentence" ]
+    "prereqs": [ "gr:nominal-sentence" ],
+    "parse": [
+      { "word": "الْأَبُ", "role": "mubtada" }
+    ]
   },
   {
     "id": "txt:gram-nominal-mother",
@@ -431,7 +434,10 @@
     "audio": "الْأُمُّ سَعِيدَةٌ",
     "level": "A1",
     "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:nominal-sentence" ]
+    "prereqs": [ "gr:nominal-sentence" ],
+    "parse": [
+      { "word": "سَعِيدَةٌ", "role": "khabar" }
+    ]
   },
   {
     "id": "txt:gram-nominal-teacher",
@@ -949,7 +955,10 @@
     "audio": "ذَهَبَ الرَّجُلُ إِلَى الْمَدْرَسَةِ",
     "level": "A2",
     "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:verbal-sentence" ]
+    "prereqs": [ "gr:verbal-sentence" ],
+    "parse": [
+      { "word": "الرَّجُلُ", "role": "fail" }
+    ]
   },
   {
     "id": "txt:gram-past-1sg",
@@ -968,7 +977,10 @@
     "audio": "أَنَا قَرَأْتُ الْكِتَابَ",
     "level": "A2",
     "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:verbal-sentence" ]
+    "prereqs": [ "gr:verbal-sentence" ],
+    "parse": [
+      { "word": "الْكِتَابَ", "role": "mafulbih" }
+    ]
   },
   {
     "id": "txt:gram-past-2sg-f",
@@ -1061,7 +1073,10 @@
     "audio": "بَابُ الْبَيْتِ",
     "level": "A2",
     "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:idafa" ]
+    "prereqs": [ "gr:idafa" ],
+    "parse": [
+      { "word": "الْبَيْتِ", "role": "mudafilayhi" }
+    ]
   },
   {
     "id": "txt:gram-idafa-sentence",
@@ -1080,7 +1095,11 @@
     "audio": "بَيْتُ الرَّجُلِ كَبِيرٌ",
     "level": "A2",
     "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:idafa" ]
+    "prereqs": [ "gr:idafa" ],
+    "parse": [
+      { "word": "الرَّجُلِ", "role": "mudafilayhi" },
+      { "word": "كَبِيرٌ", "role": "khabar" }
+    ]
   },
   {
     "id": "txt:gram-idafa-pen-student",
@@ -1099,7 +1118,11 @@
     "audio": "قَلَمُ الطَّالِبِ جَدِيدٌ",
     "level": "A2",
     "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:idafa" ]
+    "prereqs": [ "gr:idafa" ],
+    "parse": [
+      { "word": "الطَّالِبِ", "role": "mudafilayhi" },
+      { "word": "جَدِيدٌ", "role": "khabar" }
+    ]
   },
   {
     "id": "txt:gram-verb-ana",

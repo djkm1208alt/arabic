@@ -1,0 +1,147 @@
+{
+  "id": "b1-role-recognition",
+  "unitId": "b1-u7",
+  "curriculumLessonId": "b1-role-recognition",
+  "title": "Naming the Roles — مُبْتَدَأ / خَبَر",
+  "level": "B1",
+  "skills": ["grammar", "reading"],
+  "objectives": [
+    "gr:nominal-sentence", "gr:verbal-sentence", "gr:idafa",
+    "txt:gram-nominal-father", "txt:gram-nominal-mother",
+    "txt:gram-past-vso", "txt:gram-past-1sg",
+    "txt:gram-idafa-phrase", "txt:gram-idafa-sentence", "txt:gram-idafa-pen-student"
+  ],
+  "steps": [
+    {
+      "type": "explain",
+      "title": "Five roles you already use — now with names",
+      "body": [
+        "Since A1 you've built sentences like الْأَبُ سَعِيدٌ (\"the father is happy\") without ever naming the two halves: الْأَبُ is the مُبْتَدَأ (mubtadaʾ, \"topic\") and سَعِيدٌ is the خَبَر (khabar, \"comment\") — the thing you're talking about, and what you say about it.",
+        "A2 added verb-first sentences and iḍāfa phrases, each with their own named roles: in ذَهَبَ الرَّجُلُ (\"the man went\"), الرَّجُلُ is the فَاعِل (fāʿil, \"doer\"); in قَرَأْتُ الْكِتَابَ (\"I read the book\"), الْكِتَابَ is the مَفْعُول بِهِ (mafʿūl bih, \"object\"); in بَابُ الْبَيْتِ (\"the door of the house\"), الْبَيْتِ is the مُضَاف إِلَيْهِ (muḍāf ilayhi, \"possessor\").",
+        "This lesson doesn't teach anything new about how Arabic works — it names five roles you've already been building correctly, on seven sentences you've already read. Full case marking (رفع/نصب/جر) on top of these roles is B2's job."
+      ],
+      "previewSymbols": ["مُبْتَدَأ", "خَبَر", "فَاعِل"]
+    },
+    {
+      "type": "reading-practice",
+      "title": "Seven sentences, five roles",
+      "intro": "Read each sentence again before naming its roles. Tap 🔊 to hear any line.",
+      "fromObjectives": true
+    },
+    {
+      "type": "exercise",
+      "title": "Tag the topic",
+      "exercise": {
+        "kind": "label", "skill": "grammar", "objectId": "txt:gram-nominal-father", "objectIds": ["txt:gram-nominal-father"],
+        "prompt": "What role does the marked word play?",
+        "sentenceHtml": "<mark class=\"label-target\">الْأَبُ</mark> سَعِيدٌ",
+        "options": [
+          { "key": "mubtada", "ar": "مُبْتَدَأ", "en": "subject (mubtadaʾ)" },
+          { "key": "khabar", "ar": "خَبَر", "en": "predicate (khabar)" },
+          { "key": "fail", "ar": "فَاعِل", "en": "doer (fāʿil)" },
+          { "key": "mafulbih", "ar": "مَفْعُول بِهِ", "en": "object (mafʿūl bih)" },
+          { "key": "mudafilayhi", "ar": "مُضَاف إِلَيْهِ", "en": "possessor (muḍāf ilayhi)" }
+        ],
+        "answer": "mubtada"
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Tag the comment",
+      "exercise": {
+        "kind": "label", "skill": "grammar", "objectId": "txt:gram-nominal-mother", "objectIds": ["txt:gram-nominal-mother"],
+        "prompt": "What role does the marked word play?",
+        "sentenceHtml": "الْأُمُّ <mark class=\"label-target\">سَعِيدَةٌ</mark>",
+        "options": [
+          { "key": "mubtada", "ar": "مُبْتَدَأ", "en": "subject (mubtadaʾ)" },
+          { "key": "khabar", "ar": "خَبَر", "en": "predicate (khabar)" },
+          { "key": "fail", "ar": "فَاعِل", "en": "doer (fāʿil)" },
+          { "key": "mafulbih", "ar": "مَفْعُول بِهِ", "en": "object (mafʿūl bih)" },
+          { "key": "mudafilayhi", "ar": "مُضَاف إِلَيْهِ", "en": "possessor (muḍāf ilayhi)" }
+        ],
+        "answer": "khabar"
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Tag the doer",
+      "exercise": {
+        "kind": "label", "skill": "grammar", "objectId": "txt:gram-past-vso", "objectIds": ["txt:gram-past-vso"],
+        "prompt": "What role does the marked word play?",
+        "sentenceHtml": "ذَهَبَ <mark class=\"label-target\">الرَّجُلُ</mark> إِلَى الْمَدْرَسَةِ",
+        "options": [
+          { "key": "mubtada", "ar": "مُبْتَدَأ", "en": "subject (mubtadaʾ)" },
+          { "key": "khabar", "ar": "خَبَر", "en": "predicate (khabar)" },
+          { "key": "fail", "ar": "فَاعِل", "en": "doer (fāʿil)" },
+          { "key": "mafulbih", "ar": "مَفْعُول بِهِ", "en": "object (mafʿūl bih)" },
+          { "key": "mudafilayhi", "ar": "مُضَاف إِلَيْهِ", "en": "possessor (muḍāf ilayhi)" }
+        ],
+        "answer": "fail"
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Tag the object",
+      "exercise": {
+        "kind": "label", "skill": "grammar", "objectId": "txt:gram-past-1sg", "objectIds": ["txt:gram-past-1sg"],
+        "prompt": "What role does the marked word play?",
+        "sentenceHtml": "أَنَا قَرَأْتُ <mark class=\"label-target\">الْكِتَابَ</mark>",
+        "options": [
+          { "key": "mubtada", "ar": "مُبْتَدَأ", "en": "subject (mubtadaʾ)" },
+          { "key": "khabar", "ar": "خَبَر", "en": "predicate (khabar)" },
+          { "key": "fail", "ar": "فَاعِل", "en": "doer (fāʿil)" },
+          { "key": "mafulbih", "ar": "مَفْعُول بِهِ", "en": "object (mafʿūl bih)" },
+          { "key": "mudafilayhi", "ar": "مُضَاف إِلَيْهِ", "en": "possessor (muḍāf ilayhi)" }
+        ],
+        "answer": "mafulbih"
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Tag the possessor",
+      "exercise": {
+        "kind": "label", "skill": "grammar", "objectId": "txt:gram-idafa-phrase", "objectIds": ["txt:gram-idafa-phrase"],
+        "prompt": "What role does the marked word play?",
+        "sentenceHtml": "بَابُ <mark class=\"label-target\">الْبَيْتِ</mark>",
+        "options": [
+          { "key": "mubtada", "ar": "مُبْتَدَأ", "en": "subject (mubtadaʾ)" },
+          { "key": "khabar", "ar": "خَبَر", "en": "predicate (khabar)" },
+          { "key": "fail", "ar": "فَاعِل", "en": "doer (fāʿil)" },
+          { "key": "mafulbih", "ar": "مَفْعُول بِهِ", "en": "object (mafʿūl bih)" },
+          { "key": "mudafilayhi", "ar": "مُضَاف إِلَيْهِ", "en": "possessor (muḍāf ilayhi)" }
+        ],
+        "answer": "mudafilayhi"
+      }
+    },
+    {
+      "type": "practice-choice",
+      "title": "Two roles in one sentence",
+      "arabicPrompt": "بَيْتُ الرَّجُلِ كَبِيرٌ",
+      "prompt": "الرَّجُلِ and كَبِيرٌ each play a role here. Which pair is correct?",
+      "options": [
+        { "label": "الرَّجُلِ = مُضَاف إِلَيْهِ, كَبِيرٌ = خَبَر", "correct": true },
+        { "label": "الرَّجُلِ = فَاعِل, كَبِيرٌ = مَفْعُول بِهِ", "correct": false },
+        { "label": "الرَّجُلِ = مُبْتَدَأ, كَبِيرٌ = مُضَاف إِلَيْهِ", "correct": false }
+      ],
+      "explanation": "بَيْتُ الرَّجُلِ (\"the man's house\") is an iḍāfa, so الرَّجُلِ is the possessor — مُضَاف إِلَيْهِ. The whole phrase together is the sentence's topic, its مُبْتَدَأ; كَبِيرٌ, describing it, is the predicate, the خَبَر."
+    },
+    {
+      "type": "practice-choice",
+      "title": "Two roles in one sentence",
+      "arabicPrompt": "قَلَمُ الطَّالِبِ جَدِيدٌ",
+      "prompt": "الطَّالِبِ and جَدِيدٌ each play a role here. Which pair is correct?",
+      "options": [
+        { "label": "الطَّالِبِ = مُضَاف إِلَيْهِ, جَدِيدٌ = خَبَر", "correct": true },
+        { "label": "الطَّالِبِ = مَفْعُول بِهِ, جَدِيدٌ = فَاعِل", "correct": false },
+        { "label": "الطَّالِبِ = خَبَر, جَدِيدٌ = مُضَاف إِلَيْهِ", "correct": false }
+      ],
+      "explanation": "قَلَمُ الطَّالِبِ (\"the student's pen\") is an iḍāfa, so الطَّالِبِ is the possessor — مُضَاف إِلَيْهِ. The whole phrase together is the مُبْتَدَأ; جَدِيدٌ, describing it, is the predicate, the خَبَر."
+    },
+    {
+      "type": "complete",
+      "title": "You can name what you already do",
+      "message": "مُبْتَدَأ، خَبَر، فَاعِل، مَفْعُول بِهِ، مُضَاف إِلَيْهِ — five roles, all on sentences you already knew how to build. Full case marking (رفع/نصب/جر) on top of these roles is B2's job.",
+      "finishLabel": "Finish"
+    }
+  ]
+}

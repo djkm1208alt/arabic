@@ -162,13 +162,20 @@
       "skills": ["writing"],
       "status": "planned", "prereqs": ["b1-u2"]
     },
+    {
+      "id": "b1-u7", "level": "B1", "order": 7,
+      "title": "Grammatical Roles & Iʿrāb Readiness",
+      "blurb": "Naming the roles you already use — مبتدأ، خبر، فاعل، مفعول به، مضاف إليه — on sentences you've already read. Full case marking (إعراب) waits for B2.",
+      "skills": ["grammar", "reading"],
+      "status": "available", "prereqs": ["a2-u1", "a2-u2"]
+    },
 
     {
       "id": "b2-u1", "level": "B2", "order": 1,
       "title": "The Full Case System (Iʿrāb)",
       "blurb": "Nominative, accusative, and genitive used actively across nominal and verbal sentences. In development.",
       "skills": ["grammar"],
-      "status": "planned", "prereqs": ["b1-u2"]
+      "status": "planned", "prereqs": ["b1-u2", "b1-u7"]
     },
     {
       "id": "b2-u2", "level": "B2", "order": 2,
@@ -789,6 +796,14 @@
       "level": "B1", "skills": ["grammar", "reading"],
       "objectives": ["lex:prt-30", "lex:prt-31", "gr:relative-clauses", "txt:gram-relclause-safara", "txt:gram-relclause-takallamat", "txt:gram-relclause-istayqaza", "txt:gram-relclause-indefinite"],
       "status": "available", "source": "steps:b1-relative-clauses"
+    },
+    {
+      "id": "b1-role-recognition", "unitId": "b1-u7", "order": 1,
+      "title": "Naming the Roles — مُبْتَدَأ / خَبَر",
+      "blurb": "Five grammatical roles you've already been using correctly since A1/A2, finally named — on seven sentences you've already read.",
+      "level": "B1", "skills": ["grammar", "reading"],
+      "objectives": ["gr:nominal-sentence", "gr:verbal-sentence", "gr:idafa", "txt:gram-nominal-father", "txt:gram-nominal-mother", "txt:gram-past-vso", "txt:gram-past-1sg", "txt:gram-idafa-phrase", "txt:gram-idafa-sentence", "txt:gram-idafa-pen-student"],
+      "status": "available", "source": "steps:b1-role-recognition"
     }
   ]
 }
