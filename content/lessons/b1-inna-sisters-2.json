@@ -1,0 +1,69 @@
+{
+  "id": "b1-inna-sisters-2",
+  "unitId": "b1-u2",
+  "curriculumLessonId": "b1-inna-sisters-2",
+  "title": "Inna and Its Sisters — Completing the Set (لَيْتَ)",
+  "level": "B1",
+  "skills": ["grammar", "reading"],
+  "objectives": ["lex:prt-34", "lex:prt-35", "lex:prt-36", "lex:prt-37", "gr:inna-sisters", "txt:gram-kaanna-cold-weather", "txt:gram-lakinna-house-garden", "txt:gram-laalla-beautiful-tomorrow", "txt:gram-layta-warm-weather"],
+  "steps": [
+    {
+      "type": "explain",
+      "title": "Four more sisters, one familiar rule",
+      "body": [
+        "You already know إِنَّ, أَنَّ, and لِأَنَّ all push the noun right after them to accusative, leaving the predicate nominative. Four more sisters share that exact rule — new meanings, not a new pattern to learn. كَأَنَّ (\"as if\") makes a comparison: كَأَنَّ الطَّقْسَ بَارِدٌ الْيَوْمَ — \"it's as if the weather is cold today.\"",
+        "لٰكِنَّ is the HEAVY \"but\" — a real sister of إنّ, unlike the light لَكِنْ you already know (no shadda, no case shift at all): الْبَيْتُ كَبِيرٌ لٰكِنَّ الْحَدِيقَةَ صَغِيرَةٌ — \"the house is big, but the garden is small.\" لَعَلَّ (\"perhaps\") expresses hope or expectation: لَعَلَّ الطَّقْسَ جَمِيلٌ غَدًا — \"perhaps the weather will be beautiful tomorrow.\"",
+        "لَيْتَ (\"would that / I wish\") is different from an ordinary hope — it marks an irrealis wish, usually for something unlikely or impossible: لَيْتَ الطَّقْسَ دَافِئٌ — \"would that the weather were warm,\" said precisely because it probably isn't. That completes all ten traditionally-listed sisters by name. Only their attached-pronoun forms (إِنَّهُ, أَنَّهَا, …) are still ahead."
+      ],
+      "previewSymbols": ["كَأَنَّ", "لٰكِنَّ", "لَيْتَ"]
+    },
+    {
+      "type": "reading-practice",
+      "title": "The last four sisters",
+      "intro": "Read each sentence and check the noun's ending right after the sister of إنّ. Tap 🔊 to hear any line.",
+      "fromObjectives": true
+    },
+    {
+      "type": "practice-choice",
+      "title": "As if",
+      "arabicPrompt": "كَأَنَّ الطَّقْسَ بَارِدٌ الْيَوْمَ",
+      "prompt": "What does كَأَنَّ add to this sentence?",
+      "options": [
+        { "label": "A comparison — \"it's as if...\"", "correct": true },
+        { "label": "A question", "correct": false },
+        { "label": "A command", "correct": false }
+      ],
+      "explanation": "كَأَنَّ makes a comparison or simile, and — like every sister of إنّ — pushes الطَّقْسَ to accusative right after it."
+    },
+    {
+      "type": "practice-choice",
+      "title": "Heavy vs. light \"but\"",
+      "arabicPrompt": "الْبَيْتُ كَبِيرٌ لٰكِنَّ الْحَدِيقَةَ صَغِيرَةٌ",
+      "prompt": "Why is الْحَدِيقَةَ accusative here, when the same word after لَكِنْ (no shadda) would stay nominative?",
+      "options": [
+        { "label": "لٰكِنَّ (with shadda) is a sister of إِنَّ and shifts case; لَكِنْ is a completely different, lighter word that doesn't", "correct": true },
+        { "label": "لٰكِنَّ and لَكِنْ are the same word, just spelled two ways", "correct": false },
+        { "label": "Every noun after \"but\" is always accusative in Arabic", "correct": false }
+      ],
+      "explanation": "لٰكِنَّ (heavy, doubled ن) is one of the ten sisters of إنّ; لَكِنْ (light, single ن) is an unrelated, more common word that never shifts case. Only the heavy form does this."
+    },
+    {
+      "type": "practice-choice",
+      "title": "A real wish, not a request",
+      "arabicPrompt": "لَيْتَ الطَّقْسَ دَافِئٌ",
+      "prompt": "How is لَيْتَ different from لَعَلَّ (\"perhaps\")?",
+      "options": [
+        { "label": "لَيْتَ marks a wish for something unlikely or impossible; لَعَلَّ is a more realistic hope or expectation", "correct": true },
+        { "label": "They mean exactly the same thing and can always replace each other", "correct": false },
+        { "label": "لَيْتَ is used only in questions", "correct": false }
+      ],
+      "explanation": "لَيْتَ is an irrealis wish — you say it precisely because the thing probably isn't true. لَعَلَّ instead expresses something you genuinely think might happen."
+    },
+    {
+      "type": "complete",
+      "title": "All ten sisters, named",
+      "message": "كَأَنَّ, لٰكِنَّ, لَعَلَّ, and لَيْتَ complete the ten traditionally-listed sisters of إنّ — every one of them pushing the following noun to accusative, the same rule you first met with إِنَّ. Their attached-pronoun forms are still ahead.",
+      "finishLabel": "Finish"
+    }
+  ]
+}
