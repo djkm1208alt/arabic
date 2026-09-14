@@ -4,6 +4,16 @@
 implementation, no content-file changes. This doc plans a multi-batch arc; it is not itself a
 batch.
 
+> **⚠️ 2026-09-14 note:** §6/§4's engine milestone was drafted here without knowing that the same
+> bounded engine already shipped, once, under a different name — **M21.6** (the parse/label
+> exercise-type, PR #40/#41) — before a local history-loss event orphaned it off `main` and this
+> doc was written independently in its absence. M21.6 has since been recovered (see the M21 row
+> in [ROADMAP.md](ROADMAP.md)). **§6/§4-prerequisite-3 is satisfied; §4-prerequisite-2 (B1
+> grammar) is now well underway** (derived verb forms II–X + relative clauses). The design in §6
+> (`iʿrāb` annotation array, `term:`/`metalang.json` glossary) does **not** match M21.6's actual
+> shape — reconcile before drafting **M21.7**-style content batches against this doc's §3/§7
+> destination map, which otherwise remains a useful, still-accurate plan.
+
 **Parent:** [ROADMAP.md](ROADMAP.md) — "Parallel tracks → Advanced / literary Arabic" and the
 M21 continuous content operation ("A2 → B1 → B2 → C1 → C2, level by level").
 

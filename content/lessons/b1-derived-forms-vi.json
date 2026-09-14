@@ -1,0 +1,57 @@
+{
+  "id": "b1-derived-forms-vi",
+  "unitId": "b1-u1",
+  "curriculumLessonId": "b1-derived-forms-vi",
+  "title": "Derived Verb Forms — Form VI (تَفَاعَلَ)",
+  "level": "B1",
+  "skills": ["grammar", "vocabulary", "reading"],
+  "objectives": ["lex:ver-33", "gr:derived-verb-forms", "txt:gram-form6-takataba"],
+  "steps": [
+    {
+      "type": "explain",
+      "title": "تَ, this time on Form III",
+      "body": [
+        "Form VI's signature is تَ prefixed to Form III's own pattern, giving the shape تَفَاعَلَ — the long alif after the first letter is still there, just with تَ added in front, the same way Form V added تَ to Form II.",
+        "تَكَاتَبَ (\"to correspond, to write to each other\") is a new word built on ك-ت-ب, the same root as كَتَبَ, كِتَاب, and مَكْتَبَة: تَكَاتَبَ الطَّالِبَانِ, \"the two students wrote to each other,\" present tense يَتَكَاتَبُ.",
+        "Form VI is most often the reciprocal of Form III — doing the action to or with each other. تَكَاتَبَ is literally the reciprocal of a hypothetical Form III \"كَاتَبَ\" (\"to write to someone\"); the shared, back-and-forth action is exactly what the تَ prefix adds."
+      ],
+      "previewSymbols": ["تَكَاتَبَ", "تَفَاعَلَ", "يَتَكَاتَبُ"]
+    },
+    {
+      "type": "reading-practice",
+      "title": "Form VI in one sentence",
+      "intro": "Read the sentence, then check what marks it as Form VI. Tap 🔊 to hear it.",
+      "fromObjectives": true
+    },
+    {
+      "type": "practice-choice",
+      "title": "Reciprocal action",
+      "arabicPrompt": "تَكَاتَبَ (Form VI)",
+      "prompt": "تَكَاتَبَ is Form VI — تَ added to Form III's own pattern. What does Form VI often mean?",
+      "options": [
+        { "label": "Doing the action to/with each other", "correct": true },
+        { "label": "Something undergoing an action, with no one performing it", "correct": false },
+        { "label": "Seeking or considering something to be true", "correct": false }
+      ],
+      "explanation": "Form VI's تَ is the reciprocal counterpart of Form III, the same way Form V's تَ is the reflexive counterpart of Form II — تَكَاتَبَ literally means the two sides wrote to each other."
+    },
+    {
+      "type": "practice-choice",
+      "title": "Spot the pattern",
+      "arabicPrompt": "تَكَاتَبَ",
+      "prompt": "Which two pieces combine to build تَكَاتَبَ's pattern?",
+      "options": [
+        { "label": "تَ prefixed to Form III's long-alif pattern (تَفَاعَلَ)", "correct": true },
+        { "label": "تَ prefixed to Form II's doubled-consonant pattern (تَفَعَّلَ)", "correct": false },
+        { "label": "اِنْ prefixed, with no تَ at all", "correct": false }
+      ],
+      "explanation": "تَكَاتَبَ keeps the long ا of كَاتَبَ (Form III's own shape) and adds تَ in front — Form V instead adds تَ to Form II's doubled consonant."
+    },
+    {
+      "type": "complete",
+      "title": "Five forms down",
+      "message": "Form VI — تَ + Form III's pattern, often reciprocal, the same way Form V is to Form II. Three forms left.",
+      "finishLabel": "Continue"
+    }
+  ]
+}

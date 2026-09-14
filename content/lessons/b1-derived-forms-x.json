@@ -1,0 +1,69 @@
+{
+  "id": "b1-derived-forms-x",
+  "unitId": "b1-u1",
+  "curriculumLessonId": "b1-derived-forms-x",
+  "title": "Derived Verb Forms — Form X (اِسْتَفْعَلَ)",
+  "level": "B1",
+  "skills": ["grammar", "vocabulary", "reading"],
+  "objectives": ["lex:ver-13", "gr:derived-verb-forms", "txt:gram-form10-istayqaza"],
+  "steps": [
+    {
+      "type": "explain",
+      "title": "The longest pattern, and the last new one",
+      "body": [
+        "Form X's signature is اِسْتَ prefixed to the root, giving the shape اِسْتَفْعَلَ — the longest of the ten patterns.",
+        "اِسْتَيْقَظَ (\"to wake up\"), already in your vocabulary since A1, is a Form X verb — root ي-ق-ظ (\"wakefulness\"): اِسْتَيْقَظَ الْوَلَدُ فِي الصَّبَاحِ, \"the boy woke up in the morning,\" present tense يَسْتَيْقِظُ.",
+        "Form X often means \"to seek or consider X,\" or carries a reflexive-causative sense — \"to render yourself X.\" That's eight of the ten forms now, each recognisable by its own distinct shape. Only Form IX — a doubled final letter, used almost only for colours and physical defects — stays ahead, past B1."
+      ],
+      "previewSymbols": ["اِسْتَيْقَظَ", "اِسْتَفْعَلَ", "يَسْتَيْقِظُ"]
+    },
+    {
+      "type": "reading-practice",
+      "title": "Form X in one sentence",
+      "intro": "Read the sentence, then check what marks it as Form X. Tap 🔊 to hear it.",
+      "fromObjectives": true
+    },
+    {
+      "type": "practice-choice",
+      "title": "Spot the pattern",
+      "arabicPrompt": "اِسْتَيْقَظَ",
+      "prompt": "اِسْتَيْقَظَ (to wake up) starts with اِسْتَ. Which form is that?",
+      "options": [
+        { "label": "Form X — اِسْتَفْعَلَ", "correct": true },
+        { "label": "Form VIII — اِفْتَعَلَ", "correct": false },
+        { "label": "Form III — فَاعَلَ", "correct": false }
+      ],
+      "explanation": "اِسْتَفْعَلَ prefixes اِسْتَ to the root — the same prefix you can see on اِسْتَيْقَظَ."
+    },
+    {
+      "type": "practice-choice",
+      "title": "Meaning tendency",
+      "arabicPrompt": "اِسْتَفْعَلَ (Form X)",
+      "prompt": "What tendency does Form X often carry?",
+      "options": [
+        { "label": "\"To seek or consider X,\" or a reflexive-causative sense — \"to render yourself X\"", "correct": true },
+        { "label": "A passive sense with no human subject ever possible", "correct": false },
+        { "label": "A denominative sense, always built from a noun and never from a verb", "correct": false }
+      ],
+      "explanation": "Form X's اِسْتَ prefix often adds \"seeking\" or a reflexive-causative sense. The \"no human subject\" tendency belongs to Form VII, and \"always from a noun\" overstates every form's flexibility — several forms, including II and IV, can go either way."
+    },
+    {
+      "type": "practice-choice",
+      "title": "Eight forms, eight shapes",
+      "arabicPrompt": "جَرَّبَ · تَكَلَّمَ · اِنْفَتَحَ",
+      "prompt": "Doubled middle consonant, تَ added to that same doubling, and اِنْ prefixed with no human subject — which three forms, in order?",
+      "options": [
+        { "label": "II, V, VII", "correct": true },
+        { "label": "II, VI, VIII", "correct": false },
+        { "label": "III, V, X", "correct": false }
+      ],
+      "explanation": "جَرَّبَ doubles its middle consonant (Form II); تَكَلَّمَ adds تَ to that same doubled pattern (Form V); اِنْفَتَحَ prefixes اِنْ and never takes a human subject (Form VII) — three of the eight shapes you've now met."
+    },
+    {
+      "type": "complete",
+      "title": "b1-u1 is complete",
+      "message": "Eight of the ten derived forms, each in its own lesson, built from a mix of words you already knew and a few new ones chosen to sit naturally beside them. Only Form IX — colours and physical defects, a genuinely rare pattern — is still ahead, and it's staying there until much later.",
+      "finishLabel": "Finish"
+    }
+  ]
+}

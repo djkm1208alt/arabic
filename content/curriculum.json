@@ -117,22 +117,22 @@
       "title": "Everyday Exchanges",
       "blurb": "Shopping, directions, and routine conversation — listening and speaking.",
       "skills": ["listening", "speaking", "comprehension"],
-      "status": "available", "prereqs": ["a1-u3"]
+      "status": "available", "prereqs": ["a2-u4"]
     },
 
     {
       "id": "b1-u1", "level": "B1", "order": 1,
       "title": "Derived Verb Forms II–X",
-      "blurb": "Form II (تَفْعِيل) and Form III (مُفَاعَلَة) — causative/denominative vs. reciprocal/associative meaning tendencies.",
+      "blurb": "Forms II through VIII and X, one at a time, and their meaning tendencies — a mix of verbs you already knew and a few chosen to fit naturally beside them. Form IX (colours and physical defects) is rare enough to stay ahead, past B1.",
       "skills": ["grammar", "vocabulary"],
       "status": "available", "prereqs": ["a2-u1", "a2-u3"]
     },
     {
       "id": "b1-u2", "level": "B1", "order": 2,
       "title": "Relative Clauses & Longer Sentences",
-      "blurb": "الَّذِي and its family, إنّ وأخواتها, and joining ideas into paragraphs. In development.",
+      "blurb": "الَّذِي and الَّتِي for subject-relative clauses, definite and indefinite. إنّ وأخواتها and object-relative clauses are still in development.",
       "skills": ["grammar", "reading"],
-      "status": "planned", "prereqs": ["a2-u2"]
+      "status": "available", "prereqs": ["a2-u2"]
     },
     {
       "id": "b1-u3", "level": "B1", "order": 3,
@@ -639,6 +639,14 @@
       "status": "available", "source": "steps:a2-verbal-sentence"
     },
     {
+      "id": "a2-writing-sentences", "unitId": "a2-u1", "order": 2,
+      "title": "Writing A2 Sentences",
+      "blurb": "Building verb-first sentences, كَانَ, and iḍāfa phrases from word tiles — A2's own version of A1's sentence-building lesson.",
+      "level": "A2", "skills": ["writing", "grammar"],
+      "objectives": ["gr:verbal-sentence", "gr:kana", "gr:idafa", "txt:gram-past-vso", "txt:gram-past-1sg", "txt:gram-kana-house", "txt:gram-kana-fem", "txt:gram-idafa-phrase", "txt:gram-idafa-sentence", "txt:gram-idafa-pen-student"],
+      "status": "available", "source": "steps:a2-writing-sentences"
+    },
+    {
       "id": "a2-idafa", "unitId": "a2-u2", "order": 1,
       "title": "The Genitive Construct (Iḍāfa)",
       "blurb": "How two nouns side by side express possession, with no word for \"of\" needed.",
@@ -687,6 +695,14 @@
       "status": "available", "source": "steps:a2-dates"
     },
     {
+      "id": "a2-writing-dictation", "unitId": "a2-u4", "order": 5,
+      "title": "Spelling A2 Words From Dictation",
+      "blurb": "Eight A2 words — numbers, a month, and shopping vocabulary — spelled from sound alone.",
+      "level": "A2", "skills": ["writing", "listening"],
+      "objectives": ["lex:num-20", "lex:num-half", "lex:num-quarter", "lex:tim-62", "lex:sch-22", "lex:prt-27", "lex:shp-13", "lex:shp-14"],
+      "status": "available", "source": "steps:a2-writing-dictation"
+    },
+    {
       "id": "a2-reading-paragraphs", "unitId": "a2-u5", "order": 1,
       "title": "Reading Short Paragraphs",
       "blurb": "Two short connected stories — a train trip and a sudden plane in the sky — putting eight new connectors to work.",
@@ -695,28 +711,84 @@
       "status": "available", "source": "steps:a2-reading-paragraphs"
     },
     {
-      "id": "a2-everyday-exchanges", "unitId": "a2-u6", "order": 1,
-      "title": "Shopping and Asking Directions",
-      "blurb": "Two real exchanges — buying a watch and asking the way — putting existing vocabulary and grammar to work with nothing new.",
+      "id": "a2-shopping-routine", "unitId": "a2-u6", "order": 1,
+      "title": "Shopping, Directions & Everyday Exchanges",
+      "blurb": "Three real exchanges — paying for something, asking the way, and a small polite request — putting A1 and A2 vocabulary to work together.",
       "level": "A2", "skills": ["listening", "speaking", "comprehension"],
-      "objectives": ["gr:nominal-sentence", "gr:demonstratives", "gr:attached-possessive", "gr:core-prepositions", "gr:numbers-11-99", "gr:idafa", "txt:read-dlg-shopping", "txt:read-dlg-directions"],
-      "status": "available", "source": "steps:a2-everyday-exchanges"
+      "objectives": ["gr:idafa", "gr:core-prepositions", "gr:negation-a1", "txt:read-dlg-shopping", "txt:read-dlg-directions", "txt:read-dlg-permission"],
+      "status": "available", "source": "steps:a2-shopping-routine"
     },
     {
       "id": "b1-derived-forms-ii", "unitId": "b1-u1", "order": 1,
-      "title": "Derived Verb Forms — Form II (تَفْعِيل)",
-      "blurb": "The doubled-middle-consonant pattern that turns دَرَسَ (to study) into دَرَّسَ (to teach) — a first derived verb form and its causative/denominative meaning tendency.",
-      "level": "B1", "skills": ["grammar", "vocabulary"],
-      "objectives": ["lex:ver-14", "lex:ver-31", "lex:hom-16", "lex:ver-32", "lex:sch-14", "lex:ver-33", "lex:ver-30", "lex:peo-13", "lex:peo-15", "lex:peo-11", "lex:fc-14", "lex:sch-02", "lex:sch-04", "gr:derived-verb-forms", "txt:gram-form2-darrasa", "txt:gram-form2-nazzafa", "txt:gram-form2-kallama", "txt:gram-form2-jarraba"],
+      "title": "Derived Verb Forms — Form II (فَعَّلَ)",
+      "blurb": "The doubled-middle-consonant pattern, already sitting in جَرَّبَ (\"to try\") — Form II's causative/intensive meaning tendency.",
+      "level": "B1", "skills": ["grammar", "vocabulary", "reading"],
+      "objectives": ["lex:ver-30", "gr:derived-verb-forms", "txt:gram-form2-jarraba"],
       "status": "available", "source": "steps:b1-derived-forms-ii"
     },
     {
       "id": "b1-derived-forms-iii", "unitId": "b1-u1", "order": 2,
-      "title": "Derived Verb Forms — Form III (مُفَاعَلَة)",
-      "blurb": "The long-alif pattern that turns كَتَبَ (to write) into كَاتَبَ (to correspond with) — Form III's reciprocal and associative meaning tendency.",
-      "level": "B1", "skills": ["grammar", "vocabulary"],
-      "objectives": ["lex:ver-04", "lex:ver-34", "lex:ver-21", "lex:ver-35", "lex:peo-11", "lex:ver-36", "lex:ver-26", "lex:peo-15", "lex:peo-16", "lex:sch-04", "lex:adj-06", "lex:peo-12", "lex:prt-05", "gr:derived-verb-forms", "txt:gram-form3-jalasa", "txt:gram-form3-kataba", "txt:gram-form3-sadaqa", "txt:gram-form3-safara"],
+      "title": "Derived Verb Forms — Form III (فَاعَلَ)",
+      "blurb": "The long-alif-after-the-first-letter pattern, already sitting in سَافَرَ (\"to travel\") — Form III's reciprocal/effort-toward-someone meaning tendency.",
+      "level": "B1", "skills": ["grammar", "vocabulary", "reading"],
+      "objectives": ["lex:ver-26", "gr:derived-verb-forms", "txt:gram-form3-safara"],
       "status": "available", "source": "steps:b1-derived-forms-iii"
+    },
+    {
+      "id": "b1-derived-forms-iv", "unitId": "b1-u1", "order": 3,
+      "title": "Derived Verb Forms — Form IV (أَفْعَلَ)",
+      "blurb": "The أَ-prefix pattern, already sitting in أَرَادَ (\"to want\") and أَغْلَقَ (\"to close\") — Form IV's causative meaning tendency.",
+      "level": "B1", "skills": ["grammar", "vocabulary", "reading"],
+      "objectives": ["lex:ver-16", "lex:ver-20", "gr:derived-verb-forms", "txt:gram-form4-aghlaqa"],
+      "status": "available", "source": "steps:b1-derived-forms-iv"
+    },
+    {
+      "id": "b1-derived-forms-v", "unitId": "b1-u1", "order": 4,
+      "title": "Derived Verb Forms — Form V (تَفَعَّلَ)",
+      "blurb": "تَ added to Form II's own pattern, already sitting in تَكَلَّمَ (\"to speak\") — Form V's reflexive meaning tendency.",
+      "level": "B1", "skills": ["grammar", "vocabulary", "reading"],
+      "objectives": ["lex:ver-06", "gr:derived-verb-forms", "txt:gram-form5-takallama"],
+      "status": "available", "source": "steps:b1-derived-forms-v"
+    },
+    {
+      "id": "b1-derived-forms-vi", "unitId": "b1-u1", "order": 5,
+      "title": "Derived Verb Forms — Form VI (تَفَاعَلَ)",
+      "blurb": "تَ added to Form III's own pattern, in the new word تَكَاتَبَ (\"to correspond\") — Form VI's reciprocal meaning tendency.",
+      "level": "B1", "skills": ["grammar", "vocabulary", "reading"],
+      "objectives": ["lex:ver-33", "gr:derived-verb-forms", "txt:gram-form6-takataba"],
+      "status": "available", "source": "steps:b1-derived-forms-vi"
+    },
+    {
+      "id": "b1-derived-forms-vii", "unitId": "b1-u1", "order": 6,
+      "title": "Derived Verb Forms — Form VII (اِنْفَعَلَ)",
+      "blurb": "The اِنْ-prefix pattern, in the new pair اِنْفَتَحَ/اِنْغَلَقَ (\"to open/close by itself\") — Form VII never takes a human subject.",
+      "level": "B1", "skills": ["grammar", "vocabulary", "reading"],
+      "objectives": ["lex:ver-31", "lex:ver-32", "gr:derived-verb-forms", "txt:gram-form7-infataha"],
+      "status": "available", "source": "steps:b1-derived-forms-vii"
+    },
+    {
+      "id": "b1-derived-forms-viii", "unitId": "b1-u1", "order": 7,
+      "title": "Derived Verb Forms — Form VIII (اِفْتَعَلَ)",
+      "blurb": "A ت infixed after the first root letter, already sitting in اِشْتَرَى (\"to buy\") — Form VIII's middle-voice/reflexive meaning tendency.",
+      "level": "B1", "skills": ["grammar", "vocabulary", "reading"],
+      "objectives": ["lex:ver-23", "gr:derived-verb-forms", "txt:gram-form8-ishtara"],
+      "status": "available", "source": "steps:b1-derived-forms-viii"
+    },
+    {
+      "id": "b1-derived-forms-x", "unitId": "b1-u1", "order": 8,
+      "title": "Derived Verb Forms — Form X (اِسْتَفْعَلَ)",
+      "blurb": "The اِسْتَ-prefix pattern, already sitting in اِسْتَيْقَظَ (\"to wake up\") — Form X's \"seek/consider X\" meaning tendency, and a closing review across all eight forms taught so far.",
+      "level": "B1", "skills": ["grammar", "vocabulary", "reading"],
+      "objectives": ["lex:ver-13", "gr:derived-verb-forms", "txt:gram-form10-istayqaza"],
+      "status": "available", "source": "steps:b1-derived-forms-x"
+    },
+    {
+      "id": "b1-relative-clauses", "unitId": "b1-u2", "order": 1,
+      "title": "Relative Clauses — الَّذِي / الَّتِي",
+      "blurb": "The relative pronouns الَّذِي and الَّتِي — required after a definite noun, dropped entirely after an indefinite one — in four worked sentences.",
+      "level": "B1", "skills": ["grammar", "reading"],
+      "objectives": ["lex:prt-30", "lex:prt-31", "gr:relative-clauses", "txt:gram-relclause-safara", "txt:gram-relclause-takallamat", "txt:gram-relclause-istayqaza", "txt:gram-relclause-indefinite"],
+      "status": "available", "source": "steps:b1-relative-clauses"
     }
   ]
 }

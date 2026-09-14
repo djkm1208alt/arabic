@@ -1,0 +1,57 @@
+{
+  "id": "b1-derived-forms-viii",
+  "unitId": "b1-u1",
+  "curriculumLessonId": "b1-derived-forms-viii",
+  "title": "Derived Verb Forms — Form VIII (اِفْتَعَلَ)",
+  "level": "B1",
+  "skills": ["grammar", "vocabulary", "reading"],
+  "objectives": ["lex:ver-23", "gr:derived-verb-forms", "txt:gram-form8-ishtara"],
+  "steps": [
+    {
+      "type": "explain",
+      "title": "A ت, tucked inside the root",
+      "body": [
+        "Form VIII's signature is a ت infixed right after the first root letter, giving the shape اِفْتَعَلَ.",
+        "اِشْتَرَى (\"to buy\"), already in your vocabulary since A1, is a Form VIII verb — root ش-ر-ي: اِشْتَرَتِ الطَّالِبَةُ كِتَابًا, \"the student bought a book,\" present tense تَشْتَرِي.",
+        "Form VIII often carries a reflexive or middle-voice sense — doing something for yourself. Patterns aren't fixed rules, though: اِشْتَرَى doesn't transparently mean \"to seek to sell\" from ش-ر-ي's buy/sell sense — it's simply lexicalized as \"to buy.\""
+      ],
+      "previewSymbols": ["اِشْتَرَى", "اِفْتَعَلَ", "تَشْتَرِي"]
+    },
+    {
+      "type": "reading-practice",
+      "title": "Form VIII in one sentence",
+      "intro": "Read the sentence, then check what marks it as Form VIII. Tap 🔊 to hear it.",
+      "fromObjectives": true
+    },
+    {
+      "type": "practice-choice",
+      "title": "Spot the pattern",
+      "arabicPrompt": "اِشْتَرَتِ",
+      "prompt": "اِشْتَرَى has a ت right after the first root letter (ش). Which form is that?",
+      "options": [
+        { "label": "Form VIII — اِفْتَعَلَ", "correct": true },
+        { "label": "Form VII — اِنْفَعَلَ", "correct": false },
+        { "label": "Form X — اِسْتَفْعَلَ", "correct": false }
+      ],
+      "explanation": "اِفْتَعَلَ infixes ت after the first root letter — Form VII instead prefixes اِنْ with no ت, and Form X prefixes the longer اِسْتَ."
+    },
+    {
+      "type": "practice-choice",
+      "title": "Meaning tendency",
+      "arabicPrompt": "اِفْتَعَلَ (Form VIII)",
+      "prompt": "What tendency does Form VIII often carry?",
+      "options": [
+        { "label": "A reflexive or middle-voice sense — doing something for yourself", "correct": true },
+        { "label": "No fixed meaning ever applies — every Form VIII verb is pure coincidence", "correct": false },
+        { "label": "A reciprocal sense, the same as Form III", "correct": false }
+      ],
+      "explanation": "Form VIII's infixed ت often adds a middle-voice sense. That's a tendency, not an iron rule — اِشْتَرَى itself has drifted to simply mean \"to buy\" — but it's the pattern's usual direction."
+    },
+    {
+      "type": "complete",
+      "title": "Seven forms down",
+      "message": "Form VIII — ت infixed, often reflexive/middle-voice. One form left: Form X.",
+      "finishLabel": "Continue"
+    }
+  ]
+}

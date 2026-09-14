@@ -1,0 +1,57 @@
+{
+  "id": "b1-derived-forms-iv",
+  "unitId": "b1-u1",
+  "curriculumLessonId": "b1-derived-forms-iv",
+  "title": "Derived Verb Forms — Form IV (أَفْعَلَ)",
+  "level": "B1",
+  "skills": ["grammar", "vocabulary", "reading"],
+  "objectives": ["lex:ver-16", "lex:ver-20", "gr:derived-verb-forms", "txt:gram-form4-aghlaqa"],
+  "steps": [
+    {
+      "type": "explain",
+      "title": "A hamza out front",
+      "body": [
+        "Form IV's signature is a hamza prefixed to the root, giving the shape أَفْعَلَ — no doubling, no long alif, just أَ added at the front.",
+        "Two verbs you already know are Form IV: أَرَادَ (\"to want,\" its present tense أُرِيدُ you've used since your very first \"I would like...\" phrase) and أَغْلَقَ (\"to close\"): أَغْلَقَ الرَّجُلُ الْبَابَ, \"the man closed the door,\" present tense يُغْلِقُ.",
+        "Form IV often adds a causative sense, similar to Form II — but it's more often built from a plain noun or adjective rather than another verb, or simply lexicalized on its own the way أَرَادَ and أَغْلَقَ are."
+      ],
+      "previewSymbols": ["أَرَادَ", "أَغْلَقَ", "أَفْعَلَ"]
+    },
+    {
+      "type": "reading-practice",
+      "title": "Form IV in one sentence",
+      "intro": "Read the sentence, then check what marks it as Form IV. Tap 🔊 to hear it.",
+      "fromObjectives": true
+    },
+    {
+      "type": "practice-choice",
+      "title": "A form you already knew",
+      "arabicPrompt": "أَرَادَ",
+      "prompt": "أَرَادَ (to want) starts with أَ. Which form is that?",
+      "options": [
+        { "label": "Form IV — أَفْعَلَ", "correct": true },
+        { "label": "Form VII — اِنْفَعَلَ", "correct": false },
+        { "label": "Form VI — تَفَاعَلَ", "correct": false }
+      ],
+      "explanation": "أَفْعَلَ prefixes أَ to the root — you've said أُرِيدُ (its present tense) many times without naming this pattern until now."
+    },
+    {
+      "type": "practice-choice",
+      "title": "Meaning tendency",
+      "arabicPrompt": "أَغْلَقَ الرَّجُلُ الْبَابَ",
+      "prompt": "What tendency does Form IV often share with Form II?",
+      "options": [
+        { "label": "A causative sense — \"to make X happen\"", "correct": true },
+        { "label": "A reciprocal sense — doing the action with someone", "correct": false },
+        { "label": "No human subject is ever possible", "correct": false }
+      ],
+      "explanation": "Both II and IV often make a verb causative, though they're built differently — II by doubling, IV by prefixing أَ. (This sentence's own الرَّجُلُ, \"the man,\" is a human subject doing the closing — the opposite of the third option.)"
+    },
+    {
+      "type": "complete",
+      "title": "Three forms down",
+      "message": "Form IV — أَ prefixed, often causative like Form II but shaped differently. On to Form V.",
+      "finishLabel": "Continue"
+    }
+  ]
+}

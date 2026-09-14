@@ -1,0 +1,57 @@
+{
+  "id": "b1-derived-forms-vii",
+  "unitId": "b1-u1",
+  "curriculumLessonId": "b1-derived-forms-vii",
+  "title": "Derived Verb Forms — Form VII (اِنْفَعَلَ)",
+  "level": "B1",
+  "skills": ["grammar", "vocabulary", "reading"],
+  "objectives": ["lex:ver-31", "lex:ver-32", "gr:derived-verb-forms", "txt:gram-form7-infataha"],
+  "steps": [
+    {
+      "type": "explain",
+      "title": "No one did it",
+      "body": [
+        "Form VII's signature is اِنْ prefixed to the root, giving the shape اِنْفَعَلَ.",
+        "Two new words share this pattern: اِنْفَتَحَ (\"to open, by itself\") and اِنْغَلَقَ (\"to close, by itself\") — the passive/reflexive counterparts of the already-known فَتَحَ and أَغْلَقَ (\"to open/close [something]\"): اِنْفَتَحَ الْبَابُ فَجْأَةً, \"the door opened suddenly,\" present tense يَنْفَتِحُ.",
+        "Form VII is the odd one out: it never takes a person as its subject. A door اِنْفَتَحَ by itself; a person doesn't. That's exactly why اِنْفَتَحَ/اِنْغَلَقَ pair so naturally with the sentences you already know — فَتَحَ الرَّجُلُ الْبَابَ (\"the man opened the door\") describes someone doing it, while اِنْفَتَحَ الْبَابُ (\"the door opened\") describes it just happening, with no one named as the doer."
+      ],
+      "previewSymbols": ["اِنْفَتَحَ", "اِنْغَلَقَ", "اِنْفَعَلَ"]
+    },
+    {
+      "type": "reading-practice",
+      "title": "Form VII in one sentence",
+      "intro": "Read the sentence, then check what marks it as Form VII. Tap 🔊 to hear it.",
+      "fromObjectives": true
+    },
+    {
+      "type": "practice-choice",
+      "title": "No one did it",
+      "arabicPrompt": "اِنْفَتَحَ الْبَابُ فَجْأَةً",
+      "prompt": "اِنْفَتَحَ الْبَابُ فَجْأَةً — who opened the door?",
+      "options": [
+        { "label": "No one is named — it just happened", "correct": true },
+        { "label": "الرَّجُلُ (the man)", "correct": false },
+        { "label": "The sentence doesn't say, but someone must have", "correct": false }
+      ],
+      "explanation": "Form VII (اِنْفَعَلَ) describes something undergoing an action, not someone performing one — that's the whole point of the pattern, not a gap in the sentence."
+    },
+    {
+      "type": "practice-choice",
+      "title": "Spot the pattern",
+      "arabicPrompt": "اِنْفَتَحَ / اِنْغَلَقَ",
+      "prompt": "Both verbs start with اِنْ. Which form is that?",
+      "options": [
+        { "label": "Form VII — اِنْفَعَلَ", "correct": true },
+        { "label": "Form VIII — اِفْتَعَلَ", "correct": false },
+        { "label": "Form IV — أَفْعَلَ", "correct": false }
+      ],
+      "explanation": "اِنْفَعَلَ prefixes اِنْ to the root — Form VIII instead infixes a ت after the first root letter, and Form IV prefixes a bare أَ with no ن."
+    },
+    {
+      "type": "complete",
+      "title": "Six forms down",
+      "message": "Form VII — اِنْ prefixed, no human subject. Two more forms to go.",
+      "finishLabel": "Continue"
+    }
+  ]
+}

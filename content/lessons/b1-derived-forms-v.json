@@ -1,0 +1,57 @@
+{
+  "id": "b1-derived-forms-v",
+  "unitId": "b1-u1",
+  "curriculumLessonId": "b1-derived-forms-v",
+  "title": "Derived Verb Forms — Form V (تَفَعَّلَ)",
+  "level": "B1",
+  "skills": ["grammar", "vocabulary", "reading"],
+  "objectives": ["lex:ver-06", "gr:derived-verb-forms", "txt:gram-form5-takallama"],
+  "steps": [
+    {
+      "type": "explain",
+      "title": "تَ, added to a pattern you already know",
+      "body": [
+        "Form V's signature is تَ prefixed to Form II's own pattern, giving the shape تَفَعَّلَ — the doubled middle consonant from Form II is still there, just with تَ added in front.",
+        "تَكَلَّمَ (\"to speak\"), already in your vocabulary since A1, is a Form V verb: تَكَلَّمَ, present tense يَتَكَلَّمُ.",
+        "Form V is most often the reflexive of Form II — doing, or becoming the target of, Form II's action yourself. تَكَلَّمَ has no attested Form II \"كَلَّمَ\" used the same way in everyday MSA; the pattern's tendency still holds even when the \"paired\" form isn't itself a common word."
+      ],
+      "previewSymbols": ["تَكَلَّمَ", "تَفَعَّلَ", "يَتَكَلَّمُ"]
+    },
+    {
+      "type": "reading-practice",
+      "title": "Form V in one sentence",
+      "intro": "Read the sentence, then check what marks it as Form V. Tap 🔊 to hear it.",
+      "fromObjectives": true
+    },
+    {
+      "type": "practice-choice",
+      "title": "Spot the pattern",
+      "arabicPrompt": "تَكَلَّمَ",
+      "prompt": "تَكَلَّمَ starts with تَ and still has a doubled middle letter underneath. Which form is that?",
+      "options": [
+        { "label": "Form V — تَفَعَّلَ", "correct": true },
+        { "label": "Form II — فَعَّلَ", "correct": false },
+        { "label": "Form VI — تَفَاعَلَ", "correct": false }
+      ],
+      "explanation": "تَفَعَّلَ is تَ added to Form II's own doubled-consonant pattern — the mark of Form V. Form VI instead adds تَ to Form III's long-alif pattern."
+    },
+    {
+      "type": "practice-choice",
+      "title": "Meaning tendencies",
+      "arabicPrompt": "تَكَلَّمَ (Form V)",
+      "prompt": "تَكَلَّمَ is Form V — تَ added to Form II's own pattern. What does Form V often mean?",
+      "options": [
+        { "label": "The reflexive of Form II — doing (or becoming) that action to/for yourself", "correct": true },
+        { "label": "Seeking or considering something to be true", "correct": false },
+        { "label": "A color or a physical defect", "correct": false }
+      ],
+      "explanation": "Form V's تَ prefix is the same reflexive تَ you'll see again on Form VI — Form V takes Form II's causative/intensive sense and turns it back on the subject."
+    },
+    {
+      "type": "complete",
+      "title": "Halfway there",
+      "message": "Form V — تَ + Form II's pattern, often reflexive. Four forms down, four to go.",
+      "finishLabel": "Continue"
+    }
+  ]
+}

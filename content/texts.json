@@ -1677,201 +1677,73 @@
     "kind": "text",
     "textType": "dialogue",
     "source": "m20",
-    "vowelled": "بِكَمْ هَذِهِ السَّاعَةُ؟ — بِعِشْرِينَ دِينَارًا — مُمْكِن أُجَرِّبُ هَذِهِ؟ — طَبْعًا! هَلْ هَذَا مَقَاسُكَ؟ — نَعَمْ. هَلْ عِنْدَكَ خَصْمٌ؟ — نَعَمْ، بِخَمْسَةَ عَشَرَ دِينَارًا مَعَ الْخَصْمِ. هَلْ عِنْدَكَ نَقْدٌ أَوْ بِطَاقَةُ اِئْتِمَانٍ؟ — عِنْدِي نَقْدٌ — هَلْ هَذَا كُلُّ شَيْءٍ؟ — نَعَمْ، هَذَا كُلُّ شَيْءٍ. شُكْرًا! — عَفْوًا",
-    "translit": "bikam hādhihi as-sāʿatu? — bi-ʿishrīna dīnāran — mumkin ujarribu hādhihi? — ṭabʿan! hal hādhā maqāsuka? — naʿam. hal ʿindaka khaṣmun? — naʿam, bi-khamsata ʿashara dīnāran maʿa al-khaṣmi. hal ʿindaka naqdun aw biṭāqatu iʾtimānin? — ʿindī naqdun — hal hādhā kullu shayʾin? — naʿam, hādhā kullu shayʾin. shukran! — ʿafwan",
-    "en": "— How much is this watch? — Twenty dinars. — May I try this on? — Of course! Is this your size? — Yes. Do you have a discount? — Yes, for fifteen dinars with the discount. Do you have cash or a credit card? — I have cash. — Is that everything? — Yes, that's everything. Thank you! — You're welcome!",
+    "vowelled": "بِكَمْ هَذَا؟ — بِعِشْرِينَ دُولَارًا. — هَلْ عِنْدَكَ مَقَاسٌ صَغِيرٌ؟ — نَعَمْ، هَذَا مَقَاسٌ صَغِيرٌ. — هَذَا كُلُّ شَيْءٍ، شُكْرًا. — نَقْدٌ أَوْ بِطَاقَةُ اِئْتِمَانٍ؟ — بِطَاقَةُ اِئْتِمَانٍ، مِنْ فَضْلِك.",
+    "translit": "bikam hādhā? — biʿishrīna dūlāran. — hal ʿindaka maqāsun ṣaghīrun? — naʿam, hādhā maqāsun ṣaghīrun. — hādhā kullu shayʾin, shukran. — naqdun aw biṭāqatu iʾtimānin? — biṭāqatu iʾtimānin, min faḍlik.",
+    "en": "— How much is this? — For twenty dollars. — Do you have a small size? — Yes, this is a small size. — That's all, thank you. — Cash or credit card? — Credit card, please.",
     "turns": [
-      { "ar": "بِكَمْ هَذِهِ السَّاعَةُ؟", "translit": "bikam hādhihi as-sāʿatu?", "en": "How much is this watch?" },
-      { "ar": "بِعِشْرِينَ دِينَارًا", "translit": "bi-ʿishrīna dīnāran", "en": "Twenty dinars." },
-      { "ar": "مُمْكِن أُجَرِّبُ هَذِهِ؟", "translit": "mumkin ujarribu hādhihi?", "en": "May I try this on?" },
-      { "ar": "طَبْعًا! هَلْ هَذَا مَقَاسُكَ؟", "translit": "ṭabʿan! hal hādhā maqāsuka?", "en": "Of course! Is this your size?" },
-      { "ar": "نَعَمْ. هَلْ عِنْدَكَ خَصْمٌ؟", "translit": "naʿam. hal ʿindaka khaṣmun?", "en": "Yes. Do you have a discount?" },
-      { "ar": "نَعَمْ، بِخَمْسَةَ عَشَرَ دِينَارًا مَعَ الْخَصْمِ. هَلْ عِنْدَكَ نَقْدٌ أَوْ بِطَاقَةُ اِئْتِمَانٍ؟", "translit": "naʿam, bi-khamsata ʿashara dīnāran maʿa al-khaṣmi. hal ʿindaka naqdun aw biṭāqatu iʾtimānin?", "en": "Yes, for fifteen dinars with the discount. Do you have cash or a credit card?" },
-      { "ar": "عِنْدِي نَقْدٌ", "translit": "ʿindī naqdun", "en": "I have cash." },
-      { "ar": "هَلْ هَذَا كُلُّ شَيْءٍ؟", "translit": "hal hādhā kullu shayʾin?", "en": "Is that everything?" },
-      { "ar": "نَعَمْ، هَذَا كُلُّ شَيْءٍ. شُكْرًا!", "translit": "naʿam, hādhā kullu shayʾin. shukran!", "en": "Yes, that's everything. Thank you!" },
-      { "ar": "عَفْوًا!", "translit": "ʿafwan!", "en": "You're welcome!" }
+      { "ar": "بِكَمْ هَذَا؟", "translit": "bikam hādhā?", "en": "How much is this?" },
+      { "ar": "بِعِشْرِينَ دُولَارًا.", "translit": "biʿishrīna dūlāran.", "en": "For twenty dollars." },
+      { "ar": "هَلْ عِنْدَكَ مَقَاسٌ صَغِيرٌ؟", "translit": "hal ʿindaka maqāsun ṣaghīrun?", "en": "Do you have a small size?" },
+      { "ar": "نَعَمْ، هَذَا مَقَاسٌ صَغِيرٌ.", "translit": "naʿam, hādhā maqāsun ṣaghīrun.", "en": "Yes, this is a small size." },
+      { "ar": "هَذَا كُلُّ شَيْءٍ، شُكْرًا.", "translit": "hādhā kullu shayʾin, shukran.", "en": "That's all, thank you." },
+      { "ar": "نَقْدٌ أَوْ بِطَاقَةُ اِئْتِمَانٍ؟", "translit": "naqdun aw biṭāqatu iʾtimānin?", "en": "Cash or credit card?" },
+      { "ar": "بِطَاقَةُ اِئْتِمَانٍ، مِنْ فَضْلِك.", "translit": "biṭāqatu iʾtimānin, min faḍlik.", "en": "Credit card, please." }
     ],
-    "audio": "بِكَمْ هَذِهِ السَّاعَةُ؟ بِعِشْرِينَ دِينَارًا. مُمْكِن أُجَرِّبُ هَذِهِ؟ طَبْعًا! هَلْ هَذَا مَقَاسُكَ؟ نَعَمْ. هَلْ عِنْدَكَ خَصْمٌ؟ نَعَمْ، بِخَمْسَةَ عَشَرَ دِينَارًا مَعَ الْخَصْمِ. هَلْ عِنْدَكَ نَقْدٌ أَوْ بِطَاقَةُ اِئْتِمَانٍ؟ عِنْدِي نَقْدٌ. هَلْ هَذَا كُلُّ شَيْءٍ؟ نَعَمْ، هَذَا كُلُّ شَيْءٍ. شُكْرًا! عَفْوًا!",
+    "audio": "بِكَمْ هَذَا؟ بِعِشْرِينَ دُولَارًا. هَلْ عِنْدَكَ مَقَاسٌ صَغِيرٌ؟ نَعَمْ، هَذَا مَقَاسٌ صَغِيرٌ. هَذَا كُلُّ شَيْءٍ، شُكْرًا. نَقْدٌ أَوْ بِطَاقَةُ اِئْتِمَانٍ؟ بِطَاقَةُ اِئْتِمَانٍ، مِنْ فَضْلِك.",
     "level": "A2",
     "skills": [ "listening", "speaking", "comprehension" ],
-    "prereqs": [ "gr:attached-possessive", "gr:core-prepositions", "gr:numbers-11-99", "gr:idafa" ]
+    "prereqs": [ "gr:idafa" ]
   },
   {
     "id": "txt:read-dlg-directions",
     "kind": "text",
     "textType": "dialogue",
     "source": "m20",
-    "vowelled": "عَفْوًا، أَيْنَ الْبَنْكُ؟ — هُوَ قَرِيبٌ. الْبَنْكُ فِي هَذَا الشَّارِعِ، عَلَى الْيَسَارِ. — وَأَيْنَ الْمَكْتَبَةُ؟ هَلْ هِيَ بَعِيدَةٌ؟ — نَعَمْ، هِيَ بَعِيدَةٌ عَنْ هُنَا. هِيَ إِلَى الْأَمَامِ، فِي الشَّارِعِ الثَّانِي. — شُكْرًا! — عَفْوًا",
-    "translit": "ʿafwan, ayna al-banku? — huwa qarībun. al-banku fī hādhā ash-shāriʿi, ʿalā al-yasāri. — wa-ayna al-maktabatu? hal hiya baʿīdatun? — naʿam, hiya baʿīdatun ʿan hunā. hiya ilā al-amāmi, fī ash-shāriʿi ath-thānī. — shukran! — ʿafwan",
-    "en": "— Excuse me, where is the bank? — It's near. The bank is on this street, on the left. — And where is the library? Is it far? — Yes, it's far from here. It's straight ahead, on the second street. — Thank you! — You're welcome!",
+    "vowelled": "عَفْوًا، أَيْنَ الْبَنْكُ؟ — الْبَنْكُ قَرِيبٌ، بِجَانِبِ الْمَطْعَمِ. — هَلْ هُوَ بَعِيدٌ مِنْ هُنَا؟ — لَا، هُوَ قَرِيبٌ. الْبَنْكُ أَمَامَ الْمَكْتَبَةِ. — شُكْرًا! — عَفْوًا!",
+    "translit": "ʿafwan, ayna al-banku? — al-banku qarībun, bijānibi al-maṭʿami. — hal huwa baʿīdun min hunā? — lā, huwa qarībun. al-banku amāma al-maktabati. — shukran! — ʿafwan!",
+    "en": "— Excuse me, where is the bank? — The bank is near, next to the restaurant. — Is it far from here? — No, it's near. The bank is in front of the library. — Thank you! — You're welcome!",
     "turns": [
       { "ar": "عَفْوًا، أَيْنَ الْبَنْكُ؟", "translit": "ʿafwan, ayna al-banku?", "en": "Excuse me, where is the bank?" },
-      { "ar": "هُوَ قَرِيبٌ. الْبَنْكُ فِي هَذَا الشَّارِعِ، عَلَى الْيَسَارِ.", "translit": "huwa qarībun. al-banku fī hādhā ash-shāriʿi, ʿalā al-yasāri.", "en": "It's near. The bank is on this street, on the left." },
-      { "ar": "وَأَيْنَ الْمَكْتَبَةُ؟ هَلْ هِيَ بَعِيدَةٌ؟", "translit": "wa-ayna al-maktabatu? hal hiya baʿīdatun?", "en": "And where is the library? Is it far?" },
-      { "ar": "نَعَمْ، هِيَ بَعِيدَةٌ عَنْ هُنَا. هِيَ إِلَى الْأَمَامِ، فِي الشَّارِعِ الثَّانِي.", "translit": "naʿam, hiya baʿīdatun ʿan hunā. hiya ilā al-amāmi, fī ash-shāriʿi ath-thānī.", "en": "Yes, it's far from here. It's straight ahead, on the second street." },
+      { "ar": "الْبَنْكُ قَرِيبٌ، بِجَانِبِ الْمَطْعَمِ.", "translit": "al-banku qarībun, bijānibi al-maṭʿami.", "en": "The bank is near, next to the restaurant." },
+      { "ar": "هَلْ هُوَ بَعِيدٌ مِنْ هُنَا؟", "translit": "hal huwa baʿīdun min hunā?", "en": "Is it far from here?" },
+      { "ar": "لَا، هُوَ قَرِيبٌ. الْبَنْكُ أَمَامَ الْمَكْتَبَةِ.", "translit": "lā, huwa qarībun. al-banku amāma al-maktabati.", "en": "No, it's near. The bank is in front of the library." },
       { "ar": "شُكْرًا!", "translit": "shukran!", "en": "Thank you!" },
       { "ar": "عَفْوًا!", "translit": "ʿafwan!", "en": "You're welcome!" }
     ],
-    "audio": "عَفْوًا، أَيْنَ الْبَنْكُ؟ هُوَ قَرِيبٌ. الْبَنْكُ فِي هَذَا الشَّارِعِ، عَلَى الْيَسَارِ. وَأَيْنَ الْمَكْتَبَةُ؟ هَلْ هِيَ بَعِيدَةٌ؟ نَعَمْ، هِيَ بَعِيدَةٌ عَنْ هُنَا. هِيَ إِلَى الْأَمَامِ، فِي الشَّارِعِ الثَّانِي. شُكْرًا! عَفْوًا!",
+    "audio": "عَفْوًا، أَيْنَ الْبَنْكُ؟ الْبَنْكُ قَرِيبٌ، بِجَانِبِ الْمَطْعَمِ. هَلْ هُوَ بَعِيدٌ مِنْ هُنَا؟ لَا، هُوَ قَرِيبٌ. الْبَنْكُ أَمَامَ الْمَكْتَبَةِ. شُكْرًا! عَفْوًا!",
     "level": "A2",
     "skills": [ "listening", "speaking", "comprehension" ],
-    "prereqs": [ "gr:core-prepositions", "gr:nominal-sentence", "gr:demonstratives" ]
+    "prereqs": [ "gr:core-prepositions" ]
   },
   {
-    "id": "txt:gram-form2-darrasa",
+    "id": "txt:read-dlg-permission",
     "kind": "text",
-    "textType": "sentence",
-    "source": "m11",
-    "concept": "derived-verb-forms",
-    "vowelled": "الطَّالِبُ يَدْرُسُ وَالْمُعَلِّمُ يُدَرِّسُ",
-    "translit": "aṭ-ṭālibu yadrusu wa-al-muʿallimu yudarrisu",
-    "en": "The student studies, and the teacher teaches.",
-    "words": [
-      { "surface": "الطَّالِبُ", "translit": "aṭ-ṭālibu", "gloss": "the student (subject, nominative)", "gender": "masculine" },
-      { "surface": "يَدْرُسُ", "translit": "yadrusu", "gloss": "studies — Form I present, root د-ر-س", "gender": null },
-      { "surface": "وَالْمُعَلِّمُ", "translit": "wa-al-muʿallimu", "gloss": "and the teacher", "gender": "masculine" },
-      { "surface": "يُدَرِّسُ", "translit": "yudarrisu", "gloss": "teaches — Form II present, same root د-ر-س with the middle consonant doubled", "gender": null }
+    "textType": "dialogue",
+    "source": "m20",
+    "vowelled": "مُمْكِن؟ هَلْ عِنْدَكَ قَلَمٌ؟ — طَبْعًا! — شُكْرًا! — لَا بَأْسَ.",
+    "translit": "mumkin? hal ʿindaka qalamun? — ṭabʿan! — shukran! — lā baʾsa.",
+    "en": "— May I? Do you have a pen? — Of course! — Thank you! — No problem.",
+    "turns": [
+      { "ar": "مُمْكِن؟ هَلْ عِنْدَكَ قَلَمٌ؟", "translit": "mumkin? hal ʿindaka qalamun?", "en": "May I? Do you have a pen?" },
+      { "ar": "طَبْعًا!", "translit": "ṭabʿan!", "en": "Of course!" },
+      { "ar": "شُكْرًا!", "translit": "shukran!", "en": "Thank you!" },
+      { "ar": "لَا بَأْسَ.", "translit": "lā baʾsa.", "en": "No problem." }
     ],
-    "audio": "الطَّالِبُ يَدْرُسُ وَالْمُعَلِّمُ يُدَرِّسُ",
-    "level": "B1",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:derived-verb-forms" ]
+    "audio": "مُمْكِن؟ هَلْ عِنْدَكَ قَلَمٌ؟ طَبْعًا! شُكْرًا! لَا بَأْسَ.",
+    "level": "A2",
+    "skills": [ "listening", "speaking", "comprehension" ],
+    "prereqs": [ "gr:negation-a1" ]
   },
-  {
-    "id": "txt:gram-form2-nazzafa",
-    "kind": "text",
-    "textType": "sentence",
-    "source": "m11",
-    "concept": "derived-verb-forms",
-    "vowelled": "نَظَّفَتِ الْبِنْتُ الْبَيْتَ",
-    "translit": "naẓẓafati al-bintu al-bayta",
-    "en": "The girl cleaned the house.",
-    "words": [
-      { "surface": "نَظَّفَتِ", "translit": "naẓẓafati", "gloss": "cleaned (she) — Form II, denominative from نَظِيف (\"clean\")", "gender": "feminine" },
-      { "surface": "الْبِنْتُ", "translit": "al-bintu", "gloss": "the girl (subject, nominative)", "gender": "feminine" },
-      { "surface": "الْبَيْتَ", "translit": "al-bayta", "gloss": "the house (object, accusative)", "gender": "masculine" }
-    ],
-    "audio": "نَظَّفَتِ الْبِنْتُ الْبَيْتَ",
-    "level": "B1",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:derived-verb-forms" ]
-  },
-  {
-    "id": "txt:gram-form2-kallama",
-    "kind": "text",
-    "textType": "sentence",
-    "source": "m11",
-    "concept": "derived-verb-forms",
-    "vowelled": "كَلَّمَ الْوَلَدُ صَدِيقَهُ",
-    "translit": "kallama al-waladu ṣadīqahu",
-    "en": "The boy spoke to his friend.",
-    "words": [
-      { "surface": "كَلَّمَ", "translit": "kallama", "gloss": "spoke to / addressed — Form II, denominative-leaning from كَلِمَة (\"word\"); takes a direct object, no preposition", "gender": null },
-      { "surface": "الْوَلَدُ", "translit": "al-waladu", "gloss": "the boy (subject, nominative)", "gender": "masculine" },
-      { "surface": "صَدِيقَهُ", "translit": "ṣadīqahu", "gloss": "his friend (object, accusative + possessive suffix هُ)", "gender": "masculine" }
-    ],
-    "audio": "كَلَّمَ الْوَلَدُ صَدِيقَهُ",
-    "level": "B1",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:derived-verb-forms" ]
-  },
-  {
-    "id": "txt:gram-form2-jarraba",
-    "kind": "text",
-    "textType": "sentence",
-    "source": "m11",
-    "concept": "derived-verb-forms",
-    "vowelled": "جَرَّبَتِ الْبِنْتُ الطَّعَامَ",
-    "translit": "jarrabati al-bintu aṭ-ṭaʿāma",
-    "en": "The girl tried the food.",
-    "words": [
-      { "surface": "جَرَّبَتِ", "translit": "jarrabati", "gloss": "tried (she) — Form II, the same doubled-middle-consonant pattern as دَرَّسَ / نَظَّفَ / كَلَّمَ", "gender": "feminine" },
-      { "surface": "الْبِنْتُ", "translit": "al-bintu", "gloss": "the girl (subject, nominative)", "gender": "feminine" },
-      { "surface": "الطَّعَامَ", "translit": "aṭ-ṭaʿāma", "gloss": "the food (object, accusative)", "gender": "masculine" }
-    ],
-    "audio": "جَرَّبَتِ الْبِنْتُ الطَّعَامَ",
-    "level": "B1",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:derived-verb-forms" ]
-  },
-  {
-    "id": "txt:gram-form3-jalasa",
-    "kind": "text",
-    "textType": "sentence",
-    "source": "m11",
-    "concept": "derived-verb-forms",
-    "vowelled": "الْوَلَدُ يَجْلِسُ وَالرَّجُلُ يُجَالِسُ أَصْدِقَاءَهُ",
-    "translit": "al-waladu yajlisu wa-ar-rajulu yujālisu aṣdiqāʾahu",
-    "en": "The boy sits, and the man sits together with his friends.",
-    "words": [
-      { "surface": "الْوَلَدُ", "translit": "al-waladu", "gloss": "the boy (subject, nominative)", "gender": "masculine" },
-      { "surface": "يَجْلِسُ", "translit": "yajlisu", "gloss": "sits — Form I present, root ج-ل-س", "gender": null },
-      { "surface": "وَالرَّجُلُ", "translit": "wa-ar-rajulu", "gloss": "and the man", "gender": "masculine" },
-      { "surface": "يُجَالِسُ", "translit": "yujālisu", "gloss": "sits together with — Form III present, same root ج-ل-س with a long alif after the first consonant", "gender": null },
-      { "surface": "أَصْدِقَاءَهُ", "translit": "aṣdiqāʾahu", "gloss": "his friends (object, accusative) — plural of صَدِيق", "gender": "masculine" }
-    ],
-    "audio": "الْوَلَدُ يَجْلِسُ وَالرَّجُلُ يُجَالِسُ أَصْدِقَاءَهُ",
-    "level": "B1",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:derived-verb-forms" ]
-  },
-  {
-    "id": "txt:gram-form3-kataba",
-    "kind": "text",
-    "textType": "sentence",
-    "source": "m11",
-    "concept": "derived-verb-forms",
-    "vowelled": "كَاتَبَ الطَّالِبُ صَدِيقَهُ",
-    "translit": "kātaba aṭ-ṭālibu ṣadīqahu",
-    "en": "The student corresponded with his friend.",
-    "words": [
-      { "surface": "كَاتَبَ", "translit": "kātaba", "gloss": "corresponded with / wrote to — Form III, reciprocal of كَتَبَ (\"to write\")", "gender": null },
-      { "surface": "الطَّالِبُ", "translit": "aṭ-ṭālibu", "gloss": "the student (subject, nominative)", "gender": "masculine" },
-      { "surface": "صَدِيقَهُ", "translit": "ṣadīqahu", "gloss": "his friend (object, accusative + possessive suffix هُ)", "gender": "masculine" }
-    ],
-    "audio": "كَاتَبَ الطَّالِبُ صَدِيقَهُ",
-    "level": "B1",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:derived-verb-forms" ]
-  },
-  {
-    "id": "txt:gram-form3-sadaqa",
-    "kind": "text",
-    "textType": "sentence",
-    "source": "m11",
-    "concept": "derived-verb-forms",
-    "vowelled": "صَادَقَ الْوَلَدُ الطَّالِبَ الْجَدِيدَ",
-    "translit": "ṣādaqa al-waladu aṭ-ṭāliba al-jadīda",
-    "en": "The boy befriended the new student.",
-    "words": [
-      { "surface": "صَادَقَ", "translit": "ṣādaqa", "gloss": "befriended — Form III, denominative from صَدِيق (\"friend\")", "gender": null },
-      { "surface": "الْوَلَدُ", "translit": "al-waladu", "gloss": "the boy (subject, nominative)", "gender": "masculine" },
-      { "surface": "الطَّالِبَ", "translit": "aṭ-ṭāliba", "gloss": "the student (object, accusative)", "gender": "masculine" },
-      { "surface": "الْجَدِيدَ", "translit": "al-jadīda", "gloss": "new (adjective, agreeing in case, definiteness, and gender)", "gender": "masculine" }
-    ],
-    "audio": "صَادَقَ الْوَلَدُ الطَّالِبَ الْجَدِيدَ",
-    "level": "B1",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:derived-verb-forms" ]
-  },
-  {
-    "id": "txt:gram-form3-safara",
-    "kind": "text",
-    "textType": "sentence",
-    "source": "m11",
-    "concept": "derived-verb-forms",
-    "vowelled": "سَافَرَتِ الْبِنْتُ مَعَ صَدِيقَتِهَا",
-    "translit": "sāfarati al-bintu maʿa ṣadīqatihā",
-    "en": "The girl traveled with her friend.",
-    "words": [
-      { "surface": "سَافَرَتِ", "translit": "sāfarati", "gloss": "traveled (she) — Form III, already known from A1; the same long-alif pattern as كَاتَبَ / جَالَسَ / صَادَقَ", "gender": "feminine" },
-      { "surface": "الْبِنْتُ", "translit": "al-bintu", "gloss": "the girl (subject, nominative)", "gender": "feminine" },
-      { "surface": "مَعَ صَدِيقَتِهَا", "translit": "maʿa ṣadīqatihā", "gloss": "with her friend (مَعَ governs the genitive)", "gender": "feminine" }
-    ],
-    "audio": "سَافَرَتِ الْبِنْتُ مَعَ صَدِيقَتِهَا",
-    "level": "B1",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:derived-verb-forms" ]
-  }
+  { "id": "txt:gram-form2-jarraba", "kind": "text", "textType": "sentence", "source": "m11", "concept": "derived-verb-forms", "vowelled": "جَرَّبَ الرَّجُلُ الطَّعَامَ", "translit": "jarraba ar-rajulu aṭ-ṭaʿāma", "en": "The man tried the food.", "words": [{ "surface": "جَرَّبَ", "translit": "jarraba", "gloss": "he tried (Form II فَعَّلَ — doubled middle letter)" }, { "surface": "الرَّجُلُ", "translit": "ar-rajulu", "gloss": "the man (subject, nominative)" }, { "surface": "الطَّعَامَ", "translit": "aṭ-ṭaʿāma", "gloss": "the food (object, accusative)" }], "audio": "جَرَّبَ الرَّجُلُ الطَّعَامَ", "level": "B1", "skills": ["reading", "comprehension", "grammar"], "prereqs": ["gr:derived-verb-forms"] },
+  { "id": "txt:gram-form3-safara", "kind": "text", "textType": "sentence", "source": "m11", "concept": "derived-verb-forms", "vowelled": "سَافَرَ الرَّجُلُ إِلَى الْمَدِينَةِ", "translit": "sāfara ar-rajulu ilā al-madīnati", "en": "The man traveled to the city.", "words": [{ "surface": "سَافَرَ", "translit": "sāfara", "gloss": "he traveled (Form III فَاعَلَ — long ا after the first letter)" }, { "surface": "الرَّجُلُ", "translit": "ar-rajulu", "gloss": "the man (subject, nominative)" }, { "surface": "إِلَى الْمَدِينَةِ", "translit": "ilā al-madīnati", "gloss": "to the city (genitive after إِلَى)" }], "audio": "سَافَرَ الرَّجُلُ إِلَى الْمَدِينَةِ", "level": "B1", "skills": ["reading", "comprehension", "grammar"], "prereqs": ["gr:derived-verb-forms"] },
+  { "id": "txt:gram-form4-aghlaqa", "kind": "text", "textType": "sentence", "source": "m11", "concept": "derived-verb-forms", "vowelled": "أَغْلَقَ الرَّجُلُ الْبَابَ", "translit": "aghlaqa ar-rajulu al-bāba", "en": "The man closed the door.", "words": [{ "surface": "أَغْلَقَ", "translit": "aghlaqa", "gloss": "he closed (Form IV أَفْعَلَ — أَ prefixed)" }, { "surface": "الرَّجُلُ", "translit": "ar-rajulu", "gloss": "the man (subject, nominative)" }, { "surface": "الْبَابَ", "translit": "al-bāba", "gloss": "the door (object, accusative)" }], "audio": "أَغْلَقَ الرَّجُلُ الْبَابَ", "level": "B1", "skills": ["reading", "comprehension", "grammar"], "prereqs": ["gr:derived-verb-forms"] },
+  { "id": "txt:gram-form5-takallama", "kind": "text", "textType": "sentence", "source": "m11", "concept": "derived-verb-forms", "vowelled": "تَكَلَّمَتِ الْمَرْأَةُ بِالْعَرَبِيَّةِ", "translit": "takallamati al-marʾatu bi-al-ʿarabiyyati", "en": "The woman spoke in Arabic.", "words": [{ "surface": "تَكَلَّمَتِ", "translit": "takallamati", "gloss": "she spoke (Form V تَفَعَّلَ — تَ + Form II's pattern)" }, { "surface": "الْمَرْأَةُ", "translit": "al-marʾatu", "gloss": "the woman (subject, nominative)" }, { "surface": "بِالْعَرَبِيَّةِ", "translit": "bi-al-ʿarabiyyati", "gloss": "in Arabic (بِـ attaches directly)" }], "audio": "تَكَلَّمَتِ الْمَرْأَةُ بِالْعَرَبِيَّةِ", "level": "B1", "skills": ["reading", "comprehension", "grammar"], "prereqs": ["gr:derived-verb-forms"] },
+  { "id": "txt:gram-form6-takataba", "kind": "text", "textType": "sentence", "source": "m11", "concept": "derived-verb-forms", "vowelled": "تَكَاتَبَ الطَّالِبَانِ", "translit": "takātaba aṭ-ṭālibāni", "en": "The two students wrote to each other.", "words": [{ "surface": "تَكَاتَبَ", "translit": "takātaba", "gloss": "they (two) corresponded (Form VI تَفَاعَلَ — تَ + Form III's pattern; the verb stays singular here since it precedes a dual subject in VSO order)" }, { "surface": "الطَّالِبَانِ", "translit": "aṭ-ṭālibāni", "gloss": "the two students (dual subject, nominative)" }], "audio": "تَكَاتَبَ الطَّالِبَانِ", "level": "B1", "skills": ["reading", "comprehension", "grammar"], "prereqs": ["gr:derived-verb-forms"] },
+  { "id": "txt:gram-form7-infataha", "kind": "text", "textType": "sentence", "source": "m11", "concept": "derived-verb-forms", "vowelled": "اِنْفَتَحَ الْبَابُ فَجْأَةً", "translit": "infataḥa al-bābu fajʾatan", "en": "The door opened suddenly.", "words": [{ "surface": "اِنْفَتَحَ", "translit": "infataḥa", "gloss": "it opened, by itself (Form VII اِنْفَعَلَ — اِنْ prefixed; no human subject)" }, { "surface": "الْبَابُ", "translit": "al-bābu", "gloss": "the door (subject, nominative)" }, { "surface": "فَجْأَةً", "translit": "fajʾatan", "gloss": "suddenly" }], "audio": "اِنْفَتَحَ الْبَابُ فَجْأَةً", "level": "B1", "skills": ["reading", "comprehension", "grammar"], "prereqs": ["gr:derived-verb-forms"] },
+  { "id": "txt:gram-form8-ishtara", "kind": "text", "textType": "sentence", "source": "m11", "concept": "derived-verb-forms", "vowelled": "اِشْتَرَتِ الطَّالِبَةُ كِتَابًا", "translit": "ishtarati aṭ-ṭālibatu kitāban", "en": "The student (f.) bought a book.", "words": [{ "surface": "اِشْتَرَتِ", "translit": "ishtarati", "gloss": "she bought (Form VIII اِفْتَعَلَ — ت infixed after the first letter)" }, { "surface": "الطَّالِبَةُ", "translit": "aṭ-ṭālibatu", "gloss": "the student, f. (subject, nominative)" }, { "surface": "كِتَابًا", "translit": "kitāban", "gloss": "a book (object, indefinite accusative)" }], "audio": "اِشْتَرَتِ الطَّالِبَةُ كِتَابًا", "level": "B1", "skills": ["reading", "comprehension", "grammar"], "prereqs": ["gr:derived-verb-forms"] },
+  { "id": "txt:gram-form10-istayqaza", "kind": "text", "textType": "sentence", "source": "m11", "concept": "derived-verb-forms", "vowelled": "اِسْتَيْقَظَ الْوَلَدُ فِي الصَّبَاحِ", "translit": "istayqaẓa al-waladu fī aṣ-ṣabāḥi", "en": "The boy woke up in the morning.", "words": [{ "surface": "اِسْتَيْقَظَ", "translit": "istayqaẓa", "gloss": "he woke up (Form X اِسْتَفْعَلَ — اِسْتَ prefixed)" }, { "surface": "الْوَلَدُ", "translit": "al-waladu", "gloss": "the boy (subject, nominative)" }, { "surface": "فِي الصَّبَاحِ", "translit": "fī aṣ-ṣabāḥi", "gloss": "in the morning (genitive after فِي)" }], "audio": "اِسْتَيْقَظَ الْوَلَدُ فِي الصَّبَاحِ", "level": "B1", "skills": ["reading", "comprehension", "grammar"], "prereqs": ["gr:derived-verb-forms"] },
+  { "id": "txt:gram-relclause-safara", "kind": "text", "textType": "sentence", "source": "m11", "concept": "relative-clauses", "vowelled": "هَذَا هُوَ الرَّجُلُ الَّذِي سَافَرَ إِلَى الْمَدِينَةِ", "translit": "hādhā huwa ar-rajulu alladhī sāfara ilā al-madīnati", "en": "This is the man who traveled to the city.", "words": [{ "surface": "هَذَا هُوَ", "translit": "hādhā huwa", "gloss": "this is (هُوَ links مبتدأ to its definite خبر)" }, { "surface": "الرَّجُلُ", "translit": "ar-rajulu", "gloss": "the man (definite antecedent, nominative)" }, { "surface": "الَّذِي", "translit": "alladhī", "gloss": "who (masculine relative pronoun — required, since الرَّجُلُ is definite)" }, { "surface": "سَافَرَ إِلَى الْمَدِينَةِ", "translit": "sāfara ilā al-madīnati", "gloss": "traveled to the city (subject-relative: الرَّجُلُ is also this verb's subject)" }], "audio": "هَذَا هُوَ الرَّجُلُ الَّذِي سَافَرَ إِلَى الْمَدِينَةِ", "level": "B1", "skills": ["reading", "comprehension", "grammar"], "prereqs": ["gr:relative-clauses"] },
+  { "id": "txt:gram-relclause-takallamat", "kind": "text", "textType": "sentence", "source": "m11", "concept": "relative-clauses", "vowelled": "هَذِهِ هِيَ الْمَرْأَةُ الَّتِي تَتَكَلَّمُ الْعَرَبِيَّةَ", "translit": "hādhihi hiya al-marʾatu allatī tatakallamu al-ʿarabiyyata", "en": "This is the woman who speaks Arabic.", "words": [{ "surface": "هَذِهِ هِيَ", "translit": "hādhihi hiya", "gloss": "this is (feminine)" }, { "surface": "الْمَرْأَةُ", "translit": "al-marʾatu", "gloss": "the woman (definite antecedent, nominative)" }, { "surface": "الَّتِي", "translit": "allatī", "gloss": "who (feminine relative pronoun — agrees with الْمَرْأَةُ)" }, { "surface": "تَتَكَلَّمُ الْعَرَبِيَّةَ", "translit": "tatakallamu al-ʿarabiyyata", "gloss": "speaks Arabic (subject-relative: الْمَرْأَةُ is also this verb's subject)" }], "audio": "هَذِهِ هِيَ الْمَرْأَةُ الَّتِي تَتَكَلَّمُ الْعَرَبِيَّةَ", "level": "B1", "skills": ["reading", "comprehension", "grammar"], "prereqs": ["gr:relative-clauses"] },
+  { "id": "txt:gram-relclause-istayqaza", "kind": "text", "textType": "sentence", "source": "m11", "concept": "relative-clauses", "vowelled": "هَذَا هُوَ الْوَلَدُ الَّذِي اِسْتَيْقَظَ فِي الصَّبَاحِ", "translit": "hādhā huwa al-waladu alladhī istayqaẓa fī aṣ-ṣabāḥi", "en": "This is the boy who woke up in the morning.", "words": [{ "surface": "هَذَا هُوَ", "translit": "hādhā huwa", "gloss": "this is" }, { "surface": "الْوَلَدُ", "translit": "al-waladu", "gloss": "the boy (definite antecedent, nominative)" }, { "surface": "الَّذِي", "translit": "alladhī", "gloss": "who (masculine relative pronoun)" }, { "surface": "اِسْتَيْقَظَ فِي الصَّبَاحِ", "translit": "istayqaẓa fī aṣ-ṣabāḥi", "gloss": "woke up in the morning (subject-relative)" }], "audio": "هَذَا هُوَ الْوَلَدُ الَّذِي اِسْتَيْقَظَ فِي الصَّبَاحِ", "level": "B1", "skills": ["reading", "comprehension", "grammar"], "prereqs": ["gr:relative-clauses"] },
+  { "id": "txt:gram-relclause-indefinite", "kind": "text", "textType": "sentence", "source": "m11", "concept": "relative-clauses", "vowelled": "رَأَيْتُ طَالِبًا يَدْرُسُ الْعَرَبِيَّةَ", "translit": "raʾaytu ṭāliban yadrusu al-ʿarabiyyata", "en": "I saw a student who studies Arabic.", "words": [{ "surface": "رَأَيْتُ", "translit": "raʾaytu", "gloss": "I saw" }, { "surface": "طَالِبًا", "translit": "ṭāliban", "gloss": "a student (INDEFINITE antecedent, accusative object — no ال and no tanwīn dropped)" }, { "surface": "يَدْرُسُ الْعَرَبِيَّةَ", "translit": "yadrusu al-ʿarabiyyata", "gloss": "studies Arabic — no الَّذِي at all: an indefinite antecedent takes no relative pronoun" }], "audio": "رَأَيْتُ طَالِبًا يَدْرُسُ الْعَرَبِيَّةَ", "level": "B1", "skills": ["reading", "comprehension", "grammar"], "prereqs": ["gr:relative-clauses"] }
 ]

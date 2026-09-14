@@ -1,0 +1,56 @@
+{
+  "id": "a2-writing-sentences",
+  "unitId": "a2-u1",
+  "curriculumLessonId": "a2-writing-sentences",
+  "title": "Writing A2 Sentences",
+  "level": "A2",
+  "skills": ["writing", "grammar"],
+  "objectives": [
+    "gr:verbal-sentence", "gr:kana", "gr:idafa",
+    "txt:gram-past-vso", "txt:gram-past-1sg",
+    "txt:gram-kana-house", "txt:gram-kana-fem",
+    "txt:gram-idafa-phrase", "txt:gram-idafa-sentence", "txt:gram-idafa-pen-student"
+  ],
+  "steps": [
+    {
+      "type": "explain",
+      "title": "Three new ways to start a sentence",
+      "body": [
+        "A1 sentences always started with the topic — the thing you're talking about. A2 adds two more shapes: the verb can come first (ذَهَبَ الرَّجُلُ — literally \"went the man\"), and كَانَ can open a sentence to put it in the past.",
+        "Two nouns side by side, with no word for \"of\", also make a whole phrase on their own — بَابُ الْبَيْتِ (the door of the house). No linking word needed.",
+        "The tiles below are whole words, matching sentences you've already read. Rebuild each one in the right order."
+      ],
+      "previewSymbols": ["ذَهَبَ", "كَانَ", "بَابُ الْبَيْتِ"]
+    },
+    {
+      "type": "reading-practice",
+      "title": "Seven sentences, three shapes",
+      "intro": "Read each sentence and notice which of the three shapes it uses. You'll rebuild these from word tiles next.",
+      "fromObjectives": true
+    },
+    {
+      "type": "exercise",
+      "title": "Build each sentence",
+      "fromObjectives": true,
+      "exercise": { "kind": "build", "unit": "word" }
+    },
+    {
+      "type": "practice-choice",
+      "title": "Verb or subject first?",
+      "arabicPrompt": "ذَهَبَ الرَّجُلُ إِلَى الْمَدْرَسَةِ",
+      "prompt": "Which word starts this sentence?",
+      "options": [
+        { "label": "ذَهَبَ — the verb", "correct": true },
+        { "label": "الرَّجُلُ — the subject", "correct": false },
+        { "label": "إِلَى — the preposition", "correct": false }
+      ],
+      "explanation": "Arabic's verbal sentence is verb-first (VSO) — ذَهَبَ (went) comes before الرَّجُلُ (the man), the reverse of A1's topic-first nominal sentence."
+    },
+    {
+      "type": "complete",
+      "title": "You wrote A2's three sentence shapes",
+      "message": "Verb-first sentences, كَانَ putting a description in the past, and two nouns combining with no linking word — all three built from word tiles, ready for the Review view.",
+      "finishLabel": "Finish"
+    }
+  ]
+}

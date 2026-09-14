@@ -2,8 +2,8 @@
   {
     "root": "ك-ت-ب",
     "gloss": "write",
-    "lexemes": ["lex:sch-06", "lex:ver-04", "lex:pla-10", "lex:ver-34"],
-    "note": "كِتَاب (book) / كَتَبَ (he wrote) / مَكْتَبَة (library) — the same root printed three ways. Also a verb pair across two derived forms: كَتَبَ (Form I, \"he wrote\") / كَاتَبَ (Form III, \"he corresponded with\" — see gr:derived-verb-forms, B1).",
+    "lexemes": ["lex:sch-06", "lex:ver-04", "lex:pla-10"],
+    "note": "كِتَاب (book) / كَتَبَ (he wrote) / مَكْتَبَة (library) — the same root printed three ways.",
     "source": "Standard MSA root morphology (Hans Wehr root ك ت ب); cross-checked against Wiktionary."
   },
   {
@@ -23,8 +23,8 @@
   {
     "root": "د-ر-س",
     "gloss": "study",
-    "lexemes": ["lex:sch-01", "lex:sch-09", "lex:ver-14", "lex:ver-31"],
-    "note": "مَدْرَسَة (school) / دَرْس (lesson) — a place-noun (مفعل pattern) built on the same root as what happens there. Also a verb pair across two derived forms: دَرَسَ (Form I, \"he studied\") / دَرَّسَ (Form II, \"he taught\" — see gr:derived-verb-forms, B1).",
+    "lexemes": ["lex:sch-01", "lex:sch-09"],
+    "note": "مَدْرَسَة (school) / دَرْس (lesson) — a place-noun (مفعل pattern) built on the same root as what happens there.",
     "source": "Standard MSA root morphology (Hans Wehr root د ر س)."
   },
   {
@@ -75,12 +75,5 @@
     "lexemes": ["lex:num-05", "lex:tim-15"],
     "note": "خَمْسَة (five) / الْخَمِيس (Thursday).",
     "source": "Standard MSA root morphology; verified against Wiktionary and weekday-etymology references."
-  },
-  {
-    "root": "ج-ل-س",
-    "gloss": "sit",
-    "lexemes": ["lex:ver-21", "lex:ver-35"],
-    "note": "جَلَسَ (Form I, \"he sat\") / جَالَسَ (Form III, \"he sat together with [someone]\" — see gr:derived-verb-forms, B1).",
-    "source": "Standard MSA root morphology (Hans Wehr root ج ل س)."
   }
 ]

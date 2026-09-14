@@ -1,0 +1,53 @@
+{
+  "id": "a2-writing-dictation",
+  "unitId": "a2-u4",
+  "curriculumLessonId": "a2-writing-dictation",
+  "title": "Spelling A2 Words From Dictation",
+  "level": "A2",
+  "skills": ["writing", "listening"],
+  "objectives": [
+    "lex:num-20", "lex:num-half", "lex:num-quarter",
+    "lex:tim-62", "lex:sch-22", "lex:prt-27",
+    "lex:shp-13", "lex:shp-14"
+  ],
+  "steps": [
+    {
+      "type": "explain",
+      "title": "Listen, then write — A2 words",
+      "body": [
+        "Same skill as before: hear a word, then build it from letter tiles with only the sound to guide you.",
+        "These eight words are a little more varied than A1's — a doubled letter, a mid-word hamza, a borrowed month name spelled the way Arabic hears it. Use 🐢 Slower whenever you need to."
+      ]
+    },
+    {
+      "type": "reading-practice",
+      "title": "Hear the eight words",
+      "intro": "Listen to each word first and read along. Next you'll spell them with only the sound to go on.",
+      "fromObjectives": true
+    },
+    {
+      "type": "exercise",
+      "title": "Spell what you hear",
+      "fromObjectives": true,
+      "exercise": { "kind": "build", "unit": "grapheme", "audio": true }
+    },
+    {
+      "type": "practice-choice",
+      "title": "Which word was it?",
+      "audioText": "قِصَّة",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        { "label": "قِصَّة", "correct": true },
+        { "label": "مَقَاس", "correct": false },
+        { "label": "خَصْم", "correct": false }
+      ],
+      "explanation": "قِصَّة (qiṣṣah) means \"story\" — the doubled ص is what makes it sound different from a word like مَقَاس."
+    },
+    {
+      "type": "complete",
+      "title": "You took eight A2 words from dictation",
+      "message": "Numbers, a month, and everyday shopping words — all spelled from sound alone. The same skill you'll need to take a note or send a message in Arabic.",
+      "finishLabel": "Finish"
+    }
+  ]
+}
