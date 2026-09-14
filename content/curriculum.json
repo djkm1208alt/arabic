@@ -130,7 +130,7 @@
     {
       "id": "b1-u2", "level": "B1", "order": 2,
       "title": "Relative Clauses & Longer Sentences",
-      "blurb": "الَّذِي and الَّتِي for subject-relative clauses, definite and indefinite; all ten sisters of إنّ named, seven with a full worked example, shifting a nominal sentence's subject to accusative. Attached-pronoun forms and object-relative clauses are still in development.",
+      "blurb": "الَّذِي and الَّتِي for subject-relative clauses, definite and indefinite; all ten sisters of إنّ, both with a following noun and with an attached pronoun subject. Object-relative clauses and joining ideas into paragraphs are still in development.",
       "skills": ["grammar", "reading"],
       "status": "available", "prereqs": ["a2-u2"]
     },
@@ -812,6 +812,14 @@
       "level": "B1", "skills": ["grammar", "reading"],
       "objectives": ["lex:prt-34", "lex:prt-35", "lex:prt-36", "lex:prt-37", "gr:inna-sisters", "txt:gram-kaanna-cold-weather", "txt:gram-lakinna-house-garden", "txt:gram-laalla-beautiful-tomorrow", "txt:gram-layta-warm-weather"],
       "status": "available", "source": "steps:b1-inna-sisters-2"
+    },
+    {
+      "id": "b1-inna-attached-pronouns", "unitId": "b1-u2", "order": 4,
+      "title": "Inna and Its Sisters — Attached Pronouns (إِنَّهُ)",
+      "blurb": "Any sister of إنّ can take an attached pronoun instead of a following noun — the same possessive suffixes you already know, now attaching to the particle itself.",
+      "level": "B1", "skills": ["grammar", "reading"],
+      "objectives": ["gr:inna-sisters", "gr:attached-possessive", "txt:gram-innahu-happy", "txt:gram-annaha-heard-happy", "txt:gram-liannahu-happy-home"],
+      "status": "available", "source": "steps:b1-inna-attached-pronouns"
     },
     {
       "id": "b1-role-recognition", "unitId": "b1-u7", "order": 1,

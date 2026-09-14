@@ -1,0 +1,69 @@
+{
+  "id": "b1-inna-attached-pronouns",
+  "unitId": "b1-u2",
+  "curriculumLessonId": "b1-inna-attached-pronouns",
+  "title": "Inna and Its Sisters — Attached Pronouns (إِنَّهُ)",
+  "level": "B1",
+  "skills": ["grammar", "reading"],
+  "objectives": ["gr:inna-sisters", "gr:attached-possessive", "txt:gram-innahu-happy", "txt:gram-annaha-heard-happy", "txt:gram-liannahu-happy-home"],
+  "steps": [
+    {
+      "type": "explain",
+      "title": "A pronoun instead of a noun",
+      "body": [
+        "Every sister of إنّ needs a subject right after it — so far you've only seen a full noun in that spot. But the subject can just as easily be a pronoun, attached directly to the particle. It's not a new set of endings: it's the exact same possessive suffixes you already know from gr:attached-possessive — ـهُ (his/him/it), ـهَا (her/it), ـكَ (your, m.), ـكِ (your, f.) — just landing on a particle instead of a noun.",
+        "إِنَّهُ سَعِيدٌ (\"indeed he is happy\") attaches ـهُ straight onto إِنَّ, doing the same job a following noun's accusative form would. سَمِعْتُ أَنَّهَا سَعِيدَةٌ (\"I heard that she is happy\") attaches ـهَا to أَنَّ instead — same mechanic, different sister.",
+        "The mechanic works identically on every one of the ten sisters, not just إِنَّ and أَنَّ: هُوَ سَعِيدٌ لِأَنَّهُ فِي الْبَيْتِ (\"he is happy because he is at home\") attaches ـهُ to لِأَنَّ. One irregularity worth flagging for later: the 1st-person suffix doesn't attach the expected way here — إِنَّ + ي actually surfaces as إِنِّي, not إِنَّنِي — but that's a detail for another day, not something this lesson asks you to produce."
+      ],
+      "previewSymbols": ["إِنَّهُ", "أَنَّهَا", "لِأَنَّهُ"]
+    },
+    {
+      "type": "reading-practice",
+      "title": "Three sisters, one pronoun mechanic",
+      "intro": "Read each sentence and find the attached pronoun riding on the sister of إنّ. Tap 🔊 to hear any line.",
+      "fromObjectives": true
+    },
+    {
+      "type": "practice-choice",
+      "title": "Which noun is missing?",
+      "arabicPrompt": "إِنَّهُ سَعِيدٌ",
+      "prompt": "There's no separate noun in this sentence at all. What is playing the role of اِسْم إِنَّ?",
+      "options": [
+        { "label": "The attached pronoun ـهُ, built directly onto إِنَّ", "correct": true },
+        { "label": "سَعِيدٌ itself", "correct": false },
+        { "label": "Nothing — the sentence is missing its subject", "correct": false }
+      ],
+      "explanation": "ـهُ is not decoration — it IS إِنَّ's subject here, exactly the role a following noun would otherwise play."
+    },
+    {
+      "type": "practice-choice",
+      "title": "A familiar suffix, a new host",
+      "arabicPrompt": "سَمِعْتُ أَنَّهَا سَعِيدَةٌ",
+      "prompt": "Where have you seen the suffix ـهَا before, attached to something else?",
+      "options": [
+        { "label": "On a possessed noun — بَيْتُهَا, \"her house\"", "correct": true },
+        { "label": "Nowhere — this is the first time ـهَا has appeared", "correct": false },
+        { "label": "Only on verbs, never on nouns", "correct": false }
+      ],
+      "explanation": "ـهَا is the same \"her\" suffix from gr:attached-possessive (بَيْتُهَا, \"her house\") — here it attaches to أَنَّ instead of a noun, but it's the identical suffix doing an analogous job."
+    },
+    {
+      "type": "practice-choice",
+      "title": "Every sister, not just two",
+      "arabicPrompt": "هُوَ سَعِيدٌ لِأَنَّهُ فِي الْبَيْتِ",
+      "prompt": "لِأَنَّهُ shows the attached-pronoun mechanic on a sister other than إِنَّ or أَنَّ. What does that tell you?",
+      "options": [
+        { "label": "The mechanic applies to all ten sisters of إنّ, not just two of them", "correct": true },
+        { "label": "لِأَنَّ is a special exception that behaves differently from the rest", "correct": false },
+        { "label": "Only sisters that mean \"that\" can take a pronoun", "correct": false }
+      ],
+      "explanation": "Any sister of إنّ — إِنَّ, أَنَّ, لِأَنَّ, كَأَنَّ, لٰكِنَّ, لَعَلَّ, or لَيْتَ — can take an attached pronoun in exactly the same way."
+    },
+    {
+      "type": "complete",
+      "title": "إنّ's family, fully covered",
+      "message": "A following noun or an attached pronoun — either can be the subject of any sister of إنّ, and both take the same accusative role. Object-relative clauses and joining ideas into paragraphs are still ahead for this unit.",
+      "finishLabel": "Finish"
+    }
+  ]
+}
