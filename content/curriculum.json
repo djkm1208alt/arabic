@@ -130,7 +130,7 @@
     {
       "id": "b1-u2", "level": "B1", "order": 2,
       "title": "Relative Clauses & Longer Sentences",
-      "blurb": "الَّذِي and الَّتِي for subject-relative clauses, definite and indefinite. إنّ وأخواتها and object-relative clauses are still in development.",
+      "blurb": "الَّذِي and الَّتِي for subject-relative clauses, definite and indefinite; إِنَّ, أَنَّ, and لِأَنَّ shifting a nominal sentence's subject to accusative. The other four sisters of إنّ and object-relative clauses are still in development.",
       "skills": ["grammar", "reading"],
       "status": "available", "prereqs": ["a2-u2"]
     },
@@ -796,6 +796,14 @@
       "level": "B1", "skills": ["grammar", "reading"],
       "objectives": ["lex:prt-30", "lex:prt-31", "gr:relative-clauses", "txt:gram-relclause-safara", "txt:gram-relclause-takallamat", "txt:gram-relclause-istayqaza", "txt:gram-relclause-indefinite"],
       "status": "available", "source": "steps:b1-relative-clauses"
+    },
+    {
+      "id": "b1-inna-sisters", "unitId": "b1-u2", "order": 2,
+      "title": "Inna and Its Sisters — First Look (إِنَّ / أَنَّ)",
+      "blurb": "كَانَ's mirror image: إِنَّ, أَنَّ, and the already-known لِأَنَّ all push a nominal sentence's subject to accusative, leaving the predicate nominative.",
+      "level": "B1", "skills": ["grammar", "reading"],
+      "objectives": ["lex:prt-32", "lex:prt-33", "lex:prt-17", "gr:inna-sisters", "txt:gram-inna-weather", "txt:gram-anna-heard-weather", "txt:gram-lianna-happy-warm"],
+      "status": "available", "source": "steps:b1-inna-sisters"
     },
     {
       "id": "b1-role-recognition", "unitId": "b1-u7", "order": 1,

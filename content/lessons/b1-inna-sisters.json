@@ -1,0 +1,69 @@
+{
+  "id": "b1-inna-sisters",
+  "unitId": "b1-u2",
+  "curriculumLessonId": "b1-inna-sisters",
+  "title": "Inna and Its Sisters — First Look (إِنَّ / أَنَّ)",
+  "level": "B1",
+  "skills": ["grammar", "reading"],
+  "objectives": ["lex:prt-32", "lex:prt-33", "lex:prt-17", "gr:inna-sisters", "txt:gram-inna-weather", "txt:gram-anna-heard-weather", "txt:gram-lianna-happy-warm"],
+  "steps": [
+    {
+      "type": "explain",
+      "title": "كَانَ's mirror image",
+      "body": [
+        "You already know كَانَ shifts a nominal sentence's predicate to accusative, leaving the subject nominative. إنّ وأخواتها (\"inna and its sisters\") is a family of particles that does the reverse: it pushes the SUBJECT to accusative and leaves the predicate nominative. الْبَيْتُ كَبِيرٌ (\"the house is big\") becomes إِنَّ الْبَيْتَ كَبِيرٌ (\"indeed the house is big\") — الْبَيْتُ's ـُ becomes ـَ; كَبِيرٌ never changes.",
+        "إِنَّ opens a sentence for emphasis (\"indeed, truly\") — it's the family's namesake and most common member. أَنَّ does the same case-shifting job, but instead of standing alone it subordinates a whole nominal clause as \"that\" after a verb of saying, hearing, or knowing: سَمِعْتُ أَنَّ الطَّقْسَ جَمِيلٌ — \"I heard that the weather is beautiful.\" Don't confuse أَنَّ with أَنْ, an unrelated word (the subjunctive \"to\") that introduces a verb instead — that one is a separate topic for later.",
+        "You've actually known a third sister since your very first weeks: لِأَنَّ (\"because\") is just لِ + أَنَّ, and it obeys exactly the same rule — the noun right after it goes accusative too. Four more sisters exist (as if, a heavier \"but,\" perhaps, would that) and are saved for a later lesson."
+      ],
+      "previewSymbols": ["إِنَّ", "أَنَّ", "لِأَنَّ"]
+    },
+    {
+      "type": "reading-practice",
+      "title": "Three sentences, one family",
+      "intro": "Read each sentence and watch what happens to the noun right after إِنَّ, أَنَّ, or لِأَنَّ. Tap 🔊 to hear any line.",
+      "fromObjectives": true
+    },
+    {
+      "type": "practice-choice",
+      "title": "The case shift",
+      "arabicPrompt": "إِنَّ الطَّقْسَ جَمِيلٌ الْيَوْمَ",
+      "prompt": "الطَّقْسَ ends in a fatḥa here, not the ḍamma you'd expect on a plain topic. Why?",
+      "options": [
+        { "label": "It is إِنَّ's subject, which إِنَّ pushes to accusative", "correct": true },
+        { "label": "It is the object of a hidden verb", "correct": false },
+        { "label": "It is an iḍāfa's first term, so it drops its own ending", "correct": false }
+      ],
+      "explanation": "إِنَّ (and every one of its sisters) pushes the noun right after it to accusative — the mirror image of what كَانَ does to the predicate instead of the subject."
+    },
+    {
+      "type": "practice-choice",
+      "title": "That vs. to",
+      "arabicPrompt": "سَمِعْتُ أَنَّ الطَّقْسَ جَمِيلٌ الْيَوْمَ",
+      "prompt": "What does أَنَّ introduce here?",
+      "options": [
+        { "label": "A whole clause, subordinated as \"that ...\"", "correct": true },
+        { "label": "A single verb, subordinated as \"to ...\"", "correct": false },
+        { "label": "A question", "correct": false }
+      ],
+      "explanation": "This lesson's أَنَّ (double ن) subordinates a full nominal clause as \"that.\" A different, unrelated word — أَنْ, single ن, the subjunctive \"to\" — introduces a verb instead; the two are easy to mix up in translit but not in meaning."
+    },
+    {
+      "type": "practice-choice",
+      "title": "A word you already knew",
+      "arabicPrompt": "هِيَ سَعِيدَةٌ لِأَنَّ الطَّقْسَ دَافِئٌ",
+      "prompt": "لِأَنَّ has been in your vocabulary since A1. What is it actually built from?",
+      "options": [
+        { "label": "لِ (\"for\") + أَنَّ — so it follows the same accusative-subject rule", "correct": true },
+        { "label": "A single, unanalyzable word with no internal structure", "correct": false },
+        { "label": "لَكِنْ (\"but\") with a spelling change", "correct": false }
+      ],
+      "explanation": "لِأَنَّ is transparently لِ + أَنَّ, so الطَّقْسَ right after it takes the same accusative ending you just saw after إِنَّ and أَنَّ. It is unrelated to لَكِنْ (\"but,\" no shadda, does not shift case)."
+    },
+    {
+      "type": "complete",
+      "title": "You've met three sisters",
+      "message": "إِنَّ, أَنَّ, and the already-known لِأَنَّ — three members of إنّ وأخواتها, all pushing the following noun to accusative, the mirror image of كَانَ. Four more sisters and the attached-pronoun forms are still ahead.",
+      "finishLabel": "Finish"
+    }
+  ]
+}

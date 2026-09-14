@@ -471,5 +471,32 @@
       "gr:definiteness",
       "gr:verbal-sentence"
     ]
+  },
+  {
+    "id": "gr:inna-sisters",
+    "kind": "grammar",
+    "name": "إنّ وأخواتها — إِنَّ, أَنَّ, لِأَنَّ",
+    "level": "B1",
+    "rule": "إنّ وأخواتها (\"inna and its sisters\") is a family of particles that enters a nominal sentence and shifts one side's case — the mirror image of كَانَ (gr:kana). Where كَانَ leaves the subject nominative and pushes the predicate to accusative, إنّ's family does the reverse: it pushes the subject (اِسْم إِنَّ) to accusative and leaves the predicate (خَبَر إِنَّ) nominative. الْبَيْتُ كَبِيرٌ (\"the house is big\") → إِنَّ الْبَيْتَ كَبِيرٌ (\"indeed the house is big\") — الْبَيْتُ's ـُ becomes ـَ; كَبِيرٌ stays exactly as it was. This batch covers three members. إِنَّ opens a sentence for emphasis (\"indeed / truly\") and is the family's namesake and most frequent member. أَنَّ subordinates a nominal clause as \"that\" after a verb of saying, hearing, or knowing: سَمِعْتُ أَنَّ الطَّقْسَ جَمِيلٌ الْيَوْمَ (\"I heard that the weather is beautiful today\") — أَنَّ's own subject-clause still obeys the same accusative-subject rule. أَنَّ is not to be confused with أَنْ, the unrelated subjunctive \"to\" that subordinates a following verb instead of a nominal clause — a separate B1 topic. لِأَنَّ (\"because\"), already known since A1, is transparently لِ + أَنَّ and governs the same accusative-subject rule: هِيَ سَعِيدَةٌ لِأَنَّ الطَّقْسَ دَافِئٌ (\"she is happy because the weather is warm\"). Four more sisters — كَأَنَّ (\"as if\"), لٰكِنَّ (the heavy, case-marking \"but\" — contrast the already-known light لَكِنْ, which does not shift case), لَعَلَّ (\"perhaps\"), لَيْتَ (\"would that\") — and إنّ's family's own attached-pronoun forms (إِنَّهُ, أَنَّهَا, …) are covered in a later unit.",
+    "examples": [
+      "txt:gram-inna-weather",
+      "txt:gram-anna-heard-weather",
+      "txt:gram-lianna-happy-warm"
+    ],
+    "commonErrors": [
+      "Leaving the subject after إِنَّ/أَنَّ/لِأَنَّ in the nominative — إِنَّ الْبَيْتُ كَبِيرٌ is wrong; the noun right after any sister of إنّ must take the accusative ending, exactly the reverse of what a learner's كَانَ instinct expects.",
+      "Confusing أَنَّ (\"that,\" this batch, subordinates a nominal clause) with أَنْ (the subjunctive \"to,\" subordinates a following verb) — the two are unrelated words that transliterate almost identically.",
+      "Confusing لِأَنَّ (heavy, case-marking \"because\") with لَكِنْ (light \"but,\" no shadda, does not shift case) — different words, different jobs, only superficially similar in shape.",
+      "Treating إنّ's case-shift as optional or stylistic — like كَانَ, it is a grammatical requirement of the particle, not emphasis added on top of an unchanged sentence."
+    ],
+    "skills": [
+      "grammar",
+      "reading"
+    ],
+    "prereqs": [
+      "gr:kana",
+      "gr:nominal-sentence",
+      "gr:verbal-sentence"
+    ]
   }
 ]
