@@ -1794,5 +1794,84 @@
     "level": "B1",
     "skills": [ "reading", "comprehension", "listening", "grammar" ],
     "prereqs": [ "gr:derived-verb-forms" ]
+  },
+  {
+    "id": "txt:gram-form3-jalasa",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "derived-verb-forms",
+    "vowelled": "الْوَلَدُ يَجْلِسُ وَالرَّجُلُ يُجَالِسُ أَصْدِقَاءَهُ",
+    "translit": "al-waladu yajlisu wa-ar-rajulu yujālisu aṣdiqāʾahu",
+    "en": "The boy sits, and the man sits together with his friends.",
+    "words": [
+      { "surface": "الْوَلَدُ", "translit": "al-waladu", "gloss": "the boy (subject, nominative)", "gender": "masculine" },
+      { "surface": "يَجْلِسُ", "translit": "yajlisu", "gloss": "sits — Form I present, root ج-ل-س", "gender": null },
+      { "surface": "وَالرَّجُلُ", "translit": "wa-ar-rajulu", "gloss": "and the man", "gender": "masculine" },
+      { "surface": "يُجَالِسُ", "translit": "yujālisu", "gloss": "sits together with — Form III present, same root ج-ل-س with a long alif after the first consonant", "gender": null },
+      { "surface": "أَصْدِقَاءَهُ", "translit": "aṣdiqāʾahu", "gloss": "his friends (object, accusative) — plural of صَدِيق", "gender": "masculine" }
+    ],
+    "audio": "الْوَلَدُ يَجْلِسُ وَالرَّجُلُ يُجَالِسُ أَصْدِقَاءَهُ",
+    "level": "B1",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:derived-verb-forms" ]
+  },
+  {
+    "id": "txt:gram-form3-kataba",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "derived-verb-forms",
+    "vowelled": "كَاتَبَ الطَّالِبُ صَدِيقَهُ",
+    "translit": "kātaba aṭ-ṭālibu ṣadīqahu",
+    "en": "The student corresponded with his friend.",
+    "words": [
+      { "surface": "كَاتَبَ", "translit": "kātaba", "gloss": "corresponded with / wrote to — Form III, reciprocal of كَتَبَ (\"to write\")", "gender": null },
+      { "surface": "الطَّالِبُ", "translit": "aṭ-ṭālibu", "gloss": "the student (subject, nominative)", "gender": "masculine" },
+      { "surface": "صَدِيقَهُ", "translit": "ṣadīqahu", "gloss": "his friend (object, accusative + possessive suffix هُ)", "gender": "masculine" }
+    ],
+    "audio": "كَاتَبَ الطَّالِبُ صَدِيقَهُ",
+    "level": "B1",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:derived-verb-forms" ]
+  },
+  {
+    "id": "txt:gram-form3-sadaqa",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "derived-verb-forms",
+    "vowelled": "صَادَقَ الْوَلَدُ الطَّالِبَ الْجَدِيدَ",
+    "translit": "ṣādaqa al-waladu aṭ-ṭāliba al-jadīda",
+    "en": "The boy befriended the new student.",
+    "words": [
+      { "surface": "صَادَقَ", "translit": "ṣādaqa", "gloss": "befriended — Form III, denominative from صَدِيق (\"friend\")", "gender": null },
+      { "surface": "الْوَلَدُ", "translit": "al-waladu", "gloss": "the boy (subject, nominative)", "gender": "masculine" },
+      { "surface": "الطَّالِبَ", "translit": "aṭ-ṭāliba", "gloss": "the student (object, accusative)", "gender": "masculine" },
+      { "surface": "الْجَدِيدَ", "translit": "al-jadīda", "gloss": "new (adjective, agreeing in case, definiteness, and gender)", "gender": "masculine" }
+    ],
+    "audio": "صَادَقَ الْوَلَدُ الطَّالِبَ الْجَدِيدَ",
+    "level": "B1",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:derived-verb-forms" ]
+  },
+  {
+    "id": "txt:gram-form3-safara",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "derived-verb-forms",
+    "vowelled": "سَافَرَتِ الْبِنْتُ مَعَ صَدِيقَتِهَا",
+    "translit": "sāfarati al-bintu maʿa ṣadīqatihā",
+    "en": "The girl traveled with her friend.",
+    "words": [
+      { "surface": "سَافَرَتِ", "translit": "sāfarati", "gloss": "traveled (she) — Form III, already known from A1; the same long-alif pattern as كَاتَبَ / جَالَسَ / صَادَقَ", "gender": "feminine" },
+      { "surface": "الْبِنْتُ", "translit": "al-bintu", "gloss": "the girl (subject, nominative)", "gender": "feminine" },
+      { "surface": "مَعَ صَدِيقَتِهَا", "translit": "maʿa ṣadīqatihā", "gloss": "with her friend (مَعَ governs the genitive)", "gender": "feminine" }
+    ],
+    "audio": "سَافَرَتِ الْبِنْتُ مَعَ صَدِيقَتِهَا",
+    "level": "B1",
+    "skills": [ "reading", "comprehension", "listening", "grammar" ],
+    "prereqs": [ "gr:derived-verb-forms" ]
   }
 ]

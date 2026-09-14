@@ -2,8 +2,8 @@
   {
     "root": "ك-ت-ب",
     "gloss": "write",
-    "lexemes": ["lex:sch-06", "lex:ver-04", "lex:pla-10"],
-    "note": "كِتَاب (book) / كَتَبَ (he wrote) / مَكْتَبَة (library) — the same root printed three ways.",
+    "lexemes": ["lex:sch-06", "lex:ver-04", "lex:pla-10", "lex:ver-34"],
+    "note": "كِتَاب (book) / كَتَبَ (he wrote) / مَكْتَبَة (library) — the same root printed three ways. Also a verb pair across two derived forms: كَتَبَ (Form I, \"he wrote\") / كَاتَبَ (Form III, \"he corresponded with\" — see gr:derived-verb-forms, B1).",
     "source": "Standard MSA root morphology (Hans Wehr root ك ت ب); cross-checked against Wiktionary."
   },
   {
@@ -75,5 +75,12 @@
     "lexemes": ["lex:num-05", "lex:tim-15"],
     "note": "خَمْسَة (five) / الْخَمِيس (Thursday).",
     "source": "Standard MSA root morphology; verified against Wiktionary and weekday-etymology references."
+  },
+  {
+    "root": "ج-ل-س",
+    "gloss": "sit",
+    "lexemes": ["lex:ver-21", "lex:ver-35"],
+    "note": "جَلَسَ (Form I, \"he sat\") / جَالَسَ (Form III, \"he sat together with [someone]\" — see gr:derived-verb-forms, B1).",
+    "source": "Standard MSA root morphology (Hans Wehr root ج ل س)."
   }
 ]

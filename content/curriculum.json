@@ -123,7 +123,7 @@
     {
       "id": "b1-u1", "level": "B1", "order": 1,
       "title": "Derived Verb Forms II–X",
-      "blurb": "Form II (تَفْعِيل) — a first derived pattern and its causative/intensive meaning tendency.",
+      "blurb": "Form II (تَفْعِيل) and Form III (مُفَاعَلَة) — causative/denominative vs. reciprocal/associative meaning tendencies.",
       "skills": ["grammar", "vocabulary"],
       "status": "available", "prereqs": ["a2-u1", "a2-u3"]
     },
@@ -709,6 +709,14 @@
       "level": "B1", "skills": ["grammar", "vocabulary"],
       "objectives": ["lex:ver-14", "lex:ver-31", "lex:hom-16", "lex:ver-32", "lex:sch-14", "lex:ver-33", "lex:ver-30", "lex:peo-13", "lex:peo-15", "lex:peo-11", "lex:fc-14", "lex:sch-02", "lex:sch-04", "gr:derived-verb-forms", "txt:gram-form2-darrasa", "txt:gram-form2-nazzafa", "txt:gram-form2-kallama", "txt:gram-form2-jarraba"],
       "status": "available", "source": "steps:b1-derived-forms-ii"
+    },
+    {
+      "id": "b1-derived-forms-iii", "unitId": "b1-u1", "order": 2,
+      "title": "Derived Verb Forms — Form III (مُفَاعَلَة)",
+      "blurb": "The long-alif pattern that turns كَتَبَ (to write) into كَاتَبَ (to correspond with) — Form III's reciprocal and associative meaning tendency.",
+      "level": "B1", "skills": ["grammar", "vocabulary"],
+      "objectives": ["lex:ver-04", "lex:ver-34", "lex:ver-21", "lex:ver-35", "lex:peo-11", "lex:ver-36", "lex:ver-26", "lex:peo-15", "lex:peo-16", "lex:sch-04", "lex:adj-06", "lex:peo-12", "lex:prt-05", "gr:derived-verb-forms", "txt:gram-form3-jalasa", "txt:gram-form3-kataba", "txt:gram-form3-sadaqa", "txt:gram-form3-safara"],
+      "status": "available", "source": "steps:b1-derived-forms-iii"
     }
   ]
 }

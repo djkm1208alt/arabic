@@ -1,0 +1,77 @@
+{
+  "id": "b1-derived-forms-iii",
+  "unitId": "b1-u1",
+  "curriculumLessonId": "b1-derived-forms-iii",
+  "title": "Derived Verb Forms — Form III (مُفَاعَلَة)",
+  "level": "B1",
+  "skills": ["grammar", "vocabulary"],
+  "objectives": [
+    "lex:ver-04", "lex:ver-34",
+    "lex:ver-21", "lex:ver-35",
+    "lex:peo-11", "lex:ver-36",
+    "lex:ver-26",
+    "lex:peo-15", "lex:peo-16", "lex:sch-04", "lex:adj-06", "lex:peo-12", "lex:prt-05",
+    "gr:derived-verb-forms",
+    "txt:gram-form3-jalasa", "txt:gram-form3-kataba", "txt:gram-form3-sadaqa", "txt:gram-form3-safara"
+  ],
+  "steps": [
+    {
+      "type": "explain",
+      "title": "A second shape: doing it with someone",
+      "body": [
+        "You've already met Form II's doubled middle consonant (دَرَسَ → دَرَّسَ). Form III marks itself differently: a long alif after the *first* root consonant instead — وَزْن فَاعَلَ. Where Form II often means \"cause [someone] to do X,\" Form III most often means \"do X toward or together with someone\" — a reciprocal or associative sense.",
+        "كَتَبَ (\"he wrote\") becomes كَاتَبَ (\"he corresponded with someone\" — writing back and forth). جَلَسَ (\"he sat\") becomes جَالَسَ (\"he sat together with someone,\" kept them company). The root and its core meaning stay exactly the same; only the relationship to another person changes.",
+        "Form III can also be denominative, exactly like Form II can — صَدِيق (\"friend\") becomes صَادَقَ (\"he befriended someone\"), with no Form I verb behind it at all. And you already know one Form III verb from A2 without realising it: سَافَرَ (\"to travel\") — a reminder that this pattern doesn't always need a Form I partner to make sense. The present tense keeps the long alif and adds يُـ: يُكَاتِبُ, يُجَالِسُ, يُصَادِقُ, يُسَافِرُ."
+      ],
+      "previewSymbols": ["كَتَبَ", "كَاتَبَ", "فَاعَلَ"]
+    },
+    {
+      "type": "reading-practice",
+      "title": "Form III in four sentences",
+      "intro": "Read each sentence, then compare the Form III verb to the Form I or noun it's built from. Tap 🔊 to hear any line.",
+      "fromObjectives": true
+    },
+    {
+      "type": "practice-choice",
+      "title": "Doubled consonant or long alif?",
+      "arabicPrompt": "دَرَّسَ / كَاتَبَ",
+      "prompt": "Which pattern marks Form III — reciprocal, \"toward or with someone\"?",
+      "options": [
+        { "label": "كَاتَبَ (kātaba) — long alif after the first consonant", "correct": true },
+        { "label": "دَرَّسَ (darrasa) — doubled middle consonant, that's Form II", "correct": false },
+        { "label": "كَتَبَ (kataba) — plain Form I", "correct": false }
+      ],
+      "explanation": "Form III's signature is the long alif right after the first root consonant (فَاعَلَ) — visually distinct from Form II's doubled middle consonant (فَعَّلَ), even though both often sit on the same root family of meanings."
+    },
+    {
+      "type": "practice-choice",
+      "title": "Reciprocal: sit → sit together with",
+      "arabicPrompt": "جَلَسَ ← جَالَسَ",
+      "prompt": "جَلَسَ means \"he sat.\" What does the Form III جَالَسَ mean?",
+      "options": [
+        { "label": "He sat together with someone / kept them company", "correct": true },
+        { "label": "He made someone sit", "correct": false },
+        { "label": "He stood up", "correct": false }
+      ],
+      "explanation": "Form III's reciprocal/associative sense turns a plain action into one shared with another person — \"he sat\" becomes \"he sat together with [someone].\" كَاتَبَ (\"to correspond with,\" from كَتَبَ) works the same way."
+    },
+    {
+      "type": "practice-choice",
+      "title": "Denominative: friend → to befriend",
+      "arabicPrompt": "صَدِيق ← صَادَقَ",
+      "prompt": "صَدِيق is the noun \"friend.\" What does the Form III verb صَادَقَ mean?",
+      "options": [
+        { "label": "To befriend / take someone as a friend", "correct": true },
+        { "label": "To be a friend (a state, not an action)", "correct": false },
+        { "label": "Friendship (a noun)", "correct": false }
+      ],
+      "explanation": "صَادَقَ is denominative, built straight from صَدِيق — the same way نَظَّفَ was built from نَظِيف back in Form II. سَافَرَ (\"to travel\"), which you already knew from A2, is also Form III, though its own Form I partner isn't part of this course."
+    },
+    {
+      "type": "complete",
+      "title": "Two derived forms down, eight to go",
+      "message": "Form II's causative/denominative doubling and Form III's reciprocal/associative long alif — four more worked examples: كَاتَبَ, جَالَسَ, صَادَقَ, and سَافَرَ. Forms IV–X are still ahead.",
+      "finishLabel": "Finish"
+    }
+  ]
+}
