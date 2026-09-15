@@ -1,0 +1,69 @@
+{
+  "id": "b1-attached-possessive-plural",
+  "unitId": "b1-u2",
+  "curriculumLessonId": "b1-attached-possessive-plural",
+  "title": "Attached Possessive Pronouns — Plural Forms (نَا / كُمْ / هُمْ)",
+  "level": "B1",
+  "skills": ["grammar", "reading"],
+  "objectives": ["gr:attached-possessive", "gr:noun-number", "txt:gram-poss-our-house", "txt:gram-poss-your-book-pl", "txt:gram-poss-their-school"],
+  "steps": [
+    {
+      "type": "explain",
+      "title": "The same suffixes, for a group",
+      "body": [
+        "You already know ـِي (my), ـكَ (your, m.), ـكِ (your, f.), ـهُ (his), and ـهَا (her) attach directly to a noun to show possession. Three more suffixes do the exact same job for a group: ـنَا (our), ـكُمْ (your, plural), and ـهُمْ (their).",
+        "بَيْتُنَا (\"our house\") attaches ـنَا — no gender split, the same for any group that includes \"me.\" أَيْنَ كِتَابُكُمْ؟ (\"where is your book?\") attaches ـكُمْ when speaking to more than one person. مَدْرَسَتُهُمْ (\"their school\") attaches ـهُمْ.",
+        "ـكُمْ and ـهُمْ are the masculine/mixed-group forms — the same default you already saw on the independent pronoun هُمْ (\"they, masculine/mixed group\"). Arabic also has separate forms for an all-female group (ـكُنَّ, ـهُنَّ) and for exactly two people (ـكُمَا, ـهُمَا) — rare enough at this level to name and leave for later, the same way dual relative pronouns did."
+      ],
+      "previewSymbols": ["ـنَا", "ـكُمْ", "ـهُمْ"]
+    },
+    {
+      "type": "reading-practice",
+      "title": "Three plural suffixes",
+      "intro": "Read each sentence and find the possessive suffix, then check whose it is. Tap 🔊 to hear any line.",
+      "fromObjectives": true
+    },
+    {
+      "type": "practice-choice",
+      "title": "Whose house?",
+      "arabicPrompt": "بَيْتُنَا كَبِيرٌ",
+      "prompt": "Whose house is big?",
+      "options": [
+        { "label": "Ours", "correct": true },
+        { "label": "His", "correct": false },
+        { "label": "Theirs", "correct": false }
+      ],
+      "explanation": "ـنَا is \"our\" — no gender split, attaching the same way for any group that includes the speaker."
+    },
+    {
+      "type": "practice-choice",
+      "title": "Speaking to more than one person",
+      "arabicPrompt": "أَيْنَ كِتَابُكُمْ؟",
+      "prompt": "How many people is this question addressed to?",
+      "options": [
+        { "label": "More than one — ـكُمْ is the plural \"your\"", "correct": true },
+        { "label": "Exactly one person, masculine", "correct": false },
+        { "label": "Exactly one person, feminine", "correct": false }
+      ],
+      "explanation": "ـكَ (singular, masculine) and ـكُمْ (plural) are different suffixes — كِتَابُكَ would ask one man, كِتَابُكُمْ asks a group."
+    },
+    {
+      "type": "practice-choice",
+      "title": "A group's school",
+      "arabicPrompt": "مَدْرَسَتُهُمْ قَرِيبَةٌ",
+      "prompt": "Why does this word end in ـهُمْ here, instead of ـهُ?",
+      "options": [
+        { "label": "The school belongs to a group of people, not one person", "correct": true },
+        { "label": "ـهُمْ and ـهُ mean exactly the same thing", "correct": false },
+        { "label": "مَدْرَسَة requires a special suffix no other noun uses", "correct": false }
+      ],
+      "explanation": "ـهُ is \"his\" (one person); ـهُمْ is \"their\" (a group) — the same suffix mechanic, just scaled up from one antecedent to many."
+    },
+    {
+      "type": "complete",
+      "title": "The possessive paradigm, completed",
+      "message": "ـِي، ـكَ، ـكِ، ـهُ، ـهَا for one person; ـنَا، ـكُمْ، ـهُمْ for a group — eight suffixes covering the everyday cases. The all-female-group and dual forms are still ahead.",
+      "finishLabel": "Finish"
+    }
+  ]
+}

@@ -130,7 +130,7 @@
     {
       "id": "b1-u2", "level": "B1", "order": 2,
       "title": "Relative Clauses & Longer Sentences",
-      "blurb": "الَّذِي/الَّتِي (singular) and الَّذِينَ/اللَّاتِي (plural) for subject- and object-relative clauses; all ten sisters of إنّ, with a following noun or an attached pronoun subject; joining these into a connected paragraph. Dual relative pronouns stay deferred past B1, the same as Form IX.",
+      "blurb": "الَّذِي/الَّتِي (singular) and الَّذِينَ/اللَّاتِي (plural) for subject- and object-relative clauses; all ten sisters of إنّ, with a following noun or an attached pronoun subject; joining these into a connected paragraph; the plural possessive suffixes ـنَا/ـكُمْ/ـهُمْ. Dual relative pronouns and the feminine-plural/dual possessive suffixes stay deferred past B1, the same as Form IX.",
       "skills": ["grammar", "reading"],
       "status": "available", "prereqs": ["a2-u2"]
     },
@@ -836,6 +836,14 @@
       "level": "B1", "skills": ["reading", "comprehension"],
       "objectives": ["gr:relative-clauses", "gr:kana", "gr:inna-sisters", "txt:read-para-teacher-trip"],
       "status": "available", "source": "steps:b1-paragraphs"
+    },
+    {
+      "id": "b1-attached-possessive-plural", "unitId": "b1-u2", "order": 7,
+      "title": "Attached Possessive Pronouns — Plural Forms (نَا / كُمْ / هُمْ)",
+      "blurb": "Completing the possessive-suffix paradigm: ـنَا (our), ـكُمْ (your, plural), and ـهُمْ (their) — the same mechanic as ـِي/ـكَ/ـهُ, just for a group.",
+      "level": "B1", "skills": ["grammar", "reading"],
+      "objectives": ["gr:attached-possessive", "gr:noun-number", "txt:gram-poss-our-house", "txt:gram-poss-your-book-pl", "txt:gram-poss-their-school"],
+      "status": "available", "source": "steps:b1-attached-possessive-plural"
     },
     {
       "id": "b1-role-recognition", "unitId": "b1-u7", "order": 1,

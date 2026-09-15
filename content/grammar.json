@@ -148,24 +148,29 @@
   {
     "id": "gr:attached-possessive",
     "kind": "grammar",
-    "name": "Attached possessive pronouns (ـِي ـكَ ـهُ ـهَا)",
+    "name": "Attached possessive pronouns (ـِي ـكَ ـهُ ـهَا ـنَا ـكُمْ ـهُمْ)",
     "level": "A1",
-    "rule": "Possession is shown by a suffix on the noun, not a separate word: ـِي (my), ـكَ (your, m.), ـكِ (your, f.), ـهُ (his), ـهَا (her). A noun with a possessive suffix is already definite, so it takes no الـ and no tanwīn: كِتَابِي (my book), بَيْتُهُ (his house).",
+    "rule": "Possession is shown by a suffix on the noun, not a separate word: ـِي (my), ـكَ (your, m.), ـكِ (your, f.), ـهُ (his), ـهَا (her). A noun with a possessive suffix is already definite, so it takes no الـ and no tanwīn: كِتَابِي (my book), بَيْتُهُ (his house). The same mechanic extends to plural antecedents with three more suffixes: ـنَا (our, no gender split — بَيْتُنَا, \"our house\"), ـكُمْ (your, plural — أَيْنَ كِتَابُكُمْ؟, \"where is your book?\"), and ـهُمْ (their — مَدْرَسَتُهُمْ, \"their school\"). ـكُمْ and ـهُمْ are the masculine/mixed-group forms — the same default convention already used for the independent pronoun هُمْ (\"they, masculine/mixed group\"). Arabic also has specifically-feminine-plural forms (ـكُنَّ \"your, f.pl.,\" ـهُنَّ \"their, f.pl.\") and dual forms (ـكُمَا \"your, dual,\" ـهُمَا \"their, dual\") — rare enough at this level to name here and leave for later, the same way dual relative pronouns and Form IX stayed past B1.",
     "examples": [
       "txt:gram-poss-my-book",
       "txt:gram-poss-your-house",
-      "txt:gram-poss-her-bag"
+      "txt:gram-poss-her-bag",
+      "txt:gram-poss-our-house",
+      "txt:gram-poss-your-book-pl",
+      "txt:gram-poss-their-school"
     ],
     "commonErrors": [
       "Adding الـ to a possessed noun: الْكِتَابِي.",
-      "Keeping the tanwīn before the suffix: كِتَابٌي."
+      "Keeping the tanwīn before the suffix: كِتَابٌي.",
+      "Using a singular suffix (ـهُ, ـهَا) for a plural antecedent — a group of people needs ـهُمْ (\"their\"), not ـهُ repeated for each member."
     ],
     "skills": [
       "grammar",
       "reading"
     ],
     "prereqs": [
-      "gr:definiteness"
+      "gr:definiteness",
+      "gr:noun-number"
     ]
   },
   {
