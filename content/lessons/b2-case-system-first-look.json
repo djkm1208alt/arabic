@@ -1,0 +1,137 @@
+{
+  "id": "b2-case-system-first-look",
+  "unitId": "b2-u1",
+  "curriculumLessonId": "b2-case-system-first-look",
+  "title": "The Case System — First Look (رَفْع / نَصْب / جَرّ)",
+  "level": "B2",
+  "skills": ["grammar", "reading"],
+  "objectives": ["gr:case-system", "txt:gram-nominal-father", "txt:gram-nominal-mother", "txt:gram-past-vso", "txt:gram-past-1sg", "txt:gram-idafa-phrase", "txt:gram-idafa-sentence", "txt:gram-idafa-pen-student"],
+  "steps": [
+    {
+      "type": "explain",
+      "title": "The name for what you've already been doing",
+      "body": [
+        "Back in b1-u7 you named five roles — مُبْتَدَأ، خَبَر، فَاعِل، مَفْعُول بِهِ، مُضَاف إِلَيْهِ — on seven sentences. Every one of those words also had a specific ending, and you got it right every time without naming the system: that ending is its case (إِعْرَاب), and there are only three. رَفْع (nominative) is ḍamma ـُ or tanwīn ـٌ — مُبْتَدَأ، خَبَر، and فَاعِل are always رَفْع. نَصْب (accusative) is fatḥa ـَ or tanwīn ـً — مَفْعُول بِهِ is always نَصْب, and so is gr:kana's predicate and every sister of إنّ's subject. جَرّ (genitive) is kasra ـِ or tanwīn ـٍ — مُضَاف إِلَيْهِ is always جَرّ, and so is any noun after a preposition.",
+        "This lesson reuses the exact same seven sentences from role recognition. Nothing new to read — just naming, for the first time, the case ending that was already sitting on every word you tagged.",
+        "This first look covers only regular nouns — the ones that take a plain ḍamma/fatḥa/kasra. Two irregular layers (diptotes, and the five nouns / sound plurals, which use a long vowel instead) are still ahead."
+      ],
+      "previewSymbols": ["رَفْع", "نَصْب", "جَرّ"]
+    },
+    {
+      "type": "reading-practice",
+      "title": "Seven sentences, now with case",
+      "intro": "Read each sentence again and notice the ending on the tagged word. Tap 🔊 to hear any line.",
+      "fromObjectives": true
+    },
+    {
+      "type": "exercise",
+      "title": "Role and case together",
+      "exercise": {
+        "kind": "label", "skill": "grammar", "objectId": "txt:gram-nominal-father", "objectIds": ["txt:gram-nominal-father"],
+        "prompt": "What role AND case does the marked word have?",
+        "sentenceHtml": "<mark class=\"label-target\">الْأَبُ</mark> سَعِيدٌ",
+        "options": [
+          { "key": "mubtada+raf", "ar": "مُبْتَدَأ — مَرْفُوع", "en": "subject (mubtadaʾ), nominative (rafʿ)" },
+          { "key": "khabar+raf", "ar": "خَبَر — مَرْفُوع", "en": "predicate (khabar), nominative (rafʿ)" },
+          { "key": "mubtada+nasb", "ar": "مُبْتَدَأ — مَنْصُوب", "en": "subject (mubtadaʾ), accusative (naṣb)" },
+          { "key": "fail+raf", "ar": "فَاعِل — مَرْفُوع", "en": "doer (fāʿil), nominative (rafʿ)" }
+        ],
+        "answer": "mubtada+raf"
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Role and case together",
+      "exercise": {
+        "kind": "label", "skill": "grammar", "objectId": "txt:gram-nominal-mother", "objectIds": ["txt:gram-nominal-mother"],
+        "prompt": "What role AND case does the marked word have?",
+        "sentenceHtml": "الْأُمُّ <mark class=\"label-target\">سَعِيدَةٌ</mark>",
+        "options": [
+          { "key": "khabar+raf", "ar": "خَبَر — مَرْفُوع", "en": "predicate (khabar), nominative (rafʿ)" },
+          { "key": "mubtada+raf", "ar": "مُبْتَدَأ — مَرْفُوع", "en": "subject (mubtadaʾ), nominative (rafʿ)" },
+          { "key": "khabar+nasb", "ar": "خَبَر — مَنْصُوب", "en": "predicate (khabar), accusative (naṣb)" },
+          { "key": "mafulbih+nasb", "ar": "مَفْعُول بِهِ — مَنْصُوب", "en": "object (mafʿūl bih), accusative (naṣb)" }
+        ],
+        "answer": "khabar+raf"
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Role and case together",
+      "exercise": {
+        "kind": "label", "skill": "grammar", "objectId": "txt:gram-past-vso", "objectIds": ["txt:gram-past-vso"],
+        "prompt": "What role AND case does the marked word have?",
+        "sentenceHtml": "ذَهَبَ <mark class=\"label-target\">الرَّجُلُ</mark> إِلَى الْمَدْرَسَةِ",
+        "options": [
+          { "key": "fail+raf", "ar": "فَاعِل — مَرْفُوع", "en": "doer (fāʿil), nominative (rafʿ)" },
+          { "key": "mafulbih+nasb", "ar": "مَفْعُول بِهِ — مَنْصُوب", "en": "object (mafʿūl bih), accusative (naṣb)" },
+          { "key": "fail+nasb", "ar": "فَاعِل — مَنْصُوب", "en": "doer (fāʿil), accusative (naṣb)" },
+          { "key": "mubtada+raf", "ar": "مُبْتَدَأ — مَرْفُوع", "en": "subject (mubtadaʾ), nominative (rafʿ)" }
+        ],
+        "answer": "fail+raf"
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Role and case together",
+      "exercise": {
+        "kind": "label", "skill": "grammar", "objectId": "txt:gram-past-1sg", "objectIds": ["txt:gram-past-1sg"],
+        "prompt": "What role AND case does the marked word have?",
+        "sentenceHtml": "أَنَا قَرَأْتُ <mark class=\"label-target\">الْكِتَابَ</mark>",
+        "options": [
+          { "key": "mafulbih+nasb", "ar": "مَفْعُول بِهِ — مَنْصُوب", "en": "object (mafʿūl bih), accusative (naṣb)" },
+          { "key": "fail+raf", "ar": "فَاعِل — مَرْفُوع", "en": "doer (fāʿil), nominative (rafʿ)" },
+          { "key": "mafulbih+raf", "ar": "مَفْعُول بِهِ — مَرْفُوع", "en": "object (mafʿūl bih), nominative (rafʿ)" },
+          { "key": "mudafilayhi+jarr", "ar": "مُضَاف إِلَيْهِ — مَجْرُور", "en": "possessor (muḍāf ilayhi), genitive (jarr)" }
+        ],
+        "answer": "mafulbih+nasb"
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Role and case together",
+      "exercise": {
+        "kind": "label", "skill": "grammar", "objectId": "txt:gram-idafa-phrase", "objectIds": ["txt:gram-idafa-phrase"],
+        "prompt": "What role AND case does the marked word have?",
+        "sentenceHtml": "بَابُ <mark class=\"label-target\">الْبَيْتِ</mark>",
+        "options": [
+          { "key": "mudafilayhi+jarr", "ar": "مُضَاف إِلَيْهِ — مَجْرُور", "en": "possessor (muḍāf ilayhi), genitive (jarr)" },
+          { "key": "mudafilayhi+raf", "ar": "مُضَاف إِلَيْهِ — مَرْفُوع", "en": "possessor (muḍāf ilayhi), nominative (rafʿ)" },
+          { "key": "khabar+raf", "ar": "خَبَر — مَرْفُوع", "en": "predicate (khabar), nominative (rafʿ)" },
+          { "key": "mafulbih+nasb", "ar": "مَفْعُول بِهِ — مَنْصُوب", "en": "object (mafʿūl bih), accusative (naṣb)" }
+        ],
+        "answer": "mudafilayhi+jarr"
+      }
+    },
+    {
+      "type": "practice-choice",
+      "title": "Two words, two roles, two cases",
+      "arabicPrompt": "بَيْتُ الرَّجُلِ كَبِيرٌ",
+      "prompt": "الرَّجُلِ and كَبِيرٌ each have a role and a case here. Which pair is correct?",
+      "options": [
+        { "label": "الرَّجُلِ = مُضَاف إِلَيْهِ (جَرّ), كَبِيرٌ = خَبَر (رَفْع)", "correct": true },
+        { "label": "الرَّجُلِ = فَاعِل (رَفْع), كَبِيرٌ = مَفْعُول بِهِ (نَصْب)", "correct": false },
+        { "label": "الرَّجُلِ = مُضَاف إِلَيْهِ (رَفْع), كَبِيرٌ = خَبَر (نَصْب)", "correct": false }
+      ],
+      "explanation": "الرَّجُلِ is the possessor here, so its role is مُضَاف إِلَيْهِ, which is always جَرّ regardless of context. The whole phrase بَيْتُ الرَّجُلِ together forms the sentence's topic, its مُبْتَدَأ; كَبِيرٌ, describing it, is the predicate — the خَبَر — which is رَفْع."
+    },
+    {
+      "type": "practice-choice",
+      "title": "Two words, two roles, two cases",
+      "arabicPrompt": "قَلَمُ الطَّالِبِ جَدِيدٌ",
+      "prompt": "الطَّالِبِ and جَدِيدٌ each have a role and a case here. Which pair is correct?",
+      "options": [
+        { "label": "الطَّالِبِ = مُضَاف إِلَيْهِ (جَرّ), جَدِيدٌ = خَبَر (رَفْع)", "correct": true },
+        { "label": "الطَّالِبِ = مَفْعُول بِهِ (نَصْب), جَدِيدٌ = فَاعِل (رَفْع)", "correct": false },
+        { "label": "الطَّالِبِ = خَبَر (رَفْع), جَدِيدٌ = مُضَاف إِلَيْهِ (جَرّ)", "correct": false }
+      ],
+      "explanation": "الطَّالِبِ is the possessor, so it is مُضَاف إِلَيْهِ, always جَرّ, no matter where the phrase sits in the sentence. جَدِيدٌ, the predicate describing قَلَمُ الطَّالِبِ, is the خَبَر, which is رَفْع."
+    },
+    {
+      "type": "complete",
+      "title": "You've parsed your first sentences",
+      "message": "رَفْع، نَصْب، جَرّ — the three cases, on words whose roles you already knew. Diptotes, the five nouns, sound-plural markers, and verb mood are still ahead — this was the regular system, the foundation the rest builds on.",
+      "finishLabel": "Finish"
+    }
+  ]
+}

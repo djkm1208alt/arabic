@@ -415,7 +415,7 @@
     "skills": [ "reading", "comprehension", "listening", "grammar" ],
     "prereqs": [ "gr:nominal-sentence" ],
     "parse": [
-      { "word": "الْأَبُ", "role": "mubtada" }
+      { "word": "الْأَبُ", "role": "mubtada", "case": "raf" }
     ]
   },
   {
@@ -436,7 +436,7 @@
     "skills": [ "reading", "comprehension", "listening", "grammar" ],
     "prereqs": [ "gr:nominal-sentence" ],
     "parse": [
-      { "word": "سَعِيدَةٌ", "role": "khabar" }
+      { "word": "سَعِيدَةٌ", "role": "khabar", "case": "raf" }
     ]
   },
   {
@@ -957,7 +957,7 @@
     "skills": [ "reading", "comprehension", "listening", "grammar" ],
     "prereqs": [ "gr:verbal-sentence" ],
     "parse": [
-      { "word": "الرَّجُلُ", "role": "fail" }
+      { "word": "الرَّجُلُ", "role": "fail", "case": "raf" }
     ]
   },
   {
@@ -979,7 +979,7 @@
     "skills": [ "reading", "comprehension", "listening", "grammar" ],
     "prereqs": [ "gr:verbal-sentence" ],
     "parse": [
-      { "word": "الْكِتَابَ", "role": "mafulbih" }
+      { "word": "الْكِتَابَ", "role": "mafulbih", "case": "nasb" }
     ]
   },
   {
@@ -1075,7 +1075,7 @@
     "skills": [ "reading", "comprehension", "listening", "grammar" ],
     "prereqs": [ "gr:idafa" ],
     "parse": [
-      { "word": "الْبَيْتِ", "role": "mudafilayhi" }
+      { "word": "الْبَيْتِ", "role": "mudafilayhi", "case": "jarr" }
     ]
   },
   {
@@ -1097,8 +1097,8 @@
     "skills": [ "reading", "comprehension", "listening", "grammar" ],
     "prereqs": [ "gr:idafa" ],
     "parse": [
-      { "word": "الرَّجُلِ", "role": "mudafilayhi" },
-      { "word": "كَبِيرٌ", "role": "khabar" }
+      { "word": "الرَّجُلِ", "role": "mudafilayhi", "case": "jarr" },
+      { "word": "كَبِيرٌ", "role": "khabar", "case": "raf" }
     ]
   },
   {
@@ -1120,8 +1120,8 @@
     "skills": [ "reading", "comprehension", "listening", "grammar" ],
     "prereqs": [ "gr:idafa" ],
     "parse": [
-      { "word": "الطَّالِبِ", "role": "mudafilayhi" },
-      { "word": "جَدِيدٌ", "role": "khabar" }
+      { "word": "الطَّالِبِ", "role": "mudafilayhi", "case": "jarr" },
+      { "word": "جَدِيدٌ", "role": "khabar", "case": "raf" }
     ]
   },
   {

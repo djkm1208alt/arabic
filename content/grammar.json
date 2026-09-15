@@ -520,5 +520,37 @@
       "gr:nominal-sentence",
       "gr:verbal-sentence"
     ]
+  },
+  {
+    "id": "gr:case-system",
+    "kind": "grammar",
+    "name": "The full case system (الإِعْرَاب) — رَفْع / نَصْب / جَرّ",
+    "level": "B2",
+    "rule": "Arabic marks a noun's grammatical role with one of three cases, each with its own ending on a regular (triptote) noun. رَفْع (raf', nominative) — ḍamma ـُ, or tanwīn ḍamma ـٌ if indefinite — marks a مُبْتَدَأ, a خَبَر, or a فَاعِل: الْأَبُ سَعِيدٌ (\"the father is happy\") — both الْأَبُ and سَعِيدٌ are رَفْع. نَصْب (naṣb, accusative) — fatḥa ـَ, or tanwīn fatḥa ـً — marks a مَفْعُول بِهِ: قَرَأْتُ الْكِتَابَ (\"I read the book\") — الْكِتَابَ is نَصْب. جَرّ (jarr, genitive) — kasra ـِ, or tanwīn kasra ـٍ — marks a مُضَاف إِلَيْهِ, or any noun after a preposition: بَابُ الْبَيْتِ (\"the door of the house\") — الْبَيْتِ is جَرّ. None of this is new: you've been producing these three endings correctly since A2 without naming the system behind them — gr:idafa's second term is always جَرّ, gr:kana's predicate is always نَصْب, and every sister of gr:inna-sisters pushes its subject to نَصْب. إِعْرَاب is simply the name for reading (or producing) the case ending that a word's role already requires. This first look covers only REGULAR nouns — ones that take the full ḍamma/fatḥa/kasra + tanwīn system. Two irregular layers exist and are covered in a later unit: diptotes (مَمْنُوع مِنَ الصَّرْف — a fatḥa instead of a kasra for جَرّ, and no tanwīn at all, for a closed set of noun shapes and all proper names of people), and the five nouns / sound plurals (أَب، أَخ، حَم، فَم، ذُو and the sound masculine plural, which use a long vowel — و/ا/ي — instead of a short vowel ending). Case marking on the VERB itself (رفع/نصب/جزم of the present tense) is a separate system, not covered here.",
+    "examples": [
+      "txt:gram-nominal-father",
+      "txt:gram-nominal-mother",
+      "txt:gram-past-vso",
+      "txt:gram-past-1sg",
+      "txt:gram-idafa-phrase",
+      "txt:gram-idafa-sentence",
+      "txt:gram-idafa-pen-student"
+    ],
+    "commonErrors": [
+      "Treating إِعْرَاب as new grammar rather than a new name for endings already being produced correctly — every case ending in this lesson's examples was already required by a rule taught back at A2/B1 (gr:idafa, gr:kana, gr:inna-sisters).",
+      "Assuming every noun uses ḍamma/fatḥa/kasra — diptotes and the five nouns/sound plurals mark case differently; this first look deliberately stays inside the regular system and names the irregular layer without teaching it yet.",
+      "Confusing a word's case (رفع/نصب/جر, a property of nouns) with a verb's mood (رفع/نصب/جزم of the present tense) — same three Arabic names, different system, not covered by this grammar point."
+    ],
+    "skills": [
+      "grammar",
+      "reading"
+    ],
+    "prereqs": [
+      "gr:idafa",
+      "gr:kana",
+      "gr:inna-sisters",
+      "gr:nominal-sentence",
+      "gr:verbal-sentence"
+    ]
   }
 ]

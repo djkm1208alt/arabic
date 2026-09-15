@@ -173,9 +173,9 @@
     {
       "id": "b2-u1", "level": "B2", "order": 1,
       "title": "The Full Case System (Iʿrāb)",
-      "blurb": "Nominative, accusative, and genitive used actively across nominal and verbal sentences. In development.",
+      "blurb": "رَفْع، نَصْب، جَرّ — naming the case endings you've been producing correctly since A2. This first look covers regular nouns only; diptotes, the five nouns, and sound-plural markers are still in development.",
       "skills": ["grammar"],
-      "status": "planned", "prereqs": ["b1-u2", "b1-u7"]
+      "status": "available", "prereqs": ["b1-u2", "b1-u7"]
     },
     {
       "id": "b2-u2", "level": "B2", "order": 2,
@@ -852,6 +852,14 @@
       "level": "B1", "skills": ["grammar", "reading"],
       "objectives": ["gr:nominal-sentence", "gr:verbal-sentence", "gr:idafa", "txt:gram-nominal-father", "txt:gram-nominal-mother", "txt:gram-past-vso", "txt:gram-past-1sg", "txt:gram-idafa-phrase", "txt:gram-idafa-sentence", "txt:gram-idafa-pen-student"],
       "status": "available", "source": "steps:b1-role-recognition"
+    },
+    {
+      "id": "b2-case-system-first-look", "unitId": "b2-u1", "order": 1,
+      "title": "The Case System — First Look (رَفْع / نَصْب / جَرّ)",
+      "blurb": "The same seven sentences from role recognition, now naming each word's case too — role and case together, exactly what إِعْرَاب means.",
+      "level": "B2", "skills": ["grammar", "reading"],
+      "objectives": ["gr:case-system", "txt:gram-nominal-father", "txt:gram-nominal-mother", "txt:gram-past-vso", "txt:gram-past-1sg", "txt:gram-idafa-phrase", "txt:gram-idafa-sentence", "txt:gram-idafa-pen-student"],
+      "status": "available", "source": "steps:b2-case-system-first-look"
     }
   ]
 }
