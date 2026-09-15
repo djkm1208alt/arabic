@@ -130,7 +130,7 @@
     {
       "id": "b1-u2", "level": "B1", "order": 2,
       "title": "Relative Clauses & Longer Sentences",
-      "blurb": "الَّذِي/الَّتِي (singular) and الَّذِينَ/اللَّاتِي (plural) for subject- and object-relative clauses; all ten sisters of إنّ, with a following noun or an attached pronoun subject. Dual relative pronouns and joining ideas into paragraphs are still in development.",
+      "blurb": "الَّذِي/الَّتِي (singular) and الَّذِينَ/اللَّاتِي (plural) for subject- and object-relative clauses; all ten sisters of إنّ, with a following noun or an attached pronoun subject; joining these into a connected paragraph. Dual relative pronouns stay deferred past B1, the same as Form IX.",
       "skills": ["grammar", "reading"],
       "status": "available", "prereqs": ["a2-u2"]
     },
@@ -828,6 +828,14 @@
       "level": "B1", "skills": ["grammar", "reading"],
       "objectives": ["lex:prt-38", "lex:prt-39", "gr:relative-clauses", "gr:attached-possessive", "gr:noun-number", "txt:gram-relclause-obj-book", "txt:gram-relclause-obj-woman", "txt:gram-relclause-pl-teachers-m", "txt:gram-relclause-pl-teachers-f"],
       "status": "available", "source": "steps:b1-relative-clauses-2"
+    },
+    {
+      "id": "b1-paragraphs", "unitId": "b1-u2", "order": 6,
+      "title": "Joining Ideas into Paragraphs",
+      "blurb": "One connected story putting the whole unit to work: a relative clause, كَانَ, three sisters of إنّ, and the connectors you already know from A2.",
+      "level": "B1", "skills": ["reading", "comprehension"],
+      "objectives": ["gr:relative-clauses", "gr:kana", "gr:inna-sisters", "txt:read-para-teacher-trip"],
+      "status": "available", "source": "steps:b1-paragraphs"
     },
     {
       "id": "b1-role-recognition", "unitId": "b1-u7", "order": 1,

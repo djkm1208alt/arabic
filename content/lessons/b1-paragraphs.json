@@ -1,0 +1,66 @@
+{
+  "id": "b1-paragraphs",
+  "unitId": "b1-u2",
+  "curriculumLessonId": "b1-paragraphs",
+  "title": "Joining Ideas into Paragraphs",
+  "level": "B1",
+  "skills": ["reading", "comprehension"],
+  "objectives": ["gr:relative-clauses", "gr:kana", "gr:inna-sisters", "txt:read-para-teacher-trip"],
+  "steps": [
+    {
+      "type": "explain",
+      "title": "Putting the whole unit to work",
+      "body": [
+        "This unit gave you a lot of separate pieces: relative clauses, all ten sisters of إنّ, resumptive and attached pronouns. Real Arabic writing doesn't use them one at a time — it strings several together into a connected story, the same way ثُمَّ and أَخِيرًا already let you connect sentences back in A2.",
+        "The paragraph ahead uses a relative clause with a nominal predicate, كَانَ, and three different sisters of إنّ (لٰكِنَّ, أَنَّ, لَعَلَّ) — all in four sentences, all built from words you already know.",
+        "Read it as a story first, not as a grammar hunt. The comprehension questions after will check what you understood, not which particle did what."
+      ],
+      "previewSymbols": ["ذَاتَ يَوْمٍ", "لٰكِنَّهُ", "أَخِيرًا"]
+    },
+    {
+      "type": "reading-practice",
+      "title": "A teacher's trip",
+      "intro": "Read the whole story once for the gist, then again for detail. Tap 🔊 to hear any line.",
+      "fromObjectives": true
+    },
+    {
+      "type": "practice-choice",
+      "title": "The main idea",
+      "prompt": "What is this paragraph mainly about?",
+      "options": [
+        { "label": "A teacher who traveled to a distant city and visited a garden", "correct": true },
+        { "label": "A book about a famous garden", "correct": false },
+        { "label": "A teacher who stayed home because of bad weather", "correct": false }
+      ],
+      "explanation": "The paragraph follows one trip start to finish: traveling to the city, the weather, hearing about the garden, and going there."
+    },
+    {
+      "type": "practice-choice",
+      "title": "A detail",
+      "prompt": "According to the paragraph, how was the weather in the evening?",
+      "options": [
+        { "label": "Warm", "correct": true },
+        { "label": "Cold", "correct": false },
+        { "label": "Rainy", "correct": false }
+      ],
+      "explanation": "لٰكِنَّهُ دَافِئٌ فِي الْمَسَاءِ — \"but it's warm in the evening,\" contrasting the cold morning."
+    },
+    {
+      "type": "practice-choice",
+      "title": "Sequence",
+      "prompt": "What did the man do right after hearing that the garden was beautiful?",
+      "options": [
+        { "label": "He went to the garden", "correct": true },
+        { "label": "He went back to the city", "correct": false },
+        { "label": "He wrote a book about it", "correct": false }
+      ],
+      "explanation": "ثُمَّ ذَهَبَ إِلَى الْحَدِيقَةِ — \"then he went to the garden,\" right after the sentence about hearing it was beautiful."
+    },
+    {
+      "type": "complete",
+      "title": "b1-u2 is complete",
+      "message": "Relative clauses, singular and plural, subject and object; all ten sisters of إنّ; and now joining them into a connected story. Dual relative pronouns stay deferred past B1, the same way Form IX did for verb forms.",
+      "finishLabel": "Finish"
+    }
+  ]
+}
