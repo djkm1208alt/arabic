@@ -83,3 +83,82 @@ Content quality, new texts / dialogues / audio / exercises / explanations / asse
 - Pronunciation *scoring* → the recorder stays "compare to model"; no score unless a genuinely reliable one exists.
 - Full UI/UX redesign → **M24**, as one deliberate pass.
 - AI-generated curriculum content → never. AI is a tutor layer, not a content factory.
+
+---
+
+## Session Handoff — 2026-09-15
+
+*For whoever picks this up next, fresh session, no prior context. (Not put in `reference/` since
+that folder is gitignored per CLAUDE.md and wouldn't survive a push — this note needs to.)*
+
+### 1. What shipped this session
+
+Started from a discovery: `main` had been silently force-pushed back to an earlier state on
+2026-09-11 ("restore project on ubuntu"), discarding 10 merged PRs. Recovered the full lost state
+onto `main` (parse/label engine, all derived verb forms, relative clauses), **restructuring** the
+derived-verb-forms lessons from 2 crammed lessons into 8 (one per form) along the way — see
+`m21b11-12_b1_derived_verb_forms_recovery_scope.md` for the full incident writeup.
+
+From there, shipped M21.7 through M21 batch 18 in sequence, all on `main`, all verified with
+`npm run content:check` / `npm run qa` / `node tools/a11y-audit.js` (each batch's own scope doc has
+the exact numbers):
+
+- **M21.7** — Grammatical role recognition (`b1-u7`), the label engine's first real content.
+- **Batch 14** — إنّ وأخواتها, first look (إِنَّ / أَنَّ / لِأَنَّ).
+- **Batch 15** — إنّ وأخواتها, completing the set (كَأَنَّ / لٰكِنَّ / لَعَلَّ / لَيْتَ).
+- **Batch 16** — إنّ وأخواتها, attached-pronoun forms (إِنَّهُ / أَنَّهَا).
+- **Batch 17** — Relative clauses, completing the set (object-relative + الَّذِينَ / اللَّاتِي).
+- **Batch 18** — Joining ideas into paragraphs, closing `b1-u2`.
+
+**`b1-u2` ("Relative Clauses & Longer Sentences") is now fully complete**: subject- and
+object-relative clauses (singular + plural), all ten sisters of إنّ (noun or attached-pronoun
+subject), and a closing paragraph-comprehension lesson. Dual relative pronouns are a deliberate,
+permanent scope exclusion (same treatment `b1-u1` gives Form IX) — not a pending item.
+
+Recurring lesson from this session, worth knowing up front: **`qa-harness.js`'s lang/dir coverage
+check fails if a lesson title or feedback string is ≥50% Arabic characters without explicit
+`lang="ar" dir="rtl"` wrapping.** Hit this twice (M21.7, batch 14) before internalizing it. Check
+any new title/explanation string's Arabic ratio before running QA, not after.
+
+### 2. Next decision points
+
+Three independent options, none started, no PR or scope doc exists for any of them yet:
+
+- **`b1-u3`** — Verbal Nouns & Participles (maṣdar, active/passive participles). `status: planned`,
+  `prereqs: ["b1-u1"]` — already satisfied, ready to scope whenever.
+- **`b1-u7` follow-up** — `b1-u7` currently has exactly one lesson (`b1-role-recognition`, M21.7).
+  `LABEL_ROLES` in `index.html` only defines 5 roles (`mubtada`/`khabar`/`fail`/`mafulbih`/
+  `mudafilayhi`); M21.6's own scope doc named extending this set (tawābiʿ, ḥāl, tamyīz, …) as a
+  future content batch's job, not the engine's.
+- **`b2-u1`** — The Full Case System (Iʿrāb) — real case-marking recognition/production at B2.
+  `status: planned`, `prereqs: ["b1-u2", "b1-u7"]` — **both now satisfied for the first time**, so
+  this is newly unblocked. This is arguably the most natural next step: it's the actual "iʿrāb"
+  milestone the whole M21.6/M21.7/batches-14-18 arc has been building toward, and M21.6's own scope
+  doc flagged it as reusing the exact same `label` mechanism with `case` now present on each
+  `parse` entry — the two-tier design was built for exactly this reuse.
+
+No lean recorded toward one over the others — genuinely the user's call, not a technical
+dependency (all three are equally unblocked).
+
+### 3. Open threads / concerns
+
+- **Two stale draft PRs on GitHub should probably be closed**, since their content shipped directly
+  to `main` instead of through them: **PR #49** (batch 14 scope — superseded by the batch 14 that
+  actually shipped) and **PR #50** (M21.7 scope — superseded likewise). Left open, not touched, in
+  case the user wants to look at them first.
+- **PR #19** (M21.9 backend foundation — Supabase schema/RLS/Stripe) is still open, unrelated to the
+  iʿrāb thread, "implemented, pending review" per its own ROADMAP row. Not touched this session.
+- **`m27_iraab_programme_scope.md` and `m27.0_parse-engine_scope.md`** are still on disk, marked
+  superseded (M21.6 shipped the same engine milestone under a different design before this history
+  was recovered) but not deleted — kept for their planning/reasoning value (the 48-lesson book
+  destination map in `m27_iraab_programme_scope.md` §3/§7 is still accurate). Worth a deliberate
+  decision at some point: archive them, or fold their still-useful content (the destination map)
+  into a doc that reflects the real M21.6/M21.7+ lineage.
+- **A `git stash` entry is still sitting on this machine**: `WIP form IV lex additions (superseded
+  by recovery)` — safe to drop (`git stash drop`) whenever, it predates the whole recovery and
+  nothing in it survived.
+- **Two known content gaps flagged during batch 18**, not blocking anything but worth remembering
+  if a future batch wants to build B1 narrative paragraphs: no broken-plural vocabulary is taught
+  yet (only sound plurals, via `gr:noun-number`), and `gr:attached-possessive` only teaches 5
+  suffixes (`ـِي`/`ـكَ`/`ـكِ`/`ـهُ`/`ـهَا`) — no 1st/2nd/3rd-person plural ("our"/"your pl."/"their")
+  suffixes anywhere yet.
