@@ -130,7 +130,7 @@
     {
       "id": "b1-u2", "level": "B1", "order": 2,
       "title": "Relative Clauses & Longer Sentences",
-      "blurb": "الَّذِي and الَّتِي for subject-relative clauses, definite and indefinite; all ten sisters of إنّ, both with a following noun and with an attached pronoun subject. Object-relative clauses and joining ideas into paragraphs are still in development.",
+      "blurb": "الَّذِي/الَّتِي (singular) and الَّذِينَ/اللَّاتِي (plural) for subject- and object-relative clauses; all ten sisters of إنّ, with a following noun or an attached pronoun subject. Dual relative pronouns and joining ideas into paragraphs are still in development.",
       "skills": ["grammar", "reading"],
       "status": "available", "prereqs": ["a2-u2"]
     },
@@ -820,6 +820,14 @@
       "level": "B1", "skills": ["grammar", "reading"],
       "objectives": ["gr:inna-sisters", "gr:attached-possessive", "txt:gram-innahu-happy", "txt:gram-annaha-heard-happy", "txt:gram-liannahu-happy-home"],
       "status": "available", "source": "steps:b1-inna-attached-pronouns"
+    },
+    {
+      "id": "b1-relative-clauses-2", "unitId": "b1-u2", "order": 5,
+      "title": "Relative Clauses — Completing the Set (الَّذِينَ)",
+      "blurb": "Object-relative clauses need a resumptive pronoun on the verb; plural human antecedents need الَّذِينَ or اللَّاتِي instead of الَّذِي/الَّتِي.",
+      "level": "B1", "skills": ["grammar", "reading"],
+      "objectives": ["lex:prt-38", "lex:prt-39", "gr:relative-clauses", "gr:attached-possessive", "gr:noun-number", "txt:gram-relclause-obj-book", "txt:gram-relclause-obj-woman", "txt:gram-relclause-pl-teachers-m", "txt:gram-relclause-pl-teachers-f"],
+      "status": "available", "source": "steps:b1-relative-clauses-2"
     },
     {
       "id": "b1-role-recognition", "unitId": "b1-u7", "order": 1,

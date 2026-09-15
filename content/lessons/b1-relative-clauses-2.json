@@ -1,0 +1,81 @@
+{
+  "id": "b1-relative-clauses-2",
+  "unitId": "b1-u2",
+  "curriculumLessonId": "b1-relative-clauses-2",
+  "title": "Relative Clauses — Completing the Set (الَّذِينَ)",
+  "level": "B1",
+  "skills": ["grammar", "reading"],
+  "objectives": ["lex:prt-38", "lex:prt-39", "gr:relative-clauses", "gr:attached-possessive", "gr:noun-number", "txt:gram-relclause-obj-book", "txt:gram-relclause-obj-woman", "txt:gram-relclause-pl-teachers-m", "txt:gram-relclause-pl-teachers-f"],
+  "steps": [
+    {
+      "type": "explain",
+      "title": "When the antecedent is the object",
+      "body": [
+        "Every relative clause you've built so far had the antecedent doing the action: الرَّجُلُ الَّذِي سَافَرَ, \"the man who traveled.\" But what about الْكِتَابُ الَّذِي قَرَأْتُهُ, \"the book that I read\"? Here الْكِتَابُ isn't doing the reading — it's what gets read. Arabic can't just say قَرَأْتُ (\"I read\") and leave it at that; the verb needs a resumptive pronoun pointing back at the antecedent: قَرَأْتُهُ, \"I read it.\" It's the exact same attached-pronoun suffix you already know from gr:attached-possessive and from إنّ's family — just landing on a verb this time instead of a noun or a particle.",
+        "الْمَرْأَةُ الَّتِي رَأَيْتُهَا سَعِيدَةٌ (\"the woman that I saw is happy\") does the same thing with ـهَا. Drop the resumptive pronoun and the sentence is simply incomplete — رَأَيْتُ alone doesn't say who or what was seen.",
+        "Separately: الَّذِي and الَّتِي are strictly singular. A group of people needs its own relative pronoun — الَّذِينَ for masculine plural, اللَّاتِي for feminine plural: الْمُعَلِّمُونَ الَّذِينَ فِي الْمَدْرَسَةِ مَشْغُولُونَ (\"the teachers who are at school are busy\"). A non-human plural still takes singular الَّتِي, unchanged from what you already know about plural agreement — الَّذِينَ/اللَّاتِي are specifically for people."
+      ],
+      "previewSymbols": ["الَّذِينَ", "اللَّاتِي", "قَرَأْتُهُ"]
+    },
+    {
+      "type": "reading-practice",
+      "title": "Four sentences, two new ideas",
+      "intro": "Read each sentence and find either the resumptive pronoun on the verb, or the plural relative pronoun. Tap 🔊 to hear any line.",
+      "fromObjectives": true
+    },
+    {
+      "type": "practice-choice",
+      "title": "The missing piece",
+      "arabicPrompt": "الْكِتَابُ الَّذِي قَرَأْتُهُ جَمِيلٌ",
+      "prompt": "What job does the ـهُ on قَرَأْتُهُ do?",
+      "options": [
+        { "label": "It points back at الْكِتَابُ — \"I read it\"", "correct": true },
+        { "label": "It marks the verb as past tense", "correct": false },
+        { "label": "It's decorative and could be dropped", "correct": false }
+      ],
+      "explanation": "الْكِتَابُ is the OBJECT of قَرَأْتُ, not its subject, so the verb needs a resumptive pronoun (ـهُ) to stand in for it — without it, the sentence would be incomplete."
+    },
+    {
+      "type": "practice-choice",
+      "title": "A familiar suffix, a new host",
+      "arabicPrompt": "الْمَرْأَةُ الَّتِي رَأَيْتُهَا سَعِيدَةٌ",
+      "prompt": "Where else have you seen a suffix like ـهَا do a similar resuming job?",
+      "options": [
+        { "label": "On إنّ's family — أَنَّهَا, \"that she/it\"", "correct": true },
+        { "label": "Nowhere — this is a brand new kind of suffix", "correct": false },
+        { "label": "Only on adjectives", "correct": false }
+      ],
+      "explanation": "The same attached-pronoun suffixes you met on nouns (gr:attached-possessive) and on إنّ's family (أَنَّهَا) now resume an object-relative clause's antecedent on a verb — one mechanic, three different hosts."
+    },
+    {
+      "type": "practice-choice",
+      "title": "More than one person",
+      "arabicPrompt": "الْمُعَلِّمُونَ الَّذِينَ فِي الْمَدْرَسَةِ مَشْغُولُونَ",
+      "prompt": "Why الَّذِينَ here instead of الَّذِي?",
+      "options": [
+        { "label": "الْمُعَلِّمُونَ is a plural, human antecedent — الَّذِينَ is required for that, not the singular الَّذِي", "correct": true },
+        { "label": "الَّذِينَ and الَّذِي are interchangeable in every context", "correct": false },
+        { "label": "الَّذِينَ is only used for non-human antecedents", "correct": false }
+      ],
+      "explanation": "الَّذِي/الَّتِي are strictly singular. A plural group of people takes الَّذِينَ (masculine) or اللَّاتِي (feminine) instead — never الَّذِي repeated."
+    },
+    {
+      "type": "practice-choice",
+      "title": "The feminine plural counterpart",
+      "arabicPrompt": "الْمُعَلِّمَاتُ اللَّاتِي فِي الْمَدْرَسَةِ مَشْغُولَاتٌ",
+      "prompt": "الْمُعَلِّمَاتُ is the sound feminine plural of مُعَلِّمَة. Which relative pronoun must match it?",
+      "options": [
+        { "label": "اللَّاتِي — the feminine plural relative pronoun", "correct": true },
+        { "label": "الَّتِي — the feminine singular relative pronoun", "correct": false },
+        { "label": "الَّذِينَ — the masculine plural relative pronoun", "correct": false }
+      ],
+      "explanation": "اللَّاتِي is الَّتِي's plural counterpart, exactly the way الَّذِينَ is to الَّذِي — both agree with a plural, human antecedent's gender and number together."
+    },
+    {
+      "type": "complete",
+      "title": "Relative clauses, completed",
+      "message": "Subject- and object-relative, singular and plural — the full working set for describing people and things with a clause. Dual relative pronouns and joining ideas into paragraphs are still ahead for this unit.",
+      "finishLabel": "Finish"
+    }
+  ]
+}
