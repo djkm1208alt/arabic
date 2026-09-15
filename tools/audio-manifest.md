@@ -7,13 +7,14 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 
 | | count |
 |---|---:|
-| Distinct targets | 700 |
-| — Tier 1 (foundation) | 184 |
-| — Tier 2 (vocabulary) | 439 |
+| Distinct targets | 756 |
+| — Tier 1 (foundation) | 214 |
+| — Tier 2 (vocabulary) | 465 |
 | — Tier 3 (stays TTS) | 77 |
-| Unique native recordings needed (Tier 1+2) | 611 |
+| Unique native recordings needed (Tier 1+2) | 667 |
 | — of those, present on disk | 0 |
-| — still missing | 611 |
+| — still missing | 667 |
+| — AI-voice files present (`audio-ai/`, see M15.6) | 0 |
 | Aliases (share another recording) | 12 |
 
 ## Tier 1 — Foundation
@@ -89,6 +90,8 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `marks/fathatayn.mp3` | فً | an | fatḥatayn on a carrier letter | recording | tts |
 | `marks/kasra.mp3` | فِ | i | kasrah on a carrier letter | recording | tts |
 | `marks/kasratayn.mp3` | فٍ | in | kasratayn on a carrier letter | recording | tts |
+| `sentences/gram-anna-heard-weather.mp3` | سَمِعْتُ أَنَّ الطَّقْسَ جَمِيلٌ الْيَوْمَ | samiʿtu anna aṭ-ṭaqsa jamīlun al-yawma | I heard that the weather is beautiful today. | recording | tts |
+| `sentences/gram-annaha-heard-happy.mp3` | سَمِعْتُ أَنَّهَا سَعِيدَةٌ | samiʿtu annahā saʿīdatun | I heard that she is happy. | recording | tts |
 | `sentences/gram-count-one.mp3` | عِنْدِي كِتَابٌ وَاحِدٌ | ʿindī kitābun wāḥidun | I have one book. | recording | tts |
 | `sentences/gram-count-three.mp3` | عِنْدِي ثَلَاثَةُ كُتُبٍ | ʿindī thalāthatu kutubin | I have three books. | recording | tts |
 | `sentences/gram-count-two.mp3` | عِنْدِي كِتَابَانِ | ʿindī kitābāni | I have two books. | recording | tts |
@@ -102,13 +105,29 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `sentences/gram-dem-book.mp3` | هَذَا كِتَابٌ | hādhā kitābun | This is a book. | recording | tts |
 | `sentences/gram-dem-girl.mp3` | هَذِهِ بِنْتٌ | hādhihi bintun | This is a girl. | recording | tts |
 | `sentences/gram-dem-the-house.mp3` | هَذَا الْبَيْتُ كَبِيرٌ | hādhā al-baytu kabīrun | This house is big. | recording | tts |
+| `sentences/gram-form10-istayqaza.mp3` | اِسْتَيْقَظَ الْوَلَدُ فِي الصَّبَاحِ | istayqaẓa al-waladu fī aṣ-ṣabāḥi | The boy woke up in the morning. | recording | tts |
+| `sentences/gram-form2-jarraba.mp3` | جَرَّبَ الرَّجُلُ الطَّعَامَ | jarraba ar-rajulu aṭ-ṭaʿāma | The man tried the food. | recording | tts |
+| `sentences/gram-form3-safara.mp3` | سَافَرَ الرَّجُلُ إِلَى الْمَدِينَةِ | sāfara ar-rajulu ilā al-madīnati | The man traveled to the city. | recording | tts |
+| `sentences/gram-form4-aghlaqa.mp3` | أَغْلَقَ الرَّجُلُ الْبَابَ | aghlaqa ar-rajulu al-bāba | The man closed the door. | recording | tts |
+| `sentences/gram-form5-takallama.mp3` | تَكَلَّمَتِ الْمَرْأَةُ بِالْعَرَبِيَّةِ | takallamati al-marʾatu bi-al-ʿarabiyyati | The woman spoke in Arabic. | recording | tts |
+| `sentences/gram-form6-takataba.mp3` | تَكَاتَبَ الطَّالِبَانِ | takātaba aṭ-ṭālibāni | The two students wrote to each other. | recording | tts |
+| `sentences/gram-form7-infataha.mp3` | اِنْفَتَحَ الْبَابُ فَجْأَةً | infataḥa al-bābu fajʾatan | The door opened suddenly. | recording | tts |
+| `sentences/gram-form8-ishtara.mp3` | اِشْتَرَتِ الطَّالِبَةُ كِتَابًا | ishtarati aṭ-ṭālibatu kitāban | The student (f.) bought a book. | recording | tts |
 | `sentences/gram-gender-bint.mp3` | الْبِنْتُ كَبِيرَةٌ | al-bintu kabīratun | The girl is big. | recording | tts |
 | `sentences/gram-idafa-pen-student.mp3` | قَلَمُ الطَّالِبِ جَدِيدٌ | qalamu aṭ-ṭālibi jadīdun | The student's pen is new. | recording | tts |
 | `sentences/gram-idafa-phrase.mp3` | بَابُ الْبَيْتِ | bābu al-bayti | the door of the house | recording | tts |
 | `sentences/gram-idafa-sentence.mp3` | بَيْتُ الرَّجُلِ كَبِيرٌ | baytu ar-rajuli kabīrun | The man's house is big. | recording | tts |
+| `sentences/gram-inna-weather.mp3` | إِنَّ الطَّقْسَ جَمِيلٌ الْيَوْمَ | inna aṭ-ṭaqsa jamīlun al-yawma | Indeed the weather is beautiful today. | recording | tts |
+| `sentences/gram-innahu-happy.mp3` | إِنَّهُ سَعِيدٌ | innahu saʿīdun | Indeed he is happy. | recording | tts |
+| `sentences/gram-kaanna-cold-weather.mp3` | كَأَنَّ الطَّقْسَ بَارِدٌ الْيَوْمَ | kaʾanna aṭ-ṭaqsa bāridun al-yawma | It's as if the weather is cold today. | recording | tts |
 | `sentences/gram-kana-1sg.mp3` | كُنْتُ فِي الْبَيْتِ | kuntu fī al-bayti | I was at home. | recording | tts |
 | `sentences/gram-kana-fem.mp3` | كَانَتِ الْمَرْأَةُ كَبِيرَةً | kānati al-marʾatu kabīratan | The woman was old. | recording | tts |
 | `sentences/gram-kana-house.mp3` | كَانَ الْبَيْتُ كَبِيرًا | kāna al-baytu kabīran | The house was big. | recording | tts |
+| `sentences/gram-laalla-beautiful-tomorrow.mp3` | لَعَلَّ الطَّقْسَ جَمِيلٌ غَدًا | laʿalla aṭ-ṭaqsa jamīlun ghadan | Perhaps the weather will be beautiful tomorrow. | recording | tts |
+| `sentences/gram-lakinna-house-garden.mp3` | الْبَيْتُ كَبِيرٌ لٰكِنَّ الْحَدِيقَةَ صَغِيرَةٌ | al-baytu kabīrun lākinna al-ḥadīqata ṣaghīratun | The house is big, but the garden is small. | recording | tts |
+| `sentences/gram-layta-warm-weather.mp3` | لَيْتَ الطَّقْسَ دَافِئٌ | layta aṭ-ṭaqsa dāfiʾun | Would that the weather were warm. | recording | tts |
+| `sentences/gram-lianna-happy-warm.mp3` | هِيَ سَعِيدَةٌ لِأَنَّ الطَّقْسَ دَافِئٌ | hiya saʿīdatun liʾanna aṭ-ṭaqsa dāfiʾun | She is happy because the weather is warm. | recording | tts |
+| `sentences/gram-liannahu-happy-home.mp3` | هُوَ سَعِيدٌ لِأَنَّهُ فِي الْبَيْتِ | huwa saʿīdun liʾannahu fī al-bayti | He is happy because he is at home. | recording | tts |
 | `sentences/gram-neg-no-water.mp3` | لَا مَاءَ فِي الْحَقِيبَةِ | lā māʾa fī al-ḥaqībati | There is no water in the bag. | recording | tts |
 | `sentences/gram-neg-not-big.mp3` | لَيْسَ الْبَيْتُ كَبِيرًا | laysa al-baytu kabīran | The house is not big. | recording | tts |
 | `sentences/gram-neg-not-book.mp3` | هَذَا لَيْسَ كِتَابًا | hādhā laysa kitāban | This is not a book. | recording | tts |
@@ -130,6 +149,9 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `sentences/gram-past-vso.mp3` | ذَهَبَ الرَّجُلُ إِلَى الْمَدْرَسَةِ | dhahaba ar-rajulu ilā al-madrasati | The man went to school. | recording | tts |
 | `sentences/gram-poss-her-bag.mp3` | حَقِيبَتُهَا جَمِيلَةٌ | ḥaqībatuhā jamīlatun | Her bag is beautiful. | recording | tts |
 | `sentences/gram-poss-my-book.mp3` | كِتَابِي جَدِيدٌ | kitābī jadīdun | My book is new. | recording | tts |
+| `sentences/gram-poss-our-house.mp3` | بَيْتُنَا كَبِيرٌ | baytunā kabīrun | Our house is big. | recording | tts |
+| `sentences/gram-poss-their-school.mp3` | مَدْرَسَتُهُمْ قَرِيبَةٌ | madrasatuhum qarībatun | Their school is near. | recording | tts |
+| `sentences/gram-poss-your-book-pl.mp3` | أَيْنَ كِتَابُكُمْ؟ | ayna kitābukum? | Where is your book? | recording | tts |
 | `sentences/gram-poss-your-house.mp3` | بَيْتُكَ كَبِيرٌ | baytuka kabīrun | Your house is big. | recording | tts |
 | `sentences/gram-prep-from-city.mp3` | هُوَ مِنَ الْمَدِينَةِ | huwa mina al-madīnati | He is from the city. | recording | tts |
 | `sentences/gram-prep-in-bag.mp3` | الْكِتَابُ فِي الْحَقِيبَةِ | al-kitābu fī al-ḥaqībati | The book is in the bag. | recording | tts |
@@ -137,6 +159,14 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `sentences/gram-price-hundred.mp3` | هَذِهِ السَّاعَةُ بِمِائَةِ رِيَالٍ | hādhihi as-sāʿatu bi-miʾati riyālin | This watch is for a hundred riyals. | recording | tts |
 | `sentences/gram-price-ten.mp3` | هَذَا الْكِتَابُ بِعَشَرَةِ دُولَارَاتٍ | hādhā al-kitābu bi-ʿasharati dūlārātin | This book is for ten dollars. | recording | tts |
 | `sentences/gram-price-twenty.mp3` | هَذَا الْقَلَمُ بِعِشْرِينَ دِينَارًا | hādhā al-qalamu bi-ʿishrīna dīnāran | This pen is for twenty dinars. | recording | tts |
+| `sentences/gram-relclause-indefinite.mp3` | رَأَيْتُ طَالِبًا يَدْرُسُ الْعَرَبِيَّةَ | raʾaytu ṭāliban yadrusu al-ʿarabiyyata | I saw a student who studies Arabic. | recording | tts |
+| `sentences/gram-relclause-istayqaza.mp3` | هَذَا هُوَ الْوَلَدُ الَّذِي اِسْتَيْقَظَ فِي الصَّبَاحِ | hādhā huwa al-waladu alladhī istayqaẓa fī aṣ-ṣabāḥi | This is the boy who woke up in the morning. | recording | tts |
+| `sentences/gram-relclause-obj-book.mp3` | الْكِتَابُ الَّذِي قَرَأْتُهُ جَمِيلٌ | al-kitābu alladhī qaraʾtuhu jamīlun | The book that I read is beautiful. | recording | tts |
+| `sentences/gram-relclause-obj-woman.mp3` | الْمَرْأَةُ الَّتِي رَأَيْتُهَا سَعِيدَةٌ | al-marʾatu allatī raʾaytuhā saʿīdatun | The woman that I saw is happy. | recording | tts |
+| `sentences/gram-relclause-pl-teachers-f.mp3` | الْمُعَلِّمَاتُ اللَّاتِي فِي الْمَدْرَسَةِ مَشْغُولَاتٌ | al-muʿallimātu allātī fī al-madrasati mashghūlātun | The [female] teachers who are at school are busy. | recording | tts |
+| `sentences/gram-relclause-pl-teachers-m.mp3` | الْمُعَلِّمُونَ الَّذِينَ فِي الْمَدْرَسَةِ مَشْغُولُونَ | al-muʿallimūna alladhīna fī al-madrasati mashghūlūna | The teachers who are at school are busy. | recording | tts |
+| `sentences/gram-relclause-safara.mp3` | هَذَا هُوَ الرَّجُلُ الَّذِي سَافَرَ إِلَى الْمَدِينَةِ | hādhā huwa ar-rajulu alladhī sāfara ilā al-madīnati | This is the man who traveled to the city. | recording | tts |
+| `sentences/gram-relclause-takallamat.mp3` | هَذِهِ هِيَ الْمَرْأَةُ الَّتِي تَتَكَلَّمُ الْعَرَبِيَّةَ | hādhihi hiya al-marʾatu allatī tatakallamu al-ʿarabiyyata | This is the woman who speaks Arabic. | recording | tts |
 | `sentences/gram-root-jadid.mp3` | بَيْتُ جَدِّي جَدِيدٌ | baytu jaddī jadīdun | My grandfather's house is new. | recording | tts |
 | `sentences/gram-root-katab.mp3` | هَذَا كِتَابٌ مِنَ الْمَكْتَبَةِ | hādhā kitābun mina al-maktabati | This is a book from the library. | recording | tts |
 | `sentences/gram-root-khamis.mp3` | الْخَمِيسُ هُوَ الْيَوْمُ الْخَامِسُ | al-khamīsu huwa al-yawmu al-khāmisu | Thursday is the fifth day. | recording | tts |
@@ -164,6 +194,7 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `sentences/read-i-student.mp3` | أَنَا طَالِبٌ | anā ṭālibun | I am a student. | recording | tts |
 | `sentences/read-not-cold-today.mp3` | لَيْسَ الطَّقْسُ بَارِدًا الْيَوْمَ | laysa aṭ-ṭaqsu bāridan al-yawma | The weather is not cold today. | recording | tts |
 | `sentences/read-para-garden.mp3` | ذَاتَ يَوْمٍ، كَانَ الطَّقْسُ جَمِيلًا. بَيْنَمَا كَانَ الرَّجُلُ فِي الْحَدِيقَةِ، رَأَى طَائِرَةً فِي السَّمَاءِ فَجْأَةً. طَبْعًا، كَانَ سَعِيدًا. | dhāta yawmin, kāna aṭ-ṭaqsu jamīlan. baynamā kāna ar-rajulu fī al-ḥadīqati, raʾā ṭāʾiratan fī as-samāʾi fajʾatan. ṭabʿan, kāna saʿīdan. | One day, the weather was beautiful. While the man was in the garden, he suddenly saw a plane in the sky. Of course, he was happy. | recording | tts |
+| `sentences/read-para-teacher-trip.mp3` | ذَاتَ يَوْمٍ سَافَرَ الرَّجُلُ الَّذِي هُوَ مُعَلِّمٌ إِلَى مَدِينَةٍ بَعِيدَةٍ. كَانَ الطَّقْسُ بَارِدًا فِي الصَّبَاحِ، لٰكِنَّهُ دَافِئٌ فِي الْمَسَاءِ. سَمِعَ الرَّجُلُ أَنَّ الْحَدِيقَةَ جَمِيلَةٌ، ثُمَّ ذَهَبَ إِلَى الْحَدِيقَةِ. أَخِيرًا، لَعَلَّهُ سَعِيدٌ الْآنَ. | dhāta yawmin sāfara ar-rajulu alladhī huwa muʿallimun ilā madīnatin baʿīdatin. kāna aṭ-ṭaqsu bāridan fī aṣ-ṣabāḥi, lākinnahu dāfiʾun fī al-masāʾi. samiʿa ar-rajulu anna al-ḥadīqata jamīlatun, thumma dhahaba ilā al-ḥadīqati. akhīran, laʿallahu saʿīdun al-āna. | One day, the man who is a teacher traveled to a distant city. The weather was cold in the morning, but it's warm in the evening. The man heard that the garden was beautiful, then he went to the garden. Finally, perhaps he is happy now. | recording | tts |
 | `sentences/read-para-trip.mp3` | أَوَّلًا، اشْتَرَى الطَّالِبُ تَذْكِرَةً. ثُمَّ سَافَرَ بِالْقِطَارِ إِلَى الْمَدِينَةِ. أَثْنَاءَ الرِّحْلَةِ، قَرَأَ كِتَابًا. أَخِيرًا، وَصَلَ الْقِطَارُ، وَرَجَعَ الطَّالِبُ إِلَى الْبَيْتِ. كَانَ سَعِيدًا. | awwalan, ishtarā aṭ-ṭālibu tadhkiratan. thumma sāfara bi-al-qiṭāri ilā al-madīnati. athnāʾa ar-riḥlati, qaraʾa kitāban. akhīran, waṣala al-qiṭāru, wa-rajaʿa aṭ-ṭālibu ilā al-bayti. kāna saʿīdan. | First, the student bought a ticket. Then he traveled by train to the city. During the trip, he read a book. Finally, the train arrived, and the student returned home. He was happy. | recording | tts |
 | `sentences/read-parents-office-home.mp3` | الْأَبُ فِي الْمَكْتَبِ وَالْأُمُّ فِي الْبَيْتِ | al-abu fī al-maktabi wa-al-ummu fī al-bayti | The father is in the office and the mother is at home. | recording | tts |
 | `sentences/read-room-clean.mp3` | الْغُرْفَةُ نَظِيفَةٌ | al-ghurfatu naẓīfatun | The room is clean. | recording | tts |
@@ -218,6 +249,16 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `sentences/num-10-ex.mp3` | عَشَرَة أَيَّام فِي الْأُسْبُوعَيْن. |  | Ten days in two weeks. | recording | tts |
 | `sentences/peo-11-ex.mp3` | هَذَا صَدِيقِي. |  | This is my friend. | recording | tts |
 | `sentences/pla-06-ex.mp3` | نَذْهَبُ إِلَى الْمَطْعَم. |  | We are going to the restaurant. | recording | tts |
+| `sentences/prt-30-ex.mp3` | هَذَا هُوَ الرَّجُلُ الَّذِي سَافَرَ إِلَى الْمَدِينَةِ. |  | This is the man who traveled to the city. | recording | tts |
+| `sentences/prt-31-ex.mp3` | هَذِهِ هِيَ الْمَرْأَةُ الَّتِي تَتَكَلَّمُ الْعَرَبِيَّةَ. |  | This is the woman who speaks Arabic. | recording | tts |
+| `sentences/prt-32-ex.mp3` | إِنَّ الطَّقْسَ جَمِيلٌ الْيَوْمَ. |  | Indeed the weather is beautiful today. | recording | tts |
+| `sentences/prt-33-ex.mp3` | سَمِعْتُ أَنَّ الطَّقْسَ جَمِيلٌ الْيَوْمَ. |  | I heard that the weather is beautiful today. | recording | tts |
+| `sentences/prt-34-ex.mp3` | كَأَنَّ الطَّقْسَ بَارِدٌ الْيَوْمَ. |  | It's as if the weather is cold today. | recording | tts |
+| `sentences/prt-35-ex.mp3` | الْبَيْتُ كَبِيرٌ لٰكِنَّ الْحَدِيقَةَ صَغِيرَةٌ. |  | The house is big, but the garden is small. | recording | tts |
+| `sentences/prt-36-ex.mp3` | لَعَلَّ الطَّقْسَ جَمِيلٌ غَدًا. |  | Perhaps the weather will be beautiful tomorrow. | recording | tts |
+| `sentences/prt-37-ex.mp3` | لَيْتَ الطَّقْسَ دَافِئٌ. |  | Would that the weather were warm. | recording | tts |
+| `sentences/prt-38-ex.mp3` | الْمُعَلِّمُونَ الَّذِينَ فِي الْمَدْرَسَةِ مَشْغُولُونَ. |  | The teachers who are at school are busy. | recording | tts |
+| `sentences/prt-39-ex.mp3` | الْمُعَلِّمَاتُ اللَّاتِي فِي الْمَدْرَسَةِ مَشْغُولَاتٌ. |  | The [female] teachers who are at school are busy. | recording | tts |
 | `sentences/sch-04-ex.mp3` | أَنَا طَالِب فِي الْمَدْرَسَة. |  | I am a student at the school. | recording | tts |
 | `sentences/sch-10-ex.mp3` | أَنْهَيْتُ وَاجِبِي. |  | I finished my homework. | recording | tts |
 | `sentences/ver-01-ex.mp3` | ذَهَبَ إِلَى الْمَدْرَسَة. |  | He went to school. | recording | tts |
@@ -244,6 +285,9 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `sentences/ver-27-ex.mp3` | وَصَلَ الْقِطَار. |  | The train arrived. | recording | tts |
 | `sentences/ver-28-ex.mp3` | رَجَعَ إِلَى الْبَيْت. |  | He returned home. | recording | tts |
 | `sentences/ver-29-ex.mp3` | هُوَ يَفْعَلُ الْوَاجِب. |  | He is doing the homework. | recording | tts |
+| `sentences/ver-31-ex.mp3` | اِنْفَتَحَ الْبَابُ. |  | The door opened (by itself). | recording | tts |
+| `sentences/ver-32-ex.mp3` | اِنْغَلَقَ الْبَابُ. |  | The door closed (by itself). | recording | tts |
+| `sentences/ver-33-ex.mp3` | تَكَاتَبَ الطَّالِبَانِ. |  | The two students wrote to each other. | recording | tts |
 | `words/adj-01.mp3` | كَبِير | kabīr | big | recording | tts |
 | `words/adj-01f.mp3` | كَبِيرَة | kabīrah | big (feminine) | recording | tts |
 | `words/adj-02.mp3` | صَغِير | ṣaghīr | small | recording | tts |
@@ -489,6 +533,16 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `words/prt-27.mp3` | أَثْنَاءَ | athnāʾa | during | recording | tts |
 | `words/prt-28.mp3` | بَيْنَمَا | baynamā | while | recording | tts |
 | `words/prt-29.mp3` | كُلّ | kull | every / each / all | recording | tts |
+| `words/prt-30.mp3` | الَّذِي | alladhī | who / which / that (masculine) | recording | tts |
+| `words/prt-31.mp3` | الَّتِي | allatī | who / which / that (feminine) | recording | tts |
+| `words/prt-32.mp3` | إِنَّ | inna | indeed / truly | recording | tts |
+| `words/prt-33.mp3` | أَنَّ | anna | that | recording | tts |
+| `words/prt-34.mp3` | كَأَنَّ | kaʾanna | as if | recording | tts |
+| `words/prt-35.mp3` | لٰكِنَّ | lākinna | but (emphatic) | recording | tts |
+| `words/prt-36.mp3` | لَعَلَّ | laʿalla | perhaps | recording | tts |
+| `words/prt-37.mp3` | لَيْتَ | layta | would that / I wish | recording | tts |
+| `words/prt-38.mp3` | الَّذِينَ | alladhīna | who / which / that (masculine plural) | recording | tts |
+| `words/prt-39.mp3` | اللَّاتِي | allātī | who / which / that (feminine plural) | recording | tts |
 | `words/sch-01.mp3` | مَدْرَسَة | madrasah | school | recording | tts |
 | `words/sch-02.mp3` | مُعَلِّم | muʿallim | teacher (male) | recording | tts |
 | `words/sch-03.mp3` | مُعَلِّمَة | muʿallimah | teacher (female) | recording | tts |
@@ -624,6 +678,9 @@ This tool never creates audio. Today the app speaks **all** of these with browse
 | `words/ver-28.mp3` | رَجَعَ | rajaʿa | to return | recording | tts |
 | `words/ver-29.mp3` | فَعَلَ | faʿala | to do / to make | recording | tts |
 | `words/ver-30.mp3` | جَرَّبَ | jarraba | to try / to try on | recording | tts |
+| `words/ver-31.mp3` | اِنْفَتَحَ | infataḥa | to open (by itself) | recording | tts |
+| `words/ver-32.mp3` | اِنْغَلَقَ | inghalaqa | to close (by itself) | recording | tts |
+| `words/ver-33.mp3` | تَكَاتَبَ | takātaba | to correspond / to write to each other | recording | tts |
 | `words/wea-01.mp3` | حَارّ | ḥārr | hot (weather) | recording | tts |
 | `words/wea-02.mp3` | بَارِد | bārid | cold (weather) | recording | tts |
 | `words/wea-03.mp3` | دَافِئ | dāfiʾ | warm | recording | tts |

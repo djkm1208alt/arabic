@@ -2,23 +2,27 @@
 
 ## Current status (honest)
 
-**There are no recorded audio files in this project.** Every Arabic letter,
-syllable, word, and sentence the app pronounces is spoken by the browser's
-built-in speech-synthesis engine (TTS). TTS is a functional stand-in — it is
-**not** professionally recorded native-speaker audio, and the app does not claim
-that it is.
+**There are no recorded (human) or AI-voice audio files in this project.**
+Every Arabic letter, syllable, word, and sentence the app pronounces is spoken
+by the browser's built-in speech-synthesis engine (live TTS). Live TTS is a
+functional stand-in — it is **not** professionally recorded native-speaker
+audio, and (once M15.6's AI-voice tier has real files) it will not be
+AI-generated speech either; the app never claims a tier it hasn't earned.
 
-M13 added the *plumbing* for native audio, not the audio:
+M13 added the *plumbing* for native audio; M15.6 added a second, AI-generated
+tier alongside it (see "AI-generated audio (M15.6)" below) — neither has real
+audio yet:
 
 | | |
 |---|---|
-| Recorded audio files in repo | **0** |
-| Audio targets the app can play | **359** (all via TTS today) |
-| — of those, candidates for native recordings (Tier 1 + 2) | **281** rows (98 + 183) → **275** unique recordings + 6 aliases |
-| — Tier 3 (consonant × harakah drill grid) | **78** — stays TTS by decision |
-| Roadmap line "Professionally recorded native-speaker audio" | still **○ not done** — flips only when real recordings ship |
+| Recorded (human) audio files in repo | **0** |
+| AI-voice audio files in repo (`audio-ai/`, M15.6) | **0** |
+| Audio targets the app can play | **756** (all via TTS today) |
+| — of those, candidates for native/AI recordings (Tier 1 + 2) | **667** unique + 12 aliases |
+| — Tier 3 (consonant × harakah drill grid) | **77** — stays TTS by decision |
+| Roadmap line "Professionally recorded native-speaker audio" | still **○ not done** — flips only when real human recordings ship |
 
-*(Figures above regenerate with `node tools/build-audio-manifest.js` — see `tools/audio-manifest.md` for the always-current numbers; these were last refreshed alongside M15.5, since M14–M16's content growth had drifted them from AUDIO.md's original M13-era count.)*
+*(Figures above regenerate with `node tools/build-audio-manifest.js` — see `tools/audio-manifest.md` for the always-current numbers; these were last refreshed alongside M15.6, since M14–M21's content growth had drifted them from AUDIO.md's M15.5-era count.)*
 
 The authoritative, always-current inventory is generated:
 
@@ -40,33 +44,43 @@ output.
 ## How the audio system works
 
 Every playback in the app goes through one function, `playArabicAudio(text)`
-(directly or via the `buildAudioControl()` "Listen" widget). Since M13 it:
+(directly or via the `buildAudioControl()` "Listen" widget). Since M13, extended
+by M15.6, it tries three tiers in order:
 
-1. asks `resolveRecordedAudio(text)` for a recording URL;
-2. if it gets one, plays that file — and if the file is missing or won't play,
-   **falls back to TTS** for the same text, with no error shown to the learner;
-3. if it gets `null`, uses TTS directly.
+1. asks `resolveRecordedAudio(text)` for a **human recording** URL;
+2. if none, asks `resolveAiVoiceAudio(text)` for an **AI-voice** (pre-rendered
+   neural TTS, shipped as a file — see "AI-generated audio (M15.6)" below) URL;
+3. plays whichever it got — and if the file is missing or won't play, **falls
+   back to live TTS** for the same text, with no error shown to the learner;
+4. if both resolvers return `null`, uses live TTS directly.
 
 `resolveRecordedAudio()` looks the (normalised) Arabic string up in
 `RECORDED_AUDIO_MANIFEST` — an auto-generated map of `Arabic string → file stem
 under audio/`. It returns `null` whenever `RECORDED_AUDIO_ENABLED` is `false`.
+`resolveAiVoiceAudio()` is the exact same shape, one tier down: `AI_VOICE_MANIFEST`
+→ file stem under `audio-ai/`, gated by `AI_VOICE_ENABLED`.
 
 **M15.5** added two learner-facing pieces on top of this, neither requiring any
 code change to go live once real recordings land:
 
-- **`buildAudioControl()`** now shows a small "🎙️ Recorded" / "🔈 Synthesized" tag
-  next to every Listen control, computed by `audioSourceKind(text)` (the exact
-  same resolution `playArabicAudio()` itself uses, so it can never claim
-  "recorded" for something that will actually play as TTS). With
-  `RECORDED_AUDIO_ENABLED = false`, every tag reads "Synthesized" today — that
-  is the accurate state, not a placeholder.
+- **`buildAudioControl()`** shows a small provenance tag next to every Listen
+  control, computed by `audioSourceKind(text)` (the exact same resolution
+  `playArabicAudio()` itself uses, so it can never claim a tier that isn't what
+  will actually play): "🎙️ Recorded" for a human recording, "🤖 AI Voice" for
+  M15.6's pre-rendered neural TTS, "🔈 Synthesized" for live on-device TTS. With
+  both `RECORDED_AUDIO_ENABLED` and `AI_VOICE_ENABLED` at `false`, every tag
+  reads "Synthesized" today — that is the accurate state, not a placeholder.
+  **"Recorded" is reserved for genuine human native-speaker audio and must
+  never be used for AI-generated speech, however good it sounds** — that is the
+  whole reason the AI-voice tier is a separate manifest/flag/badge rather than
+  reusing the recorded one.
 - **`initRecorder(container, { referenceText })`** (used by the `listen-repeat`
   lesson step) gained a "🆚 Compare with model" button once a recording exists:
   it plays the reference pronunciation, then the learner's own recording, back
   to back. Still strictly "compare to model" — it introduces no score.
 
-**Ship state:** `RECORDED_AUDIO_ENABLED = false` and there is no `audio/`
-directory, so step 1 always returns `null` and playback is 100% TTS — byte-for-
+**Ship state:** `RECORDED_AUDIO_ENABLED` and `AI_VOICE_ENABLED` are both `false`
+and neither `audio/` nor `audio-ai/` exists, so playback is 100% live TTS — byte-for-
 byte the same behaviour as before M13.
 
 ## Adding real recordings later (go-live)
@@ -105,6 +119,50 @@ coverage.
 - **Optional:** slower takes for the ~14 lesson sentences as
   `audio/sentences/<id>-slow.mp3` (the "🐢 Slower" button will use `playbackRate`
   on the normal take otherwise).
+
+## AI-generated audio (M15.6)
+
+A second, separate go-live path, alongside — not instead of — human recordings.
+Full design in [`m15.6_ai_generated_audio_scope.md`](m15.6_ai_generated_audio_scope.md).
+
+**Why it's a separate tier, not just files dropped into `audio/`:** the
+"Recorded" badge means a genuine human native speaker. Neural TTS, however
+good, is not that. Reusing `RECORDED_AUDIO_MANIFEST`/`RECORDED_AUDIO_ENABLED`
+for AI-generated files would make that badge lie. So AI voice gets its own
+manifest (`AI_VOICE_MANIFEST`), flag (`AI_VOICE_ENABLED`), base directory
+(`audio-ai/`), and badge ("🤖 AI Voice") — see "How the audio system works"
+above for the full three-tier resolution order.
+
+**Generation is local and offline**, not a runtime call: `openbmb/VoxCPM2`
+(Apache-2.0, commercial-safe, 30 languages including Arabic) run via
+`tools/generate-ai-audio.py` on your own machine (needs Python +
+`transformers`/`torch`/`ffmpeg` — not part of this repo's Node toolchain, and
+not available in every dev environment). The script reads
+`tools/audio-manifest.json` for the word list — never a hand-maintained one —
+and writes files matching the same format spec as human recordings (§"Recording
+spec" above), so a real recording can replace an AI-voice file later with zero
+format drift.
+
+**Go-live, once files exist:**
+
+1. Generate a batch: `python tools/generate-ai-audio.py --pilot` (or `--tier 1`,
+   `--types letter-name,word`, etc. — see the script's own `--help`).
+2. **Listen-review every file before committing.** Non-negotiable — confirm
+   neutral MSA register, correct ḥarakāt/case-ending pronunciation, and (for
+   isolated-letter targets specifically) that the model produced the letter's
+   *sound* and not its *name* or an unnatural mumble on the fragment input.
+   A file that fails this check does not get committed; its target keeps using
+   live synthesis.
+3. Drop reviewed files into `audio-ai/` at the repo root (same relative paths
+   the manifest already specifies under `audio/`, e.g. `audio-ai/words/sch-06.mp3`).
+4. `node tools/build-audio-manifest.js` — reports AI-voice coverage separately
+   from recorded coverage.
+5. Flip `AI_VOICE_ENABLED = true` in `index.html` once a meaningful batch exists.
+6. Cache for offline (optional): extend the same `sw.js` step as `audio/`.
+
+Stage generation the same way recordings can stage (§"Adding real recordings
+later" above) — partial coverage is fine, each target falls back to live
+synthesis independently until its own file exists and the flag is on.
 
 ## Tier 3 — the consonant × harakah grid
 
