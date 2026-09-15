@@ -943,6 +943,41 @@
     .rtl-inline { font-family: var(--font-arabic); direction: rtl; unicode-bidi: embed; font-size: 17px; }
     .voice-warning { color: var(--gold); font-size: 12.5px; margin: 6px 0 4px; display: none; }
 
+    /* ---------- Alphabet: letter detail modal ---------- */
+    .letter-modal-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(20, 18, 12, 0.55);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 16px;
+        padding-top: max(20px, env(safe-area-inset-top, 0px));
+        padding-bottom: max(20px, env(safe-area-inset-bottom, 0px));
+        z-index: 200;
+    }
+    .letter-modal-overlay[hidden] { display: none; }
+    .letter-modal {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 480px;
+        max-height: 100%;
+        overflow-y: auto;
+        outline: none;
+        border-radius: var(--radius-lg);
+    }
+    .letter-modal-close-row {
+        position: sticky;
+        top: 0;
+        display: flex;
+        justify-content: flex-end;
+        padding-bottom: 8px;
+        z-index: 1;
+    }
+    .letter-modal-close { box-shadow: var(--shadow); }
+    body.letter-modal-open { overflow: hidden; }
+
     /* ---------- M20.9: Alphabet articulation diagrams ---------- */
     .articulation-toggle, .overview-toggle {
         margin-top: 16px;
@@ -1520,7 +1555,14 @@
             </div>
         </details>
         <div class="alphabet-grid" id="alphabetGrid"></div>
-        <div class="letter-detail" id="letterDetail"></div>
+        <div class="letter-modal-overlay" id="letterModalOverlay" hidden>
+            <div class="letter-modal" id="letterModalDialog" role="dialog" aria-modal="true" aria-label="Letter detail" tabindex="-1">
+                <div class="letter-modal-close-row">
+                    <button type="button" class="pill next-btn letter-modal-close" id="letterModalClose" aria-label="Close letter detail">✕ Close</button>
+                </div>
+                <div class="letter-detail" id="letterDetail"></div>
+            </div>
+        </div>
     </section>
 
     <!-- ================= VOCABULARY (existing flashcard/quiz engine) ================= -->
@@ -2912,9 +2954,7 @@ function renderArticulationZoneList() {
 }
 function jumpToArticulationLetter(id) {
     if (currentView !== "alphabet") setView("alphabet");
-    selectLetter(id);
-    const detail = document.getElementById("letterDetail");
-    if (detail) detail.scrollIntoView({ behavior: "smooth", block: "start" });
+    openLetterModal(id);
 }
 
 /* ---- per-letter diagram: one marked-up photo + caption per letter ---- */
@@ -7848,6 +7888,7 @@ function setView(id, opts) {
         opts = { fromHash: false };
     }
     currentView = id;
+    if (id !== "alphabet") closeLetterModal(); // never leave body scroll-locked after navigating away with the letter modal open
 
     VIEW_IDS.forEach(v => {
         document.getElementById("view-" + v).hidden = v !== id;
@@ -8579,7 +8620,7 @@ function renderAlphabetGrid() {
         const btn = document.createElement("button");
         btn.className = "letter-tile";
         btn.innerHTML = `<span class="letter-tile-ar" lang="ar" dir="rtl">${letter.isolated}</span><span class="letter-tile-translit">${letter.translit}</span>`;
-        btn.onclick = () => selectLetter(letter.id);
+        btn.onclick = () => openLetterModal(letter.id);
         grid.appendChild(btn);
     });
     document.getElementById("articulationOverviewFrame").innerHTML = renderArticulationOverview();
@@ -8640,6 +8681,65 @@ function selectLetter(id) {
     }
     updateVoiceWarning();
 }
+
+/* Alphabet letter detail modal — covers the grid instead of pushing it down
+   on mobile. selectLetter() itself is untouched; this just shows/hides the
+   overlay around #letterDetail, locks background scroll, and manages focus
+   (moves in on open, traps Tab inside while open, returns to the triggering
+   tile on close). See refactor_alphabet_detail_modal_scope.md. */
+let letterModalTriggerEl = null;
+
+function openLetterModal(id) {
+    selectLetter(id);
+    letterModalTriggerEl = document.activeElement;
+    const overlay = document.getElementById("letterModalOverlay");
+    overlay.hidden = false;
+    document.body.classList.add("letter-modal-open");
+    document.getElementById("letterModalDialog").focus();
+}
+
+function closeLetterModal() {
+    const overlay = document.getElementById("letterModalOverlay");
+    if (overlay.hidden) return;
+    overlay.hidden = true;
+    document.body.classList.remove("letter-modal-open");
+    if (letterModalTriggerEl && document.body.contains(letterModalTriggerEl)) {
+        letterModalTriggerEl.focus();
+    }
+    letterModalTriggerEl = null;
+}
+
+function isLetterModalOpen() {
+    const overlay = document.getElementById("letterModalOverlay");
+    return overlay && !overlay.hidden;
+}
+
+document.getElementById("letterModalClose").onclick = closeLetterModal;
+document.getElementById("letterModalOverlay").addEventListener("click", (event) => {
+    if (event.target.id === "letterModalOverlay") closeLetterModal();
+});
+document.addEventListener("keydown", (event) => {
+    if (!isLetterModalOpen()) return;
+    if (event.key === "Escape") {
+        event.preventDefault();
+        closeLetterModal();
+        return;
+    }
+    if (event.key === "Tab") {
+        const dialog = document.getElementById("letterModalDialog");
+        const focusable = dialog.querySelectorAll('button:not([disabled]), [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+        if (focusable.length === 0) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+            event.preventDefault();
+            last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+            event.preventDefault();
+            first.focus();
+        }
+    }
+});
 
 /* ============================================================
    PROGRESS DASHBOARD
