@@ -9,7 +9,7 @@ This is a reference, not a redesign. It documents what the app already does and 
 The six widths this project tests at, matching real device classes already in use throughout QA:
 
 | Width | Represents |
-|---|---|
+| --- | --- |
 | 320px | Smallest common phone (iPhone SE class) |
 | 375px | Standard phone |
 | 390px | Modern iPhone |
@@ -24,7 +24,7 @@ Checked via `tools/a11y-audit.js` (touch targets, contrast) and `tools/qa-harnes
 All colors are CSS custom properties on `:root` (light) and `[data-theme="dark"]` (dark) — see `index.html`'s `:root` block. Contrast is measured by **alpha-compositing each element's own background down through its ancestors to the real rendered backdrop**, not a raw `rgba()` read — a flat read produced a false low-contrast result earlier in this project's QA history when a layer had partial alpha. The same technique also waits past the app's 0.3s theme-transition CSS before measuring, for the same reason (a mid-transition read is not the settled color).
 
 | Token | Light | Dark | Role |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | `--bg-1` / `--bg-2` | `#f6f2e9` / `#eee6d3` | `#14181a` / `#0d1011` | Page backdrop |
 | `--ink` | `#21201c` | `#f1ede2` | Primary text |
 | `--ink-soft` | `#6b6459` | `#a5a196` | Muted/secondary text |
