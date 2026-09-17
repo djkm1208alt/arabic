@@ -1,0 +1,81 @@
+{
+  "id": "b2-maful-fihi-maahu",
+  "unitId": "b2-u1",
+  "curriculumLessonId": "b2-maful-fihi-maahu",
+  "title": "Two Objects Without a Preposition (فِيهِ، مَعَهُ)",
+  "level": "B2",
+  "skills": ["grammar", "reading"],
+  "objectives": ["gr:maful-fihi", "gr:maful-maahu", "txt:gram-maful-fihi-sabahan", "txt:gram-maful-fihi-laylan", "txt:gram-maful-maahu-sadiqan", "txt:gram-maful-maahu-ibnahu"],
+  "steps": [
+    {
+      "type": "explain",
+      "title": "Two of the five accusative \"objects\"",
+      "body": [
+        "مَفْعُول بِهِ (b1-u7) is the most common of a family of five accusative \"object\" roles. This lesson covers two more.",
+        "مَفْعُول فِيهِ names WHEN or WHERE something happened, with no preposition written but \"فِي\" implied: سَافَرْتُ صَبَاحًا (\"I traveled in the morning\") — صَبَاحًا is accusative even with no فِي in the sentence. دَرَسَ الطَّالِبُ لَيْلًا (\"the student studied at night\") follows the same pattern.",
+        "مَفْعُول مَعَهُ names someone or something that came along with an action without doing it themselves, after a وَ that means \"along with\" (وَاو الْمَعِيَّة), not the plain \"and\": سَافَرْتُ وَصَدِيقًا (\"I traveled along with a friend\") — the friend didn't travel on his own; he came along. جَلَسَ الرَّجُلُ وَابْنَهُ (\"the man sat along with his son\") shows the accusative even on a noun with an attached pronoun (اِبْنَهُ, not اِبْنُهُ)."
+      ],
+      "previewSymbols": ["صَبَاحًا / لَيْلًا", "وَصَدِيقًا"]
+    },
+    {
+      "type": "reading-practice",
+      "title": "Four sentences, two more accusative roles",
+      "intro": "Read all four and notice what each accusative word is doing — naming a time, or naming who came along. Tap 🔊 to hear any line.",
+      "fromObjectives": true
+    },
+    {
+      "type": "practice-choice",
+      "title": "مَفْعُول فِيهِ — a time, with no فِي written",
+      "arabicPrompt": "سَافَرْتُ صَبَاحًا",
+      "prompt": "صَبَاحًا is accusative here, with no preposition before it. Why?",
+      "options": [
+        { "label": "It's مَفْعُول فِيهِ — a time word implying \"في الصباح\" without writing فِي", "correct": true },
+        { "label": "It's مَفْعُول بِهِ — the direct object of سَافَرْتُ", "correct": false },
+        { "label": "It's a mistake — a preposition is missing", "correct": false }
+      ],
+      "explanation": "مَفْعُول فِيهِ (also called ظَرْف) is accusative specifically BECAUSE a preposition like فِي is implied rather than written. سَافَرْتُ has no object at all here — traveling doesn't take one."
+    },
+    {
+      "type": "practice-choice",
+      "title": "مَفْعُول فِيهِ — same pattern, different time word",
+      "arabicPrompt": "دَرَسَ الطَّالِبُ لَيْلًا",
+      "prompt": "What role does لَيْلًا play?",
+      "options": [
+        { "label": "مَفْعُول فِيهِ — names when الطَّالِبُ studied", "correct": true },
+        { "label": "فَاعِل — a second doer of the verb", "correct": false },
+        { "label": "مُضَاف إِلَيْهِ — a possessor", "correct": false }
+      ],
+      "explanation": "لَيْلًا is accusative and answers \"when?\" — the same مَفْعُول فِيهِ pattern as صَبَاحًا, just with a different time word."
+    },
+    {
+      "type": "practice-choice",
+      "title": "مَفْعُول مَعَهُ — came along, didn't act",
+      "arabicPrompt": "سَافَرْتُ وَصَدِيقًا",
+      "prompt": "صَدِيقًا is accusative. What does that tell you about the friend's role in the sentence?",
+      "options": [
+        { "label": "He came along with the traveling, but the sentence isn't claiming he traveled on his own — that's مَفْعُول مَعَهُ", "correct": true },
+        { "label": "He is a second فَاعِل — the sentence claims he also traveled somewhere", "correct": false },
+        { "label": "He is the مَفْعُول بِهِ — the direct object of the traveling", "correct": false }
+      ],
+      "explanation": "The وَ before صَدِيقًا is وَاو الْمَعِيَّة (\"along with\"), not the plain conjunction \"and.\" If it were a plain \"and,\" صَدِيق would need to be nominative — a second فَاعِل sharing the action equally."
+    },
+    {
+      "type": "practice-choice",
+      "title": "مَفْعُول مَعَهُ — the case survives a pronoun",
+      "arabicPrompt": "جَلَسَ الرَّجُلُ وَابْنَهُ",
+      "prompt": "اِبْنَهُ ends in a fatḥa right before the attached pronoun هُ. What does that fatḥa show?",
+      "options": [
+        { "label": "اِبْنَهُ is مَفْعُول مَعَهُ, accusative — the fatḥa shows the case even with a pronoun attached", "correct": true },
+        { "label": "Nothing — attached pronouns never affect the noun's ending", "correct": false },
+        { "label": "اِبْنَهُ is مُضَاف إِلَيْهِ, genitive, so it should be اِبْنِهُ instead", "correct": false }
+      ],
+      "explanation": "A noun's case still shows on the vowel right before an attached pronoun, even though the pronoun itself (هُ) never changes shape for case. اِبْنَهُ (fatḥa) is مَفْعُول مَعَهُ here, distinct from اِبْنُهُ (ḍamma, if it were e.g. a فَاعِل) or اِبْنِهُ (kasra, if it were e.g. a مُضَاف إِلَيْهِ)."
+    },
+    {
+      "type": "complete",
+      "title": "Two down, two to go",
+      "message": "مَفْعُول فِيهِ (a time or place, with فِي implied) and مَفْعُول مَعَهُ (came along, didn't act) join مَفْعُول بِهِ as three of the five accusative \"objects.\" مَفْعُول لَهُ (the reason) and مَفْعُول مُطْلَق (the cognate object, for emphasis) are still ahead.",
+      "finishLabel": "Finish"
+    }
+  ]
+}

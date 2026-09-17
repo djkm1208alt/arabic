@@ -660,5 +660,52 @@
       "gr:negation-a1",
       "gr:case-system"
     ]
+  },
+  {
+    "id": "gr:maful-fihi",
+    "kind": "grammar",
+    "name": "The adverbial accusative of time or place (الْمَفْعُول فِيهِ)",
+    "level": "B2",
+    "rule": "الْمَفْعُول فِيهِ (also called الظَّرْف, \"the adverbial\") is a noun that names WHEN or WHERE a verb happened — accusative, with no preposition written, but implying \"فِي\" (\"in/at/during\"): سَافَرْتُ صَبَاحًا (\"I traveled in the morning\") — صَبَاحًا is accusative even though there's no فِي in the sentence; compare صَبَاحُ الْخَيْر, where the same word صَبَاح is just a plain noun. دَرَسَ الطَّالِبُ لَيْلًا (\"the student studied at night\") follows the same pattern with a different time word. This first look covers ظَرْف زَمَان (time) only — ظَرْف مَكَان (place) uses a smaller, partly irregular set of words (أَمَام، خَلْف، فَوْق، تَحْت, and others) and is deferred.",
+    "examples": [
+      "txt:gram-maful-fihi-sabahan",
+      "txt:gram-maful-fihi-laylan"
+    ],
+    "commonErrors": [
+      "Assuming a time word needs فِي written out loud to be accusative — الْمَفْعُول فِيهِ is accusative specifically BECAUSE فِي is implied, not stated.",
+      "Confusing a time noun used adverbially (صَبَاحًا, accusative) with the same noun used as an ordinary subject or object elsewhere (صَبَاحُ الْخَيْر, \"good morning,\" a plain iḍāfa) — the role, not the word itself, decides the case."
+    ],
+    "skills": [
+      "grammar",
+      "reading"
+    ],
+    "prereqs": [
+      "gr:case-system",
+      "gr:verbal-sentence"
+    ]
+  },
+  {
+    "id": "gr:maful-maahu",
+    "kind": "grammar",
+    "name": "The object of accompaniment (الْمَفْعُول مَعَهُ)",
+    "level": "B2",
+    "rule": "الْمَفْعُول مَعَهُ marks a noun that accompanied an action without itself performing it, after a وَ that means \"along with\" (وَاو الْمَعِيَّة) rather than the plain conjunction \"and\" — accusative: سَافَرْتُ وَصَدِيقًا (\"I traveled along with a friend\") — صَدِيقًا didn't do the traveling itself the way a second فَاعِل would; the sentence isn't claiming the friend also traveled somewhere, only that he came along. جَلَسَ الرَّجُلُ وَابْنَهُ (\"the man sat along with his son\") — the fatḥa before the attached pronoun هُ (اِبْنَهُ, not اِبْنُهُ) shows the accusative even with a pronoun attached. Needs a verb (or verb-like element) before the وَ — a plain nominal sentence with وَ just conjoins two equal, nominative subjects instead.",
+    "examples": [
+      "txt:gram-maful-maahu-sadiqan",
+      "txt:gram-maful-maahu-ibnahu"
+    ],
+    "commonErrors": [
+      "Reading وَ here as the plain conjunction \"and,\" which would instead make the following noun a second, nominative فَاعِل (as if claiming the friend also performed the action).",
+      "Forgetting the fatḥa on a noun with an attached pronoun (اِبْنَهُ) — the case still shows on the vowel right before the pronoun, even though the pronoun itself never changes shape for case."
+    ],
+    "skills": [
+      "grammar",
+      "reading"
+    ],
+    "prereqs": [
+      "gr:case-system",
+      "gr:verbal-sentence",
+      "gr:attached-possessive"
+    ]
   }
 ]

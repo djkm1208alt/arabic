@@ -369,7 +369,7 @@
       "level": "B2",
       "order": 1,
       "title": "The Full Case System (Iʿrāb)",
-      "blurb": "رَفْع، نَصْب، جَرّ — the full case system on nouns (regular, five nouns, sound plurals, diptotes), plus two new accusative-taking roles beyond the original five: الْحَال (state) and التَّمْيِيز (specification), and لَا النَّافِيَة لِلْجِنْس (negating a whole category). Verb mood is covered separately in b2-u2.",
+      "blurb": "رَفْع، نَصْب، جَرّ — the full case system on nouns, seven roles beyond the verb's own (مبتدأ/خبر/فاعل/مفعول به/مضاف إليه/حال/تمييز), plus مَفْعُول فِيهِ (time adverbial) and مَفْعُول مَعَهُ (accompaniment), and لَا النَّافِيَة لِلْجِنْس. Verb mood is covered separately in b2-u2.",
       "skills": [
         "grammar"
       ],
@@ -2564,6 +2564,28 @@
       ],
       "status": "available",
       "source": "steps:b2-hal-tamyiz-first-look"
+    },
+    {
+      "id": "b2-maful-fihi-maahu",
+      "unitId": "b2-u1",
+      "order": 5,
+      "title": "Two Objects Without a Preposition (فِيهِ، مَعَهُ)",
+      "blurb": "مَفْعُول فِيهِ names when something happened with no فِي written; مَفْعُول مَعَهُ names who came along without doing the action themselves. Two more of the five accusative \"objects\" — مَفْعُول لَهُ and مَفْعُول مُطْلَق are still ahead.",
+      "level": "B2",
+      "skills": [
+        "grammar",
+        "reading"
+      ],
+      "objectives": [
+        "gr:maful-fihi",
+        "gr:maful-maahu",
+        "txt:gram-maful-fihi-sabahan",
+        "txt:gram-maful-fihi-laylan",
+        "txt:gram-maful-maahu-sadiqan",
+        "txt:gram-maful-maahu-ibnahu"
+      ],
+      "status": "available",
+      "source": "steps:b2-maful-fihi-maahu"
     }
   ]
 }

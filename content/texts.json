@@ -5494,5 +5494,155 @@
     "prereqs": [
       "gr:hal"
     ]
+  },
+  {
+    "id": "txt:gram-maful-fihi-sabahan",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "maful-fihi",
+    "vowelled": "سَافَرْتُ صَبَاحًا",
+    "translit": "sāfartu ṣabāḥan",
+    "en": "I traveled in the morning.",
+    "words": [
+      {
+        "surface": "سَافَرْتُ",
+        "translit": "sāfartu",
+        "gloss": "I traveled"
+      },
+      {
+        "surface": "صَبَاحًا",
+        "translit": "ṣabāḥan",
+        "gloss": "in the morning (مَفْعُول فِيهِ — ظَرْف زَمَان, accusative, implying \"في\" with no preposition written)"
+      }
+    ],
+    "audio": "سَافَرْتُ صَبَاحًا",
+    "level": "B2",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:maful-fihi"
+    ]
+  },
+  {
+    "id": "txt:gram-maful-fihi-laylan",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "maful-fihi",
+    "vowelled": "دَرَسَ الطَّالِبُ لَيْلًا",
+    "translit": "darasa aṭ-ṭālibu laylan",
+    "en": "The student studied at night.",
+    "words": [
+      {
+        "surface": "دَرَسَ",
+        "translit": "darasa",
+        "gloss": "studied"
+      },
+      {
+        "surface": "الطَّالِبُ",
+        "translit": "aṭ-ṭālibu",
+        "gloss": "the student (فَاعِل)",
+        "gender": "masculine"
+      },
+      {
+        "surface": "لَيْلًا",
+        "translit": "laylan",
+        "gloss": "at night (مَفْعُول فِيهِ — ظَرْف زَمَان, accusative)"
+      }
+    ],
+    "audio": "دَرَسَ الطَّالِبُ لَيْلًا",
+    "level": "B2",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:maful-fihi"
+    ]
+  },
+  {
+    "id": "txt:gram-maful-maahu-sadiqan",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "maful-maahu",
+    "vowelled": "سَافَرْتُ وَصَدِيقًا",
+    "translit": "sāfartu wa-ṣadīqan",
+    "en": "I traveled along with a friend.",
+    "words": [
+      {
+        "surface": "سَافَرْتُ",
+        "translit": "sāfartu",
+        "gloss": "I traveled"
+      },
+      {
+        "surface": "وَ",
+        "translit": "wa-",
+        "gloss": "along with (وَاو الْمَعِيَّة — accompaniment, not the plain conjunction \"and\")"
+      },
+      {
+        "surface": "صَدِيقًا",
+        "translit": "ṣadīqan",
+        "gloss": "a friend (مَفْعُول مَعَهُ — accusative, did not itself take part in the traveling)"
+      }
+    ],
+    "audio": "سَافَرْتُ وَصَدِيقًا",
+    "level": "B2",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:maful-maahu"
+    ]
+  },
+  {
+    "id": "txt:gram-maful-maahu-ibnahu",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "maful-maahu",
+    "vowelled": "جَلَسَ الرَّجُلُ وَابْنَهُ",
+    "translit": "jalasa ar-rajulu wa-ibnahu",
+    "en": "The man sat along with his son.",
+    "words": [
+      {
+        "surface": "جَلَسَ",
+        "translit": "jalasa",
+        "gloss": "sat"
+      },
+      {
+        "surface": "الرَّجُلُ",
+        "translit": "ar-rajulu",
+        "gloss": "the man (فَاعِل)",
+        "gender": "masculine"
+      },
+      {
+        "surface": "وَ",
+        "translit": "wa-",
+        "gloss": "along with (وَاو الْمَعِيَّة)"
+      },
+      {
+        "surface": "اِبْنَهُ",
+        "translit": "ibnahu",
+        "gloss": "his son (مَفْعُول مَعَهُ — accusative; the fatḥa before the attached pronoun هُ shows the case)"
+      }
+    ],
+    "audio": "جَلَسَ الرَّجُلُ وَابْنَهُ",
+    "level": "B2",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:maful-maahu"
+    ]
   }
 ]
