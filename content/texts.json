@@ -301,13 +301,30 @@
     "translit": "al-kitābāni jadīdāni",
     "en": "The two books are new.",
     "words": [
-      { "surface": "الْكِتَابَانِ", "translit": "al-kitābāni", "gloss": "the two books (dual)", "gender": "masculine" },
-      { "surface": "جَدِيدَانِ", "translit": "jadīdāni", "gloss": "new (dual)", "gender": "masculine" }
+      {
+        "surface": "الْكِتَابَانِ",
+        "translit": "al-kitābāni",
+        "gloss": "the two books (dual)",
+        "gender": "masculine"
+      },
+      {
+        "surface": "جَدِيدَانِ",
+        "translit": "jadīdāni",
+        "gloss": "new (dual)",
+        "gender": "masculine"
+      }
     ],
     "audio": "الْكِتَابَانِ جَدِيدَانِ",
     "level": "A1",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:noun-number" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:noun-number"
+    ]
   },
   {
     "id": "txt:gram-number-sound-pl",
@@ -319,13 +336,30 @@
     "translit": "hum muʿallimūna",
     "en": "They are teachers.",
     "words": [
-      { "surface": "هُمْ", "translit": "hum", "gloss": "they", "gender": "masculine" },
-      { "surface": "مُعَلِّمُونَ", "translit": "muʿallimūna", "gloss": "teachers (sound masculine plural)", "gender": "masculine" }
+      {
+        "surface": "هُمْ",
+        "translit": "hum",
+        "gloss": "they",
+        "gender": "masculine"
+      },
+      {
+        "surface": "مُعَلِّمُونَ",
+        "translit": "muʿallimūna",
+        "gloss": "teachers (sound masculine plural)",
+        "gender": "masculine"
+      }
     ],
     "audio": "هُمْ مُعَلِّمُونَ",
     "level": "A1",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:noun-number" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:noun-number"
+    ]
   },
   {
     "id": "txt:gram-number-broken-pl",
@@ -337,13 +371,30 @@
     "translit": "al-kutubu jamīlatun",
     "en": "The books are beautiful.",
     "words": [
-      { "surface": "الْكُتُبُ", "translit": "al-kutubu", "gloss": "the books (broken plural)", "gender": "feminine" },
-      { "surface": "جَمِيلَةٌ", "translit": "jamīlatun", "gloss": "beautiful (feminine singular — non-human plural agreement)", "gender": "feminine" }
+      {
+        "surface": "الْكُتُبُ",
+        "translit": "al-kutubu",
+        "gloss": "the books (broken plural)",
+        "gender": "feminine"
+      },
+      {
+        "surface": "جَمِيلَةٌ",
+        "translit": "jamīlatun",
+        "gloss": "beautiful (feminine singular — non-human plural agreement)",
+        "gender": "feminine"
+      }
     ],
     "audio": "الْكُتُبُ جَمِيلَةٌ",
     "level": "A1",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:noun-number" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:noun-number"
+    ]
   },
   {
     "id": "txt:gram-def-indef",
@@ -355,12 +406,24 @@
     "translit": "bābun",
     "en": "a door",
     "words": [
-      { "surface": "بَابٌ", "translit": "bābun", "gloss": "a door (indefinite — tanwīn ـٌ)", "gender": "masculine" }
+      {
+        "surface": "بَابٌ",
+        "translit": "bābun",
+        "gloss": "a door (indefinite — tanwīn ـٌ)",
+        "gender": "masculine"
+      }
     ],
     "audio": "بَابٌ",
     "level": "A1",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:definiteness" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:definiteness"
+    ]
   },
   {
     "id": "txt:gram-def-def",
@@ -372,12 +435,24 @@
     "translit": "al-bābu",
     "en": "the door",
     "words": [
-      { "surface": "الْبَابُ", "translit": "al-bābu", "gloss": "the door (definite — الـ, no tanwīn)", "gender": "masculine" }
+      {
+        "surface": "الْبَابُ",
+        "translit": "al-bābu",
+        "gloss": "the door (definite — الـ, no tanwīn)",
+        "gender": "masculine"
+      }
     ],
     "audio": "الْبَابُ",
     "level": "A1",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:definiteness" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:definiteness"
+    ]
   },
   {
     "id": "txt:gram-def-sentence",
@@ -389,13 +464,30 @@
     "translit": "al-qalamu jadīdun",
     "en": "The pen is new.",
     "words": [
-      { "surface": "الْقَلَمُ", "translit": "al-qalamu", "gloss": "the pen (definite)", "gender": "masculine" },
-      { "surface": "جَدِيدٌ", "translit": "jadīdun", "gloss": "new (indefinite)", "gender": "masculine" }
+      {
+        "surface": "الْقَلَمُ",
+        "translit": "al-qalamu",
+        "gloss": "the pen (definite)",
+        "gender": "masculine"
+      },
+      {
+        "surface": "جَدِيدٌ",
+        "translit": "jadīdun",
+        "gloss": "new (indefinite)",
+        "gender": "masculine"
+      }
     ],
     "audio": "الْقَلَمُ جَدِيدٌ",
     "level": "A1",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:definiteness" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:definiteness"
+    ]
   },
   {
     "id": "txt:gram-nominal-father",
@@ -407,15 +499,36 @@
     "translit": "al-abu saʿīdun",
     "en": "The father is happy.",
     "words": [
-      { "surface": "الْأَبُ", "translit": "al-abu", "gloss": "the father (topic)", "gender": "masculine" },
-      { "surface": "سَعِيدٌ", "translit": "saʿīdun", "gloss": "happy (comment, masculine)", "gender": "masculine" }
+      {
+        "surface": "الْأَبُ",
+        "translit": "al-abu",
+        "gloss": "the father (topic)",
+        "gender": "masculine"
+      },
+      {
+        "surface": "سَعِيدٌ",
+        "translit": "saʿīdun",
+        "gloss": "happy (comment, masculine)",
+        "gender": "masculine"
+      }
     ],
     "audio": "الْأَبُ سَعِيدٌ",
     "level": "A1",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:nominal-sentence" ],
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:nominal-sentence"
+    ],
     "parse": [
-      { "word": "الْأَبُ", "role": "mubtada", "case": "raf" }
+      {
+        "word": "الْأَبُ",
+        "role": "mubtada",
+        "case": "raf"
+      }
     ]
   },
   {
@@ -428,15 +541,36 @@
     "translit": "al-ummu saʿīdatun",
     "en": "The mother is happy.",
     "words": [
-      { "surface": "الْأُمُّ", "translit": "al-ummu", "gloss": "the mother (topic)", "gender": "feminine" },
-      { "surface": "سَعِيدَةٌ", "translit": "saʿīdatun", "gloss": "happy (comment, feminine — agrees with the topic)", "gender": "feminine" }
+      {
+        "surface": "الْأُمُّ",
+        "translit": "al-ummu",
+        "gloss": "the mother (topic)",
+        "gender": "feminine"
+      },
+      {
+        "surface": "سَعِيدَةٌ",
+        "translit": "saʿīdatun",
+        "gloss": "happy (comment, feminine — agrees with the topic)",
+        "gender": "feminine"
+      }
     ],
     "audio": "الْأُمُّ سَعِيدَةٌ",
     "level": "A1",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:nominal-sentence" ],
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:nominal-sentence"
+    ],
     "parse": [
-      { "word": "سَعِيدَةٌ", "role": "khabar", "case": "raf" }
+      {
+        "word": "سَعِيدَةٌ",
+        "role": "khabar",
+        "case": "raf"
+      }
     ]
   },
   {
@@ -449,13 +583,30 @@
     "translit": "al-muʿallimu fī al-madrasati",
     "en": "The teacher is in the school.",
     "words": [
-      { "surface": "الْمُعَلِّمُ", "translit": "al-muʿallimu", "gloss": "the teacher (topic)", "gender": "masculine" },
-      { "surface": "فِي الْمَدْرَسَةِ", "translit": "fī al-madrasati", "gloss": "in the school (prepositional comment)", "gender": null }
+      {
+        "surface": "الْمُعَلِّمُ",
+        "translit": "al-muʿallimu",
+        "gloss": "the teacher (topic)",
+        "gender": "masculine"
+      },
+      {
+        "surface": "فِي الْمَدْرَسَةِ",
+        "translit": "fī al-madrasati",
+        "gloss": "in the school (prepositional comment)",
+        "gender": null
+      }
     ],
     "audio": "الْمُعَلِّمُ فِي الْمَدْرَسَةِ",
     "level": "A1",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:nominal-sentence" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:nominal-sentence"
+    ]
   },
   {
     "id": "txt:gram-dem-book",
@@ -467,13 +618,30 @@
     "translit": "hādhā kitābun",
     "en": "This is a book.",
     "words": [
-      { "surface": "هَذَا", "translit": "hādhā", "gloss": "this (masculine)", "gender": "masculine" },
-      { "surface": "كِتَابٌ", "translit": "kitābun", "gloss": "a book", "gender": "masculine" }
+      {
+        "surface": "هَذَا",
+        "translit": "hādhā",
+        "gloss": "this (masculine)",
+        "gender": "masculine"
+      },
+      {
+        "surface": "كِتَابٌ",
+        "translit": "kitābun",
+        "gloss": "a book",
+        "gender": "masculine"
+      }
     ],
     "audio": "هَذَا كِتَابٌ",
     "level": "A1",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:demonstratives" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:demonstratives"
+    ]
   },
   {
     "id": "txt:gram-dem-girl",
@@ -485,13 +653,30 @@
     "translit": "hādhihi bintun",
     "en": "This is a girl.",
     "words": [
-      { "surface": "هَذِهِ", "translit": "hādhihi", "gloss": "this (feminine)", "gender": "feminine" },
-      { "surface": "بِنْتٌ", "translit": "bintun", "gloss": "a girl", "gender": "feminine" }
+      {
+        "surface": "هَذِهِ",
+        "translit": "hādhihi",
+        "gloss": "this (feminine)",
+        "gender": "feminine"
+      },
+      {
+        "surface": "بِنْتٌ",
+        "translit": "bintun",
+        "gloss": "a girl",
+        "gender": "feminine"
+      }
     ],
     "audio": "هَذِهِ بِنْتٌ",
     "level": "A1",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:demonstratives" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:demonstratives"
+    ]
   },
   {
     "id": "txt:gram-dem-the-house",
@@ -503,14 +688,37 @@
     "translit": "hādhā al-baytu kabīrun",
     "en": "This house is big.",
     "words": [
-      { "surface": "هَذَا", "translit": "hādhā", "gloss": "this", "gender": "masculine" },
-      { "surface": "الْبَيْتُ", "translit": "al-baytu", "gloss": "the house", "gender": "masculine" },
-      { "surface": "كَبِيرٌ", "translit": "kabīrun", "gloss": "big", "gender": "masculine" }
+      {
+        "surface": "هَذَا",
+        "translit": "hādhā",
+        "gloss": "this",
+        "gender": "masculine"
+      },
+      {
+        "surface": "الْبَيْتُ",
+        "translit": "al-baytu",
+        "gloss": "the house",
+        "gender": "masculine"
+      },
+      {
+        "surface": "كَبِيرٌ",
+        "translit": "kabīrun",
+        "gloss": "big",
+        "gender": "masculine"
+      }
     ],
     "audio": "هَذَا الْبَيْتُ كَبِيرٌ",
     "level": "A1",
-    "skills": [ "reading", "comprehension", "listening", "grammar", "writing" ],
-    "prereqs": [ "gr:demonstratives" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar",
+      "writing"
+    ],
+    "prereqs": [
+      "gr:demonstratives"
+    ]
   },
   {
     "id": "txt:gram-poss-my-book",
@@ -522,13 +730,30 @@
     "translit": "kitābī jadīdun",
     "en": "My book is new.",
     "words": [
-      { "surface": "كِتَابِي", "translit": "kitābī", "gloss": "my book", "gender": "masculine" },
-      { "surface": "جَدِيدٌ", "translit": "jadīdun", "gloss": "new", "gender": "masculine" }
+      {
+        "surface": "كِتَابِي",
+        "translit": "kitābī",
+        "gloss": "my book",
+        "gender": "masculine"
+      },
+      {
+        "surface": "جَدِيدٌ",
+        "translit": "jadīdun",
+        "gloss": "new",
+        "gender": "masculine"
+      }
     ],
     "audio": "كِتَابِي جَدِيدٌ",
     "level": "A1",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:attached-possessive" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:attached-possessive"
+    ]
   },
   {
     "id": "txt:gram-poss-your-house",
@@ -540,13 +765,30 @@
     "translit": "baytuka kabīrun",
     "en": "Your house is big.",
     "words": [
-      { "surface": "بَيْتُكَ", "translit": "baytuka", "gloss": "your house (to a man)", "gender": "masculine" },
-      { "surface": "كَبِيرٌ", "translit": "kabīrun", "gloss": "big", "gender": "masculine" }
+      {
+        "surface": "بَيْتُكَ",
+        "translit": "baytuka",
+        "gloss": "your house (to a man)",
+        "gender": "masculine"
+      },
+      {
+        "surface": "كَبِيرٌ",
+        "translit": "kabīrun",
+        "gloss": "big",
+        "gender": "masculine"
+      }
     ],
     "audio": "بَيْتُكَ كَبِيرٌ",
     "level": "A1",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:attached-possessive" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:attached-possessive"
+    ]
   },
   {
     "id": "txt:gram-poss-her-bag",
@@ -558,13 +800,30 @@
     "translit": "ḥaqībatuhā jamīlatun",
     "en": "Her bag is beautiful.",
     "words": [
-      { "surface": "حَقِيبَتُهَا", "translit": "ḥaqībatuhā", "gloss": "her bag", "gender": "feminine" },
-      { "surface": "جَمِيلَةٌ", "translit": "jamīlatun", "gloss": "beautiful (feminine)", "gender": "feminine" }
+      {
+        "surface": "حَقِيبَتُهَا",
+        "translit": "ḥaqībatuhā",
+        "gloss": "her bag",
+        "gender": "feminine"
+      },
+      {
+        "surface": "جَمِيلَةٌ",
+        "translit": "jamīlatun",
+        "gloss": "beautiful (feminine)",
+        "gender": "feminine"
+      }
     ],
     "audio": "حَقِيبَتُهَا جَمِيلَةٌ",
     "level": "A1",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:attached-possessive" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:attached-possessive"
+    ]
   },
   {
     "id": "txt:gram-prep-in-bag",
@@ -576,13 +835,30 @@
     "translit": "al-kitābu fī al-ḥaqībati",
     "en": "The book is in the bag.",
     "words": [
-      { "surface": "الْكِتَابُ", "translit": "al-kitābu", "gloss": "the book", "gender": "masculine" },
-      { "surface": "فِي الْحَقِيبَةِ", "translit": "fī al-ḥaqībati", "gloss": "in the bag (genitive ـِ)", "gender": null }
+      {
+        "surface": "الْكِتَابُ",
+        "translit": "al-kitābu",
+        "gloss": "the book",
+        "gender": "masculine"
+      },
+      {
+        "surface": "فِي الْحَقِيبَةِ",
+        "translit": "fī al-ḥaqībati",
+        "gloss": "in the bag (genitive ـِ)",
+        "gender": null
+      }
     ],
     "audio": "الْكِتَابُ فِي الْحَقِيبَةِ",
     "level": "A1",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:core-prepositions" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:core-prepositions"
+    ]
   },
   {
     "id": "txt:gram-prep-on-table",
@@ -594,13 +870,30 @@
     "translit": "al-qalamu ʿalā aṭ-ṭāwilati",
     "en": "The pen is on the table.",
     "words": [
-      { "surface": "الْقَلَمُ", "translit": "al-qalamu", "gloss": "the pen", "gender": "masculine" },
-      { "surface": "عَلَى الطَّاوِلَةِ", "translit": "ʿalā aṭ-ṭāwilati", "gloss": "on the table", "gender": null }
+      {
+        "surface": "الْقَلَمُ",
+        "translit": "al-qalamu",
+        "gloss": "the pen",
+        "gender": "masculine"
+      },
+      {
+        "surface": "عَلَى الطَّاوِلَةِ",
+        "translit": "ʿalā aṭ-ṭāwilati",
+        "gloss": "on the table",
+        "gender": null
+      }
     ],
     "audio": "الْقَلَمُ عَلَى الطَّاوِلَةِ",
     "level": "A1",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:core-prepositions" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:core-prepositions"
+    ]
   },
   {
     "id": "txt:gram-prep-from-city",
@@ -612,13 +905,30 @@
     "translit": "huwa mina al-madīnati",
     "en": "He is from the city.",
     "words": [
-      { "surface": "هُوَ", "translit": "huwa", "gloss": "he", "gender": "masculine" },
-      { "surface": "مِنَ الْمَدِينَةِ", "translit": "mina al-madīnati", "gloss": "from the city (مِنْ + الـ → مِنَ)", "gender": null }
+      {
+        "surface": "هُوَ",
+        "translit": "huwa",
+        "gloss": "he",
+        "gender": "masculine"
+      },
+      {
+        "surface": "مِنَ الْمَدِينَةِ",
+        "translit": "mina al-madīnati",
+        "gloss": "from the city (مِنْ + الـ → مِنَ)",
+        "gender": null
+      }
     ],
     "audio": "هُوَ مِنَ الْمَدِينَةِ",
     "level": "A1",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:core-prepositions" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:core-prepositions"
+    ]
   },
   {
     "id": "txt:gram-neg-not-big",
@@ -630,14 +940,36 @@
     "translit": "laysa al-baytu kabīran",
     "en": "The house is not big.",
     "words": [
-      { "surface": "لَيْسَ", "translit": "laysa", "gloss": "is not", "gender": null },
-      { "surface": "الْبَيْتُ", "translit": "al-baytu", "gloss": "the house", "gender": "masculine" },
-      { "surface": "كَبِيرًا", "translit": "kabīran", "gloss": "big (takes ـً after لَيْسَ)", "gender": "masculine" }
+      {
+        "surface": "لَيْسَ",
+        "translit": "laysa",
+        "gloss": "is not",
+        "gender": null
+      },
+      {
+        "surface": "الْبَيْتُ",
+        "translit": "al-baytu",
+        "gloss": "the house",
+        "gender": "masculine"
+      },
+      {
+        "surface": "كَبِيرًا",
+        "translit": "kabīran",
+        "gloss": "big (takes ـً after لَيْسَ)",
+        "gender": "masculine"
+      }
     ],
     "audio": "لَيْسَ الْبَيْتُ كَبِيرًا",
     "level": "A1",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:negation-a1" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:negation-a1"
+    ]
   },
   {
     "id": "txt:gram-neg-not-book",
@@ -649,14 +981,36 @@
     "translit": "hādhā laysa kitāban",
     "en": "This is not a book.",
     "words": [
-      { "surface": "هَذَا", "translit": "hādhā", "gloss": "this", "gender": "masculine" },
-      { "surface": "لَيْسَ", "translit": "laysa", "gloss": "is not", "gender": null },
-      { "surface": "كِتَابًا", "translit": "kitāban", "gloss": "a book (takes ـً after لَيْسَ)", "gender": "masculine" }
+      {
+        "surface": "هَذَا",
+        "translit": "hādhā",
+        "gloss": "this",
+        "gender": "masculine"
+      },
+      {
+        "surface": "لَيْسَ",
+        "translit": "laysa",
+        "gloss": "is not",
+        "gender": null
+      },
+      {
+        "surface": "كِتَابًا",
+        "translit": "kitāban",
+        "gloss": "a book (takes ـً after لَيْسَ)",
+        "gender": "masculine"
+      }
     ],
     "audio": "هَذَا لَيْسَ كِتَابًا",
     "level": "A1",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:negation-a1" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:negation-a1"
+    ]
   },
   {
     "id": "txt:gram-neg-no-water",
@@ -668,220 +1022,777 @@
     "translit": "lā māʾa fī al-ḥaqībati",
     "en": "There is no water in the bag.",
     "words": [
-      { "surface": "لَا", "translit": "lā", "gloss": "there is no", "gender": null },
-      { "surface": "مَاءَ", "translit": "māʾa", "gloss": "water", "gender": "masculine" },
-      { "surface": "فِي الْحَقِيبَةِ", "translit": "fī al-ḥaqībati", "gloss": "in the bag", "gender": null }
+      {
+        "surface": "لَا",
+        "translit": "lā",
+        "gloss": "there is no",
+        "gender": null
+      },
+      {
+        "surface": "مَاءَ",
+        "translit": "māʾa",
+        "gloss": "water",
+        "gender": "masculine"
+      },
+      {
+        "surface": "فِي الْحَقِيبَةِ",
+        "translit": "fī al-ḥaqībati",
+        "gloss": "in the bag",
+        "gender": null
+      }
     ],
     "audio": "لَا مَاءَ فِي الْحَقِيبَةِ",
     "level": "A1",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:negation-a1" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:negation-a1"
+    ]
   },
-
-  { "id": "txt:read-weather-hot", "kind": "text", "textType": "sentence", "source": "m20",
-    "vowelled": "الطَّقْسُ حَارٌّ", "translit": "aṭ-ṭaqsu ḥārrun", "en": "The weather is hot.",
+  {
+    "id": "txt:read-weather-hot",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m20",
+    "vowelled": "الطَّقْسُ حَارٌّ",
+    "translit": "aṭ-ṭaqsu ḥārrun",
+    "en": "The weather is hot.",
     "words": [
-      { "surface": "الطَّقْسُ", "translit": "aṭ-ṭaqsu", "gloss": "the weather", "gender": "masculine" },
-      { "surface": "حَارٌّ", "translit": "ḥārrun", "gloss": "hot", "gender": "masculine" }
+      {
+        "surface": "الطَّقْسُ",
+        "translit": "aṭ-ṭaqsu",
+        "gloss": "the weather",
+        "gender": "masculine"
+      },
+      {
+        "surface": "حَارٌّ",
+        "translit": "ḥārrun",
+        "gloss": "hot",
+        "gender": "masculine"
+      }
     ],
-    "audio": "الطَّقْسُ حَارٌّ", "level": "A1", "skills": [ "reading", "listening", "comprehension", "writing" ],
-    "prereqs": [ "gr:nominal-sentence", "gr:sun-moon" ] },
-
-  { "id": "txt:read-i-student", "kind": "text", "textType": "sentence", "source": "m20",
-    "vowelled": "أَنَا طَالِبٌ", "translit": "anā ṭālibun", "en": "I am a student.",
+    "audio": "الطَّقْسُ حَارٌّ",
+    "level": "A1",
+    "skills": [
+      "reading",
+      "listening",
+      "comprehension",
+      "writing"
+    ],
+    "prereqs": [
+      "gr:nominal-sentence",
+      "gr:sun-moon"
+    ]
+  },
+  {
+    "id": "txt:read-i-student",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m20",
+    "vowelled": "أَنَا طَالِبٌ",
+    "translit": "anā ṭālibun",
+    "en": "I am a student.",
     "words": [
-      { "surface": "أَنَا", "translit": "anā", "gloss": "I", "gender": null },
-      { "surface": "طَالِبٌ", "translit": "ṭālibun", "gloss": "a student", "gender": "masculine" }
+      {
+        "surface": "أَنَا",
+        "translit": "anā",
+        "gloss": "I",
+        "gender": null
+      },
+      {
+        "surface": "طَالِبٌ",
+        "translit": "ṭālibun",
+        "gloss": "a student",
+        "gender": "masculine"
+      }
     ],
-    "audio": "أَنَا طَالِبٌ", "level": "A1", "skills": [ "reading", "listening", "comprehension" ],
-    "prereqs": [ "gr:nominal-sentence" ] },
-
-  { "id": "txt:read-room-clean", "kind": "text", "textType": "sentence", "source": "m20",
-    "vowelled": "الْغُرْفَةُ نَظِيفَةٌ", "translit": "al-ghurfatu naẓīfatun", "en": "The room is clean.",
+    "audio": "أَنَا طَالِبٌ",
+    "level": "A1",
+    "skills": [
+      "reading",
+      "listening",
+      "comprehension"
+    ],
+    "prereqs": [
+      "gr:nominal-sentence"
+    ]
+  },
+  {
+    "id": "txt:read-room-clean",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m20",
+    "vowelled": "الْغُرْفَةُ نَظِيفَةٌ",
+    "translit": "al-ghurfatu naẓīfatun",
+    "en": "The room is clean.",
     "words": [
-      { "surface": "الْغُرْفَةُ", "translit": "al-ghurfatu", "gloss": "the room", "gender": "feminine" },
-      { "surface": "نَظِيفَةٌ", "translit": "naẓīfatun", "gloss": "clean (feminine — agrees with the room)", "gender": "feminine" }
+      {
+        "surface": "الْغُرْفَةُ",
+        "translit": "al-ghurfatu",
+        "gloss": "the room",
+        "gender": "feminine"
+      },
+      {
+        "surface": "نَظِيفَةٌ",
+        "translit": "naẓīfatun",
+        "gloss": "clean (feminine — agrees with the room)",
+        "gender": "feminine"
+      }
     ],
-    "audio": "الْغُرْفَةُ نَظِيفَةٌ", "level": "A1", "skills": [ "reading", "listening", "comprehension", "writing" ],
-    "prereqs": [ "gr:nominal-sentence", "gr:gender-agreement" ] },
-
-  { "id": "txt:read-he-engineer", "kind": "text", "textType": "sentence", "source": "m20",
-    "vowelled": "هُوَ مُهَنْدِسٌ", "translit": "huwa muhandisun", "en": "He is an engineer.",
+    "audio": "الْغُرْفَةُ نَظِيفَةٌ",
+    "level": "A1",
+    "skills": [
+      "reading",
+      "listening",
+      "comprehension",
+      "writing"
+    ],
+    "prereqs": [
+      "gr:nominal-sentence",
+      "gr:gender-agreement"
+    ]
+  },
+  {
+    "id": "txt:read-he-engineer",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m20",
+    "vowelled": "هُوَ مُهَنْدِسٌ",
+    "translit": "huwa muhandisun",
+    "en": "He is an engineer.",
     "words": [
-      { "surface": "هُوَ", "translit": "huwa", "gloss": "he", "gender": "masculine" },
-      { "surface": "مُهَنْدِسٌ", "translit": "muhandisun", "gloss": "an engineer", "gender": "masculine" }
+      {
+        "surface": "هُوَ",
+        "translit": "huwa",
+        "gloss": "he",
+        "gender": "masculine"
+      },
+      {
+        "surface": "مُهَنْدِسٌ",
+        "translit": "muhandisun",
+        "gloss": "an engineer",
+        "gender": "masculine"
+      }
     ],
-    "audio": "هُوَ مُهَنْدِسٌ", "level": "A1", "skills": [ "reading", "listening", "comprehension" ],
-    "prereqs": [ "gr:nominal-sentence" ] },
-
-  { "id": "txt:read-coffee-delicious", "kind": "text", "textType": "sentence", "source": "m20",
-    "vowelled": "الْقَهْوَةُ لَذِيذَةٌ", "translit": "al-qahwatu ladhīdhatun", "en": "The coffee is delicious.",
+    "audio": "هُوَ مُهَنْدِسٌ",
+    "level": "A1",
+    "skills": [
+      "reading",
+      "listening",
+      "comprehension"
+    ],
+    "prereqs": [
+      "gr:nominal-sentence"
+    ]
+  },
+  {
+    "id": "txt:read-coffee-delicious",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m20",
+    "vowelled": "الْقَهْوَةُ لَذِيذَةٌ",
+    "translit": "al-qahwatu ladhīdhatun",
+    "en": "The coffee is delicious.",
     "words": [
-      { "surface": "الْقَهْوَةُ", "translit": "al-qahwatu", "gloss": "the coffee", "gender": "feminine" },
-      { "surface": "لَذِيذَةٌ", "translit": "ladhīdhatun", "gloss": "delicious (feminine)", "gender": "feminine" }
+      {
+        "surface": "الْقَهْوَةُ",
+        "translit": "al-qahwatu",
+        "gloss": "the coffee",
+        "gender": "feminine"
+      },
+      {
+        "surface": "لَذِيذَةٌ",
+        "translit": "ladhīdhatun",
+        "gloss": "delicious (feminine)",
+        "gender": "feminine"
+      }
     ],
-    "audio": "الْقَهْوَةُ لَذِيذَةٌ", "level": "A1", "skills": [ "reading", "listening", "comprehension" ],
-    "prereqs": [ "gr:nominal-sentence", "gr:gender-agreement" ] },
-
-  { "id": "txt:read-bag-new", "kind": "text", "textType": "sentence", "source": "m20",
-    "vowelled": "الْحَقِيبَةُ جَدِيدَةٌ", "translit": "al-ḥaqībatu jadīdatun", "en": "The bag is new.",
+    "audio": "الْقَهْوَةُ لَذِيذَةٌ",
+    "level": "A1",
+    "skills": [
+      "reading",
+      "listening",
+      "comprehension"
+    ],
+    "prereqs": [
+      "gr:nominal-sentence",
+      "gr:gender-agreement"
+    ]
+  },
+  {
+    "id": "txt:read-bag-new",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m20",
+    "vowelled": "الْحَقِيبَةُ جَدِيدَةٌ",
+    "translit": "al-ḥaqībatu jadīdatun",
+    "en": "The bag is new.",
     "words": [
-      { "surface": "الْحَقِيبَةُ", "translit": "al-ḥaqībatu", "gloss": "the bag", "gender": "feminine" },
-      { "surface": "جَدِيدَةٌ", "translit": "jadīdatun", "gloss": "new (feminine)", "gender": "feminine" }
+      {
+        "surface": "الْحَقِيبَةُ",
+        "translit": "al-ḥaqībatu",
+        "gloss": "the bag",
+        "gender": "feminine"
+      },
+      {
+        "surface": "جَدِيدَةٌ",
+        "translit": "jadīdatun",
+        "gloss": "new (feminine)",
+        "gender": "feminine"
+      }
     ],
-    "audio": "الْحَقِيبَةُ جَدِيدَةٌ", "level": "A1", "skills": [ "reading", "listening", "comprehension" ],
-    "prereqs": [ "gr:nominal-sentence", "gr:gender-agreement" ] },
-
-  { "id": "txt:read-book-on-table", "kind": "text", "textType": "sentence", "source": "m20",
-    "vowelled": "الْكِتَابُ عَلَى الطَّاوِلَةِ", "translit": "al-kitābu ʿalā aṭ-ṭāwilati", "en": "The book is on the table.",
+    "audio": "الْحَقِيبَةُ جَدِيدَةٌ",
+    "level": "A1",
+    "skills": [
+      "reading",
+      "listening",
+      "comprehension"
+    ],
+    "prereqs": [
+      "gr:nominal-sentence",
+      "gr:gender-agreement"
+    ]
+  },
+  {
+    "id": "txt:read-book-on-table",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m20",
+    "vowelled": "الْكِتَابُ عَلَى الطَّاوِلَةِ",
+    "translit": "al-kitābu ʿalā aṭ-ṭāwilati",
+    "en": "The book is on the table.",
     "words": [
-      { "surface": "الْكِتَابُ", "translit": "al-kitābu", "gloss": "the book", "gender": "masculine" },
-      { "surface": "عَلَى الطَّاوِلَةِ", "translit": "ʿalā aṭ-ṭāwilati", "gloss": "on the table (genitive)", "gender": null }
+      {
+        "surface": "الْكِتَابُ",
+        "translit": "al-kitābu",
+        "gloss": "the book",
+        "gender": "masculine"
+      },
+      {
+        "surface": "عَلَى الطَّاوِلَةِ",
+        "translit": "ʿalā aṭ-ṭāwilati",
+        "gloss": "on the table (genitive)",
+        "gender": null
+      }
     ],
-    "audio": "الْكِتَابُ عَلَى الطَّاوِلَةِ", "level": "A1", "skills": [ "reading", "listening", "comprehension", "writing" ],
-    "prereqs": [ "gr:core-prepositions" ] },
-
-  { "id": "txt:read-this-my-house", "kind": "text", "textType": "sentence", "source": "m20",
-    "vowelled": "هَذَا بَيْتِي", "translit": "hādhā baytī", "en": "This is my house.",
+    "audio": "الْكِتَابُ عَلَى الطَّاوِلَةِ",
+    "level": "A1",
+    "skills": [
+      "reading",
+      "listening",
+      "comprehension",
+      "writing"
+    ],
+    "prereqs": [
+      "gr:core-prepositions"
+    ]
+  },
+  {
+    "id": "txt:read-this-my-house",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m20",
+    "vowelled": "هَذَا بَيْتِي",
+    "translit": "hādhā baytī",
+    "en": "This is my house.",
     "words": [
-      { "surface": "هَذَا", "translit": "hādhā", "gloss": "this", "gender": "masculine" },
-      { "surface": "بَيْتِي", "translit": "baytī", "gloss": "my house", "gender": "masculine" }
+      {
+        "surface": "هَذَا",
+        "translit": "hādhā",
+        "gloss": "this",
+        "gender": "masculine"
+      },
+      {
+        "surface": "بَيْتِي",
+        "translit": "baytī",
+        "gloss": "my house",
+        "gender": "masculine"
+      }
     ],
-    "audio": "هَذَا بَيْتِي", "level": "A1", "skills": [ "reading", "listening", "comprehension", "writing" ],
-    "prereqs": [ "gr:demonstratives", "gr:attached-possessive" ] },
-
-  { "id": "txt:read-friend-university", "kind": "text", "textType": "sentence", "source": "m20",
-    "vowelled": "صَدِيقِي فِي الْجَامِعَةِ", "translit": "ṣadīqī fī al-jāmiʿati", "en": "My friend is at the university.",
+    "audio": "هَذَا بَيْتِي",
+    "level": "A1",
+    "skills": [
+      "reading",
+      "listening",
+      "comprehension",
+      "writing"
+    ],
+    "prereqs": [
+      "gr:demonstratives",
+      "gr:attached-possessive"
+    ]
+  },
+  {
+    "id": "txt:read-friend-university",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m20",
+    "vowelled": "صَدِيقِي فِي الْجَامِعَةِ",
+    "translit": "ṣadīqī fī al-jāmiʿati",
+    "en": "My friend is at the university.",
     "words": [
-      { "surface": "صَدِيقِي", "translit": "ṣadīqī", "gloss": "my friend", "gender": "masculine" },
-      { "surface": "فِي الْجَامِعَةِ", "translit": "fī al-jāmiʿati", "gloss": "at the university (genitive)", "gender": null }
+      {
+        "surface": "صَدِيقِي",
+        "translit": "ṣadīqī",
+        "gloss": "my friend",
+        "gender": "masculine"
+      },
+      {
+        "surface": "فِي الْجَامِعَةِ",
+        "translit": "fī al-jāmiʿati",
+        "gloss": "at the university (genitive)",
+        "gender": null
+      }
     ],
-    "audio": "صَدِيقِي فِي الْجَامِعَةِ", "level": "A1", "skills": [ "reading", "listening", "comprehension" ],
-    "prereqs": [ "gr:attached-possessive", "gr:core-prepositions" ] },
-
-  { "id": "txt:read-that-man-doctor", "kind": "text", "textType": "sentence", "source": "m20",
-    "vowelled": "ذَلِكَ الرَّجُلُ طَبِيبٌ", "translit": "dhālika ar-rajulu ṭabībun", "en": "That man is a doctor.",
+    "audio": "صَدِيقِي فِي الْجَامِعَةِ",
+    "level": "A1",
+    "skills": [
+      "reading",
+      "listening",
+      "comprehension"
+    ],
+    "prereqs": [
+      "gr:attached-possessive",
+      "gr:core-prepositions"
+    ]
+  },
+  {
+    "id": "txt:read-that-man-doctor",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m20",
+    "vowelled": "ذَلِكَ الرَّجُلُ طَبِيبٌ",
+    "translit": "dhālika ar-rajulu ṭabībun",
+    "en": "That man is a doctor.",
     "words": [
-      { "surface": "ذَلِكَ", "translit": "dhālika", "gloss": "that", "gender": "masculine" },
-      { "surface": "الرَّجُلُ", "translit": "ar-rajulu", "gloss": "the man", "gender": "masculine" },
-      { "surface": "طَبِيبٌ", "translit": "ṭabībun", "gloss": "a doctor", "gender": "masculine" }
+      {
+        "surface": "ذَلِكَ",
+        "translit": "dhālika",
+        "gloss": "that",
+        "gender": "masculine"
+      },
+      {
+        "surface": "الرَّجُلُ",
+        "translit": "ar-rajulu",
+        "gloss": "the man",
+        "gender": "masculine"
+      },
+      {
+        "surface": "طَبِيبٌ",
+        "translit": "ṭabībun",
+        "gloss": "a doctor",
+        "gender": "masculine"
+      }
     ],
-    "audio": "ذَلِكَ الرَّجُلُ طَبِيبٌ", "level": "A1", "skills": [ "reading", "listening", "comprehension", "writing" ],
-    "prereqs": [ "gr:demonstratives", "gr:nominal-sentence", "gr:sun-moon" ] },
-
-  { "id": "txt:read-bag-under-chair", "kind": "text", "textType": "sentence", "source": "m20",
-    "vowelled": "الْحَقِيبَةُ تَحْتَ الْكُرْسِيِّ", "translit": "al-ḥaqībatu taḥta al-kursiyyi", "en": "The bag is under the chair.",
+    "audio": "ذَلِكَ الرَّجُلُ طَبِيبٌ",
+    "level": "A1",
+    "skills": [
+      "reading",
+      "listening",
+      "comprehension",
+      "writing"
+    ],
+    "prereqs": [
+      "gr:demonstratives",
+      "gr:nominal-sentence",
+      "gr:sun-moon"
+    ]
+  },
+  {
+    "id": "txt:read-bag-under-chair",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m20",
+    "vowelled": "الْحَقِيبَةُ تَحْتَ الْكُرْسِيِّ",
+    "translit": "al-ḥaqībatu taḥta al-kursiyyi",
+    "en": "The bag is under the chair.",
     "words": [
-      { "surface": "الْحَقِيبَةُ", "translit": "al-ḥaqībatu", "gloss": "the bag", "gender": "feminine" },
-      { "surface": "تَحْتَ الْكُرْسِيِّ", "translit": "taḥta al-kursiyyi", "gloss": "under the chair (genitive)", "gender": null }
+      {
+        "surface": "الْحَقِيبَةُ",
+        "translit": "al-ḥaqībatu",
+        "gloss": "the bag",
+        "gender": "feminine"
+      },
+      {
+        "surface": "تَحْتَ الْكُرْسِيِّ",
+        "translit": "taḥta al-kursiyyi",
+        "gloss": "under the chair (genitive)",
+        "gender": null
+      }
     ],
-    "audio": "الْحَقِيبَةُ تَحْتَ الْكُرْسِيِّ", "level": "A1", "skills": [ "reading", "listening", "comprehension" ],
-    "prereqs": [ "gr:core-prepositions" ] },
-
-  { "id": "txt:read-this-my-bag", "kind": "text", "textType": "sentence", "source": "m20",
-    "vowelled": "هَذِهِ حَقِيبَتِي", "translit": "hādhihi ḥaqībatī", "en": "This is my bag.",
+    "audio": "الْحَقِيبَةُ تَحْتَ الْكُرْسِيِّ",
+    "level": "A1",
+    "skills": [
+      "reading",
+      "listening",
+      "comprehension"
+    ],
+    "prereqs": [
+      "gr:core-prepositions"
+    ]
+  },
+  {
+    "id": "txt:read-this-my-bag",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m20",
+    "vowelled": "هَذِهِ حَقِيبَتِي",
+    "translit": "hādhihi ḥaqībatī",
+    "en": "This is my bag.",
     "words": [
-      { "surface": "هَذِهِ", "translit": "hādhihi", "gloss": "this (feminine)", "gender": "feminine" },
-      { "surface": "حَقِيبَتِي", "translit": "ḥaqībatī", "gloss": "my bag", "gender": "feminine" }
+      {
+        "surface": "هَذِهِ",
+        "translit": "hādhihi",
+        "gloss": "this (feminine)",
+        "gender": "feminine"
+      },
+      {
+        "surface": "حَقِيبَتِي",
+        "translit": "ḥaqībatī",
+        "gloss": "my bag",
+        "gender": "feminine"
+      }
     ],
-    "audio": "هَذِهِ حَقِيبَتِي", "level": "A1", "skills": [ "reading", "listening", "comprehension" ],
-    "prereqs": [ "gr:demonstratives", "gr:attached-possessive" ] },
-
-  { "id": "txt:read-parents-office-home", "kind": "text", "textType": "sentence", "source": "m20",
-    "vowelled": "الْأَبُ فِي الْمَكْتَبِ وَالْأُمُّ فِي الْبَيْتِ", "translit": "al-abu fī al-maktabi wa-al-ummu fī al-bayti", "en": "The father is in the office and the mother is at home.",
+    "audio": "هَذِهِ حَقِيبَتِي",
+    "level": "A1",
+    "skills": [
+      "reading",
+      "listening",
+      "comprehension"
+    ],
+    "prereqs": [
+      "gr:demonstratives",
+      "gr:attached-possessive"
+    ]
+  },
+  {
+    "id": "txt:read-parents-office-home",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m20",
+    "vowelled": "الْأَبُ فِي الْمَكْتَبِ وَالْأُمُّ فِي الْبَيْتِ",
+    "translit": "al-abu fī al-maktabi wa-al-ummu fī al-bayti",
+    "en": "The father is in the office and the mother is at home.",
     "words": [
-      { "surface": "الْأَبُ", "translit": "al-abu", "gloss": "the father", "gender": "masculine" },
-      { "surface": "فِي الْمَكْتَبِ", "translit": "fī al-maktabi", "gloss": "in the office", "gender": null },
-      { "surface": "وَالْأُمُّ", "translit": "wa-al-ummu", "gloss": "and the mother", "gender": "feminine" },
-      { "surface": "فِي الْبَيْتِ", "translit": "fī al-bayti", "gloss": "at home", "gender": null }
+      {
+        "surface": "الْأَبُ",
+        "translit": "al-abu",
+        "gloss": "the father",
+        "gender": "masculine"
+      },
+      {
+        "surface": "فِي الْمَكْتَبِ",
+        "translit": "fī al-maktabi",
+        "gloss": "in the office",
+        "gender": null
+      },
+      {
+        "surface": "وَالْأُمُّ",
+        "translit": "wa-al-ummu",
+        "gloss": "and the mother",
+        "gender": "feminine"
+      },
+      {
+        "surface": "فِي الْبَيْتِ",
+        "translit": "fī al-bayti",
+        "gloss": "at home",
+        "gender": null
+      }
     ],
-    "audio": "الْأَبُ فِي الْمَكْتَبِ وَالْأُمُّ فِي الْبَيْتِ", "level": "A1", "skills": [ "reading", "listening", "comprehension" ],
-    "prereqs": [ "gr:core-prepositions", "gr:nominal-sentence" ] },
-
-  { "id": "txt:read-tired-but-happy", "kind": "text", "textType": "sentence", "source": "m20",
-    "vowelled": "أَنَا مُتْعَبٌ لَكِنْ سَعِيدٌ", "translit": "anā mutʿabun lākin saʿīdun", "en": "I am tired but happy.",
+    "audio": "الْأَبُ فِي الْمَكْتَبِ وَالْأُمُّ فِي الْبَيْتِ",
+    "level": "A1",
+    "skills": [
+      "reading",
+      "listening",
+      "comprehension"
+    ],
+    "prereqs": [
+      "gr:core-prepositions",
+      "gr:nominal-sentence"
+    ]
+  },
+  {
+    "id": "txt:read-tired-but-happy",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m20",
+    "vowelled": "أَنَا مُتْعَبٌ لَكِنْ سَعِيدٌ",
+    "translit": "anā mutʿabun lākin saʿīdun",
+    "en": "I am tired but happy.",
     "words": [
-      { "surface": "أَنَا", "translit": "anā", "gloss": "I", "gender": null },
-      { "surface": "مُتْعَبٌ", "translit": "mutʿabun", "gloss": "tired", "gender": "masculine" },
-      { "surface": "لَكِنْ", "translit": "lākin", "gloss": "but", "gender": null },
-      { "surface": "سَعِيدٌ", "translit": "saʿīdun", "gloss": "happy", "gender": "masculine" }
+      {
+        "surface": "أَنَا",
+        "translit": "anā",
+        "gloss": "I",
+        "gender": null
+      },
+      {
+        "surface": "مُتْعَبٌ",
+        "translit": "mutʿabun",
+        "gloss": "tired",
+        "gender": "masculine"
+      },
+      {
+        "surface": "لَكِنْ",
+        "translit": "lākin",
+        "gloss": "but",
+        "gender": null
+      },
+      {
+        "surface": "سَعِيدٌ",
+        "translit": "saʿīdun",
+        "gloss": "happy",
+        "gender": "masculine"
+      }
     ],
-    "audio": "أَنَا مُتْعَبٌ لَكِنْ سَعِيدٌ", "level": "A1", "skills": [ "reading", "listening", "comprehension", "writing" ],
-    "prereqs": [ "gr:nominal-sentence" ] },
-
-  { "id": "txt:read-not-cold-today", "kind": "text", "textType": "sentence", "source": "m20",
-    "vowelled": "لَيْسَ الطَّقْسُ بَارِدًا الْيَوْمَ", "translit": "laysa aṭ-ṭaqsu bāridan al-yawma", "en": "The weather is not cold today.",
+    "audio": "أَنَا مُتْعَبٌ لَكِنْ سَعِيدٌ",
+    "level": "A1",
+    "skills": [
+      "reading",
+      "listening",
+      "comprehension",
+      "writing"
+    ],
+    "prereqs": [
+      "gr:nominal-sentence"
+    ]
+  },
+  {
+    "id": "txt:read-not-cold-today",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m20",
+    "vowelled": "لَيْسَ الطَّقْسُ بَارِدًا الْيَوْمَ",
+    "translit": "laysa aṭ-ṭaqsu bāridan al-yawma",
+    "en": "The weather is not cold today.",
     "words": [
-      { "surface": "لَيْسَ", "translit": "laysa", "gloss": "is not", "gender": null },
-      { "surface": "الطَّقْسُ", "translit": "aṭ-ṭaqsu", "gloss": "the weather", "gender": "masculine" },
-      { "surface": "بَارِدًا", "translit": "bāridan", "gloss": "cold (accusative after لَيْسَ)", "gender": "masculine" },
-      { "surface": "الْيَوْمَ", "translit": "al-yawma", "gloss": "today (adverb)", "gender": null }
+      {
+        "surface": "لَيْسَ",
+        "translit": "laysa",
+        "gloss": "is not",
+        "gender": null
+      },
+      {
+        "surface": "الطَّقْسُ",
+        "translit": "aṭ-ṭaqsu",
+        "gloss": "the weather",
+        "gender": "masculine"
+      },
+      {
+        "surface": "بَارِدًا",
+        "translit": "bāridan",
+        "gloss": "cold (accusative after لَيْسَ)",
+        "gender": "masculine"
+      },
+      {
+        "surface": "الْيَوْمَ",
+        "translit": "al-yawma",
+        "gloss": "today (adverb)",
+        "gender": null
+      }
     ],
-    "audio": "لَيْسَ الطَّقْسُ بَارِدًا الْيَوْمَ", "level": "A1", "skills": [ "reading", "listening", "comprehension" ],
-    "prereqs": [ "gr:negation-a1", "gr:sun-moon" ] },
-
-  { "id": "txt:read-this-not-my-pen", "kind": "text", "textType": "sentence", "source": "m20",
-    "vowelled": "هَذَا لَيْسَ قَلَمِي", "translit": "hādhā laysa qalamī", "en": "This is not my pen.",
+    "audio": "لَيْسَ الطَّقْسُ بَارِدًا الْيَوْمَ",
+    "level": "A1",
+    "skills": [
+      "reading",
+      "listening",
+      "comprehension"
+    ],
+    "prereqs": [
+      "gr:negation-a1",
+      "gr:sun-moon"
+    ]
+  },
+  {
+    "id": "txt:read-this-not-my-pen",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m20",
+    "vowelled": "هَذَا لَيْسَ قَلَمِي",
+    "translit": "hādhā laysa qalamī",
+    "en": "This is not my pen.",
     "words": [
-      { "surface": "هَذَا", "translit": "hādhā", "gloss": "this", "gender": "masculine" },
-      { "surface": "لَيْسَ", "translit": "laysa", "gloss": "is not", "gender": null },
-      { "surface": "قَلَمِي", "translit": "qalamī", "gloss": "my pen", "gender": "masculine" }
+      {
+        "surface": "هَذَا",
+        "translit": "hādhā",
+        "gloss": "this",
+        "gender": "masculine"
+      },
+      {
+        "surface": "لَيْسَ",
+        "translit": "laysa",
+        "gloss": "is not",
+        "gender": null
+      },
+      {
+        "surface": "قَلَمِي",
+        "translit": "qalamī",
+        "gloss": "my pen",
+        "gender": "masculine"
+      }
     ],
-    "audio": "هَذَا لَيْسَ قَلَمِي", "level": "A1", "skills": [ "reading", "listening", "comprehension" ],
-    "prereqs": [ "gr:demonstratives", "gr:negation-a1", "gr:attached-possessive" ] },
-
-  { "id": "txt:read-dlg-greeting", "kind": "text", "textType": "dialogue", "source": "m20",
+    "audio": "هَذَا لَيْسَ قَلَمِي",
+    "level": "A1",
+    "skills": [
+      "reading",
+      "listening",
+      "comprehension"
+    ],
+    "prereqs": [
+      "gr:demonstratives",
+      "gr:negation-a1",
+      "gr:attached-possessive"
+    ]
+  },
+  {
+    "id": "txt:read-dlg-greeting",
+    "kind": "text",
+    "textType": "dialogue",
+    "source": "m20",
     "vowelled": "السَّلَامُ عَلَيْكُمْ — وَعَلَيْكُمُ السَّلَامُ — كَيْفَ حَالُكَ؟ — أَنَا بِخَيْرٍ، شُكْرًا",
     "translit": "as-salāmu ʿalaykum — wa-ʿalaykumu s-salāmu — kayfa ḥāluka? — anā bikhayrin, shukran",
     "en": "— Peace be upon you. — And upon you be peace. — How are you? — I'm fine, thank you.",
     "turns": [
-      { "ar": "السَّلَامُ عَلَيْكُمْ", "translit": "as-salāmu ʿalaykum", "en": "Peace be upon you." },
-      { "ar": "وَعَلَيْكُمُ السَّلَامُ", "translit": "wa-ʿalaykumu s-salāmu", "en": "And upon you be peace." },
-      { "ar": "كَيْفَ حَالُكَ؟", "translit": "kayfa ḥāluka?", "en": "How are you?" },
-      { "ar": "أَنَا بِخَيْرٍ، شُكْرًا", "translit": "anā bikhayrin, shukran", "en": "I'm fine, thank you." }
+      {
+        "ar": "السَّلَامُ عَلَيْكُمْ",
+        "translit": "as-salāmu ʿalaykum",
+        "en": "Peace be upon you."
+      },
+      {
+        "ar": "وَعَلَيْكُمُ السَّلَامُ",
+        "translit": "wa-ʿalaykumu s-salāmu",
+        "en": "And upon you be peace."
+      },
+      {
+        "ar": "كَيْفَ حَالُكَ؟",
+        "translit": "kayfa ḥāluka?",
+        "en": "How are you?"
+      },
+      {
+        "ar": "أَنَا بِخَيْرٍ، شُكْرًا",
+        "translit": "anā bikhayrin, shukran",
+        "en": "I'm fine, thank you."
+      }
     ],
     "audio": "السَّلَامُ عَلَيْكُمْ. وَعَلَيْكُمُ السَّلَامُ. كَيْفَ حَالُكَ؟ أَنَا بِخَيْرٍ، شُكْرًا.",
-    "level": "A1", "skills": [ "listening", "reading", "comprehension" ],
-    "prereqs": [ "gr:nominal-sentence" ] },
-
-  { "id": "txt:read-dlg-name", "kind": "text", "textType": "dialogue", "source": "m20",
+    "level": "A1",
+    "skills": [
+      "listening",
+      "reading",
+      "comprehension"
+    ],
+    "prereqs": [
+      "gr:nominal-sentence"
+    ]
+  },
+  {
+    "id": "txt:read-dlg-name",
+    "kind": "text",
+    "textType": "dialogue",
+    "source": "m20",
     "vowelled": "مَا اسْمُكِ؟ — اسْمِي سَارَةُ — تَشَرَّفْنَا",
     "translit": "mā ismuki? — ismī sāratu — tasharrafnā",
     "en": "— What is your name? — My name is Sara. — Nice to meet you.",
     "turns": [
-      { "ar": "مَا اسْمُكِ؟", "translit": "mā ismuki?", "en": "What is your name? (to a woman)" },
-      { "ar": "اسْمِي سَارَةُ", "translit": "ismī sāratu", "en": "My name is Sara." },
-      { "ar": "تَشَرَّفْنَا", "translit": "tasharrafnā", "en": "Nice to meet you." }
+      {
+        "ar": "مَا اسْمُكِ؟",
+        "translit": "mā ismuki?",
+        "en": "What is your name? (to a woman)"
+      },
+      {
+        "ar": "اسْمِي سَارَةُ",
+        "translit": "ismī sāratu",
+        "en": "My name is Sara."
+      },
+      {
+        "ar": "تَشَرَّفْنَا",
+        "translit": "tasharrafnā",
+        "en": "Nice to meet you."
+      }
     ],
     "audio": "مَا اسْمُكِ؟ اسْمِي سَارَةُ. تَشَرَّفْنَا.",
-    "level": "A1", "skills": [ "listening", "reading", "comprehension" ],
-    "prereqs": [ "gr:attached-possessive" ] },
-
-  { "id": "txt:read-dlg-who-is-this", "kind": "text", "textType": "dialogue", "source": "m20",
+    "level": "A1",
+    "skills": [
+      "listening",
+      "reading",
+      "comprehension"
+    ],
+    "prereqs": [
+      "gr:attached-possessive"
+    ]
+  },
+  {
+    "id": "txt:read-dlg-who-is-this",
+    "kind": "text",
+    "textType": "dialogue",
+    "source": "m20",
     "vowelled": "مَنْ هَذَا؟ — هَذَا صَدِيقِي مُحَمَّدٌ — أَهْلًا وَسَهْلًا",
     "translit": "man hādhā? — hādhā ṣadīqī muḥammadun — ahlan wa-sahlan",
     "en": "— Who is this? — This is my friend Muhammad. — Welcome.",
     "turns": [
-      { "ar": "مَنْ هَذَا؟", "translit": "man hādhā?", "en": "Who is this?" },
-      { "ar": "هَذَا صَدِيقِي مُحَمَّدٌ", "translit": "hādhā ṣadīqī muḥammadun", "en": "This is my friend Muhammad." },
-      { "ar": "أَهْلًا وَسَهْلًا", "translit": "ahlan wa-sahlan", "en": "Welcome." }
+      {
+        "ar": "مَنْ هَذَا؟",
+        "translit": "man hādhā?",
+        "en": "Who is this?"
+      },
+      {
+        "ar": "هَذَا صَدِيقِي مُحَمَّدٌ",
+        "translit": "hādhā ṣadīqī muḥammadun",
+        "en": "This is my friend Muhammad."
+      },
+      {
+        "ar": "أَهْلًا وَسَهْلًا",
+        "translit": "ahlan wa-sahlan",
+        "en": "Welcome."
+      }
     ],
     "audio": "مَنْ هَذَا؟ هَذَا صَدِيقِي مُحَمَّدٌ. أَهْلًا وَسَهْلًا.",
-    "level": "A1", "skills": [ "listening", "reading", "comprehension" ],
-    "prereqs": [ "gr:demonstratives", "gr:attached-possessive" ] },
-
-  { "id": "txt:read-dlg-asking-way", "kind": "text", "textType": "dialogue", "source": "m20",
+    "level": "A1",
+    "skills": [
+      "listening",
+      "reading",
+      "comprehension"
+    ],
+    "prereqs": [
+      "gr:demonstratives",
+      "gr:attached-possessive"
+    ]
+  },
+  {
+    "id": "txt:read-dlg-asking-way",
+    "kind": "text",
+    "textType": "dialogue",
+    "source": "m20",
     "vowelled": "أَيْنَ الْمَحَطَّةُ؟ — الْمَحَطَّةُ هُنَاكَ، عَلَى الْيَمِينِ",
     "translit": "ayna al-maḥaṭṭatu? — al-maḥaṭṭatu hunāka, ʿalā al-yamīni",
     "en": "— Where is the station? — The station is over there, on the right.",
     "turns": [
-      { "ar": "أَيْنَ الْمَحَطَّةُ؟", "translit": "ayna al-maḥaṭṭatu?", "en": "Where is the station?" },
-      { "ar": "الْمَحَطَّةُ هُنَاكَ، عَلَى الْيَمِينِ", "translit": "al-maḥaṭṭatu hunāka, ʿalā al-yamīni", "en": "The station is over there, on the right." }
+      {
+        "ar": "أَيْنَ الْمَحَطَّةُ؟",
+        "translit": "ayna al-maḥaṭṭatu?",
+        "en": "Where is the station?"
+      },
+      {
+        "ar": "الْمَحَطَّةُ هُنَاكَ، عَلَى الْيَمِينِ",
+        "translit": "al-maḥaṭṭatu hunāka, ʿalā al-yamīni",
+        "en": "The station is over there, on the right."
+      }
     ],
     "audio": "أَيْنَ الْمَحَطَّةُ؟ الْمَحَطَّةُ هُنَاكَ، عَلَى الْيَمِينِ.",
-    "level": "A1", "skills": [ "listening", "reading", "comprehension" ],
-    "prereqs": [ "gr:core-prepositions" ] },
-
+    "level": "A1",
+    "skills": [
+      "listening",
+      "reading",
+      "comprehension"
+    ],
+    "prereqs": [
+      "gr:core-prepositions"
+    ]
+  },
   {
     "id": "txt:gram-count-one",
     "kind": "text",
@@ -892,14 +1803,35 @@
     "translit": "ʿindī kitābun wāḥidun",
     "en": "I have one book.",
     "words": [
-      { "surface": "عِنْدِي", "translit": "ʿindī", "gloss": "I have (lit. \"at me\")", "gender": null },
-      { "surface": "كِتَابٌ", "translit": "kitābun", "gloss": "a book", "gender": "masculine" },
-      { "surface": "وَاحِدٌ", "translit": "wāḥidun", "gloss": "one — the singular noun already says this; وَاحِد just adds emphasis", "gender": "masculine" }
+      {
+        "surface": "عِنْدِي",
+        "translit": "ʿindī",
+        "gloss": "I have (lit. \"at me\")",
+        "gender": null
+      },
+      {
+        "surface": "كِتَابٌ",
+        "translit": "kitābun",
+        "gloss": "a book",
+        "gender": "masculine"
+      },
+      {
+        "surface": "وَاحِدٌ",
+        "translit": "wāḥidun",
+        "gloss": "one — the singular noun already says this; وَاحِد just adds emphasis",
+        "gender": "masculine"
+      }
     ],
     "audio": "عِنْدِي كِتَابٌ وَاحِدٌ",
     "level": "A1",
-    "skills": [ "reading", "comprehension", "grammar" ],
-    "prereqs": [ "gr:counted-noun-intro" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:counted-noun-intro"
+    ]
   },
   {
     "id": "txt:gram-count-two",
@@ -911,13 +1843,29 @@
     "translit": "ʿindī kitābāni",
     "en": "I have two books.",
     "words": [
-      { "surface": "عِنْدِي", "translit": "ʿindī", "gloss": "I have (lit. \"at me\")", "gender": null },
-      { "surface": "كِتَابَانِ", "translit": "kitābāni", "gloss": "two books — the dual ending alone says \"two\", no separate number word needed", "gender": "masculine" }
+      {
+        "surface": "عِنْدِي",
+        "translit": "ʿindī",
+        "gloss": "I have (lit. \"at me\")",
+        "gender": null
+      },
+      {
+        "surface": "كِتَابَانِ",
+        "translit": "kitābāni",
+        "gloss": "two books — the dual ending alone says \"two\", no separate number word needed",
+        "gender": "masculine"
+      }
     ],
     "audio": "عِنْدِي كِتَابَانِ",
     "level": "A1",
-    "skills": [ "reading", "comprehension", "grammar" ],
-    "prereqs": [ "gr:counted-noun-intro" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:counted-noun-intro"
+    ]
   },
   {
     "id": "txt:gram-count-three",
@@ -929,14 +1877,35 @@
     "translit": "ʿindī thalāthatu kutubin",
     "en": "I have three books.",
     "words": [
-      { "surface": "عِنْدِي", "translit": "ʿindī", "gloss": "I have (lit. \"at me\")", "gender": null },
-      { "surface": "ثَلَاثَةُ", "translit": "thalāthatu", "gloss": "three (feminine-form number, counting a masculine noun — the reversal rule for later)", "gender": "feminine" },
-      { "surface": "كُتُبٍ", "translit": "kutubin", "gloss": "books (plural, genitive after the number)", "gender": "masculine" }
+      {
+        "surface": "عِنْدِي",
+        "translit": "ʿindī",
+        "gloss": "I have (lit. \"at me\")",
+        "gender": null
+      },
+      {
+        "surface": "ثَلَاثَةُ",
+        "translit": "thalāthatu",
+        "gloss": "three (feminine-form number, counting a masculine noun — the reversal rule for later)",
+        "gender": "feminine"
+      },
+      {
+        "surface": "كُتُبٍ",
+        "translit": "kutubin",
+        "gloss": "books (plural, genitive after the number)",
+        "gender": "masculine"
+      }
     ],
     "audio": "عِنْدِي ثَلَاثَةُ كُتُبٍ",
     "level": "A1",
-    "skills": [ "reading", "comprehension", "grammar" ],
-    "prereqs": [ "gr:counted-noun-intro" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:counted-noun-intro"
+    ]
   },
   {
     "id": "txt:gram-past-vso",
@@ -948,16 +1917,42 @@
     "translit": "dhahaba ar-rajulu ilā al-madrasati",
     "en": "The man went to school.",
     "words": [
-      { "surface": "ذَهَبَ", "translit": "dhahaba", "gloss": "went (he)", "gender": "masculine" },
-      { "surface": "الرَّجُلُ", "translit": "ar-rajulu", "gloss": "the man (subject, following the verb — VSO order)", "gender": "masculine" },
-      { "surface": "إِلَى الْمَدْرَسَةِ", "translit": "ilā al-madrasati", "gloss": "to school", "gender": null }
+      {
+        "surface": "ذَهَبَ",
+        "translit": "dhahaba",
+        "gloss": "went (he)",
+        "gender": "masculine"
+      },
+      {
+        "surface": "الرَّجُلُ",
+        "translit": "ar-rajulu",
+        "gloss": "the man (subject, following the verb — VSO order)",
+        "gender": "masculine"
+      },
+      {
+        "surface": "إِلَى الْمَدْرَسَةِ",
+        "translit": "ilā al-madrasati",
+        "gloss": "to school",
+        "gender": null
+      }
     ],
     "audio": "ذَهَبَ الرَّجُلُ إِلَى الْمَدْرَسَةِ",
     "level": "A2",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:verbal-sentence" ],
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:verbal-sentence"
+    ],
     "parse": [
-      { "word": "الرَّجُلُ", "role": "fail", "case": "raf" }
+      {
+        "word": "الرَّجُلُ",
+        "role": "fail",
+        "case": "raf"
+      }
     ]
   },
   {
@@ -970,16 +1965,42 @@
     "translit": "anā qaraʾtu al-kitāba",
     "en": "I read the book.",
     "words": [
-      { "surface": "أَنَا", "translit": "anā", "gloss": "I", "gender": null },
-      { "surface": "قَرَأْتُ", "translit": "qaraʾtu", "gloss": "read (I) — the 1st-person past-tense ending, no gender marking", "gender": null },
-      { "surface": "الْكِتَابَ", "translit": "al-kitāba", "gloss": "the book (object, accusative)", "gender": "masculine" }
+      {
+        "surface": "أَنَا",
+        "translit": "anā",
+        "gloss": "I",
+        "gender": null
+      },
+      {
+        "surface": "قَرَأْتُ",
+        "translit": "qaraʾtu",
+        "gloss": "read (I) — the 1st-person past-tense ending, no gender marking",
+        "gender": null
+      },
+      {
+        "surface": "الْكِتَابَ",
+        "translit": "al-kitāba",
+        "gloss": "the book (object, accusative)",
+        "gender": "masculine"
+      }
     ],
     "audio": "أَنَا قَرَأْتُ الْكِتَابَ",
     "level": "A2",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:verbal-sentence" ],
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:verbal-sentence"
+    ],
     "parse": [
-      { "word": "الْكِتَابَ", "role": "mafulbih", "case": "nasb" }
+      {
+        "word": "الْكِتَابَ",
+        "role": "mafulbih",
+        "case": "nasb"
+      }
     ]
   },
   {
@@ -992,14 +2013,36 @@
     "translit": "anti dhahabti ilā al-bayti",
     "en": "You (f.) went home.",
     "words": [
-      { "surface": "أَنْتِ", "translit": "anti", "gloss": "you (f.)", "gender": "feminine" },
-      { "surface": "ذَهَبْتِ", "translit": "dhahabti", "gloss": "went (you, f.)", "gender": "feminine" },
-      { "surface": "إِلَى الْبَيْتِ", "translit": "ilā al-bayti", "gloss": "home (lit. \"to the house\")", "gender": null }
+      {
+        "surface": "أَنْتِ",
+        "translit": "anti",
+        "gloss": "you (f.)",
+        "gender": "feminine"
+      },
+      {
+        "surface": "ذَهَبْتِ",
+        "translit": "dhahabti",
+        "gloss": "went (you, f.)",
+        "gender": "feminine"
+      },
+      {
+        "surface": "إِلَى الْبَيْتِ",
+        "translit": "ilā al-bayti",
+        "gloss": "home (lit. \"to the house\")",
+        "gender": null
+      }
     ],
     "audio": "أَنْتِ ذَهَبْتِ إِلَى الْبَيْتِ",
     "level": "A2",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:verbal-sentence" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:verbal-sentence"
+    ]
   },
   {
     "id": "txt:gram-kana-house",
@@ -1011,14 +2054,36 @@
     "translit": "kāna al-baytu kabīran",
     "en": "The house was big.",
     "words": [
-      { "surface": "كَانَ", "translit": "kāna", "gloss": "was", "gender": "masculine" },
-      { "surface": "الْبَيْتُ", "translit": "al-baytu", "gloss": "the house (اسم كان, nominative)", "gender": "masculine" },
-      { "surface": "كَبِيرًا", "translit": "kabīran", "gloss": "big (خبر كان, accusative — not the nominative ٌ a nominal sentence would use)", "gender": "masculine" }
+      {
+        "surface": "كَانَ",
+        "translit": "kāna",
+        "gloss": "was",
+        "gender": "masculine"
+      },
+      {
+        "surface": "الْبَيْتُ",
+        "translit": "al-baytu",
+        "gloss": "the house (اسم كان, nominative)",
+        "gender": "masculine"
+      },
+      {
+        "surface": "كَبِيرًا",
+        "translit": "kabīran",
+        "gloss": "big (خبر كان, accusative — not the nominative ٌ a nominal sentence would use)",
+        "gender": "masculine"
+      }
     ],
     "audio": "كَانَ الْبَيْتُ كَبِيرًا",
     "level": "A2",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:kana" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:kana"
+    ]
   },
   {
     "id": "txt:gram-kana-fem",
@@ -1030,14 +2095,36 @@
     "translit": "kānati al-marʾatu kabīratan",
     "en": "The woman was old.",
     "words": [
-      { "surface": "كَانَتِ", "translit": "kānati", "gloss": "was (feminine — a helping kasra appears before الـ)", "gender": "feminine" },
-      { "surface": "الْمَرْأَةُ", "translit": "al-marʾatu", "gloss": "the woman (اسم كان, nominative)", "gender": "feminine" },
-      { "surface": "كَبِيرَةً", "translit": "kabīratan", "gloss": "old (خبر كان, accusative, feminine)", "gender": "feminine" }
+      {
+        "surface": "كَانَتِ",
+        "translit": "kānati",
+        "gloss": "was (feminine — a helping kasra appears before الـ)",
+        "gender": "feminine"
+      },
+      {
+        "surface": "الْمَرْأَةُ",
+        "translit": "al-marʾatu",
+        "gloss": "the woman (اسم كان, nominative)",
+        "gender": "feminine"
+      },
+      {
+        "surface": "كَبِيرَةً",
+        "translit": "kabīratan",
+        "gloss": "old (خبر كان, accusative, feminine)",
+        "gender": "feminine"
+      }
     ],
     "audio": "كَانَتِ الْمَرْأَةُ كَبِيرَةً",
     "level": "A2",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:kana" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:kana"
+    ]
   },
   {
     "id": "txt:gram-kana-1sg",
@@ -1049,13 +2136,30 @@
     "translit": "kuntu fī al-bayti",
     "en": "I was at home.",
     "words": [
-      { "surface": "كُنْتُ", "translit": "kuntu", "gloss": "I was — كان's irregular 1st-person form", "gender": null },
-      { "surface": "فِي الْبَيْتِ", "translit": "fī al-bayti", "gloss": "at home (lit. \"in the house\")", "gender": null }
+      {
+        "surface": "كُنْتُ",
+        "translit": "kuntu",
+        "gloss": "I was — كان's irregular 1st-person form",
+        "gender": null
+      },
+      {
+        "surface": "فِي الْبَيْتِ",
+        "translit": "fī al-bayti",
+        "gloss": "at home (lit. \"in the house\")",
+        "gender": null
+      }
     ],
     "audio": "كُنْتُ فِي الْبَيْتِ",
     "level": "A2",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:kana" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:kana"
+    ]
   },
   {
     "id": "txt:gram-idafa-phrase",
@@ -1067,15 +2171,36 @@
     "translit": "bābu al-bayti",
     "en": "the door of the house",
     "words": [
-      { "surface": "بَابُ", "translit": "bābu", "gloss": "door (of — مُضَاف, no الـ or tanwīn of its own)", "gender": "masculine" },
-      { "surface": "الْبَيْتِ", "translit": "al-bayti", "gloss": "the house (مُضَاف إِلَيْهِ — genitive, carries the phrase's definiteness)", "gender": "masculine" }
+      {
+        "surface": "بَابُ",
+        "translit": "bābu",
+        "gloss": "door (of — مُضَاف, no الـ or tanwīn of its own)",
+        "gender": "masculine"
+      },
+      {
+        "surface": "الْبَيْتِ",
+        "translit": "al-bayti",
+        "gloss": "the house (مُضَاف إِلَيْهِ — genitive, carries the phrase's definiteness)",
+        "gender": "masculine"
+      }
     ],
     "audio": "بَابُ الْبَيْتِ",
     "level": "A2",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:idafa" ],
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:idafa"
+    ],
     "parse": [
-      { "word": "الْبَيْتِ", "role": "mudafilayhi", "case": "jarr" }
+      {
+        "word": "الْبَيْتِ",
+        "role": "mudafilayhi",
+        "case": "jarr"
+      }
     ]
   },
   {
@@ -1088,17 +2213,47 @@
     "translit": "baytu ar-rajuli kabīrun",
     "en": "The man's house is big.",
     "words": [
-      { "surface": "بَيْتُ", "translit": "baytu", "gloss": "house (of — مُضَاف, here the nominative topic of the sentence)", "gender": "masculine" },
-      { "surface": "الرَّجُلِ", "translit": "ar-rajuli", "gloss": "the man (مُضَاف إِلَيْهِ — genitive)", "gender": "masculine" },
-      { "surface": "كَبِيرٌ", "translit": "kabīrun", "gloss": "big (comment, indefinite)", "gender": "masculine" }
+      {
+        "surface": "بَيْتُ",
+        "translit": "baytu",
+        "gloss": "house (of — مُضَاف, here the nominative topic of the sentence)",
+        "gender": "masculine"
+      },
+      {
+        "surface": "الرَّجُلِ",
+        "translit": "ar-rajuli",
+        "gloss": "the man (مُضَاف إِلَيْهِ — genitive)",
+        "gender": "masculine"
+      },
+      {
+        "surface": "كَبِيرٌ",
+        "translit": "kabīrun",
+        "gloss": "big (comment, indefinite)",
+        "gender": "masculine"
+      }
     ],
     "audio": "بَيْتُ الرَّجُلِ كَبِيرٌ",
     "level": "A2",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:idafa" ],
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:idafa"
+    ],
     "parse": [
-      { "word": "الرَّجُلِ", "role": "mudafilayhi", "case": "jarr" },
-      { "word": "كَبِيرٌ", "role": "khabar", "case": "raf" }
+      {
+        "word": "الرَّجُلِ",
+        "role": "mudafilayhi",
+        "case": "jarr"
+      },
+      {
+        "word": "كَبِيرٌ",
+        "role": "khabar",
+        "case": "raf"
+      }
     ]
   },
   {
@@ -1111,17 +2266,47 @@
     "translit": "qalamu aṭ-ṭālibi jadīdun",
     "en": "The student's pen is new.",
     "words": [
-      { "surface": "قَلَمُ", "translit": "qalamu", "gloss": "pen (of — مُضَاف, nominative topic)", "gender": "masculine" },
-      { "surface": "الطَّالِبِ", "translit": "aṭ-ṭālibi", "gloss": "the student (مُضَاف إِلَيْهِ — genitive)", "gender": "masculine" },
-      { "surface": "جَدِيدٌ", "translit": "jadīdun", "gloss": "new (comment, indefinite)", "gender": "masculine" }
+      {
+        "surface": "قَلَمُ",
+        "translit": "qalamu",
+        "gloss": "pen (of — مُضَاف, nominative topic)",
+        "gender": "masculine"
+      },
+      {
+        "surface": "الطَّالِبِ",
+        "translit": "aṭ-ṭālibi",
+        "gloss": "the student (مُضَاف إِلَيْهِ — genitive)",
+        "gender": "masculine"
+      },
+      {
+        "surface": "جَدِيدٌ",
+        "translit": "jadīdun",
+        "gloss": "new (comment, indefinite)",
+        "gender": "masculine"
+      }
     ],
     "audio": "قَلَمُ الطَّالِبِ جَدِيدٌ",
     "level": "A2",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:idafa" ],
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:idafa"
+    ],
     "parse": [
-      { "word": "الطَّالِبِ", "role": "mudafilayhi", "case": "jarr" },
-      { "word": "جَدِيدٌ", "role": "khabar", "case": "raf" }
+      {
+        "word": "الطَّالِبِ",
+        "role": "mudafilayhi",
+        "case": "jarr"
+      },
+      {
+        "word": "جَدِيدٌ",
+        "role": "khabar",
+        "case": "raf"
+      }
     ]
   },
   {
@@ -1134,14 +2319,36 @@
     "translit": "anā adhhabu ilā al-madrasati",
     "en": "I go to school.",
     "words": [
-      { "surface": "أَنَا", "translit": "anā", "gloss": "I", "gender": null },
-      { "surface": "أَذْهَبُ", "translit": "adhhabu", "gloss": "go (I) — the أَـ prefix", "gender": null },
-      { "surface": "إِلَى الْمَدْرَسَةِ", "translit": "ilā al-madrasati", "gloss": "to school", "gender": null }
+      {
+        "surface": "أَنَا",
+        "translit": "anā",
+        "gloss": "I",
+        "gender": null
+      },
+      {
+        "surface": "أَذْهَبُ",
+        "translit": "adhhabu",
+        "gloss": "go (I) — the أَـ prefix",
+        "gender": null
+      },
+      {
+        "surface": "إِلَى الْمَدْرَسَةِ",
+        "translit": "ilā al-madrasati",
+        "gloss": "to school",
+        "gender": null
+      }
     ],
     "audio": "أَنَا أَذْهَبُ إِلَى الْمَدْرَسَةِ",
     "level": "A2",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:present-tense" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:present-tense"
+    ]
   },
   {
     "id": "txt:gram-verb-anta",
@@ -1153,14 +2360,36 @@
     "translit": "anta tadhhabu ilā al-madrasati",
     "en": "You (m.) go to school.",
     "words": [
-      { "surface": "أَنْتَ", "translit": "anta", "gloss": "you (m.)", "gender": "masculine" },
-      { "surface": "تَذْهَبُ", "translit": "tadhhabu", "gloss": "go (you, m.) — the same تَـ prefix-form as \"she goes\"; only the pronoun tells them apart", "gender": "masculine" },
-      { "surface": "إِلَى الْمَدْرَسَةِ", "translit": "ilā al-madrasati", "gloss": "to school", "gender": null }
+      {
+        "surface": "أَنْتَ",
+        "translit": "anta",
+        "gloss": "you (m.)",
+        "gender": "masculine"
+      },
+      {
+        "surface": "تَذْهَبُ",
+        "translit": "tadhhabu",
+        "gloss": "go (you, m.) — the same تَـ prefix-form as \"she goes\"; only the pronoun tells them apart",
+        "gender": "masculine"
+      },
+      {
+        "surface": "إِلَى الْمَدْرَسَةِ",
+        "translit": "ilā al-madrasati",
+        "gloss": "to school",
+        "gender": null
+      }
     ],
     "audio": "أَنْتَ تَذْهَبُ إِلَى الْمَدْرَسَةِ",
     "level": "A2",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:present-tense" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:present-tense"
+    ]
   },
   {
     "id": "txt:gram-verb-anti",
@@ -1172,14 +2401,36 @@
     "translit": "anti tadhhabīna ilā al-madrasati",
     "en": "You (f.) go to school.",
     "words": [
-      { "surface": "أَنْتِ", "translit": "anti", "gloss": "you (f.)", "gender": "feminine" },
-      { "surface": "تَذْهَبِينَ", "translit": "tadhhabīna", "gloss": "go (you, f.) — تَـ plus the feminine ـِينَ ending", "gender": "feminine" },
-      { "surface": "إِلَى الْمَدْرَسَةِ", "translit": "ilā al-madrasati", "gloss": "to school", "gender": null }
+      {
+        "surface": "أَنْتِ",
+        "translit": "anti",
+        "gloss": "you (f.)",
+        "gender": "feminine"
+      },
+      {
+        "surface": "تَذْهَبِينَ",
+        "translit": "tadhhabīna",
+        "gloss": "go (you, f.) — تَـ plus the feminine ـِينَ ending",
+        "gender": "feminine"
+      },
+      {
+        "surface": "إِلَى الْمَدْرَسَةِ",
+        "translit": "ilā al-madrasati",
+        "gloss": "to school",
+        "gender": null
+      }
     ],
     "audio": "أَنْتِ تَذْهَبِينَ إِلَى الْمَدْرَسَةِ",
     "level": "A2",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:present-tense" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:present-tense"
+    ]
   },
   {
     "id": "txt:gram-verb-nahnu",
@@ -1191,14 +2442,36 @@
     "translit": "naḥnu nadhhabu ilā al-madrasati",
     "en": "We go to school.",
     "words": [
-      { "surface": "نَحْنُ", "translit": "naḥnu", "gloss": "we", "gender": null },
-      { "surface": "نَذْهَبُ", "translit": "nadhhabu", "gloss": "go (we) — the نَـ prefix", "gender": null },
-      { "surface": "إِلَى الْمَدْرَسَةِ", "translit": "ilā al-madrasati", "gloss": "to school", "gender": null }
+      {
+        "surface": "نَحْنُ",
+        "translit": "naḥnu",
+        "gloss": "we",
+        "gender": null
+      },
+      {
+        "surface": "نَذْهَبُ",
+        "translit": "nadhhabu",
+        "gloss": "go (we) — the نَـ prefix",
+        "gender": null
+      },
+      {
+        "surface": "إِلَى الْمَدْرَسَةِ",
+        "translit": "ilā al-madrasati",
+        "gloss": "to school",
+        "gender": null
+      }
     ],
     "audio": "نَحْنُ نَذْهَبُ إِلَى الْمَدْرَسَةِ",
     "level": "A2",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:present-tense" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:present-tense"
+    ]
   },
   {
     "id": "txt:gram-num-11m",
@@ -1210,14 +2483,36 @@
     "translit": "ʿindī aḥada ʿashara kitāban",
     "en": "I have eleven books.",
     "words": [
-      { "surface": "عِنْدِي", "translit": "ʿindī", "gloss": "I have (lit. \"at me\")", "gender": null },
-      { "surface": "أَحَدَ عَشَرَ", "translit": "aḥada ʿashara", "gloss": "eleven (masculine, irregular compound)", "gender": "masculine" },
-      { "surface": "كِتَابًا", "translit": "kitāban", "gloss": "book (singular, accusative — not a plural)", "gender": "masculine" }
+      {
+        "surface": "عِنْدِي",
+        "translit": "ʿindī",
+        "gloss": "I have (lit. \"at me\")",
+        "gender": null
+      },
+      {
+        "surface": "أَحَدَ عَشَرَ",
+        "translit": "aḥada ʿashara",
+        "gloss": "eleven (masculine, irregular compound)",
+        "gender": "masculine"
+      },
+      {
+        "surface": "كِتَابًا",
+        "translit": "kitāban",
+        "gloss": "book (singular, accusative — not a plural)",
+        "gender": "masculine"
+      }
     ],
     "audio": "عِنْدِي أَحَدَ عَشَرَ كِتَابًا",
     "level": "A2",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:numbers-11-99" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:numbers-11-99"
+    ]
   },
   {
     "id": "txt:gram-num-11f",
@@ -1229,14 +2524,36 @@
     "translit": "ʿindī iḥdā ʿashrata ṭālibatan",
     "en": "I have eleven female students.",
     "words": [
-      { "surface": "عِنْدِي", "translit": "ʿindī", "gloss": "I have (lit. \"at me\")", "gender": null },
-      { "surface": "إِحْدَى عَشْرَةَ", "translit": "iḥdā ʿashrata", "gloss": "eleven (feminine — a different word from the masculine, not just a changed ending)", "gender": "feminine" },
-      { "surface": "طَالِبَةً", "translit": "ṭālibatan", "gloss": "student (singular feminine, accusative)", "gender": "feminine" }
+      {
+        "surface": "عِنْدِي",
+        "translit": "ʿindī",
+        "gloss": "I have (lit. \"at me\")",
+        "gender": null
+      },
+      {
+        "surface": "إِحْدَى عَشْرَةَ",
+        "translit": "iḥdā ʿashrata",
+        "gloss": "eleven (feminine — a different word from the masculine, not just a changed ending)",
+        "gender": "feminine"
+      },
+      {
+        "surface": "طَالِبَةً",
+        "translit": "ṭālibatan",
+        "gloss": "student (singular feminine, accusative)",
+        "gender": "feminine"
+      }
     ],
     "audio": "عِنْدِي إِحْدَى عَشْرَةَ طَالِبَةً",
     "level": "A2",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:numbers-11-99" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:numbers-11-99"
+    ]
   },
   {
     "id": "txt:gram-num-15m",
@@ -1248,14 +2565,36 @@
     "translit": "ʿindī khamsata ʿashara kitāban",
     "en": "I have fifteen books.",
     "words": [
-      { "surface": "عِنْدِي", "translit": "ʿindī", "gloss": "I have (lit. \"at me\")", "gender": null },
-      { "surface": "خَمْسَةَ عَشَرَ", "translit": "khamsata ʿashara", "gloss": "fifteen — خَمْسَةَ keeps the reversed agreement already known from 3-10, عَشَرَ agrees normally (masculine)", "gender": "masculine" },
-      { "surface": "كِتَابًا", "translit": "kitāban", "gloss": "book (singular, accusative)", "gender": "masculine" }
+      {
+        "surface": "عِنْدِي",
+        "translit": "ʿindī",
+        "gloss": "I have (lit. \"at me\")",
+        "gender": null
+      },
+      {
+        "surface": "خَمْسَةَ عَشَرَ",
+        "translit": "khamsata ʿashara",
+        "gloss": "fifteen — خَمْسَةَ keeps the reversed agreement already known from 3-10, عَشَرَ agrees normally (masculine)",
+        "gender": "masculine"
+      },
+      {
+        "surface": "كِتَابًا",
+        "translit": "kitāban",
+        "gloss": "book (singular, accusative)",
+        "gender": "masculine"
+      }
     ],
     "audio": "عِنْدِي خَمْسَةَ عَشَرَ كِتَابًا",
     "level": "A2",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:numbers-11-99" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:numbers-11-99"
+    ]
   },
   {
     "id": "txt:gram-num-15f",
@@ -1267,14 +2606,36 @@
     "translit": "ʿindī khamsa ʿashrata ṭālibatan",
     "en": "I have fifteen female students.",
     "words": [
-      { "surface": "عِنْدِي", "translit": "ʿindī", "gloss": "I have (lit. \"at me\")", "gender": null },
-      { "surface": "خَمْسَ عَشْرَةَ", "translit": "khamsa ʿashrata", "gloss": "fifteen, feminine — both halves flip from the masculine: خَمْسَ loses its ة, عَشْرَةَ gains one", "gender": "feminine" },
-      { "surface": "طَالِبَةً", "translit": "ṭālibatan", "gloss": "student (singular feminine, accusative)", "gender": "feminine" }
+      {
+        "surface": "عِنْدِي",
+        "translit": "ʿindī",
+        "gloss": "I have (lit. \"at me\")",
+        "gender": null
+      },
+      {
+        "surface": "خَمْسَ عَشْرَةَ",
+        "translit": "khamsa ʿashrata",
+        "gloss": "fifteen, feminine — both halves flip from the masculine: خَمْسَ loses its ة, عَشْرَةَ gains one",
+        "gender": "feminine"
+      },
+      {
+        "surface": "طَالِبَةً",
+        "translit": "ṭālibatan",
+        "gloss": "student (singular feminine, accusative)",
+        "gender": "feminine"
+      }
     ],
     "audio": "عِنْدِي خَمْسَ عَشْرَةَ طَالِبَةً",
     "level": "A2",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:numbers-11-99" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:numbers-11-99"
+    ]
   },
   {
     "id": "txt:gram-num-20",
@@ -1286,14 +2647,36 @@
     "translit": "ʿindī ʿishrūna kitāban",
     "en": "I have twenty books.",
     "words": [
-      { "surface": "عِنْدِي", "translit": "ʿindī", "gloss": "I have (lit. \"at me\")", "gender": null },
-      { "surface": "عِشْرُونَ", "translit": "ʿishrūna", "gloss": "twenty — invariant, the same form for a masculine or feminine noun", "gender": null },
-      { "surface": "كِتَابًا", "translit": "kitāban", "gloss": "book (singular, accusative)", "gender": "masculine" }
+      {
+        "surface": "عِنْدِي",
+        "translit": "ʿindī",
+        "gloss": "I have (lit. \"at me\")",
+        "gender": null
+      },
+      {
+        "surface": "عِشْرُونَ",
+        "translit": "ʿishrūna",
+        "gloss": "twenty — invariant, the same form for a masculine or feminine noun",
+        "gender": null
+      },
+      {
+        "surface": "كِتَابًا",
+        "translit": "kitāban",
+        "gloss": "book (singular, accusative)",
+        "gender": "masculine"
+      }
     ],
     "audio": "عِنْدِي عِشْرُونَ كِتَابًا",
     "level": "A2",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:numbers-11-99" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:numbers-11-99"
+    ]
   },
   {
     "id": "txt:gram-num-21",
@@ -1305,14 +2688,36 @@
     "translit": "ʿindī wāḥidun wa-ʿishrūna kitāban",
     "en": "I have twenty-one books.",
     "words": [
-      { "surface": "عِنْدِي", "translit": "ʿindī", "gloss": "I have (lit. \"at me\")", "gender": null },
-      { "surface": "وَاحِدٌ وَعِشْرُونَ", "translit": "wāḥidun wa-ʿishrūna", "gloss": "twenty-one — ones-digit وَ tens; وَاحِدٌ agrees normally with the noun, exactly as it would alone", "gender": "masculine" },
-      { "surface": "كِتَابًا", "translit": "kitāban", "gloss": "book (singular, accusative)", "gender": "masculine" }
+      {
+        "surface": "عِنْدِي",
+        "translit": "ʿindī",
+        "gloss": "I have (lit. \"at me\")",
+        "gender": null
+      },
+      {
+        "surface": "وَاحِدٌ وَعِشْرُونَ",
+        "translit": "wāḥidun wa-ʿishrūna",
+        "gloss": "twenty-one — ones-digit وَ tens; وَاحِدٌ agrees normally with the noun, exactly as it would alone",
+        "gender": "masculine"
+      },
+      {
+        "surface": "كِتَابًا",
+        "translit": "kitāban",
+        "gloss": "book (singular, accusative)",
+        "gender": "masculine"
+      }
     ],
     "audio": "عِنْدِي وَاحِدٌ وَعِشْرُونَ كِتَابًا",
     "level": "A2",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:numbers-11-99" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:numbers-11-99"
+    ]
   },
   {
     "id": "txt:gram-num-100",
@@ -1324,14 +2729,36 @@
     "translit": "ʿindī miʾatu kitābin",
     "en": "I have a hundred books.",
     "words": [
-      { "surface": "عِنْدِي", "translit": "ʿindī", "gloss": "I have (lit. \"at me\")", "gender": null },
-      { "surface": "مِائَةُ", "translit": "miʾatu", "gloss": "hundred (مُضَاف — governs a genitive noun, like an iḍāfa)", "gender": "feminine" },
-      { "surface": "كِتَابٍ", "translit": "kitābin", "gloss": "book (singular, genitive — not accusative)", "gender": "masculine" }
+      {
+        "surface": "عِنْدِي",
+        "translit": "ʿindī",
+        "gloss": "I have (lit. \"at me\")",
+        "gender": null
+      },
+      {
+        "surface": "مِائَةُ",
+        "translit": "miʾatu",
+        "gloss": "hundred (مُضَاف — governs a genitive noun, like an iḍāfa)",
+        "gender": "feminine"
+      },
+      {
+        "surface": "كِتَابٍ",
+        "translit": "kitābin",
+        "gloss": "book (singular, genitive — not accusative)",
+        "gender": "masculine"
+      }
     ],
     "audio": "عِنْدِي مِائَةُ كِتَابٍ",
     "level": "A2",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:numbers-11-99" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:numbers-11-99"
+    ]
   },
   {
     "id": "txt:gram-time-one",
@@ -1343,13 +2770,30 @@
     "translit": "as-sāʿatu al-wāḥidatu",
     "en": "It's one o'clock.",
     "words": [
-      { "surface": "السَّاعَةُ", "translit": "as-sāʿatu", "gloss": "the hour / clock", "gender": "feminine" },
-      { "surface": "الْوَاحِدَةُ", "translit": "al-wāḥidatu", "gloss": "the one (feminine cardinal — one o'clock is the exception, not an ordinal)", "gender": "feminine" }
+      {
+        "surface": "السَّاعَةُ",
+        "translit": "as-sāʿatu",
+        "gloss": "the hour / clock",
+        "gender": "feminine"
+      },
+      {
+        "surface": "الْوَاحِدَةُ",
+        "translit": "al-wāḥidatu",
+        "gloss": "the one (feminine cardinal — one o'clock is the exception, not an ordinal)",
+        "gender": "feminine"
+      }
     ],
     "audio": "السَّاعَةُ الْوَاحِدَةُ",
     "level": "A2",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:telling-time" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:telling-time"
+    ]
   },
   {
     "id": "txt:gram-time-two",
@@ -1361,13 +2805,30 @@
     "translit": "as-sāʿatu ath-thāniyatu",
     "en": "It's two o'clock.",
     "words": [
-      { "surface": "السَّاعَةُ", "translit": "as-sāʿatu", "gloss": "the hour / clock", "gender": "feminine" },
-      { "surface": "الثَّانِيَةُ", "translit": "ath-thāniyatu", "gloss": "the second (ordinal, agreeing with the hour)", "gender": "feminine" }
+      {
+        "surface": "السَّاعَةُ",
+        "translit": "as-sāʿatu",
+        "gloss": "the hour / clock",
+        "gender": "feminine"
+      },
+      {
+        "surface": "الثَّانِيَةُ",
+        "translit": "ath-thāniyatu",
+        "gloss": "the second (ordinal, agreeing with the hour)",
+        "gender": "feminine"
+      }
     ],
     "audio": "السَّاعَةُ الثَّانِيَةُ",
     "level": "A2",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:telling-time" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:telling-time"
+    ]
   },
   {
     "id": "txt:gram-time-twelve",
@@ -1379,13 +2840,30 @@
     "translit": "as-sāʿatu ath-thāniyata ʿashrata",
     "en": "It's twelve o'clock.",
     "words": [
-      { "surface": "السَّاعَةُ", "translit": "as-sāʿatu", "gloss": "the hour / clock", "gender": "feminine" },
-      { "surface": "الثَّانِيَةَ عَشْرَةَ", "translit": "ath-thāniyata ʿashrata", "gloss": "the twelfth — an ordinal teen-compound, fixed on ـَ regardless of case, same as the cardinal teens", "gender": "feminine" }
+      {
+        "surface": "السَّاعَةُ",
+        "translit": "as-sāʿatu",
+        "gloss": "the hour / clock",
+        "gender": "feminine"
+      },
+      {
+        "surface": "الثَّانِيَةَ عَشْرَةَ",
+        "translit": "ath-thāniyata ʿashrata",
+        "gloss": "the twelfth — an ordinal teen-compound, fixed on ـَ regardless of case, same as the cardinal teens",
+        "gender": "feminine"
+      }
     ],
     "audio": "السَّاعَةُ الثَّانِيَةَ عَشْرَةَ",
     "level": "A2",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:telling-time" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:telling-time"
+    ]
   },
   {
     "id": "txt:gram-time-half",
@@ -1397,14 +2875,36 @@
     "translit": "as-sāʿatu ath-thāniyatu wa-n-niṣfu",
     "en": "It's half past two.",
     "words": [
-      { "surface": "السَّاعَةُ", "translit": "as-sāʿatu", "gloss": "the hour / clock", "gender": "feminine" },
-      { "surface": "الثَّانِيَةُ", "translit": "ath-thāniyatu", "gloss": "the second (two o'clock)", "gender": "feminine" },
-      { "surface": "وَالنِّصْفُ", "translit": "wa-n-niṣfu", "gloss": "and the half — \"past\" uses وَ", "gender": null }
+      {
+        "surface": "السَّاعَةُ",
+        "translit": "as-sāʿatu",
+        "gloss": "the hour / clock",
+        "gender": "feminine"
+      },
+      {
+        "surface": "الثَّانِيَةُ",
+        "translit": "ath-thāniyatu",
+        "gloss": "the second (two o'clock)",
+        "gender": "feminine"
+      },
+      {
+        "surface": "وَالنِّصْفُ",
+        "translit": "wa-n-niṣfu",
+        "gloss": "and the half — \"past\" uses وَ",
+        "gender": null
+      }
     ],
     "audio": "السَّاعَةُ الثَّانِيَةُ وَالنِّصْفُ",
     "level": "A2",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:telling-time" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:telling-time"
+    ]
   },
   {
     "id": "txt:gram-time-quarter-past",
@@ -1416,14 +2916,36 @@
     "translit": "as-sāʿatu ath-thālithatu wa-r-rubʿu",
     "en": "It's quarter past three.",
     "words": [
-      { "surface": "السَّاعَةُ", "translit": "as-sāʿatu", "gloss": "the hour / clock", "gender": "feminine" },
-      { "surface": "الثَّالِثَةُ", "translit": "ath-thālithatu", "gloss": "the third (three o'clock)", "gender": "feminine" },
-      { "surface": "وَالرُّبْعُ", "translit": "wa-r-rubʿu", "gloss": "and the quarter — \"past\" uses وَ, same as the half", "gender": null }
+      {
+        "surface": "السَّاعَةُ",
+        "translit": "as-sāʿatu",
+        "gloss": "the hour / clock",
+        "gender": "feminine"
+      },
+      {
+        "surface": "الثَّالِثَةُ",
+        "translit": "ath-thālithatu",
+        "gloss": "the third (three o'clock)",
+        "gender": "feminine"
+      },
+      {
+        "surface": "وَالرُّبْعُ",
+        "translit": "wa-r-rubʿu",
+        "gloss": "and the quarter — \"past\" uses وَ, same as the half",
+        "gender": null
+      }
     ],
     "audio": "السَّاعَةُ الثَّالِثَةُ وَالرُّبْعُ",
     "level": "A2",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:telling-time" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:telling-time"
+    ]
   },
   {
     "id": "txt:gram-time-quarter-to",
@@ -1435,14 +2957,36 @@
     "translit": "as-sāʿatu ar-rābiʿatu illā rubʿan",
     "en": "It's quarter to four.",
     "words": [
-      { "surface": "السَّاعَةُ", "translit": "as-sāʿatu", "gloss": "the hour / clock", "gender": "feminine" },
-      { "surface": "الرَّابِعَةُ", "translit": "ar-rābiʿatu", "gloss": "the fourth (four o'clock)", "gender": "feminine" },
-      { "surface": "إِلَّا رُبْعًا", "translit": "illā rubʿan", "gloss": "minus a quarter — \"to\" uses إِلَّا, not وَ", "gender": null }
+      {
+        "surface": "السَّاعَةُ",
+        "translit": "as-sāʿatu",
+        "gloss": "the hour / clock",
+        "gender": "feminine"
+      },
+      {
+        "surface": "الرَّابِعَةُ",
+        "translit": "ar-rābiʿatu",
+        "gloss": "the fourth (four o'clock)",
+        "gender": "feminine"
+      },
+      {
+        "surface": "إِلَّا رُبْعًا",
+        "translit": "illā rubʿan",
+        "gloss": "minus a quarter — \"to\" uses إِلَّا, not وَ",
+        "gender": null
+      }
     ],
     "audio": "السَّاعَةُ الرَّابِعَةُ إِلَّا رُبْعًا",
     "level": "A2",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:telling-time" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:telling-time"
+    ]
   },
   {
     "id": "txt:gram-price-ten",
@@ -1454,14 +2998,36 @@
     "translit": "hādhā al-kitābu bi-ʿasharati dūlārātin",
     "en": "This book is for ten dollars.",
     "words": [
-      { "surface": "هَذَا الْكِتَابُ", "translit": "hādhā al-kitābu", "gloss": "this book", "gender": "masculine" },
-      { "surface": "بِعَشَرَةِ", "translit": "bi-ʿasharati", "gloss": "for ten (بِ marks the price, same as بِكَمْ)", "gender": null },
-      { "surface": "دُولَارَاتٍ", "translit": "dūlārātin", "gloss": "dollars (plural, genitive — the same 3-10 rule as any counted noun)", "gender": null }
+      {
+        "surface": "هَذَا الْكِتَابُ",
+        "translit": "hādhā al-kitābu",
+        "gloss": "this book",
+        "gender": "masculine"
+      },
+      {
+        "surface": "بِعَشَرَةِ",
+        "translit": "bi-ʿasharati",
+        "gloss": "for ten (بِ marks the price, same as بِكَمْ)",
+        "gender": null
+      },
+      {
+        "surface": "دُولَارَاتٍ",
+        "translit": "dūlārātin",
+        "gloss": "dollars (plural, genitive — the same 3-10 rule as any counted noun)",
+        "gender": null
+      }
     ],
     "audio": "هَذَا الْكِتَابُ بِعَشَرَةِ دُولَارَاتٍ",
     "level": "A2",
-    "skills": [ "reading", "comprehension", "listening", "vocabulary" ],
-    "prereqs": [ "gr:counted-noun-intro" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "vocabulary"
+    ],
+    "prereqs": [
+      "gr:counted-noun-intro"
+    ]
   },
   {
     "id": "txt:gram-price-twenty",
@@ -1473,14 +3039,36 @@
     "translit": "hādhā al-qalamu bi-ʿishrīna dīnāran",
     "en": "This pen is for twenty dinars.",
     "words": [
-      { "surface": "هَذَا الْقَلَمُ", "translit": "hādhā al-qalamu", "gloss": "this pen", "gender": "masculine" },
-      { "surface": "بِعِشْرِينَ", "translit": "bi-ʿishrīna", "gloss": "for twenty (عِشْرِينَ — the genitive form after a preposition)", "gender": null },
-      { "surface": "دِينَارًا", "translit": "dīnāran", "gloss": "dinars (singular, accusative — the 11-99 rule)", "gender": null }
+      {
+        "surface": "هَذَا الْقَلَمُ",
+        "translit": "hādhā al-qalamu",
+        "gloss": "this pen",
+        "gender": "masculine"
+      },
+      {
+        "surface": "بِعِشْرِينَ",
+        "translit": "bi-ʿishrīna",
+        "gloss": "for twenty (عِشْرِينَ — the genitive form after a preposition)",
+        "gender": null
+      },
+      {
+        "surface": "دِينَارًا",
+        "translit": "dīnāran",
+        "gloss": "dinars (singular, accusative — the 11-99 rule)",
+        "gender": null
+      }
     ],
     "audio": "هَذَا الْقَلَمُ بِعِشْرِينَ دِينَارًا",
     "level": "A2",
-    "skills": [ "reading", "comprehension", "listening", "vocabulary" ],
-    "prereqs": [ "gr:numbers-11-99" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "vocabulary"
+    ],
+    "prereqs": [
+      "gr:numbers-11-99"
+    ]
   },
   {
     "id": "txt:gram-price-hundred",
@@ -1492,14 +3080,36 @@
     "translit": "hādhihi as-sāʿatu bi-miʾati riyālin",
     "en": "This watch is for a hundred riyals.",
     "words": [
-      { "surface": "هَذِهِ السَّاعَةُ", "translit": "hādhihi as-sāʿatu", "gloss": "this watch (سَاعَة also means \"watch/clock\")", "gender": "feminine" },
-      { "surface": "بِمِائَةِ", "translit": "bi-miʾati", "gloss": "for a hundred (of — مُضَاف)", "gender": null },
-      { "surface": "رِيَالٍ", "translit": "riyālin", "gloss": "riyal (singular, genitive — مِائَة's own iḍāfa government)", "gender": null }
+      {
+        "surface": "هَذِهِ السَّاعَةُ",
+        "translit": "hādhihi as-sāʿatu",
+        "gloss": "this watch (سَاعَة also means \"watch/clock\")",
+        "gender": "feminine"
+      },
+      {
+        "surface": "بِمِائَةِ",
+        "translit": "bi-miʾati",
+        "gloss": "for a hundred (of — مُضَاف)",
+        "gender": null
+      },
+      {
+        "surface": "رِيَالٍ",
+        "translit": "riyālin",
+        "gloss": "riyal (singular, genitive — مِائَة's own iḍāfa government)",
+        "gender": null
+      }
     ],
     "audio": "هَذِهِ السَّاعَةُ بِمِائَةِ رِيَالٍ",
     "level": "A2",
-    "skills": [ "reading", "comprehension", "listening", "vocabulary" ],
-    "prereqs": [ "gr:numbers-11-99" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "vocabulary"
+    ],
+    "prereqs": [
+      "gr:numbers-11-99"
+    ]
   },
   {
     "id": "txt:gram-date-first",
@@ -1511,14 +3121,36 @@
     "translit": "al-awwalu min yanāyir",
     "en": "the first of January",
     "words": [
-      { "surface": "الْأَوَّلُ", "translit": "al-awwalu", "gloss": "the first (irregular, not built on the shared ordinal pattern)", "gender": "masculine" },
-      { "surface": "مِنْ", "translit": "min", "gloss": "of", "gender": null },
-      { "surface": "يَنَايِر", "translit": "yanāyir", "gloss": "January", "gender": null }
+      {
+        "surface": "الْأَوَّلُ",
+        "translit": "al-awwalu",
+        "gloss": "the first (irregular, not built on the shared ordinal pattern)",
+        "gender": "masculine"
+      },
+      {
+        "surface": "مِنْ",
+        "translit": "min",
+        "gloss": "of",
+        "gender": null
+      },
+      {
+        "surface": "يَنَايِر",
+        "translit": "yanāyir",
+        "gloss": "January",
+        "gender": null
+      }
     ],
     "audio": "الْأَوَّلُ مِنْ يَنَايِر",
     "level": "A2",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:dates" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:dates"
+    ]
   },
   {
     "id": "txt:gram-date-third",
@@ -1530,14 +3162,36 @@
     "translit": "ath-thālithu min sibtambir",
     "en": "the third of September",
     "words": [
-      { "surface": "الثَّالِثُ", "translit": "ath-thālithu", "gloss": "the third (masculine — the same root as the feminine ordinal for telling time)", "gender": "masculine" },
-      { "surface": "مِنْ", "translit": "min", "gloss": "of", "gender": null },
-      { "surface": "سِبْتَمْبِر", "translit": "sibtambir", "gloss": "September", "gender": null }
+      {
+        "surface": "الثَّالِثُ",
+        "translit": "ath-thālithu",
+        "gloss": "the third (masculine — the same root as the feminine ordinal for telling time)",
+        "gender": "masculine"
+      },
+      {
+        "surface": "مِنْ",
+        "translit": "min",
+        "gloss": "of",
+        "gender": null
+      },
+      {
+        "surface": "سِبْتَمْبِر",
+        "translit": "sibtambir",
+        "gloss": "September",
+        "gender": null
+      }
     ],
     "audio": "الثَّالِثُ مِنْ سِبْتَمْبِر",
     "level": "A2",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:dates" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:dates"
+    ]
   },
   {
     "id": "txt:gram-date-tenth",
@@ -1549,14 +3203,36 @@
     "translit": "al-ʿāshiru min dīsimbir",
     "en": "the tenth of December",
     "words": [
-      { "surface": "الْعَاشِرُ", "translit": "al-ʿāshiru", "gloss": "the tenth (masculine)", "gender": "masculine" },
-      { "surface": "مِنْ", "translit": "min", "gloss": "of", "gender": null },
-      { "surface": "دِيسِمْبِر", "translit": "dīsimbir", "gloss": "December", "gender": null }
+      {
+        "surface": "الْعَاشِرُ",
+        "translit": "al-ʿāshiru",
+        "gloss": "the tenth (masculine)",
+        "gender": "masculine"
+      },
+      {
+        "surface": "مِنْ",
+        "translit": "min",
+        "gloss": "of",
+        "gender": null
+      },
+      {
+        "surface": "دِيسِمْبِر",
+        "translit": "dīsimbir",
+        "gloss": "December",
+        "gender": null
+      }
     ],
     "audio": "الْعَاشِرُ مِنْ دِيسِمْبِر",
     "level": "A2",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:dates" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:dates"
+    ]
   },
   {
     "id": "txt:gram-date-sentence",
@@ -1568,15 +3244,42 @@
     "translit": "al-yawma huwa al-khāmisu min māris",
     "en": "Today is the fifth of March.",
     "words": [
-      { "surface": "الْيَوْمَ", "translit": "al-yawma", "gloss": "today (accusative — the normal case for a time adverbial)", "gender": null },
-      { "surface": "هُوَ", "translit": "huwa", "gloss": "it (referring back to \"day\", masculine)", "gender": "masculine" },
-      { "surface": "الْخَامِسُ", "translit": "al-khāmisu", "gloss": "the fifth", "gender": "masculine" },
-      { "surface": "مِنْ مَارِس", "translit": "min māris", "gloss": "of March", "gender": null }
+      {
+        "surface": "الْيَوْمَ",
+        "translit": "al-yawma",
+        "gloss": "today (accusative — the normal case for a time adverbial)",
+        "gender": null
+      },
+      {
+        "surface": "هُوَ",
+        "translit": "huwa",
+        "gloss": "it (referring back to \"day\", masculine)",
+        "gender": "masculine"
+      },
+      {
+        "surface": "الْخَامِسُ",
+        "translit": "al-khāmisu",
+        "gloss": "the fifth",
+        "gender": "masculine"
+      },
+      {
+        "surface": "مِنْ مَارِس",
+        "translit": "min māris",
+        "gloss": "of March",
+        "gender": null
+      }
     ],
     "audio": "الْيَوْمَ هُوَ الْخَامِسُ مِنْ مَارِس",
     "level": "A2",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:dates" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:dates"
+    ]
   },
   {
     "id": "txt:gram-root-katab",
@@ -1588,14 +3291,36 @@
     "translit": "hādhā kitābun mina al-maktabati",
     "en": "This is a book from the library.",
     "words": [
-      { "surface": "هَذَا", "translit": "hādhā", "gloss": "this (masculine)", "gender": "masculine" },
-      { "surface": "كِتَابٌ", "translit": "kitābun", "gloss": "a book (predicate, indefinite) — root ك-ت-ب", "gender": "masculine" },
-      { "surface": "مِنَ الْمَكْتَبَةِ", "translit": "mina al-maktabati", "gloss": "from the library (مِنْ + الـ → مِنَ) — same root ك-ت-ب", "gender": null }
+      {
+        "surface": "هَذَا",
+        "translit": "hādhā",
+        "gloss": "this (masculine)",
+        "gender": "masculine"
+      },
+      {
+        "surface": "كِتَابٌ",
+        "translit": "kitābun",
+        "gloss": "a book (predicate, indefinite) — root ك-ت-ب",
+        "gender": "masculine"
+      },
+      {
+        "surface": "مِنَ الْمَكْتَبَةِ",
+        "translit": "mina al-maktabati",
+        "gloss": "from the library (مِنْ + الـ → مِنَ) — same root ك-ت-ب",
+        "gender": null
+      }
     ],
     "audio": "هَذَا كِتَابٌ مِنَ الْمَكْتَبَةِ",
     "level": "A2",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:root-pattern" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:root-pattern"
+    ]
   },
   {
     "id": "txt:gram-root-taam",
@@ -1607,14 +3332,36 @@
     "translit": "aṭ-ṭaʿāmu fī al-maṭʿami ladhīdhun",
     "en": "The food in the restaurant is delicious.",
     "words": [
-      { "surface": "الطَّعَامُ", "translit": "aṭ-ṭaʿāmu", "gloss": "the food (topic, nominative) — root ط-ع-م", "gender": "masculine" },
-      { "surface": "فِي الْمَطْعَمِ", "translit": "fī al-maṭʿami", "gloss": "in the restaurant — same root ط-ع-م", "gender": null },
-      { "surface": "لَذِيذٌ", "translit": "ladhīdhun", "gloss": "delicious (predicate, indefinite)", "gender": "masculine" }
+      {
+        "surface": "الطَّعَامُ",
+        "translit": "aṭ-ṭaʿāmu",
+        "gloss": "the food (topic, nominative) — root ط-ع-م",
+        "gender": "masculine"
+      },
+      {
+        "surface": "فِي الْمَطْعَمِ",
+        "translit": "fī al-maṭʿami",
+        "gloss": "in the restaurant — same root ط-ع-م",
+        "gender": null
+      },
+      {
+        "surface": "لَذِيذٌ",
+        "translit": "ladhīdhun",
+        "gloss": "delicious (predicate, indefinite)",
+        "gender": "masculine"
+      }
     ],
     "audio": "الطَّعَامُ فِي الْمَطْعَمِ لَذِيذٌ",
     "level": "A2",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:root-pattern" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:root-pattern"
+    ]
   },
   {
     "id": "txt:gram-root-jadid",
@@ -1626,14 +3373,36 @@
     "translit": "baytu jaddī jadīdun",
     "en": "My grandfather's house is new.",
     "words": [
-      { "surface": "بَيْتُ", "translit": "baytu", "gloss": "house (of — مُضَاف, nominative topic)", "gender": "masculine" },
-      { "surface": "جَدِّي", "translit": "jaddī", "gloss": "my grandfather (مُضَاف إِلَيْهِ — genitive, with attached possessive) — root ج-د-د", "gender": "masculine" },
-      { "surface": "جَدِيدٌ", "translit": "jadīdun", "gloss": "new (comment, indefinite) — same root ج-د-د, though unrelated in translation", "gender": "masculine" }
+      {
+        "surface": "بَيْتُ",
+        "translit": "baytu",
+        "gloss": "house (of — مُضَاف, nominative topic)",
+        "gender": "masculine"
+      },
+      {
+        "surface": "جَدِّي",
+        "translit": "jaddī",
+        "gloss": "my grandfather (مُضَاف إِلَيْهِ — genitive, with attached possessive) — root ج-د-د",
+        "gender": "masculine"
+      },
+      {
+        "surface": "جَدِيدٌ",
+        "translit": "jadīdun",
+        "gloss": "new (comment, indefinite) — same root ج-د-د, though unrelated in translation",
+        "gender": "masculine"
+      }
     ],
     "audio": "بَيْتُ جَدِّي جَدِيدٌ",
     "level": "A2",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:root-pattern" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:root-pattern"
+    ]
   },
   {
     "id": "txt:gram-root-khamis",
@@ -1645,15 +3414,42 @@
     "translit": "al-khamīsu huwa al-yawmu al-khāmisu",
     "en": "Thursday is the fifth day.",
     "words": [
-      { "surface": "الْخَمِيسُ", "translit": "al-khamīsu", "gloss": "Thursday (topic, nominative) — root خ-م-س", "gender": "masculine" },
-      { "surface": "هُوَ", "translit": "huwa", "gloss": "it (referring back to \"Thursday\", masculine)", "gender": "masculine" },
-      { "surface": "الْيَوْمُ", "translit": "al-yawmu", "gloss": "the day", "gender": "masculine" },
-      { "surface": "الْخَامِسُ", "translit": "al-khāmisu", "gloss": "the fifth (ordinal, agreeing with the day) — same root خ-م-س as خَمْسَة \"five\"", "gender": "masculine" }
+      {
+        "surface": "الْخَمِيسُ",
+        "translit": "al-khamīsu",
+        "gloss": "Thursday (topic, nominative) — root خ-م-س",
+        "gender": "masculine"
+      },
+      {
+        "surface": "هُوَ",
+        "translit": "huwa",
+        "gloss": "it (referring back to \"Thursday\", masculine)",
+        "gender": "masculine"
+      },
+      {
+        "surface": "الْيَوْمُ",
+        "translit": "al-yawmu",
+        "gloss": "the day",
+        "gender": "masculine"
+      },
+      {
+        "surface": "الْخَامِسُ",
+        "translit": "al-khāmisu",
+        "gloss": "the fifth (ordinal, agreeing with the day) — same root خ-م-س as خَمْسَة \"five\"",
+        "gender": "masculine"
+      }
     ],
     "audio": "الْخَمِيسُ هُوَ الْيَوْمُ الْخَامِسُ",
     "level": "A2",
-    "skills": [ "reading", "comprehension", "listening", "grammar" ],
-    "prereqs": [ "gr:root-pattern" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:root-pattern"
+    ]
   },
   {
     "id": "txt:read-para-trip",
@@ -1665,16 +3461,43 @@
     "translit": "awwalan, ishtarā aṭ-ṭālibu tadhkiratan. thumma sāfara bi-al-qiṭāri ilā al-madīnati. athnāʾa ar-riḥlati, qaraʾa kitāban. akhīran, waṣala al-qiṭāru, wa-rajaʿa aṭ-ṭālibu ilā al-bayti. kāna saʿīdan.",
     "en": "First, the student bought a ticket. Then he traveled by train to the city. During the trip, he read a book. Finally, the train arrived, and the student returned home. He was happy.",
     "sentences": [
-      { "ar": "أَوَّلًا، اشْتَرَى الطَّالِبُ تَذْكِرَةً.", "translit": "awwalan, ishtarā aṭ-ṭālibu tadhkiratan.", "en": "First, the student bought a ticket." },
-      { "ar": "ثُمَّ سَافَرَ بِالْقِطَارِ إِلَى الْمَدِينَةِ.", "translit": "thumma sāfara bi-al-qiṭāri ilā al-madīnati.", "en": "Then he traveled by train to the city." },
-      { "ar": "أَثْنَاءَ الرِّحْلَةِ، قَرَأَ كِتَابًا.", "translit": "athnāʾa ar-riḥlati, qaraʾa kitāban.", "en": "During the trip, he read a book." },
-      { "ar": "أَخِيرًا، وَصَلَ الْقِطَارُ، وَرَجَعَ الطَّالِبُ إِلَى الْبَيْتِ.", "translit": "akhīran, waṣala al-qiṭāru, wa-rajaʿa aṭ-ṭālibu ilā al-bayti.", "en": "Finally, the train arrived, and the student returned home." },
-      { "ar": "كَانَ سَعِيدًا.", "translit": "kāna saʿīdan.", "en": "He was happy." }
+      {
+        "ar": "أَوَّلًا، اشْتَرَى الطَّالِبُ تَذْكِرَةً.",
+        "translit": "awwalan, ishtarā aṭ-ṭālibu tadhkiratan.",
+        "en": "First, the student bought a ticket."
+      },
+      {
+        "ar": "ثُمَّ سَافَرَ بِالْقِطَارِ إِلَى الْمَدِينَةِ.",
+        "translit": "thumma sāfara bi-al-qiṭāri ilā al-madīnati.",
+        "en": "Then he traveled by train to the city."
+      },
+      {
+        "ar": "أَثْنَاءَ الرِّحْلَةِ، قَرَأَ كِتَابًا.",
+        "translit": "athnāʾa ar-riḥlati, qaraʾa kitāban.",
+        "en": "During the trip, he read a book."
+      },
+      {
+        "ar": "أَخِيرًا، وَصَلَ الْقِطَارُ، وَرَجَعَ الطَّالِبُ إِلَى الْبَيْتِ.",
+        "translit": "akhīran, waṣala al-qiṭāru, wa-rajaʿa aṭ-ṭālibu ilā al-bayti.",
+        "en": "Finally, the train arrived, and the student returned home."
+      },
+      {
+        "ar": "كَانَ سَعِيدًا.",
+        "translit": "kāna saʿīdan.",
+        "en": "He was happy."
+      }
     ],
     "audio": "أَوَّلًا، اشْتَرَى الطَّالِبُ تَذْكِرَةً. ثُمَّ سَافَرَ بِالْقِطَارِ إِلَى الْمَدِينَةِ. أَثْنَاءَ الرِّحْلَةِ، قَرَأَ كِتَابًا. أَخِيرًا، وَصَلَ الْقِطَارُ، وَرَجَعَ الطَّالِبُ إِلَى الْبَيْتِ. كَانَ سَعِيدًا.",
     "level": "A2",
-    "skills": [ "reading", "comprehension", "listening" ],
-    "prereqs": [ "gr:verbal-sentence", "gr:kana" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening"
+    ],
+    "prereqs": [
+      "gr:verbal-sentence",
+      "gr:kana"
+    ]
   },
   {
     "id": "txt:read-para-garden",
@@ -1686,14 +3509,33 @@
     "translit": "dhāta yawmin, kāna aṭ-ṭaqsu jamīlan. baynamā kāna ar-rajulu fī al-ḥadīqati, raʾā ṭāʾiratan fī as-samāʾi fajʾatan. ṭabʿan, kāna saʿīdan.",
     "en": "One day, the weather was beautiful. While the man was in the garden, he suddenly saw a plane in the sky. Of course, he was happy.",
     "sentences": [
-      { "ar": "ذَاتَ يَوْمٍ، كَانَ الطَّقْسُ جَمِيلًا.", "translit": "dhāta yawmin, kāna aṭ-ṭaqsu jamīlan.", "en": "One day, the weather was beautiful." },
-      { "ar": "بَيْنَمَا كَانَ الرَّجُلُ فِي الْحَدِيقَةِ، رَأَى طَائِرَةً فِي السَّمَاءِ فَجْأَةً.", "translit": "baynamā kāna ar-rajulu fī al-ḥadīqati, raʾā ṭāʾiratan fī as-samāʾi fajʾatan.", "en": "While the man was in the garden, he suddenly saw a plane in the sky." },
-      { "ar": "طَبْعًا، كَانَ سَعِيدًا.", "translit": "ṭabʿan, kāna saʿīdan.", "en": "Of course, he was happy." }
+      {
+        "ar": "ذَاتَ يَوْمٍ، كَانَ الطَّقْسُ جَمِيلًا.",
+        "translit": "dhāta yawmin, kāna aṭ-ṭaqsu jamīlan.",
+        "en": "One day, the weather was beautiful."
+      },
+      {
+        "ar": "بَيْنَمَا كَانَ الرَّجُلُ فِي الْحَدِيقَةِ، رَأَى طَائِرَةً فِي السَّمَاءِ فَجْأَةً.",
+        "translit": "baynamā kāna ar-rajulu fī al-ḥadīqati, raʾā ṭāʾiratan fī as-samāʾi fajʾatan.",
+        "en": "While the man was in the garden, he suddenly saw a plane in the sky."
+      },
+      {
+        "ar": "طَبْعًا، كَانَ سَعِيدًا.",
+        "translit": "ṭabʿan, kāna saʿīdan.",
+        "en": "Of course, he was happy."
+      }
     ],
     "audio": "ذَاتَ يَوْمٍ، كَانَ الطَّقْسُ جَمِيلًا. بَيْنَمَا كَانَ الرَّجُلُ فِي الْحَدِيقَةِ، رَأَى طَائِرَةً فِي السَّمَاءِ فَجْأَةً. طَبْعًا، كَانَ سَعِيدًا.",
     "level": "A2",
-    "skills": [ "reading", "comprehension", "listening" ],
-    "prereqs": [ "gr:verbal-sentence", "gr:kana" ]
+    "skills": [
+      "reading",
+      "comprehension",
+      "listening"
+    ],
+    "prereqs": [
+      "gr:verbal-sentence",
+      "gr:kana"
+    ]
   },
   {
     "id": "txt:read-dlg-shopping",
@@ -1704,18 +3546,52 @@
     "translit": "bikam hādhā? — biʿishrīna dūlāran. — hal ʿindaka maqāsun ṣaghīrun? — naʿam, hādhā maqāsun ṣaghīrun. — hādhā kullu shayʾin, shukran. — naqdun aw biṭāqatu iʾtimānin? — biṭāqatu iʾtimānin, min faḍlik.",
     "en": "— How much is this? — For twenty dollars. — Do you have a small size? — Yes, this is a small size. — That's all, thank you. — Cash or credit card? — Credit card, please.",
     "turns": [
-      { "ar": "بِكَمْ هَذَا؟", "translit": "bikam hādhā?", "en": "How much is this?" },
-      { "ar": "بِعِشْرِينَ دُولَارًا.", "translit": "biʿishrīna dūlāran.", "en": "For twenty dollars." },
-      { "ar": "هَلْ عِنْدَكَ مَقَاسٌ صَغِيرٌ؟", "translit": "hal ʿindaka maqāsun ṣaghīrun?", "en": "Do you have a small size?" },
-      { "ar": "نَعَمْ، هَذَا مَقَاسٌ صَغِيرٌ.", "translit": "naʿam, hādhā maqāsun ṣaghīrun.", "en": "Yes, this is a small size." },
-      { "ar": "هَذَا كُلُّ شَيْءٍ، شُكْرًا.", "translit": "hādhā kullu shayʾin, shukran.", "en": "That's all, thank you." },
-      { "ar": "نَقْدٌ أَوْ بِطَاقَةُ اِئْتِمَانٍ؟", "translit": "naqdun aw biṭāqatu iʾtimānin?", "en": "Cash or credit card?" },
-      { "ar": "بِطَاقَةُ اِئْتِمَانٍ، مِنْ فَضْلِك.", "translit": "biṭāqatu iʾtimānin, min faḍlik.", "en": "Credit card, please." }
+      {
+        "ar": "بِكَمْ هَذَا؟",
+        "translit": "bikam hādhā?",
+        "en": "How much is this?"
+      },
+      {
+        "ar": "بِعِشْرِينَ دُولَارًا.",
+        "translit": "biʿishrīna dūlāran.",
+        "en": "For twenty dollars."
+      },
+      {
+        "ar": "هَلْ عِنْدَكَ مَقَاسٌ صَغِيرٌ؟",
+        "translit": "hal ʿindaka maqāsun ṣaghīrun?",
+        "en": "Do you have a small size?"
+      },
+      {
+        "ar": "نَعَمْ، هَذَا مَقَاسٌ صَغِيرٌ.",
+        "translit": "naʿam, hādhā maqāsun ṣaghīrun.",
+        "en": "Yes, this is a small size."
+      },
+      {
+        "ar": "هَذَا كُلُّ شَيْءٍ، شُكْرًا.",
+        "translit": "hādhā kullu shayʾin, shukran.",
+        "en": "That's all, thank you."
+      },
+      {
+        "ar": "نَقْدٌ أَوْ بِطَاقَةُ اِئْتِمَانٍ؟",
+        "translit": "naqdun aw biṭāqatu iʾtimānin?",
+        "en": "Cash or credit card?"
+      },
+      {
+        "ar": "بِطَاقَةُ اِئْتِمَانٍ، مِنْ فَضْلِك.",
+        "translit": "biṭāqatu iʾtimānin, min faḍlik.",
+        "en": "Credit card, please."
+      }
     ],
     "audio": "بِكَمْ هَذَا؟ بِعِشْرِينَ دُولَارًا. هَلْ عِنْدَكَ مَقَاسٌ صَغِيرٌ؟ نَعَمْ، هَذَا مَقَاسٌ صَغِيرٌ. هَذَا كُلُّ شَيْءٍ، شُكْرًا. نَقْدٌ أَوْ بِطَاقَةُ اِئْتِمَانٍ؟ بِطَاقَةُ اِئْتِمَانٍ، مِنْ فَضْلِك.",
     "level": "A2",
-    "skills": [ "listening", "speaking", "comprehension" ],
-    "prereqs": [ "gr:idafa" ]
+    "skills": [
+      "listening",
+      "speaking",
+      "comprehension"
+    ],
+    "prereqs": [
+      "gr:idafa"
+    ]
   },
   {
     "id": "txt:read-dlg-directions",
@@ -1726,17 +3602,47 @@
     "translit": "ʿafwan, ayna al-banku? — al-banku qarībun, bijānibi al-maṭʿami. — hal huwa baʿīdun min hunā? — lā, huwa qarībun. al-banku amāma al-maktabati. — shukran! — ʿafwan!",
     "en": "— Excuse me, where is the bank? — The bank is near, next to the restaurant. — Is it far from here? — No, it's near. The bank is in front of the library. — Thank you! — You're welcome!",
     "turns": [
-      { "ar": "عَفْوًا، أَيْنَ الْبَنْكُ؟", "translit": "ʿafwan, ayna al-banku?", "en": "Excuse me, where is the bank?" },
-      { "ar": "الْبَنْكُ قَرِيبٌ، بِجَانِبِ الْمَطْعَمِ.", "translit": "al-banku qarībun, bijānibi al-maṭʿami.", "en": "The bank is near, next to the restaurant." },
-      { "ar": "هَلْ هُوَ بَعِيدٌ مِنْ هُنَا؟", "translit": "hal huwa baʿīdun min hunā?", "en": "Is it far from here?" },
-      { "ar": "لَا، هُوَ قَرِيبٌ. الْبَنْكُ أَمَامَ الْمَكْتَبَةِ.", "translit": "lā, huwa qarībun. al-banku amāma al-maktabati.", "en": "No, it's near. The bank is in front of the library." },
-      { "ar": "شُكْرًا!", "translit": "shukran!", "en": "Thank you!" },
-      { "ar": "عَفْوًا!", "translit": "ʿafwan!", "en": "You're welcome!" }
+      {
+        "ar": "عَفْوًا، أَيْنَ الْبَنْكُ؟",
+        "translit": "ʿafwan, ayna al-banku?",
+        "en": "Excuse me, where is the bank?"
+      },
+      {
+        "ar": "الْبَنْكُ قَرِيبٌ، بِجَانِبِ الْمَطْعَمِ.",
+        "translit": "al-banku qarībun, bijānibi al-maṭʿami.",
+        "en": "The bank is near, next to the restaurant."
+      },
+      {
+        "ar": "هَلْ هُوَ بَعِيدٌ مِنْ هُنَا؟",
+        "translit": "hal huwa baʿīdun min hunā?",
+        "en": "Is it far from here?"
+      },
+      {
+        "ar": "لَا، هُوَ قَرِيبٌ. الْبَنْكُ أَمَامَ الْمَكْتَبَةِ.",
+        "translit": "lā, huwa qarībun. al-banku amāma al-maktabati.",
+        "en": "No, it's near. The bank is in front of the library."
+      },
+      {
+        "ar": "شُكْرًا!",
+        "translit": "shukran!",
+        "en": "Thank you!"
+      },
+      {
+        "ar": "عَفْوًا!",
+        "translit": "ʿafwan!",
+        "en": "You're welcome!"
+      }
     ],
     "audio": "عَفْوًا، أَيْنَ الْبَنْكُ؟ الْبَنْكُ قَرِيبٌ، بِجَانِبِ الْمَطْعَمِ. هَلْ هُوَ بَعِيدٌ مِنْ هُنَا؟ لَا، هُوَ قَرِيبٌ. الْبَنْكُ أَمَامَ الْمَكْتَبَةِ. شُكْرًا! عَفْوًا!",
     "level": "A2",
-    "skills": [ "listening", "speaking", "comprehension" ],
-    "prereqs": [ "gr:core-prepositions" ]
+    "skills": [
+      "listening",
+      "speaking",
+      "comprehension"
+    ],
+    "prereqs": [
+      "gr:core-prepositions"
+    ]
   },
   {
     "id": "txt:read-dlg-permission",
@@ -1747,44 +3653,1459 @@
     "translit": "mumkin? hal ʿindaka qalamun? — ṭabʿan! — shukran! — lā baʾsa.",
     "en": "— May I? Do you have a pen? — Of course! — Thank you! — No problem.",
     "turns": [
-      { "ar": "مُمْكِن؟ هَلْ عِنْدَكَ قَلَمٌ؟", "translit": "mumkin? hal ʿindaka qalamun?", "en": "May I? Do you have a pen?" },
-      { "ar": "طَبْعًا!", "translit": "ṭabʿan!", "en": "Of course!" },
-      { "ar": "شُكْرًا!", "translit": "shukran!", "en": "Thank you!" },
-      { "ar": "لَا بَأْسَ.", "translit": "lā baʾsa.", "en": "No problem." }
+      {
+        "ar": "مُمْكِن؟ هَلْ عِنْدَكَ قَلَمٌ؟",
+        "translit": "mumkin? hal ʿindaka qalamun?",
+        "en": "May I? Do you have a pen?"
+      },
+      {
+        "ar": "طَبْعًا!",
+        "translit": "ṭabʿan!",
+        "en": "Of course!"
+      },
+      {
+        "ar": "شُكْرًا!",
+        "translit": "shukran!",
+        "en": "Thank you!"
+      },
+      {
+        "ar": "لَا بَأْسَ.",
+        "translit": "lā baʾsa.",
+        "en": "No problem."
+      }
     ],
     "audio": "مُمْكِن؟ هَلْ عِنْدَكَ قَلَمٌ؟ طَبْعًا! شُكْرًا! لَا بَأْسَ.",
     "level": "A2",
-    "skills": [ "listening", "speaking", "comprehension" ],
-    "prereqs": [ "gr:negation-a1" ]
+    "skills": [
+      "listening",
+      "speaking",
+      "comprehension"
+    ],
+    "prereqs": [
+      "gr:negation-a1"
+    ]
   },
-  { "id": "txt:gram-form2-jarraba", "kind": "text", "textType": "sentence", "source": "m11", "concept": "derived-verb-forms", "vowelled": "جَرَّبَ الرَّجُلُ الطَّعَامَ", "translit": "jarraba ar-rajulu aṭ-ṭaʿāma", "en": "The man tried the food.", "words": [{ "surface": "جَرَّبَ", "translit": "jarraba", "gloss": "he tried (Form II فَعَّلَ — doubled middle letter)" }, { "surface": "الرَّجُلُ", "translit": "ar-rajulu", "gloss": "the man (subject, nominative)" }, { "surface": "الطَّعَامَ", "translit": "aṭ-ṭaʿāma", "gloss": "the food (object, accusative)" }], "audio": "جَرَّبَ الرَّجُلُ الطَّعَامَ", "level": "B1", "skills": ["reading", "comprehension", "grammar"], "prereqs": ["gr:derived-verb-forms"] },
-  { "id": "txt:gram-form3-safara", "kind": "text", "textType": "sentence", "source": "m11", "concept": "derived-verb-forms", "vowelled": "سَافَرَ الرَّجُلُ إِلَى الْمَدِينَةِ", "translit": "sāfara ar-rajulu ilā al-madīnati", "en": "The man traveled to the city.", "words": [{ "surface": "سَافَرَ", "translit": "sāfara", "gloss": "he traveled (Form III فَاعَلَ — long ا after the first letter)" }, { "surface": "الرَّجُلُ", "translit": "ar-rajulu", "gloss": "the man (subject, nominative)" }, { "surface": "إِلَى الْمَدِينَةِ", "translit": "ilā al-madīnati", "gloss": "to the city (genitive after إِلَى)" }], "audio": "سَافَرَ الرَّجُلُ إِلَى الْمَدِينَةِ", "level": "B1", "skills": ["reading", "comprehension", "grammar"], "prereqs": ["gr:derived-verb-forms"] },
-  { "id": "txt:gram-form4-aghlaqa", "kind": "text", "textType": "sentence", "source": "m11", "concept": "derived-verb-forms", "vowelled": "أَغْلَقَ الرَّجُلُ الْبَابَ", "translit": "aghlaqa ar-rajulu al-bāba", "en": "The man closed the door.", "words": [{ "surface": "أَغْلَقَ", "translit": "aghlaqa", "gloss": "he closed (Form IV أَفْعَلَ — أَ prefixed)" }, { "surface": "الرَّجُلُ", "translit": "ar-rajulu", "gloss": "the man (subject, nominative)" }, { "surface": "الْبَابَ", "translit": "al-bāba", "gloss": "the door (object, accusative)" }], "audio": "أَغْلَقَ الرَّجُلُ الْبَابَ", "level": "B1", "skills": ["reading", "comprehension", "grammar"], "prereqs": ["gr:derived-verb-forms"] },
-  { "id": "txt:gram-form5-takallama", "kind": "text", "textType": "sentence", "source": "m11", "concept": "derived-verb-forms", "vowelled": "تَكَلَّمَتِ الْمَرْأَةُ بِالْعَرَبِيَّةِ", "translit": "takallamati al-marʾatu bi-al-ʿarabiyyati", "en": "The woman spoke in Arabic.", "words": [{ "surface": "تَكَلَّمَتِ", "translit": "takallamati", "gloss": "she spoke (Form V تَفَعَّلَ — تَ + Form II's pattern)" }, { "surface": "الْمَرْأَةُ", "translit": "al-marʾatu", "gloss": "the woman (subject, nominative)" }, { "surface": "بِالْعَرَبِيَّةِ", "translit": "bi-al-ʿarabiyyati", "gloss": "in Arabic (بِـ attaches directly)" }], "audio": "تَكَلَّمَتِ الْمَرْأَةُ بِالْعَرَبِيَّةِ", "level": "B1", "skills": ["reading", "comprehension", "grammar"], "prereqs": ["gr:derived-verb-forms"] },
-  { "id": "txt:gram-form6-takataba", "kind": "text", "textType": "sentence", "source": "m11", "concept": "derived-verb-forms", "vowelled": "تَكَاتَبَ الطَّالِبَانِ", "translit": "takātaba aṭ-ṭālibāni", "en": "The two students wrote to each other.", "words": [{ "surface": "تَكَاتَبَ", "translit": "takātaba", "gloss": "they (two) corresponded (Form VI تَفَاعَلَ — تَ + Form III's pattern; the verb stays singular here since it precedes a dual subject in VSO order)" }, { "surface": "الطَّالِبَانِ", "translit": "aṭ-ṭālibāni", "gloss": "the two students (dual subject, nominative)" }], "audio": "تَكَاتَبَ الطَّالِبَانِ", "level": "B1", "skills": ["reading", "comprehension", "grammar"], "prereqs": ["gr:derived-verb-forms"] },
-  { "id": "txt:gram-form7-infataha", "kind": "text", "textType": "sentence", "source": "m11", "concept": "derived-verb-forms", "vowelled": "اِنْفَتَحَ الْبَابُ فَجْأَةً", "translit": "infataḥa al-bābu fajʾatan", "en": "The door opened suddenly.", "words": [{ "surface": "اِنْفَتَحَ", "translit": "infataḥa", "gloss": "it opened, by itself (Form VII اِنْفَعَلَ — اِنْ prefixed; no human subject)" }, { "surface": "الْبَابُ", "translit": "al-bābu", "gloss": "the door (subject, nominative)" }, { "surface": "فَجْأَةً", "translit": "fajʾatan", "gloss": "suddenly" }], "audio": "اِنْفَتَحَ الْبَابُ فَجْأَةً", "level": "B1", "skills": ["reading", "comprehension", "grammar"], "prereqs": ["gr:derived-verb-forms"] },
-  { "id": "txt:gram-form8-ishtara", "kind": "text", "textType": "sentence", "source": "m11", "concept": "derived-verb-forms", "vowelled": "اِشْتَرَتِ الطَّالِبَةُ كِتَابًا", "translit": "ishtarati aṭ-ṭālibatu kitāban", "en": "The student (f.) bought a book.", "words": [{ "surface": "اِشْتَرَتِ", "translit": "ishtarati", "gloss": "she bought (Form VIII اِفْتَعَلَ — ت infixed after the first letter)" }, { "surface": "الطَّالِبَةُ", "translit": "aṭ-ṭālibatu", "gloss": "the student, f. (subject, nominative)" }, { "surface": "كِتَابًا", "translit": "kitāban", "gloss": "a book (object, indefinite accusative)" }], "audio": "اِشْتَرَتِ الطَّالِبَةُ كِتَابًا", "level": "B1", "skills": ["reading", "comprehension", "grammar"], "prereqs": ["gr:derived-verb-forms"] },
-  { "id": "txt:gram-form10-istayqaza", "kind": "text", "textType": "sentence", "source": "m11", "concept": "derived-verb-forms", "vowelled": "اِسْتَيْقَظَ الْوَلَدُ فِي الصَّبَاحِ", "translit": "istayqaẓa al-waladu fī aṣ-ṣabāḥi", "en": "The boy woke up in the morning.", "words": [{ "surface": "اِسْتَيْقَظَ", "translit": "istayqaẓa", "gloss": "he woke up (Form X اِسْتَفْعَلَ — اِسْتَ prefixed)" }, { "surface": "الْوَلَدُ", "translit": "al-waladu", "gloss": "the boy (subject, nominative)" }, { "surface": "فِي الصَّبَاحِ", "translit": "fī aṣ-ṣabāḥi", "gloss": "in the morning (genitive after فِي)" }], "audio": "اِسْتَيْقَظَ الْوَلَدُ فِي الصَّبَاحِ", "level": "B1", "skills": ["reading", "comprehension", "grammar"], "prereqs": ["gr:derived-verb-forms"] },
-  { "id": "txt:gram-relclause-safara", "kind": "text", "textType": "sentence", "source": "m11", "concept": "relative-clauses", "vowelled": "هَذَا هُوَ الرَّجُلُ الَّذِي سَافَرَ إِلَى الْمَدِينَةِ", "translit": "hādhā huwa ar-rajulu alladhī sāfara ilā al-madīnati", "en": "This is the man who traveled to the city.", "words": [{ "surface": "هَذَا هُوَ", "translit": "hādhā huwa", "gloss": "this is (هُوَ links مبتدأ to its definite خبر)" }, { "surface": "الرَّجُلُ", "translit": "ar-rajulu", "gloss": "the man (definite antecedent, nominative)" }, { "surface": "الَّذِي", "translit": "alladhī", "gloss": "who (masculine relative pronoun — required, since الرَّجُلُ is definite)" }, { "surface": "سَافَرَ إِلَى الْمَدِينَةِ", "translit": "sāfara ilā al-madīnati", "gloss": "traveled to the city (subject-relative: الرَّجُلُ is also this verb's subject)" }], "audio": "هَذَا هُوَ الرَّجُلُ الَّذِي سَافَرَ إِلَى الْمَدِينَةِ", "level": "B1", "skills": ["reading", "comprehension", "grammar"], "prereqs": ["gr:relative-clauses"] },
-  { "id": "txt:gram-relclause-takallamat", "kind": "text", "textType": "sentence", "source": "m11", "concept": "relative-clauses", "vowelled": "هَذِهِ هِيَ الْمَرْأَةُ الَّتِي تَتَكَلَّمُ الْعَرَبِيَّةَ", "translit": "hādhihi hiya al-marʾatu allatī tatakallamu al-ʿarabiyyata", "en": "This is the woman who speaks Arabic.", "words": [{ "surface": "هَذِهِ هِيَ", "translit": "hādhihi hiya", "gloss": "this is (feminine)" }, { "surface": "الْمَرْأَةُ", "translit": "al-marʾatu", "gloss": "the woman (definite antecedent, nominative)" }, { "surface": "الَّتِي", "translit": "allatī", "gloss": "who (feminine relative pronoun — agrees with الْمَرْأَةُ)" }, { "surface": "تَتَكَلَّمُ الْعَرَبِيَّةَ", "translit": "tatakallamu al-ʿarabiyyata", "gloss": "speaks Arabic (subject-relative: الْمَرْأَةُ is also this verb's subject)" }], "audio": "هَذِهِ هِيَ الْمَرْأَةُ الَّتِي تَتَكَلَّمُ الْعَرَبِيَّةَ", "level": "B1", "skills": ["reading", "comprehension", "grammar"], "prereqs": ["gr:relative-clauses"] },
-  { "id": "txt:gram-relclause-istayqaza", "kind": "text", "textType": "sentence", "source": "m11", "concept": "relative-clauses", "vowelled": "هَذَا هُوَ الْوَلَدُ الَّذِي اِسْتَيْقَظَ فِي الصَّبَاحِ", "translit": "hādhā huwa al-waladu alladhī istayqaẓa fī aṣ-ṣabāḥi", "en": "This is the boy who woke up in the morning.", "words": [{ "surface": "هَذَا هُوَ", "translit": "hādhā huwa", "gloss": "this is" }, { "surface": "الْوَلَدُ", "translit": "al-waladu", "gloss": "the boy (definite antecedent, nominative)" }, { "surface": "الَّذِي", "translit": "alladhī", "gloss": "who (masculine relative pronoun)" }, { "surface": "اِسْتَيْقَظَ فِي الصَّبَاحِ", "translit": "istayqaẓa fī aṣ-ṣabāḥi", "gloss": "woke up in the morning (subject-relative)" }], "audio": "هَذَا هُوَ الْوَلَدُ الَّذِي اِسْتَيْقَظَ فِي الصَّبَاحِ", "level": "B1", "skills": ["reading", "comprehension", "grammar"], "prereqs": ["gr:relative-clauses"] },
-  { "id": "txt:gram-relclause-indefinite", "kind": "text", "textType": "sentence", "source": "m11", "concept": "relative-clauses", "vowelled": "رَأَيْتُ طَالِبًا يَدْرُسُ الْعَرَبِيَّةَ", "translit": "raʾaytu ṭāliban yadrusu al-ʿarabiyyata", "en": "I saw a student who studies Arabic.", "words": [{ "surface": "رَأَيْتُ", "translit": "raʾaytu", "gloss": "I saw" }, { "surface": "طَالِبًا", "translit": "ṭāliban", "gloss": "a student (INDEFINITE antecedent, accusative object — no ال and no tanwīn dropped)" }, { "surface": "يَدْرُسُ الْعَرَبِيَّةَ", "translit": "yadrusu al-ʿarabiyyata", "gloss": "studies Arabic — no الَّذِي at all: an indefinite antecedent takes no relative pronoun" }], "audio": "رَأَيْتُ طَالِبًا يَدْرُسُ الْعَرَبِيَّةَ", "level": "B1", "skills": ["reading", "comprehension", "grammar"], "prereqs": ["gr:relative-clauses"] },
-  { "id": "txt:gram-inna-weather", "kind": "text", "textType": "sentence", "source": "m11", "concept": "inna-sisters", "vowelled": "إِنَّ الطَّقْسَ جَمِيلٌ الْيَوْمَ", "translit": "inna aṭ-ṭaqsa jamīlun al-yawma", "en": "Indeed the weather is beautiful today.", "words": [{ "surface": "إِنَّ", "translit": "inna", "gloss": "indeed (opens the sentence for emphasis)" }, { "surface": "الطَّقْسَ", "translit": "aṭ-ṭaqsa", "gloss": "the weather (اِسْم إِنَّ — pushed to accusative by إِنَّ)" }, { "surface": "جَمِيلٌ", "translit": "jamīlun", "gloss": "beautiful (خَبَر إِنَّ — stays nominative)" }, { "surface": "الْيَوْمَ", "translit": "al-yawma", "gloss": "today" }], "audio": "إِنَّ الطَّقْسَ جَمِيلٌ الْيَوْمَ", "level": "B1", "skills": ["reading", "comprehension", "grammar"], "prereqs": ["gr:inna-sisters"] },
-  { "id": "txt:gram-anna-heard-weather", "kind": "text", "textType": "sentence", "source": "m11", "concept": "inna-sisters", "vowelled": "سَمِعْتُ أَنَّ الطَّقْسَ جَمِيلٌ الْيَوْمَ", "translit": "samiʿtu anna aṭ-ṭaqsa jamīlun al-yawma", "en": "I heard that the weather is beautiful today.", "words": [{ "surface": "سَمِعْتُ", "translit": "samiʿtu", "gloss": "I heard" }, { "surface": "أَنَّ", "translit": "anna", "gloss": "that (subordinates the nominal clause that follows)" }, { "surface": "الطَّقْسَ", "translit": "aṭ-ṭaqsa", "gloss": "the weather (اِسْم أَنَّ — accusative)" }, { "surface": "جَمِيلٌ", "translit": "jamīlun", "gloss": "beautiful (خَبَر أَنَّ — nominative)" }, { "surface": "الْيَوْمَ", "translit": "al-yawma", "gloss": "today" }], "audio": "سَمِعْتُ أَنَّ الطَّقْسَ جَمِيلٌ الْيَوْمَ", "level": "B1", "skills": ["reading", "comprehension", "grammar"], "prereqs": ["gr:inna-sisters"] },
-  { "id": "txt:gram-lianna-happy-warm", "kind": "text", "textType": "sentence", "source": "m11", "concept": "inna-sisters", "vowelled": "هِيَ سَعِيدَةٌ لِأَنَّ الطَّقْسَ دَافِئٌ", "translit": "hiya saʿīdatun liʾanna aṭ-ṭaqsa dāfiʾun", "en": "She is happy because the weather is warm.", "words": [{ "surface": "هِيَ سَعِيدَةٌ", "translit": "hiya saʿīdatun", "gloss": "she is happy" }, { "surface": "لِأَنَّ", "translit": "liʾanna", "gloss": "because (لِ + أَنَّ — already known, same accusative-subject rule)" }, { "surface": "الطَّقْسَ", "translit": "aṭ-ṭaqsa", "gloss": "the weather (اِسْم لِأَنَّ — accusative)" }, { "surface": "دَافِئٌ", "translit": "dāfiʾun", "gloss": "warm (خَبَر لِأَنَّ — nominative)" }], "audio": "هِيَ سَعِيدَةٌ لِأَنَّ الطَّقْسَ دَافِئٌ", "level": "B1", "skills": ["reading", "comprehension", "grammar"], "prereqs": ["gr:inna-sisters"] },
-  { "id": "txt:gram-kaanna-cold-weather", "kind": "text", "textType": "sentence", "source": "m11", "concept": "inna-sisters", "vowelled": "كَأَنَّ الطَّقْسَ بَارِدٌ الْيَوْمَ", "translit": "kaʾanna aṭ-ṭaqsa bāridun al-yawma", "en": "It's as if the weather is cold today.", "words": [{ "surface": "كَأَنَّ", "translit": "kaʾanna", "gloss": "as if (comparison — same accusative-subject rule)" }, { "surface": "الطَّقْسَ", "translit": "aṭ-ṭaqsa", "gloss": "the weather (اِسْم كَأَنَّ — accusative)" }, { "surface": "بَارِدٌ", "translit": "bāridun", "gloss": "cold (خَبَر كَأَنَّ — nominative)" }, { "surface": "الْيَوْمَ", "translit": "al-yawma", "gloss": "today" }], "audio": "كَأَنَّ الطَّقْسَ بَارِدٌ الْيَوْمَ", "level": "B1", "skills": ["reading", "comprehension", "grammar"], "prereqs": ["gr:inna-sisters"] },
-  { "id": "txt:gram-lakinna-house-garden", "kind": "text", "textType": "sentence", "source": "m11", "concept": "inna-sisters", "vowelled": "الْبَيْتُ كَبِيرٌ لٰكِنَّ الْحَدِيقَةَ صَغِيرَةٌ", "translit": "al-baytu kabīrun lākinna al-ḥadīqata ṣaghīratun", "en": "The house is big, but the garden is small.", "words": [{ "surface": "الْبَيْتُ كَبِيرٌ", "translit": "al-baytu kabīrun", "gloss": "the house is big (an ordinary nominal sentence)" }, { "surface": "لٰكِنَّ", "translit": "lākinna", "gloss": "but (HEAVY — a sister of إِنَّ, unlike the light لَكِنْ)" }, { "surface": "الْحَدِيقَةَ", "translit": "al-ḥadīqata", "gloss": "the garden (اِسْم لٰكِنَّ — accusative)" }, { "surface": "صَغِيرَةٌ", "translit": "ṣaghīratun", "gloss": "small (خَبَر لٰكِنَّ — nominative)" }], "audio": "الْبَيْتُ كَبِيرٌ لٰكِنَّ الْحَدِيقَةَ صَغِيرَةٌ", "level": "B1", "skills": ["reading", "comprehension", "grammar"], "prereqs": ["gr:inna-sisters"] },
-  { "id": "txt:gram-laalla-beautiful-tomorrow", "kind": "text", "textType": "sentence", "source": "m11", "concept": "inna-sisters", "vowelled": "لَعَلَّ الطَّقْسَ جَمِيلٌ غَدًا", "translit": "laʿalla aṭ-ṭaqsa jamīlun ghadan", "en": "Perhaps the weather will be beautiful tomorrow.", "words": [{ "surface": "لَعَلَّ", "translit": "laʿalla", "gloss": "perhaps (hope/expectation — same accusative-subject rule)" }, { "surface": "الطَّقْسَ", "translit": "aṭ-ṭaqsa", "gloss": "the weather (اِسْم لَعَلَّ — accusative)" }, { "surface": "جَمِيلٌ", "translit": "jamīlun", "gloss": "beautiful (خَبَر لَعَلَّ — nominative)" }, { "surface": "غَدًا", "translit": "ghadan", "gloss": "tomorrow" }], "audio": "لَعَلَّ الطَّقْسَ جَمِيلٌ غَدًا", "level": "B1", "skills": ["reading", "comprehension", "grammar"], "prereqs": ["gr:inna-sisters"] },
-  { "id": "txt:gram-layta-warm-weather", "kind": "text", "textType": "sentence", "source": "m11", "concept": "inna-sisters", "vowelled": "لَيْتَ الطَّقْسَ دَافِئٌ", "translit": "layta aṭ-ṭaqsa dāfiʾun", "en": "Would that the weather were warm.", "words": [{ "surface": "لَيْتَ", "translit": "layta", "gloss": "would that / I wish (irrealis wish, usually for something unlikely)" }, { "surface": "الطَّقْسَ", "translit": "aṭ-ṭaqsa", "gloss": "the weather (اِسْم لَيْتَ — accusative)" }, { "surface": "دَافِئٌ", "translit": "dāfiʾun", "gloss": "warm (خَبَر لَيْتَ — nominative)" }], "audio": "لَيْتَ الطَّقْسَ دَافِئٌ", "level": "B1", "skills": ["reading", "comprehension", "grammar"], "prereqs": ["gr:inna-sisters"] },
-  { "id": "txt:gram-innahu-happy", "kind": "text", "textType": "sentence", "source": "m11", "concept": "inna-sisters", "vowelled": "إِنَّهُ سَعِيدٌ", "translit": "innahu saʿīdun", "en": "Indeed he is happy.", "words": [{ "surface": "إِنَّهُ", "translit": "innahu", "gloss": "indeed he/it (إِنَّ + the attached pronoun ـهُ, replacing a following noun as اِسْم إِنَّ)" }, { "surface": "سَعِيدٌ", "translit": "saʿīdun", "gloss": "happy (خَبَر إِنَّ — nominative)" }], "audio": "إِنَّهُ سَعِيدٌ", "level": "B1", "skills": ["reading", "comprehension", "grammar"], "prereqs": ["gr:inna-sisters", "gr:attached-possessive"] },
-  { "id": "txt:gram-annaha-heard-happy", "kind": "text", "textType": "sentence", "source": "m11", "concept": "inna-sisters", "vowelled": "سَمِعْتُ أَنَّهَا سَعِيدَةٌ", "translit": "samiʿtu annahā saʿīdatun", "en": "I heard that she is happy.", "words": [{ "surface": "سَمِعْتُ", "translit": "samiʿtu", "gloss": "I heard" }, { "surface": "أَنَّهَا", "translit": "annahā", "gloss": "that she/it (أَنَّ + the attached pronoun ـهَا)" }, { "surface": "سَعِيدَةٌ", "translit": "saʿīdatun", "gloss": "happy (خَبَر أَنَّ — nominative)" }], "audio": "سَمِعْتُ أَنَّهَا سَعِيدَةٌ", "level": "B1", "skills": ["reading", "comprehension", "grammar"], "prereqs": ["gr:inna-sisters", "gr:attached-possessive"] },
-  { "id": "txt:gram-liannahu-happy-home", "kind": "text", "textType": "sentence", "source": "m11", "concept": "inna-sisters", "vowelled": "هُوَ سَعِيدٌ لِأَنَّهُ فِي الْبَيْتِ", "translit": "huwa saʿīdun liʾannahu fī al-bayti", "en": "He is happy because he is at home.", "words": [{ "surface": "هُوَ سَعِيدٌ", "translit": "huwa saʿīdun", "gloss": "he is happy" }, { "surface": "لِأَنَّهُ", "translit": "liʾannahu", "gloss": "because he/it (لِأَنَّ + the attached pronoun ـهُ — the same mechanic works on every sister)" }, { "surface": "فِي الْبَيْتِ", "translit": "fī al-bayti", "gloss": "at home" }], "audio": "هُوَ سَعِيدٌ لِأَنَّهُ فِي الْبَيْتِ", "level": "B1", "skills": ["reading", "comprehension", "grammar"], "prereqs": ["gr:inna-sisters", "gr:attached-possessive"] },
-  { "id": "txt:gram-relclause-obj-book", "kind": "text", "textType": "sentence", "source": "m11", "concept": "relative-clauses", "vowelled": "الْكِتَابُ الَّذِي قَرَأْتُهُ جَمِيلٌ", "translit": "al-kitābu alladhī qaraʾtuhu jamīlun", "en": "The book that I read is beautiful.", "words": [{ "surface": "الْكِتَابُ", "translit": "al-kitābu", "gloss": "the book (definite antecedent, nominative — also the OBJECT of the clause's verb)" }, { "surface": "الَّذِي", "translit": "alladhī", "gloss": "that (masculine relative pronoun)" }, { "surface": "قَرَأْتُهُ", "translit": "qaraʾtuhu", "gloss": "I read it — قَرَأْتُ + the resumptive pronoun ـهُ, pointing back at الْكِتَابُ" }, { "surface": "جَمِيلٌ", "translit": "jamīlun", "gloss": "beautiful (predicate)" }], "audio": "الْكِتَابُ الَّذِي قَرَأْتُهُ جَمِيلٌ", "level": "B1", "skills": ["reading", "comprehension", "grammar"], "prereqs": ["gr:relative-clauses", "gr:attached-possessive"] },
-  { "id": "txt:gram-relclause-obj-woman", "kind": "text", "textType": "sentence", "source": "m11", "concept": "relative-clauses", "vowelled": "الْمَرْأَةُ الَّتِي رَأَيْتُهَا سَعِيدَةٌ", "translit": "al-marʾatu allatī raʾaytuhā saʿīdatun", "en": "The woman that I saw is happy.", "words": [{ "surface": "الْمَرْأَةُ", "translit": "al-marʾatu", "gloss": "the woman (definite antecedent, nominative — also the OBJECT of the clause's verb)" }, { "surface": "الَّتِي", "translit": "allatī", "gloss": "that (feminine relative pronoun)" }, { "surface": "رَأَيْتُهَا", "translit": "raʾaytuhā", "gloss": "I saw her/it — رَأَيْتُ + the resumptive pronoun ـهَا, pointing back at الْمَرْأَةُ" }, { "surface": "سَعِيدَةٌ", "translit": "saʿīdatun", "gloss": "happy (predicate)" }], "audio": "الْمَرْأَةُ الَّتِي رَأَيْتُهَا سَعِيدَةٌ", "level": "B1", "skills": ["reading", "comprehension", "grammar"], "prereqs": ["gr:relative-clauses", "gr:attached-possessive"] },
-  { "id": "txt:gram-relclause-pl-teachers-m", "kind": "text", "textType": "sentence", "source": "m11", "concept": "relative-clauses", "vowelled": "الْمُعَلِّمُونَ الَّذِينَ فِي الْمَدْرَسَةِ مَشْغُولُونَ", "translit": "al-muʿallimūna alladhīna fī al-madrasati mashghūlūna", "en": "The teachers who are at school are busy.", "words": [{ "surface": "الْمُعَلِّمُونَ", "translit": "al-muʿallimūna", "gloss": "the teachers (sound masculine plural of مُعَلِّم, definite antecedent)" }, { "surface": "الَّذِينَ", "translit": "alladhīna", "gloss": "who (masculine PLURAL relative pronoun — الَّذِي's plural counterpart)" }, { "surface": "فِي الْمَدْرَسَةِ", "translit": "fī al-madrasati", "gloss": "at school (subject-relative — الْمُعَلِّمُونَ is also this phrase's implied subject)" }, { "surface": "مَشْغُولُونَ", "translit": "mashghūlūna", "gloss": "busy (sound masculine plural predicate, agreeing with الْمُعَلِّمُونَ)" }], "audio": "الْمُعَلِّمُونَ الَّذِينَ فِي الْمَدْرَسَةِ مَشْغُولُونَ", "level": "B1", "skills": ["reading", "comprehension", "grammar"], "prereqs": ["gr:relative-clauses", "gr:noun-number"] },
-  { "id": "txt:gram-relclause-pl-teachers-f", "kind": "text", "textType": "sentence", "source": "m11", "concept": "relative-clauses", "vowelled": "الْمُعَلِّمَاتُ اللَّاتِي فِي الْمَدْرَسَةِ مَشْغُولَاتٌ", "translit": "al-muʿallimātu allātī fī al-madrasati mashghūlātun", "en": "The [female] teachers who are at school are busy.", "words": [{ "surface": "الْمُعَلِّمَاتُ", "translit": "al-muʿallimātu", "gloss": "the [female] teachers (sound feminine plural of مُعَلِّمَة, definite antecedent)" }, { "surface": "اللَّاتِي", "translit": "allātī", "gloss": "who (feminine PLURAL relative pronoun — الَّتِي's plural counterpart)" }, { "surface": "فِي الْمَدْرَسَةِ", "translit": "fī al-madrasati", "gloss": "at school" }, { "surface": "مَشْغُولَاتٌ", "translit": "mashghūlātun", "gloss": "busy (sound feminine plural predicate, agreeing with الْمُعَلِّمَاتُ)" }], "audio": "الْمُعَلِّمَاتُ اللَّاتِي فِي الْمَدْرَسَةِ مَشْغُولَاتٌ", "level": "B1", "skills": ["reading", "comprehension", "grammar"], "prereqs": ["gr:relative-clauses", "gr:noun-number"] },
-  { "id": "txt:read-para-teacher-trip", "kind": "text", "textType": "paragraph", "source": "m11", "concept": "narrative", "vowelled": "ذَاتَ يَوْمٍ سَافَرَ الرَّجُلُ الَّذِي هُوَ مُعَلِّمٌ إِلَى مَدِينَةٍ بَعِيدَةٍ. كَانَ الطَّقْسُ بَارِدًا فِي الصَّبَاحِ، لٰكِنَّهُ دَافِئٌ فِي الْمَسَاءِ. سَمِعَ الرَّجُلُ أَنَّ الْحَدِيقَةَ جَمِيلَةٌ، ثُمَّ ذَهَبَ إِلَى الْحَدِيقَةِ. أَخِيرًا، لَعَلَّهُ سَعِيدٌ الْآنَ.", "translit": "dhāta yawmin sāfara ar-rajulu alladhī huwa muʿallimun ilā madīnatin baʿīdatin. kāna aṭ-ṭaqsu bāridan fī aṣ-ṣabāḥi, lākinnahu dāfiʾun fī al-masāʾi. samiʿa ar-rajulu anna al-ḥadīqata jamīlatun, thumma dhahaba ilā al-ḥadīqati. akhīran, laʿallahu saʿīdun al-āna.", "en": "One day, the man who is a teacher traveled to a distant city. The weather was cold in the morning, but it's warm in the evening. The man heard that the garden was beautiful, then he went to the garden. Finally, perhaps he is happy now.", "sentences": [{ "ar": "ذَاتَ يَوْمٍ سَافَرَ الرَّجُلُ الَّذِي هُوَ مُعَلِّمٌ إِلَى مَدِينَةٍ بَعِيدَةٍ.", "translit": "dhāta yawmin sāfara ar-rajulu alladhī huwa muʿallimun ilā madīnatin baʿīdatin.", "en": "One day, the man who is a teacher traveled to a distant city." }, { "ar": "كَانَ الطَّقْسُ بَارِدًا فِي الصَّبَاحِ، لٰكِنَّهُ دَافِئٌ فِي الْمَسَاءِ.", "translit": "kāna aṭ-ṭaqsu bāridan fī aṣ-ṣabāḥi, lākinnahu dāfiʾun fī al-masāʾi.", "en": "The weather was cold in the morning, but it's warm in the evening." }, { "ar": "سَمِعَ الرَّجُلُ أَنَّ الْحَدِيقَةَ جَمِيلَةٌ، ثُمَّ ذَهَبَ إِلَى الْحَدِيقَةِ.", "translit": "samiʿa ar-rajulu anna al-ḥadīqata jamīlatun, thumma dhahaba ilā al-ḥadīqati.", "en": "The man heard that the garden was beautiful, then he went to the garden." }, { "ar": "أَخِيرًا، لَعَلَّهُ سَعِيدٌ الْآنَ.", "translit": "akhīran, laʿallahu saʿīdun al-āna.", "en": "Finally, perhaps he is happy now." }], "audio": "ذَاتَ يَوْمٍ سَافَرَ الرَّجُلُ الَّذِي هُوَ مُعَلِّمٌ إِلَى مَدِينَةٍ بَعِيدَةٍ. كَانَ الطَّقْسُ بَارِدًا فِي الصَّبَاحِ، لٰكِنَّهُ دَافِئٌ فِي الْمَسَاءِ. سَمِعَ الرَّجُلُ أَنَّ الْحَدِيقَةَ جَمِيلَةٌ، ثُمَّ ذَهَبَ إِلَى الْحَدِيقَةِ. أَخِيرًا، لَعَلَّهُ سَعِيدٌ الْآنَ.", "level": "B1", "skills": ["reading", "comprehension"], "prereqs": ["gr:relative-clauses", "gr:kana", "gr:inna-sisters"] },
-  { "id": "txt:gram-poss-our-house", "kind": "text", "textType": "sentence", "source": "m11", "concept": "attached-possessive", "vowelled": "بَيْتُنَا كَبِيرٌ", "translit": "baytunā kabīrun", "en": "Our house is big.", "words": [{ "surface": "بَيْتُنَا", "translit": "baytunā", "gloss": "our house (بَيْت + the attached pronoun ـنَا)" }, { "surface": "كَبِيرٌ", "translit": "kabīrun", "gloss": "big (predicate)" }], "audio": "بَيْتُنَا كَبِيرٌ", "level": "A1", "skills": ["reading", "comprehension", "grammar"], "prereqs": ["gr:attached-possessive"] },
-  { "id": "txt:gram-poss-your-book-pl", "kind": "text", "textType": "sentence", "source": "m11", "concept": "attached-possessive", "vowelled": "أَيْنَ كِتَابُكُمْ؟", "translit": "ayna kitābukum?", "en": "Where is your book?", "words": [{ "surface": "أَيْنَ", "translit": "ayna", "gloss": "where" }, { "surface": "كِتَابُكُمْ", "translit": "kitābukum", "gloss": "your book (كِتَاب + the attached pronoun ـكُمْ, plural addressee)" }], "audio": "أَيْنَ كِتَابُكُمْ؟", "level": "A1", "skills": ["reading", "comprehension", "grammar"], "prereqs": ["gr:attached-possessive"] },
-  { "id": "txt:gram-poss-their-school", "kind": "text", "textType": "sentence", "source": "m11", "concept": "attached-possessive", "vowelled": "مَدْرَسَتُهُمْ قَرِيبَةٌ", "translit": "madrasatuhum qarībatun", "en": "Their school is near.", "words": [{ "surface": "مَدْرَسَتُهُمْ", "translit": "madrasatuhum", "gloss": "their school (مَدْرَسَة + the attached pronoun ـهُمْ)" }, { "surface": "قَرِيبَةٌ", "translit": "qarībatun", "gloss": "near (predicate, feminine agreement)" }], "audio": "مَدْرَسَتُهُمْ قَرِيبَةٌ", "level": "A1", "skills": ["reading", "comprehension", "grammar"], "prereqs": ["gr:attached-possessive"] }
+  {
+    "id": "txt:gram-form2-jarraba",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "derived-verb-forms",
+    "vowelled": "جَرَّبَ الرَّجُلُ الطَّعَامَ",
+    "translit": "jarraba ar-rajulu aṭ-ṭaʿāma",
+    "en": "The man tried the food.",
+    "words": [
+      {
+        "surface": "جَرَّبَ",
+        "translit": "jarraba",
+        "gloss": "he tried (Form II فَعَّلَ — doubled middle letter)"
+      },
+      {
+        "surface": "الرَّجُلُ",
+        "translit": "ar-rajulu",
+        "gloss": "the man (subject, nominative)"
+      },
+      {
+        "surface": "الطَّعَامَ",
+        "translit": "aṭ-ṭaʿāma",
+        "gloss": "the food (object, accusative)"
+      }
+    ],
+    "audio": "جَرَّبَ الرَّجُلُ الطَّعَامَ",
+    "level": "B1",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:derived-verb-forms"
+    ]
+  },
+  {
+    "id": "txt:gram-form3-safara",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "derived-verb-forms",
+    "vowelled": "سَافَرَ الرَّجُلُ إِلَى الْمَدِينَةِ",
+    "translit": "sāfara ar-rajulu ilā al-madīnati",
+    "en": "The man traveled to the city.",
+    "words": [
+      {
+        "surface": "سَافَرَ",
+        "translit": "sāfara",
+        "gloss": "he traveled (Form III فَاعَلَ — long ا after the first letter)"
+      },
+      {
+        "surface": "الرَّجُلُ",
+        "translit": "ar-rajulu",
+        "gloss": "the man (subject, nominative)"
+      },
+      {
+        "surface": "إِلَى الْمَدِينَةِ",
+        "translit": "ilā al-madīnati",
+        "gloss": "to the city (genitive after إِلَى)"
+      }
+    ],
+    "audio": "سَافَرَ الرَّجُلُ إِلَى الْمَدِينَةِ",
+    "level": "B1",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:derived-verb-forms"
+    ]
+  },
+  {
+    "id": "txt:gram-form4-aghlaqa",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "derived-verb-forms",
+    "vowelled": "أَغْلَقَ الرَّجُلُ الْبَابَ",
+    "translit": "aghlaqa ar-rajulu al-bāba",
+    "en": "The man closed the door.",
+    "words": [
+      {
+        "surface": "أَغْلَقَ",
+        "translit": "aghlaqa",
+        "gloss": "he closed (Form IV أَفْعَلَ — أَ prefixed)"
+      },
+      {
+        "surface": "الرَّجُلُ",
+        "translit": "ar-rajulu",
+        "gloss": "the man (subject, nominative)"
+      },
+      {
+        "surface": "الْبَابَ",
+        "translit": "al-bāba",
+        "gloss": "the door (object, accusative)"
+      }
+    ],
+    "audio": "أَغْلَقَ الرَّجُلُ الْبَابَ",
+    "level": "B1",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:derived-verb-forms"
+    ]
+  },
+  {
+    "id": "txt:gram-form5-takallama",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "derived-verb-forms",
+    "vowelled": "تَكَلَّمَتِ الْمَرْأَةُ بِالْعَرَبِيَّةِ",
+    "translit": "takallamati al-marʾatu bi-al-ʿarabiyyati",
+    "en": "The woman spoke in Arabic.",
+    "words": [
+      {
+        "surface": "تَكَلَّمَتِ",
+        "translit": "takallamati",
+        "gloss": "she spoke (Form V تَفَعَّلَ — تَ + Form II's pattern)"
+      },
+      {
+        "surface": "الْمَرْأَةُ",
+        "translit": "al-marʾatu",
+        "gloss": "the woman (subject, nominative)"
+      },
+      {
+        "surface": "بِالْعَرَبِيَّةِ",
+        "translit": "bi-al-ʿarabiyyati",
+        "gloss": "in Arabic (بِـ attaches directly)"
+      }
+    ],
+    "audio": "تَكَلَّمَتِ الْمَرْأَةُ بِالْعَرَبِيَّةِ",
+    "level": "B1",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:derived-verb-forms"
+    ]
+  },
+  {
+    "id": "txt:gram-form6-takataba",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "derived-verb-forms",
+    "vowelled": "تَكَاتَبَ الطَّالِبَانِ",
+    "translit": "takātaba aṭ-ṭālibāni",
+    "en": "The two students wrote to each other.",
+    "words": [
+      {
+        "surface": "تَكَاتَبَ",
+        "translit": "takātaba",
+        "gloss": "they (two) corresponded (Form VI تَفَاعَلَ — تَ + Form III's pattern; the verb stays singular here since it precedes a dual subject in VSO order)"
+      },
+      {
+        "surface": "الطَّالِبَانِ",
+        "translit": "aṭ-ṭālibāni",
+        "gloss": "the two students (dual subject, nominative)"
+      }
+    ],
+    "audio": "تَكَاتَبَ الطَّالِبَانِ",
+    "level": "B1",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:derived-verb-forms"
+    ]
+  },
+  {
+    "id": "txt:gram-form7-infataha",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "derived-verb-forms",
+    "vowelled": "اِنْفَتَحَ الْبَابُ فَجْأَةً",
+    "translit": "infataḥa al-bābu fajʾatan",
+    "en": "The door opened suddenly.",
+    "words": [
+      {
+        "surface": "اِنْفَتَحَ",
+        "translit": "infataḥa",
+        "gloss": "it opened, by itself (Form VII اِنْفَعَلَ — اِنْ prefixed; no human subject)"
+      },
+      {
+        "surface": "الْبَابُ",
+        "translit": "al-bābu",
+        "gloss": "the door (subject, nominative)"
+      },
+      {
+        "surface": "فَجْأَةً",
+        "translit": "fajʾatan",
+        "gloss": "suddenly"
+      }
+    ],
+    "audio": "اِنْفَتَحَ الْبَابُ فَجْأَةً",
+    "level": "B1",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:derived-verb-forms"
+    ]
+  },
+  {
+    "id": "txt:gram-form8-ishtara",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "derived-verb-forms",
+    "vowelled": "اِشْتَرَتِ الطَّالِبَةُ كِتَابًا",
+    "translit": "ishtarati aṭ-ṭālibatu kitāban",
+    "en": "The student (f.) bought a book.",
+    "words": [
+      {
+        "surface": "اِشْتَرَتِ",
+        "translit": "ishtarati",
+        "gloss": "she bought (Form VIII اِفْتَعَلَ — ت infixed after the first letter)"
+      },
+      {
+        "surface": "الطَّالِبَةُ",
+        "translit": "aṭ-ṭālibatu",
+        "gloss": "the student, f. (subject, nominative)"
+      },
+      {
+        "surface": "كِتَابًا",
+        "translit": "kitāban",
+        "gloss": "a book (object, indefinite accusative)"
+      }
+    ],
+    "audio": "اِشْتَرَتِ الطَّالِبَةُ كِتَابًا",
+    "level": "B1",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:derived-verb-forms"
+    ]
+  },
+  {
+    "id": "txt:gram-form10-istayqaza",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "derived-verb-forms",
+    "vowelled": "اِسْتَيْقَظَ الْوَلَدُ فِي الصَّبَاحِ",
+    "translit": "istayqaẓa al-waladu fī aṣ-ṣabāḥi",
+    "en": "The boy woke up in the morning.",
+    "words": [
+      {
+        "surface": "اِسْتَيْقَظَ",
+        "translit": "istayqaẓa",
+        "gloss": "he woke up (Form X اِسْتَفْعَلَ — اِسْتَ prefixed)"
+      },
+      {
+        "surface": "الْوَلَدُ",
+        "translit": "al-waladu",
+        "gloss": "the boy (subject, nominative)"
+      },
+      {
+        "surface": "فِي الصَّبَاحِ",
+        "translit": "fī aṣ-ṣabāḥi",
+        "gloss": "in the morning (genitive after فِي)"
+      }
+    ],
+    "audio": "اِسْتَيْقَظَ الْوَلَدُ فِي الصَّبَاحِ",
+    "level": "B1",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:derived-verb-forms"
+    ]
+  },
+  {
+    "id": "txt:gram-relclause-safara",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "relative-clauses",
+    "vowelled": "هَذَا هُوَ الرَّجُلُ الَّذِي سَافَرَ إِلَى الْمَدِينَةِ",
+    "translit": "hādhā huwa ar-rajulu alladhī sāfara ilā al-madīnati",
+    "en": "This is the man who traveled to the city.",
+    "words": [
+      {
+        "surface": "هَذَا هُوَ",
+        "translit": "hādhā huwa",
+        "gloss": "this is (هُوَ links مبتدأ to its definite خبر)"
+      },
+      {
+        "surface": "الرَّجُلُ",
+        "translit": "ar-rajulu",
+        "gloss": "the man (definite antecedent, nominative)"
+      },
+      {
+        "surface": "الَّذِي",
+        "translit": "alladhī",
+        "gloss": "who (masculine relative pronoun — required, since الرَّجُلُ is definite)"
+      },
+      {
+        "surface": "سَافَرَ إِلَى الْمَدِينَةِ",
+        "translit": "sāfara ilā al-madīnati",
+        "gloss": "traveled to the city (subject-relative: الرَّجُلُ is also this verb's subject)"
+      }
+    ],
+    "audio": "هَذَا هُوَ الرَّجُلُ الَّذِي سَافَرَ إِلَى الْمَدِينَةِ",
+    "level": "B1",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:relative-clauses"
+    ]
+  },
+  {
+    "id": "txt:gram-relclause-takallamat",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "relative-clauses",
+    "vowelled": "هَذِهِ هِيَ الْمَرْأَةُ الَّتِي تَتَكَلَّمُ الْعَرَبِيَّةَ",
+    "translit": "hādhihi hiya al-marʾatu allatī tatakallamu al-ʿarabiyyata",
+    "en": "This is the woman who speaks Arabic.",
+    "words": [
+      {
+        "surface": "هَذِهِ هِيَ",
+        "translit": "hādhihi hiya",
+        "gloss": "this is (feminine)"
+      },
+      {
+        "surface": "الْمَرْأَةُ",
+        "translit": "al-marʾatu",
+        "gloss": "the woman (definite antecedent, nominative)"
+      },
+      {
+        "surface": "الَّتِي",
+        "translit": "allatī",
+        "gloss": "who (feminine relative pronoun — agrees with الْمَرْأَةُ)"
+      },
+      {
+        "surface": "تَتَكَلَّمُ الْعَرَبِيَّةَ",
+        "translit": "tatakallamu al-ʿarabiyyata",
+        "gloss": "speaks Arabic (subject-relative: الْمَرْأَةُ is also this verb's subject)"
+      }
+    ],
+    "audio": "هَذِهِ هِيَ الْمَرْأَةُ الَّتِي تَتَكَلَّمُ الْعَرَبِيَّةَ",
+    "level": "B1",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:relative-clauses"
+    ]
+  },
+  {
+    "id": "txt:gram-relclause-istayqaza",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "relative-clauses",
+    "vowelled": "هَذَا هُوَ الْوَلَدُ الَّذِي اِسْتَيْقَظَ فِي الصَّبَاحِ",
+    "translit": "hādhā huwa al-waladu alladhī istayqaẓa fī aṣ-ṣabāḥi",
+    "en": "This is the boy who woke up in the morning.",
+    "words": [
+      {
+        "surface": "هَذَا هُوَ",
+        "translit": "hādhā huwa",
+        "gloss": "this is"
+      },
+      {
+        "surface": "الْوَلَدُ",
+        "translit": "al-waladu",
+        "gloss": "the boy (definite antecedent, nominative)"
+      },
+      {
+        "surface": "الَّذِي",
+        "translit": "alladhī",
+        "gloss": "who (masculine relative pronoun)"
+      },
+      {
+        "surface": "اِسْتَيْقَظَ فِي الصَّبَاحِ",
+        "translit": "istayqaẓa fī aṣ-ṣabāḥi",
+        "gloss": "woke up in the morning (subject-relative)"
+      }
+    ],
+    "audio": "هَذَا هُوَ الْوَلَدُ الَّذِي اِسْتَيْقَظَ فِي الصَّبَاحِ",
+    "level": "B1",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:relative-clauses"
+    ]
+  },
+  {
+    "id": "txt:gram-relclause-indefinite",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "relative-clauses",
+    "vowelled": "رَأَيْتُ طَالِبًا يَدْرُسُ الْعَرَبِيَّةَ",
+    "translit": "raʾaytu ṭāliban yadrusu al-ʿarabiyyata",
+    "en": "I saw a student who studies Arabic.",
+    "words": [
+      {
+        "surface": "رَأَيْتُ",
+        "translit": "raʾaytu",
+        "gloss": "I saw"
+      },
+      {
+        "surface": "طَالِبًا",
+        "translit": "ṭāliban",
+        "gloss": "a student (INDEFINITE antecedent, accusative object — no ال and no tanwīn dropped)"
+      },
+      {
+        "surface": "يَدْرُسُ الْعَرَبِيَّةَ",
+        "translit": "yadrusu al-ʿarabiyyata",
+        "gloss": "studies Arabic — no الَّذِي at all: an indefinite antecedent takes no relative pronoun"
+      }
+    ],
+    "audio": "رَأَيْتُ طَالِبًا يَدْرُسُ الْعَرَبِيَّةَ",
+    "level": "B1",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:relative-clauses"
+    ]
+  },
+  {
+    "id": "txt:gram-inna-weather",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "inna-sisters",
+    "vowelled": "إِنَّ الطَّقْسَ جَمِيلٌ الْيَوْمَ",
+    "translit": "inna aṭ-ṭaqsa jamīlun al-yawma",
+    "en": "Indeed the weather is beautiful today.",
+    "words": [
+      {
+        "surface": "إِنَّ",
+        "translit": "inna",
+        "gloss": "indeed (opens the sentence for emphasis)"
+      },
+      {
+        "surface": "الطَّقْسَ",
+        "translit": "aṭ-ṭaqsa",
+        "gloss": "the weather (اِسْم إِنَّ — pushed to accusative by إِنَّ)"
+      },
+      {
+        "surface": "جَمِيلٌ",
+        "translit": "jamīlun",
+        "gloss": "beautiful (خَبَر إِنَّ — stays nominative)"
+      },
+      {
+        "surface": "الْيَوْمَ",
+        "translit": "al-yawma",
+        "gloss": "today"
+      }
+    ],
+    "audio": "إِنَّ الطَّقْسَ جَمِيلٌ الْيَوْمَ",
+    "level": "B1",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:inna-sisters"
+    ]
+  },
+  {
+    "id": "txt:gram-anna-heard-weather",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "inna-sisters",
+    "vowelled": "سَمِعْتُ أَنَّ الطَّقْسَ جَمِيلٌ الْيَوْمَ",
+    "translit": "samiʿtu anna aṭ-ṭaqsa jamīlun al-yawma",
+    "en": "I heard that the weather is beautiful today.",
+    "words": [
+      {
+        "surface": "سَمِعْتُ",
+        "translit": "samiʿtu",
+        "gloss": "I heard"
+      },
+      {
+        "surface": "أَنَّ",
+        "translit": "anna",
+        "gloss": "that (subordinates the nominal clause that follows)"
+      },
+      {
+        "surface": "الطَّقْسَ",
+        "translit": "aṭ-ṭaqsa",
+        "gloss": "the weather (اِسْم أَنَّ — accusative)"
+      },
+      {
+        "surface": "جَمِيلٌ",
+        "translit": "jamīlun",
+        "gloss": "beautiful (خَبَر أَنَّ — nominative)"
+      },
+      {
+        "surface": "الْيَوْمَ",
+        "translit": "al-yawma",
+        "gloss": "today"
+      }
+    ],
+    "audio": "سَمِعْتُ أَنَّ الطَّقْسَ جَمِيلٌ الْيَوْمَ",
+    "level": "B1",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:inna-sisters"
+    ]
+  },
+  {
+    "id": "txt:gram-lianna-happy-warm",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "inna-sisters",
+    "vowelled": "هِيَ سَعِيدَةٌ لِأَنَّ الطَّقْسَ دَافِئٌ",
+    "translit": "hiya saʿīdatun liʾanna aṭ-ṭaqsa dāfiʾun",
+    "en": "She is happy because the weather is warm.",
+    "words": [
+      {
+        "surface": "هِيَ سَعِيدَةٌ",
+        "translit": "hiya saʿīdatun",
+        "gloss": "she is happy"
+      },
+      {
+        "surface": "لِأَنَّ",
+        "translit": "liʾanna",
+        "gloss": "because (لِ + أَنَّ — already known, same accusative-subject rule)"
+      },
+      {
+        "surface": "الطَّقْسَ",
+        "translit": "aṭ-ṭaqsa",
+        "gloss": "the weather (اِسْم لِأَنَّ — accusative)"
+      },
+      {
+        "surface": "دَافِئٌ",
+        "translit": "dāfiʾun",
+        "gloss": "warm (خَبَر لِأَنَّ — nominative)"
+      }
+    ],
+    "audio": "هِيَ سَعِيدَةٌ لِأَنَّ الطَّقْسَ دَافِئٌ",
+    "level": "B1",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:inna-sisters"
+    ]
+  },
+  {
+    "id": "txt:gram-kaanna-cold-weather",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "inna-sisters",
+    "vowelled": "كَأَنَّ الطَّقْسَ بَارِدٌ الْيَوْمَ",
+    "translit": "kaʾanna aṭ-ṭaqsa bāridun al-yawma",
+    "en": "It's as if the weather is cold today.",
+    "words": [
+      {
+        "surface": "كَأَنَّ",
+        "translit": "kaʾanna",
+        "gloss": "as if (comparison — same accusative-subject rule)"
+      },
+      {
+        "surface": "الطَّقْسَ",
+        "translit": "aṭ-ṭaqsa",
+        "gloss": "the weather (اِسْم كَأَنَّ — accusative)"
+      },
+      {
+        "surface": "بَارِدٌ",
+        "translit": "bāridun",
+        "gloss": "cold (خَبَر كَأَنَّ — nominative)"
+      },
+      {
+        "surface": "الْيَوْمَ",
+        "translit": "al-yawma",
+        "gloss": "today"
+      }
+    ],
+    "audio": "كَأَنَّ الطَّقْسَ بَارِدٌ الْيَوْمَ",
+    "level": "B1",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:inna-sisters"
+    ]
+  },
+  {
+    "id": "txt:gram-lakinna-house-garden",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "inna-sisters",
+    "vowelled": "الْبَيْتُ كَبِيرٌ لٰكِنَّ الْحَدِيقَةَ صَغِيرَةٌ",
+    "translit": "al-baytu kabīrun lākinna al-ḥadīqata ṣaghīratun",
+    "en": "The house is big, but the garden is small.",
+    "words": [
+      {
+        "surface": "الْبَيْتُ كَبِيرٌ",
+        "translit": "al-baytu kabīrun",
+        "gloss": "the house is big (an ordinary nominal sentence)"
+      },
+      {
+        "surface": "لٰكِنَّ",
+        "translit": "lākinna",
+        "gloss": "but (HEAVY — a sister of إِنَّ, unlike the light لَكِنْ)"
+      },
+      {
+        "surface": "الْحَدِيقَةَ",
+        "translit": "al-ḥadīqata",
+        "gloss": "the garden (اِسْم لٰكِنَّ — accusative)"
+      },
+      {
+        "surface": "صَغِيرَةٌ",
+        "translit": "ṣaghīratun",
+        "gloss": "small (خَبَر لٰكِنَّ — nominative)"
+      }
+    ],
+    "audio": "الْبَيْتُ كَبِيرٌ لٰكِنَّ الْحَدِيقَةَ صَغِيرَةٌ",
+    "level": "B1",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:inna-sisters"
+    ]
+  },
+  {
+    "id": "txt:gram-laalla-beautiful-tomorrow",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "inna-sisters",
+    "vowelled": "لَعَلَّ الطَّقْسَ جَمِيلٌ غَدًا",
+    "translit": "laʿalla aṭ-ṭaqsa jamīlun ghadan",
+    "en": "Perhaps the weather will be beautiful tomorrow.",
+    "words": [
+      {
+        "surface": "لَعَلَّ",
+        "translit": "laʿalla",
+        "gloss": "perhaps (hope/expectation — same accusative-subject rule)"
+      },
+      {
+        "surface": "الطَّقْسَ",
+        "translit": "aṭ-ṭaqsa",
+        "gloss": "the weather (اِسْم لَعَلَّ — accusative)"
+      },
+      {
+        "surface": "جَمِيلٌ",
+        "translit": "jamīlun",
+        "gloss": "beautiful (خَبَر لَعَلَّ — nominative)"
+      },
+      {
+        "surface": "غَدًا",
+        "translit": "ghadan",
+        "gloss": "tomorrow"
+      }
+    ],
+    "audio": "لَعَلَّ الطَّقْسَ جَمِيلٌ غَدًا",
+    "level": "B1",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:inna-sisters"
+    ]
+  },
+  {
+    "id": "txt:gram-layta-warm-weather",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "inna-sisters",
+    "vowelled": "لَيْتَ الطَّقْسَ دَافِئٌ",
+    "translit": "layta aṭ-ṭaqsa dāfiʾun",
+    "en": "Would that the weather were warm.",
+    "words": [
+      {
+        "surface": "لَيْتَ",
+        "translit": "layta",
+        "gloss": "would that / I wish (irrealis wish, usually for something unlikely)"
+      },
+      {
+        "surface": "الطَّقْسَ",
+        "translit": "aṭ-ṭaqsa",
+        "gloss": "the weather (اِسْم لَيْتَ — accusative)"
+      },
+      {
+        "surface": "دَافِئٌ",
+        "translit": "dāfiʾun",
+        "gloss": "warm (خَبَر لَيْتَ — nominative)"
+      }
+    ],
+    "audio": "لَيْتَ الطَّقْسَ دَافِئٌ",
+    "level": "B1",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:inna-sisters"
+    ]
+  },
+  {
+    "id": "txt:gram-innahu-happy",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "inna-sisters",
+    "vowelled": "إِنَّهُ سَعِيدٌ",
+    "translit": "innahu saʿīdun",
+    "en": "Indeed he is happy.",
+    "words": [
+      {
+        "surface": "إِنَّهُ",
+        "translit": "innahu",
+        "gloss": "indeed he/it (إِنَّ + the attached pronoun ـهُ, replacing a following noun as اِسْم إِنَّ)"
+      },
+      {
+        "surface": "سَعِيدٌ",
+        "translit": "saʿīdun",
+        "gloss": "happy (خَبَر إِنَّ — nominative)"
+      }
+    ],
+    "audio": "إِنَّهُ سَعِيدٌ",
+    "level": "B1",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:inna-sisters",
+      "gr:attached-possessive"
+    ]
+  },
+  {
+    "id": "txt:gram-annaha-heard-happy",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "inna-sisters",
+    "vowelled": "سَمِعْتُ أَنَّهَا سَعِيدَةٌ",
+    "translit": "samiʿtu annahā saʿīdatun",
+    "en": "I heard that she is happy.",
+    "words": [
+      {
+        "surface": "سَمِعْتُ",
+        "translit": "samiʿtu",
+        "gloss": "I heard"
+      },
+      {
+        "surface": "أَنَّهَا",
+        "translit": "annahā",
+        "gloss": "that she/it (أَنَّ + the attached pronoun ـهَا)"
+      },
+      {
+        "surface": "سَعِيدَةٌ",
+        "translit": "saʿīdatun",
+        "gloss": "happy (خَبَر أَنَّ — nominative)"
+      }
+    ],
+    "audio": "سَمِعْتُ أَنَّهَا سَعِيدَةٌ",
+    "level": "B1",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:inna-sisters",
+      "gr:attached-possessive"
+    ]
+  },
+  {
+    "id": "txt:gram-liannahu-happy-home",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "inna-sisters",
+    "vowelled": "هُوَ سَعِيدٌ لِأَنَّهُ فِي الْبَيْتِ",
+    "translit": "huwa saʿīdun liʾannahu fī al-bayti",
+    "en": "He is happy because he is at home.",
+    "words": [
+      {
+        "surface": "هُوَ سَعِيدٌ",
+        "translit": "huwa saʿīdun",
+        "gloss": "he is happy"
+      },
+      {
+        "surface": "لِأَنَّهُ",
+        "translit": "liʾannahu",
+        "gloss": "because he/it (لِأَنَّ + the attached pronoun ـهُ — the same mechanic works on every sister)"
+      },
+      {
+        "surface": "فِي الْبَيْتِ",
+        "translit": "fī al-bayti",
+        "gloss": "at home"
+      }
+    ],
+    "audio": "هُوَ سَعِيدٌ لِأَنَّهُ فِي الْبَيْتِ",
+    "level": "B1",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:inna-sisters",
+      "gr:attached-possessive"
+    ]
+  },
+  {
+    "id": "txt:gram-relclause-obj-book",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "relative-clauses",
+    "vowelled": "الْكِتَابُ الَّذِي قَرَأْتُهُ جَمِيلٌ",
+    "translit": "al-kitābu alladhī qaraʾtuhu jamīlun",
+    "en": "The book that I read is beautiful.",
+    "words": [
+      {
+        "surface": "الْكِتَابُ",
+        "translit": "al-kitābu",
+        "gloss": "the book (definite antecedent, nominative — also the OBJECT of the clause's verb)"
+      },
+      {
+        "surface": "الَّذِي",
+        "translit": "alladhī",
+        "gloss": "that (masculine relative pronoun)"
+      },
+      {
+        "surface": "قَرَأْتُهُ",
+        "translit": "qaraʾtuhu",
+        "gloss": "I read it — قَرَأْتُ + the resumptive pronoun ـهُ, pointing back at الْكِتَابُ"
+      },
+      {
+        "surface": "جَمِيلٌ",
+        "translit": "jamīlun",
+        "gloss": "beautiful (predicate)"
+      }
+    ],
+    "audio": "الْكِتَابُ الَّذِي قَرَأْتُهُ جَمِيلٌ",
+    "level": "B1",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:relative-clauses",
+      "gr:attached-possessive"
+    ]
+  },
+  {
+    "id": "txt:gram-relclause-obj-woman",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "relative-clauses",
+    "vowelled": "الْمَرْأَةُ الَّتِي رَأَيْتُهَا سَعِيدَةٌ",
+    "translit": "al-marʾatu allatī raʾaytuhā saʿīdatun",
+    "en": "The woman that I saw is happy.",
+    "words": [
+      {
+        "surface": "الْمَرْأَةُ",
+        "translit": "al-marʾatu",
+        "gloss": "the woman (definite antecedent, nominative — also the OBJECT of the clause's verb)"
+      },
+      {
+        "surface": "الَّتِي",
+        "translit": "allatī",
+        "gloss": "that (feminine relative pronoun)"
+      },
+      {
+        "surface": "رَأَيْتُهَا",
+        "translit": "raʾaytuhā",
+        "gloss": "I saw her/it — رَأَيْتُ + the resumptive pronoun ـهَا, pointing back at الْمَرْأَةُ"
+      },
+      {
+        "surface": "سَعِيدَةٌ",
+        "translit": "saʿīdatun",
+        "gloss": "happy (predicate)"
+      }
+    ],
+    "audio": "الْمَرْأَةُ الَّتِي رَأَيْتُهَا سَعِيدَةٌ",
+    "level": "B1",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:relative-clauses",
+      "gr:attached-possessive"
+    ]
+  },
+  {
+    "id": "txt:gram-relclause-pl-teachers-m",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "relative-clauses",
+    "vowelled": "الْمُعَلِّمُونَ الَّذِينَ فِي الْمَدْرَسَةِ مَشْغُولُونَ",
+    "translit": "al-muʿallimūna alladhīna fī al-madrasati mashghūlūna",
+    "en": "The teachers who are at school are busy.",
+    "words": [
+      {
+        "surface": "الْمُعَلِّمُونَ",
+        "translit": "al-muʿallimūna",
+        "gloss": "the teachers (sound masculine plural of مُعَلِّم, definite antecedent)"
+      },
+      {
+        "surface": "الَّذِينَ",
+        "translit": "alladhīna",
+        "gloss": "who (masculine PLURAL relative pronoun — الَّذِي's plural counterpart)"
+      },
+      {
+        "surface": "فِي الْمَدْرَسَةِ",
+        "translit": "fī al-madrasati",
+        "gloss": "at school (subject-relative — الْمُعَلِّمُونَ is also this phrase's implied subject)"
+      },
+      {
+        "surface": "مَشْغُولُونَ",
+        "translit": "mashghūlūna",
+        "gloss": "busy (sound masculine plural predicate, agreeing with الْمُعَلِّمُونَ)"
+      }
+    ],
+    "audio": "الْمُعَلِّمُونَ الَّذِينَ فِي الْمَدْرَسَةِ مَشْغُولُونَ",
+    "level": "B1",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:relative-clauses",
+      "gr:noun-number"
+    ],
+    "parse": [
+      {
+        "word": "الْمُعَلِّمُونَ",
+        "role": "mubtada",
+        "case": "raf"
+      }
+    ]
+  },
+  {
+    "id": "txt:gram-relclause-pl-teachers-f",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "relative-clauses",
+    "vowelled": "الْمُعَلِّمَاتُ اللَّاتِي فِي الْمَدْرَسَةِ مَشْغُولَاتٌ",
+    "translit": "al-muʿallimātu allātī fī al-madrasati mashghūlātun",
+    "en": "The [female] teachers who are at school are busy.",
+    "words": [
+      {
+        "surface": "الْمُعَلِّمَاتُ",
+        "translit": "al-muʿallimātu",
+        "gloss": "the [female] teachers (sound feminine plural of مُعَلِّمَة, definite antecedent)"
+      },
+      {
+        "surface": "اللَّاتِي",
+        "translit": "allātī",
+        "gloss": "who (feminine PLURAL relative pronoun — الَّتِي's plural counterpart)"
+      },
+      {
+        "surface": "فِي الْمَدْرَسَةِ",
+        "translit": "fī al-madrasati",
+        "gloss": "at school"
+      },
+      {
+        "surface": "مَشْغُولَاتٌ",
+        "translit": "mashghūlātun",
+        "gloss": "busy (sound feminine plural predicate, agreeing with الْمُعَلِّمَاتُ)"
+      }
+    ],
+    "audio": "الْمُعَلِّمَاتُ اللَّاتِي فِي الْمَدْرَسَةِ مَشْغُولَاتٌ",
+    "level": "B1",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:relative-clauses",
+      "gr:noun-number"
+    ],
+    "parse": [
+      {
+        "word": "الْمُعَلِّمَاتُ",
+        "role": "mubtada",
+        "case": "raf"
+      }
+    ]
+  },
+  {
+    "id": "txt:read-para-teacher-trip",
+    "kind": "text",
+    "textType": "paragraph",
+    "source": "m11",
+    "concept": "narrative",
+    "vowelled": "ذَاتَ يَوْمٍ سَافَرَ الرَّجُلُ الَّذِي هُوَ مُعَلِّمٌ إِلَى مَدِينَةٍ بَعِيدَةٍ. كَانَ الطَّقْسُ بَارِدًا فِي الصَّبَاحِ، لٰكِنَّهُ دَافِئٌ فِي الْمَسَاءِ. سَمِعَ الرَّجُلُ أَنَّ الْحَدِيقَةَ جَمِيلَةٌ، ثُمَّ ذَهَبَ إِلَى الْحَدِيقَةِ. أَخِيرًا، لَعَلَّهُ سَعِيدٌ الْآنَ.",
+    "translit": "dhāta yawmin sāfara ar-rajulu alladhī huwa muʿallimun ilā madīnatin baʿīdatin. kāna aṭ-ṭaqsu bāridan fī aṣ-ṣabāḥi, lākinnahu dāfiʾun fī al-masāʾi. samiʿa ar-rajulu anna al-ḥadīqata jamīlatun, thumma dhahaba ilā al-ḥadīqati. akhīran, laʿallahu saʿīdun al-āna.",
+    "en": "One day, the man who is a teacher traveled to a distant city. The weather was cold in the morning, but it's warm in the evening. The man heard that the garden was beautiful, then he went to the garden. Finally, perhaps he is happy now.",
+    "sentences": [
+      {
+        "ar": "ذَاتَ يَوْمٍ سَافَرَ الرَّجُلُ الَّذِي هُوَ مُعَلِّمٌ إِلَى مَدِينَةٍ بَعِيدَةٍ.",
+        "translit": "dhāta yawmin sāfara ar-rajulu alladhī huwa muʿallimun ilā madīnatin baʿīdatin.",
+        "en": "One day, the man who is a teacher traveled to a distant city."
+      },
+      {
+        "ar": "كَانَ الطَّقْسُ بَارِدًا فِي الصَّبَاحِ، لٰكِنَّهُ دَافِئٌ فِي الْمَسَاءِ.",
+        "translit": "kāna aṭ-ṭaqsu bāridan fī aṣ-ṣabāḥi, lākinnahu dāfiʾun fī al-masāʾi.",
+        "en": "The weather was cold in the morning, but it's warm in the evening."
+      },
+      {
+        "ar": "سَمِعَ الرَّجُلُ أَنَّ الْحَدِيقَةَ جَمِيلَةٌ، ثُمَّ ذَهَبَ إِلَى الْحَدِيقَةِ.",
+        "translit": "samiʿa ar-rajulu anna al-ḥadīqata jamīlatun, thumma dhahaba ilā al-ḥadīqati.",
+        "en": "The man heard that the garden was beautiful, then he went to the garden."
+      },
+      {
+        "ar": "أَخِيرًا، لَعَلَّهُ سَعِيدٌ الْآنَ.",
+        "translit": "akhīran, laʿallahu saʿīdun al-āna.",
+        "en": "Finally, perhaps he is happy now."
+      }
+    ],
+    "audio": "ذَاتَ يَوْمٍ سَافَرَ الرَّجُلُ الَّذِي هُوَ مُعَلِّمٌ إِلَى مَدِينَةٍ بَعِيدَةٍ. كَانَ الطَّقْسُ بَارِدًا فِي الصَّبَاحِ، لٰكِنَّهُ دَافِئٌ فِي الْمَسَاءِ. سَمِعَ الرَّجُلُ أَنَّ الْحَدِيقَةَ جَمِيلَةٌ، ثُمَّ ذَهَبَ إِلَى الْحَدِيقَةِ. أَخِيرًا، لَعَلَّهُ سَعِيدٌ الْآنَ.",
+    "level": "B1",
+    "skills": [
+      "reading",
+      "comprehension"
+    ],
+    "prereqs": [
+      "gr:relative-clauses",
+      "gr:kana",
+      "gr:inna-sisters"
+    ]
+  },
+  {
+    "id": "txt:gram-poss-our-house",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "attached-possessive",
+    "vowelled": "بَيْتُنَا كَبِيرٌ",
+    "translit": "baytunā kabīrun",
+    "en": "Our house is big.",
+    "words": [
+      {
+        "surface": "بَيْتُنَا",
+        "translit": "baytunā",
+        "gloss": "our house (بَيْت + the attached pronoun ـنَا)"
+      },
+      {
+        "surface": "كَبِيرٌ",
+        "translit": "kabīrun",
+        "gloss": "big (predicate)"
+      }
+    ],
+    "audio": "بَيْتُنَا كَبِيرٌ",
+    "level": "A1",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:attached-possessive"
+    ]
+  },
+  {
+    "id": "txt:gram-poss-your-book-pl",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "attached-possessive",
+    "vowelled": "أَيْنَ كِتَابُكُمْ؟",
+    "translit": "ayna kitābukum?",
+    "en": "Where is your book?",
+    "words": [
+      {
+        "surface": "أَيْنَ",
+        "translit": "ayna",
+        "gloss": "where"
+      },
+      {
+        "surface": "كِتَابُكُمْ",
+        "translit": "kitābukum",
+        "gloss": "your book (كِتَاب + the attached pronoun ـكُمْ, plural addressee)"
+      }
+    ],
+    "audio": "أَيْنَ كِتَابُكُمْ؟",
+    "level": "A1",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:attached-possessive"
+    ]
+  },
+  {
+    "id": "txt:gram-poss-their-school",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "attached-possessive",
+    "vowelled": "مَدْرَسَتُهُمْ قَرِيبَةٌ",
+    "translit": "madrasatuhum qarībatun",
+    "en": "Their school is near.",
+    "words": [
+      {
+        "surface": "مَدْرَسَتُهُمْ",
+        "translit": "madrasatuhum",
+        "gloss": "their school (مَدْرَسَة + the attached pronoun ـهُمْ)"
+      },
+      {
+        "surface": "قَرِيبَةٌ",
+        "translit": "qarībatun",
+        "gloss": "near (predicate, feminine agreement)"
+      }
+    ],
+    "audio": "مَدْرَسَتُهُمْ قَرِيبَةٌ",
+    "level": "A1",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:attached-possessive"
+    ]
+  },
+  {
+    "id": "txt:gram-case-five-nouns-raf",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "case-system",
+    "vowelled": "أَخُو الطَّالِبِ مُعَلِّمٌ",
+    "translit": "akhū aṭ-ṭālibi muʿallimun",
+    "en": "The student's brother is a teacher.",
+    "words": [
+      {
+        "surface": "أَخُو",
+        "translit": "akhū",
+        "gloss": "brother (of — one of the five nouns, رَفْع marked by و instead of ḍamma)",
+        "gender": "masculine"
+      },
+      {
+        "surface": "الطَّالِبِ",
+        "translit": "aṭ-ṭālibi",
+        "gloss": "the student (مُضَاف إِلَيْهِ — genitive)",
+        "gender": "masculine"
+      },
+      {
+        "surface": "مُعَلِّمٌ",
+        "translit": "muʿallimun",
+        "gloss": "a teacher (predicate)",
+        "gender": "masculine"
+      }
+    ],
+    "audio": "أَخُو الطَّالِبِ مُعَلِّمٌ",
+    "level": "B2",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:case-system"
+    ],
+    "parse": [
+      {
+        "word": "أَخُو",
+        "role": "mubtada",
+        "case": "raf"
+      }
+    ]
+  },
+  {
+    "id": "txt:gram-case-five-nouns-nasb",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "case-system",
+    "vowelled": "رَأَيْتُ أَبَا الطَّالِبِ",
+    "translit": "raʾaytu abā aṭ-ṭālibi",
+    "en": "I saw the student's father.",
+    "words": [
+      {
+        "surface": "رَأَيْتُ",
+        "translit": "raʾaytu",
+        "gloss": "I saw"
+      },
+      {
+        "surface": "أَبَا",
+        "translit": "abā",
+        "gloss": "father (of — one of the five nouns, نَصْب marked by ا instead of fatḥa)",
+        "gender": "masculine"
+      },
+      {
+        "surface": "الطَّالِبِ",
+        "translit": "aṭ-ṭālibi",
+        "gloss": "the student (مُضَاف إِلَيْهِ — genitive)",
+        "gender": "masculine"
+      }
+    ],
+    "audio": "رَأَيْتُ أَبَا الطَّالِبِ",
+    "level": "B2",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:case-system"
+    ],
+    "parse": [
+      {
+        "word": "أَبَا",
+        "role": "mafulbih",
+        "case": "nasb"
+      }
+    ]
+  },
+  {
+    "id": "txt:gram-case-five-nouns-jarr",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "case-system",
+    "vowelled": "كِتَابُ أَخِي الطَّالِبِ جَدِيدٌ",
+    "translit": "kitābu akhī aṭ-ṭālibi jadīdun",
+    "en": "The student's brother's book is new.",
+    "words": [
+      {
+        "surface": "كِتَابُ",
+        "translit": "kitābu",
+        "gloss": "book (of — مُضَاف, no الـ or tanwīn of its own)",
+        "gender": "masculine"
+      },
+      {
+        "surface": "أَخِي",
+        "translit": "akhī",
+        "gloss": "brother (of — one of the five nouns, جَرّ marked by ي instead of kasra; itself مُضَاف to الطَّالِبِ)",
+        "gender": "masculine"
+      },
+      {
+        "surface": "الطَّالِبِ",
+        "translit": "aṭ-ṭālibi",
+        "gloss": "the student (مُضَاف إِلَيْهِ of أَخِي — genitive)",
+        "gender": "masculine"
+      },
+      {
+        "surface": "جَدِيدٌ",
+        "translit": "jadīdun",
+        "gloss": "new (predicate)",
+        "gender": "masculine"
+      }
+    ],
+    "audio": "كِتَابُ أَخِي الطَّالِبِ جَدِيدٌ",
+    "level": "B2",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:case-system"
+    ],
+    "parse": [
+      {
+        "word": "أَخِي",
+        "role": "mudafilayhi",
+        "case": "jarr"
+      },
+      {
+        "word": "جَدِيدٌ",
+        "role": "khabar",
+        "case": "raf"
+      }
+    ]
+  },
+  {
+    "id": "txt:gram-case-sound-mpl-nasb",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "case-system",
+    "vowelled": "رَأَيْتُ الْمُعَلِّمِينَ فِي الْمَدْرَسَةِ",
+    "translit": "raʾaytu al-muʿallimīna fī al-madrasati",
+    "en": "I saw the teachers at school.",
+    "words": [
+      {
+        "surface": "رَأَيْتُ",
+        "translit": "raʾaytu",
+        "gloss": "I saw"
+      },
+      {
+        "surface": "الْمُعَلِّمِينَ",
+        "translit": "al-muʿallimīna",
+        "gloss": "the teachers (sound masculine plural, نَصْب marked by ـِينَ, not the ـُونَ of رَفْع)"
+      },
+      {
+        "surface": "فِي الْمَدْرَسَةِ",
+        "translit": "fī al-madrasati",
+        "gloss": "at school"
+      }
+    ],
+    "audio": "رَأَيْتُ الْمُعَلِّمِينَ فِي الْمَدْرَسَةِ",
+    "level": "B2",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:case-system",
+      "gr:noun-number"
+    ],
+    "parse": [
+      {
+        "word": "الْمُعَلِّمِينَ",
+        "role": "mafulbih",
+        "case": "nasb"
+      }
+    ]
+  },
+  {
+    "id": "txt:gram-case-sound-fpl-nasb",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "case-system",
+    "vowelled": "رَأَيْتُ الْمُعَلِّمَاتِ فِي الْمَدْرَسَةِ",
+    "translit": "raʾaytu al-muʿallimāti fī al-madrasati",
+    "en": "I saw the [female] teachers at school.",
+    "words": [
+      {
+        "surface": "رَأَيْتُ",
+        "translit": "raʾaytu",
+        "gloss": "I saw"
+      },
+      {
+        "surface": "الْمُعَلِّمَاتِ",
+        "translit": "al-muʿallimāti",
+        "gloss": "the [female] teachers (sound feminine plural, نَصْب unexpectedly marked by kasra ـِ, identical to its own جَرّ form)"
+      },
+      {
+        "surface": "فِي الْمَدْرَسَةِ",
+        "translit": "fī al-madrasati",
+        "gloss": "at school"
+      }
+    ],
+    "audio": "رَأَيْتُ الْمُعَلِّمَاتِ فِي الْمَدْرَسَةِ",
+    "level": "B2",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:case-system",
+      "gr:noun-number"
+    ],
+    "parse": [
+      {
+        "word": "الْمُعَلِّمَاتِ",
+        "role": "mafulbih",
+        "case": "nasb"
+      }
+    ]
+  }
 ]

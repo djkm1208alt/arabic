@@ -1,865 +1,2501 @@
 {
   "_comment": "M16 curriculum spine. levels: id in levels.json + status. units: a level's sections. lessons: wired to M14 objects via `objectives`; `source` = steps:<catalog id> | view:alphabet | view:vocabulary | generate. A0 + A1 carry real lesson nodes; A2-C2 are unit stubs (the map) filled by M20+. Authored English copy only; no Arabic content added here.",
-
   "levels": [
-    { "id": "A0", "status": "available" },
-    { "id": "A1", "status": "available" },
-    { "id": "A2", "status": "planned" },
-    { "id": "B1", "status": "planned" },
-    { "id": "B2", "status": "planned" },
-    { "id": "C1", "status": "planned" },
-    { "id": "C2", "status": "planned" }
-  ],
-
-  "units": [
     {
-      "id": "a0-u1", "level": "A0", "order": 1,
-      "title": "The Arabic Alphabet",
-      "blurb": "All 28 letters — name, sound, the four positional forms, and which six never join to the left.",
-      "skills": ["reading", "writing", "pronunciation"],
-      "status": "available", "prereqs": []
+      "id": "A0",
+      "status": "available"
     },
     {
-      "id": "a0-u2", "level": "A0", "order": 2,
-      "title": "Ḥarakāt & Reading Marks",
-      "blurb": "The short vowels, sukūn, shaddah, tanwīn, and the long vowels — everything written above and below the line.",
-      "skills": ["reading", "pronunciation"],
-      "status": "available", "prereqs": ["a0-u1"]
+      "id": "A1",
+      "status": "available"
     },
     {
-      "id": "a0-u3", "level": "A0", "order": 3,
-      "title": "Building & Blending Syllables",
-      "blurb": "Combine a consonant and a mark into a syllable, then read open, closed, and doubled syllables aloud.",
-      "skills": ["reading", "pronunciation"],
-      "status": "available", "prereqs": ["a0-u2"]
+      "id": "A2",
+      "status": "planned"
     },
     {
-      "id": "a0-u4", "level": "A0", "order": 4,
-      "title": "First Words & Sounds",
-      "blurb": "Your first real vocabulary, plus ear training and pronunciation practice on familiar words.",
-      "skills": ["vocabulary", "listening", "pronunciation"],
-      "status": "available", "prereqs": ["a0-u2"]
-    },
-
-    {
-      "id": "a1-u1", "level": "A1", "order": 1,
-      "title": "Your First Sentences",
-      "blurb": "The nominal sentence, noun–adjective agreement, the definite article, and present-tense verbs for reading.",
-      "skills": ["reading", "grammar", "comprehension"],
-      "status": "available", "prereqs": ["a0-u3", "a0-u4"]
+      "id": "B1",
+      "status": "planned"
     },
     {
-      "id": "a1-u2", "level": "A1", "order": 2,
-      "title": "Reading Beyond Full Vowels",
-      "blurb": "The same sentences with the vowel marks progressively removed — a first look at how Arabic is really written.",
-      "skills": ["reading"],
-      "status": "available", "prereqs": ["a1-u1"]
+      "id": "B2",
+      "status": "planned"
     },
     {
-      "id": "a1-u3", "level": "A1", "order": 3,
-      "title": "Everyday Words",
-      "blurb": "High-frequency vocabulary for daily life — colours, useful questions, people, and describing things.",
-      "skills": ["vocabulary"],
-      "status": "available", "prereqs": ["a0-u4"]
+      "id": "C1",
+      "status": "planned"
     },
     {
-      "id": "a1-u4", "level": "A1", "order": 4,
-      "title": "Talking About People & Places",
-      "blurb": "Towns and shops, getting around, and asking the way.",
-      "skills": ["vocabulary", "grammar", "speaking"],
-      "status": "available", "prereqs": ["a1-u1", "a1-u3"]
-    },
-    {
-      "id": "a1-u5", "level": "A1", "order": 5,
-      "title": "Numbers 1–10",
-      "blurb": "Counting 1-10, and how Arabic nouns change after a number — full agreement rules come later.",
-      "skills": ["vocabulary", "grammar"],
-      "status": "available", "prereqs": ["a1-u3"]
-    },
-
-    {
-      "id": "a2-u1", "level": "A2", "order": 1,
-      "title": "The Verbal Sentence",
-      "blurb": "Past tense of Form I, VSO word order, and كان.",
-      "skills": ["grammar", "reading"],
-      "status": "available", "prereqs": ["a1-u1"]
-    },
-    {
-      "id": "a2-u2", "level": "A2", "order": 2,
-      "title": "The Genitive Construct (Iḍāfa)",
-      "blurb": "Noun-to-noun possession, the backbone of Arabic phrasing.",
-      "skills": ["grammar", "reading"],
-      "status": "available", "prereqs": ["a1-u1"]
-    },
-    {
-      "id": "a2-u3", "level": "A2", "order": 3,
-      "title": "Root & Pattern — First Look",
-      "blurb": "How ك-ت-ب gives كِتَاب, كَتَبَ, مَكْتَبَة — recognising word families across eleven root clusters you already half-know.",
-      "skills": ["grammar", "vocabulary"],
-      "status": "available", "prereqs": ["a2-u1"]
-    },
-    {
-      "id": "a2-u4", "level": "A2", "order": 4,
-      "title": "Numbers, Counting & Time",
-      "blurb": "11–99 and their gender-polarity rules, how to tell the time, prices, and dates.",
-      "skills": ["vocabulary", "grammar"],
-      "status": "available", "prereqs": ["a1-u5"]
-    },
-    {
-      "id": "a2-u5", "level": "A2", "order": 5,
-      "title": "Reading Short Paragraphs",
-      "blurb": "Fully-vowelled connected text on familiar topics; separating main idea from detail.",
-      "skills": ["reading", "comprehension"],
-      "status": "available", "prereqs": ["a1-u2"]
-    },
-    {
-      "id": "a2-u6", "level": "A2", "order": 6,
-      "title": "Everyday Exchanges",
-      "blurb": "Shopping, directions, and routine conversation — listening and speaking.",
-      "skills": ["listening", "speaking", "comprehension"],
-      "status": "available", "prereqs": ["a2-u4"]
-    },
-
-    {
-      "id": "b1-u1", "level": "B1", "order": 1,
-      "title": "Derived Verb Forms II–X",
-      "blurb": "Forms II through VIII and X, one at a time, and their meaning tendencies — a mix of verbs you already knew and a few chosen to fit naturally beside them. Form IX (colours and physical defects) is rare enough to stay ahead, past B1.",
-      "skills": ["grammar", "vocabulary"],
-      "status": "available", "prereqs": ["a2-u1", "a2-u3"]
-    },
-    {
-      "id": "b1-u2", "level": "B1", "order": 2,
-      "title": "Relative Clauses & Longer Sentences",
-      "blurb": "الَّذِي/الَّتِي (singular) and الَّذِينَ/اللَّاتِي (plural) for subject- and object-relative clauses; all ten sisters of إنّ, with a following noun or an attached pronoun subject; joining these into a connected paragraph; the plural possessive suffixes ـنَا/ـكُمْ/ـهُمْ. Dual relative pronouns and the feminine-plural/dual possessive suffixes stay deferred past B1, the same as Form IX.",
-      "skills": ["grammar", "reading"],
-      "status": "available", "prereqs": ["a2-u2"]
-    },
-    {
-      "id": "b1-u3", "level": "B1", "order": 3,
-      "title": "Verbal Nouns & Participles",
-      "blurb": "The maṣdar and active/passive participles — Arabic's engine for abstraction. In development.",
-      "skills": ["grammar", "vocabulary"],
-      "status": "planned", "prereqs": ["b1-u1"]
-    },
-    {
-      "id": "b1-u4", "level": "B1", "order": 4,
-      "title": "Reading Unvowelled MSA",
-      "blurb": "Supplying vowels from pattern and context on familiar-topic prose. In development.",
-      "skills": ["reading"],
-      "status": "planned", "prereqs": ["a2-u5"]
-    },
-    {
-      "id": "b1-u5", "level": "B1", "order": 5,
-      "title": "Understanding Standard Speech",
-      "blurb": "Short narratives, interviews, and factual reports at natural pace. In development.",
-      "skills": ["listening", "comprehension"],
-      "status": "planned", "prereqs": ["a2-u6"]
-    },
-    {
-      "id": "b1-u6", "level": "B1", "order": 6,
-      "title": "Writing Connected Texts",
-      "blurb": "Description, narrative, and informal messages with conjunctions and relative clauses. In development.",
-      "skills": ["writing"],
-      "status": "planned", "prereqs": ["b1-u2"]
-    },
-    {
-      "id": "b1-u7", "level": "B1", "order": 7,
-      "title": "Grammatical Roles & Iʿrāb Readiness",
-      "blurb": "Naming the roles you already use — مبتدأ، خبر، فاعل، مفعول به، مضاف إليه — on sentences you've already read. Full case marking (إعراب) waits for B2.",
-      "skills": ["grammar", "reading"],
-      "status": "available", "prereqs": ["a2-u1", "a2-u2"]
-    },
-
-    {
-      "id": "b2-u1", "level": "B2", "order": 1,
-      "title": "The Full Case System (Iʿrāb)",
-      "blurb": "رَفْع، نَصْب، جَرّ — naming the case endings you've been producing correctly since A2. This first look covers regular nouns only; diptotes, the five nouns, and sound-plural markers are still in development.",
-      "skills": ["grammar"],
-      "status": "available", "prereqs": ["b1-u2", "b1-u7"]
-    },
-    {
-      "id": "b2-u2", "level": "B2", "order": 2,
-      "title": "The Passive, the Jussive & Conditionals",
-      "blurb": "Internal-vowel passive, the jussive after لم, and real and hypothetical conditions. In development.",
-      "skills": ["grammar"],
-      "status": "planned", "prereqs": ["b1-u3"]
-    },
-    {
-      "id": "b2-u3", "level": "B2", "order": 3,
-      "title": "Weak & Irregular Verbs",
-      "blurb": "Assimilated, hollow, defective, doubled, and hamzated verbs — recognition and production. In development.",
-      "skills": ["grammar", "vocabulary"],
-      "status": "planned", "prereqs": ["b1-u1"]
-    },
-    {
-      "id": "b2-u4", "level": "B2", "order": 4,
-      "title": "Reading the News",
-      "blurb": "Unvowelled authentic articles and reports; following the argument and separating fact from comment. In development.",
-      "skills": ["reading", "comprehension"],
-      "status": "planned", "prereqs": ["b1-u4"]
-    },
-    {
-      "id": "b2-u5", "level": "B2", "order": 5,
-      "title": "Broadcast & Extended Audio",
-      "blurb": "News bulletins, documentaries, and discussion on concrete and abstract topics. In development.",
-      "skills": ["listening", "comprehension"],
-      "status": "planned", "prereqs": ["b1-u5"]
-    },
-    {
-      "id": "b2-u6", "level": "B2", "order": 6,
-      "title": "Argumentative Writing",
-      "blurb": "A paragraph that states a position, supports it, and concludes — with paragraphing and cohesion. In development.",
-      "skills": ["writing"],
-      "status": "planned", "prereqs": ["b1-u6"]
-    },
-
-    {
-      "id": "c1-u1", "level": "C1", "order": 1,
-      "title": "Rhetorical Syntax & Style",
-      "blurb": "Fronting, emphasis, particle nuance, and stylistic case variation. In development.",
-      "skills": ["grammar", "reading"],
-      "status": "planned", "prereqs": ["b2-u1"]
-    },
-    {
-      "id": "c1-u2", "level": "C1", "order": 2,
-      "title": "Editorials, Essays & Literary Prose",
-      "blurb": "Register shifts, ellipsis, complex subordination, and implicit meaning. In development.",
-      "skills": ["reading", "comprehension"],
-      "status": "planned", "prereqs": ["b2-u4"]
-    },
-    {
-      "id": "c1-u3", "level": "C1", "order": 3,
-      "title": "Register & Formal Correspondence",
-      "blurb": "Choosing style for the reader; formal letters, reports, and structured essays. In development.",
-      "skills": ["writing"],
-      "status": "planned", "prereqs": ["b2-u6"]
-    },
-    {
-      "id": "c1-u4", "level": "C1", "order": 4,
-      "title": "Following Lectures & Debates",
-      "blurb": "Extended, loosely-structured speech; humour, irony, and speaker attitude. In development.",
-      "skills": ["listening", "comprehension"],
-      "status": "planned", "prereqs": ["b2-u5"]
-    },
-    {
-      "id": "c1-u5", "level": "C1", "order": 5,
-      "title": "Fluent Discussion",
-      "blurb": "Precise formulation, skilful turn-taking, and defending a point of view. In development.",
-      "skills": ["speaking"],
-      "status": "planned", "prereqs": ["b2-u5"]
-    },
-
-    {
-      "id": "c2-u1", "level": "C2", "order": 1,
-      "title": "Advanced Iʿrāb & Contested Parses",
-      "blurb": "Stylistic and disputed parses; analysing syntactic ambiguity in real text. In development.",
-      "skills": ["grammar"],
-      "status": "planned", "prereqs": ["c1-u1"]
-    },
-    {
-      "id": "c2-u2", "level": "C2", "order": 2,
-      "title": "Classical & Heritage Texts",
-      "blurb": "Pre-modern prose and poetry, with correct iʿrāb read aloud. In development.",
-      "skills": ["reading"],
-      "status": "planned", "prereqs": ["c1-u2"]
-    },
-    {
-      "id": "c2-u3", "level": "C2", "order": 3,
-      "title": "Academic & Analytical Writing",
-      "blurb": "Sustained argument, classical constructions, and deliberate stylistic variation. In development.",
-      "skills": ["writing"],
-      "status": "planned", "prereqs": ["c1-u3"]
-    },
-    {
-      "id": "c2-u4", "level": "C2", "order": 4,
-      "title": "Near-Native Comprehension",
-      "blurb": "Critical analysis of sophisticated texts for structure, assumption, and effect. In development.",
-      "skills": ["comprehension", "listening"],
-      "status": "planned", "prereqs": ["c1-u2", "c1-u4"]
-    },
-    {
-      "id": "c2-u5", "level": "C2", "order": 5,
-      "title": "Idiomatic & Stylistic Mastery",
-      "blurb": "Colloquial-register fluency, rare and figurative vocabulary, near-native nuance. In development.",
-      "skills": ["speaking", "vocabulary"],
-      "status": "planned", "prereqs": ["c1-u5"]
+      "id": "C2",
+      "status": "planned"
     }
   ],
-
+  "units": [
+    {
+      "id": "a0-u1",
+      "level": "A0",
+      "order": 1,
+      "title": "The Arabic Alphabet",
+      "blurb": "All 28 letters — name, sound, the four positional forms, and which six never join to the left.",
+      "skills": [
+        "reading",
+        "writing",
+        "pronunciation"
+      ],
+      "status": "available",
+      "prereqs": []
+    },
+    {
+      "id": "a0-u2",
+      "level": "A0",
+      "order": 2,
+      "title": "Ḥarakāt & Reading Marks",
+      "blurb": "The short vowels, sukūn, shaddah, tanwīn, and the long vowels — everything written above and below the line.",
+      "skills": [
+        "reading",
+        "pronunciation"
+      ],
+      "status": "available",
+      "prereqs": [
+        "a0-u1"
+      ]
+    },
+    {
+      "id": "a0-u3",
+      "level": "A0",
+      "order": 3,
+      "title": "Building & Blending Syllables",
+      "blurb": "Combine a consonant and a mark into a syllable, then read open, closed, and doubled syllables aloud.",
+      "skills": [
+        "reading",
+        "pronunciation"
+      ],
+      "status": "available",
+      "prereqs": [
+        "a0-u2"
+      ]
+    },
+    {
+      "id": "a0-u4",
+      "level": "A0",
+      "order": 4,
+      "title": "First Words & Sounds",
+      "blurb": "Your first real vocabulary, plus ear training and pronunciation practice on familiar words.",
+      "skills": [
+        "vocabulary",
+        "listening",
+        "pronunciation"
+      ],
+      "status": "available",
+      "prereqs": [
+        "a0-u2"
+      ]
+    },
+    {
+      "id": "a1-u1",
+      "level": "A1",
+      "order": 1,
+      "title": "Your First Sentences",
+      "blurb": "The nominal sentence, noun–adjective agreement, the definite article, and present-tense verbs for reading.",
+      "skills": [
+        "reading",
+        "grammar",
+        "comprehension"
+      ],
+      "status": "available",
+      "prereqs": [
+        "a0-u3",
+        "a0-u4"
+      ]
+    },
+    {
+      "id": "a1-u2",
+      "level": "A1",
+      "order": 2,
+      "title": "Reading Beyond Full Vowels",
+      "blurb": "The same sentences with the vowel marks progressively removed — a first look at how Arabic is really written.",
+      "skills": [
+        "reading"
+      ],
+      "status": "available",
+      "prereqs": [
+        "a1-u1"
+      ]
+    },
+    {
+      "id": "a1-u3",
+      "level": "A1",
+      "order": 3,
+      "title": "Everyday Words",
+      "blurb": "High-frequency vocabulary for daily life — colours, useful questions, people, and describing things.",
+      "skills": [
+        "vocabulary"
+      ],
+      "status": "available",
+      "prereqs": [
+        "a0-u4"
+      ]
+    },
+    {
+      "id": "a1-u4",
+      "level": "A1",
+      "order": 4,
+      "title": "Talking About People & Places",
+      "blurb": "Towns and shops, getting around, and asking the way.",
+      "skills": [
+        "vocabulary",
+        "grammar",
+        "speaking"
+      ],
+      "status": "available",
+      "prereqs": [
+        "a1-u1",
+        "a1-u3"
+      ]
+    },
+    {
+      "id": "a1-u5",
+      "level": "A1",
+      "order": 5,
+      "title": "Numbers 1–10",
+      "blurb": "Counting 1-10, and how Arabic nouns change after a number — full agreement rules come later.",
+      "skills": [
+        "vocabulary",
+        "grammar"
+      ],
+      "status": "available",
+      "prereqs": [
+        "a1-u3"
+      ]
+    },
+    {
+      "id": "a2-u1",
+      "level": "A2",
+      "order": 1,
+      "title": "The Verbal Sentence",
+      "blurb": "Past tense of Form I, VSO word order, and كان.",
+      "skills": [
+        "grammar",
+        "reading"
+      ],
+      "status": "available",
+      "prereqs": [
+        "a1-u1"
+      ]
+    },
+    {
+      "id": "a2-u2",
+      "level": "A2",
+      "order": 2,
+      "title": "The Genitive Construct (Iḍāfa)",
+      "blurb": "Noun-to-noun possession, the backbone of Arabic phrasing.",
+      "skills": [
+        "grammar",
+        "reading"
+      ],
+      "status": "available",
+      "prereqs": [
+        "a1-u1"
+      ]
+    },
+    {
+      "id": "a2-u3",
+      "level": "A2",
+      "order": 3,
+      "title": "Root & Pattern — First Look",
+      "blurb": "How ك-ت-ب gives كِتَاب, كَتَبَ, مَكْتَبَة — recognising word families across eleven root clusters you already half-know.",
+      "skills": [
+        "grammar",
+        "vocabulary"
+      ],
+      "status": "available",
+      "prereqs": [
+        "a2-u1"
+      ]
+    },
+    {
+      "id": "a2-u4",
+      "level": "A2",
+      "order": 4,
+      "title": "Numbers, Counting & Time",
+      "blurb": "11–99 and their gender-polarity rules, how to tell the time, prices, and dates.",
+      "skills": [
+        "vocabulary",
+        "grammar"
+      ],
+      "status": "available",
+      "prereqs": [
+        "a1-u5"
+      ]
+    },
+    {
+      "id": "a2-u5",
+      "level": "A2",
+      "order": 5,
+      "title": "Reading Short Paragraphs",
+      "blurb": "Fully-vowelled connected text on familiar topics; separating main idea from detail.",
+      "skills": [
+        "reading",
+        "comprehension"
+      ],
+      "status": "available",
+      "prereqs": [
+        "a1-u2"
+      ]
+    },
+    {
+      "id": "a2-u6",
+      "level": "A2",
+      "order": 6,
+      "title": "Everyday Exchanges",
+      "blurb": "Shopping, directions, and routine conversation — listening and speaking.",
+      "skills": [
+        "listening",
+        "speaking",
+        "comprehension"
+      ],
+      "status": "available",
+      "prereqs": [
+        "a2-u4"
+      ]
+    },
+    {
+      "id": "b1-u1",
+      "level": "B1",
+      "order": 1,
+      "title": "Derived Verb Forms II–X",
+      "blurb": "Forms II through VIII and X, one at a time, and their meaning tendencies — a mix of verbs you already knew and a few chosen to fit naturally beside them. Form IX (colours and physical defects) is rare enough to stay ahead, past B1.",
+      "skills": [
+        "grammar",
+        "vocabulary"
+      ],
+      "status": "available",
+      "prereqs": [
+        "a2-u1",
+        "a2-u3"
+      ]
+    },
+    {
+      "id": "b1-u2",
+      "level": "B1",
+      "order": 2,
+      "title": "Relative Clauses & Longer Sentences",
+      "blurb": "الَّذِي/الَّتِي (singular) and الَّذِينَ/اللَّاتِي (plural) for subject- and object-relative clauses; all ten sisters of إنّ, with a following noun or an attached pronoun subject; joining these into a connected paragraph; the plural possessive suffixes ـنَا/ـكُمْ/ـهُمْ. Dual relative pronouns and the feminine-plural/dual possessive suffixes stay deferred past B1, the same as Form IX.",
+      "skills": [
+        "grammar",
+        "reading"
+      ],
+      "status": "available",
+      "prereqs": [
+        "a2-u2"
+      ]
+    },
+    {
+      "id": "b1-u3",
+      "level": "B1",
+      "order": 3,
+      "title": "Verbal Nouns & Participles",
+      "blurb": "The maṣdar and active/passive participles — Arabic's engine for abstraction. In development.",
+      "skills": [
+        "grammar",
+        "vocabulary"
+      ],
+      "status": "planned",
+      "prereqs": [
+        "b1-u1"
+      ]
+    },
+    {
+      "id": "b1-u4",
+      "level": "B1",
+      "order": 4,
+      "title": "Reading Unvowelled MSA",
+      "blurb": "Supplying vowels from pattern and context on familiar-topic prose. In development.",
+      "skills": [
+        "reading"
+      ],
+      "status": "planned",
+      "prereqs": [
+        "a2-u5"
+      ]
+    },
+    {
+      "id": "b1-u5",
+      "level": "B1",
+      "order": 5,
+      "title": "Understanding Standard Speech",
+      "blurb": "Short narratives, interviews, and factual reports at natural pace. In development.",
+      "skills": [
+        "listening",
+        "comprehension"
+      ],
+      "status": "planned",
+      "prereqs": [
+        "a2-u6"
+      ]
+    },
+    {
+      "id": "b1-u6",
+      "level": "B1",
+      "order": 6,
+      "title": "Writing Connected Texts",
+      "blurb": "Description, narrative, and informal messages with conjunctions and relative clauses. In development.",
+      "skills": [
+        "writing"
+      ],
+      "status": "planned",
+      "prereqs": [
+        "b1-u2"
+      ]
+    },
+    {
+      "id": "b1-u7",
+      "level": "B1",
+      "order": 7,
+      "title": "Grammatical Roles & Iʿrāb Readiness",
+      "blurb": "Naming the roles you already use — مبتدأ، خبر، فاعل، مفعول به، مضاف إليه — on sentences you've already read. Full case marking (إعراب) waits for B2.",
+      "skills": [
+        "grammar",
+        "reading"
+      ],
+      "status": "available",
+      "prereqs": [
+        "a2-u1",
+        "a2-u2"
+      ]
+    },
+    {
+      "id": "b2-u1",
+      "level": "B2",
+      "order": 1,
+      "title": "The Full Case System (Iʿrāb)",
+      "blurb": "رَفْع، نَصْب، جَرّ — naming the case endings you've been producing correctly since A2, now including the five nouns (أَب، أَخ) and the sound plurals' own irregular markers. Diptotes are the one remaining irregular layer, still in development.",
+      "skills": [
+        "grammar"
+      ],
+      "status": "available",
+      "prereqs": [
+        "b1-u2",
+        "b1-u7"
+      ]
+    },
+    {
+      "id": "b2-u2",
+      "level": "B2",
+      "order": 2,
+      "title": "The Passive, the Jussive & Conditionals",
+      "blurb": "Internal-vowel passive, the jussive after لم, and real and hypothetical conditions. In development.",
+      "skills": [
+        "grammar"
+      ],
+      "status": "planned",
+      "prereqs": [
+        "b1-u3"
+      ]
+    },
+    {
+      "id": "b2-u3",
+      "level": "B2",
+      "order": 3,
+      "title": "Weak & Irregular Verbs",
+      "blurb": "Assimilated, hollow, defective, doubled, and hamzated verbs — recognition and production. In development.",
+      "skills": [
+        "grammar",
+        "vocabulary"
+      ],
+      "status": "planned",
+      "prereqs": [
+        "b1-u1"
+      ]
+    },
+    {
+      "id": "b2-u4",
+      "level": "B2",
+      "order": 4,
+      "title": "Reading the News",
+      "blurb": "Unvowelled authentic articles and reports; following the argument and separating fact from comment. In development.",
+      "skills": [
+        "reading",
+        "comprehension"
+      ],
+      "status": "planned",
+      "prereqs": [
+        "b1-u4"
+      ]
+    },
+    {
+      "id": "b2-u5",
+      "level": "B2",
+      "order": 5,
+      "title": "Broadcast & Extended Audio",
+      "blurb": "News bulletins, documentaries, and discussion on concrete and abstract topics. In development.",
+      "skills": [
+        "listening",
+        "comprehension"
+      ],
+      "status": "planned",
+      "prereqs": [
+        "b1-u5"
+      ]
+    },
+    {
+      "id": "b2-u6",
+      "level": "B2",
+      "order": 6,
+      "title": "Argumentative Writing",
+      "blurb": "A paragraph that states a position, supports it, and concludes — with paragraphing and cohesion. In development.",
+      "skills": [
+        "writing"
+      ],
+      "status": "planned",
+      "prereqs": [
+        "b1-u6"
+      ]
+    },
+    {
+      "id": "c1-u1",
+      "level": "C1",
+      "order": 1,
+      "title": "Rhetorical Syntax & Style",
+      "blurb": "Fronting, emphasis, particle nuance, and stylistic case variation. In development.",
+      "skills": [
+        "grammar",
+        "reading"
+      ],
+      "status": "planned",
+      "prereqs": [
+        "b2-u1"
+      ]
+    },
+    {
+      "id": "c1-u2",
+      "level": "C1",
+      "order": 2,
+      "title": "Editorials, Essays & Literary Prose",
+      "blurb": "Register shifts, ellipsis, complex subordination, and implicit meaning. In development.",
+      "skills": [
+        "reading",
+        "comprehension"
+      ],
+      "status": "planned",
+      "prereqs": [
+        "b2-u4"
+      ]
+    },
+    {
+      "id": "c1-u3",
+      "level": "C1",
+      "order": 3,
+      "title": "Register & Formal Correspondence",
+      "blurb": "Choosing style for the reader; formal letters, reports, and structured essays. In development.",
+      "skills": [
+        "writing"
+      ],
+      "status": "planned",
+      "prereqs": [
+        "b2-u6"
+      ]
+    },
+    {
+      "id": "c1-u4",
+      "level": "C1",
+      "order": 4,
+      "title": "Following Lectures & Debates",
+      "blurb": "Extended, loosely-structured speech; humour, irony, and speaker attitude. In development.",
+      "skills": [
+        "listening",
+        "comprehension"
+      ],
+      "status": "planned",
+      "prereqs": [
+        "b2-u5"
+      ]
+    },
+    {
+      "id": "c1-u5",
+      "level": "C1",
+      "order": 5,
+      "title": "Fluent Discussion",
+      "blurb": "Precise formulation, skilful turn-taking, and defending a point of view. In development.",
+      "skills": [
+        "speaking"
+      ],
+      "status": "planned",
+      "prereqs": [
+        "b2-u5"
+      ]
+    },
+    {
+      "id": "c2-u1",
+      "level": "C2",
+      "order": 1,
+      "title": "Advanced Iʿrāb & Contested Parses",
+      "blurb": "Stylistic and disputed parses; analysing syntactic ambiguity in real text. In development.",
+      "skills": [
+        "grammar"
+      ],
+      "status": "planned",
+      "prereqs": [
+        "c1-u1"
+      ]
+    },
+    {
+      "id": "c2-u2",
+      "level": "C2",
+      "order": 2,
+      "title": "Classical & Heritage Texts",
+      "blurb": "Pre-modern prose and poetry, with correct iʿrāb read aloud. In development.",
+      "skills": [
+        "reading"
+      ],
+      "status": "planned",
+      "prereqs": [
+        "c1-u2"
+      ]
+    },
+    {
+      "id": "c2-u3",
+      "level": "C2",
+      "order": 3,
+      "title": "Academic & Analytical Writing",
+      "blurb": "Sustained argument, classical constructions, and deliberate stylistic variation. In development.",
+      "skills": [
+        "writing"
+      ],
+      "status": "planned",
+      "prereqs": [
+        "c1-u3"
+      ]
+    },
+    {
+      "id": "c2-u4",
+      "level": "C2",
+      "order": 4,
+      "title": "Near-Native Comprehension",
+      "blurb": "Critical analysis of sophisticated texts for structure, assumption, and effect. In development.",
+      "skills": [
+        "comprehension",
+        "listening"
+      ],
+      "status": "planned",
+      "prereqs": [
+        "c1-u2",
+        "c1-u4"
+      ]
+    },
+    {
+      "id": "c2-u5",
+      "level": "C2",
+      "order": 5,
+      "title": "Idiomatic & Stylistic Mastery",
+      "blurb": "Colloquial-register fluency, rare and figurative vocabulary, near-native nuance. In development.",
+      "skills": [
+        "speaking",
+        "vocabulary"
+      ],
+      "status": "planned",
+      "prereqs": [
+        "c1-u5"
+      ]
+    }
+  ],
   "lessons": [
     {
-      "id": "l1", "unitId": "a0-u1", "order": 1,
+      "id": "l1",
+      "unitId": "a0-u1",
+      "order": 1,
       "title": "Meet the Arabic Alphabet",
       "blurb": "An overview of all 28 letters — their names and the sounds they make.",
-      "level": "A0", "skills": ["reading", "pronunciation"],
-      "objectives": ["let:alif","let:ba","let:ta1","let:tha","let:jim","let:ha1","let:kha","let:dal","let:dhal","let:ra","let:zay","let:sin","let:shin","let:sad","let:dad","let:ta2","let:za2","let:ayn","let:ghayn","let:fa","let:qaf","let:kaf","let:lam","let:mim","let:nun","let:ha2","let:waw","let:ya"],
-      "status": "available", "source": "view:alphabet"
+      "level": "A0",
+      "skills": [
+        "reading",
+        "pronunciation"
+      ],
+      "objectives": [
+        "let:alif",
+        "let:ba",
+        "let:ta1",
+        "let:tha",
+        "let:jim",
+        "let:ha1",
+        "let:kha",
+        "let:dal",
+        "let:dhal",
+        "let:ra",
+        "let:zay",
+        "let:sin",
+        "let:shin",
+        "let:sad",
+        "let:dad",
+        "let:ta2",
+        "let:za2",
+        "let:ayn",
+        "let:ghayn",
+        "let:fa",
+        "let:qaf",
+        "let:kaf",
+        "let:lam",
+        "let:mim",
+        "let:nun",
+        "let:ha2",
+        "let:waw",
+        "let:ya"
+      ],
+      "status": "available",
+      "source": "view:alphabet"
     },
     {
-      "id": "l2", "unitId": "a0-u1", "order": 2,
+      "id": "l2",
+      "unitId": "a0-u1",
+      "order": 2,
       "title": "Arabic Letter Shapes",
       "blurb": "How each letter changes shape depending on its position in a word, and the six non-joiners.",
-      "level": "A0", "skills": ["reading", "writing"],
-      "objectives": ["let:alif","let:ba","let:ta1","let:tha","let:jim","let:ha1","let:kha","let:dal","let:dhal","let:ra","let:zay","let:sin","let:shin","let:sad","let:dad","let:ta2","let:za2","let:ayn","let:ghayn","let:fa","let:qaf","let:kaf","let:lam","let:mim","let:nun","let:ha2","let:waw","let:ya"],
-      "status": "preview", "source": "view:alphabet"
+      "level": "A0",
+      "skills": [
+        "reading",
+        "writing"
+      ],
+      "objectives": [
+        "let:alif",
+        "let:ba",
+        "let:ta1",
+        "let:tha",
+        "let:jim",
+        "let:ha1",
+        "let:kha",
+        "let:dal",
+        "let:dhal",
+        "let:ra",
+        "let:zay",
+        "let:sin",
+        "let:shin",
+        "let:sad",
+        "let:dad",
+        "let:ta2",
+        "let:za2",
+        "let:ayn",
+        "let:ghayn",
+        "let:fa",
+        "let:qaf",
+        "let:kaf",
+        "let:lam",
+        "let:mim",
+        "let:nun",
+        "let:ha2",
+        "let:waw",
+        "let:ya"
+      ],
+      "status": "preview",
+      "source": "view:alphabet"
     },
     {
-      "id": "alphabet-writing-1", "unitId": "a0-u1", "order": 3,
+      "id": "alphabet-writing-1",
+      "unitId": "a0-u1",
+      "order": 3,
       "title": "Letter Writing Practice",
       "blurb": "Trace each letter to learn how it is drawn.",
-      "level": "A0", "skills": ["writing"],
-      "objectives": ["let:alif","let:ba","let:ta1","let:tha","let:jim","let:ha1","let:kha","let:dal","let:dhal","let:ra","let:zay","let:sin","let:shin","let:sad","let:dad","let:ta2","let:za2","let:ayn","let:ghayn","let:fa","let:qaf","let:kaf","let:lam","let:mim","let:nun","let:ha2","let:waw","let:ya"],
-      "status": "available", "source": "steps:alphabet-writing-1"
+      "level": "A0",
+      "skills": [
+        "writing"
+      ],
+      "objectives": [
+        "let:alif",
+        "let:ba",
+        "let:ta1",
+        "let:tha",
+        "let:jim",
+        "let:ha1",
+        "let:kha",
+        "let:dal",
+        "let:dhal",
+        "let:ra",
+        "let:zay",
+        "let:sin",
+        "let:shin",
+        "let:sad",
+        "let:dad",
+        "let:ta2",
+        "let:za2",
+        "let:ayn",
+        "let:ghayn",
+        "let:fa",
+        "let:qaf",
+        "let:kaf",
+        "let:lam",
+        "let:mim",
+        "let:nun",
+        "let:ha2",
+        "let:waw",
+        "let:ya"
+      ],
+      "status": "available",
+      "source": "steps:alphabet-writing-1"
     },
     {
-      "id": "stroke-order-writing", "unitId": "a0-u1", "order": 4,
+      "id": "stroke-order-writing",
+      "unitId": "a0-u1",
+      "order": 4,
       "title": "Directional Stroke-Order Writing",
       "blurb": "Watch, trace, then write each letter with the correct stroke order and direction.",
-      "level": "A0", "skills": ["writing"],
-      "objectives": ["let:alif","let:ba","let:ta1","let:tha","let:jim","let:ha1","let:kha","let:dal","let:dhal","let:ra","let:zay","let:sin","let:shin","let:sad","let:dad","let:ta2","let:za2","let:ayn","let:ghayn","let:fa","let:qaf","let:kaf","let:lam","let:mim","let:nun","let:ha2","let:waw","let:ya"],
-      "status": "available", "source": "steps:stroke-order-writing"
+      "level": "A0",
+      "skills": [
+        "writing"
+      ],
+      "objectives": [
+        "let:alif",
+        "let:ba",
+        "let:ta1",
+        "let:tha",
+        "let:jim",
+        "let:ha1",
+        "let:kha",
+        "let:dal",
+        "let:dhal",
+        "let:ra",
+        "let:zay",
+        "let:sin",
+        "let:shin",
+        "let:sad",
+        "let:dad",
+        "let:ta2",
+        "let:za2",
+        "let:ayn",
+        "let:ghayn",
+        "let:fa",
+        "let:qaf",
+        "let:kaf",
+        "let:lam",
+        "let:mim",
+        "let:nun",
+        "let:ha2",
+        "let:waw",
+        "let:ya"
+      ],
+      "status": "available",
+      "source": "steps:stroke-order-writing"
     },
-
     {
-      "id": "l3", "unitId": "a0-u2", "order": 1,
+      "id": "l3",
+      "unitId": "a0-u2",
+      "order": 1,
       "title": "Harakāt & Reading Marks",
       "blurb": "Every Arabic reading mark — short vowels, sukūn, shaddah, tanwīn, and long vowels — across the full alphabet.",
-      "level": "A0", "skills": ["reading", "pronunciation"],
-      "objectives": ["mrk:fatha","mrk:kasra","mrk:damma","mrk:sukun","mrk:shadda","mrk:fathatayn","mrk:kasratayn","mrk:dammatayn","mrk:madd-alif","mrk:madd-ya","mrk:madd-waw"],
-      "status": "available", "source": "steps:harakat-intro"
+      "level": "A0",
+      "skills": [
+        "reading",
+        "pronunciation"
+      ],
+      "objectives": [
+        "mrk:fatha",
+        "mrk:kasra",
+        "mrk:damma",
+        "mrk:sukun",
+        "mrk:shadda",
+        "mrk:fathatayn",
+        "mrk:kasratayn",
+        "mrk:dammatayn",
+        "mrk:madd-alif",
+        "mrk:madd-ya",
+        "mrk:madd-waw"
+      ],
+      "status": "available",
+      "source": "steps:harakat-intro"
     },
     {
-      "id": "reading-foundations", "unitId": "a0-u2", "order": 2,
+      "id": "reading-foundations",
+      "unitId": "a0-u2",
+      "order": 2,
       "title": "Reading Foundations",
       "blurb": "Put letters, marks, and syllables together to read short, familiar Arabic aloud.",
-      "level": "A0", "skills": ["reading"],
-      "objectives": ["mrk:fatha","mrk:kasra","mrk:damma"],
-      "status": "available", "source": "steps:reading-foundations"
+      "level": "A0",
+      "skills": [
+        "reading"
+      ],
+      "objectives": [
+        "mrk:fatha",
+        "mrk:kasra",
+        "mrk:damma"
+      ],
+      "status": "available",
+      "source": "steps:reading-foundations"
     },
-
     {
-      "id": "l4", "unitId": "a0-u3", "order": 1,
+      "id": "l4",
+      "unitId": "a0-u3",
+      "order": 1,
       "title": "Reading Simple Syllables",
       "blurb": "Combine a consonant with each short vowel to read your first syllables.",
-      "level": "A0", "skills": ["reading", "pronunciation"],
-      "objectives": ["mrk:fatha","mrk:kasra","mrk:damma","let:ba","let:mim","let:ta1"],
-      "status": "available", "source": "steps:syllables-1"
+      "level": "A0",
+      "skills": [
+        "reading",
+        "pronunciation"
+      ],
+      "objectives": [
+        "mrk:fatha",
+        "mrk:kasra",
+        "mrk:damma",
+        "let:ba",
+        "let:mim",
+        "let:ta1"
+      ],
+      "status": "available",
+      "source": "steps:syllables-1"
     },
     {
-      "id": "syllables-intro", "unitId": "a0-u3", "order": 2,
+      "id": "syllables-intro",
+      "unitId": "a0-u3",
+      "order": 2,
       "title": "Syllables: Long Vowels, Closed Syllables & Doubling",
       "blurb": "CVV, CVC, and geminated syllables — how Arabic builds and blends sound units.",
-      "level": "A0", "skills": ["reading", "pronunciation"],
-      "objectives": ["syl:cvv-ba","syl:cvv-bi","syl:cvv-bu","syl:cvv-ma","syl:cvv-mi","syl:cvv-mu","syl:cvv-ta","syl:cvv-ti","syl:cvv-tu","syl:cvc-ba","syl:cvc-bi","syl:cvc-bu","syl:cvc-ma","syl:cvc-mi","syl:cvc-mu","syl:cvc-ta","syl:cvc-ti","syl:cvc-tu","syl:gem-da","syl:gem-ma","syl:gem-ta","syl:gem-ka","mrk:madd-alif","mrk:madd-ya","mrk:madd-waw","mrk:sukun","mrk:shadda"],
-      "status": "available", "source": "steps:syllables-intro"
+      "level": "A0",
+      "skills": [
+        "reading",
+        "pronunciation"
+      ],
+      "objectives": [
+        "syl:cvv-ba",
+        "syl:cvv-bi",
+        "syl:cvv-bu",
+        "syl:cvv-ma",
+        "syl:cvv-mi",
+        "syl:cvv-mu",
+        "syl:cvv-ta",
+        "syl:cvv-ti",
+        "syl:cvv-tu",
+        "syl:cvc-ba",
+        "syl:cvc-bi",
+        "syl:cvc-bu",
+        "syl:cvc-ma",
+        "syl:cvc-mi",
+        "syl:cvc-mu",
+        "syl:cvc-ta",
+        "syl:cvc-ti",
+        "syl:cvc-tu",
+        "syl:gem-da",
+        "syl:gem-ma",
+        "syl:gem-ta",
+        "syl:gem-ka",
+        "mrk:madd-alif",
+        "mrk:madd-ya",
+        "mrk:madd-waw",
+        "mrk:sukun",
+        "mrk:shadda"
+      ],
+      "status": "available",
+      "source": "steps:syllables-intro"
     },
-
     {
-      "id": "l5", "unitId": "a0-u4", "order": 1,
+      "id": "l5",
+      "unitId": "a0-u4",
+      "order": 1,
       "title": "First Arabic Words",
       "blurb": "Start building vocabulary with the core flashcard deck.",
-      "level": "A0", "skills": ["vocabulary"],
-      "objectives": ["lex:gre-01","lex:gre-08","lex:peo-01","lex:peo-02","lex:peo-03","lex:peo-04","lex:peo-11","lex:num-01","lex:num-02","lex:num-03","lex:num-04","lex:num-05","lex:num-06","lex:num-07","lex:num-08","lex:num-09","lex:num-10","lex:foo-01","lex:foo-09","lex:foo-10","lex:foo-11","lex:hom-01","lex:hom-06","lex:hom-07","lex:hom-08","lex:hom-09","lex:sch-01","lex:sch-06","lex:sch-07","lex:sch-08","lex:obj-01","lex:obj-02","lex:tim-01","lex:tim-05","lex:tim-06","lex:exp-01","lex:exp-02","lex:exp-05","lex:exp-06"],
-      "status": "available", "source": "view:vocabulary"
+      "level": "A0",
+      "skills": [
+        "vocabulary"
+      ],
+      "objectives": [
+        "lex:gre-01",
+        "lex:gre-08",
+        "lex:peo-01",
+        "lex:peo-02",
+        "lex:peo-03",
+        "lex:peo-04",
+        "lex:peo-11",
+        "lex:num-01",
+        "lex:num-02",
+        "lex:num-03",
+        "lex:num-04",
+        "lex:num-05",
+        "lex:num-06",
+        "lex:num-07",
+        "lex:num-08",
+        "lex:num-09",
+        "lex:num-10",
+        "lex:foo-01",
+        "lex:foo-09",
+        "lex:foo-10",
+        "lex:foo-11",
+        "lex:hom-01",
+        "lex:hom-06",
+        "lex:hom-07",
+        "lex:hom-08",
+        "lex:hom-09",
+        "lex:sch-01",
+        "lex:sch-06",
+        "lex:sch-07",
+        "lex:sch-08",
+        "lex:obj-01",
+        "lex:obj-02",
+        "lex:tim-01",
+        "lex:tim-05",
+        "lex:tim-06",
+        "lex:exp-01",
+        "lex:exp-02",
+        "lex:exp-05",
+        "lex:exp-06"
+      ],
+      "status": "available",
+      "source": "view:vocabulary"
     },
     {
-      "id": "listening-foundations", "unitId": "a0-u4", "order": 2,
+      "id": "listening-foundations",
+      "unitId": "a0-u4",
+      "order": 2,
       "title": "Listening Foundations",
       "blurb": "Hear, identify, and tell apart familiar Arabic words and phrases by ear.",
-      "level": "A0", "skills": ["listening"],
-      "objectives": ["lex:foo-09","lex:hom-01","lex:sch-06","lex:gre-01","lex:gre-08","lex:exp-01","lex:exp-02"],
-      "status": "available", "source": "steps:listening-foundations"
+      "level": "A0",
+      "skills": [
+        "listening"
+      ],
+      "objectives": [
+        "lex:foo-09",
+        "lex:hom-01",
+        "lex:sch-06",
+        "lex:gre-01",
+        "lex:gre-08",
+        "lex:exp-01",
+        "lex:exp-02"
+      ],
+      "status": "available",
+      "source": "steps:listening-foundations"
     },
     {
-      "id": "pronunciation-foundations", "unitId": "a0-u4", "order": 3,
+      "id": "pronunciation-foundations",
+      "unitId": "a0-u4",
+      "order": 3,
       "title": "Pronunciation Foundations",
       "blurb": "Listen, repeat aloud, and optionally record yourself on five familiar words.",
-      "level": "A0", "skills": ["pronunciation"],
-      "objectives": ["lex:foo-09","lex:hom-01","lex:sch-06","lex:exp-02","lex:gre-01"],
-      "status": "available", "source": "steps:pronunciation-foundations"
+      "level": "A0",
+      "skills": [
+        "pronunciation"
+      ],
+      "objectives": [
+        "lex:foo-09",
+        "lex:hom-01",
+        "lex:sch-06",
+        "lex:exp-02",
+        "lex:gre-01"
+      ],
+      "status": "available",
+      "source": "steps:pronunciation-foundations"
     },
-
     {
-      "id": "sentence-reading", "unitId": "a1-u1", "order": 1,
+      "id": "sentence-reading",
+      "unitId": "a1-u1",
+      "order": 1,
       "title": "Reading Real Sentences",
       "blurb": "Three fully-vowelled Arabic sentences — the nominal sentence and adjective agreement in action.",
-      "level": "A1", "skills": ["reading", "comprehension"],
-      "objectives": ["txt:sent-house-big","txt:sent-book-beautiful","txt:sent-girl-happy"],
-      "status": "available", "source": "steps:sentence-reading"
+      "level": "A1",
+      "skills": [
+        "reading",
+        "comprehension"
+      ],
+      "objectives": [
+        "txt:sent-house-big",
+        "txt:sent-book-beautiful",
+        "txt:sent-girl-happy"
+      ],
+      "status": "available",
+      "source": "steps:sentence-reading"
     },
     {
-      "id": "grammar-intro", "unitId": "a1-u1", "order": 2,
+      "id": "grammar-intro",
+      "unitId": "a1-u1",
+      "order": 2,
       "title": "Grammar for Reading",
       "blurb": "Gender agreement, present-tense verb prefixes, and sun/moon assimilation of the definite article.",
-      "level": "A2", "skills": ["grammar", "reading"],
-      "objectives": ["gr:gender-agreement","gr:sun-moon","gr:present-tense","txt:gram-gender-bint","txt:gram-sunletter-shams","txt:gram-verb-he","txt:gram-verb-she","txt:gram-verb-they"],
-      "status": "available", "source": "steps:grammar-intro"
+      "level": "A2",
+      "skills": [
+        "grammar",
+        "reading"
+      ],
+      "objectives": [
+        "gr:gender-agreement",
+        "gr:sun-moon",
+        "gr:present-tense",
+        "txt:gram-gender-bint",
+        "txt:gram-sunletter-shams",
+        "txt:gram-verb-he",
+        "txt:gram-verb-she",
+        "txt:gram-verb-they"
+      ],
+      "status": "available",
+      "source": "steps:grammar-intro"
     },
     {
-      "id": "a1-grammar-structural", "unitId": "a1-u1", "order": 3,
+      "id": "a1-grammar-structural",
+      "unitId": "a1-u1",
+      "order": 3,
       "title": "How Arabic Sentences Are Built",
       "blurb": "Singular / dual / plural, definite vs. indefinite, the verbless sentence, and negation with لَيْسَ.",
-      "level": "A1", "skills": ["grammar", "reading"],
-      "objectives": ["gr:noun-number","gr:definiteness","gr:nominal-sentence","gr:negation-a1","txt:gram-number-dual","txt:gram-number-sound-pl","txt:gram-number-broken-pl","txt:gram-def-indef","txt:gram-def-def","txt:gram-def-sentence","txt:gram-nominal-father","txt:gram-nominal-mother","txt:gram-nominal-teacher","txt:gram-neg-not-big","txt:gram-neg-not-book","txt:gram-neg-no-water"],
-      "status": "available", "source": "steps:a1-grammar-structural"
+      "level": "A1",
+      "skills": [
+        "grammar",
+        "reading"
+      ],
+      "objectives": [
+        "gr:noun-number",
+        "gr:definiteness",
+        "gr:nominal-sentence",
+        "gr:negation-a1",
+        "txt:gram-number-dual",
+        "txt:gram-number-sound-pl",
+        "txt:gram-number-broken-pl",
+        "txt:gram-def-indef",
+        "txt:gram-def-def",
+        "txt:gram-def-sentence",
+        "txt:gram-nominal-father",
+        "txt:gram-nominal-mother",
+        "txt:gram-nominal-teacher",
+        "txt:gram-neg-not-big",
+        "txt:gram-neg-not-book",
+        "txt:gram-neg-no-water"
+      ],
+      "status": "available",
+      "source": "steps:a1-grammar-structural"
     },
     {
-      "id": "a1-grammar-function-words", "unitId": "a1-u1", "order": 4,
+      "id": "a1-grammar-function-words",
+      "unitId": "a1-u1",
+      "order": 4,
       "title": "This, That, My, In, On",
       "blurb": "Demonstratives هَذَا / هَذِهِ, the possessive endings, and the core prepositions with their genitive ending.",
-      "level": "A1", "skills": ["grammar", "reading"],
-      "objectives": ["gr:demonstratives","gr:attached-possessive","gr:core-prepositions","txt:gram-dem-book","txt:gram-dem-girl","txt:gram-dem-the-house","txt:gram-poss-my-book","txt:gram-poss-your-house","txt:gram-poss-her-bag","txt:gram-prep-in-bag","txt:gram-prep-on-table","txt:gram-prep-from-city"],
-      "status": "available", "source": "steps:a1-grammar-function-words"
+      "level": "A1",
+      "skills": [
+        "grammar",
+        "reading"
+      ],
+      "objectives": [
+        "gr:demonstratives",
+        "gr:attached-possessive",
+        "gr:core-prepositions",
+        "txt:gram-dem-book",
+        "txt:gram-dem-girl",
+        "txt:gram-dem-the-house",
+        "txt:gram-poss-my-book",
+        "txt:gram-poss-your-house",
+        "txt:gram-poss-her-bag",
+        "txt:gram-prep-in-bag",
+        "txt:gram-prep-on-table",
+        "txt:gram-prep-from-city"
+      ],
+      "status": "available",
+      "source": "steps:a1-grammar-function-words"
     },
     {
-      "id": "a1-reading-sentences", "unitId": "a1-u1", "order": 5,
+      "id": "a1-reading-sentences",
+      "unitId": "a1-u1",
+      "order": 5,
       "title": "Reading Whole Sentences",
       "blurb": "Twelve short A1 sentences — the topic, then the comment — read for meaning.",
-      "level": "A1", "skills": ["reading", "comprehension"],
-      "objectives": ["gr:nominal-sentence","gr:gender-agreement","gr:core-prepositions","gr:demonstratives","gr:attached-possessive","txt:read-weather-hot","txt:read-i-student","txt:read-room-clean","txt:read-he-engineer","txt:read-coffee-delicious","txt:read-bag-new","txt:read-book-on-table","txt:read-this-my-house","txt:read-friend-university","txt:read-that-man-doctor","txt:read-bag-under-chair","txt:read-this-my-bag"],
-      "status": "available", "source": "steps:a1-reading-sentences"
+      "level": "A1",
+      "skills": [
+        "reading",
+        "comprehension"
+      ],
+      "objectives": [
+        "gr:nominal-sentence",
+        "gr:gender-agreement",
+        "gr:core-prepositions",
+        "gr:demonstratives",
+        "gr:attached-possessive",
+        "txt:read-weather-hot",
+        "txt:read-i-student",
+        "txt:read-room-clean",
+        "txt:read-he-engineer",
+        "txt:read-coffee-delicious",
+        "txt:read-bag-new",
+        "txt:read-book-on-table",
+        "txt:read-this-my-house",
+        "txt:read-friend-university",
+        "txt:read-that-man-doctor",
+        "txt:read-bag-under-chair",
+        "txt:read-this-my-bag"
+      ],
+      "status": "available",
+      "source": "steps:a1-reading-sentences"
     },
     {
-      "id": "a1-reading-connected", "unitId": "a1-u1", "order": 6,
+      "id": "a1-reading-connected",
+      "unitId": "a1-u1",
+      "order": 6,
       "title": "Joining Two Ideas",
       "blurb": "Four longer sentences joined by وَ, لَكِنْ, or لَيْسَ.",
-      "level": "A1", "skills": ["reading", "comprehension"],
-      "objectives": ["gr:nominal-sentence","gr:core-prepositions","gr:negation-a1","txt:read-parents-office-home","txt:read-tired-but-happy","txt:read-not-cold-today","txt:read-this-not-my-pen"],
-      "status": "available", "source": "steps:a1-reading-connected"
+      "level": "A1",
+      "skills": [
+        "reading",
+        "comprehension"
+      ],
+      "objectives": [
+        "gr:nominal-sentence",
+        "gr:core-prepositions",
+        "gr:negation-a1",
+        "txt:read-parents-office-home",
+        "txt:read-tired-but-happy",
+        "txt:read-not-cold-today",
+        "txt:read-this-not-my-pen"
+      ],
+      "status": "available",
+      "source": "steps:a1-reading-connected"
     },
     {
-      "id": "a1-writing-join-spell", "unitId": "a1-u1", "order": 7,
+      "id": "a1-writing-join-spell",
+      "unitId": "a1-u1",
+      "order": 7,
       "title": "Joining Letters, Spelling Words",
       "blurb": "How a letter changes shape by position, the six non-connectors, and spelling six short A1 words letter by letter.",
-      "level": "A1", "skills": ["writing", "reading"],
-      "objectives": ["lex:peo-20","lex:peo-15","lex:peo-16","lex:pla-14","lex:foo-18","lex:tim-22"],
-      "status": "available", "source": "steps:a1-writing-join-spell"
+      "level": "A1",
+      "skills": [
+        "writing",
+        "reading"
+      ],
+      "objectives": [
+        "lex:peo-20",
+        "lex:peo-15",
+        "lex:peo-16",
+        "lex:pla-14",
+        "lex:foo-18",
+        "lex:tim-22"
+      ],
+      "status": "available",
+      "source": "steps:a1-writing-join-spell"
     },
     {
-      "id": "a1-writing-sentences", "unitId": "a1-u1", "order": 8,
+      "id": "a1-writing-sentences",
+      "unitId": "a1-u1",
+      "order": 8,
       "title": "Writing a Whole Sentence",
       "blurb": "Topic first, then the comment, with no verb — building seven A1 nominal sentences from word tiles.",
-      "level": "A1", "skills": ["writing", "grammar"],
-      "objectives": ["gr:nominal-sentence","gr:gender-agreement","gr:demonstratives","gr:attached-possessive","gr:core-prepositions","txt:read-weather-hot","txt:read-room-clean","txt:read-this-my-house","txt:gram-dem-the-house","txt:read-that-man-doctor","txt:read-book-on-table","txt:read-tired-but-happy"],
-      "status": "available", "source": "steps:a1-writing-sentences"
+      "level": "A1",
+      "skills": [
+        "writing",
+        "grammar"
+      ],
+      "objectives": [
+        "gr:nominal-sentence",
+        "gr:gender-agreement",
+        "gr:demonstratives",
+        "gr:attached-possessive",
+        "gr:core-prepositions",
+        "txt:read-weather-hot",
+        "txt:read-room-clean",
+        "txt:read-this-my-house",
+        "txt:gram-dem-the-house",
+        "txt:read-that-man-doctor",
+        "txt:read-book-on-table",
+        "txt:read-tired-but-happy"
+      ],
+      "status": "available",
+      "source": "steps:a1-writing-sentences"
     },
-
     {
-      "id": "unvowelled-reading", "unitId": "a1-u2", "order": 1,
+      "id": "unvowelled-reading",
+      "unitId": "a1-u2",
+      "order": 1,
       "title": "Reading Without Full Vowelling",
       "blurb": "The same sentences with the ḥarakāt progressively removed — reading Arabic as it is really written.",
-      "level": "A2", "skills": ["reading"],
-      "objectives": ["txt:sent-house-big","txt:sent-book-beautiful","txt:sent-girl-happy"],
-      "status": "available", "source": "steps:unvowelled-reading"
+      "level": "A2",
+      "skills": [
+        "reading"
+      ],
+      "objectives": [
+        "txt:sent-house-big",
+        "txt:sent-book-beautiful",
+        "txt:sent-girl-happy"
+      ],
+      "status": "available",
+      "source": "steps:unvowelled-reading"
     },
-
     {
-      "id": "a1-colours", "unitId": "a1-u3", "order": 1,
+      "id": "a1-colours",
+      "unitId": "a1-u3",
+      "order": 1,
       "title": "Colours",
       "blurb": "The core colour words, including the ones that follow the nisba (-iyy) pattern.",
-      "level": "A1", "skills": ["vocabulary"],
-      "objectives": ["lex:col-01","lex:col-02","lex:col-03","lex:col-04","lex:col-05","lex:col-06","lex:col-07","lex:col-08","lex:col-09","lex:col-10"],
-      "status": "available", "source": "generate"
+      "level": "A1",
+      "skills": [
+        "vocabulary"
+      ],
+      "objectives": [
+        "lex:col-01",
+        "lex:col-02",
+        "lex:col-03",
+        "lex:col-04",
+        "lex:col-05",
+        "lex:col-06",
+        "lex:col-07",
+        "lex:col-08",
+        "lex:col-09",
+        "lex:col-10"
+      ],
+      "status": "available",
+      "source": "generate"
     },
     {
-      "id": "a1-useful-questions", "unitId": "a1-u3", "order": 2,
+      "id": "a1-useful-questions",
+      "unitId": "a1-u3",
+      "order": 2,
       "title": "Useful Questions",
       "blurb": "Four everyday questions you can use right away.",
-      "level": "A1", "skills": ["vocabulary"],
-      "objectives": ["lex:exp-07","lex:exp-08","lex:exp-09","lex:exp-10"],
-      "status": "available", "source": "generate"
+      "level": "A1",
+      "skills": [
+        "vocabulary"
+      ],
+      "objectives": [
+        "lex:exp-07",
+        "lex:exp-08",
+        "lex:exp-09",
+        "lex:exp-10"
+      ],
+      "status": "available",
+      "source": "generate"
     },
     {
-      "id": "a1-pronouns", "unitId": "a1-u3", "order": 3,
+      "id": "a1-pronouns",
+      "unitId": "a1-u3",
+      "order": 3,
       "title": "He, She, They",
       "blurb": "The subject pronouns هُوَ, هِيَ, هُمْ — the ones you meet first in reading.",
-      "level": "A1", "skills": ["vocabulary", "grammar"],
-      "objectives": ["lex:pro-01","lex:pro-02","lex:pro-03"],
-      "status": "planned", "source": "generate"
+      "level": "A1",
+      "skills": [
+        "vocabulary",
+        "grammar"
+      ],
+      "objectives": [
+        "lex:pro-01",
+        "lex:pro-02",
+        "lex:pro-03"
+      ],
+      "status": "planned",
+      "source": "generate"
     },
     {
-      "id": "a1-describing", "unitId": "a1-u3", "order": 4,
+      "id": "a1-describing",
+      "unitId": "a1-u3",
+      "order": 4,
       "title": "Describing Things",
       "blurb": "Easy and difficult, and other adjectives for talking about the world. In development.",
-      "level": "A1", "skills": ["vocabulary"],
-      "objectives": ["lex:adj-10","lex:adj-11"],
-      "status": "planned", "source": "generate"
+      "level": "A1",
+      "skills": [
+        "vocabulary"
+      ],
+      "objectives": [
+        "lex:adj-10",
+        "lex:adj-11"
+      ],
+      "status": "planned",
+      "source": "generate"
     },
     {
-      "id": "a1-family", "unitId": "a1-u3", "order": 5,
+      "id": "a1-family",
+      "unitId": "a1-u3",
+      "order": 5,
       "title": "Family & People",
       "blurb": "Child, boy, man, woman, uncle, aunt, neighbour, young, old — and the word for \"name\".",
-      "level": "A1", "skills": ["vocabulary"],
-      "objectives": ["lex:peo-14","lex:peo-15","lex:peo-16","lex:peo-17","lex:peo-18","lex:peo-19","lex:peo-20","lex:peo-21","lex:peo-22","lex:peo-23"],
-      "status": "available", "source": "generate"
+      "level": "A1",
+      "skills": [
+        "vocabulary"
+      ],
+      "objectives": [
+        "lex:peo-14",
+        "lex:peo-15",
+        "lex:peo-16",
+        "lex:peo-17",
+        "lex:peo-18",
+        "lex:peo-19",
+        "lex:peo-20",
+        "lex:peo-21",
+        "lex:peo-22",
+        "lex:peo-23"
+      ],
+      "status": "available",
+      "source": "generate"
     },
     {
-      "id": "a1-food", "unitId": "a1-u3", "order": 6,
+      "id": "a1-food",
+      "unitId": "a1-u3",
+      "order": 6,
       "title": "Food & Meals",
       "blurb": "Juice, egg, cheese, salt, apple, the three meals, and how to say you are hungry.",
-      "level": "A1", "skills": ["vocabulary"],
-      "objectives": ["lex:foo-16","lex:foo-17","lex:foo-18","lex:foo-19","lex:foo-20","lex:foo-21","lex:foo-22","lex:foo-23","lex:foo-24","lex:foo-25","lex:foo-26","lex:foo-27"],
-      "status": "available", "source": "generate"
+      "level": "A1",
+      "skills": [
+        "vocabulary"
+      ],
+      "objectives": [
+        "lex:foo-16",
+        "lex:foo-17",
+        "lex:foo-18",
+        "lex:foo-19",
+        "lex:foo-20",
+        "lex:foo-21",
+        "lex:foo-22",
+        "lex:foo-23",
+        "lex:foo-24",
+        "lex:foo-25",
+        "lex:foo-26",
+        "lex:foo-27"
+      ],
+      "status": "available",
+      "source": "generate"
     },
     {
-      "id": "a1-home-garden", "unitId": "a1-u3", "order": 7,
+      "id": "a1-home-garden",
+      "unitId": "a1-u3",
+      "order": 7,
       "title": "Around the Home",
       "blurb": "Wall, floor, garden, old — and the word for \"clean\".",
-      "level": "A1", "skills": ["vocabulary"],
-      "objectives": ["lex:hom-13","lex:hom-14","lex:hom-15","lex:hom-16","lex:hom-17"],
-      "status": "available", "source": "generate"
+      "level": "A1",
+      "skills": [
+        "vocabulary"
+      ],
+      "objectives": [
+        "lex:hom-13",
+        "lex:hom-14",
+        "lex:hom-15",
+        "lex:hom-16",
+        "lex:hom-17"
+      ],
+      "status": "available",
+      "source": "generate"
     },
     {
-      "id": "a1-time-words", "unitId": "a1-u3", "order": 8,
+      "id": "a1-time-words",
+      "unitId": "a1-u3",
+      "order": 8,
       "title": "Telling the Time of Day",
       "blurb": "Hour, minute, day, noon, and the adverbs early / late / always / sometimes / before / after.",
-      "level": "A1", "skills": ["vocabulary"],
-      "objectives": ["lex:tim-20","lex:tim-21","lex:tim-22","lex:tim-23","lex:tim-24","lex:tim-25","lex:tim-26","lex:tim-27","lex:tim-28","lex:tim-29"],
-      "status": "available", "source": "generate"
+      "level": "A1",
+      "skills": [
+        "vocabulary"
+      ],
+      "objectives": [
+        "lex:tim-20",
+        "lex:tim-21",
+        "lex:tim-22",
+        "lex:tim-23",
+        "lex:tim-24",
+        "lex:tim-25",
+        "lex:tim-26",
+        "lex:tim-27",
+        "lex:tim-28",
+        "lex:tim-29"
+      ],
+      "status": "available",
+      "source": "generate"
     },
     {
-      "id": "a1-daily-verbs", "unitId": "a1-u3", "order": 9,
+      "id": "a1-daily-verbs",
+      "unitId": "a1-u3",
+      "order": 9,
       "title": "Everyday Actions",
       "blurb": "Thirteen common verbs — come, sleep, wake up, study, live, want, play, open, close, sit, walk, to do/make — plus \"to have\".",
-      "level": "A1", "skills": ["vocabulary"],
-      "objectives": ["lex:ver-11","lex:ver-12","lex:ver-13","lex:ver-14","lex:ver-15","lex:ver-16","lex:ver-17","lex:ver-18","lex:ver-19","lex:ver-20","lex:ver-21","lex:ver-22","lex:ver-29"],
-      "status": "available", "source": "generate"
+      "level": "A1",
+      "skills": [
+        "vocabulary"
+      ],
+      "objectives": [
+        "lex:ver-11",
+        "lex:ver-12",
+        "lex:ver-13",
+        "lex:ver-14",
+        "lex:ver-15",
+        "lex:ver-16",
+        "lex:ver-17",
+        "lex:ver-18",
+        "lex:ver-19",
+        "lex:ver-20",
+        "lex:ver-21",
+        "lex:ver-22",
+        "lex:ver-29"
+      ],
+      "status": "available",
+      "source": "generate"
     },
     {
-      "id": "a1-this-and-that", "unitId": "a1-u3", "order": 10,
+      "id": "a1-this-and-that",
+      "unitId": "a1-u3",
+      "order": 10,
       "title": "This, That & the Little Words",
       "blurb": "Demonstratives (هَذَا / هَذِهِ / هَؤُلَاءِ — this, these) and the core prepositions (فِي عَلَى مِنْ إِلَى مَعَ — in, on, from, to, with), plus negation with لَيْسَ.",
-      "level": "A1", "skills": ["vocabulary", "grammar"],
-      "objectives": ["lex:pro-04","lex:pro-05","lex:pro-06","lex:prt-01","lex:prt-02","lex:prt-03","lex:prt-04","lex:prt-05","lex:prt-06"],
-      "status": "available", "source": "generate"
+      "level": "A1",
+      "skills": [
+        "vocabulary",
+        "grammar"
+      ],
+      "objectives": [
+        "lex:pro-04",
+        "lex:pro-05",
+        "lex:pro-06",
+        "lex:prt-01",
+        "lex:prt-02",
+        "lex:prt-03",
+        "lex:prt-04",
+        "lex:prt-05",
+        "lex:prt-06"
+      ],
+      "status": "available",
+      "source": "generate"
     },
     {
-      "id": "a1-school", "unitId": "a1-u3", "order": 11,
+      "id": "a1-school",
+      "unitId": "a1-u3",
+      "order": 11,
       "title": "School & Learning",
       "blurb": "University, word, sentence, question, answer, exam — and the words for the Arabic and English languages.",
-      "level": "A1", "skills": ["vocabulary"],
-      "objectives": ["lex:sch-11","lex:sch-12","lex:sch-13","lex:sch-14","lex:sch-15","lex:sch-16","lex:sch-17","lex:sch-18","lex:sch-19","lex:sch-20","lex:sch-21"],
-      "status": "available", "source": "generate"
+      "level": "A1",
+      "skills": [
+        "vocabulary"
+      ],
+      "objectives": [
+        "lex:sch-11",
+        "lex:sch-12",
+        "lex:sch-13",
+        "lex:sch-14",
+        "lex:sch-15",
+        "lex:sch-16",
+        "lex:sch-17",
+        "lex:sch-18",
+        "lex:sch-19",
+        "lex:sch-20",
+        "lex:sch-21"
+      ],
+      "status": "available",
+      "source": "generate"
     },
     {
-      "id": "a1-work", "unitId": "a1-u3", "order": 12,
+      "id": "a1-work",
+      "unitId": "a1-u3",
+      "order": 12,
       "title": "Work & Jobs",
       "blurb": "Work/job, office, company, doctor, engineer, employee, money — and \"busy\" and \"important\".",
-      "level": "A1", "skills": ["vocabulary"],
-      "objectives": ["lex:wrk-01","lex:wrk-02","lex:wrk-03","lex:wrk-04","lex:wrk-05","lex:wrk-06","lex:wrk-07","lex:wrk-08","lex:wrk-09","lex:wrk-10","lex:wrk-11"],
-      "status": "available", "source": "generate"
+      "level": "A1",
+      "skills": [
+        "vocabulary"
+      ],
+      "objectives": [
+        "lex:wrk-01",
+        "lex:wrk-02",
+        "lex:wrk-03",
+        "lex:wrk-04",
+        "lex:wrk-05",
+        "lex:wrk-06",
+        "lex:wrk-07",
+        "lex:wrk-08",
+        "lex:wrk-09",
+        "lex:wrk-10",
+        "lex:wrk-11"
+      ],
+      "status": "available",
+      "source": "generate"
     },
     {
-      "id": "a1-body-health", "unitId": "a1-u3", "order": 13,
+      "id": "a1-body-health",
+      "unitId": "a1-u3",
+      "order": 13,
       "title": "The Body & Feeling Unwell",
       "blurb": "Head, hand, eye, foot — plus sick, tired, pain, and medicine.",
-      "level": "A1", "skills": ["vocabulary"],
-      "objectives": ["lex:bod-01","lex:bod-02","lex:bod-03","lex:bod-04","lex:bod-05","lex:bod-06","lex:bod-07","lex:bod-08","lex:bod-09"],
-      "status": "available", "source": "generate"
+      "level": "A1",
+      "skills": [
+        "vocabulary"
+      ],
+      "objectives": [
+        "lex:bod-01",
+        "lex:bod-02",
+        "lex:bod-03",
+        "lex:bod-04",
+        "lex:bod-05",
+        "lex:bod-06",
+        "lex:bod-07",
+        "lex:bod-08",
+        "lex:bod-09"
+      ],
+      "status": "available",
+      "source": "generate"
     },
     {
-      "id": "a1-weather", "unitId": "a1-u3", "order": 14,
+      "id": "a1-weather",
+      "unitId": "a1-u3",
+      "order": 14,
       "title": "Weather & Nature",
       "blurb": "Hot, cold, warm, rain, wind, sky, season — and the word for \"weather\".",
-      "level": "A1", "skills": ["vocabulary"],
-      "objectives": ["lex:wea-01","lex:wea-02","lex:wea-03","lex:wea-04","lex:wea-05","lex:wea-06","lex:wea-07","lex:wea-08"],
-      "status": "available", "source": "generate"
+      "level": "A1",
+      "skills": [
+        "vocabulary"
+      ],
+      "objectives": [
+        "lex:wea-01",
+        "lex:wea-02",
+        "lex:wea-03",
+        "lex:wea-04",
+        "lex:wea-05",
+        "lex:wea-06",
+        "lex:wea-07",
+        "lex:wea-08"
+      ],
+      "status": "available",
+      "source": "generate"
     },
     {
-      "id": "a1-question-words", "unitId": "a1-u3", "order": 15,
+      "id": "a1-question-words",
+      "unitId": "a1-u3",
+      "order": 15,
       "title": "Asking Questions",
       "blurb": "The seven question words — مَنْ / مَا / أَيْنَ / مَتَى / لِمَاذَا / كَيْفَ / كَمْ — for asking who, what, where, when, why, how, and how many.",
-      "level": "A1", "skills": ["vocabulary", "grammar"],
-      "objectives": ["lex:prt-18","lex:prt-19","lex:prt-20","lex:prt-21","lex:prt-22","lex:prt-23","lex:prt-24"],
-      "status": "available", "source": "generate"
+      "level": "A1",
+      "skills": [
+        "vocabulary",
+        "grammar"
+      ],
+      "objectives": [
+        "lex:prt-18",
+        "lex:prt-19",
+        "lex:prt-20",
+        "lex:prt-21",
+        "lex:prt-22",
+        "lex:prt-23",
+        "lex:prt-24"
+      ],
+      "status": "available",
+      "source": "generate"
     },
     {
-      "id": "a1-connectors", "unitId": "a1-u3", "order": 16,
+      "id": "a1-connectors",
+      "unitId": "a1-u3",
+      "order": 16,
       "title": "Joining Words & Subject Pronouns",
       "blurb": "The joining words وَ / أَوْ / لَكِنْ / لِأَنَّ (and, or, but, because), the subject pronouns أَنَا / أَنْتَ / أَنْتِ / نَحْنُ (I, you m., you f., we) plus ذَلِكَ (that), and the adjectives good / bad / fine.",
-      "level": "A1", "skills": ["vocabulary", "grammar"],
-      "objectives": ["lex:prt-14","lex:prt-15","lex:prt-16","lex:prt-17","lex:pro-08","lex:pro-09","lex:pro-10","lex:pro-11","lex:pro-07","lex:adj-14","lex:adj-15","lex:exp-11"],
-      "status": "available", "source": "generate"
+      "level": "A1",
+      "skills": [
+        "vocabulary",
+        "grammar"
+      ],
+      "objectives": [
+        "lex:prt-14",
+        "lex:prt-15",
+        "lex:prt-16",
+        "lex:prt-17",
+        "lex:pro-08",
+        "lex:pro-09",
+        "lex:pro-10",
+        "lex:pro-11",
+        "lex:pro-07",
+        "lex:adj-14",
+        "lex:adj-15",
+        "lex:exp-11"
+      ],
+      "status": "available",
+      "source": "generate"
     },
     {
-      "id": "a1-writing-dictation", "unitId": "a1-u3", "order": 17,
+      "id": "a1-writing-dictation",
+      "unitId": "a1-u3",
+      "order": 17,
       "title": "Spelling From Dictation",
       "blurb": "Hear a word, then build it from letter tiles with only the sound to go on — ten A1 words across family, food, and home.",
-      "level": "A1", "skills": ["writing", "listening"],
-      "objectives": ["lex:peo-14","lex:peo-19","lex:peo-21","lex:foo-16","lex:foo-17","lex:foo-19","lex:foo-20","lex:foo-27","lex:hom-13","lex:hom-16"],
-      "status": "available", "source": "steps:a1-writing-dictation"
+      "level": "A1",
+      "skills": [
+        "writing",
+        "listening"
+      ],
+      "objectives": [
+        "lex:peo-14",
+        "lex:peo-19",
+        "lex:peo-21",
+        "lex:foo-16",
+        "lex:foo-17",
+        "lex:foo-19",
+        "lex:foo-20",
+        "lex:foo-27",
+        "lex:hom-13",
+        "lex:hom-16"
+      ],
+      "status": "available",
+      "source": "steps:a1-writing-dictation"
     },
     {
-      "id": "a1-places", "unitId": "a1-u4", "order": 1,
+      "id": "a1-places",
+      "unitId": "a1-u4",
+      "order": 1,
       "title": "Around Town",
       "blurb": "Country, shop, bank, station, park — and here / there / near / far.",
-      "level": "A1", "skills": ["vocabulary"],
-      "objectives": ["lex:pla-12","lex:pla-13","lex:pla-14","lex:pla-15","lex:pla-16","lex:pla-17","lex:pla-18","lex:pla-19","lex:pla-20"],
-      "status": "available", "source": "generate"
+      "level": "A1",
+      "skills": [
+        "vocabulary"
+      ],
+      "objectives": [
+        "lex:pla-12",
+        "lex:pla-13",
+        "lex:pla-14",
+        "lex:pla-15",
+        "lex:pla-16",
+        "lex:pla-17",
+        "lex:pla-18",
+        "lex:pla-19",
+        "lex:pla-20"
+      ],
+      "status": "available",
+      "source": "generate"
     },
     {
-      "id": "a1-directions", "unitId": "a1-u4", "order": 2,
+      "id": "a1-directions",
+      "unitId": "a1-u4",
+      "order": 2,
       "title": "Asking the Way",
       "blurb": "Right, left, straight ahead, above — and the position words under / in front of / behind / next to / between / inside / outside.",
-      "level": "A1", "skills": ["vocabulary", "grammar"],
-      "objectives": ["lex:dir-01","lex:dir-02","lex:dir-03","lex:dir-04","lex:prt-07","lex:prt-08","lex:prt-09","lex:prt-10","lex:prt-11","lex:prt-12","lex:prt-13"],
-      "status": "available", "source": "generate"
+      "level": "A1",
+      "skills": [
+        "vocabulary",
+        "grammar"
+      ],
+      "objectives": [
+        "lex:dir-01",
+        "lex:dir-02",
+        "lex:dir-03",
+        "lex:dir-04",
+        "lex:prt-07",
+        "lex:prt-08",
+        "lex:prt-09",
+        "lex:prt-10",
+        "lex:prt-11",
+        "lex:prt-12",
+        "lex:prt-13"
+      ],
+      "status": "available",
+      "source": "generate"
     },
     {
-      "id": "a1-travel", "unitId": "a1-u4", "order": 3,
+      "id": "a1-travel",
+      "unitId": "a1-u4",
+      "order": 3,
       "title": "Getting Around",
       "blurb": "Bus, train, plane, taxi, ticket, trip — and to travel / arrive / return.",
-      "level": "A1", "skills": ["vocabulary"],
-      "objectives": ["lex:trv-01","lex:trv-02","lex:trv-03","lex:trv-04","lex:trv-05","lex:trv-06","lex:ver-26","lex:ver-27","lex:ver-28"],
-      "status": "available", "source": "generate"
+      "level": "A1",
+      "skills": [
+        "vocabulary"
+      ],
+      "objectives": [
+        "lex:trv-01",
+        "lex:trv-02",
+        "lex:trv-03",
+        "lex:trv-04",
+        "lex:trv-05",
+        "lex:trv-06",
+        "lex:ver-26",
+        "lex:ver-27",
+        "lex:ver-28"
+      ],
+      "status": "available",
+      "source": "generate"
     },
     {
-      "id": "a1-shopping", "unitId": "a1-u4", "order": 4,
+      "id": "a1-shopping",
+      "unitId": "a1-u4",
+      "order": 4,
       "title": "Shopping & Money",
       "blurb": "Price, cheap, expensive, how much — a little / a lot — and to buy / sell / pay.",
-      "level": "A1", "skills": ["vocabulary"],
-      "objectives": ["lex:shp-01","lex:shp-02","lex:shp-03","lex:shp-04","lex:shp-05","lex:shp-06","lex:ver-23","lex:ver-24","lex:ver-25"],
-      "status": "available", "source": "generate"
+      "level": "A1",
+      "skills": [
+        "vocabulary"
+      ],
+      "objectives": [
+        "lex:shp-01",
+        "lex:shp-02",
+        "lex:shp-03",
+        "lex:shp-04",
+        "lex:shp-05",
+        "lex:shp-06",
+        "lex:ver-23",
+        "lex:ver-24",
+        "lex:ver-25"
+      ],
+      "status": "available",
+      "source": "generate"
     },
     {
-      "id": "a1-listening-dialogues", "unitId": "a1-u4", "order": 5,
+      "id": "a1-listening-dialogues",
+      "unitId": "a1-u4",
+      "order": 5,
       "title": "Short Exchanges",
       "blurb": "Four 2–3-turn dialogues — a greeting, a name, \"who is this?\", asking the way — heard and read.",
-      "level": "A1", "skills": ["listening", "comprehension"],
-      "objectives": ["gr:nominal-sentence","gr:demonstratives","gr:attached-possessive","gr:core-prepositions","txt:read-dlg-greeting","txt:read-dlg-name","txt:read-dlg-who-is-this","txt:read-dlg-asking-way"],
-      "status": "available", "source": "steps:a1-listening-dialogues"
+      "level": "A1",
+      "skills": [
+        "listening",
+        "comprehension"
+      ],
+      "objectives": [
+        "gr:nominal-sentence",
+        "gr:demonstratives",
+        "gr:attached-possessive",
+        "gr:core-prepositions",
+        "txt:read-dlg-greeting",
+        "txt:read-dlg-name",
+        "txt:read-dlg-who-is-this",
+        "txt:read-dlg-asking-way"
+      ],
+      "status": "available",
+      "source": "steps:a1-listening-dialogues"
     },
     {
-      "id": "a1-numbers", "unitId": "a1-u5", "order": 1,
+      "id": "a1-numbers",
+      "unitId": "a1-u5",
+      "order": 1,
       "title": "Counting 1-10",
       "blurb": "Zero through ten, and why Arabic counting isn't just \"number + noun\" the way English is.",
-      "level": "A1", "skills": ["vocabulary", "grammar", "reading"],
-      "objectives": ["lex:num-00","lex:num-01","lex:num-02","lex:num-03","lex:num-04","lex:num-05","lex:num-06","lex:num-07","lex:num-08","lex:num-09","lex:num-10","gr:counted-noun-intro","txt:gram-count-one","txt:gram-count-two","txt:gram-count-three"],
-      "status": "available", "source": "steps:a1-numbers"
+      "level": "A1",
+      "skills": [
+        "vocabulary",
+        "grammar",
+        "reading"
+      ],
+      "objectives": [
+        "lex:num-00",
+        "lex:num-01",
+        "lex:num-02",
+        "lex:num-03",
+        "lex:num-04",
+        "lex:num-05",
+        "lex:num-06",
+        "lex:num-07",
+        "lex:num-08",
+        "lex:num-09",
+        "lex:num-10",
+        "gr:counted-noun-intro",
+        "txt:gram-count-one",
+        "txt:gram-count-two",
+        "txt:gram-count-three"
+      ],
+      "status": "available",
+      "source": "steps:a1-numbers"
     },
     {
-      "id": "a2-verbal-sentence", "unitId": "a2-u1", "order": 1,
+      "id": "a2-verbal-sentence",
+      "unitId": "a2-u1",
+      "order": 1,
       "title": "The Verbal Sentence: Past Tense & كَانَ",
       "blurb": "Verb-first word order, the full past-tense paradigm on a verb you already know, and كَانَ for putting a description in the past.",
-      "level": "A2", "skills": ["grammar", "reading"],
-      "objectives": ["gr:verbal-sentence","gr:kana","txt:gram-past-vso","txt:gram-past-1sg","txt:gram-past-2sg-f","txt:gram-kana-house","txt:gram-kana-fem","txt:gram-kana-1sg"],
-      "status": "available", "source": "steps:a2-verbal-sentence"
+      "level": "A2",
+      "skills": [
+        "grammar",
+        "reading"
+      ],
+      "objectives": [
+        "gr:verbal-sentence",
+        "gr:kana",
+        "txt:gram-past-vso",
+        "txt:gram-past-1sg",
+        "txt:gram-past-2sg-f",
+        "txt:gram-kana-house",
+        "txt:gram-kana-fem",
+        "txt:gram-kana-1sg"
+      ],
+      "status": "available",
+      "source": "steps:a2-verbal-sentence"
     },
     {
-      "id": "a2-writing-sentences", "unitId": "a2-u1", "order": 2,
+      "id": "a2-writing-sentences",
+      "unitId": "a2-u1",
+      "order": 2,
       "title": "Writing A2 Sentences",
       "blurb": "Building verb-first sentences, كَانَ, and iḍāfa phrases from word tiles — A2's own version of A1's sentence-building lesson.",
-      "level": "A2", "skills": ["writing", "grammar"],
-      "objectives": ["gr:verbal-sentence", "gr:kana", "gr:idafa", "txt:gram-past-vso", "txt:gram-past-1sg", "txt:gram-kana-house", "txt:gram-kana-fem", "txt:gram-idafa-phrase", "txt:gram-idafa-sentence", "txt:gram-idafa-pen-student"],
-      "status": "available", "source": "steps:a2-writing-sentences"
+      "level": "A2",
+      "skills": [
+        "writing",
+        "grammar"
+      ],
+      "objectives": [
+        "gr:verbal-sentence",
+        "gr:kana",
+        "gr:idafa",
+        "txt:gram-past-vso",
+        "txt:gram-past-1sg",
+        "txt:gram-kana-house",
+        "txt:gram-kana-fem",
+        "txt:gram-idafa-phrase",
+        "txt:gram-idafa-sentence",
+        "txt:gram-idafa-pen-student"
+      ],
+      "status": "available",
+      "source": "steps:a2-writing-sentences"
     },
     {
-      "id": "a2-idafa", "unitId": "a2-u2", "order": 1,
+      "id": "a2-idafa",
+      "unitId": "a2-u2",
+      "order": 1,
       "title": "The Genitive Construct (Iḍāfa)",
       "blurb": "How two nouns side by side express possession, with no word for \"of\" needed.",
-      "level": "A2", "skills": ["grammar", "reading"],
-      "objectives": ["gr:idafa","txt:gram-idafa-phrase","txt:gram-idafa-sentence","txt:gram-idafa-pen-student"],
-      "status": "available", "source": "steps:a2-idafa"
+      "level": "A2",
+      "skills": [
+        "grammar",
+        "reading"
+      ],
+      "objectives": [
+        "gr:idafa",
+        "txt:gram-idafa-phrase",
+        "txt:gram-idafa-sentence",
+        "txt:gram-idafa-pen-student"
+      ],
+      "status": "available",
+      "source": "steps:a2-idafa"
     },
     {
-      "id": "a2-root-pattern", "unitId": "a2-u3", "order": 1,
+      "id": "a2-root-pattern",
+      "unitId": "a2-u3",
+      "order": 1,
       "title": "Root & Pattern — First Look",
       "blurb": "Eleven pairs of words you already know, revealed to share a root — كِتَاب/كَتَبَ/مَكْتَبَة and ten more.",
-      "level": "A2", "skills": ["grammar", "vocabulary", "reading"],
-      "objectives": ["lex:sch-06","lex:ver-04","lex:pla-10","lex:pla-06","lex:fc-14","lex:obj-06","lex:tim-05","lex:sch-01","lex:sch-09","lex:adj-06","lex:peo-07","lex:peo-08","lex:ver-08","lex:obj-07","lex:num-01","lex:tim-11","lex:num-02","lex:tim-12","lex:num-03","lex:tim-13","lex:num-04","lex:tim-14","lex:num-05","lex:tim-15","gr:root-pattern","txt:gram-root-katab","txt:gram-root-taam","txt:gram-root-jadid","txt:gram-root-khamis"],
-      "status": "available", "source": "steps:a2-root-pattern"
+      "level": "A2",
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading"
+      ],
+      "objectives": [
+        "lex:sch-06",
+        "lex:ver-04",
+        "lex:pla-10",
+        "lex:pla-06",
+        "lex:fc-14",
+        "lex:obj-06",
+        "lex:tim-05",
+        "lex:sch-01",
+        "lex:sch-09",
+        "lex:adj-06",
+        "lex:peo-07",
+        "lex:peo-08",
+        "lex:ver-08",
+        "lex:obj-07",
+        "lex:num-01",
+        "lex:tim-11",
+        "lex:num-02",
+        "lex:tim-12",
+        "lex:num-03",
+        "lex:tim-13",
+        "lex:num-04",
+        "lex:tim-14",
+        "lex:num-05",
+        "lex:tim-15",
+        "gr:root-pattern",
+        "txt:gram-root-katab",
+        "txt:gram-root-taam",
+        "txt:gram-root-jadid",
+        "txt:gram-root-khamis"
+      ],
+      "status": "available",
+      "source": "steps:a2-root-pattern"
     },
     {
-      "id": "a2-numbers-11-99", "unitId": "a2-u4", "order": 1,
+      "id": "a2-numbers-11-99",
+      "unitId": "a2-u4",
+      "order": 1,
       "title": "Counting 11-99",
       "blurb": "Eleven through a hundred, and the three different ways Arabic agrees a number with its noun.",
-      "level": "A2", "skills": ["vocabulary", "grammar", "reading"],
-      "objectives": ["lex:num-11","lex:num-12","lex:num-13","lex:num-14","lex:num-15","lex:num-16","lex:num-17","lex:num-18","lex:num-19","lex:num-20","lex:num-30","lex:num-40","lex:num-50","lex:num-60","lex:num-70","lex:num-80","lex:num-90","lex:num-100","gr:numbers-11-99","txt:gram-num-11m","txt:gram-num-11f","txt:gram-num-15m","txt:gram-num-15f","txt:gram-num-20","txt:gram-num-21","txt:gram-num-100"],
-      "status": "available", "source": "steps:a2-numbers-11-99"
+      "level": "A2",
+      "skills": [
+        "vocabulary",
+        "grammar",
+        "reading"
+      ],
+      "objectives": [
+        "lex:num-11",
+        "lex:num-12",
+        "lex:num-13",
+        "lex:num-14",
+        "lex:num-15",
+        "lex:num-16",
+        "lex:num-17",
+        "lex:num-18",
+        "lex:num-19",
+        "lex:num-20",
+        "lex:num-30",
+        "lex:num-40",
+        "lex:num-50",
+        "lex:num-60",
+        "lex:num-70",
+        "lex:num-80",
+        "lex:num-90",
+        "lex:num-100",
+        "gr:numbers-11-99",
+        "txt:gram-num-11m",
+        "txt:gram-num-11f",
+        "txt:gram-num-15m",
+        "txt:gram-num-15f",
+        "txt:gram-num-20",
+        "txt:gram-num-21",
+        "txt:gram-num-100"
+      ],
+      "status": "available",
+      "source": "steps:a2-numbers-11-99"
     },
     {
-      "id": "a2-telling-time", "unitId": "a2-u4", "order": 2,
+      "id": "a2-telling-time",
+      "unitId": "a2-u4",
+      "order": 2,
       "title": "Telling Time",
       "blurb": "Ordinal numbers agreeing with السَّاعَة, the one-o'clock exception, and وَ / إِلَّا for minutes past and to.",
-      "level": "A2", "skills": ["vocabulary", "grammar", "reading"],
-      "objectives": ["lex:num-01f","lex:tim-30","lex:tim-31","lex:tim-32","lex:tim-33","lex:tim-34","lex:tim-35","lex:tim-36","lex:tim-37","lex:tim-38","lex:tim-39","lex:tim-40","lex:prt-25","lex:num-half","lex:num-quarter","gr:telling-time","txt:gram-time-one","txt:gram-time-two","txt:gram-time-twelve","txt:gram-time-half","txt:gram-time-quarter-past","txt:gram-time-quarter-to"],
-      "status": "available", "source": "steps:a2-telling-time"
+      "level": "A2",
+      "skills": [
+        "vocabulary",
+        "grammar",
+        "reading"
+      ],
+      "objectives": [
+        "lex:num-01f",
+        "lex:tim-30",
+        "lex:tim-31",
+        "lex:tim-32",
+        "lex:tim-33",
+        "lex:tim-34",
+        "lex:tim-35",
+        "lex:tim-36",
+        "lex:tim-37",
+        "lex:tim-38",
+        "lex:tim-39",
+        "lex:tim-40",
+        "lex:prt-25",
+        "lex:num-half",
+        "lex:num-quarter",
+        "gr:telling-time",
+        "txt:gram-time-one",
+        "txt:gram-time-two",
+        "txt:gram-time-twelve",
+        "txt:gram-time-half",
+        "txt:gram-time-quarter-past",
+        "txt:gram-time-quarter-to"
+      ],
+      "status": "available",
+      "source": "steps:a2-telling-time"
     },
     {
-      "id": "a2-prices", "unitId": "a2-u4", "order": 3,
+      "id": "a2-prices",
+      "unitId": "a2-u4",
+      "order": 3,
       "title": "Prices",
       "blurb": "Four currencies, and the same 3-10 / 11-99 / مِائَة counting rules applied to money.",
-      "level": "A2", "skills": ["vocabulary", "reading"],
-      "objectives": ["lex:shp-07","lex:shp-08","lex:shp-09","lex:shp-10","txt:gram-price-ten","txt:gram-price-twenty","txt:gram-price-hundred"],
-      "status": "available", "source": "steps:a2-prices"
+      "level": "A2",
+      "skills": [
+        "vocabulary",
+        "reading"
+      ],
+      "objectives": [
+        "lex:shp-07",
+        "lex:shp-08",
+        "lex:shp-09",
+        "lex:shp-10",
+        "txt:gram-price-ten",
+        "txt:gram-price-twenty",
+        "txt:gram-price-hundred"
+      ],
+      "status": "available",
+      "source": "steps:a2-prices"
     },
     {
-      "id": "a2-dates", "unitId": "a2-u4", "order": 4,
+      "id": "a2-dates",
+      "unitId": "a2-u4",
+      "order": 4,
       "title": "Dates",
       "blurb": "The masculine ordinals (reusing telling time's own roots), the twelve months, and [ordinal] + مِنْ + [month].",
-      "level": "A2", "skills": ["vocabulary", "grammar", "reading"],
-      "objectives": ["lex:tim-41","lex:tim-42","lex:tim-43","lex:tim-44","lex:tim-45","lex:tim-46","lex:tim-47","lex:tim-48","lex:tim-49","lex:tim-50","lex:tim-51","lex:tim-52","lex:tim-53","lex:tim-54","lex:tim-55","lex:tim-56","lex:tim-57","lex:tim-58","lex:tim-59","lex:tim-60","lex:tim-61","lex:tim-62","lex:tim-63","lex:exp-12","gr:dates","txt:gram-date-first","txt:gram-date-third","txt:gram-date-tenth","txt:gram-date-sentence"],
-      "status": "available", "source": "steps:a2-dates"
+      "level": "A2",
+      "skills": [
+        "vocabulary",
+        "grammar",
+        "reading"
+      ],
+      "objectives": [
+        "lex:tim-41",
+        "lex:tim-42",
+        "lex:tim-43",
+        "lex:tim-44",
+        "lex:tim-45",
+        "lex:tim-46",
+        "lex:tim-47",
+        "lex:tim-48",
+        "lex:tim-49",
+        "lex:tim-50",
+        "lex:tim-51",
+        "lex:tim-52",
+        "lex:tim-53",
+        "lex:tim-54",
+        "lex:tim-55",
+        "lex:tim-56",
+        "lex:tim-57",
+        "lex:tim-58",
+        "lex:tim-59",
+        "lex:tim-60",
+        "lex:tim-61",
+        "lex:tim-62",
+        "lex:tim-63",
+        "lex:exp-12",
+        "gr:dates",
+        "txt:gram-date-first",
+        "txt:gram-date-third",
+        "txt:gram-date-tenth",
+        "txt:gram-date-sentence"
+      ],
+      "status": "available",
+      "source": "steps:a2-dates"
     },
     {
-      "id": "a2-writing-dictation", "unitId": "a2-u4", "order": 5,
+      "id": "a2-writing-dictation",
+      "unitId": "a2-u4",
+      "order": 5,
       "title": "Spelling A2 Words From Dictation",
       "blurb": "Eight A2 words — numbers, a month, and shopping vocabulary — spelled from sound alone.",
-      "level": "A2", "skills": ["writing", "listening"],
-      "objectives": ["lex:num-20", "lex:num-half", "lex:num-quarter", "lex:tim-62", "lex:sch-22", "lex:prt-27", "lex:shp-13", "lex:shp-14"],
-      "status": "available", "source": "steps:a2-writing-dictation"
+      "level": "A2",
+      "skills": [
+        "writing",
+        "listening"
+      ],
+      "objectives": [
+        "lex:num-20",
+        "lex:num-half",
+        "lex:num-quarter",
+        "lex:tim-62",
+        "lex:sch-22",
+        "lex:prt-27",
+        "lex:shp-13",
+        "lex:shp-14"
+      ],
+      "status": "available",
+      "source": "steps:a2-writing-dictation"
     },
     {
-      "id": "a2-reading-paragraphs", "unitId": "a2-u5", "order": 1,
+      "id": "a2-reading-paragraphs",
+      "unitId": "a2-u5",
+      "order": 1,
       "title": "Reading Short Paragraphs",
       "blurb": "Two short connected stories — a train trip and a sudden plane in the sky — putting eight new connectors to work.",
-      "level": "A2", "skills": ["reading", "comprehension"],
-      "objectives": ["gr:verbal-sentence", "gr:kana", "gr:core-prepositions", "txt:read-para-trip", "txt:read-para-garden"],
-      "status": "available", "source": "steps:a2-reading-paragraphs"
+      "level": "A2",
+      "skills": [
+        "reading",
+        "comprehension"
+      ],
+      "objectives": [
+        "gr:verbal-sentence",
+        "gr:kana",
+        "gr:core-prepositions",
+        "txt:read-para-trip",
+        "txt:read-para-garden"
+      ],
+      "status": "available",
+      "source": "steps:a2-reading-paragraphs"
     },
     {
-      "id": "a2-shopping-routine", "unitId": "a2-u6", "order": 1,
+      "id": "a2-shopping-routine",
+      "unitId": "a2-u6",
+      "order": 1,
       "title": "Shopping, Directions & Everyday Exchanges",
       "blurb": "Three real exchanges — paying for something, asking the way, and a small polite request — putting A1 and A2 vocabulary to work together.",
-      "level": "A2", "skills": ["listening", "speaking", "comprehension"],
-      "objectives": ["gr:idafa", "gr:core-prepositions", "gr:negation-a1", "txt:read-dlg-shopping", "txt:read-dlg-directions", "txt:read-dlg-permission"],
-      "status": "available", "source": "steps:a2-shopping-routine"
+      "level": "A2",
+      "skills": [
+        "listening",
+        "speaking",
+        "comprehension"
+      ],
+      "objectives": [
+        "gr:idafa",
+        "gr:core-prepositions",
+        "gr:negation-a1",
+        "txt:read-dlg-shopping",
+        "txt:read-dlg-directions",
+        "txt:read-dlg-permission"
+      ],
+      "status": "available",
+      "source": "steps:a2-shopping-routine"
     },
     {
-      "id": "b1-derived-forms-ii", "unitId": "b1-u1", "order": 1,
+      "id": "b1-derived-forms-ii",
+      "unitId": "b1-u1",
+      "order": 1,
       "title": "Derived Verb Forms — Form II (فَعَّلَ)",
       "blurb": "The doubled-middle-consonant pattern, already sitting in جَرَّبَ (\"to try\") — Form II's causative/intensive meaning tendency.",
-      "level": "B1", "skills": ["grammar", "vocabulary", "reading"],
-      "objectives": ["lex:ver-30", "gr:derived-verb-forms", "txt:gram-form2-jarraba"],
-      "status": "available", "source": "steps:b1-derived-forms-ii"
+      "level": "B1",
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading"
+      ],
+      "objectives": [
+        "lex:ver-30",
+        "gr:derived-verb-forms",
+        "txt:gram-form2-jarraba"
+      ],
+      "status": "available",
+      "source": "steps:b1-derived-forms-ii"
     },
     {
-      "id": "b1-derived-forms-iii", "unitId": "b1-u1", "order": 2,
+      "id": "b1-derived-forms-iii",
+      "unitId": "b1-u1",
+      "order": 2,
       "title": "Derived Verb Forms — Form III (فَاعَلَ)",
       "blurb": "The long-alif-after-the-first-letter pattern, already sitting in سَافَرَ (\"to travel\") — Form III's reciprocal/effort-toward-someone meaning tendency.",
-      "level": "B1", "skills": ["grammar", "vocabulary", "reading"],
-      "objectives": ["lex:ver-26", "gr:derived-verb-forms", "txt:gram-form3-safara"],
-      "status": "available", "source": "steps:b1-derived-forms-iii"
+      "level": "B1",
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading"
+      ],
+      "objectives": [
+        "lex:ver-26",
+        "gr:derived-verb-forms",
+        "txt:gram-form3-safara"
+      ],
+      "status": "available",
+      "source": "steps:b1-derived-forms-iii"
     },
     {
-      "id": "b1-derived-forms-iv", "unitId": "b1-u1", "order": 3,
+      "id": "b1-derived-forms-iv",
+      "unitId": "b1-u1",
+      "order": 3,
       "title": "Derived Verb Forms — Form IV (أَفْعَلَ)",
       "blurb": "The أَ-prefix pattern, already sitting in أَرَادَ (\"to want\") and أَغْلَقَ (\"to close\") — Form IV's causative meaning tendency.",
-      "level": "B1", "skills": ["grammar", "vocabulary", "reading"],
-      "objectives": ["lex:ver-16", "lex:ver-20", "gr:derived-verb-forms", "txt:gram-form4-aghlaqa"],
-      "status": "available", "source": "steps:b1-derived-forms-iv"
+      "level": "B1",
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading"
+      ],
+      "objectives": [
+        "lex:ver-16",
+        "lex:ver-20",
+        "gr:derived-verb-forms",
+        "txt:gram-form4-aghlaqa"
+      ],
+      "status": "available",
+      "source": "steps:b1-derived-forms-iv"
     },
     {
-      "id": "b1-derived-forms-v", "unitId": "b1-u1", "order": 4,
+      "id": "b1-derived-forms-v",
+      "unitId": "b1-u1",
+      "order": 4,
       "title": "Derived Verb Forms — Form V (تَفَعَّلَ)",
       "blurb": "تَ added to Form II's own pattern, already sitting in تَكَلَّمَ (\"to speak\") — Form V's reflexive meaning tendency.",
-      "level": "B1", "skills": ["grammar", "vocabulary", "reading"],
-      "objectives": ["lex:ver-06", "gr:derived-verb-forms", "txt:gram-form5-takallama"],
-      "status": "available", "source": "steps:b1-derived-forms-v"
+      "level": "B1",
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading"
+      ],
+      "objectives": [
+        "lex:ver-06",
+        "gr:derived-verb-forms",
+        "txt:gram-form5-takallama"
+      ],
+      "status": "available",
+      "source": "steps:b1-derived-forms-v"
     },
     {
-      "id": "b1-derived-forms-vi", "unitId": "b1-u1", "order": 5,
+      "id": "b1-derived-forms-vi",
+      "unitId": "b1-u1",
+      "order": 5,
       "title": "Derived Verb Forms — Form VI (تَفَاعَلَ)",
       "blurb": "تَ added to Form III's own pattern, in the new word تَكَاتَبَ (\"to correspond\") — Form VI's reciprocal meaning tendency.",
-      "level": "B1", "skills": ["grammar", "vocabulary", "reading"],
-      "objectives": ["lex:ver-33", "gr:derived-verb-forms", "txt:gram-form6-takataba"],
-      "status": "available", "source": "steps:b1-derived-forms-vi"
+      "level": "B1",
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading"
+      ],
+      "objectives": [
+        "lex:ver-33",
+        "gr:derived-verb-forms",
+        "txt:gram-form6-takataba"
+      ],
+      "status": "available",
+      "source": "steps:b1-derived-forms-vi"
     },
     {
-      "id": "b1-derived-forms-vii", "unitId": "b1-u1", "order": 6,
+      "id": "b1-derived-forms-vii",
+      "unitId": "b1-u1",
+      "order": 6,
       "title": "Derived Verb Forms — Form VII (اِنْفَعَلَ)",
       "blurb": "The اِنْ-prefix pattern, in the new pair اِنْفَتَحَ/اِنْغَلَقَ (\"to open/close by itself\") — Form VII never takes a human subject.",
-      "level": "B1", "skills": ["grammar", "vocabulary", "reading"],
-      "objectives": ["lex:ver-31", "lex:ver-32", "gr:derived-verb-forms", "txt:gram-form7-infataha"],
-      "status": "available", "source": "steps:b1-derived-forms-vii"
+      "level": "B1",
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading"
+      ],
+      "objectives": [
+        "lex:ver-31",
+        "lex:ver-32",
+        "gr:derived-verb-forms",
+        "txt:gram-form7-infataha"
+      ],
+      "status": "available",
+      "source": "steps:b1-derived-forms-vii"
     },
     {
-      "id": "b1-derived-forms-viii", "unitId": "b1-u1", "order": 7,
+      "id": "b1-derived-forms-viii",
+      "unitId": "b1-u1",
+      "order": 7,
       "title": "Derived Verb Forms — Form VIII (اِفْتَعَلَ)",
       "blurb": "A ت infixed after the first root letter, already sitting in اِشْتَرَى (\"to buy\") — Form VIII's middle-voice/reflexive meaning tendency.",
-      "level": "B1", "skills": ["grammar", "vocabulary", "reading"],
-      "objectives": ["lex:ver-23", "gr:derived-verb-forms", "txt:gram-form8-ishtara"],
-      "status": "available", "source": "steps:b1-derived-forms-viii"
+      "level": "B1",
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading"
+      ],
+      "objectives": [
+        "lex:ver-23",
+        "gr:derived-verb-forms",
+        "txt:gram-form8-ishtara"
+      ],
+      "status": "available",
+      "source": "steps:b1-derived-forms-viii"
     },
     {
-      "id": "b1-derived-forms-x", "unitId": "b1-u1", "order": 8,
+      "id": "b1-derived-forms-x",
+      "unitId": "b1-u1",
+      "order": 8,
       "title": "Derived Verb Forms — Form X (اِسْتَفْعَلَ)",
       "blurb": "The اِسْتَ-prefix pattern, already sitting in اِسْتَيْقَظَ (\"to wake up\") — Form X's \"seek/consider X\" meaning tendency, and a closing review across all eight forms taught so far.",
-      "level": "B1", "skills": ["grammar", "vocabulary", "reading"],
-      "objectives": ["lex:ver-13", "gr:derived-verb-forms", "txt:gram-form10-istayqaza"],
-      "status": "available", "source": "steps:b1-derived-forms-x"
+      "level": "B1",
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading"
+      ],
+      "objectives": [
+        "lex:ver-13",
+        "gr:derived-verb-forms",
+        "txt:gram-form10-istayqaza"
+      ],
+      "status": "available",
+      "source": "steps:b1-derived-forms-x"
     },
     {
-      "id": "b1-relative-clauses", "unitId": "b1-u2", "order": 1,
+      "id": "b1-relative-clauses",
+      "unitId": "b1-u2",
+      "order": 1,
       "title": "Relative Clauses — الَّذِي / الَّتِي",
       "blurb": "The relative pronouns الَّذِي and الَّتِي — required after a definite noun, dropped entirely after an indefinite one — in four worked sentences.",
-      "level": "B1", "skills": ["grammar", "reading"],
-      "objectives": ["lex:prt-30", "lex:prt-31", "gr:relative-clauses", "txt:gram-relclause-safara", "txt:gram-relclause-takallamat", "txt:gram-relclause-istayqaza", "txt:gram-relclause-indefinite"],
-      "status": "available", "source": "steps:b1-relative-clauses"
+      "level": "B1",
+      "skills": [
+        "grammar",
+        "reading"
+      ],
+      "objectives": [
+        "lex:prt-30",
+        "lex:prt-31",
+        "gr:relative-clauses",
+        "txt:gram-relclause-safara",
+        "txt:gram-relclause-takallamat",
+        "txt:gram-relclause-istayqaza",
+        "txt:gram-relclause-indefinite"
+      ],
+      "status": "available",
+      "source": "steps:b1-relative-clauses"
     },
     {
-      "id": "b1-inna-sisters", "unitId": "b1-u2", "order": 2,
+      "id": "b1-inna-sisters",
+      "unitId": "b1-u2",
+      "order": 2,
       "title": "Inna and Its Sisters — First Look (إِنَّ / أَنَّ)",
       "blurb": "كَانَ's mirror image: إِنَّ, أَنَّ, and the already-known لِأَنَّ all push a nominal sentence's subject to accusative, leaving the predicate nominative.",
-      "level": "B1", "skills": ["grammar", "reading"],
-      "objectives": ["lex:prt-32", "lex:prt-33", "lex:prt-17", "gr:inna-sisters", "txt:gram-inna-weather", "txt:gram-anna-heard-weather", "txt:gram-lianna-happy-warm"],
-      "status": "available", "source": "steps:b1-inna-sisters"
+      "level": "B1",
+      "skills": [
+        "grammar",
+        "reading"
+      ],
+      "objectives": [
+        "lex:prt-32",
+        "lex:prt-33",
+        "lex:prt-17",
+        "gr:inna-sisters",
+        "txt:gram-inna-weather",
+        "txt:gram-anna-heard-weather",
+        "txt:gram-lianna-happy-warm"
+      ],
+      "status": "available",
+      "source": "steps:b1-inna-sisters"
     },
     {
-      "id": "b1-inna-sisters-2", "unitId": "b1-u2", "order": 3,
+      "id": "b1-inna-sisters-2",
+      "unitId": "b1-u2",
+      "order": 3,
       "title": "Inna and Its Sisters — Completing the Set (لَيْتَ)",
       "blurb": "The last four sisters of إنّ: كَأَنَّ (\"as if\"), the heavy لٰكِنَّ (\"but,\" contrast the light لَكِنْ), لَعَلَّ (\"perhaps\"), and لَيْتَ (an irrealis wish) — all ten sisters now named.",
-      "level": "B1", "skills": ["grammar", "reading"],
-      "objectives": ["lex:prt-34", "lex:prt-35", "lex:prt-36", "lex:prt-37", "gr:inna-sisters", "txt:gram-kaanna-cold-weather", "txt:gram-lakinna-house-garden", "txt:gram-laalla-beautiful-tomorrow", "txt:gram-layta-warm-weather"],
-      "status": "available", "source": "steps:b1-inna-sisters-2"
+      "level": "B1",
+      "skills": [
+        "grammar",
+        "reading"
+      ],
+      "objectives": [
+        "lex:prt-34",
+        "lex:prt-35",
+        "lex:prt-36",
+        "lex:prt-37",
+        "gr:inna-sisters",
+        "txt:gram-kaanna-cold-weather",
+        "txt:gram-lakinna-house-garden",
+        "txt:gram-laalla-beautiful-tomorrow",
+        "txt:gram-layta-warm-weather"
+      ],
+      "status": "available",
+      "source": "steps:b1-inna-sisters-2"
     },
     {
-      "id": "b1-inna-attached-pronouns", "unitId": "b1-u2", "order": 4,
+      "id": "b1-inna-attached-pronouns",
+      "unitId": "b1-u2",
+      "order": 4,
       "title": "Inna and Its Sisters — Attached Pronouns (إِنَّهُ)",
       "blurb": "Any sister of إنّ can take an attached pronoun instead of a following noun — the same possessive suffixes you already know, now attaching to the particle itself.",
-      "level": "B1", "skills": ["grammar", "reading"],
-      "objectives": ["gr:inna-sisters", "gr:attached-possessive", "txt:gram-innahu-happy", "txt:gram-annaha-heard-happy", "txt:gram-liannahu-happy-home"],
-      "status": "available", "source": "steps:b1-inna-attached-pronouns"
+      "level": "B1",
+      "skills": [
+        "grammar",
+        "reading"
+      ],
+      "objectives": [
+        "gr:inna-sisters",
+        "gr:attached-possessive",
+        "txt:gram-innahu-happy",
+        "txt:gram-annaha-heard-happy",
+        "txt:gram-liannahu-happy-home"
+      ],
+      "status": "available",
+      "source": "steps:b1-inna-attached-pronouns"
     },
     {
-      "id": "b1-relative-clauses-2", "unitId": "b1-u2", "order": 5,
+      "id": "b1-relative-clauses-2",
+      "unitId": "b1-u2",
+      "order": 5,
       "title": "Relative Clauses — Completing the Set (الَّذِينَ)",
       "blurb": "Object-relative clauses need a resumptive pronoun on the verb; plural human antecedents need الَّذِينَ or اللَّاتِي instead of الَّذِي/الَّتِي.",
-      "level": "B1", "skills": ["grammar", "reading"],
-      "objectives": ["lex:prt-38", "lex:prt-39", "gr:relative-clauses", "gr:attached-possessive", "gr:noun-number", "txt:gram-relclause-obj-book", "txt:gram-relclause-obj-woman", "txt:gram-relclause-pl-teachers-m", "txt:gram-relclause-pl-teachers-f"],
-      "status": "available", "source": "steps:b1-relative-clauses-2"
+      "level": "B1",
+      "skills": [
+        "grammar",
+        "reading"
+      ],
+      "objectives": [
+        "lex:prt-38",
+        "lex:prt-39",
+        "gr:relative-clauses",
+        "gr:attached-possessive",
+        "gr:noun-number",
+        "txt:gram-relclause-obj-book",
+        "txt:gram-relclause-obj-woman",
+        "txt:gram-relclause-pl-teachers-m",
+        "txt:gram-relclause-pl-teachers-f"
+      ],
+      "status": "available",
+      "source": "steps:b1-relative-clauses-2"
     },
     {
-      "id": "b1-paragraphs", "unitId": "b1-u2", "order": 6,
+      "id": "b1-paragraphs",
+      "unitId": "b1-u2",
+      "order": 6,
       "title": "Joining Ideas into Paragraphs",
       "blurb": "One connected story putting the whole unit to work: a relative clause, كَانَ, three sisters of إنّ, and the connectors you already know from A2.",
-      "level": "B1", "skills": ["reading", "comprehension"],
-      "objectives": ["gr:relative-clauses", "gr:kana", "gr:inna-sisters", "txt:read-para-teacher-trip"],
-      "status": "available", "source": "steps:b1-paragraphs"
+      "level": "B1",
+      "skills": [
+        "reading",
+        "comprehension"
+      ],
+      "objectives": [
+        "gr:relative-clauses",
+        "gr:kana",
+        "gr:inna-sisters",
+        "txt:read-para-teacher-trip"
+      ],
+      "status": "available",
+      "source": "steps:b1-paragraphs"
     },
     {
-      "id": "b1-attached-possessive-plural", "unitId": "b1-u2", "order": 7,
+      "id": "b1-attached-possessive-plural",
+      "unitId": "b1-u2",
+      "order": 7,
       "title": "Attached Possessive Pronouns — Plural Forms (نَا / كُمْ / هُمْ)",
       "blurb": "Completing the possessive-suffix paradigm: ـنَا (our), ـكُمْ (your, plural), and ـهُمْ (their) — the same mechanic as ـِي/ـكَ/ـهُ, just for a group.",
-      "level": "B1", "skills": ["grammar", "reading"],
-      "objectives": ["gr:attached-possessive", "gr:noun-number", "txt:gram-poss-our-house", "txt:gram-poss-your-book-pl", "txt:gram-poss-their-school"],
-      "status": "available", "source": "steps:b1-attached-possessive-plural"
+      "level": "B1",
+      "skills": [
+        "grammar",
+        "reading"
+      ],
+      "objectives": [
+        "gr:attached-possessive",
+        "gr:noun-number",
+        "txt:gram-poss-our-house",
+        "txt:gram-poss-your-book-pl",
+        "txt:gram-poss-their-school"
+      ],
+      "status": "available",
+      "source": "steps:b1-attached-possessive-plural"
     },
     {
-      "id": "b1-role-recognition", "unitId": "b1-u7", "order": 1,
+      "id": "b1-role-recognition",
+      "unitId": "b1-u7",
+      "order": 1,
       "title": "Naming the Roles — مُبْتَدَأ / خَبَر",
       "blurb": "Five grammatical roles you've already been using correctly since A1/A2, finally named — on seven sentences you've already read.",
-      "level": "B1", "skills": ["grammar", "reading"],
-      "objectives": ["gr:nominal-sentence", "gr:verbal-sentence", "gr:idafa", "txt:gram-nominal-father", "txt:gram-nominal-mother", "txt:gram-past-vso", "txt:gram-past-1sg", "txt:gram-idafa-phrase", "txt:gram-idafa-sentence", "txt:gram-idafa-pen-student"],
-      "status": "available", "source": "steps:b1-role-recognition"
+      "level": "B1",
+      "skills": [
+        "grammar",
+        "reading"
+      ],
+      "objectives": [
+        "gr:nominal-sentence",
+        "gr:verbal-sentence",
+        "gr:idafa",
+        "txt:gram-nominal-father",
+        "txt:gram-nominal-mother",
+        "txt:gram-past-vso",
+        "txt:gram-past-1sg",
+        "txt:gram-idafa-phrase",
+        "txt:gram-idafa-sentence",
+        "txt:gram-idafa-pen-student"
+      ],
+      "status": "available",
+      "source": "steps:b1-role-recognition"
     },
     {
-      "id": "b2-case-system-first-look", "unitId": "b2-u1", "order": 1,
+      "id": "b2-case-system-first-look",
+      "unitId": "b2-u1",
+      "order": 1,
       "title": "The Case System — First Look (رَفْع / نَصْب / جَرّ)",
       "blurb": "The same seven sentences from role recognition, now naming each word's case too — role and case together, exactly what إِعْرَاب means.",
-      "level": "B2", "skills": ["grammar", "reading"],
-      "objectives": ["gr:case-system", "txt:gram-nominal-father", "txt:gram-nominal-mother", "txt:gram-past-vso", "txt:gram-past-1sg", "txt:gram-idafa-phrase", "txt:gram-idafa-sentence", "txt:gram-idafa-pen-student"],
-      "status": "available", "source": "steps:b2-case-system-first-look"
+      "level": "B2",
+      "skills": [
+        "grammar",
+        "reading"
+      ],
+      "objectives": [
+        "gr:case-system",
+        "txt:gram-nominal-father",
+        "txt:gram-nominal-mother",
+        "txt:gram-past-vso",
+        "txt:gram-past-1sg",
+        "txt:gram-idafa-phrase",
+        "txt:gram-idafa-sentence",
+        "txt:gram-idafa-pen-student"
+      ],
+      "status": "available",
+      "source": "steps:b2-case-system-first-look"
+    },
+    {
+      "id": "b2-case-system-second-look",
+      "unitId": "b2-u1",
+      "order": 2,
+      "title": "The Case System — Second Look (و / ا / ي)",
+      "blurb": "The five nouns and the sound plurals mark case with a long vowel instead of a short one — the irregular layer named, but not taught, in the first look.",
+      "level": "B2",
+      "skills": [
+        "grammar",
+        "reading"
+      ],
+      "objectives": [
+        "gr:case-system",
+        "txt:gram-case-five-nouns-raf",
+        "txt:gram-case-five-nouns-nasb",
+        "txt:gram-case-five-nouns-jarr",
+        "txt:gram-relclause-pl-teachers-m",
+        "txt:gram-relclause-pl-teachers-f",
+        "txt:gram-case-sound-mpl-nasb",
+        "txt:gram-case-sound-fpl-nasb"
+      ],
+      "status": "available",
+      "source": "steps:b2-case-system-second-look"
     }
   ]
 }

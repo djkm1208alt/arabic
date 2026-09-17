@@ -1,0 +1,141 @@
+{
+  "id": "b2-case-system-second-look",
+  "unitId": "b2-u1",
+  "curriculumLessonId": "b2-case-system-second-look",
+  "title": "The Case System — Second Look (و / ا / ي)",
+  "level": "B2",
+  "skills": ["grammar", "reading"],
+  "objectives": ["gr:case-system", "txt:gram-case-five-nouns-raf", "txt:gram-case-five-nouns-nasb", "txt:gram-case-five-nouns-jarr", "txt:gram-relclause-pl-teachers-m", "txt:gram-relclause-pl-teachers-f", "txt:gram-case-sound-mpl-nasb", "txt:gram-case-sound-fpl-nasb"],
+  "steps": [
+    {
+      "type": "explain",
+      "title": "The irregular layer, named last time — taught this time",
+      "body": [
+        "The first look at إِعْرَاب named two irregular layers without teaching them: the five nouns, and the sound plurals. Both swap a short-vowel ending for a longer one — this lesson shows exactly how.",
+        "الْأَسْمَاء الْخَمْسَة (\"the five nouns\") — أَب، أَخ، حَم، فَم، ذُو — use وَ for رَفْع, ا for نَصْب, and ي for جَرّ when they're the first term of an iḍāfa: أَخُو الطَّالِبِ (رَفْع), أَبَا الطَّالِبِ (نَصْب), أَخِي الطَّالِبِ (جَرّ). With an attached pronoun instead (أَخِي on its own means \"my brother\"), the three cases collapse to one identical-looking form — the long vowel only shows up clearly with a following NOUN, not a pronoun.",
+        "The sound masculine plural swaps ـُونَ (رَفْع) for ـِينَ in BOTH نَصْب and جَرّ — the two other cases share one marker. The sound feminine plural stays regular everywhere except نَصْب, where it unexpectedly borrows its own جَرّ ending (kasra) instead of the fatḥa a regular noun would take."
+      ],
+      "previewSymbols": ["أَخُو / أَبَا / أَخِي", "ـُونَ / ـِينَ", "ـَاتٌ / ـَاتٍ"]
+    },
+    {
+      "type": "reading-practice",
+      "title": "Seven sentences, two irregular layers",
+      "intro": "Read each sentence and notice the ending on the tagged word — a long vowel, not a short one. Tap 🔊 to hear any line.",
+      "fromObjectives": true
+    },
+    {
+      "type": "exercise",
+      "title": "The five nouns — رَفْع",
+      "exercise": {
+        "kind": "label", "skill": "grammar", "objectId": "txt:gram-case-five-nouns-raf", "objectIds": ["txt:gram-case-five-nouns-raf"],
+        "prompt": "What role AND case does the marked word have?",
+        "sentenceHtml": "<mark class=\"label-target\">أَخُو</mark> الطَّالِبِ مُعَلِّمٌ",
+        "options": [
+          { "key": "mubtada+raf", "ar": "مُبْتَدَأ — مَرْفُوع", "en": "subject (mubtadaʾ), nominative (rafʿ)" },
+          { "key": "khabar+raf", "ar": "خَبَر — مَرْفُوع", "en": "predicate (khabar), nominative (rafʿ)" },
+          { "key": "mubtada+nasb", "ar": "مُبْتَدَأ — مَنْصُوب", "en": "subject (mubtadaʾ), accusative (naṣb)" },
+          { "key": "fail+raf", "ar": "فَاعِل — مَرْفُوع", "en": "doer (fāʿil), nominative (rafʿ)" }
+        ],
+        "answer": "mubtada+raf"
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "The five nouns — نَصْب",
+      "exercise": {
+        "kind": "label", "skill": "grammar", "objectId": "txt:gram-case-five-nouns-nasb", "objectIds": ["txt:gram-case-five-nouns-nasb"],
+        "prompt": "What role AND case does the marked word have?",
+        "sentenceHtml": "رَأَيْتُ <mark class=\"label-target\">أَبَا</mark> الطَّالِبِ",
+        "options": [
+          { "key": "mafulbih+nasb", "ar": "مَفْعُول بِهِ — مَنْصُوب", "en": "object (mafʿūl bih), accusative (naṣb)" },
+          { "key": "mafulbih+raf", "ar": "مَفْعُول بِهِ — مَرْفُوع", "en": "object (mafʿūl bih), nominative (rafʿ)" },
+          { "key": "fail+raf", "ar": "فَاعِل — مَرْفُوع", "en": "doer (fāʿil), nominative (rafʿ)" },
+          { "key": "mudafilayhi+jarr", "ar": "مُضَاف إِلَيْهِ — مَجْرُور", "en": "possessor (muḍāf ilayhi), genitive (jarr)" }
+        ],
+        "answer": "mafulbih+nasb"
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Sound masculine plural — رَفْع",
+      "exercise": {
+        "kind": "label", "skill": "grammar", "objectId": "txt:gram-relclause-pl-teachers-m", "objectIds": ["txt:gram-relclause-pl-teachers-m"],
+        "prompt": "What role AND case does the marked word have?",
+        "sentenceHtml": "<mark class=\"label-target\">الْمُعَلِّمُونَ</mark> الَّذِينَ فِي الْمَدْرَسَةِ مَشْغُولُونَ",
+        "options": [
+          { "key": "mubtada+raf", "ar": "مُبْتَدَأ — مَرْفُوع", "en": "subject (mubtadaʾ), nominative (rafʿ)" },
+          { "key": "khabar+raf", "ar": "خَبَر — مَرْفُوع", "en": "predicate (khabar), nominative (rafʿ)" },
+          { "key": "mubtada+nasb", "ar": "مُبْتَدَأ — مَنْصُوب", "en": "subject (mubtadaʾ), accusative (naṣb)" },
+          { "key": "fail+raf", "ar": "فَاعِل — مَرْفُوع", "en": "doer (fāʿil), nominative (rafʿ)" }
+        ],
+        "answer": "mubtada+raf"
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Sound masculine plural — نَصْب",
+      "exercise": {
+        "kind": "label", "skill": "grammar", "objectId": "txt:gram-case-sound-mpl-nasb", "objectIds": ["txt:gram-case-sound-mpl-nasb"],
+        "prompt": "What role AND case does the marked word have?",
+        "sentenceHtml": "رَأَيْتُ <mark class=\"label-target\">الْمُعَلِّمِينَ</mark> فِي الْمَدْرَسَةِ",
+        "options": [
+          { "key": "mafulbih+nasb", "ar": "مَفْعُول بِهِ — مَنْصُوب", "en": "object (mafʿūl bih), accusative (naṣb)" },
+          { "key": "mafulbih+raf", "ar": "مَفْعُول بِهِ — مَرْفُوع", "en": "object (mafʿūl bih), nominative (rafʿ)" },
+          { "key": "mubtada+raf", "ar": "مُبْتَدَأ — مَرْفُوع", "en": "subject (mubtadaʾ), nominative (rafʿ)" },
+          { "key": "mudafilayhi+jarr", "ar": "مُضَاف إِلَيْهِ — مَجْرُور", "en": "possessor (muḍāf ilayhi), genitive (jarr)" }
+        ],
+        "answer": "mafulbih+nasb"
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Sound feminine plural — رَفْع",
+      "exercise": {
+        "kind": "label", "skill": "grammar", "objectId": "txt:gram-relclause-pl-teachers-f", "objectIds": ["txt:gram-relclause-pl-teachers-f"],
+        "prompt": "What role AND case does the marked word have?",
+        "sentenceHtml": "<mark class=\"label-target\">الْمُعَلِّمَاتُ</mark> اللَّاتِي فِي الْمَدْرَسَةِ مَشْغُولَاتٌ",
+        "options": [
+          { "key": "mubtada+raf", "ar": "مُبْتَدَأ — مَرْفُوع", "en": "subject (mubtadaʾ), nominative (rafʿ)" },
+          { "key": "khabar+raf", "ar": "خَبَر — مَرْفُوع", "en": "predicate (khabar), nominative (rafʿ)" },
+          { "key": "mubtada+nasb", "ar": "مُبْتَدَأ — مَنْصُوب", "en": "subject (mubtadaʾ), accusative (naṣb)" },
+          { "key": "fail+raf", "ar": "فَاعِل — مَرْفُوع", "en": "doer (fāʿil), nominative (rafʿ)" }
+        ],
+        "answer": "mubtada+raf"
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Sound feminine plural — نَصْب",
+      "exercise": {
+        "kind": "label", "skill": "grammar", "objectId": "txt:gram-case-sound-fpl-nasb", "objectIds": ["txt:gram-case-sound-fpl-nasb"],
+        "prompt": "What role AND case does the marked word have?",
+        "sentenceHtml": "رَأَيْتُ <mark class=\"label-target\">الْمُعَلِّمَاتِ</mark> فِي الْمَدْرَسَةِ",
+        "options": [
+          { "key": "mafulbih+nasb", "ar": "مَفْعُول بِهِ — مَنْصُوب", "en": "object (mafʿūl bih), accusative (naṣb)" },
+          { "key": "mafulbih+raf", "ar": "مَفْعُول بِهِ — مَرْفُوع", "en": "object (mafʿūl bih), nominative (rafʿ)" },
+          { "key": "mudafilayhi+jarr", "ar": "مُضَاف إِلَيْهِ — مَجْرُور", "en": "possessor (muḍāf ilayhi), genitive (jarr)" },
+          { "key": "mubtada+raf", "ar": "مُبْتَدَأ — مَرْفُوع", "en": "subject (mubtadaʾ), nominative (rafʿ)" }
+        ],
+        "answer": "mafulbih+nasb"
+      }
+    },
+    {
+      "type": "practice-choice",
+      "title": "The five nouns — جَرّ, plus a predicate",
+      "arabicPrompt": "كِتَابُ أَخِي الطَّالِبِ جَدِيدٌ",
+      "prompt": "أَخِي and جَدِيدٌ each have a role and a case here. Which pair is correct?",
+      "options": [
+        { "label": "أَخِي = مُضَاف إِلَيْهِ (جَرّ, marked by ي), جَدِيدٌ = خَبَر (رَفْع)", "correct": true },
+        { "label": "أَخِي = مُضَاف إِلَيْهِ (نَصْب, marked by ي), جَدِيدٌ = خَبَر (رَفْع)", "correct": false },
+        { "label": "أَخِي = فَاعِل (رَفْع), جَدِيدٌ = مَفْعُول بِهِ (نَصْب)", "correct": false }
+      ],
+      "explanation": "أَخِي is the possessor of كِتَابُ, so its role is مُضَاف إِلَيْهِ — always جَرّ. As one of the five nouns, its جَرّ marker is the long vowel ي, not a short kasra. جَدِيدٌ, describing the whole phrase كِتَابُ أَخِي الطَّالِبِ, is the predicate — the خَبَر — which is رَفْع."
+    },
+    {
+      "type": "complete",
+      "title": "The irregular layer, no longer a mystery",
+      "message": "أَخُو / أَبَا / أَخِي and ـُونَ / ـِينَ / ـَاتٍ — the five nouns and the sound plurals mark case with a long vowel instead of a short one, but the same three cases and the same five roles apply. Diptotes are the one irregular layer still ahead.",
+      "finishLabel": "Finish"
+    }
+  ]
+}
