@@ -593,5 +593,72 @@
       "gr:present-tense",
       "gr:negation-a1"
     ]
+  },
+  {
+    "id": "gr:hal",
+    "kind": "grammar",
+    "name": "The circumstantial accusative (الْحَال)",
+    "level": "B2",
+    "rule": "الْحَال describes the STATE or manner of a noun (usually the subject) at the exact moment the verb happens — always accusative (نَصْب), always indefinite. رَجَعَ الرَّجُلُ سَعِيدًا (\"the man returned happy\") — سَعِيدًا describes الرَّجُلُ's state WHILE returning, not a separate fact about him; compare a plain predicate (الرَّجُلُ سَعِيدٌ, gr:nominal-sentence, رَفْع) which just states a fact with no verb at all. جَاءَ الطَّالِبُ حَزِينًا (\"the student came sad\") follows the same pattern with a different adjective. الْحَال is a NEW role, alongside the five roles gr:case-system already named (مبتدأ/خبر/فاعل/مفعول به/مضاف إليه) — a sixth accusative-taking category, structurally similar to مَفْعُول بِهِ but answering \"in what state?\" instead of \"what/whom?\".",
+    "examples": [
+      "txt:gram-hal-rajaa-saeed",
+      "txt:gram-hal-jaa-hazin"
+    ],
+    "commonErrors": [
+      "Confusing حَال (accusative, describes a temporary state during the verb's action) with a plain predicate/adjective (nominative, states a general fact) — the same word, سَعِيدًا vs. سَعِيدٌ, changes meaning entirely with its case.",
+      "Making الْحَال definite — a definite noun in this position reads as a description of the subject itself (an apposition), not a state at the moment of the verb."
+    ],
+    "skills": [
+      "grammar",
+      "reading"
+    ],
+    "prereqs": [
+      "gr:case-system",
+      "gr:verbal-sentence"
+    ]
+  },
+  {
+    "id": "gr:tamyiz",
+    "kind": "grammar",
+    "name": "Specification (التَّمْيِيز)",
+    "level": "B2",
+    "rule": "التَّمْيِيز clears up an otherwise-ambiguous quantity, weight, or measure by naming exactly what's being counted — always accusative, always indefinite. You have already been producing it correctly since gr:numbers-11-99: عِنْدِي عِشْرُونَ كِتَابًا (\"I have twenty books\") — عِشْرُونَ alone doesn't say twenty WHAT; كِتَابًا (the تَمْيِيز) specifies it, and takes نَصْب. This is not new grammar — the same counted-noun accusative rule numbers already taught, now named as its own role, another of the accusative-taking categories alongside الْحَال and gr:case-system's original five.",
+    "examples": [
+      "txt:gram-num-20"
+    ],
+    "commonErrors": [
+      "Treating تَمْيِيز as new grammar — every example here already appeared, correctly, back at gr:numbers-11-99; this only names the role that ending was already playing.",
+      "Confusing تَمْيِيز (clarifies a QUANTITY — \"how much of what?\") with الْحَال (describes a STATE — \"in what condition?\") — both are indefinite accusative nouns, but they answer different questions."
+    ],
+    "skills": [
+      "grammar",
+      "reading"
+    ],
+    "prereqs": [
+      "gr:numbers-11-99",
+      "gr:hal"
+    ]
+  },
+  {
+    "id": "gr:la-nafiya-jins",
+    "kind": "grammar",
+    "name": "لَا that negates an entire category (لَا النَّافِيَة لِلْجِنْس)",
+    "level": "B2",
+    "rule": "لَا النَّافِيَة لِلْجِنْس (\"لَا that negates the whole genus\") denies the existence of something completely — stronger than gr:negation-a1's لَيْسَ, which just negates one sentence. لَا مَاءَ فِي الْحَقِيبَةِ (\"there is absolutely no water in the bag\") — you have already produced this correctly since A1, without its name. One crucial exception: when its noun is a single word like مَاءَ (not the first term of an إِضَافَة), that noun is technically مَبْنِي (grammatically \"built\") rather than truly مُعْرَب (declined/case-marked) — even though it is WRITTEN with a fatḥa that looks exactly like a normal accusative ending. The full مُعْرَب-vs-مَبْنِي distinction (gr:case-system's endings are all مُعْرَب) is its own future topic; for now, just recognize that this لَا's noun always looks accusative, whether or not it is technically case-marked.",
+    "examples": [
+      "txt:gram-neg-no-water"
+    ],
+    "commonErrors": [
+      "Treating مَاءَ here as identical in grammatical status to a true منصوب noun like الْحَال or التَّمْيِيز — it looks the same on the surface (fatḥa, no tanwīn) but is technically مَبْنِي with a single-word اسم لا, not مُعْرَب. The distinction itself is deferred to a future topic.",
+      "Confusing this لَا with the plain لَا that simply means \"no\" in casual speech, or with لَا النَّاهِيَة (the prohibition particle before a VERB, one of gr:mudari-mood's own deferred جَزْم triggers) — three different, unrelated uses of the same word لَا."
+    ],
+    "skills": [
+      "grammar",
+      "reading"
+    ],
+    "prereqs": [
+      "gr:negation-a1",
+      "gr:case-system"
+    ]
   }
 ]

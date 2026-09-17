@@ -5416,5 +5416,83 @@
     "prereqs": [
       "gr:mudari-mood"
     ]
+  },
+  {
+    "id": "txt:gram-hal-rajaa-saeed",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "hal",
+    "vowelled": "رَجَعَ الرَّجُلُ سَعِيدًا",
+    "translit": "rajaʿa ar-rajulu saʿīdan",
+    "en": "The man returned happy.",
+    "words": [
+      {
+        "surface": "رَجَعَ",
+        "translit": "rajaʿa",
+        "gloss": "returned"
+      },
+      {
+        "surface": "الرَّجُلُ",
+        "translit": "ar-rajulu",
+        "gloss": "the man (فَاعِل — doer, رَفْع)",
+        "gender": "masculine"
+      },
+      {
+        "surface": "سَعِيدًا",
+        "translit": "saʿīdan",
+        "gloss": "happy (الْحَال — describes the man's state WHILE returning, accusative and indefinite)",
+        "gender": "masculine"
+      }
+    ],
+    "audio": "رَجَعَ الرَّجُلُ سَعِيدًا",
+    "level": "B2",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:hal"
+    ]
+  },
+  {
+    "id": "txt:gram-hal-jaa-hazin",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "hal",
+    "vowelled": "جَاءَ الطَّالِبُ حَزِينًا",
+    "translit": "jāʾa aṭ-ṭālibu ḥazīnan",
+    "en": "The student came sad.",
+    "words": [
+      {
+        "surface": "جَاءَ",
+        "translit": "jāʾa",
+        "gloss": "came"
+      },
+      {
+        "surface": "الطَّالِبُ",
+        "translit": "aṭ-ṭālibu",
+        "gloss": "the student",
+        "gender": "masculine"
+      },
+      {
+        "surface": "حَزِينًا",
+        "translit": "ḥazīnan",
+        "gloss": "sad (الْحَال — describes the student's state WHILE coming, accusative and indefinite)",
+        "gender": "masculine"
+      }
+    ],
+    "audio": "جَاءَ الطَّالِبُ حَزِينًا",
+    "level": "B2",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:hal"
+    ]
   }
 ]

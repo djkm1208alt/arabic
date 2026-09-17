@@ -369,7 +369,7 @@
       "level": "B2",
       "order": 1,
       "title": "The Full Case System (Iʿrāb)",
-      "blurb": "رَفْع، نَصْب، جَرّ — naming the case endings you've been producing correctly since A2, now including the five nouns, the sound plurals, and diptotes — the full regular-and-irregular case system on nouns. Verb mood (case marking on the present tense) is still ahead.",
+      "blurb": "رَفْع، نَصْب، جَرّ — the full case system on nouns (regular, five nouns, sound plurals, diptotes), plus two new accusative-taking roles beyond the original five: الْحَال (state) and التَّمْيِيز (specification), and لَا النَّافِيَة لِلْجِنْس (negating a whole category). Verb mood is covered separately in b2-u2.",
       "skills": [
         "grammar"
       ],
@@ -2541,6 +2541,29 @@
       ],
       "status": "available",
       "source": "steps:b2-mudari-mood-first-look"
+    },
+    {
+      "id": "b2-hal-tamyiz-first-look",
+      "unitId": "b2-u1",
+      "order": 4,
+      "title": "Two More Accusative Roles (الْحَال، التَّمْيِيز)",
+      "blurb": "Beyond the five roles named in b1-u7: الْحَال describes a state, التَّمْيِيز specifies a quantity, and لَا النَّافِيَة لِلْجِنْس negates a whole category — all three already used correctly, now named.",
+      "level": "B2",
+      "skills": [
+        "grammar",
+        "reading"
+      ],
+      "objectives": [
+        "gr:hal",
+        "gr:tamyiz",
+        "gr:la-nafiya-jins",
+        "txt:gram-hal-rajaa-saeed",
+        "txt:gram-hal-jaa-hazin",
+        "txt:gram-num-20",
+        "txt:gram-neg-no-water"
+      ],
+      "status": "available",
+      "source": "steps:b2-hal-tamyiz-first-look"
     }
   ]
 }

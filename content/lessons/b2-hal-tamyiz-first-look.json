@@ -1,0 +1,82 @@
+{
+  "id": "b2-hal-tamyiz-first-look",
+  "unitId": "b2-u1",
+  "curriculumLessonId": "b2-hal-tamyiz-first-look",
+  "title": "Two More Accusative Roles (الْحَال، التَّمْيِيز)",
+  "level": "B2",
+  "skills": ["grammar", "reading"],
+  "objectives": ["gr:hal", "gr:tamyiz", "gr:la-nafiya-jins", "txt:gram-hal-rajaa-saeed", "txt:gram-hal-jaa-hazin", "txt:gram-num-20", "txt:gram-neg-no-water"],
+  "steps": [
+    {
+      "type": "explain",
+      "title": "Beyond the five roles — two more, plus a look-alike",
+      "body": [
+        "b1-u7 named five roles that take رَفْع or جَرّ or نَصْب: مُبْتَدَأ، خَبَر، فَاعِل، مَفْعُول بِهِ، مُضَاف إِلَيْهِ. Two more accusative-taking roles exist, and you've already been producing both correctly.",
+        "الْحَال describes a STATE at the exact moment of the verb — always accusative, always indefinite: رَجَعَ الرَّجُلُ سَعِيدًا (\"the man returned happy\") describes his state WHILE returning. Compare الرَّجُلُ سَعِيدٌ (a plain predicate, رَفْع, just a fact) — same word, different case, different meaning.",
+        "التَّمْيِيز specifies an ambiguous quantity — also always accusative, always indefinite: عِنْدِي عِشْرُونَ كِتَابًا (\"I have twenty books\") — عِشْرُونَ alone doesn't say twenty of what; كِتَابًا specifies it. This is the exact ending gr:numbers-11-99 already taught, just named now.",
+        "One look-alike, with an honest caveat: لَا النَّافِيَة لِلْجِنْس (\"لَا that negates a whole category\") also produces a word that LOOKS accusative — لَا مَاءَ فِي الْحَقِيبَةِ (\"there is absolutely no water in the bag\"). But a single-word اسم لا like مَاءَ is technically مَبْنِي (built), not truly مُعْرَب (declined) — it just happens to be written the same way. The full مُعْرَب/مَبْنِي distinction is its own future topic."
+      ],
+      "previewSymbols": ["الْحَال", "التَّمْيِيز", "لَا النَّافِيَة لِلْجِنْس"]
+    },
+    {
+      "type": "reading-practice",
+      "title": "Four sentences, two roles, one look-alike",
+      "intro": "Read each sentence and notice which accusative-looking word is doing what job. Tap 🔊 to hear any line.",
+      "fromObjectives": true
+    },
+    {
+      "type": "practice-choice",
+      "title": "الْحَال — a state, not a fact",
+      "arabicPrompt": "رَجَعَ الرَّجُلُ سَعِيدًا",
+      "prompt": "What role does سَعِيدًا play, and why is it accusative?",
+      "options": [
+        { "label": "الْحَال — describes the man's state while returning", "correct": true },
+        { "label": "خَبَر — states a fact about the man", "correct": false },
+        { "label": "مَفْعُول بِهِ — the object of the verb", "correct": false }
+      ],
+      "explanation": "سَعِيدًا is indefinite and accusative, describing a temporary state during the verb's action — that's الْحَال, not a predicate (which would be nominative, سَعِيدٌ) or an object (رَجَعَ takes no object here)."
+    },
+    {
+      "type": "practice-choice",
+      "title": "The same word, two cases, two meanings",
+      "arabicPrompt": "جَاءَ الطَّالِبُ حَزِينًا  /  الطَّالِبُ حَزِينٌ",
+      "prompt": "Both describe the student as sad. What's the real difference?",
+      "options": [
+        { "label": "حَزِينًا (accusative) ties the sadness to the moment of coming; حَزِينٌ (nominative) just states a fact", "correct": true },
+        { "label": "They mean exactly the same thing", "correct": false },
+        { "label": "حَزِينًا is a mistake — it should be حَزِينٌ", "correct": false }
+      ],
+      "explanation": "Case carries real meaning here: حَزِينًا (الْحَال) ties the sadness to the specific moment of coming; حَزِينٌ (خَبَر) just states he's sad, with no verb or moment attached at all."
+    },
+    {
+      "type": "practice-choice",
+      "title": "التَّمْيِيز — specifying a quantity",
+      "arabicPrompt": "عِنْدِي عِشْرُونَ كِتَابًا",
+      "prompt": "What role does كِتَابًا play here?",
+      "options": [
+        { "label": "التَّمْيِيز — specifies what's being counted", "correct": true },
+        { "label": "الْحَال — describes a state", "correct": false },
+        { "label": "مُضَاف إِلَيْهِ — a possessor", "correct": false }
+      ],
+      "explanation": "عِشْرُونَ alone doesn't say twenty of what — كِتَابًا (التَّمْيِيز) specifies it. You've been producing this exact ending correctly since gr:numbers-11-99."
+    },
+    {
+      "type": "practice-choice",
+      "title": "Looks accusative — but is it?",
+      "arabicPrompt": "لَا مَاءَ فِي الْحَقِيبَةِ",
+      "prompt": "مَاءَ ends in fatḥa here. Is it truly مَنْصُوب (case-marked accusative), like الْحَال or التَّمْيِيز?",
+      "options": [
+        { "label": "Not exactly — it's مَبْنِي (built) with لَا, just written the way a منصوب noun would be", "correct": true },
+        { "label": "Yes — exactly the same mechanism as الْحَال or التَّمْيِيز", "correct": false },
+        { "label": "No — it has no case, and no position, at all", "correct": false }
+      ],
+      "explanation": "A single-word اسم لا (like مَاءَ, with no إِضَافَة) is مَبْنِي — grammatically built together with لَا — not truly declined. It's written with a fatḥa either way, so it LOOKS like a normal accusative noun, but the underlying mechanism differs. The full مُعْرَب/مَبْنِي distinction is a future topic."
+    },
+    {
+      "type": "complete",
+      "title": "Seven accusative-taking roles, one honest exception",
+      "message": "مُبْتَدَأ، خَبَر، فَاعِل، مُضَاف إِلَيْهِ (b1-u7) plus مَفْعُول بِهِ، الْحَال، التَّمْيِيز — every noun-role this project names now covers most of what shows up in an ordinary sentence. لَا النَّافِيَة لِلْجِنْس's مَبْنِي exception, and the full مُعْرَب/مَبْنِي distinction behind it, are still ahead.",
+      "finishLabel": "Finish"
+    }
+  ]
+}
