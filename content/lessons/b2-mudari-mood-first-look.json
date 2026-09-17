@@ -1,0 +1,82 @@
+{
+  "id": "b2-mudari-mood-first-look",
+  "unitId": "b2-u2",
+  "curriculumLessonId": "b2-mudari-mood-first-look",
+  "title": "Present-Tense Mood — First Look (أَنْ / لَنْ / لَمْ)",
+  "level": "B2",
+  "skills": ["grammar", "reading"],
+  "objectives": ["lex:prt-40", "lex:prt-41", "lex:prt-42", "gr:mudari-mood", "txt:gram-verb-he", "txt:gram-mood-subj-an", "txt:gram-mood-subj-lan", "txt:gram-mood-juss-lam"],
+  "steps": [
+    {
+      "type": "explain",
+      "title": "A verb has its own case system — mood",
+      "body": [
+        "Nouns mark their role with case (رَفْع/نَصْب/جَرّ — gr:case-system). The present-tense VERB marks something different — mood — using two of the same three Arabic names, plus a third: مَرْفُوع, مَنْصُوب, مَجْزُوم. Same names, completely different system: this marks the verb's own ending, not a noun's role.",
+        "مَرْفُوع is the default — the plain present tense you already know, ending in ḍamma ـُ: هُوَ يَذْهَبُ إِلَى الْمَدْرَسَةِ (\"he goes to school\"). Nothing before the verb triggers anything else.",
+        "أَنْ (\"to\") and لَنْ (\"will never\") both trigger مَنْصُوب — replace the ḍamma with fatḥa ـَ: هُوَ يُرِيدُ أَنْ يَذْهَبَ... (\"he wants to go...\"), هُوَ لَنْ يَذْهَبَ... (\"he will never go...\").",
+        "لَمْ (\"did not\") triggers مَجْزُوم — drop the ending vowel entirely (sukūn, no vowel at all): هُوَ لَمْ يَذْهَبْ... (\"he did not go...\"). This is the first way you've seen to negate a PAST-tense verbal sentence — gr:negation-a1's لَيْسَ/لَا/مَا only negate a nominal sentence."
+      ],
+      "previewSymbols": ["أَنْ / لَنْ", "لَمْ", "يَذْهَبُ / يَذْهَبَ / يَذْهَبْ"]
+    },
+    {
+      "type": "reading-practice",
+      "title": "Four sentences, one verb, three moods",
+      "intro": "Read all four and compare the ending on يَذْهَبُ/يَذْهَبَ/يَذْهَبْ each time. Tap 🔊 to hear any line.",
+      "fromObjectives": true
+    },
+    {
+      "type": "practice-choice",
+      "title": "The default mood",
+      "arabicPrompt": "هُوَ يَذْهَبُ إِلَى الْمَدْرَسَةِ",
+      "prompt": "No mood-triggering particle appears here. What mood is يَذْهَبُ?",
+      "options": [
+        { "label": "مَرْفُوع — the default, since nothing before it triggers a different mood", "correct": true },
+        { "label": "مَنْصُوب — every present-tense verb needs a mood particle", "correct": false },
+        { "label": "مَجْزُوم — sukūn is the default ending for verbs", "correct": false }
+      ],
+      "explanation": "مَرْفُوع is the default mood. A present-tense verb only becomes مَنْصُوب or مَجْزُوم when a specific trigger particle (أَنْ, لَنْ, لَمْ, and others not yet taught) sits directly before it."
+    },
+    {
+      "type": "practice-choice",
+      "title": "أَنْ triggers مَنْصُوب",
+      "arabicPrompt": "هُوَ يُرِيدُ أَنْ يَذْهَبَ إِلَى الْمَدْرَسَةِ",
+      "prompt": "يَذْهَبَ ends in fatḥa here, not the usual ḍamma. Why?",
+      "options": [
+        { "label": "أَنْ triggers مَنْصُوب on the verb right after it", "correct": true },
+        { "label": "All present-tense verbs end in fatḥa", "correct": false },
+        { "label": "يَذْهَبَ is the subject of the sentence", "correct": false }
+      ],
+      "explanation": "أَنْ is a subjunctive particle — a present-tense verb right after it takes مَنْصُوب, replacing the default ḍamma with fatḥa."
+    },
+    {
+      "type": "practice-choice",
+      "title": "لَنْ also triggers مَنْصُوب",
+      "arabicPrompt": "هُوَ لَنْ يَذْهَبَ إِلَى الْمَدْرَسَةِ",
+      "prompt": "What mood is يَذْهَبَ in here, and why?",
+      "options": [
+        { "label": "مَنْصُوب — لَنْ triggers it, just like أَنْ", "correct": true },
+        { "label": "مَجْزُوم — لَنْ negates the past", "correct": false },
+        { "label": "مَرْفُوع — nothing changed", "correct": false }
+      ],
+      "explanation": "لَنْ negates the future and, like أَنْ, pushes the verb after it into مَنْصُوب — fatḥa instead of ḍamma."
+    },
+    {
+      "type": "practice-choice",
+      "title": "لَمْ triggers مَجْزُوم — and negates the past",
+      "arabicPrompt": "هُوَ لَمْ يَذْهَبْ إِلَى الْمَدْرَسَةِ",
+      "prompt": "يَذْهَبْ has no ending vowel at all here. What mood is that, and what does the sentence mean?",
+      "options": [
+        { "label": "مَجْزُوم, triggered by لَمْ — \"he did NOT go to school\" (past, despite the present-tense verb shape)", "correct": true },
+        { "label": "مَجْزُوم, triggered by لَمْ — \"he does not go to school\" (present)", "correct": false },
+        { "label": "مَنْصُوب, triggered by لَمْ — the same mood as أَنْ/لَنْ", "correct": false }
+      ],
+      "explanation": "لَمْ triggers its own mood, مَجْزُوم — sukūn, no vowel at all, distinct from مَنْصُوب's fatḥa. لَمْ specifically negates the PAST, even though the verb after it keeps its present-tense shape."
+    },
+    {
+      "type": "complete",
+      "title": "A verb's own case system",
+      "message": "مَرْفُوع (default) / مَنْصُوب (أَنْ, لَنْ) / مَجْزُوم (لَمْ) — three moods on the present-tense verb, and a real new way to negate the past. كَيْ, حَتَّى, لِـ, لَا النَّاهِيَة, لَام الْأَمْر, and the conditional particles are still ahead, along with how plural/dual forms mark مَجْزُوم.",
+      "finishLabel": "Finish"
+    }
+  ]
+}

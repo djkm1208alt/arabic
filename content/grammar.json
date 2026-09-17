@@ -566,5 +566,32 @@
       "gr:nominal-sentence",
       "gr:verbal-sentence"
     ]
+  },
+  {
+    "id": "gr:mudari-mood",
+    "kind": "grammar",
+    "name": "Present-tense mood (الْفِعْل الْمُضَارِع) — مَرْفُوع / مَنْصُوب / مَجْزُوم",
+    "level": "B2",
+    "rule": "The present tense has three moods, marked on the verb's own ending — using the same three Arabic names as noun case (gr:case-system), but a completely separate system: this marks the VERB, not a noun's role. مَرْفُوع (the default) is the plain present tense already known since A1: ḍamma ـُ — هُوَ يَذْهَبُ إِلَى الْمَدْرَسَةِ (\"he goes to school\"). مَنْصُوب replaces that ḍamma with fatḥa ـَ, triggered by a particle right before the verb — أَنْ (\"to,\" after a verb like أَرَادَ) and لَنْ (\"will never\"): هُوَ يُرِيدُ أَنْ يَذْهَبَ إِلَى الْمَدْرَسَةِ (\"he wants to go to school\"); هُوَ لَنْ يَذْهَبَ إِلَى الْمَدْرَسَةِ (\"he will never go to school\"). مَجْزُوم drops that vowel entirely — sukūn, no ending vowel at all — triggered here by لَمْ, which negates the PAST using a present-tense verb: هُوَ لَمْ يَذْهَبْ إِلَى الْمَدْرَسَةِ (\"he did not go to school\") — the only way taught so far to negate a verbal past-tense sentence; gr:negation-a1's لَيْسَ/لَا/مَا only negate a NOMINAL sentence. Other subjunctive particles (كَيْ, حَتَّى, لِـ) and other jussive triggers (لَا النَّاهِيَة the prohibition, لَام الْأَمْر the command particle, and the conditional particles إِنْ/مَنْ/مَا) are named here, not taught yet. Plural and dual forms mark مَجْزُوم differently — by dropping the final ن instead of adding a sukūn (تَذْهَبُونَ → لَمْ تَذْهَبُوا) — deferred to a later unit.",
+    "examples": [
+      "txt:gram-verb-he",
+      "txt:gram-mood-subj-an",
+      "txt:gram-mood-subj-lan",
+      "txt:gram-mood-juss-lam"
+    ],
+    "commonErrors": [
+      "Confusing a verb's mood (رفع/نصب/جزم, marked on the verb itself) with a noun's case (رفع/نصب/جر, marked on a noun's role) — the same three Arabic names for two of them, but an entirely different system. gr:case-system's own rule text flags this same confusion from the other direction.",
+      "Assuming لَمْ + a present-tense verb describes something happening now — لَمْ negates the PAST, even though the verb after it keeps its present-tense shape.",
+      "Using مَنْصُوب or مَجْزُوم without one of their trigger particles directly before the verb — with nothing before it, or after a different particle, the verb stays مَرْفُوع."
+    ],
+    "skills": [
+      "grammar",
+      "reading"
+    ],
+    "prereqs": [
+      "gr:verbal-sentence",
+      "gr:present-tense",
+      "gr:negation-a1"
+    ]
   }
 ]

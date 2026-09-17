@@ -5285,5 +5285,136 @@
         "case": "jarr"
       }
     ]
+  },
+  {
+    "id": "txt:gram-mood-subj-an",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "mudari-mood",
+    "vowelled": "هُوَ يُرِيدُ أَنْ يَذْهَبَ إِلَى الْمَدْرَسَةِ",
+    "translit": "huwa yurīdu an yadhhaba ilā al-madrasati",
+    "en": "He wants to go to school.",
+    "words": [
+      {
+        "surface": "هُوَ",
+        "translit": "huwa",
+        "gloss": "he"
+      },
+      {
+        "surface": "يُرِيدُ",
+        "translit": "yurīdu",
+        "gloss": "wants (present tense, مَرْفُوع — the default, no trigger before it)"
+      },
+      {
+        "surface": "أَنْ",
+        "translit": "an",
+        "gloss": "to (subordinates the next verb, triggering مَنْصُوب)"
+      },
+      {
+        "surface": "يَذْهَبَ",
+        "translit": "yadhhaba",
+        "gloss": "go (مَنْصُوب — fatḥa instead of the usual ḍamma, triggered by أَنْ)"
+      },
+      {
+        "surface": "إِلَى الْمَدْرَسَةِ",
+        "translit": "ilā al-madrasati",
+        "gloss": "to school"
+      }
+    ],
+    "audio": "هُوَ يُرِيدُ أَنْ يَذْهَبَ إِلَى الْمَدْرَسَةِ",
+    "level": "B2",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:mudari-mood"
+    ]
+  },
+  {
+    "id": "txt:gram-mood-subj-lan",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "mudari-mood",
+    "vowelled": "هُوَ لَنْ يَذْهَبَ إِلَى الْمَدْرَسَةِ",
+    "translit": "huwa lan yadhhaba ilā al-madrasati",
+    "en": "He will never go to school.",
+    "words": [
+      {
+        "surface": "هُوَ",
+        "translit": "huwa",
+        "gloss": "he"
+      },
+      {
+        "surface": "لَنْ",
+        "translit": "lan",
+        "gloss": "will never (negates the future, triggering مَنْصُوب)"
+      },
+      {
+        "surface": "يَذْهَبَ",
+        "translit": "yadhhaba",
+        "gloss": "go (مَنْصُوب — fatḥa instead of ḍamma, triggered by لَنْ)"
+      },
+      {
+        "surface": "إِلَى الْمَدْرَسَةِ",
+        "translit": "ilā al-madrasati",
+        "gloss": "to school"
+      }
+    ],
+    "audio": "هُوَ لَنْ يَذْهَبَ إِلَى الْمَدْرَسَةِ",
+    "level": "B2",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:mudari-mood"
+    ]
+  },
+  {
+    "id": "txt:gram-mood-juss-lam",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "mudari-mood",
+    "vowelled": "هُوَ لَمْ يَذْهَبْ إِلَى الْمَدْرَسَةِ",
+    "translit": "huwa lam yadhhab ilā al-madrasati",
+    "en": "He did not go to school.",
+    "words": [
+      {
+        "surface": "هُوَ",
+        "translit": "huwa",
+        "gloss": "he"
+      },
+      {
+        "surface": "لَمْ",
+        "translit": "lam",
+        "gloss": "did not (negates the PAST, triggering مَجْزُوم on the present-tense verb after it)"
+      },
+      {
+        "surface": "يَذْهَبْ",
+        "translit": "yadhhab",
+        "gloss": "go (مَجْزُوم — sukūn, no ending vowel at all, triggered by لَمْ)"
+      },
+      {
+        "surface": "إِلَى الْمَدْرَسَةِ",
+        "translit": "ilā al-madrasati",
+        "gloss": "to school"
+      }
+    ],
+    "audio": "هُوَ لَمْ يَذْهَبْ إِلَى الْمَدْرَسَةِ",
+    "level": "B2",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:mudari-mood"
+    ]
   }
 ]

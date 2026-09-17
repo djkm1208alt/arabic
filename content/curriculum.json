@@ -384,13 +384,13 @@
       "level": "B2",
       "order": 2,
       "title": "The Passive, the Jussive & Conditionals",
-      "blurb": "Internal-vowel passive, the jussive after لم, and real and hypothetical conditions. In development.",
+      "blurb": "The jussive/subjunctive mood on present-tense verbs — أَنْ / لَنْ (مَنْصُوب) and لَمْ (مَجْزُوم), the first way to negate a past-tense verbal sentence. The passive and conditionals are still in development.",
       "skills": [
         "grammar"
       ],
-      "status": "planned",
+      "status": "available",
       "prereqs": [
-        "b1-u3"
+        "a2-u1"
       ]
     },
     {
@@ -2517,6 +2517,30 @@
       ],
       "status": "available",
       "source": "steps:b2-case-system-third-look"
+    },
+    {
+      "id": "b2-mudari-mood-first-look",
+      "unitId": "b2-u2",
+      "order": 1,
+      "title": "Present-Tense Mood — First Look (أَنْ / لَنْ / لَمْ)",
+      "blurb": "Three particles that change a present-tense verb's own ending — the same رَفْع/نَصْب/جَزْم names as noun case, but a different system entirely.",
+      "level": "B2",
+      "skills": [
+        "grammar",
+        "reading"
+      ],
+      "objectives": [
+        "lex:prt-40",
+        "lex:prt-41",
+        "lex:prt-42",
+        "gr:mudari-mood",
+        "txt:gram-verb-he",
+        "txt:gram-mood-subj-an",
+        "txt:gram-mood-subj-lan",
+        "txt:gram-mood-juss-lam"
+      ],
+      "status": "available",
+      "source": "steps:b2-mudari-mood-first-look"
     }
   ]
 }
