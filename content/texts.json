@@ -5107,5 +5107,183 @@
         "case": "nasb"
       }
     ]
+  },
+  {
+    "id": "txt:gram-case-diptote-raf",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "case-system",
+    "vowelled": "هَذِهِ مَكَاتِبُ جَدِيدَةٌ",
+    "translit": "hādhihi makātibu jadīdatun",
+    "en": "These are new offices.",
+    "words": [
+      {
+        "surface": "هَذِهِ",
+        "translit": "hādhihi",
+        "gloss": "these (non-human plural takes the feminine-singular demonstrative)"
+      },
+      {
+        "surface": "مَكَاتِبُ",
+        "translit": "makātibu",
+        "gloss": "offices (plural of مَكْتَب — a diptote broken-plural pattern; رَفْع marked by ḍamma, no tanwīn)"
+      },
+      {
+        "surface": "جَدِيدَةٌ",
+        "translit": "jadīdatun",
+        "gloss": "new (feminine-singular agreement, matching the non-human plural)"
+      }
+    ],
+    "audio": "هَذِهِ مَكَاتِبُ جَدِيدَةٌ",
+    "level": "B2",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:case-system",
+      "gr:noun-number"
+    ],
+    "parse": [
+      {
+        "word": "مَكَاتِبُ",
+        "role": "khabar",
+        "case": "raf"
+      }
+    ]
+  },
+  {
+    "id": "txt:gram-case-diptote-nasb",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "case-system",
+    "vowelled": "رَأَيْتُ مَكَاتِبَ جَدِيدَةً",
+    "translit": "raʾaytu makātiba jadīdatan",
+    "en": "I saw new offices.",
+    "words": [
+      {
+        "surface": "رَأَيْتُ",
+        "translit": "raʾaytu",
+        "gloss": "I saw"
+      },
+      {
+        "surface": "مَكَاتِبَ",
+        "translit": "makātiba",
+        "gloss": "offices (diptote; نَصْب marked by fatḥa, no tanwīn)"
+      },
+      {
+        "surface": "جَدِيدَةً",
+        "translit": "jadīdatan",
+        "gloss": "new (feminine-singular agreement, accusative)"
+      }
+    ],
+    "audio": "رَأَيْتُ مَكَاتِبَ جَدِيدَةً",
+    "level": "B2",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:case-system",
+      "gr:noun-number"
+    ],
+    "parse": [
+      {
+        "word": "مَكَاتِبَ",
+        "role": "mafulbih",
+        "case": "nasb"
+      }
+    ]
+  },
+  {
+    "id": "txt:gram-case-diptote-jarr-indef",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "case-system",
+    "vowelled": "هَذَا بَيْتُ أَصْدِقَاءَ",
+    "translit": "hādhā baytu aṣdiqāʾa",
+    "en": "This is a friends' house.",
+    "words": [
+      {
+        "surface": "هَذَا",
+        "translit": "hādhā",
+        "gloss": "this"
+      },
+      {
+        "surface": "بَيْتُ",
+        "translit": "baytu",
+        "gloss": "house (of — مُضَاف, no الـ or tanwīn of its own)"
+      },
+      {
+        "surface": "أَصْدِقَاءَ",
+        "translit": "aṣdiqāʾa",
+        "gloss": "friends (plural of صَدِيق — a diptote plural pattern; INDEFINITE, so جَرّ is marked by fatḥa, not kasra)"
+      }
+    ],
+    "audio": "هَذَا بَيْتُ أَصْدِقَاءَ",
+    "level": "B2",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:case-system"
+    ],
+    "parse": [
+      {
+        "word": "أَصْدِقَاءَ",
+        "role": "mudafilayhi",
+        "case": "jarr"
+      }
+    ]
+  },
+  {
+    "id": "txt:gram-case-diptote-jarr-def",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "case-system",
+    "vowelled": "هَذَا بَيْتُ الْأَصْدِقَاءِ",
+    "translit": "hādhā baytu al-aṣdiqāʾi",
+    "en": "This is the friends' house.",
+    "words": [
+      {
+        "surface": "هَذَا",
+        "translit": "hādhā",
+        "gloss": "this"
+      },
+      {
+        "surface": "بَيْتُ",
+        "translit": "baytu",
+        "gloss": "house (of — مُضَاف)"
+      },
+      {
+        "surface": "الْأَصْدِقَاءِ",
+        "translit": "al-aṣdiqāʾi",
+        "gloss": "the friends (same diptote plural, now DEFINITE with الـ — جَرّ returns to the regular kasra)"
+      }
+    ],
+    "audio": "هَذَا بَيْتُ الْأَصْدِقَاءِ",
+    "level": "B2",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:case-system"
+    ],
+    "parse": [
+      {
+        "word": "الْأَصْدِقَاءِ",
+        "role": "mudafilayhi",
+        "case": "jarr"
+      }
+    ]
   }
 ]

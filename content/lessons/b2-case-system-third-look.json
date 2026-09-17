@@ -1,0 +1,109 @@
+{
+  "id": "b2-case-system-third-look",
+  "unitId": "b2-u1",
+  "curriculumLessonId": "b2-case-system-third-look",
+  "title": "The Case System — Third Look (مَمْنُوع مِنَ الصَّرْف)",
+  "level": "B2",
+  "skills": ["grammar", "reading"],
+  "objectives": ["gr:case-system", "txt:gram-case-diptote-raf", "txt:gram-case-diptote-nasb", "txt:gram-case-diptote-jarr-indef", "txt:gram-case-diptote-jarr-def"],
+  "steps": [
+    {
+      "type": "explain",
+      "title": "The last irregular layer — and its own exception",
+      "body": [
+        "Diptotes (مَمْنُوع مِنَ الصَّرْف) are a closed set of noun shapes — certain broken-plural patterns like مَفَاعِل and أَفْعِلَاء, and every proper name of a person — that never take tanwīn.",
+        "When INDEFINITE, a diptote takes ḍamma for رَفْع and fatḥa for both نَصْب and جَرّ — so its جَرّ form looks exactly like its نَصْب form, and neither has the tanwīn a regular noun would have.",
+        "But that irregularity has its own exception: the moment a diptote becomes DEFINITE — by الـ, or by being the second term of an إِضَافَة whose own definiteness carries through — it declines completely regularly again, kasra included. هَذَا بَيْتُ أَصْدِقَاءَ (indefinite, fatḥa) vs. هَذَا بَيْتُ الْأَصْدِقَاءِ (definite, kasra) is the same noun, the same جَرّ role, two different markers."
+      ],
+      "previewSymbols": ["مَمْنُوع مِنَ الصَّرْف", "أَصْدِقَاءَ / الْأَصْدِقَاءِ"]
+    },
+    {
+      "type": "reading-practice",
+      "title": "Four sentences, one exception to the exception",
+      "intro": "Read each sentence and notice the ending — especially the last two, which differ only in definiteness. Tap 🔊 to hear any line.",
+      "fromObjectives": true
+    },
+    {
+      "type": "exercise",
+      "title": "Diptote — رَفْع",
+      "exercise": {
+        "kind": "label", "skill": "grammar", "objectId": "txt:gram-case-diptote-raf", "objectIds": ["txt:gram-case-diptote-raf"],
+        "prompt": "What role AND case does the marked word have?",
+        "sentenceHtml": "هَذِهِ <mark class=\"label-target\">مَكَاتِبُ</mark> جَدِيدَةٌ",
+        "options": [
+          { "key": "khabar+raf", "ar": "خَبَر — مَرْفُوع", "en": "predicate (khabar), nominative (rafʿ)" },
+          { "key": "mubtada+raf", "ar": "مُبْتَدَأ — مَرْفُوع", "en": "subject (mubtadaʾ), nominative (rafʿ)" },
+          { "key": "khabar+nasb", "ar": "خَبَر — مَنْصُوب", "en": "predicate (khabar), accusative (naṣb)" },
+          { "key": "mafulbih+nasb", "ar": "مَفْعُول بِهِ — مَنْصُوب", "en": "object (mafʿūl bih), accusative (naṣb)" }
+        ],
+        "answer": "khabar+raf"
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Diptote — نَصْب",
+      "exercise": {
+        "kind": "label", "skill": "grammar", "objectId": "txt:gram-case-diptote-nasb", "objectIds": ["txt:gram-case-diptote-nasb"],
+        "prompt": "What role AND case does the marked word have?",
+        "sentenceHtml": "رَأَيْتُ <mark class=\"label-target\">مَكَاتِبَ</mark> جَدِيدَةً",
+        "options": [
+          { "key": "mafulbih+nasb", "ar": "مَفْعُول بِهِ — مَنْصُوب", "en": "object (mafʿūl bih), accusative (naṣb)" },
+          { "key": "mafulbih+raf", "ar": "مَفْعُول بِهِ — مَرْفُوع", "en": "object (mafʿūl bih), nominative (rafʿ)" },
+          { "key": "fail+raf", "ar": "فَاعِل — مَرْفُوع", "en": "doer (fāʿil), nominative (rafʿ)" },
+          { "key": "mudafilayhi+jarr", "ar": "مُضَاف إِلَيْهِ — مَجْرُور", "en": "possessor (muḍāf ilayhi), genitive (jarr)" }
+        ],
+        "answer": "mafulbih+nasb"
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Diptote — جَرّ, indefinite",
+      "exercise": {
+        "kind": "label", "skill": "grammar", "objectId": "txt:gram-case-diptote-jarr-indef", "objectIds": ["txt:gram-case-diptote-jarr-indef"],
+        "prompt": "What role AND case does the marked word have?",
+        "sentenceHtml": "هَذَا بَيْتُ <mark class=\"label-target\">أَصْدِقَاءَ</mark>",
+        "options": [
+          { "key": "mudafilayhi+jarr", "ar": "مُضَاف إِلَيْهِ — مَجْرُور", "en": "possessor (muḍāf ilayhi), genitive (jarr)" },
+          { "key": "mudafilayhi+nasb", "ar": "مُضَاف إِلَيْهِ — مَنْصُوب", "en": "possessor (muḍāf ilayhi), accusative (naṣb)" },
+          { "key": "khabar+raf", "ar": "خَبَر — مَرْفُوع", "en": "predicate (khabar), nominative (rafʿ)" },
+          { "key": "mafulbih+nasb", "ar": "مَفْعُول بِهِ — مَنْصُوب", "en": "object (mafʿūl bih), accusative (naṣb)" }
+        ],
+        "answer": "mudafilayhi+jarr"
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Diptote — جَرّ, definite",
+      "exercise": {
+        "kind": "label", "skill": "grammar", "objectId": "txt:gram-case-diptote-jarr-def", "objectIds": ["txt:gram-case-diptote-jarr-def"],
+        "prompt": "What role AND case does the marked word have?",
+        "sentenceHtml": "هَذَا بَيْتُ <mark class=\"label-target\">الْأَصْدِقَاءِ</mark>",
+        "options": [
+          { "key": "mudafilayhi+jarr", "ar": "مُضَاف إِلَيْهِ — مَجْرُور", "en": "possessor (muḍāf ilayhi), genitive (jarr)" },
+          { "key": "mudafilayhi+nasb", "ar": "مُضَاف إِلَيْهِ — مَنْصُوب", "en": "possessor (muḍāf ilayhi), accusative (naṣb)" },
+          { "key": "khabar+raf", "ar": "خَبَر — مَرْفُوع", "en": "predicate (khabar), nominative (rafʿ)" },
+          { "key": "fail+raf", "ar": "فَاعِل — مَرْفُوع", "en": "doer (fāʿil), nominative (rafʿ)" }
+        ],
+        "answer": "mudafilayhi+jarr"
+      }
+    },
+    {
+      "type": "practice-choice",
+      "title": "The exception to the exception",
+      "arabicPrompt": "هَذَا بَيْتُ أَصْدِقَاءَ  /  هَذَا بَيْتُ الْأَصْدِقَاءِ",
+      "prompt": "Both أَصْدِقَاءَ and الْأَصْدِقَاءِ are جَرّ here. Which pair of markers is correct?",
+      "options": [
+        { "label": "أَصْدِقَاءَ (indefinite) = fatḥa; الْأَصْدِقَاءِ (definite) = kasra", "correct": true },
+        { "label": "Both take fatḥa — diptotes never take kasra", "correct": false },
+        { "label": "Both take kasra — الـ has no effect on diptotes", "correct": false }
+      ],
+      "explanation": "A diptote only shows its irregular fatḥa-for-جَرّ marker when INDEFINITE. Add الـ — or make it the second term of an إِضَافَة whose own definiteness carries through, as it does here — and it takes the regular kasra like any other noun."
+    },
+    {
+      "type": "complete",
+      "title": "The full case system, on nouns",
+      "message": "Regular nouns, the five nouns, the sound plurals, and now diptotes — every noun-marking pattern in الإِعْرَاب. Case marking on the verb itself (رفع/نصب/جزم of the present tense) is a separate system, still ahead.",
+      "finishLabel": "Finish"
+    }
+  ]
+}

@@ -369,7 +369,7 @@
       "level": "B2",
       "order": 1,
       "title": "The Full Case System (Iʿrāb)",
-      "blurb": "رَفْع، نَصْب، جَرّ — naming the case endings you've been producing correctly since A2, now including the five nouns (أَب، أَخ) and the sound plurals' own irregular markers. Diptotes are the one remaining irregular layer, still in development.",
+      "blurb": "رَفْع، نَصْب، جَرّ — naming the case endings you've been producing correctly since A2, now including the five nouns, the sound plurals, and diptotes — the full regular-and-irregular case system on nouns. Verb mood (case marking on the present tense) is still ahead.",
       "skills": [
         "grammar"
       ],
@@ -2496,6 +2496,27 @@
       ],
       "status": "available",
       "source": "steps:b2-case-system-second-look"
+    },
+    {
+      "id": "b2-case-system-third-look",
+      "unitId": "b2-u1",
+      "order": 3,
+      "title": "The Case System — Third Look (مَمْنُوع مِنَ الصَّرْف)",
+      "blurb": "Diptotes drop tanwin and swap kasra for fatha in جَرّ — but only when indefinite. The irregularity vanishes the moment الـ or إِضَافَة makes the noun definite.",
+      "level": "B2",
+      "skills": [
+        "grammar",
+        "reading"
+      ],
+      "objectives": [
+        "gr:case-system",
+        "txt:gram-case-diptote-raf",
+        "txt:gram-case-diptote-nasb",
+        "txt:gram-case-diptote-jarr-indef",
+        "txt:gram-case-diptote-jarr-def"
+      ],
+      "status": "available",
+      "source": "steps:b2-case-system-third-look"
     }
   ]
 }
