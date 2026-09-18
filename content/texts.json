@@ -5644,5 +5644,172 @@
     "prereqs": [
       "gr:maful-maahu"
     ]
+  },
+  {
+    "id": "txt:gram-naat-big-house",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "naat",
+    "vowelled": "الْبَيْتُ الْكَبِيرُ جَمِيلٌ",
+    "translit": "al-baytu al-kabīru jamīlun",
+    "en": "The big house is beautiful.",
+    "words": [
+      {
+        "surface": "الْبَيْتُ",
+        "translit": "al-baytu",
+        "gloss": "the house (الْمَنْعُوت — described noun)",
+        "gender": "masculine"
+      },
+      {
+        "surface": "الْكَبِيرُ",
+        "translit": "al-kabīru",
+        "gloss": "big (النَّعْت — agrees with الْبَيْتُ in definiteness, gender, number, AND case)",
+        "gender": "masculine"
+      },
+      {
+        "surface": "جَمِيلٌ",
+        "translit": "jamīlun",
+        "gloss": "beautiful (predicate, خَبَر)",
+        "gender": "masculine"
+      }
+    ],
+    "audio": "الْبَيْتُ الْكَبِيرُ جَمِيلٌ",
+    "level": "B2",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:naat"
+    ]
+  },
+  {
+    "id": "txt:gram-naat-tall-man",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "naat",
+    "vowelled": "رَأَيْتُ الرَّجُلَ الطَّوِيلَ",
+    "translit": "raʾaytu ar-rajula aṭ-ṭawīla",
+    "en": "I saw the tall man.",
+    "words": [
+      {
+        "surface": "رَأَيْتُ",
+        "translit": "raʾaytu",
+        "gloss": "I saw"
+      },
+      {
+        "surface": "الرَّجُلَ",
+        "translit": "ar-rajula",
+        "gloss": "the man (الْمَنْعُوت, accusative — مَفْعُول بِهِ)",
+        "gender": "masculine"
+      },
+      {
+        "surface": "الطَّوِيلَ",
+        "translit": "aṭ-ṭawīla",
+        "gloss": "tall (النَّعْت — matches الرَّجُلَ's definiteness, gender, number, and accusative case)",
+        "gender": "masculine"
+      }
+    ],
+    "audio": "رَأَيْتُ الرَّجُلَ الطَّوِيلَ",
+    "level": "B2",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:naat"
+    ]
+  },
+  {
+    "id": "txt:gram-atf-father-mother",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "atf-nasaq",
+    "vowelled": "الْأَبُ وَالْأُمُّ سَعِيدَانِ",
+    "translit": "al-abu wa-al-ummu saʿīdāni",
+    "en": "The father and the mother are happy.",
+    "words": [
+      {
+        "surface": "الْأَبُ",
+        "translit": "al-abu",
+        "gloss": "the father (الْمَعْطُوف عَلَيْه — the noun conjoined TO, رَفْع)",
+        "gender": "masculine"
+      },
+      {
+        "surface": "وَ",
+        "translit": "wa-",
+        "gloss": "and (حَرْف عَطْف — a coordinating conjunction)"
+      },
+      {
+        "surface": "الْأُمُّ",
+        "translit": "al-ummu",
+        "gloss": "the mother (الْمَعْطُوف — takes the SAME case, رَفْع, as الْأَبُ)",
+        "gender": "feminine"
+      },
+      {
+        "surface": "سَعِيدَانِ",
+        "translit": "saʿīdāni",
+        "gloss": "happy (dual predicate, agreeing with the combined pair)"
+      }
+    ],
+    "audio": "الْأَبُ وَالْأُمُّ سَعِيدَانِ",
+    "level": "B2",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:atf-nasaq"
+    ]
+  },
+  {
+    "id": "txt:gram-atf-book-lesson",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "atf-nasaq",
+    "vowelled": "قَرَأْتُ الْكِتَابَ وَالدَّرْسَ",
+    "translit": "qaraʾtu al-kitāba wa-ad-darsa",
+    "en": "I read the book and the lesson.",
+    "words": [
+      {
+        "surface": "قَرَأْتُ",
+        "translit": "qaraʾtu",
+        "gloss": "I read"
+      },
+      {
+        "surface": "الْكِتَابَ",
+        "translit": "al-kitāba",
+        "gloss": "the book (الْمَعْطُوف عَلَيْه — نَصْب, مَفْعُول بِهِ)",
+        "gender": "masculine"
+      },
+      {
+        "surface": "وَ",
+        "translit": "wa-",
+        "gloss": "and"
+      },
+      {
+        "surface": "الدَّرْسَ",
+        "translit": "ad-darsa",
+        "gloss": "the lesson (الْمَعْطُوف — takes the SAME case, نَصْب, as الْكِتَابَ)",
+        "gender": "masculine"
+      }
+    ],
+    "audio": "قَرَأْتُ الْكِتَابَ وَالدَّرْسَ",
+    "level": "B2",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:atf-nasaq"
+    ]
   }
 ]

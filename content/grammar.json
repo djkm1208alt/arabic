@@ -707,5 +707,50 @@
       "gr:verbal-sentence",
       "gr:attached-possessive"
     ]
+  },
+  {
+    "id": "gr:naat",
+    "kind": "grammar",
+    "name": "The direct description (النَّعْت)",
+    "level": "B2",
+    "rule": "النَّعْت is an adjective that follows its noun (الْمَنْعُوت) and must AGREE with it in four things: definiteness, gender, number, and case. الْبَيْتُ الْكَبِيرُ جَمِيلٌ (\"the big house is beautiful\") — الْكَبِيرُ agrees with الْبَيْتُ: both definite (بِالـ), both masculine, both singular, both رَفْع (the whole phrase together forms this sentence's مُبْتَدَأ). رَأَيْتُ الرَّجُلَ الطَّوِيلَ (\"I saw the tall man\") — الطَّوِيلَ agrees with الرَّجُلَ, this time in the accusative pattern instead. النَّعْت is the first of four تَوَابِع (\"followers\") — a category of words that copy some or all of a preceding noun's grammar rather than carrying independent case of their own; النَّعْت is the fullest agreement of the four. You have already been building this correctly since A1 — الْبَيْتُ الْكَبِيرُ itself appeared, unnamed, back in a1-grammar-structural, contrasted there against a full verbless sentence.",
+    "examples": [
+      "txt:gram-naat-big-house",
+      "txt:gram-naat-tall-man"
+    ],
+    "commonErrors": [
+      "Forgetting that النَّعْت must match its noun's CASE too, not just gender and number — الرَّجُلَ الطَّوِيلَ (both accusative) is correct; a mismatched case on the adjective is not.",
+      "Confusing النَّعْت (agrees on all four things; adds no independent meaning beyond describing) with الْحَال (gr:hal — independently accusative, describes a temporary state, and is always indefinite regardless of its noun's own definiteness)."
+    ],
+    "skills": [
+      "grammar",
+      "reading"
+    ],
+    "prereqs": [
+      "gr:case-system",
+      "gr:definiteness"
+    ]
+  },
+  {
+    "id": "gr:atf-nasaq",
+    "kind": "grammar",
+    "name": "The coordinating conjunction (عَطْف النَّسَق)",
+    "level": "B2",
+    "rule": "عَطْف النَّسَق joins two nouns (or two verbs) with a conjunction — وَ (\"and\"), أَوْ (\"or\"), among nine total حُرُوف عَطْف — and the second noun (الْمَعْطُوف) takes the SAME case as the first (الْمَعْطُوف عَلَيْه), even though the two are separate things, not one describing the other. الْأَبُ وَالْأُمُّ سَعِيدَانِ (\"the father and the mother are happy\") — الْأُمُّ takes رَفْع, matching الْأَبُ's رَفْع, since together they form one compound مُبْتَدَأ. قَرَأْتُ الْكِتَابَ وَالدَّرْسَ (\"I read the book and the lesson\") — الدَّرْسَ takes نَصْب, matching الْكِتَابَ's نَصْب as a second مَفْعُول بِهِ. This is the second تَابِع — unlike النَّعْت, the two nouns are independent (neither describes the other), but the conjunction still forces them to share one case.",
+    "examples": [
+      "txt:gram-atf-father-mother",
+      "txt:gram-atf-book-lesson"
+    ],
+    "commonErrors": [
+      "Assuming a conjoined noun keeps whatever case it would have had on its own — عَطْف النَّسَق specifically forces it to match the case the FIRST noun already has, regardless of the second noun's own role in the sentence.",
+      "Confusing عَطْف النَّسَق (joins two separate, equal nouns) with النَّعْت (gr:naat — one noun describing another) — عَطْف always has a conjunction (وَ، أَوْ...) between the two nouns; النَّعْت never does."
+    ],
+    "skills": [
+      "grammar",
+      "reading"
+    ],
+    "prereqs": [
+      "gr:case-system"
+    ]
   }
 ]

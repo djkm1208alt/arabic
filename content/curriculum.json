@@ -369,7 +369,7 @@
       "level": "B2",
       "order": 1,
       "title": "The Full Case System (Iʿrāb)",
-      "blurb": "رَفْع، نَصْب، جَرّ — the full case system on nouns, seven roles beyond the verb's own (مبتدأ/خبر/فاعل/مفعول به/مضاف إليه/حال/تمييز), plus مَفْعُول فِيهِ (time adverbial) and مَفْعُول مَعَهُ (accompaniment), and لَا النَّافِيَة لِلْجِنْس. Verb mood is covered separately in b2-u2.",
+      "blurb": "رَفْع، نَصْب، جَرّ — the full case system on nouns, seven roles beyond the original five (حال، تمييز), مفعول فيه/معه, لا النافية للجنس, and the first two of the four تَوَابِع (\"followers\"): النَّعْت (adjective agreement) and عَطْف النَّسَق (coordinating conjunction). Verb mood is covered separately in b2-u2.",
       "skills": [
         "grammar"
       ],
@@ -2586,6 +2586,28 @@
       ],
       "status": "available",
       "source": "steps:b2-maful-fihi-maahu"
+    },
+    {
+      "id": "b2-naat-atf-nasaq",
+      "unitId": "b2-u1",
+      "order": 6,
+      "title": "Followers, First Look (النَّعْت / عَطْف)",
+      "blurb": "النَّعْت (an adjective that fully agrees with its noun) and عَطْف النَّسَق (a conjunction that forces two nouns to share one case) — the first two of the four تَوَابِع. توكيد and بدل are still ahead.",
+      "level": "B2",
+      "skills": [
+        "grammar",
+        "reading"
+      ],
+      "objectives": [
+        "gr:naat",
+        "gr:atf-nasaq",
+        "txt:gram-naat-big-house",
+        "txt:gram-naat-tall-man",
+        "txt:gram-atf-father-mother",
+        "txt:gram-atf-book-lesson"
+      ],
+      "status": "available",
+      "source": "steps:b2-naat-atf-nasaq"
     }
   ]
 }

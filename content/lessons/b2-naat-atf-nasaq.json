@@ -1,0 +1,81 @@
+{
+  "id": "b2-naat-atf-nasaq",
+  "unitId": "b2-u1",
+  "curriculumLessonId": "b2-naat-atf-nasaq",
+  "title": "Followers, First Look (النَّعْت / عَطْف)",
+  "level": "B2",
+  "skills": ["grammar", "reading"],
+  "objectives": ["gr:naat", "gr:atf-nasaq", "txt:gram-naat-big-house", "txt:gram-naat-tall-man", "txt:gram-atf-father-mother", "txt:gram-atf-book-lesson"],
+  "steps": [
+    {
+      "type": "explain",
+      "title": "التَّوَابِع — words that follow, not lead",
+      "body": [
+        "A تَابِع (\"follower\") copies some or all of a preceding noun's grammar instead of carrying independent case of its own. Four exist; this lesson covers the first two.",
+        "النَّعْت is an adjective that fully agrees with its noun (الْمَنْعُوت) — definiteness, gender, number, AND case, all four: الْبَيْتُ الْكَبِيرُ جَمِيلٌ (\"the big house is beautiful\") — الْكَبِيرُ matches الْبَيْتُ on every count. رَأَيْتُ الرَّجُلَ الطَّوِيلَ (\"I saw the tall man\") shows the same agreement in the accusative.",
+        "عَطْف النَّسَق joins two SEPARATE nouns with a conjunction (وَ, أَوْ, and others) and forces the second (الْمَعْطُوف) to take the same case as the first (الْمَعْطُوف عَلَيْه) — even though neither describes the other: الْأَبُ وَالْأُمُّ سَعِيدَانِ (\"the father and the mother are happy\"); قَرَأْتُ الْكِتَابَ وَالدَّرْسَ (\"I read the book and the lesson\")."
+      ],
+      "previewSymbols": ["النَّعْت", "عَطْف النَّسَق"]
+    },
+    {
+      "type": "reading-practice",
+      "title": "Four sentences, two kinds of \"following\"",
+      "intro": "Read all four and notice which words are AGREEING (النعت) and which are just SHARING a case (عطف). Tap 🔊 to hear any line.",
+      "fromObjectives": true
+    },
+    {
+      "type": "practice-choice",
+      "title": "النَّعْت — full agreement",
+      "arabicPrompt": "الْبَيْتُ الْكَبِيرُ جَمِيلٌ",
+      "prompt": "الْكَبِيرُ agrees with الْبَيْتُ in four ways. Which of these is NOT one of them?",
+      "options": [
+        { "label": "Person (1st/2nd/3rd) — nouns don't have this at all", "correct": true },
+        { "label": "Definiteness — both take الـ", "correct": false },
+        { "label": "Case — both are رَفْع here", "correct": false }
+      ],
+      "explanation": "النَّعْت agrees with its noun in definiteness, gender, number, and case — four things total. \"Person\" (1st/2nd/3rd) is a property of pronouns and verbs, not nouns or adjectives."
+    },
+    {
+      "type": "practice-choice",
+      "title": "النَّعْت follows the case, too",
+      "arabicPrompt": "رَأَيْتُ الرَّجُلَ الطَّوِيلَ",
+      "prompt": "Why does الطَّوِيلَ end in a fatḥa here, matching الرَّجُلَ?",
+      "options": [
+        { "label": "الطَّوِيلَ is النَّعْت — it must agree with الرَّجُلَ's accusative case, since الرَّجُلَ is مَفْعُول بِهِ", "correct": true },
+        { "label": "الطَّوِيلَ is الْحَال — describing a temporary state", "correct": false },
+        { "label": "All adjectives end in fatḥa by default", "correct": false }
+      ],
+      "explanation": "الرَّجُلَ is مَفْعُول بِهِ (accusative). Its نَعْت, الطَّوِيلَ, must copy that case — a mismatched case on the adjective would be an error, not a stylistic choice."
+    },
+    {
+      "type": "practice-choice",
+      "title": "عَطْف النَّسَق — sharing a case, not agreeing",
+      "arabicPrompt": "الْأَبُ وَالْأُمُّ سَعِيدَانِ",
+      "prompt": "الْأُمُّ takes رَفْع here. Is الْأُمُّ describing الْأَبُ, the way النَّعْت would?",
+      "options": [
+        { "label": "No — الْأُمُّ is a separate noun conjoined by وَ; it just happens to share الْأَبُ's case", "correct": true },
+        { "label": "Yes — الْأُمُّ is النَّعْت, describing الْأَبُ", "correct": false },
+        { "label": "Yes — الْأُمُّ is الْحَال, describing a state", "correct": false }
+      ],
+      "explanation": "الْأَبُ and الْأُمُّ are two independent nouns, joined by the conjunction وَ (عَطْف النَّسَق) — neither describes the other. The conjunction just forces the second to copy the first's case, رَفْع, here forming one compound مُبْتَدَأ."
+    },
+    {
+      "type": "practice-choice",
+      "title": "عَطْف النَّسَق works on any case",
+      "arabicPrompt": "قَرَأْتُ الْكِتَابَ وَالدَّرْسَ",
+      "prompt": "Why is الدَّرْسَ accusative here?",
+      "options": [
+        { "label": "It's الْمَعْطُوف — conjoined by وَ to الْكِتَابَ, so it copies الْكِتَابَ's accusative case", "correct": true },
+        { "label": "It's النَّعْت, describing الْكِتَابَ", "correct": false },
+        { "label": "الدَّرْسَ is always accusative, in any sentence", "correct": false }
+      ],
+      "explanation": "عَطْف النَّسَق isn't limited to رَفْع — the conjoined noun copies WHATEVER case the first noun has. Here الْكِتَابَ is نَصْب (مَفْعُول بِهِ), so الدَّرْسَ is نَصْب too."
+    },
+    {
+      "type": "complete",
+      "title": "Two followers down, two to go",
+      "message": "النَّعْت (full agreement, describes its noun) and عَطْف النَّسَق (shares a case, joins two equals) are the first two of the four تَوَابِع. التَّوْكِيد (emphasis) and الْبَدَل (substitution) are still ahead.",
+      "finishLabel": "Finish"
+    }
+  ]
+}
