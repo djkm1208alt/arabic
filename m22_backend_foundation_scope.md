@@ -22,7 +22,7 @@ Why land the infrastructure first, separately: the schema and RLS design is itse
 ## 3. Schema design decisions
 
 | Decision | Why |
-|---|---|
+| --- | --- |
 | `profiles`, not extending `auth.users` | Supabase manages `auth.users` (email/password, etc.) directly; app-owned fields never belong on it. Standard Supabase pattern. |
 | `lesson_id` / `object_id` are `text`, not foreign keys into a server-side content table | `CONTENT` is compiled into `index.html` at build time and never mirrored server-side (buildless-runtime rule, standing rule 5). A server-side mirror would be a second source of truth for content that already has one. |
 | `enrollments.skill_levels` / `placement_result` are `jsonb`, not decomposed columns | These already exist client-side as `deriveLevel()` output (M15) and M17's placement result shape. Syncing the blob as-is avoids the schema having to track every strand/level the client adds; the client owns the shape. |
