@@ -1,0 +1,645 @@
+{
+  "id": "a0-hear-long-and-short",
+  "unitId": "a0-u3",
+  "curriculumLessonId": "a0-hear-long-and-short",
+  "title": "Short or Long? Then Real Word Pairs",
+  "level": "A0",
+  "skills": [
+    "listening",
+    "reading",
+    "pronunciation"
+  ],
+  "objectives": [
+    "mrk:madd-alif",
+    "mrk:madd-ya",
+    "mrk:madd-waw",
+    "syl:cvv-ba",
+    "syl:cvv-bu",
+    "syl:cvv-mi",
+    "syl:cvv-ta",
+    "syl:cvv-tu",
+    "let:ha1",
+    "let:ha2",
+    "let:ayn",
+    "mrk:hamza",
+    "let:qaf",
+    "let:kaf"
+  ],
+  "emphasisTag": "both",
+  "fr": {
+    "title": "Brève ou longue ? Puis de vraies paires de mots"
+  },
+  "steps": [
+    {
+      "type": "explain",
+      "title": "Short or long",
+      "body": [
+        "A long vowel is held about twice as long as a short one: بَ (ba) and بَا (bā). The long vowels are written with ا, ي or و after the letter.",
+        "The audio uses your device's built-in voice. If two words sound the same to you, replay them: some device voices blur these sounds."
+      ],
+      "fr": {
+        "title": "Brève ou longue",
+        "body": [
+          "Une voyelle longue dure environ deux fois plus longtemps qu'une brève : بَ (ba) et بَا (bā). Les voyelles longues s'écrivent avec ا, ي ou و après la lettre.",
+          "L'audio utilise la voix intégrée de votre appareil. Si deux mots vous semblent identiques, réécoutez-les : certaines voix d'appareil estompent ces sons."
+        ]
+      },
+      "previewSymbols": [
+        "بَ",
+        "بَا",
+        "بِي",
+        "بُو"
+      ]
+    },
+    {
+      "type": "exercise",
+      "title": "Short or long?",
+      "fr": {
+        "title": "Brève ou longue ?"
+      },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "minimal-pair",
+        "skill": "listening",
+        "objectIds": [
+          "mrk:madd-alif",
+          "syl:cvv-ba"
+        ],
+        "contrastPhonemes": [
+          "mrk:fatha",
+          "mrk:madd-alif"
+        ],
+        "audioText": "بَا",
+        "audioKey": "syllables/cvv-ba",
+        "prompt": "Listen. Short or long?",
+        "options": [
+          {
+            "label": "بَ",
+            "correct": false
+          },
+          {
+            "label": "بَا",
+            "correct": true
+          }
+        ],
+        "explanation": "بَا (bā): the ا after the letter makes the vowel long.",
+        "fr": {
+          "prompt": "Écoutez. Brève ou longue ?",
+          "explanation": "بَا (bā) : le ا après la lettre allonge la voyelle."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Short or long?",
+      "fr": {
+        "title": "Brève ou longue ?"
+      },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "minimal-pair",
+        "skill": "listening",
+        "objectIds": [
+          "mrk:kasra",
+          "syl:cvv-mi"
+        ],
+        "contrastPhonemes": [
+          "mrk:kasra",
+          "mrk:madd-ya"
+        ],
+        "audioText": "مِ",
+        "audioKey": "grid/mim-kasra",
+        "prompt": "Listen. Short or long?",
+        "options": [
+          {
+            "label": "مِي",
+            "correct": false
+          },
+          {
+            "label": "مِ",
+            "correct": true
+          }
+        ],
+        "explanation": "مِ (mi) is short: there is no ي after it to lengthen it.",
+        "fr": {
+          "prompt": "Écoutez. Brève ou longue ?",
+          "explanation": "مِ (mi) est brève : aucun ي ne la suit pour l'allonger."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Short or long?",
+      "fr": {
+        "title": "Brève ou longue ?"
+      },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "minimal-pair",
+        "skill": "listening",
+        "objectIds": [
+          "mrk:madd-waw",
+          "syl:cvv-tu"
+        ],
+        "contrastPhonemes": [
+          "mrk:damma",
+          "mrk:madd-waw"
+        ],
+        "audioText": "تُو",
+        "audioKey": "syllables/cvv-tu",
+        "prompt": "Listen. Short or long?",
+        "options": [
+          {
+            "label": "تُو",
+            "correct": true
+          },
+          {
+            "label": "تُ",
+            "correct": false
+          }
+        ],
+        "explanation": "تُو (tū): the و after the letter makes the vowel long.",
+        "fr": {
+          "prompt": "Écoutez. Brève ou longue ?",
+          "explanation": "تُو (tū) : le و après la lettre allonge la voyelle."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Short or long?",
+      "fr": {
+        "title": "Brève ou longue ?"
+      },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "minimal-pair",
+        "skill": "listening",
+        "objectIds": [
+          "mrk:damma",
+          "syl:cvv-bu"
+        ],
+        "contrastPhonemes": [
+          "mrk:damma",
+          "mrk:madd-waw"
+        ],
+        "audioText": "بُ",
+        "audioKey": "grid/ba-damma",
+        "prompt": "Listen. Short or long?",
+        "options": [
+          {
+            "label": "بُ",
+            "correct": true
+          },
+          {
+            "label": "بُو",
+            "correct": false
+          }
+        ],
+        "explanation": "بُ (bu) is short: there is no و after it to lengthen it.",
+        "fr": {
+          "prompt": "Écoutez. Brève ou longue ?",
+          "explanation": "بُ (bu) est brève : aucun و ne la suit pour l'allonger."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Short or long?",
+      "fr": {
+        "title": "Brève ou longue ?"
+      },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "minimal-pair",
+        "skill": "listening",
+        "objectIds": [
+          "mrk:madd-ya",
+          "syl:cvv-mi"
+        ],
+        "contrastPhonemes": [
+          "mrk:kasra",
+          "mrk:madd-ya"
+        ],
+        "audioText": "مِي",
+        "audioKey": "syllables/cvv-mi",
+        "prompt": "Listen. Short or long?",
+        "options": [
+          {
+            "label": "مِ",
+            "correct": false
+          },
+          {
+            "label": "مِي",
+            "correct": true
+          }
+        ],
+        "explanation": "مِي (mī): the ي after the letter makes the vowel long.",
+        "fr": {
+          "prompt": "Écoutez. Brève ou longue ?",
+          "explanation": "مِي (mī) : le ي après la lettre allonge la voyelle."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Short or long?",
+      "fr": {
+        "title": "Brève ou longue ?"
+      },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "minimal-pair",
+        "skill": "listening",
+        "objectIds": [
+          "mrk:fatha",
+          "syl:cvv-ta"
+        ],
+        "contrastPhonemes": [
+          "mrk:fatha",
+          "mrk:madd-alif"
+        ],
+        "audioText": "تَ",
+        "audioKey": "grid/ta1-fatha",
+        "prompt": "Listen. Short or long?",
+        "options": [
+          {
+            "label": "تَا",
+            "correct": false
+          },
+          {
+            "label": "تَ",
+            "correct": true
+          }
+        ],
+        "explanation": "تَ (ta) is short: there is no ا after it to lengthen it.",
+        "fr": {
+          "prompt": "Écoutez. Brève ou longue ?",
+          "explanation": "تَ (ta) est brève : aucun ا ne la suit pour l'allonger."
+        }
+      }
+    },
+    {
+      "type": "explain",
+      "title": "Word pairs, now in writing",
+      "body": [
+        "Earlier you picked only the first letter. Now you can read these words, so choose the whole word you hear.",
+        "Each pair differs in its first sound only."
+      ],
+      "fr": {
+        "title": "Les paires de mots, maintenant à l'écrit",
+        "body": [
+          "Tout à l'heure, vous choisissiez seulement la première lettre. Maintenant que vous savez lire ces mots, choisissez le mot entier que vous entendez.",
+          "Chaque paire ne diffère que par son premier son."
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Which word?",
+      "fr": {
+        "title": "Quel mot ?"
+      },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "minimal-pair",
+        "skill": "listening",
+        "objectIds": [
+          "let:ha1",
+          "let:ha2"
+        ],
+        "contrastPhonemes": [
+          "let:ha1",
+          "let:ha2"
+        ],
+        "pairRef": {
+          "pairId": "mp:ha1-ha2-haram",
+          "heard": "let:ha1"
+        },
+        "audioText": "حَرَم",
+        "audioKey": "pairs/haram-ha1",
+        "prompt": "Listen, then choose the word you hear.",
+        "options": [
+          {
+            "label": "حَرَم",
+            "correct": true
+          },
+          {
+            "label": "هَرَم",
+            "correct": false
+          }
+        ],
+        "explanation": "You heard حَرَم (ḥaram), “sanctuary”. Its twin هَرَم (haram) means “pyramid”.",
+        "fr": {
+          "prompt": "Écoutez, puis choisissez le mot que vous entendez.",
+          "explanation": "Vous avez entendu حَرَم (ḥaram), « sanctuaire ». Son jumeau هَرَم (haram) signifie « pyramide »."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Which word?",
+      "fr": {
+        "title": "Quel mot ?"
+      },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "minimal-pair",
+        "skill": "listening",
+        "objectIds": [
+          "let:kaf",
+          "let:qaf"
+        ],
+        "contrastPhonemes": [
+          "let:qaf",
+          "let:kaf"
+        ],
+        "pairRef": {
+          "pairId": "mp:qaf-kaf-qalb",
+          "heard": "let:kaf"
+        },
+        "audioText": "كَلْب",
+        "audioKey": "pairs/kalb-kaf",
+        "prompt": "Listen, then choose the word you hear.",
+        "options": [
+          {
+            "label": "قَلْب",
+            "correct": false
+          },
+          {
+            "label": "كَلْب",
+            "correct": true
+          }
+        ],
+        "explanation": "You heard كَلْب (kalb), “dog”. Its twin قَلْب (qalb) means “heart”.",
+        "fr": {
+          "prompt": "Écoutez, puis choisissez le mot que vous entendez.",
+          "explanation": "Vous avez entendu كَلْب (kalb), « chien ». Son jumeau قَلْب (qalb) signifie « cœur »."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Which word?",
+      "fr": {
+        "title": "Quel mot ?"
+      },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "minimal-pair",
+        "skill": "listening",
+        "objectIds": [
+          "mrk:hamza",
+          "let:ayn"
+        ],
+        "contrastPhonemes": [
+          "let:ayn",
+          "mrk:hamza"
+        ],
+        "pairRef": {
+          "pairId": "mp:ayn-hamza-amal",
+          "heard": "mrk:hamza"
+        },
+        "audioText": "أَمَل",
+        "audioKey": "pairs/amal-hamza",
+        "prompt": "Listen, then choose the word you hear.",
+        "options": [
+          {
+            "label": "عَمَل",
+            "correct": false
+          },
+          {
+            "label": "أَمَل",
+            "correct": true
+          }
+        ],
+        "explanation": "You heard أَمَل (amal), “hope”. Its twin عَمَل (ʿamal) means “work / job”.",
+        "fr": {
+          "prompt": "Écoutez, puis choisissez le mot que vous entendez.",
+          "explanation": "Vous avez entendu أَمَل (amal), « espoir ». Son jumeau عَمَل (ʿamal) signifie « travail »."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Which word?",
+      "fr": {
+        "title": "Quel mot ?"
+      },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "minimal-pair",
+        "skill": "listening",
+        "objectIds": [
+          "let:ayn",
+          "mrk:hamza"
+        ],
+        "contrastPhonemes": [
+          "let:ayn",
+          "mrk:hamza"
+        ],
+        "pairRef": {
+          "pairId": "mp:ayn-hamza-alima",
+          "heard": "let:ayn"
+        },
+        "audioText": "عَلِمَ",
+        "audioKey": "pairs/alima-ayn",
+        "prompt": "Listen, then choose the word you hear.",
+        "options": [
+          {
+            "label": "عَلِمَ",
+            "correct": true
+          },
+          {
+            "label": "أَلِمَ",
+            "correct": false
+          }
+        ],
+        "explanation": "You heard عَلِمَ (ʿalima), “to know”. Its twin أَلِمَ (alima) means “to feel pain”.",
+        "fr": {
+          "prompt": "Écoutez, puis choisissez le mot que vous entendez.",
+          "explanation": "Vous avez entendu عَلِمَ (ʿalima), « savoir ». Son jumeau أَلِمَ (alima) signifie « souffrir »."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Which word?",
+      "fr": {
+        "title": "Quel mot ?"
+      },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "minimal-pair",
+        "skill": "listening",
+        "objectIds": [
+          "let:ha2",
+          "let:ha1"
+        ],
+        "contrastPhonemes": [
+          "let:ha1",
+          "let:ha2"
+        ],
+        "pairRef": {
+          "pairId": "mp:ha1-ha2-haram",
+          "heard": "let:ha2"
+        },
+        "audioText": "هَرَم",
+        "audioKey": "pairs/haram-ha2",
+        "prompt": "Listen, then choose the word you hear.",
+        "options": [
+          {
+            "label": "حَرَم",
+            "correct": false
+          },
+          {
+            "label": "هَرَم",
+            "correct": true
+          }
+        ],
+        "explanation": "You heard هَرَم (haram), “pyramid”. Its twin حَرَم (ḥaram) means “sanctuary”.",
+        "fr": {
+          "prompt": "Écoutez, puis choisissez le mot que vous entendez.",
+          "explanation": "Vous avez entendu هَرَم (haram), « pyramide ». Son jumeau حَرَم (ḥaram) signifie « sanctuaire »."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Which word?",
+      "fr": {
+        "title": "Quel mot ?"
+      },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "minimal-pair",
+        "skill": "listening",
+        "objectIds": [
+          "let:qaf",
+          "let:kaf"
+        ],
+        "contrastPhonemes": [
+          "let:qaf",
+          "let:kaf"
+        ],
+        "pairRef": {
+          "pairId": "mp:qaf-kaf-qalb",
+          "heard": "let:qaf"
+        },
+        "audioText": "قَلْب",
+        "audioKey": "pairs/qalb-qaf",
+        "prompt": "Listen, then choose the word you hear.",
+        "options": [
+          {
+            "label": "قَلْب",
+            "correct": true
+          },
+          {
+            "label": "كَلْب",
+            "correct": false
+          }
+        ],
+        "explanation": "You heard قَلْب (qalb), “heart”. Its twin كَلْب (kalb) means “dog”.",
+        "fr": {
+          "prompt": "Écoutez, puis choisissez le mot que vous entendez.",
+          "explanation": "Vous avez entendu قَلْب (qalb), « cœur ». Son jumeau كَلْب (kalb) signifie « chien »."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Which word?",
+      "fr": {
+        "title": "Quel mot ?"
+      },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "minimal-pair",
+        "skill": "listening",
+        "objectIds": [
+          "let:ayn",
+          "mrk:hamza"
+        ],
+        "contrastPhonemes": [
+          "let:ayn",
+          "mrk:hamza"
+        ],
+        "pairRef": {
+          "pairId": "mp:ayn-hamza-amal",
+          "heard": "let:ayn"
+        },
+        "audioText": "عَمَل",
+        "audioKey": "words/wrk-11",
+        "prompt": "Listen, then choose the word you hear.",
+        "options": [
+          {
+            "label": "عَمَل",
+            "correct": true
+          },
+          {
+            "label": "أَمَل",
+            "correct": false
+          }
+        ],
+        "explanation": "You heard عَمَل (ʿamal), “work / job”. Its twin أَمَل (amal) means “hope”.",
+        "fr": {
+          "prompt": "Écoutez, puis choisissez le mot que vous entendez.",
+          "explanation": "Vous avez entendu عَمَل (ʿamal), « travail ». Son jumeau أَمَل (amal) signifie « espoir »."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Which word?",
+      "fr": {
+        "title": "Quel mot ?"
+      },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "minimal-pair",
+        "skill": "listening",
+        "objectIds": [
+          "mrk:hamza",
+          "let:ayn"
+        ],
+        "contrastPhonemes": [
+          "let:ayn",
+          "mrk:hamza"
+        ],
+        "pairRef": {
+          "pairId": "mp:ayn-hamza-alima",
+          "heard": "mrk:hamza"
+        },
+        "audioText": "أَلِمَ",
+        "audioKey": "pairs/alima-hamza",
+        "prompt": "Listen, then choose the word you hear.",
+        "options": [
+          {
+            "label": "عَلِمَ",
+            "correct": false
+          },
+          {
+            "label": "أَلِمَ",
+            "correct": true
+          }
+        ],
+        "explanation": "You heard أَلِمَ (alima), “to feel pain”. Its twin عَلِمَ (ʿalima) means “to know”.",
+        "fr": {
+          "prompt": "Écoutez, puis choisissez le mot que vous entendez.",
+          "explanation": "Vous avez entendu أَلِمَ (alima), « souffrir ». Son jumeau عَلِمَ (ʿalima) signifie « savoir »."
+        }
+      }
+    },
+    {
+      "type": "complete",
+      "title": "Short, long, and real words",
+      "message": "You heard the difference between short and long vowels, then read and chose real words that differ by a single sound.",
+      "finishLabel": "Finish",
+      "fr": {
+        "title": "Brèves, longues et vrais mots",
+        "message": "Vous avez entendu la différence entre voyelles brèves et longues, puis lu et choisi de vrais mots qui ne diffèrent que d'un seul son.",
+        "finishLabel": "Terminer"
+      }
+    }
+  ]
+}

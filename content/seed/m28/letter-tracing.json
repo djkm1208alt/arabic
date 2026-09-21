@@ -1,0 +1,390 @@
+{
+  "_meta": {
+    "status": "M28 seed — draft for review, NOT wired into tools/build-content.js. See m28_emphasis_layer_scope.md.",
+    "why": "Stroke geometry already lives in content/letters.json (M12) and is reused, not copied. New here: dots as structured data (transcribed from index.html LETTER_DOT_NOTES), proposed as an additive `dots` field on letters.json. Dot-writing order stays out of scope, as in M12."
+  },
+  "letters": [
+    {
+      "letterId": "let:alif",
+      "ar": "ا",
+      "strokeCount": 1,
+      "strokeSource": "content/letters.json#strokeOrder",
+      "dots": null,
+      "phases": [
+        "watch",
+        "trace",
+        "write"
+      ]
+    },
+    {
+      "letterId": "let:ba",
+      "ar": "ب",
+      "strokeCount": 1,
+      "strokeSource": "content/letters.json#strokeOrder",
+      "dots": {
+        "count": 1,
+        "position": "below"
+      },
+      "phases": [
+        "watch",
+        "trace",
+        "write"
+      ]
+    },
+    {
+      "letterId": "let:ta1",
+      "ar": "ت",
+      "strokeCount": 1,
+      "strokeSource": "content/letters.json#strokeOrder",
+      "dots": {
+        "count": 2,
+        "position": "above"
+      },
+      "phases": [
+        "watch",
+        "trace",
+        "write"
+      ]
+    },
+    {
+      "letterId": "let:tha",
+      "ar": "ث",
+      "strokeCount": 1,
+      "strokeSource": "content/letters.json#strokeOrder",
+      "dots": {
+        "count": 3,
+        "position": "above"
+      },
+      "phases": [
+        "watch",
+        "trace",
+        "write"
+      ]
+    },
+    {
+      "letterId": "let:jim",
+      "ar": "ج",
+      "strokeCount": 1,
+      "strokeSource": "content/letters.json#strokeOrder",
+      "dots": {
+        "count": 1,
+        "position": "below"
+      },
+      "phases": [
+        "watch",
+        "trace",
+        "write"
+      ]
+    },
+    {
+      "letterId": "let:ha1",
+      "ar": "ح",
+      "strokeCount": 1,
+      "strokeSource": "content/letters.json#strokeOrder",
+      "dots": null,
+      "phases": [
+        "watch",
+        "trace",
+        "write"
+      ]
+    },
+    {
+      "letterId": "let:kha",
+      "ar": "خ",
+      "strokeCount": 1,
+      "strokeSource": "content/letters.json#strokeOrder",
+      "dots": {
+        "count": 1,
+        "position": "above"
+      },
+      "phases": [
+        "watch",
+        "trace",
+        "write"
+      ]
+    },
+    {
+      "letterId": "let:dal",
+      "ar": "د",
+      "strokeCount": 1,
+      "strokeSource": "content/letters.json#strokeOrder",
+      "dots": null,
+      "phases": [
+        "watch",
+        "trace",
+        "write"
+      ]
+    },
+    {
+      "letterId": "let:dhal",
+      "ar": "ذ",
+      "strokeCount": 1,
+      "strokeSource": "content/letters.json#strokeOrder",
+      "dots": {
+        "count": 1,
+        "position": "above"
+      },
+      "phases": [
+        "watch",
+        "trace",
+        "write"
+      ]
+    },
+    {
+      "letterId": "let:ra",
+      "ar": "ر",
+      "strokeCount": 1,
+      "strokeSource": "content/letters.json#strokeOrder",
+      "dots": null,
+      "phases": [
+        "watch",
+        "trace",
+        "write"
+      ]
+    },
+    {
+      "letterId": "let:zay",
+      "ar": "ز",
+      "strokeCount": 1,
+      "strokeSource": "content/letters.json#strokeOrder",
+      "dots": {
+        "count": 1,
+        "position": "above"
+      },
+      "phases": [
+        "watch",
+        "trace",
+        "write"
+      ]
+    },
+    {
+      "letterId": "let:sin",
+      "ar": "س",
+      "strokeCount": 1,
+      "strokeSource": "content/letters.json#strokeOrder",
+      "dots": null,
+      "phases": [
+        "watch",
+        "trace",
+        "write"
+      ]
+    },
+    {
+      "letterId": "let:shin",
+      "ar": "ش",
+      "strokeCount": 1,
+      "strokeSource": "content/letters.json#strokeOrder",
+      "dots": {
+        "count": 3,
+        "position": "above"
+      },
+      "phases": [
+        "watch",
+        "trace",
+        "write"
+      ]
+    },
+    {
+      "letterId": "let:sad",
+      "ar": "ص",
+      "strokeCount": 1,
+      "strokeSource": "content/letters.json#strokeOrder",
+      "dots": null,
+      "phases": [
+        "watch",
+        "trace",
+        "write"
+      ]
+    },
+    {
+      "letterId": "let:dad",
+      "ar": "ض",
+      "strokeCount": 1,
+      "strokeSource": "content/letters.json#strokeOrder",
+      "dots": {
+        "count": 1,
+        "position": "above"
+      },
+      "phases": [
+        "watch",
+        "trace",
+        "write"
+      ]
+    },
+    {
+      "letterId": "let:ta2",
+      "ar": "ط",
+      "strokeCount": 2,
+      "strokeSource": "content/letters.json#strokeOrder",
+      "dots": null,
+      "phases": [
+        "watch",
+        "trace",
+        "write"
+      ]
+    },
+    {
+      "letterId": "let:za2",
+      "ar": "ظ",
+      "strokeCount": 2,
+      "strokeSource": "content/letters.json#strokeOrder",
+      "dots": {
+        "count": 1,
+        "position": "above"
+      },
+      "phases": [
+        "watch",
+        "trace",
+        "write"
+      ]
+    },
+    {
+      "letterId": "let:ayn",
+      "ar": "ع",
+      "strokeCount": 1,
+      "strokeSource": "content/letters.json#strokeOrder",
+      "dots": null,
+      "phases": [
+        "watch",
+        "trace",
+        "write"
+      ]
+    },
+    {
+      "letterId": "let:ghayn",
+      "ar": "غ",
+      "strokeCount": 1,
+      "strokeSource": "content/letters.json#strokeOrder",
+      "dots": {
+        "count": 1,
+        "position": "above"
+      },
+      "phases": [
+        "watch",
+        "trace",
+        "write"
+      ]
+    },
+    {
+      "letterId": "let:fa",
+      "ar": "ف",
+      "strokeCount": 1,
+      "strokeSource": "content/letters.json#strokeOrder",
+      "dots": {
+        "count": 1,
+        "position": "above"
+      },
+      "phases": [
+        "watch",
+        "trace",
+        "write"
+      ]
+    },
+    {
+      "letterId": "let:qaf",
+      "ar": "ق",
+      "strokeCount": 1,
+      "strokeSource": "content/letters.json#strokeOrder",
+      "dots": {
+        "count": 2,
+        "position": "above"
+      },
+      "phases": [
+        "watch",
+        "trace",
+        "write"
+      ]
+    },
+    {
+      "letterId": "let:kaf",
+      "ar": "ك",
+      "strokeCount": 2,
+      "strokeSource": "content/letters.json#strokeOrder",
+      "dots": null,
+      "phases": [
+        "watch",
+        "trace",
+        "write"
+      ]
+    },
+    {
+      "letterId": "let:lam",
+      "ar": "ل",
+      "strokeCount": 1,
+      "strokeSource": "content/letters.json#strokeOrder",
+      "dots": null,
+      "phases": [
+        "watch",
+        "trace",
+        "write"
+      ]
+    },
+    {
+      "letterId": "let:mim",
+      "ar": "م",
+      "strokeCount": 1,
+      "strokeSource": "content/letters.json#strokeOrder",
+      "dots": null,
+      "phases": [
+        "watch",
+        "trace",
+        "write"
+      ]
+    },
+    {
+      "letterId": "let:nun",
+      "ar": "ن",
+      "strokeCount": 1,
+      "strokeSource": "content/letters.json#strokeOrder",
+      "dots": {
+        "count": 1,
+        "position": "above"
+      },
+      "phases": [
+        "watch",
+        "trace",
+        "write"
+      ]
+    },
+    {
+      "letterId": "let:ha2",
+      "ar": "ه",
+      "strokeCount": 1,
+      "strokeSource": "content/letters.json#strokeOrder",
+      "dots": null,
+      "phases": [
+        "watch",
+        "trace",
+        "write"
+      ]
+    },
+    {
+      "letterId": "let:waw",
+      "ar": "و",
+      "strokeCount": 1,
+      "strokeSource": "content/letters.json#strokeOrder",
+      "dots": null,
+      "phases": [
+        "watch",
+        "trace",
+        "write"
+      ]
+    },
+    {
+      "letterId": "let:ya",
+      "ar": "ي",
+      "strokeCount": 1,
+      "strokeSource": "content/letters.json#strokeOrder",
+      "dots": {
+        "count": 2,
+        "position": "below",
+        "form": "isolated"
+      },
+      "phases": [
+        "watch",
+        "trace",
+        "write"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,502 @@
+{
+  "id": "a0-sounds-back",
+  "unitId": "a0-u1",
+  "curriculumLessonId": "a0-sounds-back",
+  "title": "The Deep k, Then a Mixed Review",
+  "level": "A0",
+  "skills": [
+    "listening",
+    "pronunciation",
+    "writing"
+  ],
+  "objectives": [
+    "let:qaf",
+    "let:kaf",
+    "let:ha1",
+    "let:ha2",
+    "let:ayn",
+    "mrk:hamza",
+    "let:sad",
+    "let:ta2",
+    "let:dal"
+  ],
+  "emphasisTag": "both",
+  "fr": {
+    "title": "Le k profond, puis une révision"
+  },
+  "steps": [
+    {
+      "type": "explain",
+      "title": "Two kinds of k",
+      "body": [
+        "ك is the k you already know. ق is made further back: raise the very back of your tongue against the uvula, the small soft flap hanging at the back of your mouth. It sounds deeper, almost like a knock.",
+        "Like the heavy letters, ق darkens the vowel that follows it."
+      ],
+      "fr": {
+        "title": "Deux sortes de k",
+        "body": [
+          "ك est le k que vous connaissez déjà. ق se prononce plus en arrière : levez le fond de la langue contre la luette, le petit lobe mou suspendu au fond de la bouche. Le son est plus grave, presque comme un coup frappé.",
+          "Comme les lettres lourdes, ق assombrit la voyelle qui suit."
+        ]
+      },
+      "previewSymbols": [
+        "ق",
+        "ك"
+      ]
+    },
+    {
+      "type": "exercise",
+      "title": "Which sound?",
+      "fr": {
+        "title": "Quel son ?"
+      },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "minimal-pair",
+        "skill": "listening",
+        "objectIds": [
+          "let:qaf",
+          "let:kaf"
+        ],
+        "contrastPhonemes": [
+          "let:qaf",
+          "let:kaf"
+        ],
+        "pairRef": {
+          "pairId": "mp:qaf-kaf-qalb",
+          "heard": "let:qaf"
+        },
+        "audioText": "قَلْب",
+        "audioKey": "pairs/qalb-qaf",
+        "prompt": "Listen. Which sound does this word start with?",
+        "options": [
+          {
+            "label": "ق",
+            "correct": true
+          },
+          {
+            "label": "ك",
+            "correct": false
+          }
+        ],
+        "explanation": "قَلْب (qalb), “heart”, starts with ق: the deep k.",
+        "fr": {
+          "prompt": "Écoutez. Par quel son ce mot commence-t-il ?",
+          "explanation": "قَلْب (qalb), « cœur », commence par ق : le k profond."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Which sound?",
+      "fr": {
+        "title": "Quel son ?"
+      },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "minimal-pair",
+        "skill": "listening",
+        "objectIds": [
+          "let:kaf",
+          "let:qaf"
+        ],
+        "contrastPhonemes": [
+          "let:qaf",
+          "let:kaf"
+        ],
+        "pairRef": {
+          "pairId": "mp:qaf-kaf-qala",
+          "heard": "let:kaf"
+        },
+        "audioText": "كَالَ",
+        "audioKey": "pairs/kala-kaf",
+        "prompt": "Listen. Which sound does this word start with?",
+        "options": [
+          {
+            "label": "ك",
+            "correct": true
+          },
+          {
+            "label": "ق",
+            "correct": false
+          }
+        ],
+        "explanation": "كَالَ (kāla), “to measure out (by volume)”, starts with ك: the light k.",
+        "fr": {
+          "prompt": "Écoutez. Par quel son ce mot commence-t-il ?",
+          "explanation": "كَالَ (kāla), « mesurer (en volume) », commence par ك : le k léger."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Which sound?",
+      "fr": {
+        "title": "Quel son ?"
+      },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "minimal-pair",
+        "skill": "listening",
+        "objectIds": [
+          "let:kaf",
+          "let:qaf"
+        ],
+        "contrastPhonemes": [
+          "let:qaf",
+          "let:kaf"
+        ],
+        "pairRef": {
+          "pairId": "mp:qaf-kaf-qalb",
+          "heard": "let:kaf"
+        },
+        "audioText": "كَلْب",
+        "audioKey": "pairs/kalb-kaf",
+        "prompt": "Listen. Which sound does this word start with?",
+        "options": [
+          {
+            "label": "ق",
+            "correct": false
+          },
+          {
+            "label": "ك",
+            "correct": true
+          }
+        ],
+        "explanation": "كَلْب (kalb), “dog”, starts with ك: the light k.",
+        "fr": {
+          "prompt": "Écoutez. Par quel son ce mot commence-t-il ?",
+          "explanation": "كَلْب (kalb), « chien », commence par ك : le k léger."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Which sound?",
+      "fr": {
+        "title": "Quel son ?"
+      },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "minimal-pair",
+        "skill": "listening",
+        "objectIds": [
+          "let:qaf",
+          "let:kaf"
+        ],
+        "contrastPhonemes": [
+          "let:qaf",
+          "let:kaf"
+        ],
+        "pairRef": {
+          "pairId": "mp:qaf-kaf-qala",
+          "heard": "let:qaf"
+        },
+        "audioText": "قَالَ",
+        "audioKey": "pairs/qala-qaf",
+        "prompt": "Listen. Which sound does this word start with?",
+        "options": [
+          {
+            "label": "ك",
+            "correct": false
+          },
+          {
+            "label": "ق",
+            "correct": true
+          }
+        ],
+        "explanation": "قَالَ (qāla), “to say”, starts with ق: the deep k.",
+        "fr": {
+          "prompt": "Écoutez. Par quel son ce mot commence-t-il ?",
+          "explanation": "قَالَ (qāla), « dire », commence par ق : le k profond."
+        }
+      }
+    },
+    {
+      "type": "trace-letter",
+      "letterId": "let:qaf",
+      "strokes": "fromLetter"
+    },
+    {
+      "type": "trace-letter",
+      "letterId": "let:kaf",
+      "strokes": "fromLetter"
+    },
+    {
+      "type": "explain",
+      "title": "Mixed review",
+      "body": [
+        "Now pairs from the whole unit, mixed together. Same task: listen, then pick the first sound."
+      ],
+      "fr": {
+        "title": "Révision mélangée",
+        "body": [
+          "Voici maintenant des paires de toute l'unité, mélangées. Même consigne : écoutez, puis choisissez le premier son."
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Which sound?",
+      "fr": {
+        "title": "Quel son ?"
+      },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "minimal-pair",
+        "skill": "listening",
+        "objectIds": [
+          "let:ha2",
+          "let:ha1"
+        ],
+        "contrastPhonemes": [
+          "let:ha1",
+          "let:ha2"
+        ],
+        "pairRef": {
+          "pairId": "mp:ha1-ha2-haram",
+          "heard": "let:ha2"
+        },
+        "audioText": "هَرَم",
+        "audioKey": "pairs/haram-ha2",
+        "prompt": "Listen. Which sound does this word start with?",
+        "options": [
+          {
+            "label": "ح",
+            "correct": false
+          },
+          {
+            "label": "ه",
+            "correct": true
+          }
+        ],
+        "explanation": "هَرَم (haram), “pyramid”, starts with ه: the light h.",
+        "fr": {
+          "prompt": "Écoutez. Par quel son ce mot commence-t-il ?",
+          "explanation": "هَرَم (haram), « pyramide », commence par ه : le h léger."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Which sound?",
+      "fr": {
+        "title": "Quel son ?"
+      },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "minimal-pair",
+        "skill": "listening",
+        "objectIds": [
+          "mrk:hamza",
+          "let:ayn"
+        ],
+        "contrastPhonemes": [
+          "let:ayn",
+          "mrk:hamza"
+        ],
+        "pairRef": {
+          "pairId": "mp:ayn-hamza-alima",
+          "heard": "mrk:hamza"
+        },
+        "audioText": "أَلِمَ",
+        "audioKey": "pairs/alima-hamza",
+        "prompt": "Listen. Which sound does this word start with?",
+        "options": [
+          {
+            "label": "ع",
+            "correct": false
+          },
+          {
+            "label": "ء",
+            "correct": true
+          }
+        ],
+        "explanation": "أَلِمَ (alima), “to feel pain”, starts with ء: the throat catch (hamza), written here on an alif (أ).",
+        "fr": {
+          "prompt": "Écoutez. Par quel son ce mot commence-t-il ?",
+          "explanation": "أَلِمَ (alima), « souffrir », commence par ء : le coup de glotte (hamza), écrit ici sur un alif (أ)."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Which sound?",
+      "fr": {
+        "title": "Quel son ?"
+      },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "minimal-pair",
+        "skill": "listening",
+        "objectIds": [
+          "let:ta2",
+          "let:ta1"
+        ],
+        "contrastPhonemes": [
+          "let:ta2",
+          "let:ta1"
+        ],
+        "pairRef": {
+          "pairId": "mp:ta2-ta1-tin",
+          "heard": "let:ta2"
+        },
+        "audioText": "طِين",
+        "audioKey": "pairs/tin-ta2",
+        "prompt": "Listen. Which sound does this word start with?",
+        "options": [
+          {
+            "label": "ط",
+            "correct": true
+          },
+          {
+            "label": "ت",
+            "correct": false
+          }
+        ],
+        "explanation": "طِين (ṭīn), “clay”, starts with ط: the heavy t.",
+        "fr": {
+          "prompt": "Écoutez. Par quel son ce mot commence-t-il ?",
+          "explanation": "طِين (ṭīn), « argile », commence par ط : le t lourd."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Which sound?",
+      "fr": {
+        "title": "Quel son ?"
+      },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "minimal-pair",
+        "skill": "listening",
+        "objectIds": [
+          "let:dal",
+          "let:dad"
+        ],
+        "contrastPhonemes": [
+          "let:dad",
+          "let:dal"
+        ],
+        "pairRef": {
+          "pairId": "mp:dad-dal-dalla",
+          "heard": "let:dal"
+        },
+        "audioText": "دَلَّ",
+        "audioKey": "pairs/dalla-dal",
+        "prompt": "Listen. Which sound does this word start with?",
+        "options": [
+          {
+            "label": "ض",
+            "correct": false
+          },
+          {
+            "label": "د",
+            "correct": true
+          }
+        ],
+        "explanation": "دَلَّ (dalla), “to guide, to point the way”, starts with د: the light d.",
+        "fr": {
+          "prompt": "Écoutez. Par quel son ce mot commence-t-il ?",
+          "explanation": "دَلَّ (dalla), « guider, indiquer le chemin », commence par د : le d léger."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Which sound?",
+      "fr": {
+        "title": "Quel son ?"
+      },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "minimal-pair",
+        "skill": "listening",
+        "objectIds": [
+          "let:sad",
+          "let:sin"
+        ],
+        "contrastPhonemes": [
+          "let:sad",
+          "let:sin"
+        ],
+        "pairRef": {
+          "pairId": "mp:sad-sin-sara",
+          "heard": "let:sad"
+        },
+        "audioText": "صَارَ",
+        "audioKey": "pairs/sara-sad",
+        "prompt": "Listen. Which sound does this word start with?",
+        "options": [
+          {
+            "label": "س",
+            "correct": false
+          },
+          {
+            "label": "ص",
+            "correct": true
+          }
+        ],
+        "explanation": "صَارَ (ṣāra), “to become”, starts with ص: the heavy s.",
+        "fr": {
+          "prompt": "Écoutez. Par quel son ce mot commence-t-il ?",
+          "explanation": "صَارَ (ṣāra), « devenir », commence par ص : le s lourd."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Which sound?",
+      "fr": {
+        "title": "Quel son ?"
+      },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "minimal-pair",
+        "skill": "listening",
+        "objectIds": [
+          "let:ha1",
+          "let:ha2"
+        ],
+        "contrastPhonemes": [
+          "let:ha1",
+          "let:ha2"
+        ],
+        "pairRef": {
+          "pairId": "mp:ha1-ha2-habba",
+          "heard": "let:ha1"
+        },
+        "audioText": "حَبَّ",
+        "audioKey": "pairs/habba-ha1",
+        "prompt": "Listen. Which sound does this word start with?",
+        "options": [
+          {
+            "label": "ح",
+            "correct": true
+          },
+          {
+            "label": "ه",
+            "correct": false
+          }
+        ],
+        "explanation": "حَبَّ (ḥabba), “to love”, starts with ح: the strong throat h.",
+        "fr": {
+          "prompt": "Écoutez. Par quel son ce mot commence-t-il ?",
+          "explanation": "حَبَّ (ḥabba), « aimer », commence par ح : le h fort de la gorge."
+        }
+      }
+    },
+    {
+      "type": "complete",
+      "title": "All the hard contrasts, by ear",
+      "message": "You can now hear the contrasts learners find hardest: ح/ه, ع/ء, ص/س, ط/ت, ض/د and ق/ك. They come back as soon as you start reading words.",
+      "finishLabel": "Finish",
+      "fr": {
+        "title": "Tous les contrastes difficiles, à l'oreille",
+        "message": "Vous entendez désormais les contrastes que les apprenants trouvent les plus difficiles : ح/ه, ع/ء, ص/س, ط/ت, ض/د et ق/ك. Ils reviennent dès que vous commencez à lire des mots.",
+        "finishLabel": "Terminer"
+      }
+    }
+  ]
+}

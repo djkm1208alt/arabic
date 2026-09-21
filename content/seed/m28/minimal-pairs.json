@@ -1,0 +1,497 @@
+{
+  "_meta": {
+    "status": "M28 seed — draft for review, NOT wired into tools/build-content.js. See m28_emphasis_layer_scope.md.",
+    "source": "docs/MASTER_CURRICULUM_SPEC.md §4 (as corrected by decisions 1-5).",
+    "quranic": "`ref` is surah:ayah; `form` is the word exactly as it occurs there (often inflected). Every ref must be checked against a muṣḥaf before shipping (ROADMAP standing rule 1).",
+    "frequencyRank": "null throughout: no sourced frequency list yet. Never estimated."
+  },
+  "pairs": [
+    {
+      "id": "mp:ha1-ha2-haram",
+      "kind": "minimal-pair",
+      "contrastPhonemes": [
+        "let:ha1",
+        "let:ha2"
+      ],
+      "position": "initial",
+      "level": "A0",
+      "emphasisTag": "both",
+      "skills": [
+        "listening",
+        "pronunciation"
+      ],
+      "words": [
+        {
+          "phoneme": "let:ha1",
+          "ar": "حَرَم",
+          "translit": "ḥaram",
+          "en": "sanctuary",
+          "fr": "sanctuaire",
+          "emphasisTag": "both",
+          "audioKey": "pairs/haram-ha1",
+          "frequencyRank": null,
+          "quranic": {
+            "ref": "28:57",
+            "form": "حَرَمًا"
+          }
+        },
+        {
+          "phoneme": "let:ha2",
+          "ar": "هَرَم",
+          "translit": "haram",
+          "en": "pyramid",
+          "fr": "pyramide",
+          "emphasisTag": "both",
+          "audioKey": "pairs/haram-ha2",
+          "frequencyRank": null,
+          "quranic": null
+        }
+      ]
+    },
+    {
+      "id": "mp:ha1-ha2-habba",
+      "kind": "minimal-pair",
+      "contrastPhonemes": [
+        "let:ha1",
+        "let:ha2"
+      ],
+      "position": "initial",
+      "level": "A0",
+      "emphasisTag": "both",
+      "skills": [
+        "listening",
+        "pronunciation"
+      ],
+      "words": [
+        {
+          "phoneme": "let:ha1",
+          "ar": "حَبَّ",
+          "translit": "ḥabba",
+          "en": "to love",
+          "fr": "aimer",
+          "emphasisTag": "both",
+          "audioKey": "pairs/habba-ha1",
+          "frequencyRank": null,
+          "quranic": null,
+          "notes": "Classical form; everyday MSA says أَحَبَّ. Kept for the sound contrast only (decision 1-5)."
+        },
+        {
+          "phoneme": "let:ha2",
+          "ar": "هَبَّ",
+          "translit": "habba",
+          "en": "to blow (of wind)",
+          "fr": "souffler (le vent)",
+          "emphasisTag": "both",
+          "audioKey": "pairs/habba-ha2",
+          "frequencyRank": null,
+          "quranic": null
+        }
+      ]
+    },
+    {
+      "id": "mp:ayn-hamza-alima",
+      "kind": "minimal-pair",
+      "contrastPhonemes": [
+        "let:ayn",
+        "mrk:hamza"
+      ],
+      "position": "initial",
+      "level": "A0",
+      "emphasisTag": "both",
+      "skills": [
+        "listening",
+        "pronunciation"
+      ],
+      "words": [
+        {
+          "phoneme": "let:ayn",
+          "ar": "عَلِمَ",
+          "translit": "ʿalima",
+          "en": "to know",
+          "fr": "savoir",
+          "emphasisTag": "both",
+          "audioKey": "pairs/alima-ayn",
+          "frequencyRank": null,
+          "quranic": {
+            "ref": "2:60",
+            "form": "عَلِمَ"
+          }
+        },
+        {
+          "phoneme": "mrk:hamza",
+          "ar": "أَلِمَ",
+          "translit": "alima",
+          "en": "to feel pain",
+          "fr": "souffrir",
+          "emphasisTag": "both",
+          "audioKey": "pairs/alima-hamza",
+          "frequencyRank": null,
+          "quranic": {
+            "ref": "4:104",
+            "form": "يَأْلَمُونَ"
+          }
+        }
+      ]
+    },
+    {
+      "id": "mp:ayn-hamza-amal",
+      "kind": "minimal-pair",
+      "contrastPhonemes": [
+        "let:ayn",
+        "mrk:hamza"
+      ],
+      "position": "initial",
+      "level": "A0",
+      "emphasisTag": "both",
+      "skills": [
+        "listening",
+        "pronunciation"
+      ],
+      "words": [
+        {
+          "phoneme": "let:ayn",
+          "ar": "عَمَل",
+          "translit": "ʿamal",
+          "en": "work / job",
+          "fr": "travail",
+          "emphasisTag": "both",
+          "audioKey": "words/wrk-11",
+          "frequencyRank": null,
+          "lexemeId": "lex:wrk-11",
+          "quranic": {
+            "ref": "18:110",
+            "form": "عَمَلًا"
+          }
+        },
+        {
+          "phoneme": "mrk:hamza",
+          "ar": "أَمَل",
+          "translit": "amal",
+          "en": "hope",
+          "fr": "espoir",
+          "emphasisTag": "both",
+          "audioKey": "pairs/amal-hamza",
+          "frequencyRank": null,
+          "quranic": {
+            "ref": "15:3",
+            "form": "الْأَمَلُ"
+          }
+        }
+      ]
+    },
+    {
+      "id": "mp:sad-sin-sayf",
+      "kind": "minimal-pair",
+      "contrastPhonemes": [
+        "let:sad",
+        "let:sin"
+      ],
+      "position": "initial",
+      "level": "A0",
+      "emphasisTag": "both",
+      "skills": [
+        "listening",
+        "pronunciation"
+      ],
+      "words": [
+        {
+          "phoneme": "let:sad",
+          "ar": "صَيْف",
+          "translit": "ṣayf",
+          "en": "summer",
+          "fr": "été",
+          "emphasisTag": "both",
+          "audioKey": "pairs/sayf-sad",
+          "frequencyRank": null,
+          "quranic": {
+            "ref": "106:2",
+            "form": "وَالصَّيْفِ"
+          }
+        },
+        {
+          "phoneme": "let:sin",
+          "ar": "سَيْف",
+          "translit": "sayf",
+          "en": "sword",
+          "fr": "épée",
+          "emphasisTag": "both",
+          "audioKey": "pairs/sayf-sin",
+          "frequencyRank": null,
+          "quranic": null
+        }
+      ]
+    },
+    {
+      "id": "mp:sad-sin-sara",
+      "kind": "minimal-pair",
+      "contrastPhonemes": [
+        "let:sad",
+        "let:sin"
+      ],
+      "position": "initial",
+      "level": "A0",
+      "emphasisTag": "both",
+      "skills": [
+        "listening",
+        "pronunciation"
+      ],
+      "words": [
+        {
+          "phoneme": "let:sad",
+          "ar": "صَارَ",
+          "translit": "ṣāra",
+          "en": "to become",
+          "fr": "devenir",
+          "emphasisTag": "both",
+          "audioKey": "pairs/sara-sad",
+          "frequencyRank": null,
+          "quranic": {
+            "ref": "42:53",
+            "form": "تَصِيرُ"
+          }
+        },
+        {
+          "phoneme": "let:sin",
+          "ar": "سَارَ",
+          "translit": "sāra",
+          "en": "to walk, to travel",
+          "fr": "marcher, voyager",
+          "emphasisTag": "both",
+          "audioKey": "pairs/sara-sin",
+          "frequencyRank": null,
+          "quranic": {
+            "ref": "28:29",
+            "form": "وَسَارَ"
+          }
+        }
+      ]
+    },
+    {
+      "id": "mp:ta2-ta1-taba",
+      "kind": "minimal-pair",
+      "contrastPhonemes": [
+        "let:ta2",
+        "let:ta1"
+      ],
+      "position": "initial",
+      "level": "A0",
+      "emphasisTag": "both",
+      "skills": [
+        "listening",
+        "pronunciation"
+      ],
+      "words": [
+        {
+          "phoneme": "let:ta2",
+          "ar": "طَابَ",
+          "translit": "ṭāba",
+          "en": "to be good, pleasant",
+          "fr": "être bon, agréable",
+          "emphasisTag": "both",
+          "audioKey": "pairs/taba-ta2",
+          "frequencyRank": null,
+          "quranic": {
+            "ref": "4:3",
+            "form": "طَابَ"
+          }
+        },
+        {
+          "phoneme": "let:ta1",
+          "ar": "تَابَ",
+          "translit": "tāba",
+          "en": "to repent",
+          "fr": "se repentir",
+          "emphasisTag": "both",
+          "audioKey": "pairs/taba-ta1",
+          "frequencyRank": null,
+          "quranic": {
+            "ref": "2:37",
+            "form": "فَتَابَ"
+          }
+        }
+      ]
+    },
+    {
+      "id": "mp:ta2-ta1-tin",
+      "kind": "minimal-pair",
+      "contrastPhonemes": [
+        "let:ta2",
+        "let:ta1"
+      ],
+      "position": "initial",
+      "level": "A0",
+      "emphasisTag": "both",
+      "skills": [
+        "listening",
+        "pronunciation"
+      ],
+      "words": [
+        {
+          "phoneme": "let:ta2",
+          "ar": "طِين",
+          "translit": "ṭīn",
+          "en": "clay",
+          "fr": "argile",
+          "emphasisTag": "both",
+          "audioKey": "pairs/tin-ta2",
+          "frequencyRank": null,
+          "quranic": {
+            "ref": "6:2",
+            "form": "طِينٍ"
+          }
+        },
+        {
+          "phoneme": "let:ta1",
+          "ar": "تِين",
+          "translit": "tīn",
+          "en": "figs",
+          "fr": "figues",
+          "emphasisTag": "both",
+          "audioKey": "words/foo-14",
+          "frequencyRank": null,
+          "lexemeId": "lex:foo-14",
+          "quranic": {
+            "ref": "95:1",
+            "form": "وَالتِّينِ"
+          }
+        }
+      ]
+    },
+    {
+      "id": "mp:dad-dal-dalla",
+      "kind": "minimal-pair",
+      "contrastPhonemes": [
+        "let:dad",
+        "let:dal"
+      ],
+      "position": "initial",
+      "level": "A0",
+      "emphasisTag": "both",
+      "skills": [
+        "listening",
+        "pronunciation"
+      ],
+      "words": [
+        {
+          "phoneme": "let:dad",
+          "ar": "ضَلَّ",
+          "translit": "ḍalla",
+          "en": "to go astray",
+          "fr": "s'égarer",
+          "emphasisTag": "both",
+          "audioKey": "pairs/dalla-dad",
+          "frequencyRank": null,
+          "quranic": {
+            "ref": "53:2",
+            "form": "ضَلَّ"
+          }
+        },
+        {
+          "phoneme": "let:dal",
+          "ar": "دَلَّ",
+          "translit": "dalla",
+          "en": "to guide, to point the way",
+          "fr": "guider, indiquer le chemin",
+          "emphasisTag": "both",
+          "audioKey": "pairs/dalla-dal",
+          "frequencyRank": null,
+          "quranic": {
+            "ref": "34:14",
+            "form": "دَلَّهُمْ"
+          }
+        }
+      ]
+    },
+    {
+      "id": "mp:qaf-kaf-qalb",
+      "kind": "minimal-pair",
+      "contrastPhonemes": [
+        "let:qaf",
+        "let:kaf"
+      ],
+      "position": "initial",
+      "level": "A0",
+      "emphasisTag": "both",
+      "skills": [
+        "listening",
+        "pronunciation"
+      ],
+      "words": [
+        {
+          "phoneme": "let:qaf",
+          "ar": "قَلْب",
+          "translit": "qalb",
+          "en": "heart",
+          "fr": "cœur",
+          "emphasisTag": "both",
+          "audioKey": "pairs/qalb-qaf",
+          "frequencyRank": null,
+          "quranic": {
+            "ref": "26:89",
+            "form": "بِقَلْبٍ"
+          }
+        },
+        {
+          "phoneme": "let:kaf",
+          "ar": "كَلْب",
+          "translit": "kalb",
+          "en": "dog",
+          "fr": "chien",
+          "emphasisTag": "both",
+          "audioKey": "pairs/kalb-kaf",
+          "frequencyRank": null,
+          "quranic": {
+            "ref": "18:18",
+            "form": "وَكَلْبُهُم"
+          }
+        }
+      ]
+    },
+    {
+      "id": "mp:qaf-kaf-qala",
+      "kind": "minimal-pair",
+      "contrastPhonemes": [
+        "let:qaf",
+        "let:kaf"
+      ],
+      "position": "initial",
+      "level": "A0",
+      "emphasisTag": "both",
+      "skills": [
+        "listening",
+        "pronunciation"
+      ],
+      "words": [
+        {
+          "phoneme": "let:qaf",
+          "ar": "قَالَ",
+          "translit": "qāla",
+          "en": "to say",
+          "fr": "dire",
+          "emphasisTag": "both",
+          "audioKey": "pairs/qala-qaf",
+          "frequencyRank": null,
+          "quranic": {
+            "ref": "2:30",
+            "form": "قَالَ"
+          }
+        },
+        {
+          "phoneme": "let:kaf",
+          "ar": "كَالَ",
+          "translit": "kāla",
+          "en": "to measure out (by volume)",
+          "fr": "mesurer (en volume)",
+          "emphasisTag": "both",
+          "audioKey": "pairs/kala-kaf",
+          "frequencyRank": null,
+          "quranic": {
+            "ref": "83:3",
+            "form": "كَالُوهُمْ"
+          },
+          "notes": "كَيْل (measuring by volume) is distinct from وَزْن (weighing); 83:3 uses both: كَالُوهُمْ أَو وَّزَنُوهُمْ."
+        }
+      ]
+    }
+  ]
+}
