@@ -4,7 +4,7 @@
 30 grammar points, 146 texts, 38 units, 77 lessons); `npm run qa` 92/92; `node tools/a11y-audit.js`
 clean.
 **Parent:** [ROADMAP.md](ROADMAP.md) M21 row · `b2-u1` ("The Full Case System (Iʿrāb)"), its sixth
-lesson · [reference/iraab-audit.md](reference/iraab-audit.md) §8's `B2-iʿrāb-5` names all four
+lesson · [docs/iraab-audit.md](docs/iraab-audit.md) §8's `B2-iʿrāb-5` names all four
 تَوَابِع (نعت/عطف النسق/توكيد/بدل) as one batch; this session splits it, teaching the two tractable
 with existing vocabulary first.
 

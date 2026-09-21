@@ -17,7 +17,7 @@ batch.
 **Parent:** [ROADMAP.md](ROADMAP.md) — "Parallel tracks → Advanced / literary Arabic" and the
 M21 continuous content operation ("A2 → B1 → B2 → C1 → C2, level by level").
 
-**Builds directly on:** [`reference/iraab-audit.md`](reference/iraab-audit.md) (read-only audit,
+**Builds directly on:** [`docs/iraab-audit.md`](docs/iraab-audit.md) (read-only audit,
 2026-09-08) — the source analysis, cross-map, dependency chain, and defer-list. That audit is the
 evidence base; this doc is the plan it called for in its §8.
 

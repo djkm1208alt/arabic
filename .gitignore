@@ -3,3 +3,9 @@ node_modules/
 .env.*
 __pycache__/
 *.pyc
+
+# Personal reference material (textbooks, grammar PDFs, etc.) kept locally
+# to consult while writing curriculum content. Never shipped, never part of
+# the app, and never committed — may be copyrighted.
+# (First added in 7966b2e; lost in the 67e8e3c restore; put back here.)
+reference/

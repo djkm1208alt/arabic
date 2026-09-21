@@ -4,7 +4,7 @@
 28 grammar points, 142 texts, 38 units, 76 lessons); `npm run qa` 91/91; `node tools/a11y-audit.js`
 clean.
 **Parent:** [ROADMAP.md](ROADMAP.md) M21 row · `b2-u1` ("The Full Case System (Iʿrāb)"), its fifth
-lesson · [reference/iraab-audit.md](reference/iraab-audit.md) §8's `B2-iʿrāb-2` names "المفاعيل
+lesson · [docs/iraab-audit.md](docs/iraab-audit.md) §8's `B2-iʿrāb-2` names "المفاعيل
 (فيه/به/له/مطلق/معه)" alongside the passive; this batch takes the two objects tractable without
 participle vocabulary, leaving the passive itself (needs `b1-u3`) and two vocabulary-blocked
 objects for later.

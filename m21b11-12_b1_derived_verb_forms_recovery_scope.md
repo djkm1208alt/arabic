@@ -1,7 +1,7 @@
 # M21 — Batches 11–12 (recovered + restructured): b1-u1, Derived Verb Forms II–X
 
 **Status:** implemented, on branch `recover/m21-full-history`.
-**Parent:** [ROADMAP.md](ROADMAP.md) M21 row · [reference/iraab-audit.md](reference/iraab-audit.md) §9
+**Parent:** [ROADMAP.md](ROADMAP.md) M21 row · [docs/iraab-audit.md](docs/iraab-audit.md) §9
 Implementation Gate, prerequisite 2 ("B1 is empty").
 **Supersedes (locally):** `m21b10_b1_form_ii_scope.md`, `m21b11_b1_form_iii_scope.md`,
 `m21b12_b1_form_iv_scope.md` (deleted — describe a partial, independently-redone version of this

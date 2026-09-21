@@ -4,7 +4,7 @@
 26 grammar points, 138 texts, 38 units, 75 lessons); `npm run qa` 90/90; `node tools/a11y-audit.js`
 clean.
 **Parent:** [ROADMAP.md](ROADMAP.md) M21 row · `b2-u1` ("The Full Case System (Iʿrāb)"), its fourth
-lesson · [reference/iraab-audit.md](reference/iraab-audit.md) §8's proposed table maps this to
+lesson · [docs/iraab-audit.md](docs/iraab-audit.md) §8's proposed table maps this to
 `B2-iʿrāb-4` (indicative ids `gr:hal`, `gr:tamyiz`, `gr:la-nafiya-jins` — used as-written).
 
 ---
@@ -27,7 +27,7 @@ truly مُعْرَب (case-declined), even though it's written identically to a 
   mattered most: a single-word اسم لا is مبني (built) with فتحة that only LOOKS like a normal
   accusative ending; it becomes genuinely مُعرب مَنصوب only when it's مضاف or شبيه بالمضاف. Getting
   this backwards would have taught a real grammatical inaccuracy dressed up as authoritative
-  content — exactly the risk `reference/iraab-audit.md` §3 flags as this whole programme's
+  content — exactly the risk `docs/iraab-audit.md` §3 flags as this whole programme's
   "biggest structural gap" (المعرب والمبني، entirely absent before this batch).
 - **Checked the lexicon for حَال-suitable vocabulary first**: `رَجَعَ`/`جَاءَ` (already-known verbs)
   plus `سَعِيد`/`حَزِين` (already-known adjectives) cover both new sentences with zero new lexemes.
@@ -93,7 +93,7 @@ blurb string).
 ## 7. Out of scope
 
 - The full مُعْرَب/مَبْنِي distinction itself (only the لا-النافية-للجنس instance is flagged here) —
-  a genuinely foundational topic `reference/iraab-audit.md` names as its own future entry point.
+  a genuinely foundational topic `docs/iraab-audit.md` names as its own future entry point.
 - لا-النافية-للجنس's مضاف / شبيه بالمضاف forms (which ARE fully معرب منصوب) — only the single-word
   مبني form is taught here.
 - التوابع (نعت/عطف/توكيد/بدل) — `B2-iʿrāb-5`, the next item in the audit's dependency-ordered table.

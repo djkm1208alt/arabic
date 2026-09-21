@@ -10,8 +10,10 @@ curriculum-mapping analysis remains.
 `content/descriptors.json`, `content/skills.json`, `content/levels.json`, `content/marks.json`,
 all `content/lessons/*`, `CURRICULUM_ARCHITECTURE.md §10`, `ROADMAP.md`.
 
-This file lives in `reference/` and is **gitignored / local-only** — it is not part of the app
-and is not a milestone scope doc. It exists to inform a future, properly-scoped iʿrāb milestone.
+This file is not part of the app and is not a milestone scope doc. It exists to inform a future,
+properly-scoped iʿrāb milestone. It was first kept in the gitignored `reference/` folder, next to
+the book; it moved to `docs/` on 2026-09-22 because milestone scope docs link to it. It contains
+none of the book's text.
 
 ---
 

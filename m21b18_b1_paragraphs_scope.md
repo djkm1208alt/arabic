@@ -34,7 +34,7 @@ taught is combining already-known pieces into connected prose, not a new rule.
   *noun*, not a preposition, so the paragraph repeats the noun (`إِلَى الْحَدِيقَةِ`) instead; and
   an existential "there is" clause with a sister of إنّ governing a delayed, fronted-predicate
   subject (`إنّ في المدينة حديقةً`-shape) — a genuinely contested construction among reference
-  grammars (flagged in `reference/iraab-audit.md`'s own "أو نقول" contested-parse category for
+  grammars (flagged in `docs/iraab-audit.md`'s own "أو نقول" contested-parse category for
   C1/C2), not something to teach silently in a B1 reading passage.
 - **A second paragraph was drafted and dropped.** Extending the plural-relative-clause example
   (`الْمُعَلِّمُونَ الَّذِينَ...`) into its own short narrative kept needing either an unverified

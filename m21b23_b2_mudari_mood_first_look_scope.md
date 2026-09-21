@@ -4,7 +4,7 @@
 23 grammar points, 136 texts, 38 units, 74 lessons); `npm run qa` 89/89; `node tools/a11y-audit.js`
 clean.
 **Parent:** [ROADMAP.md](ROADMAP.md) M21 row · opens `b2-u2` ("The Passive, the Jussive &
-Conditionals") · [reference/iraab-audit.md](reference/iraab-audit.md) §8's proposed table maps this
+Conditionals") · [docs/iraab-audit.md](docs/iraab-audit.md) §8's proposed table maps this
 topic to `B2-iʿrāb-3` / `b2-u2`. Follows the completion of `gr:case-system`'s full noun-case arc
 (batches 20–22) — this is the case system's counterpart on the VERB.
 
