@@ -7959,7 +7959,23 @@ function setView(id, opts) {
     if (id === "review") renderReview();
     if (id === "alphabet" && !alphabetRendered) renderAlphabetGrid();
 
-    window.scrollTo(0, 0);
+    // The lesson runner (trace-letter steps especially) needs its canvas
+    // visible without extra scrolling. Scrolling to page (0,0) leaves the
+    // masthead + tagline on screen and pushes the actual step content below
+    // the fold on phone-height viewports, so land on the runner itself
+    // instead — the primary nav is `position: sticky` and stays reachable.
+    const lessonRunner = id === "lesson" ? document.querySelector(".lesson-runner") : null;
+    if (lessonRunner) {
+        // `.main-nav` is `position: sticky; top: 10px`, so it stays pinned
+        // on screen at that offset once we scroll past it — leave room for
+        // it instead of landing the runner underneath it.
+        const nav = document.getElementById("mainNav");
+        const navSpace = nav ? nav.getBoundingClientRect().height + 10 : 0;
+        const target = lessonRunner.getBoundingClientRect().top + window.scrollY - navSpace;
+        window.scrollTo(0, Math.max(0, target));
+    } else {
+        window.scrollTo(0, 0);
+    }
 }
 
 function goToVocabulary(subMode) {
