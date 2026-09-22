@@ -5811,5 +5811,195 @@
     "prereqs": [
       "gr:atf-nasaq"
     ]
+  },
+  {
+    "id": "txt:gram-maful-mutlaq-good-work",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "maful-mutlaq",
+    "vowelled": "عَمِلَ الرَّجُلُ عَمَلًا جَيِّدًا",
+    "translit": "ʿamila ar-rajulu ʿamalan jayyidan",
+    "en": "The man did good work.",
+    "words": [
+      {
+        "surface": "عَمِلَ",
+        "translit": "ʿamila",
+        "gloss": "he worked / did"
+      },
+      {
+        "surface": "الرَّجُلُ",
+        "translit": "ar-rajulu",
+        "gloss": "the man (فَاعِل, nominative)"
+      },
+      {
+        "surface": "عَمَلًا",
+        "translit": "ʿamalan",
+        "gloss": "work (الْمَفْعُول الْمُطْلَق — a مَصْدَر of عَمِلَ itself, accusative)"
+      },
+      {
+        "surface": "جَيِّدًا",
+        "translit": "jayyidan",
+        "gloss": "good (its نَعْت — agrees in case, accusative)"
+      }
+    ],
+    "audio": "عَمِلَ الرَّجُلُ عَمَلًا جَيِّدًا",
+    "level": "B2",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:maful-mutlaq"
+    ]
+  },
+  {
+    "id": "txt:gram-maful-mutlaq-important-work",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "maful-mutlaq",
+    "vowelled": "عَمِلَتِ الْمُعَلِّمَةُ عَمَلًا مُهِمًّا",
+    "translit": "ʿamilati al-muʿallimatu ʿamalan muhimman",
+    "en": "The teacher did important work.",
+    "words": [
+      {
+        "surface": "عَمِلَتِ",
+        "translit": "ʿamilati",
+        "gloss": "she worked / did"
+      },
+      {
+        "surface": "الْمُعَلِّمَةُ",
+        "translit": "al-muʿallimatu",
+        "gloss": "the teacher (فَاعِل, feminine, nominative)",
+        "gender": "feminine"
+      },
+      {
+        "surface": "عَمَلًا",
+        "translit": "ʿamalan",
+        "gloss": "work (الْمَفْعُول الْمُطْلَق, accusative)"
+      },
+      {
+        "surface": "مُهِمًّا",
+        "translit": "muhimman",
+        "gloss": "important (its نَعْت, accusative)"
+      }
+    ],
+    "audio": "عَمِلَتِ الْمُعَلِّمَةُ عَمَلًا مُهِمًّا",
+    "level": "B2",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:maful-mutlaq"
+    ]
+  },
+  {
+    "id": "txt:gram-maful-lahu-window",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "maful-lahu",
+    "vowelled": "أَغْلَقَ الرَّجُلُ النَّافِذَةَ خَوْفًا مِنَ الرِّيحِ",
+    "translit": "aghlaqa ar-rajulu an-nāfidhata khawfan mina ar-rīḥi",
+    "en": "The man closed the window out of fear of the wind.",
+    "words": [
+      {
+        "surface": "أَغْلَقَ",
+        "translit": "aghlaqa",
+        "gloss": "he closed"
+      },
+      {
+        "surface": "الرَّجُلُ",
+        "translit": "ar-rajulu",
+        "gloss": "the man (فَاعِل, nominative)"
+      },
+      {
+        "surface": "النَّافِذَةَ",
+        "translit": "an-nāfidhata",
+        "gloss": "the window (مَفْعُول بِهِ, accusative)"
+      },
+      {
+        "surface": "خَوْفًا",
+        "translit": "khawfan",
+        "gloss": "out of fear (الْمَفْعُول لِأَجْلِه — an indefinite مَصْدَر, accusative, answering \"why?\")"
+      },
+      {
+        "surface": "مِنَ",
+        "translit": "mina",
+        "gloss": "of / from"
+      },
+      {
+        "surface": "الرِّيحِ",
+        "translit": "ar-rīḥi",
+        "gloss": "the wind (مَجْرُور after مِنَ)"
+      }
+    ],
+    "audio": "أَغْلَقَ الرَّجُلُ النَّافِذَةَ خَوْفًا مِنَ الرِّيحِ",
+    "level": "B2",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:maful-lahu"
+    ]
+  },
+  {
+    "id": "txt:gram-maful-lahu-door",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m11",
+    "concept": "maful-lahu",
+    "vowelled": "أَغْلَقَتِ الْمَرْأَةُ الْبَابَ خَوْفًا مِنَ الرِّيحِ",
+    "translit": "aghlaqati al-marʾatu al-bāba khawfan mina ar-rīḥi",
+    "en": "The woman closed the door out of fear of the wind.",
+    "words": [
+      {
+        "surface": "أَغْلَقَتِ",
+        "translit": "aghlaqati",
+        "gloss": "she closed"
+      },
+      {
+        "surface": "الْمَرْأَةُ",
+        "translit": "al-marʾatu",
+        "gloss": "the woman (فَاعِل, feminine, nominative)",
+        "gender": "feminine"
+      },
+      {
+        "surface": "الْبَابَ",
+        "translit": "al-bāba",
+        "gloss": "the door (مَفْعُول بِهِ, accusative)"
+      },
+      {
+        "surface": "خَوْفًا",
+        "translit": "khawfan",
+        "gloss": "out of fear (الْمَفْعُول لِأَجْلِه, accusative)"
+      },
+      {
+        "surface": "مِنَ",
+        "translit": "mina",
+        "gloss": "of / from"
+      },
+      {
+        "surface": "الرِّيحِ",
+        "translit": "ar-rīḥi",
+        "gloss": "the wind (مَجْرُور after مِنَ)"
+      }
+    ],
+    "audio": "أَغْلَقَتِ الْمَرْأَةُ الْبَابَ خَوْفًا مِنَ الرِّيحِ",
+    "level": "B2",
+    "skills": [
+      "reading",
+      "comprehension",
+      "grammar"
+    ],
+    "prereqs": [
+      "gr:maful-lahu"
+    ]
   }
 ]

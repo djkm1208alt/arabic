@@ -6788,5 +6788,21 @@
       "vocabulary"
     ],
     "prereqs": []
+  },
+  {
+    "id": "lex:bod-10",
+    "kind": "lexeme",
+    "ar": "خَوْف",
+    "translit": "khawf",
+    "en": "fear",
+    "pos": "noun",
+    "topic": "body",
+    "level": "B2",
+    "notes": "A مَصْدَر used indefinite + accusative as الْمَفْعُول لِأَجْلِه (\"out of fear of...\") — see gr:maful-lahu.",
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   }
 ]

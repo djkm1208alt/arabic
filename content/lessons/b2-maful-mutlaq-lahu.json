@@ -1,0 +1,81 @@
+{
+  "id": "b2-maful-mutlaq-lahu",
+  "unitId": "b2-u1",
+  "curriculumLessonId": "b2-maful-mutlaq-lahu",
+  "title": "Two More Accusative Objects (مُطْلَق / لِأَجْلِه)",
+  "level": "B2",
+  "skills": ["grammar", "reading"],
+  "objectives": ["gr:maful-mutlaq", "gr:maful-lahu", "txt:gram-maful-mutlaq-good-work", "txt:gram-maful-mutlaq-important-work", "txt:gram-maful-lahu-window", "txt:gram-maful-lahu-door"],
+  "steps": [
+    {
+      "type": "explain",
+      "title": "The last two of the five accusative \"objects\"",
+      "body": [
+        "مَفْعُول بِهِ (b1-u7), مَفْعُول فِيهِ and مَفْعُول مَعَهُ (batch 25) are three of the five accusative \"object\" roles. This lesson finishes the set with the last two.",
+        "الْمَفْعُول الْمُطْلَق is a مَصْدَر (verbal noun) from the SAME root as its verb, accusative — here used to specify WHAT KIND, via a following adjective: عَمِلَ الرَّجُلُ عَمَلًا جَيِّدًا (\"the man did good work\") — عَمَلًا restates عَمِلَ's own root, and جَيِّدًا says what kind. عَمِلَتِ الْمُعَلِّمَةُ عَمَلًا مُهِمًّا (\"the teacher did important work\") follows the same pattern.",
+        "الْمَفْعُول لِأَجْلِه is an INDEFINITE مَصْدَر, accusative, that names WHY the main verb happened — from a DIFFERENT root, sharing the verb's subject and time: أَغْلَقَ الرَّجُلُ النَّافِذَةَ خَوْفًا مِنَ الرِّيحِ (\"the man closed the window out of fear of the wind\"). أَغْلَقَتِ الْمَرْأَةُ الْبَابَ خَوْفًا مِنَ الرِّيحِ (\"the woman closed the door out of fear of the wind\") shows the same pattern with different nouns."
+      ],
+      "previewSymbols": ["عَمَلًا جَيِّدًا", "خَوْفًا مِنَ الرِّيحِ"]
+    },
+    {
+      "type": "reading-practice",
+      "title": "Four sentences, the last two accusative roles",
+      "intro": "Read all four and notice which مَصْدَر restates its OWN verb's root (مُطْلَق) and which explains a reason from a different root (لِأَجْلِه). Tap 🔊 to hear any line.",
+      "fromObjectives": true
+    },
+    {
+      "type": "practice-choice",
+      "title": "الْمَفْعُول الْمُطْلَق — restating the verb's own root",
+      "arabicPrompt": "عَمِلَ الرَّجُلُ عَمَلًا جَيِّدًا",
+      "prompt": "عَمَلًا is accusative here. What is it, and why is جَيِّدًا there?",
+      "options": [
+        { "label": "عَمَلًا is الْمَفْعُول الْمُطْلَق — a مَصْدَر of عَمِلَ itself; جَيِّدًا is its نَعْت, naming what KIND of work", "correct": true },
+        { "label": "عَمَلًا is the مَفْعُول بِهِ of عَمِلَ, and جَيِّدًا describes الرَّجُلُ", "correct": false },
+        { "label": "عَمَلًا and جَيِّدًا are two nouns joined by عَطْف النَّسَق", "correct": false }
+      ],
+      "explanation": "عَمِلَ doesn't take a direct object — عَمَلًا is a مَصْدَر built from عَمِلَ's own root, restating the verb, then described (نَعْت) by جَيِّدًا to say what kind of work it was."
+    },
+    {
+      "type": "practice-choice",
+      "title": "الْمَفْعُول الْمُطْلَق — same pattern, different subject",
+      "arabicPrompt": "عَمِلَتِ الْمُعَلِّمَةُ عَمَلًا مُهِمًّا",
+      "prompt": "What role does عَمَلًا مُهِمًّا play here?",
+      "options": [
+        { "label": "الْمَفْعُول الْمُطْلَق (عَمَلًا, from عَمِلَتِ's own root) described by its نَعْت (مُهِمًّا)", "correct": true },
+        { "label": "الْمَفْعُول لِأَجْلِه — the reason الْمُعَلِّمَةُ worked", "correct": false },
+        { "label": "الْفَاعِل of the sentence", "correct": false }
+      ],
+      "explanation": "عَمَلًا is built from the same root as عَمِلَتِ, so it's الْمَفْعُول الْمُطْلَق, not لِأَجْلِه (which would need a DIFFERENT root). مُهِمًّا agrees with it as نَعْت."
+    },
+    {
+      "type": "practice-choice",
+      "title": "الْمَفْعُول لِأَجْلِه — a reason, not the verb's own root",
+      "arabicPrompt": "أَغْلَقَ الرَّجُلُ النَّافِذَةَ خَوْفًا مِنَ الرِّيحِ",
+      "prompt": "خَوْفًا is accusative and indefinite. What is it doing in this sentence?",
+      "options": [
+        { "label": "It's الْمَفْعُول لِأَجْلِه — an indefinite مَصْدَر (from a different root than أَغْلَقَ) answering \"لماذا؟\"", "correct": true },
+        { "label": "It's الْمَفْعُول الْمُطْلَق — a مَصْدَر of أَغْلَقَ itself", "correct": false },
+        { "label": "It's a second مَفْعُول بِهِ of أَغْلَقَ", "correct": false }
+      ],
+      "explanation": "خَوْفًا (\"fear\") comes from a different root than أَغْلَقَ (\"closed\") — so it can't be الْمَفْعُول الْمُطْلَق. It answers \"why did he close it?\", which is exactly what الْمَفْعُول لِأَجْلِه does."
+    },
+    {
+      "type": "practice-choice",
+      "title": "الْمَفْعُول لِأَجْلِه — same reason, different subject and object",
+      "arabicPrompt": "أَغْلَقَتِ الْمَرْأَةُ الْبَابَ خَوْفًا مِنَ الرِّيحِ",
+      "prompt": "خَوْفًا مِنَ الرِّيحِ shares its subject and time with the main verb. What does that mean here?",
+      "options": [
+        { "label": "The woman herself felt the fear, at the same time as she closed the door", "correct": true },
+        { "label": "Someone else felt the fear, at an earlier time", "correct": false },
+        { "label": "The wind felt the fear", "correct": false }
+      ],
+      "explanation": "الْمَفْعُول لِأَجْلِه always shares the main verb's subject and time — the same person doing the action (الْمَرْأَةُ) is the one who felt خَوْفًا, right as she closed الْبَابَ."
+    },
+    {
+      "type": "complete",
+      "title": "All five مَفَاعِيل, now complete",
+      "message": "مَفْعُول بِهِ (b1-u7), مَفْعُول فِيهِ and مَفْعُول مَعَهُ (batch 25), and now مَفْعُول مُطْلَق and مَفْعُول لِأَجْلِه complete all five of the accusative \"object\" roles.",
+      "finishLabel": "Finish"
+    }
+  ]
+}

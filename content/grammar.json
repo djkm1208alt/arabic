@@ -752,5 +752,53 @@
     "prereqs": [
       "gr:case-system"
     ]
+  },
+  {
+    "id": "gr:maful-mutlaq",
+    "kind": "grammar",
+    "name": "The cognate/absolute object (الْمَفْعُول الْمُطْلَق)",
+    "level": "B2",
+    "rule": "الْمَفْعُول الْمُطْلَق is a مَصْدَر (verbal noun) built from the SAME root as its verb, accusative — here restricted to its بَيَان النَّوْع (\"specifying the kind\") use, where a following adjective says WHAT KIND: عَمِلَ الرَّجُلُ عَمَلًا جَيِّدًا (\"the man did good work\") — عَمَلًا is the مَصْدَر of عَمِلَ itself, restating the verb, and جَيِّدًا (its نَعْت) names the kind of work. عَمِلَتِ الْمُعَلِّمَةُ عَمَلًا مُهِمًّا (\"the teacher did important work\") follows the same pattern. الْمَفْعُول الْمُطْلَق has two other uses — تَوْكِيد الْفِعْل (emphasizing the verb, with no adjective) and بَيَان الْعَدَد (specifying a count) — both deferred; this first look covers بَيَان النَّوْع only.",
+    "examples": [
+      "txt:gram-maful-mutlaq-good-work",
+      "txt:gram-maful-mutlaq-important-work"
+    ],
+    "commonErrors": [
+      "Treating عَمَلًا as an ordinary مَفْعُول بِهِ (direct object) — عَمِلَ doesn't take a direct object here; عَمَلًا is a مَصْدَر restating the verb itself, then described by an adjective.",
+      "Forgetting that الْمَفْعُول الْمُطْلَق must come from the SAME root as its verb — a مَصْدَر from a different root in this slot is instead الْمَفْعُول لِأَجْلِه (gr:maful-lahu)."
+    ],
+    "skills": [
+      "grammar",
+      "reading"
+    ],
+    "prereqs": [
+      "gr:case-system",
+      "gr:verbal-sentence",
+      "gr:naat"
+    ]
+  },
+  {
+    "id": "gr:maful-lahu",
+    "kind": "grammar",
+    "name": "The causative object (الْمَفْعُول لِأَجْلِه)",
+    "level": "B2",
+    "rule": "الْمَفْعُول لِأَجْلِه is an INDEFINITE مَصْدَر, accusative, answering \"لِمَاذَا؟\" (\"why?\") by naming the REASON the main verb happened — it shares the main verb's subject and time, and comes from a DIFFERENT root than the main verb: أَغْلَقَ الرَّجُلُ النَّافِذَةَ خَوْفًا مِنَ الرِّيحِ (\"the man closed the window out of fear of the wind\") — خَوْفًا explains WHY he closed it, felt by the same person, at the same time as the closing. أَغْلَقَتِ الْمَرْأَةُ الْبَابَ خَوْفًا مِنَ الرِّيحِ (\"the woman closed the door out of fear of the wind\") follows the same pattern.",
+    "examples": [
+      "txt:gram-maful-lahu-window",
+      "txt:gram-maful-lahu-door"
+    ],
+    "commonErrors": [
+      "Confusing الْمَفْعُول لِأَجْلِه with الْمَفْعُول الْمُطْلَق — both are accusative مَصَادِر, but مُطْلَق shares its verb's own root (restating the action) while لِأَجْلِه is a DIFFERENT root (explaining a reason) and is always indefinite.",
+      "Assuming the reason word needs لِأَجْلِ or another preposition written before it — الْمَفْعُول لِأَجْلِه is accusative on its own, with no preposition needed."
+    ],
+    "skills": [
+      "grammar",
+      "reading"
+    ],
+    "prereqs": [
+      "gr:case-system",
+      "gr:verbal-sentence",
+      "gr:maful-mutlaq"
+    ]
   }
 ]

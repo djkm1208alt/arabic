@@ -369,7 +369,7 @@
       "level": "B2",
       "order": 1,
       "title": "The Full Case System (Iʿrāb)",
-      "blurb": "رَفْع، نَصْب، جَرّ — the full case system on nouns, seven roles beyond the original five (حال، تمييز), مفعول فيه/معه, لا النافية للجنس, and the first two of the four تَوَابِع (\"followers\"): النَّعْت (adjective agreement) and عَطْف النَّسَق (coordinating conjunction). Verb mood is covered separately in b2-u2.",
+      "blurb": "رَفْع، نَصْب، جَرّ — the full case system on nouns, all five مَفَاعِيل now complete (بِهِ/فِيهِ/مَعَهُ/مُطْلَق/لِأَجْلِه), plus حال، تمييز, لا النافية للجنس, and the first two of the four تَوَابِع (\"followers\"): النَّعْت (adjective agreement) and عَطْف النَّسَق (coordinating conjunction). Verb mood is covered separately in b2-u2.",
       "skills": [
         "grammar"
       ],
@@ -2608,6 +2608,28 @@
       ],
       "status": "available",
       "source": "steps:b2-naat-atf-nasaq"
+    },
+    {
+      "id": "b2-maful-mutlaq-lahu",
+      "unitId": "b2-u1",
+      "order": 7,
+      "title": "Two More Accusative Objects (مُطْلَق / لِأَجْلِه)",
+      "blurb": "الْمَفْعُول الْمُطْلَق (a مَصْدَر restating its own verb's root, described by an adjective) and الْمَفْعُول لِأَجْلِه (an indefinite مَصْدَر from a different root, naming a reason) — the last two of the five accusative \"objects,\" now complete.",
+      "level": "B2",
+      "skills": [
+        "grammar",
+        "reading"
+      ],
+      "objectives": [
+        "gr:maful-mutlaq",
+        "gr:maful-lahu",
+        "txt:gram-maful-mutlaq-good-work",
+        "txt:gram-maful-mutlaq-important-work",
+        "txt:gram-maful-lahu-window",
+        "txt:gram-maful-lahu-door"
+      ],
+      "status": "available",
+      "source": "steps:b2-maful-mutlaq-lahu"
     }
   ]
 }
