@@ -12,7 +12,7 @@ A **layer over the existing curriculum**: the learner picks an emphasis (🌍 Ge
 It is **not**:
 
 - a second course or a fork of the curriculum spine;
-- a renumbering or re-sequencing of the existing 44 data lessons or the inline A0 lessons;
+- a renumbering or re-sequencing of the existing 45 data lessons or the inline A0 lessons;
 - server-side content. Supabase (M21.9) stores learner state only. Content stays compiled into `index.html` by `tools/build-content.js`, so the app keeps working offline with zero runtime fetches.
 
 ## 2. Why its own milestone
@@ -43,7 +43,7 @@ The spec numbers its levels differently from the app. Nothing is renamed; this i
 
 ### 4.1 Requested fields → content JSON fields
 
-Every existing content field is camelCase (`strokeOrder`, `markClass`, `audioText`, `objectIds`), and the compiler, the runtime, and 44 lesson files read them that way. The requested fields therefore map to camelCase names. Where the app already has a field for the same thing, that field is reused rather than duplicated.
+Every existing content field is camelCase (`strokeOrder`, `markClass`, `audioText`, `objectIds`), and the compiler, the runtime, and 45 lesson files read them that way. The requested fields therefore map to camelCase names. Where the app already has a field for the same thing, that field is reused rather than duplicated.
 
 | Requested | Content JSON | Notes |
 | --- | --- | --- |
@@ -166,7 +166,7 @@ That is 52 drills and 6 tracing steps. Each lesson has 8–14 drills, the 3–5-
 ### 5.4 Verification done
 
 - **Generator checks** (`tools/m28-seed-generator.py`, which writes every file in `content/seed/m28/` and exits non-zero on any failure): every object id and audio key resolves; every Arabic word carries ḥarakāt; each item has exactly one correct option; the heard word matches its pair member; all 22 pair members are heard in Unit 01; the word-level readability rule holds; the dots match `LETTER_DOT_NOTES`.
-- **Drop-in build test:** on a clean export of `HEAD` with the seed added (lessons, nodes, `mrk:hamza`), `node tools/build-content.js` passes with 0 errors (82 curriculum lessons, 49 data lessons), and `--lint` output is identical to the baseline.
+- **Drop-in build test:** on a clean export of `main` at `21f3117` (after batch 27) with the seed added (lessons, nodes, `mrk:hamza`), `node tools/build-content.js` passes with 0 errors (83 curriculum lessons, 50 data lessons; 78 and 45 without the seed), and `--lint` output is identical to the baseline.
 - **Browser smoke test** on that compiled copy:
   - `a0-sounds-throat` loads, and its first drill shows Listen / Slower / "Synthesized", RTL `lang="ar"` answer buttons, and the explanation as feedback.
   - The answer is logged as `{ objectId: "let:ha1", skill: "listening", correct: true }`.
