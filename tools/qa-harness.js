@@ -96,6 +96,14 @@ async function freshPage(browser, { blockStorage } = {}) {
 }
 
 async function gotoApp(page) {
+    // M28 — a fresh profile triggers the first-run onboarding overlay, which
+    // would intercept every click in the rest of a check. Seed a returning
+    // "both" profile (the default, pre-M28-equivalent state) before load so
+    // the general run is unblocked. The onboarding flow itself is covered by
+    // its own dedicated check.
+    await page.addInitScript(() => {
+        try { localStorage.setItem("learnArabic_progress_v1", JSON.stringify({ onboarded: true, emphasis: "both" })); } catch (e) { /* storage blocked */ }
+    });
     await page.goto(APP_URL, { waitUntil: "load" });
     await page.waitForSelector("#view-home:not([hidden])", { timeout: 5000 });
 }
@@ -256,6 +264,40 @@ async function main() {
         await page.click("#themeToggle"); // back to original, so later checks in this run see the default
         await page.waitForTimeout(250);
         assertNoErrors(pageErrors, consoleErrors, failedRequestUrls, "theme toggle");
+        await context.close();
+    });
+
+    await check("M28 — first-run onboarding shows for a fresh profile and completing it sets the emphasis", async () => {
+        const { context, page, pageErrors } = await freshPage(browser);
+        // Go raw (not gotoApp, which seeds a returning profile) so the
+        // fresh-profile onboarding overlay appears.
+        await page.addInitScript(() => { try { localStorage.removeItem("learnArabic_progress_v1"); } catch (e) { /* blocked */ } });
+        await page.goto(APP_URL, { waitUntil: "load" });
+        await page.waitForSelector("#emphasisModal .emphasis-option", { timeout: 5000 });
+        const count = await page.evaluate(() => document.querySelectorAll("#emphasisModal .emphasis-option").length);
+        assert(count === 3, `expected 3 onboarding options, got ${count}`);
+        await page.evaluate(() => document.querySelectorAll("#emphasisModal .emphasis-option")[1].click()); // Quranic
+        const s = await page.evaluate(() => ({ emphasis: progress.emphasis, onboarded: progress.onboarded, modal: !!document.getElementById("emphasisModal") }));
+        assert(s.emphasis === "quranic", `emphasis not set (${s.emphasis})`);
+        assert(s.onboarded === true, "onboarded flag not set after choosing");
+        assert(s.modal === false, "onboarding modal did not close after choosing");
+        assert(pageErrors.length === 0, `pageerror(s): ${pageErrors.join(" | ")}`);
+        await context.close();
+    });
+
+    await check("M28 — Settings opens, reflects emphasis, and switching persists", async () => {
+        const { context, page, pageErrors } = await freshPage(browser);
+        await gotoApp(page); // seeded "both"
+        await page.click("#settingsToggle");
+        await page.waitForSelector("#emphasisModal .emphasis-option", { timeout: 5000 });
+        // switch to General (index 0)
+        await page.evaluate(() => document.querySelectorAll("#emphasisModal .emphasis-option")[0].click());
+        const persisted = await page.evaluate(() => JSON.parse(localStorage.getItem("learnArabic_progress_v1")).emphasis);
+        assert(persisted === "general", `emphasis did not persist (${persisted})`);
+        await page.evaluate(() => closeEmphasisModal());
+        const closed = await page.evaluate(() => !document.getElementById("emphasisModal"));
+        assert(closed, "settings modal did not close");
+        assert(pageErrors.length === 0, `pageerror(s): ${pageErrors.join(" | ")}`);
         await context.close();
     });
 

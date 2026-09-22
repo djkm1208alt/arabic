@@ -54,6 +54,11 @@ async function main() {
     const browser = await chromium.launch({ executablePath: chromium.executablePath() });
     const context = await browser.newContext();
     await context.route(/^https:\/\/fonts\.(googleapis|gstatic)\.com\//, (route) => route.abort());
+    // M28 — seed a returning "both" profile so the first-run onboarding overlay
+    // never blocks the audit's nav clicks. Emphasis "both" is the default state.
+    await context.addInitScript(() => {
+        try { localStorage.setItem("learnArabic_progress_v1", JSON.stringify({ onboarded: true, emphasis: "both" })); } catch (e) { /* storage blocked */ }
+    });
     const page = await context.newPage();
 
     const findings = { touchTargets: [], contrast: [] };

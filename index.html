@@ -1462,6 +1462,78 @@
         .pronounce-card .reading-card-ar { font-size: 32px; }
         .audio-btn { font-size: 12.5px; padding: 9px 13px; }
     }
+
+    /* ===== M28 — emphasis layer (selector + surfaces) ===== */
+    .header-controls { display: flex; gap: 8px; flex-shrink: 0; }
+
+    /* Modal shell (Settings + Onboarding) */
+    .modal-overlay {
+        position: fixed; inset: 0; z-index: 1000;
+        background: rgba(0, 0, 0, 0.45);
+        display: flex; align-items: center; justify-content: center;
+        padding: 16px;
+    }
+    .modal-card {
+        background: var(--panel); color: var(--ink);
+        border: 1px solid var(--panel-border); border-radius: var(--radius-lg);
+        box-shadow: var(--shadow);
+        width: 100%; max-width: 460px; max-height: 90vh; overflow-y: auto;
+        padding: 22px;
+    }
+    .modal-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 6px; }
+    .modal-head h2 { margin: 0; font-family: var(--font-ui); font-weight: 600; font-size: 22px; }
+    .modal-sub { margin: 0 0 16px; color: var(--ink-soft); font-size: 14px; }
+    .modal-pref-group { margin-bottom: 18px; }
+    .modal-pref-label { font-weight: 600; font-size: 14px; margin-bottom: 8px; display: block; }
+
+    /* Emphasis choice cards (onboarding + settings share these) */
+    .emphasis-options { display: flex; flex-direction: column; gap: 10px; }
+    .emphasis-option {
+        display: flex; align-items: center; gap: 12px; width: 100%; text-align: start;
+        border: 1.5px solid var(--panel-border); background: var(--bg-2); color: var(--ink);
+        border-radius: var(--radius-md); padding: 13px 14px; cursor: pointer;
+        font-family: var(--font-body); transition: border-color 0.15s ease, background 0.15s ease;
+    }
+    .emphasis-option:hover { background: var(--bg-1); }
+    .emphasis-option.selected { border-color: var(--accent); background: var(--accent-soft); }
+    .emphasis-option .eo-icon { font-size: 24px; line-height: 1; flex-shrink: 0; }
+    .emphasis-option .eo-text { display: flex; flex-direction: column; gap: 2px; }
+    .emphasis-option .eo-title { font-weight: 600; font-size: 15px; }
+    .emphasis-option .eo-desc { font-size: 12.5px; color: var(--ink-soft); }
+    .emphasis-option .eo-check { margin-inline-start: auto; color: var(--accent); font-weight: 700; opacity: 0; flex-shrink: 0; }
+    .emphasis-option.selected .eo-check { opacity: 1; }
+
+    /* UI-language switch (prepared for M29, inert for now) */
+    .lang-switch { display: flex; gap: 8px; }
+    .lang-switch button {
+        flex: 1; min-height: 44px; border: 1.5px solid var(--panel-border); background: var(--bg-2); color: var(--ink);
+        border-radius: var(--radius-md); padding: 9px; font-family: var(--font-body); font-size: 14px; cursor: pointer;
+    }
+    .lang-switch button.active { border-color: var(--accent); background: var(--accent-soft); font-weight: 600; }
+    .lang-switch button[disabled] { opacity: 0.55; cursor: not-allowed; }
+    .modal-note { font-size: 12px; color: var(--ink-soft); margin: 8px 0 0; }
+    .modal-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 8px; }
+
+    /* In-lesson quick-switch (above the exercise) */
+    .lesson-emphasis-bar {
+        display: flex; align-items: center; gap: 8px;
+        margin-bottom: 12px; font-size: 13px; color: var(--ink-soft);
+    }
+    .lesson-emphasis-bar label { font-weight: 600; }
+    .lesson-emphasis-bar select {
+        min-height: 44px; border: 1px solid var(--panel-border); background: var(--bg-2); color: var(--ink);
+        border-radius: 8px; padding: 5px 10px; font-family: var(--font-body); font-size: 13px; cursor: pointer;
+    }
+
+    /* Quranic-occurrence line after a minimal-pair answer */
+    .quranic-occurrence {
+        margin-top: 10px; padding: 9px 12px;
+        border-inline-start: 3px solid var(--gold);
+        background: var(--gold-soft); border-radius: 8px;
+        font-size: 13.5px; color: var(--ink);
+    }
+    .quranic-occurrence .qo-ar { font-family: var(--font-arabic); font-size: 17px; }
+    .quranic-occurrence .qo-ref { color: var(--ink-soft); font-size: 12px; }
 </style>
 </head>
 
@@ -1477,7 +1549,10 @@
             <p class="tagline">Learn to read, write, understand and speak Arabic</p>
             <p class="tagline ar-tagline" lang="ar" dir="rtl">تَعَلَّمْ قِرَاءَةَ الْعَرَبِيَّةِ وَكِتَابَتَهَا وَفَهْمَهَا وَالتَّحَدُّثَ بِهَا</p>
         </div>
-        <button class="icon-btn" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
+        <div class="header-controls">
+            <button class="icon-btn" id="settingsToggle" onclick="openSettings()" aria-label="Settings" title="Settings">⚙️</button>
+            <button class="icon-btn" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
+        </div>
     </header>
 
     <nav class="main-nav" id="mainNav" aria-label="Primary">
@@ -5204,11 +5279,221 @@ function loadProgress() {
            any newer events, so the state survives the interactionLog rotation. */
         reviewState: (saved.reviewState && typeof saved.reviewState === "object") ? saved.reviewState : {},
         reviewCursor: saved.reviewCursor || null,
+        /* M28 — emphasis preference (General MSA / Quranic & Islamic / Both).
+           Absent/invalid → "both", which is exactly the pre-M28 experience, so
+           every existing profile is unaffected. `onboarded` gates the first-run
+           goal step; a returning learner (any stored profile) is treated as
+           already onboarded so they never see it. */
+        emphasis: (saved.emphasis === "general" || saved.emphasis === "quranic") ? saved.emphasis : "both",
+        onboarded: saved.onboarded === true || profileHasActivity(saved),
     };
+}
+
+/* M28 — a pre-M28 profile predates the `onboarded` flag; treat it as already
+   onboarded (it never sees the first-run step) when it shows real prior
+   activity. An empty just-created profile (e.g. saved on unload before the
+   learner chose) has no activity, so onboarding keeps showing until they pick. */
+function profileHasActivity(saved) {
+    return !!(
+        (Array.isArray(saved.mastered) && saved.mastered.length) ||
+        (Array.isArray(saved.lessonsCompleted) && saved.lessonsCompleted.length) ||
+        (Array.isArray(saved.practiceLessonsCompleted) && saved.practiceLessonsCompleted.length) ||
+        (Array.isArray(saved.interactionLog) && saved.interactionLog.length) ||
+        saved.lastStudied || saved.placementResult
+    );
 }
 
 function saveProgress() {
     safeStorageSet(STORAGE_KEY, JSON.stringify(progress));
+}
+
+/* ============================================================
+   MILESTONE 28 — EMPHASIS LAYER (selector + surfaces)
+   One preference, `progress.emphasis` (general | quranic | both),
+   surfaced on three surfaces (onboarding, Settings, in-lesson),
+   all writing through setEmphasis(). Content is tagged additively
+   (emphasisTag; absent = both), so with the default "both" the app
+   behaves exactly as before this milestone.
+   ============================================================ */
+const EMPHASIS_META = {
+    general: { icon: "🌍", title: "General Arabic", desc: "Everyday communication, travel & modern usage.",
+               fr: { title: "Arabe général", desc: "Communication quotidienne, voyage et usage moderne." } },
+    quranic: { icon: "🕌", title: "Quranic & Islamic Arabic", desc: "Quran, prayer (ṣalāh) & devotional vocabulary.",
+               fr: { title: "Arabe coranique et islamique", desc: "Coran, prière (ṣalāh) et vocabulaire cultuel." } },
+    both:    { icon: "🔄", title: "Complete Dual Track", desc: "A balanced mix of everyday and Quranic Arabic.",
+               fr: { title: "Double parcours complet", desc: "Un mélange équilibré des deux." } },
+};
+const MP_BY_ID = new Map((CONTENT.minimalPairs || []).map(p => [p.id, p]));
+
+function getEmphasis() {
+    return EMPHASIS_META[progress.emphasis] ? progress.emphasis : "both";
+}
+
+/* The one setter every surface calls. Persists, then re-renders the current
+   view so tagged content + the Quranic line reflect the change. Switching
+   never touches lesson progress — it only changes which items are shown. */
+function setEmphasis(v, opts) {
+    opts = opts || {};
+    if (!EMPHASIS_META[v]) return;
+    progress.emphasis = v;
+    saveProgress();
+    if (opts.silent) return;
+    if (currentView === "lesson" && activeLesson) renderLessonStep();
+    else if (currentView) setView(currentView, { fromHash: true });
+}
+
+/* Visibility rule: shown when the item is untagged/both, or the learner is on
+   "both", or the tags match. A step inherits its lesson's tag. No A0 content is
+   non-"both" yet, so this is a no-op today; it takes effect with split content. */
+function isVisibleUnderEmphasis(tag, pref) {
+    tag = tag || "both";
+    pref = pref || getEmphasis();
+    return tag === "both" || pref === "both" || tag === pref;
+}
+function emphasisOfLesson(lessonId) {
+    const L = lessons[lessonId];
+    return (L && L.emphasisTag) || "both";
+}
+
+/* ---- shared emphasis-choice cards (onboarding + Settings) ---- */
+function buildEmphasisOptions(selected, onPick) {
+    const wrap = document.createElement("div");
+    wrap.className = "emphasis-options";
+    ["general", "quranic", "both"].forEach(v => {
+        const m = EMPHASIS_META[v];
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "emphasis-option" + (v === selected ? " selected" : "");
+        btn.setAttribute("aria-pressed", v === selected ? "true" : "false");
+        btn.innerHTML =
+            `<span class="eo-icon" aria-hidden="true">${m.icon}</span>`
+            + `<span class="eo-text"><span class="eo-title">${m.title}</span><span class="eo-desc">${m.desc}</span></span>`
+            + `<span class="eo-check" aria-hidden="true">✓</span>`;
+        btn.onclick = () => onPick(v);
+        wrap.appendChild(btn);
+    });
+    return wrap;
+}
+
+/* ---- modal shell ---- */
+let emphasisModalKeydown = null;
+function closeEmphasisModal() {
+    const o = document.getElementById("emphasisModal");
+    if (o) o.remove();
+    if (emphasisModalKeydown) { document.removeEventListener("keydown", emphasisModalKeydown); emphasisModalKeydown = null; }
+}
+function openEmphasisModal(card, opts) {
+    opts = opts || {};
+    closeEmphasisModal();
+    const overlay = document.createElement("div");
+    overlay.className = "modal-overlay";
+    overlay.id = "emphasisModal";
+    overlay.appendChild(card);
+    if (opts.dismissible !== false) {
+        overlay.addEventListener("click", e => { if (e.target === overlay) closeEmphasisModal(); });
+        emphasisModalKeydown = e => { if (e.key === "Escape") closeEmphasisModal(); };
+        document.addEventListener("keydown", emphasisModalKeydown);
+    }
+    document.body.appendChild(overlay);
+    return overlay;
+}
+
+/* ---- surface 2: Settings panel ---- */
+function openSettings() {
+    const card = document.createElement("div");
+    card.className = "modal-card";
+    card.setAttribute("role", "dialog");
+    card.setAttribute("aria-modal", "true");
+    card.setAttribute("aria-label", "Settings");
+    card.innerHTML =
+        `<div class="modal-head"><h2>Settings</h2>`
+        + `<button class="icon-btn" aria-label="Close" onclick="closeEmphasisModal()">✕</button></div>`
+        + `<p class="modal-sub">Learning Preferences</p>`;
+
+    const empGroup = document.createElement("div");
+    empGroup.className = "modal-pref-group";
+    empGroup.innerHTML = `<span class="modal-pref-label">Learning Emphasis</span>`;
+    empGroup.appendChild(buildEmphasisOptions(getEmphasis(), v => {
+        setEmphasis(v);
+        openSettings();   // re-render the panel so the selected card updates
+    }));
+    card.appendChild(empGroup);
+
+    const langGroup = document.createElement("div");
+    langGroup.className = "modal-pref-group";
+    langGroup.innerHTML =
+        `<span class="modal-pref-label">Interface Language</span>`
+        + `<div class="lang-switch"><button class="active" type="button">English</button>`
+        + `<button type="button" disabled>Français</button></div>`
+        + `<p class="modal-note">French interface is coming soon (M29). Lesson content already includes French where available.</p>`;
+    card.appendChild(langGroup);
+
+    const actions = document.createElement("div");
+    actions.className = "modal-actions";
+    actions.innerHTML = `<button class="pill show-btn" type="button" onclick="closeEmphasisModal()">Done</button>`;
+    card.appendChild(actions);
+
+    openEmphasisModal(card);
+}
+
+/* ---- surface 1: first-run onboarding (goal step) ----
+   The app has no onboarding flow today; this is the goal step. The UI-language
+   pick that precedes it in the full design lands with M29 (English-only until
+   then). Existing profiles are treated as onboarded, so they never see this. */
+function showOnboarding() {
+    const card = document.createElement("div");
+    card.className = "modal-card";
+    card.setAttribute("role", "dialog");
+    card.setAttribute("aria-modal", "true");
+    card.setAttribute("aria-label", "Choose your learning goal");
+    card.innerHTML =
+        `<div class="modal-head"><h2>What is your primary Arabic goal?</h2></div>`
+        + `<p class="modal-sub">This tailors the vocabulary and examples you see. You can change it any time in Settings — it never resets your progress.</p>`;
+    card.appendChild(buildEmphasisOptions(null, v => {
+        progress.onboarded = true;
+        setEmphasis(v, { silent: true });   // saves emphasis + onboarded together
+        closeEmphasisModal();
+        if (currentView) setView(currentView, { fromHash: true });
+    }));
+    openEmphasisModal(card, { dismissible: false });
+}
+function maybeShowOnboarding() {
+    if (!progress.onboarded) showOnboarding();
+}
+
+/* ---- surface 3: in-lesson quick-switch (above the exercise) ---- */
+function buildLessonEmphasisBar() {
+    const bar = document.createElement("div");
+    bar.className = "lesson-emphasis-bar";
+    const cur = getEmphasis();
+    const id = "lessonEmphasisSelect";
+    bar.innerHTML = `<label for="${id}">Emphasis</label>`;
+    const sel = document.createElement("select");
+    sel.id = id;
+    ["general", "quranic", "both"].forEach(v => {
+        const o = document.createElement("option");
+        o.value = v; o.textContent = EMPHASIS_META[v].icon + " " + EMPHASIS_META[v].title;
+        if (v === cur) o.selected = true;
+        sel.appendChild(o);
+    });
+    sel.onchange = () => setEmphasis(sel.value);   // re-renders the current step
+    bar.appendChild(sel);
+    return bar;
+}
+
+/* ---- Quranic-occurrence line (minimal-pair answers, quranic/both only) ---- */
+function quranicOccurrenceEl(pairRef) {
+    if (!pairRef || getEmphasis() === "general") return null;
+    const pair = MP_BY_ID.get(pairRef.pairId);
+    if (!pair) return null;
+    const word = (pair.words || []).find(w => w.phoneme === pairRef.heard);
+    if (!word || !word.quranic) return null;
+    const el = document.createElement("div");
+    el.className = "quranic-occurrence";
+    el.innerHTML =
+        `In the Qur'an: <span class="qo-ar" lang="ar" dir="rtl">${word.quranic.form}</span> `
+        + `<span class="qo-ref">(${word.quranic.ref})</span>`;
+    return el;
 }
 
 /* ============================================================
@@ -8166,7 +8451,9 @@ function renderLearn() {
         units.forEach(unit => {
             const unitEl = document.createElement("div");
             unitEl.className = "unit-block" + (unit.status === "planned" ? " is-planned" : "");
-            const lessonNodes = CURRICULUM.lessons.filter(l => l.unitId === unit.id).sort((a, b) => (a.order || 0) - (b.order || 0));
+            const lessonNodes = CURRICULUM.lessons
+                .filter(l => l.unitId === unit.id && isVisibleUnderEmphasis(emphasisOfLesson(l.id)))
+                .sort((a, b) => (a.order || 0) - (b.order || 0));
             const liveNodes = lessonNodes.filter(l => l.status !== "planned");
             const doneCount = liveNodes.filter(curriculumLessonDone).length;
             const introduced = new Set(progress.objectsIntroduced || []);
@@ -9198,6 +9485,8 @@ function renderExerciseStep(step, body) {
         lessonCanProceed = true;
         return;
     }
+    // M28 — surface 3: the in-lesson emphasis quick-switch, directly above the exercise.
+    body.appendChild(buildLessonEmphasisBar());
     const host = document.createElement("div");
     host.className = "exercise-host";
     body.appendChild(host);
@@ -9379,6 +9668,11 @@ function renderMCQ(container, cfg, onDone) {
                 feedback.textContent = "Not quite. " + (cfg.explanation || "");
                 feedback.classList.add("wrong");
             }
+            // M28 — after a minimal-pair answer, show where the word occurs in
+            // the Qur'an (quranic / both learners only). cfg.pairRef is set on
+            // the compiled minimal-pair drills.
+            const qo = quranicOccurrenceEl(cfg.pairRef);
+            if (qo) feedback.appendChild(qo);
             bumpDailyGoal();
             onDone(!!opt.correct);
         };
@@ -9969,6 +10263,7 @@ renderChips();
 rebuildDeck();
 renderAlphabetGrid();
 initRouter();
+maybeShowOnboarding(); // M28 — first-run goal step (returning learners skip it)
 backfillInteractionEventsToIdb(); // M19.5 — fire-and-forget, never blocks boot
 
 /* PWA groundwork — cache-first service worker for offline core shell
