@@ -178,7 +178,8 @@
     "skills": [
       "vocabulary"
     ],
-    "prereqs": []
+    "prereqs": [],
+    "emphasisTag": "both"
   },
   {
     "id": "lex:peo-02",
@@ -196,7 +197,8 @@
     "skills": [
       "vocabulary"
     ],
-    "prereqs": []
+    "prereqs": [],
+    "emphasisTag": "both"
   },
   {
     "id": "lex:peo-03",
@@ -218,7 +220,8 @@
     "skills": [
       "vocabulary"
     ],
-    "prereqs": []
+    "prereqs": [],
+    "emphasisTag": "both"
   },
   {
     "id": "lex:peo-04",
@@ -240,7 +243,8 @@
     "skills": [
       "vocabulary"
     ],
-    "prereqs": []
+    "prereqs": [],
+    "emphasisTag": "both"
   },
   {
     "id": "lex:peo-05",
@@ -364,7 +368,8 @@
     "skills": [
       "vocabulary"
     ],
-    "prereqs": []
+    "prereqs": [],
+    "emphasisTag": "general"
   },
   {
     "id": "lex:peo-12",
@@ -1344,7 +1349,8 @@
     "skills": [
       "vocabulary"
     ],
-    "prereqs": []
+    "prereqs": [],
+    "emphasisTag": "both"
   },
   {
     "id": "lex:hom-02",
@@ -1539,7 +1545,8 @@
     "skills": [
       "vocabulary"
     ],
-    "prereqs": []
+    "prereqs": [],
+    "emphasisTag": "general"
   },
   {
     "id": "lex:sch-02",
@@ -1893,7 +1900,8 @@
     "skills": [
       "vocabulary"
     ],
-    "prereqs": []
+    "prereqs": [],
+    "emphasisTag": "quranic"
   },
   {
     "id": "lex:pla-05",
@@ -1942,7 +1950,8 @@
     "skills": [
       "vocabulary"
     ],
-    "prereqs": []
+    "prereqs": [],
+    "emphasisTag": "general"
   },
   {
     "id": "lex:pla-08",
@@ -2388,7 +2397,8 @@
     "skills": [
       "vocabulary"
     ],
-    "prereqs": []
+    "prereqs": [],
+    "emphasisTag": "both"
   },
   {
     "id": "lex:ver-06",
@@ -2419,7 +2429,8 @@
     "skills": [
       "vocabulary"
     ],
-    "prereqs": []
+    "prereqs": [],
+    "emphasisTag": "both"
   },
   {
     "id": "lex:ver-08",
@@ -2484,7 +2495,8 @@
     "skills": [
       "vocabulary"
     ],
-    "prereqs": []
+    "prereqs": [],
+    "emphasisTag": "both"
   },
   {
     "id": "lex:adj-01f",
@@ -2519,7 +2531,8 @@
     "skills": [
       "vocabulary"
     ],
-    "prereqs": []
+    "prereqs": [],
+    "emphasisTag": "both"
   },
   {
     "id": "lex:adj-03",
@@ -2579,7 +2592,8 @@
     "skills": [
       "vocabulary"
     ],
-    "prereqs": []
+    "prereqs": [],
+    "emphasisTag": "both"
   },
   {
     "id": "lex:adj-07",
@@ -3348,7 +3362,8 @@
     "skills": [
       "vocabulary"
     ],
-    "prereqs": []
+    "prereqs": [],
+    "emphasisTag": "both"
   },
   {
     "id": "lex:hom-15",
@@ -4491,7 +4506,8 @@
       "vocabulary",
       "writing"
     ],
-    "prereqs": []
+    "prereqs": [],
+    "emphasisTag": "both"
   },
   {
     "id": "lex:peo-22",
@@ -4723,7 +4739,8 @@
     "skills": [
       "vocabulary"
     ],
-    "prereqs": []
+    "prereqs": [],
+    "emphasisTag": "general"
   },
   {
     "id": "lex:wrk-02",
@@ -4990,7 +5007,8 @@
     "skills": [
       "vocabulary"
     ],
-    "prereqs": []
+    "prereqs": [],
+    "emphasisTag": "both"
   },
   {
     "id": "lex:pla-19",
@@ -5006,7 +5024,8 @@
     "skills": [
       "vocabulary"
     ],
-    "prereqs": []
+    "prereqs": [],
+    "emphasisTag": "both"
   },
   {
     "id": "lex:pla-20",
@@ -5646,7 +5665,8 @@
     "skills": [
       "vocabulary"
     ],
-    "prereqs": []
+    "prereqs": [],
+    "emphasisTag": "both"
   },
   {
     "id": "lex:wea-08",
@@ -5930,7 +5950,8 @@
     "skills": [
       "vocabulary"
     ],
-    "prereqs": []
+    "prereqs": [],
+    "emphasisTag": "general"
   },
   {
     "id": "lex:ver-27",
@@ -6799,6 +6820,296 @@
     "topic": "body",
     "level": "B2",
     "notes": "A مَصْدَر used indefinite + accusative as الْمَفْعُول لِأَجْلِه (\"out of fear of...\") — see gr:maful-lahu.",
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
+  },
+  {
+    "id": "lex:pla-21",
+    "kind": "lexeme",
+    "ar": "جَنَّة",
+    "translit": "jannah",
+    "en": "paradise / garden",
+    "pos": "noun",
+    "topic": "places",
+    "level": "A1",
+    "emphasisTag": "quranic",
+    "example": {
+      "ar": "هَذِهِ جَنَّةٌ.",
+      "en": "This is a garden."
+    },
+    "fr": "paradis / jardin",
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
+  },
+  {
+    "id": "lex:pla-22",
+    "kind": "lexeme",
+    "ar": "مِحْرَاب",
+    "translit": "miḥrāb",
+    "en": "prayer niche",
+    "pos": "noun",
+    "topic": "places",
+    "level": "A1",
+    "emphasisTag": "quranic",
+    "example": {
+      "ar": "الْمِحْرَابُ فِي الْمَسْجِدِ.",
+      "en": "The prayer niche is in the mosque."
+    },
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
+  },
+  {
+    "id": "lex:peo-24",
+    "kind": "lexeme",
+    "ar": "وَالِد",
+    "translit": "wālid",
+    "en": "father",
+    "pos": "noun",
+    "topic": "people",
+    "level": "A1",
+    "emphasisTag": "both",
+    "example": {
+      "ar": "هَذَا وَالِدِي.",
+      "en": "This is my father."
+    },
+    "fr": "père",
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
+  },
+  {
+    "id": "lex:peo-25",
+    "kind": "lexeme",
+    "ar": "وَالِدَة",
+    "translit": "wālidah",
+    "en": "mother",
+    "pos": "noun",
+    "topic": "people",
+    "level": "A1",
+    "emphasisTag": "both",
+    "example": {
+      "ar": "هَذِهِ وَالِدَتِي.",
+      "en": "This is my mother."
+    },
+    "fr": "mère",
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
+  },
+  {
+    "id": "lex:peo-26",
+    "kind": "lexeme",
+    "ar": "مُؤْمِن",
+    "translit": "muʾmin",
+    "en": "believer (m)",
+    "pos": "noun",
+    "topic": "people",
+    "level": "A1",
+    "emphasisTag": "quranic",
+    "example": {
+      "ar": "الْمُؤْمِنُ صَادِقٌ.",
+      "en": "The believer is truthful."
+    },
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
+  },
+  {
+    "id": "lex:peo-27",
+    "kind": "lexeme",
+    "ar": "مُؤْمِنَة",
+    "translit": "muʾminah",
+    "en": "believer (f)",
+    "pos": "noun",
+    "topic": "people",
+    "level": "A1",
+    "emphasisTag": "quranic",
+    "example": {
+      "ar": "الْمُؤْمِنَةُ صَادِقَةٌ.",
+      "en": "The believer is truthful."
+    },
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
+  },
+  {
+    "id": "lex:peo-28",
+    "kind": "lexeme",
+    "ar": "رَسُول",
+    "translit": "rasūl",
+    "en": "messenger",
+    "pos": "noun",
+    "topic": "people",
+    "level": "A1",
+    "emphasisTag": "quranic",
+    "example": {
+      "ar": "هَذَا رَسُولٌ كَرِيمٌ.",
+      "en": "This is a noble messenger."
+    },
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
+  },
+  {
+    "id": "lex:ver-34",
+    "kind": "lexeme",
+    "ar": "طَلَبَ",
+    "translit": "ṭalaba",
+    "en": "to seek / to ask for",
+    "pos": "verb",
+    "topic": "verbs",
+    "level": "A1",
+    "emphasisTag": "both",
+    "example": {
+      "ar": "طَلَبَ الْكِتَابَ.",
+      "en": "He asked for the book."
+    },
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": [],
+    "notes": "Present tense: يَطْلُبُ (yaṭlubu)."
+  },
+  {
+    "id": "lex:ver-35",
+    "kind": "lexeme",
+    "ar": "دَخَلَ",
+    "translit": "dakhala",
+    "en": "to enter",
+    "pos": "verb",
+    "topic": "verbs",
+    "level": "A1",
+    "emphasisTag": "both",
+    "example": {
+      "ar": "دَخَلَ الْبَيْتَ.",
+      "en": "He entered the house."
+    },
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": [],
+    "notes": "Present tense: يَدْخُلُ (yadkhulu)."
+  },
+  {
+    "id": "lex:ver-36",
+    "kind": "lexeme",
+    "ar": "صَلَّى",
+    "translit": "ṣallā",
+    "en": "to pray",
+    "pos": "verb",
+    "topic": "verbs",
+    "level": "A1",
+    "emphasisTag": "quranic",
+    "example": {
+      "ar": "صَلَّى فِي الْمَسْجِدِ.",
+      "en": "He prayed in the mosque."
+    },
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": [],
+    "notes": "Present tense: يُصَلِّي (yuṣallī). Form II verb (root ص-ل-و)."
+  },
+  {
+    "id": "lex:ver-37",
+    "kind": "lexeme",
+    "ar": "ذَكَرَ",
+    "translit": "dhakara",
+    "en": "to mention / to remember",
+    "pos": "verb",
+    "topic": "verbs",
+    "level": "A1",
+    "emphasisTag": "both",
+    "example": {
+      "ar": "ذَكَرَ اسْمَهُ.",
+      "en": "He mentioned his name."
+    },
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": [],
+    "notes": "Present tense: يَذْكُرُ (yadhkuru)."
+  },
+  {
+    "id": "lex:adj-16",
+    "kind": "lexeme",
+    "ar": "كَرِيم",
+    "translit": "karīm",
+    "en": "generous / noble",
+    "pos": "adjective",
+    "topic": "adjectives",
+    "level": "A1",
+    "emphasisTag": "both",
+    "example": {
+      "ar": "رَجُلٌ كَرِيمٌ.",
+      "en": "A generous man."
+    },
+    "fr": "généreux / noble",
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
+  },
+  {
+    "id": "lex:adj-17",
+    "kind": "lexeme",
+    "ar": "صَادِق",
+    "translit": "ṣādiq",
+    "en": "truthful",
+    "pos": "adjective",
+    "topic": "adjectives",
+    "level": "A1",
+    "emphasisTag": "both",
+    "example": {
+      "ar": "صَدِيقٌ صَادِقٌ.",
+      "en": "A truthful friend."
+    },
+    "fr": "sincère / véridique",
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
+  },
+  {
+    "id": "lex:adj-18",
+    "kind": "lexeme",
+    "ar": "مُبَارَك",
+    "translit": "mubārak",
+    "en": "blessed",
+    "pos": "adjective",
+    "topic": "adjectives",
+    "level": "A1",
+    "emphasisTag": "both",
+    "example": {
+      "ar": "يَوْمٌ مُبَارَكٌ.",
+      "en": "A blessed day."
+    },
+    "fr": "béni",
     "tags": [],
     "skills": [
       "vocabulary"

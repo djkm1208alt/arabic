@@ -346,6 +346,23 @@ async function main() {
         await context.close();
     });
 
+    await check("M28-B1 — filterByEmphasis selects the right payload and never empties a step", async () => {
+        const { context, page, pageErrors } = await freshPage(browser);
+        await gotoApp(page);
+        const r = await page.evaluate(() => {
+            const items = [{ id: "g", emphasisTag: "general" }, { id: "q", emphasisTag: "quranic" }, { id: "b", emphasisTag: "both" }, { id: "u" }];
+            const pick = (pref) => { progress.emphasis = pref; return filterByEmphasis(items).map(x => x.id); };
+            const offTrackOnly = () => { progress.emphasis = "general"; return filterByEmphasis([{ id: "q1", emphasisTag: "quranic" }, { id: "q2", emphasisTag: "quranic" }]).map(x => x.id); };
+            return { general: pick("general"), quranic: pick("quranic"), both: pick("both"), fallback: offTrackOnly() };
+        });
+        assert(JSON.stringify(r.general) === JSON.stringify(["g", "b", "u"]), `general payload wrong: ${r.general}`);
+        assert(JSON.stringify(r.quranic) === JSON.stringify(["q", "b", "u"]), `quranic payload wrong: ${r.quranic}`);
+        assert(JSON.stringify(r.both) === JSON.stringify(["g", "q", "b", "u"]), `both payload wrong: ${r.both}`);
+        assert(JSON.stringify(r.fallback) === JSON.stringify(["q1", "q2"]), `never-empty fallback failed: ${r.fallback}`);
+        assert(pageErrors.length === 0, `pageerror(s): ${pageErrors.join(" | ")}`);
+        await context.close();
+    });
+
     for (const width of BREAKPOINTS) {
         await check(`no horizontal overflow at ${width}px (all nav views)`, async () => {
             const { context, page } = await freshPage(browser);
