@@ -147,7 +147,7 @@ The emphasis lives on three surfaces. This supersedes the earlier "Home card + �
    - 🔄 **Complete Dual Track** — a balanced mix of both → `emphasis: "both"`
    - The app has **no onboarding flow today**; this step (and the language pick it follows) is new UI built in the implementation pass. Existing learners never see it — they are migrated straight to `"both"` (§4.2), which is exactly today's experience, and can change it any time via surfaces 2–3.
 2. **Settings / profile.** A section headed **"Learning Preferences"** with **"Learning Emphasis"** (FR: *Préférence d'apprentissage*) as a 3-way segmented control / radio-card list. Switching is instant and **never resets lesson progress** (it only changes which tagged items are shown). Reached via a ⚙️ button beside the 🌙/☀️ toggle in the header, which is on every screen; the same panel will host the EN/FR UI-language switcher (prepared now, populated in M29).
-3. **Dashboard quick-switch.** A small pill on Home/Learn showing the current emphasis (e.g. `🕌 Quranic Focus ▾`); tapping it switches directly, same instant, no-reset behaviour.
+3. **In-lesson quick-switch (decision 2026-09-22, replacing the earlier dashboard pill).** A small "Emphasis" dropdown directly above the exercise inside the lesson view, so a learner can retune focus in the moment; changing it re-renders the current step, same instant, no-reset behaviour.
 
 All three write the one value `progress.emphasis`; there is a single source of truth, and the migration + before/after check (standing rule 2) covers it.
 
@@ -252,7 +252,7 @@ That is 52 drills and 6 tracing steps. Each lesson has 8–14 drills, the 3–5-
 
 1. **Topic vs Doer** — option (a): the fronted noun of a nominal sentence is the **Topic**, the actor of a verbal sentence is the **Doer**, both on the same emerald + solid underline; only the A2 tap-label differs (§4.7). Three colours total.
 2. **French app chrome** — confirmed as its own milestone, **M29**. EN stays the default UI; French content strings are populated in the background in the meantime, and the role/nudge FR labels here are provisional until M29's native-speaker review.
-3. **Emphasis selector placement** — three surfaces: onboarding step, Settings "Learning Preferences" section, and a Home/Learn quick-switch pill (§4.8).
+3. **Emphasis selector placement** — three surfaces: onboarding step, Settings "Learning Preferences" section, and a contextual in-lesson "Emphasis" dropdown above the exercise (§4.8; the in-lesson dropdown replaced the earlier dashboard pill on 2026-09-22).
 
 **Still open:**
 

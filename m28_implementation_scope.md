@@ -79,7 +79,7 @@ M28 touches the build tool, learner state, and UI at once. Per the project's fou
 
 1. **Onboarding step** — the app has no onboarding today, so this is a new first-run flow: UI-language pick (EN/FR; FR strings deferred to M29 but the control exists) → "What is your primary Arabic goal?" with the three cards. Gated on a `progress`-level "onboarded" flag so it shows once. Existing profiles are treated as already-onboarded (they migrate to `both`), so they never see it.
 2. **Settings panel** — a ⚙️ button beside `#themeToggle` (`index.html:1480`) opens a lightweight modal: "Learning Preferences" → "Learning Emphasis" 3-way segmented control, plus the EN/FR switch (wired to a no-op until M29). Reuses existing modal/pill styles; no new dependency.
-3. **Dashboard pill** — a small current-emphasis pill on Home (`#view-home`, `index.html:1493`) / Learn; tap to switch.
+3. **Contextual in-lesson dropdown** — a small "Emphasis" dropdown placed directly above the exercise inside the lesson view (`#view-lesson`, the `#lessonStepBody` region, `index.html:1768`), so a learner can retune focus in the moment without leaving the lesson. Shows the current value; changing it re-renders the current step under the new preference. (Replaces the earlier Home/Learn dashboard pill — decision 2026-09-22.)
 
 All three write `progress.emphasis` via one setter that also `saveProgress()`s and re-renders the current view. Switching never touches lesson progress.
 
@@ -90,7 +90,7 @@ All three write `progress.emphasis` via one setter that also `saveProgress()`s a
 ### 4.5 Pass B acceptance
 
 - Migration check passes (pre-M28 profile → `emphasis: "both"`, nothing else changed).
-- Selector reachable on all three surfaces; switching is instant, persists across reload, and leaves `lessonsCompleted`/`mastered`/etc. untouched.
+- Selector reachable on all three surfaces (onboarding, Settings panel, in-lesson dropdown); switching is instant, persists across reload, and leaves `lessonsCompleted`/`mastered`/etc. untouched.
 - Quranic-occurrence line shows for quranic/both, hidden for general.
 - `npm run qa` / a11y clean, including the harness lang/dir check on any new Arabic strings (the occurrence line is Arabic — needs `lang="ar" dir="rtl"`).
 
