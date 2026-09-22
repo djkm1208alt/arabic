@@ -194,5 +194,26 @@
       "mrk:kasra",
       "mrk:damma"
     ]
+  },
+  {
+    "id": "mrk:hamza",
+    "kind": "mark",
+    "symbol": "ء",
+    "ar": "ء",
+    "translit": "ʾ",
+    "name": "hamzah",
+    "markClass": "hamza",
+    "fn": "A quick catch in the throat, like the break in “uh-oh”. Often written on a seat letter: أ إ ؤ ئ.",
+    "fr": {
+      "fn": "Un petit coup de glotte, comme la coupure au milieu de « oh-oh ». Souvent écrit sur une lettre support : أ إ ؤ ئ."
+    },
+    "level": "A0",
+    "skills": [
+      "reading",
+      "pronunciation"
+    ],
+    "prereqs": [
+      "let:alif"
+    ]
   }
 ]

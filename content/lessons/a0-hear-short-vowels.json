@@ -1,0 +1,494 @@
+{
+  "id": "a0-hear-short-vowels",
+  "unitId": "a0-u2",
+  "curriculumLessonId": "a0-hear-short-vowels",
+  "title": "Hear the Short Vowels",
+  "level": "A0",
+  "skills": [
+    "listening",
+    "pronunciation"
+  ],
+  "objectives": [
+    "mrk:fatha",
+    "mrk:kasra",
+    "mrk:damma",
+    "mrk:sukun",
+    "syl:cvc-ba",
+    "syl:cvc-bi",
+    "syl:cvc-mu",
+    "syl:cvc-ti"
+  ],
+  "emphasisTag": "both",
+  "fr": {
+    "title": "Entendre les voyelles brèves"
+  },
+  "steps": [
+    {
+      "type": "explain",
+      "title": "Listen for the vowel",
+      "body": [
+        "A short-vowel mark changes the sound of its letter: بَ is “ba”, بِ is “bi”, بُ is “bu”. Here you only listen: hear a sound, then pick the letter with the matching mark.",
+        "A sukūn (ـْ) means no vowel at all: the sound closes on that letter. بَ (ba) stays open; بَحْ (baḥ) closes on ح.",
+        "The audio uses your device's built-in voice. If two words sound the same to you, replay them: some device voices blur these sounds."
+      ],
+      "fr": {
+        "title": "Écoutez la voyelle",
+        "body": [
+          "Une marque de voyelle brève change le son de sa lettre : بَ se lit « ba », بِ « bi », بُ « bou ». Ici, vous écoutez seulement : entendez un son, puis choisissez la lettre qui porte la bonne marque.",
+          "Un sukūn (ـْ) signifie « pas de voyelle » : le son se ferme sur cette lettre. بَ (ba) reste ouvert ; بَحْ (baḥ) se ferme sur ح.",
+          "L'audio utilise la voix intégrée de votre appareil. Si deux mots vous semblent identiques, réécoutez-les : certaines voix d'appareil estompent ces sons."
+        ]
+      },
+      "previewSymbols": [
+        "بَ",
+        "بِ",
+        "بُ",
+        "بْ"
+      ]
+    },
+    {
+      "type": "exercise",
+      "title": "Which vowel?",
+      "fr": {
+        "title": "Quelle voyelle ?"
+      },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "minimal-pair",
+        "skill": "listening",
+        "objectIds": [
+          "mrk:fatha",
+          "mrk:kasra",
+          "mrk:damma"
+        ],
+        "contrastPhonemes": [
+          "mrk:fatha",
+          "mrk:kasra",
+          "mrk:damma"
+        ],
+        "audioText": "بَ",
+        "audioKey": "grid/ba-fatha",
+        "prompt": "Listen. Which one did you hear?",
+        "options": [
+          {
+            "label": "بَ",
+            "correct": true
+          },
+          {
+            "label": "بِ",
+            "correct": false
+          },
+          {
+            "label": "بُ",
+            "correct": false
+          }
+        ],
+        "explanation": "بَ (ba): the fatḥah gives the “a” sound.",
+        "fr": {
+          "prompt": "Écoutez. Lequel avez-vous entendu ?",
+          "explanation": "بَ (ba) : la fatḥah donne le son « a »."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Which vowel?",
+      "fr": {
+        "title": "Quelle voyelle ?"
+      },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "minimal-pair",
+        "skill": "listening",
+        "objectIds": [
+          "mrk:kasra",
+          "mrk:fatha",
+          "mrk:damma"
+        ],
+        "contrastPhonemes": [
+          "mrk:fatha",
+          "mrk:kasra",
+          "mrk:damma"
+        ],
+        "audioText": "مِ",
+        "audioKey": "grid/mim-kasra",
+        "prompt": "Listen. Which one did you hear?",
+        "options": [
+          {
+            "label": "مَ",
+            "correct": false
+          },
+          {
+            "label": "مُ",
+            "correct": false
+          },
+          {
+            "label": "مِ",
+            "correct": true
+          }
+        ],
+        "explanation": "مِ (mi): the kasrah gives the “i” sound.",
+        "fr": {
+          "prompt": "Écoutez. Lequel avez-vous entendu ?",
+          "explanation": "مِ (mi) : la kasrah donne le son « i »."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Which vowel?",
+      "fr": {
+        "title": "Quelle voyelle ?"
+      },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "minimal-pair",
+        "skill": "listening",
+        "objectIds": [
+          "mrk:damma",
+          "mrk:fatha",
+          "mrk:kasra"
+        ],
+        "contrastPhonemes": [
+          "mrk:fatha",
+          "mrk:kasra",
+          "mrk:damma"
+        ],
+        "audioText": "تُ",
+        "audioKey": "grid/ta1-damma",
+        "prompt": "Listen. Which one did you hear?",
+        "options": [
+          {
+            "label": "تِ",
+            "correct": false
+          },
+          {
+            "label": "تُ",
+            "correct": true
+          },
+          {
+            "label": "تَ",
+            "correct": false
+          }
+        ],
+        "explanation": "تُ (tu): the ḍammah gives the “u” sound.",
+        "fr": {
+          "prompt": "Écoutez. Lequel avez-vous entendu ?",
+          "explanation": "تُ (tu) : la ḍammah donne le son « ou »."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Which vowel?",
+      "fr": {
+        "title": "Quelle voyelle ?"
+      },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "minimal-pair",
+        "skill": "listening",
+        "objectIds": [
+          "mrk:kasra",
+          "mrk:fatha",
+          "mrk:damma"
+        ],
+        "contrastPhonemes": [
+          "mrk:fatha",
+          "mrk:kasra",
+          "mrk:damma"
+        ],
+        "audioText": "بِ",
+        "audioKey": "grid/ba-kasra",
+        "prompt": "Listen. Which one did you hear?",
+        "options": [
+          {
+            "label": "بُ",
+            "correct": false
+          },
+          {
+            "label": "بِ",
+            "correct": true
+          },
+          {
+            "label": "بَ",
+            "correct": false
+          }
+        ],
+        "explanation": "بِ (bi): the kasrah gives the “i” sound.",
+        "fr": {
+          "prompt": "Écoutez. Lequel avez-vous entendu ?",
+          "explanation": "بِ (bi) : la kasrah donne le son « i »."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Which vowel?",
+      "fr": {
+        "title": "Quelle voyelle ?"
+      },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "minimal-pair",
+        "skill": "listening",
+        "objectIds": [
+          "mrk:damma",
+          "mrk:fatha",
+          "mrk:kasra"
+        ],
+        "contrastPhonemes": [
+          "mrk:fatha",
+          "mrk:kasra",
+          "mrk:damma"
+        ],
+        "audioText": "مُ",
+        "audioKey": "grid/mim-damma",
+        "prompt": "Listen. Which one did you hear?",
+        "options": [
+          {
+            "label": "مِ",
+            "correct": false
+          },
+          {
+            "label": "مَ",
+            "correct": false
+          },
+          {
+            "label": "مُ",
+            "correct": true
+          }
+        ],
+        "explanation": "مُ (mu): the ḍammah gives the “u” sound.",
+        "fr": {
+          "prompt": "Écoutez. Lequel avez-vous entendu ?",
+          "explanation": "مُ (mu) : la ḍammah donne le son « ou »."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Which vowel?",
+      "fr": {
+        "title": "Quelle voyelle ?"
+      },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "minimal-pair",
+        "skill": "listening",
+        "objectIds": [
+          "mrk:fatha",
+          "mrk:kasra",
+          "mrk:damma"
+        ],
+        "contrastPhonemes": [
+          "mrk:fatha",
+          "mrk:kasra",
+          "mrk:damma"
+        ],
+        "audioText": "تَ",
+        "audioKey": "grid/ta1-fatha",
+        "prompt": "Listen. Which one did you hear?",
+        "options": [
+          {
+            "label": "تَ",
+            "correct": true
+          },
+          {
+            "label": "تِ",
+            "correct": false
+          },
+          {
+            "label": "تُ",
+            "correct": false
+          }
+        ],
+        "explanation": "تَ (ta): the fatḥah gives the “a” sound.",
+        "fr": {
+          "prompt": "Écoutez. Lequel avez-vous entendu ?",
+          "explanation": "تَ (ta) : la fatḥah donne le son « a »."
+        }
+      }
+    },
+    {
+      "type": "explain",
+      "title": "Open or closed?",
+      "body": [
+        "Now listen for the ending: does the sound stay open on a vowel, or close with a sukūn?"
+      ],
+      "fr": {
+        "title": "Ouvert ou fermé ?",
+        "body": [
+          "Écoutez maintenant la fin : le son reste-t-il ouvert sur une voyelle, ou se ferme-t-il avec un sukūn ?"
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Open or closed?",
+      "fr": {
+        "title": "Ouvert ou fermé ?"
+      },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "minimal-pair",
+        "skill": "listening",
+        "objectIds": [
+          "mrk:sukun",
+          "mrk:fatha",
+          "syl:cvc-ba"
+        ],
+        "contrastPhonemes": [
+          "mrk:fatha",
+          "mrk:sukun"
+        ],
+        "audioText": "بَحْ",
+        "audioKey": "syllables/cvc-ba",
+        "prompt": "Listen. Which one did you hear?",
+        "options": [
+          {
+            "label": "بَ",
+            "correct": false
+          },
+          {
+            "label": "بَحْ",
+            "correct": true
+          }
+        ],
+        "explanation": "بَحْ (baḥ): the sukūn closes the sound on ح.",
+        "fr": {
+          "prompt": "Écoutez. Lequel avez-vous entendu ?",
+          "explanation": "بَحْ (baḥ) : le sukūn ferme le son sur ح."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Open or closed?",
+      "fr": {
+        "title": "Ouvert ou fermé ?"
+      },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "minimal-pair",
+        "skill": "listening",
+        "objectIds": [
+          "mrk:sukun",
+          "mrk:damma",
+          "syl:cvc-mu"
+        ],
+        "contrastPhonemes": [
+          "mrk:damma",
+          "mrk:sukun"
+        ],
+        "audioText": "مُ",
+        "audioKey": "grid/mim-damma",
+        "prompt": "Listen. Which one did you hear?",
+        "options": [
+          {
+            "label": "مُ",
+            "correct": true
+          },
+          {
+            "label": "مُسْ",
+            "correct": false
+          }
+        ],
+        "explanation": "مُ (mu) stays open: no sukūn, so it ends on the vowel.",
+        "fr": {
+          "prompt": "Écoutez. Lequel avez-vous entendu ?",
+          "explanation": "مُ (mu) reste ouvert : pas de sukūn, le son finit sur la voyelle."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Open or closed?",
+      "fr": {
+        "title": "Ouvert ou fermé ?"
+      },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "minimal-pair",
+        "skill": "listening",
+        "objectIds": [
+          "mrk:sukun",
+          "mrk:kasra",
+          "syl:cvc-ti"
+        ],
+        "contrastPhonemes": [
+          "mrk:kasra",
+          "mrk:sukun"
+        ],
+        "audioText": "تِسْ",
+        "audioKey": "syllables/cvc-ti",
+        "prompt": "Listen. Which one did you hear?",
+        "options": [
+          {
+            "label": "تِسْ",
+            "correct": true
+          },
+          {
+            "label": "تِ",
+            "correct": false
+          }
+        ],
+        "explanation": "تِسْ (tis): the sukūn closes the sound on س.",
+        "fr": {
+          "prompt": "Écoutez. Lequel avez-vous entendu ?",
+          "explanation": "تِسْ (tis) : le sukūn ferme le son sur س."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Open or closed?",
+      "fr": {
+        "title": "Ouvert ou fermé ?"
+      },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "minimal-pair",
+        "skill": "listening",
+        "objectIds": [
+          "mrk:sukun",
+          "mrk:kasra",
+          "syl:cvc-bi"
+        ],
+        "contrastPhonemes": [
+          "mrk:kasra",
+          "mrk:sukun"
+        ],
+        "audioText": "بِ",
+        "audioKey": "grid/ba-kasra",
+        "prompt": "Listen. Which one did you hear?",
+        "options": [
+          {
+            "label": "بِنْ",
+            "correct": false
+          },
+          {
+            "label": "بِ",
+            "correct": true
+          }
+        ],
+        "explanation": "بِ (bi) stays open: no sukūn, so it ends on the vowel.",
+        "fr": {
+          "prompt": "Écoutez. Lequel avez-vous entendu ?",
+          "explanation": "بِ (bi) reste ouvert : pas de sukūn, le son finit sur la voyelle."
+        }
+      }
+    },
+    {
+      "type": "complete",
+      "title": "You can hear the vowels",
+      "message": "You picked out fatḥah, kasrah and ḍammah by ear, and heard when a sukūn closes the sound.",
+      "finishLabel": "Finish",
+      "fr": {
+        "title": "Vous entendez les voyelles",
+        "message": "Vous avez reconnu à l'oreille la fatḥah, la kasrah et la ḍammah, et entendu quand un sukūn ferme le son.",
+        "finishLabel": "Terminer"
+      }
+    }
+  ]
+}

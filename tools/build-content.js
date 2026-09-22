@@ -66,7 +66,12 @@ const FILES = {
     syllables: { file: "syllables.json", idPrefix: "syl:" },
     grammar:   { file: "grammar.json",   idPrefix: "gr:"  },
     texts:     { file: "texts.json",     idPrefix: "txt:" },
+    // M28 — minimal-pair objects for the emphasis layer's listening drills.
+    minimalPairs: { file: "minimal-pairs.json", idPrefix: "mp:" },
 };
+
+// M28 — the emphasis tag every taggable object/lesson/step may carry.
+const EMPHASIS_TAGS = new Set(["general", "quranic", "both"]);
 
 function lf(s) { return s == null ? s : s.replace(/\r\n/g, "\n"); }
 function readJSON(p) { return JSON.parse(fs.readFileSync(p, "utf8")); }
@@ -205,6 +210,37 @@ function load() {
         // m11 = grammar-demo sentence (carries concept, feeds grammarExamples);
         // m20 = M20 Phase B reading/dialogue text (reaches lessons only via data-authored lessons).
         if (!["m8", "m11", "m20"].includes(t.source)) errors.push(`text ${t.id}: source "${t.source}" must be m8, m11 or m20`);
+    }
+
+    /* -------- M28: emphasis tag (any taggable object) + minimal pairs -------- */
+    const AR_HARAKAT = /[ً-ْٰ]/;   // ḥarakāt / tanwīn / sukūn / shaddah / dagger-alif
+    for (const key of Object.keys(FILES)) for (const o of data[key]) {
+        if ("emphasisTag" in o && !EMPHASIS_TAGS.has(o.emphasisTag))
+            errors.push(`${o.id}: emphasisTag "${o.emphasisTag}" must be general | quranic | both`);
+    }
+    for (const p of data.minimalPairs || []) {
+        const cp = p.contrastPhonemes;
+        if (!Array.isArray(cp) || cp.length !== 2 || new Set(cp).size !== 2)
+            errors.push(`minimal pair ${p.id}: contrastPhonemes must be two distinct object ids`);
+        else for (const ph of cp) {
+            if (!allIds.has(ph)) errors.push(`minimal pair ${p.id}: contrastPhoneme "${ph}" does not resolve`);
+            else if (!/^(let|mrk):/.test(ph)) errors.push(`minimal pair ${p.id}: contrastPhoneme "${ph}" must be a letter or mark`);
+        }
+        if (!Array.isArray(p.words) || p.words.length < 2)
+            errors.push(`minimal pair ${p.id}: needs a words[] of at least 2 members`);
+        else for (const w of p.words) {
+            if (Array.isArray(cp) && !cp.includes(w.phoneme)) errors.push(`minimal pair ${p.id}: word "${w.ar}" phoneme "${w.phoneme}" is not one of contrastPhonemes`);
+            if (!w.ar || !AR_HARAKAT.test(w.ar)) errors.push(`minimal pair ${p.id}: word "${w.ar}" must be vowelled Arabic`);
+            if (!w.translit) errors.push(`minimal pair ${p.id}: word "${w.ar}" missing translit`);
+            if (w.lexemeId) {
+                const lx = data._objById.get(w.lexemeId);
+                if (!lx || lx.kind !== "lexeme") errors.push(`minimal pair ${p.id}: lexemeId "${w.lexemeId}" does not resolve to a lexeme`);
+                else if (lx.ar !== w.ar) errors.push(`minimal pair ${p.id}: word "${w.ar}" != lexeme ${w.lexemeId} ar "${lx.ar}"`);
+            }
+            if (!w.audioKey) errors.push(`minimal pair ${p.id}: word "${w.ar}" missing audioKey`);
+            if (w.quranic != null && (typeof w.quranic !== "object" || !w.quranic.ref || !w.quranic.form))
+                errors.push(`minimal pair ${p.id}: word "${w.ar}" quranic must be null or { ref, form }`);
+        }
     }
 
     /* prereq graph: every edge resolves, no cycles (M14 has no prereqs — kept for later) */
@@ -411,6 +447,17 @@ function load() {
                     errors.push(`lesson ${L.id}: step[${j}] type "${s && s.type}" is not a known renderer`);
                 if (s && s.fromObjectives && !FROM_OBJECTIVES_OK.has(s.type))
                     errors.push(`lesson ${L.id}: step[${j}] "fromObjectives" is only valid on ${[...FROM_OBJECTIVES_OK].join(" / ")}`);
+                // M28 — a step may carry its own emphasisTag (else it inherits the lesson's).
+                if (s && "emphasisTag" in s && !EMPHASIS_TAGS.has(s.emphasisTag))
+                    errors.push(`lesson ${L.id}: step[${j}] emphasisTag "${s.emphasisTag}" must be general | quranic | both`);
+                // M28 — a data-lesson trace-letter step references a letter by id;
+                // the compile step expands it to the { letter, strokes } shape the
+                // runtime renderer needs (mirrors the inline stroke-order lesson).
+                if (s && s.type === "trace-letter" && !s.letter) {
+                    const lt = s.letterId && data._objById.get(s.letterId);
+                    if (!lt || lt.kind !== "letter") errors.push(`lesson ${L.id}: step[${j}] trace-letter letterId "${s.letterId}" does not resolve to a letter`);
+                    else if (s.strokes === "fromLetter" && !Array.isArray(lt.strokeOrder)) errors.push(`lesson ${L.id}: step[${j}] trace-letter ${s.letterId} has no strokeOrder for "fromLetter"`);
+                }
                 if (s && s.fromObjectives) {
                     // example-set expands lexeme objectives; reading-practice expands
                     // lexeme AND text objectives; exercise (build) expands lexemes for
@@ -573,6 +620,23 @@ function compile(data, legacyMap) {
     const compiledLessons = (data.lessons || []).map(L => {
         const obj = id => data._objById && data._objById.get(id);
         const steps = (L.steps || []).flatMap(s => {
+            // M28 — expand a trace-letter step's letterId into the exact
+            // { id(bare), isolated, name, translit, initial, medial, final, connects }
+            // shape the runtime builds in `arabicAlphabet`, so renderTraceLetterStep
+            // (and its dot-notes lookup, keyed by the bare id) works unchanged.
+            if (s.type === "trace-letter" && !s.letter && s.letterId) {
+                const lt = obj(s.letterId) || {};
+                const f = lt.forms || {};
+                return Object.assign({}, s, {
+                    letterId: undefined,
+                    letter: {
+                        id: String(lt.id || "").replace(/^let:/, ""),
+                        isolated: f.isolated, name: lt.name, translit: lt.translit,
+                        initial: f.initial, medial: f.medial, final: f.final, connects: lt.connects,
+                    },
+                    strokes: s.strokes === "fromLetter" ? (lt.strokeOrder || []) : (s.strokes || []),
+                });
+            }
             if ((s.type === "example-set" || s.type === "reading-practice") && s.fromObjectives) {
                 const objs = (L.objectives || []).map(obj).filter(Boolean);
                 const lex = objs.filter(o => o.kind === "lexeme");
@@ -619,7 +683,13 @@ function compile(data, legacyMap) {
             }
             return s;
         });
-        return { id: L.id, title: L.title, curriculumLessonId: L.curriculumLessonId || null, objectives: L.objectives || [], steps };
+        // M28 — carry emphasisTag / fr through compile when present (absent on
+        // every pre-M28 lesson, so their compiled output stays byte-identical).
+        const out = { id: L.id, title: L.title, curriculumLessonId: L.curriculumLessonId || null, objectives: L.objectives || [], steps };
+        if (L.emphasisTag) out.emphasisTag = L.emphasisTag;
+        if (L.fr) out.fr = L.fr;
+        if (L.smartNudge) out.smartNudge = L.smartNudge;
+        return out;
     });
 
     return [
@@ -637,6 +707,7 @@ function compile(data, legacyMap) {
         section("syllables") + ",",
         section("grammar") + ",",
         section("texts") + ",",
+        section("minimalPairs") + ",",
         curriculumBlock() + ",",
         `"lessons": [\n${compiledLessons.map(o => "  " + JSON.stringify(o) + ",").join("\n")}\n]` + ",",
         `"legacyFlashcardId": {\n${mapRows.join("\n")}\n}`,
