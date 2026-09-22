@@ -36,6 +36,10 @@
         --gold-soft: #f5e9cf;
         --danger: #b8452f;
         --danger-soft: #fbe8e2;
+        /* M28.3 — grammar-role colours (WCAG-AA on all app backgrounds). */
+        --role-topic: #065f46;
+        --role-receiver: #075985;
+        --role-description: var(--gold);
         --shadow: 0 20px 50px rgba(33, 32, 28, 0.10);
         --radius-lg: 22px;
         --radius-md: 14px;
@@ -60,6 +64,10 @@
         --gold-soft: #2b2417;
         --danger: #e07357;
         --danger-soft: #2c1c17;
+        /* M28.3 — lighter role colours for the dark theme (--role-description
+           tracks --gold, already themed above). */
+        --role-topic: #34d399;
+        --role-receiver: #38bdf8;
         --shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
     }
 
@@ -1524,6 +1532,21 @@
         min-height: 44px; border: 1px solid var(--panel-border); background: var(--bg-2); color: var(--ink);
         border-radius: 8px; padding: 5px 10px; font-family: var(--font-body); font-size: 13px; cursor: pointer;
     }
+
+    /* Grammar-role colour + underline (colour is never the only cue). The
+       underline is border-bottom + padding, not text-decoration, so it clears
+       the dots under ب ج ي. A1/A0 use colour+underline only; A2 adds a pill. */
+    .role-chunk { padding-bottom: 1px; border-bottom: 2px solid transparent; }
+    .role-topic       { color: var(--role-topic);       border-bottom-color: var(--role-topic);       border-bottom-style: solid; }
+    .role-receiver    { color: var(--role-receiver);    border-bottom-color: var(--role-receiver);    border-bottom-style: dashed; }
+    .role-description  { color: var(--role-description); border-bottom-color: var(--role-description); border-bottom-style: dotted; }
+    .role-pill {
+        display: inline-block; margin-inline-start: 4px; padding: 1px 7px;
+        border-radius: 999px; font-size: 11px; font-weight: 600; vertical-align: middle;
+        font-family: var(--font-body); border: 1px solid currentColor;
+    }
+    .role-pattern { font-family: var(--font-arabic); font-size: 26px; line-height: 2; }
+    .role-pattern .role-chunk { margin-inline: 3px; }
 
     /* Quranic-occurrence line after a minimal-pair answer */
     .quranic-occurrence {
@@ -4946,6 +4969,51 @@ exerciseTypes.cloze = {
     },
 };
 
+/* M28.3 — a tile arrangement is correct if it matches the canonical `target`
+   order or any permutation listed in `acceptedOrders` (each an array of indices
+   into `target`). Compared by value, so duplicate tiles are handled. With no
+   acceptedOrders it is exactly the old strict check. */
+function isAcceptedTileOrder(placed, target, acceptedOrders) {
+    if (!Array.isArray(placed) || !Array.isArray(target) || placed.length !== target.length) return false;
+    const orders = (Array.isArray(acceptedOrders) && acceptedOrders.length)
+        ? acceptedOrders
+        : [target.map((_, i) => i)];
+    return orders.some(order =>
+        Array.isArray(order) && order.length === target.length
+        && placed.every((t, k) => t === target[order[k]])
+    );
+}
+
+/* M28.3 — render a colour-coded grammar pattern. `tokens` is [{text, role?}]
+   where role ∈ topic|doer|receiver|description. Colour + underline always
+   carry the role (never colour alone); at A2+ (`showLabels`) each chunk also
+   gets a text pill, because a role name is itself metalanguage barred at A1.
+   Dormant until the A1.2 grammar content authors `visualRoles`. */
+const ROLE_CLASS = { topic: "role-topic", doer: "role-topic", receiver: "role-receiver", description: "role-description" };
+const ROLE_LABEL = { topic: "Topic", doer: "Doer", receiver: "Receiver", description: "Description" };
+function renderRolePattern(tokens, opts) {
+    opts = opts || {};
+    const wrap = document.createElement("span");
+    wrap.className = "role-pattern"; wrap.lang = "ar"; wrap.dir = "rtl";
+    (tokens || []).forEach((tk, i) => {
+        if (i) wrap.appendChild(document.createTextNode(" "));
+        const cls = ROLE_CLASS[tk.role];
+        if (!cls) { wrap.appendChild(document.createTextNode(tk.text)); return; }
+        const span = document.createElement("span");
+        span.className = "role-chunk " + cls;
+        span.textContent = tk.text;
+        wrap.appendChild(span);
+        if (opts.showLabels && ROLE_LABEL[tk.role]) {
+            const pill = document.createElement("span");
+            pill.className = "role-pill " + cls;
+            pill.textContent = ROLE_LABEL[tk.role];
+            pill.lang = "en"; pill.dir = "ltr";
+            wrap.appendChild(pill);
+        }
+    });
+    return wrap;
+}
+
 exerciseTypes.build = {
     strands: ["writing", "reading"],
     render(item, host, onResult) {
@@ -4981,7 +5049,11 @@ exerciseTypes.build = {
         check.className = "pill show-btn exercise-check";
         check.textContent = "Check";
         check.onclick = () => {
-            const correct = placed.length === target.length && placed.every((t, i) => t === target[i]);
+            // M28.3 — accept any arrangement listed in item.acceptedOrders
+            // (index permutations of `target`); falls back to the single
+            // canonical order when absent. Lets a sentence-builder grade both
+            // nominal and verbal word order as correct.
+            const correct = isAcceptedTileOrder(placed, target, item.acceptedOrders);
             answer.classList.add(correct ? "right" : "wrong");
             check.disabled = true;
             answer.querySelectorAll("button").forEach(b => b.disabled = true);

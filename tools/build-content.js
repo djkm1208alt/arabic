@@ -458,6 +458,27 @@ function load() {
                     if (!lt || lt.kind !== "letter") errors.push(`lesson ${L.id}: step[${j}] trace-letter letterId "${s.letterId}" does not resolve to a letter`);
                     else if (s.strokes === "fromLetter" && !Array.isArray(lt.strokeOrder)) errors.push(`lesson ${L.id}: step[${j}] trace-letter ${s.letterId} has no strokeOrder for "fromLetter"`);
                 }
+                // M28.3 — a build exercise may list acceptedOrders (index
+                // permutations of its `target`); the runtime grades any of them
+                // correct. Each entry must be a full permutation with no dupes.
+                const ex28 = s && s.exercise;
+                if (ex28 && ex28.acceptedOrders != null) {
+                    const ao = ex28.acceptedOrders;
+                    const n = Array.isArray(ex28.target) ? ex28.target.length : null;
+                    if (!Array.isArray(ao) || !ao.length) errors.push(`lesson ${L.id}: step[${j}] acceptedOrders must be a non-empty array`);
+                    else {
+                        const seen = new Set();
+                        ao.forEach((order, k) => {
+                            if (!Array.isArray(order) || (n != null && order.length !== n)) { errors.push(`lesson ${L.id}: step[${j}] acceptedOrders[${k}] must be a permutation of the ${n} target indices`); return; }
+                            const sorted = order.slice().sort((a, b) => a - b);
+                            const isPerm = n != null && sorted.every((v, idx) => v === idx);
+                            if (n != null && !isPerm) errors.push(`lesson ${L.id}: step[${j}] acceptedOrders[${k}] is not a permutation of 0..${n - 1}`);
+                            const key = order.join(",");
+                            if (seen.has(key)) errors.push(`lesson ${L.id}: step[${j}] acceptedOrders[${k}] is a duplicate`);
+                            seen.add(key);
+                        });
+                    }
+                }
                 if (s && s.fromObjectives) {
                     // example-set expands lexeme objectives; reading-practice expands
                     // lexeme AND text objectives; exercise (build) expands lexemes for

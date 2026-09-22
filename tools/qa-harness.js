@@ -301,6 +301,51 @@ async function main() {
         await context.close();
     });
 
+    await check("M28.3 — build acceptedOrders grades every listed permutation (and only those)", async () => {
+        const { context, page, pageErrors } = await freshPage(browser);
+        await gotoApp(page);
+        const r = await page.evaluate(() => {
+            const target = ["الْمُسْلِمُ", "يَقْرَأُ", "الْقُرْآنَ"];
+            const ao = [[0, 1, 2], [1, 0, 2]]; // nominal + verbal order
+            return {
+                canonical: isAcceptedTileOrder(["الْمُسْلِمُ", "يَقْرَأُ", "الْقُرْآنَ"], target, ao),
+                verbal: isAcceptedTileOrder(["يَقْرَأُ", "الْمُسْلِمُ", "الْقُرْآنَ"], target, ao),
+                unlisted: isAcceptedTileOrder(["الْقُرْآنَ", "يَقْرَأُ", "الْمُسْلِمُ"], target, ao),
+                fallbackExact: isAcceptedTileOrder(target.slice(), target, null),
+                fallbackWrong: isAcceptedTileOrder(["يَقْرَأُ", "الْمُسْلِمُ", "الْقُرْآنَ"], target, null),
+                wrongLen: isAcceptedTileOrder(["الْمُسْلِمُ"], target, ao),
+            };
+        });
+        assert(r.canonical && r.verbal, "a listed order was not accepted");
+        assert(!r.unlisted, "an unlisted order was wrongly accepted");
+        assert(r.fallbackExact && !r.fallbackWrong, "no-acceptedOrders fallback is not strict");
+        assert(!r.wrongLen, "a length mismatch was wrongly accepted");
+        assert(pageErrors.length === 0, `pageerror(s): ${pageErrors.join(" | ")}`);
+        await context.close();
+    });
+
+    await check("M28.3 — renderRolePattern colour-codes chunks; A1 hides labels, A2 shows pills", async () => {
+        const { context, page, pageErrors } = await freshPage(browser);
+        await gotoApp(page);
+        const r = await page.evaluate(() => {
+            const a1 = renderRolePattern([{ text: "الْوَلَدُ", role: "topic" }, { text: "كَبِيرٌ", role: "description" }], { showLabels: false });
+            const a2 = renderRolePattern([{ text: "قَرَأَ", role: "doer" }, { text: "الْكِتَابَ", role: "receiver" }], { showLabels: true });
+            return {
+                a1Classes: [!!a1.querySelector(".role-topic"), !!a1.querySelector(".role-description")],
+                a1Pills: a1.querySelectorAll(".role-pill").length,
+                a2doerIsTopicColour: !!a2.querySelector(".role-topic"), // doer shares the topic colour
+                a2Receiver: !!a2.querySelector(".role-receiver"),
+                a2Pills: [...a2.querySelectorAll(".role-pill")].map(p => p.textContent),
+            };
+        });
+        assert(r.a1Classes[0] && r.a1Classes[1], "A1 role classes missing");
+        assert(r.a1Pills === 0, "A1 must not render role labels (metalanguage rule)");
+        assert(r.a2doerIsTopicColour && r.a2Receiver, "A2 role classes missing");
+        assert(JSON.stringify(r.a2Pills) === JSON.stringify(["Doer", "Receiver"]), `A2 pills wrong: ${r.a2Pills}`);
+        assert(pageErrors.length === 0, `pageerror(s): ${pageErrors.join(" | ")}`);
+        await context.close();
+    });
+
     for (const width of BREAKPOINTS) {
         await check(`no horizontal overflow at ${width}px (all nav views)`, async () => {
             const { context, page } = await freshPage(browser);
