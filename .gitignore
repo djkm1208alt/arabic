@@ -1,4 +1,7 @@
 node_modules/
+# Local Claude Code settings, per machine.
+# (First added in 595e47f; lost in the 67e8e3c restore; put back here.)
+.claude/
 .env
 .env.*
 __pycache__/
