@@ -2775,6 +2775,32 @@
         "title": "Brève ou longue ? Puis de vraies paires de mots",
         "blurb": "Entendez les voyelles brèves face aux longues, puis lisez et choisissez de vrais mots qui ne diffèrent que d'un son."
       }
+    },
+    {
+      "id": "a1-dual-demonstratives",
+      "unitId": "a1-u1",
+      "order": 9,
+      "title": "This & That — With Matching Words",
+      "blurb": "Point with هَذَا / هَذِهِ and make the describing word match — with everyday and Quranic words.",
+      "level": "A1",
+      "skills": [
+        "grammar",
+        "reading"
+      ],
+      "objectives": [
+        "gr:demonstratives",
+        "gr:gender-agreement",
+        "lex:wrk-01",
+        "lex:sch-01",
+        "lex:pla-04",
+        "lex:pla-21"
+      ],
+      "status": "available",
+      "source": "steps:a1-dual-demonstratives",
+      "fr": {
+        "title": "Ceci & cela — avec les mots qui s'accordent",
+        "blurb": "Montrez avec هَذَا / هَذِهِ et accordez le mot qui décrit — avec des mots du quotidien et du Coran."
+      }
     }
   ]
 }

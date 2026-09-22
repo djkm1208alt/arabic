@@ -1,0 +1,133 @@
+{
+  "id": "a1-dual-demonstratives",
+  "unitId": "a1-u1",
+  "curriculumLessonId": "a1-dual-demonstratives",
+  "title": "This & That — With Matching Words",
+  "level": "A1",
+  "skills": ["grammar", "reading"],
+  "objectives": ["gr:demonstratives", "gr:gender-agreement", "lex:wrk-01", "lex:sch-01", "lex:pla-04", "lex:pla-21"],
+  "emphasisTag": "both",
+  "fr": { "title": "Ceci & cela — avec les mots qui s'accordent" },
+  "steps": [
+    {
+      "type": "explain",
+      "title": "Pointing, and making words match",
+      "body": [
+        "Use هَذَا for something you point at that is masculine, and هَذِهِ for something feminine. A feminine word usually ends in ة.",
+        "The describing word matches too: with a masculine word it stays plain (كَبِيرٌ), with a feminine word it takes ة (كَبِيرَةٌ).",
+        "So: هَذَا بَيْتٌ كَبِيرٌ, but هَذِهِ مَدِينَةٌ كَبِيرَةٌ."
+      ],
+      "fr": {
+        "title": "Montrer, et accorder les mots",
+        "body": [
+          "Utilisez هَذَا pour un mot masculin que vous montrez, et هَذِهِ pour un mot féminin. Un mot féminin finit souvent par ة.",
+          "Le mot qui décrit s'accorde aussi : avec un masculin il reste simple (كَبِيرٌ), avec un féminin il prend ة (كَبِيرَةٌ).",
+          "Donc : هَذَا بَيْتٌ كَبِيرٌ, mais هَذِهِ مَدِينَةٌ كَبِيرَةٌ."
+        ]
+      },
+      "previewSymbols": ["هَذَا", "هَذِهِ"]
+    },
+    {
+      "type": "reading-practice",
+      "title": "Read these, your way",
+      "intro": "Read each one and tap 🔊. Reveal the meaning to check yourself.",
+      "fr": { "title": "Lisez à votre façon", "intro": "Lisez chaque phrase et appuyez sur 🔊. Affichez le sens pour vérifier." },
+      "items": [
+        { "arabic": "هَذَا مَكْتَبٌ جَدِيدٌ", "translit": "hādhā maktabun jadīdun", "english": "This is a new office.", "emphasisTag": "general" },
+        { "arabic": "هَذِهِ مَدْرَسَةٌ كَبِيرَةٌ", "translit": "hādhihi madrasatun kabīratun", "english": "This is a big school.", "emphasisTag": "general" },
+        { "arabic": "هَذَا مَسْجِدٌ قَرِيبٌ", "translit": "hādhā masjidun qarībun", "english": "This is a nearby mosque.", "emphasisTag": "quranic" },
+        { "arabic": "هَذِهِ جَنَّةٌ كَبِيرَةٌ", "translit": "hādhihi jannatun kabīratun", "english": "This is a big garden.", "emphasisTag": "quranic" },
+        { "arabic": "هَذَا بَيْتٌ كَبِيرٌ", "translit": "hādhā baytun kabīrun", "english": "This is a big house.", "emphasisTag": "both" },
+        { "arabic": "هَذِهِ سَيَّارَةٌ جَدِيدَةٌ", "translit": "hādhihi sayyāratun jadīdatun", "english": "This is a new car.", "emphasisTag": "both" }
+      ]
+    },
+    {
+      "type": "exercise",
+      "title": "Make it match",
+      "fr": { "title": "Faites l'accord" },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "pattern-substitution",
+        "skill": "grammar",
+        "objectIds": ["gr:gender-agreement"],
+        "arabicOptions": true,
+        "prompt": "The word is now feminine. Which sentence is correct?",
+        "fr": { "prompt": "Le mot est maintenant féminin. Quelle phrase est correcte ?" },
+        "variants": {
+          "general": {
+            "arabicPrompt": "هَذَا مَكْتَبٌ جَدِيدٌ ← مَدِينَة",
+            "options": [
+              { "label": "هَذِهِ مَدِينَةٌ جَدِيدَةٌ", "correct": true },
+              { "label": "هَذَا مَدِينَةٌ جَدِيدٌ", "correct": false },
+              { "label": "هَذِهِ مَدِينَةٌ جَدِيدٌ", "correct": false }
+            ],
+            "explanation": "مَدِينَة ends in ة, so هَذَا becomes هَذِهِ and جَدِيد takes ة → جَدِيدَةٌ.",
+            "fr": { "explanation": "مَدِينَة finit par ة, donc هَذَا devient هَذِهِ et جَدِيد prend ة → جَدِيدَةٌ." }
+          },
+          "quranic": {
+            "arabicPrompt": "هَذَا مَسْجِدٌ كَبِيرٌ ← جَنَّة",
+            "options": [
+              { "label": "هَذِهِ جَنَّةٌ كَبِيرَةٌ", "correct": true },
+              { "label": "هَذَا جَنَّةٌ كَبِيرٌ", "correct": false },
+              { "label": "هَذِهِ جَنَّةٌ كَبِيرٌ", "correct": false }
+            ],
+            "explanation": "جَنَّة ends in ة, so هَذَا becomes هَذِهِ and كَبِير takes ة → كَبِيرَةٌ.",
+            "fr": { "explanation": "جَنَّة finit par ة, donc هَذَا devient هَذِهِ et كَبِير prend ة → كَبِيرَةٌ." }
+          },
+          "both": {
+            "arabicPrompt": "هَذَا بَيْتٌ جَدِيدٌ ← سَيَّارَة",
+            "options": [
+              { "label": "هَذِهِ سَيَّارَةٌ جَدِيدَةٌ", "correct": true },
+              { "label": "هَذَا سَيَّارَةٌ جَدِيدٌ", "correct": false },
+              { "label": "هَذِهِ سَيَّارَةٌ جَدِيدٌ", "correct": false }
+            ],
+            "explanation": "سَيَّارَة ends in ة, so هَذَا becomes هَذِهِ and جَدِيد takes ة → جَدِيدَةٌ.",
+            "fr": { "explanation": "سَيَّارَة finit par ة, donc هَذَا devient هَذِهِ et جَدِيد prend ة → جَدِيدَةٌ." }
+          }
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Build the sentence",
+      "fr": { "title": "Construisez la phrase" },
+      "exercise": {
+        "kind": "build",
+        "unit": "word",
+        "drillType": "sentence-builder",
+        "skill": "reading",
+        "objectId": "gr:demonstratives",
+        "objectIds": ["gr:demonstratives"],
+        "prompt": "Build: “This is a big house.”",
+        "hint": "Tap the words in order, right to left.",
+        "fr": { "prompt": "Construisez : « Ceci est une grande maison. »", "hint": "Touchez les mots dans l'ordre, de droite à gauche." },
+        "target": ["هَذَا", "بَيْتٌ", "كَبِيرٌ"]
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Fill the gap",
+      "fr": { "title": "Complétez" },
+      "exercise": {
+        "kind": "cloze",
+        "drillType": "fill-in-blank",
+        "skill": "grammar",
+        "objectId": "gr:gender-agreement",
+        "objectIds": ["gr:gender-agreement"],
+        "prompt": "Choose the word that matches.",
+        "before": "هَذِهِ مَدِينَةٌ ",
+        "after": ".",
+        "options": ["كَبِيرَةٌ", "كَبِيرٌ"],
+        "answer": "كَبِيرَةٌ",
+        "fr": { "prompt": "Choisissez le mot qui s'accorde." }
+      }
+    },
+    {
+      "type": "complete",
+      "title": "Nicely matched",
+      "message": "You pointed with هَذَا / هَذِهِ and made the describing word match. You saw it in everyday and Quranic words alike.",
+      "finishLabel": "Finish",
+      "fr": { "title": "Bien accordé", "message": "Vous avez montré avec هَذَا / هَذِهِ et accordé le mot qui décrit — dans des mots du quotidien comme du Coran.", "finishLabel": "Terminer" }
+    }
+  ]
+}

@@ -479,6 +479,17 @@ function load() {
                         });
                     }
                 }
+                // M28-B1 — per-track exercise variants: keys ⊆ {general,quranic,both},
+                // and every preference must resolve to a variant (the pref's own or
+                // `both`) so no track loses the drill — reachability holds.
+                if (ex28 && ex28.variants != null) {
+                    const vk = Object.keys(ex28.variants);
+                    if (!vk.length) errors.push(`lesson ${L.id}: step[${j}] exercise.variants must not be empty`);
+                    for (const k of vk) if (!EMPHASIS_TAGS.has(k)) errors.push(`lesson ${L.id}: step[${j}] variants key "${k}" must be general | quranic | both`);
+                    for (const pref of ["general", "quranic", "both"])
+                        if (!ex28.variants[pref] && !ex28.variants.both)
+                            errors.push(`lesson ${L.id}: step[${j}] variants leave "${pref}" learners with no drill (add a "${pref}" or "both" variant)`);
+                }
                 if (s && s.fromObjectives) {
                     // example-set expands lexeme objectives; reading-practice expands
                     // lexeme AND text objectives; exercise (build) expands lexemes for
