@@ -1,7 +1,7 @@
 # M28 — Emphasis layer (General MSA / Quranic & Islamic / Both)
 
-**Status:** Draft for review — held for approval (ROADMAP standing rule 6). The Unit 01–02 seed data is staged as reviewable files under `content/seed/m28/` and is **not wired into the build**; nothing in `index.html` or `content/*.json` changes in this pass.
-**Parent:** [ROADMAP.md](ROADMAP.md) M28. Source of truth: [docs/MASTER_CURRICULUM_SPEC.md](docs/MASTER_CURRICULUM_SPEC.md) v2 (decisions 1–9) plus the 2026-09-22 decisions on role styling, schema fields, and the first seed target.
+**Status:** Design approved 2026-09-22 (Topic-label, emphasis-selector placement, and French-chrome→M29 decisions recorded in §4.7, §4.8, §10). The Unit 01–02 seed data is merged to `main` under `content/seed/m28/` but is **not yet wired into the build** — implementation (§6) is the next step; nothing in `index.html` or `content/*.json` has changed yet.
+**Parent:** [ROADMAP.md](ROADMAP.md) M28. Source of truth: [docs/MASTER_CURRICULUM_SPEC.md](docs/MASTER_CURRICULUM_SPEC.md) v2 (decisions 1–9) plus the 2026-09-22 decisions on role styling, emphasis-selector placement, schema fields, and the first seed target.
 
 ---
 
@@ -65,7 +65,7 @@ The Supabase schema's snake_case columns are unaffected: they hold learner state
 - Carried by: lexemes, texts, minimal pairs, lessons, and lesson steps (a step inherits its lesson's tag unless it sets its own).
 - Visibility: an item is shown when `tag == "both"` **or** `preference == "both"` **or** `tag == preference`.
 - **Invariant (validator-enforced):** every unit's objectives stay reachable under every preference. A `general` lesson needs a `quranic` or `both` counterpart covering the same objectives, and vice versa.
-- Learner preference: `progress.emphasis`, default `"both"`. Existing learners are migrated to `"both"`, which is exactly today's experience. New learners choose during onboarding; everyone can change it later. Ships with a migration function and a before/after check (standing rule 2).
+- Learner preference: `progress.emphasis`, default `"both"`. Existing learners are migrated to `"both"`, which is exactly today's experience. New learners choose in the onboarding step (§4.8, surface 1); everyone can change it later via the Settings section or the dashboard pill. Ships with a migration function and a before/after check (standing rule 2).
 
 ### 4.3 Words
 
@@ -113,20 +113,43 @@ Exercise items gain `drillType`, `contrastPhonemes`, `pairRef` (`{ pairId, heard
 - Every learner-facing string gets an `fr` sibling object with the same keys: `title`, `body`, `prompt`, `explanation`, `message`, `finishLabel`, and `blurb` on curriculum nodes. The renderer uses `fr` when the UI language is French and falls back to English per key. Lexemes keep their existing `fr` gloss field.
 - **Out of M28:** the app chrome (navigation, buttons, and the hard-coded "Correct! ✓" / "Not quite." in `renderMCQ`). That is a whole-app string-extraction job and deserves its own milestone (proposed M29). Until then a French learner sees French content inside English chrome.
 
-### 4.7 Visual roles (decision 8 + the 2026-09-22 role styling)
+### 4.7 Visual roles (decision 8 + the 2026-09-22 role-styling decision)
 
-| Role | Light theme | Dark theme | Second cue |
-| --- | --- | --- | --- |
-| Doer | `#065F46` (6.18:1) | `#34D399` (8.47:1) | 2px solid underline |
-| Action Receiver | `#075985` (6.08:1) | `#38BDF8` (7.60:1) | 2px dashed underline |
-| Description | `var(--gold)` = `#8A5A1F` (4.74:1) | `var(--gold)` = `#D9AC54` (7.74:1) | 2px dotted underline |
+Exactly three colour+cue pairs, each carrying a non-colour cue so colour is never the only signal:
+
+| Role | Light theme | Dark theme | Second cue | A2 label (EN) |
+| --- | --- | --- | --- | --- |
+| Topic / Doer | `#065F46` (6.18:1) | `#34D399` (8.47:1) | 2px **solid** underline | context-sensitive — see below |
+| Receiver | `#075985` (6.08:1) | `#38BDF8` (7.60:1) | 2px **dashed** underline | "Receiver" |
+| Description | `var(--gold)` = `#8A5A1F` (4.74:1) | `var(--gold)` = `#D9AC54` (7.74:1) | 2px **dotted** underline | "Description" |
 
 - **Ratios** are the worst case across the theme's three backgrounds (`--panel`, `--bg-1`, `--bg-2`); all pass WCAG AA for normal text (4.5:1).
-- **Why not the named shades:** `#D97706` measures 2.56:1 on the light theme's `--bg-2`, below even the 3:1 large-text minimum. The mid-tone emerald (`#059669`, 3.03:1) and sky (`#0284C7`, 3.29:1) fail too. The app's own `--gold` token is an amber that passes in both themes, so Description uses it (the "theme accent" option).
-- **Implement the underline as `border-bottom` + `padding-bottom`**, as specified, not `text-decoration: underline`, which cuts through the dots under ب ج ي.
-- **A1 (and A0):** colour + underline only, no text. **A2:** a pill tag with the role name is added, because a role name is itself metalanguage.
-- **B1 continuity:** the existing label engine (M21.6/M21.7) already shows English "doer (fāʿil)" and "object (mafʿūl bih)", so A2's "Doer" and "Action Receiver" lead straight into it.
-- **Final values** are confirmed by `node tools/a11y-audit.js` in both themes during implementation.
+- **Why not the named shades:** `#D97706` measures 2.56:1 on the light theme's `--bg-2`, below even the 3:1 large-text minimum. The mid-tone emerald (`#059669`, 3.03:1) and sky (`#0284C7`, 3.29:1) fail too. The app's own `--gold` token is an amber that passes in both themes, so Description uses it (the "theme accent" the decision names).
+- **Implement the underline as `border-bottom` + `padding-bottom`**, not `text-decoration: underline`, which cuts through the dots under ب ج ي.
+- **The green role is one colour with two names, by sentence type (decision 2026-09-22, Topic-label option a):**
+  - **Nominal sentence** (هٰذَا كِتَابٌ, أَنَا طَالِبٌ) — the fronted noun is the **Topic**.
+  - **Verbal sentence** (يَقْرَأُ الطَّالِبُ) — the actor is the **Doer**.
+  - Same emerald + solid underline for both, so learners still see only three colours; only the tap-label text differs.
+- **A1 (and A0):** colour + underline only, **zero** role text — avoids cognitive overload, per the pedagogy rule.
+- **A2:** a tap-revealed label (tooltip/pill), because a role name is itself metalanguage. EN labels: **"Topic"** (nominal) / **"Doer"** (verbal), **"Receiver"**, **"Description"**.
+- **French labels are provisional**, to be confirmed by a native speaker in the M29 French-chrome pass: Topic → *Thème*, Doer → *Auteur / Sujet*, Receiver → *Complément*, Description → *Description*. (The two source messages differed — *Thème* vs *Sujet* for Topic, *Complément* vs *Receiver* — so these are held as provisional, not shipped copy.)
+- **B1 continuity:** the existing label engine (M21.6/M21.7) already shows English "doer (fāʿil)" and "object (mafʿūl bih)", so A2's "Doer" and "Receiver" lead straight into it.
+- **Final colour values** are confirmed by `node tools/a11y-audit.js` in both themes during implementation.
+
+### 4.8 Emphasis selector — placement (decision 2026-09-22)
+
+The emphasis lives on three surfaces. This supersedes the earlier "Home card + ⚙️ header modal" proposal, folding it into the fuller design below (the gear modal becomes the Settings section; the first-run card becomes the onboarding step).
+
+1. **Onboarding, first launch.** After the UI-language pick (EN/FR), a dedicated single-choice step:
+   - Title: **"What is your primary Arabic goal?"** (FR: *Quel est votre objectif principal ?*)
+   - 🌍 **General Arabic** — everyday communication, travel & modern usage → `emphasis: "general"`
+   - 🕌 **Quranic & Islamic Arabic** — Quran, prayer (ṣalāh) & devotional vocabulary → `emphasis: "quranic"`
+   - 🔄 **Complete Dual Track** — a balanced mix of both → `emphasis: "both"`
+   - The app has **no onboarding flow today**; this step (and the language pick it follows) is new UI built in the implementation pass. Existing learners never see it — they are migrated straight to `"both"` (§4.2), which is exactly today's experience, and can change it any time via surfaces 2–3.
+2. **Settings / profile.** A section headed **"Learning Preferences"** with **"Learning Emphasis"** (FR: *Préférence d'apprentissage*) as a 3-way segmented control / radio-card list. Switching is instant and **never resets lesson progress** (it only changes which tagged items are shown). Reached via a ⚙️ button beside the 🌙/☀️ toggle in the header, which is on every screen; the same panel will host the EN/FR UI-language switcher (prepared now, populated in M29).
+3. **Dashboard quick-switch.** A small pill on Home/Learn showing the current emphasis (e.g. `🕌 Quranic Focus ▾`); tapping it switches directly, same instant, no-reset behaviour.
+
+All three write the one value `progress.emphasis`; there is a single source of truth, and the migration + before/after check (standing rule 2) covers it.
 
 ## 5. Seed data — Units 01–02 (this pass)
 
@@ -223,10 +246,16 @@ That is 52 drills and 6 tracing steps. Each lesson has 8–14 drills, the 3–5-
   - consider not featuring these lessons prominently until recorded or M15.6 AI-voice audio exists.
 - **Level mapping confusion.** Spec "A1.1" is the app's A0. §3 is the reference for this; unit titles in the spec are author-facing only.
 
-## 10. Open decisions
+## 10. Decisions
 
-1. **The "topic" of a sentence without a verb** (هذا كتابٌ, أنا طالبٌ) isn't a Doer. Options: (a) same green + solid styling, with a "Topic" pill at A2; (b) no pill on topics. I recommend (a).
-2. **French app chrome:** confirm it is its own milestone (proposed M29).
-3. **Nudge cadence:** confirm the proposed defaults in §4.4.
-4. **Missing contrast:** the A0 listening descriptor lists ذ/ز/ظ, but spec §4 has no pair for it. Should we source real pairs (checked against a reference) for the next seed?
-5. **Next seed:** Unit 03 (long vowels, shaddah, tanwīn, and the written form of the remaining seven pairs)?
+**Resolved (2026-09-22):**
+
+1. **Topic vs Doer** — option (a): the fronted noun of a nominal sentence is the **Topic**, the actor of a verbal sentence is the **Doer**, both on the same emerald + solid underline; only the A2 tap-label differs (§4.7). Three colours total.
+2. **French app chrome** — confirmed as its own milestone, **M29**. EN stays the default UI; French content strings are populated in the background in the meantime, and the role/nudge FR labels here are provisional until M29's native-speaker review.
+3. **Emphasis selector placement** — three surfaces: onboarding step, Settings "Learning Preferences" section, and a Home/Learn quick-switch pill (§4.8).
+
+**Still open:**
+
+4. **Nudge cadence:** confirm the proposed defaults in §4.4 (≤ 1/day, always dismissible, never returns once dismissed). Not exercised until the A1.2 seed, so it can be confirmed later.
+5. **Missing contrast:** the A0 listening descriptor lists ذ/ز/ظ, but spec §4 has no pair for it. Source real, reference-checked pairs for a later seed?
+6. **Next seed:** Unit 03 (long vowels, shaddah, tanwīn, and the written form of the remaining seven pairs)?
