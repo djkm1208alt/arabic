@@ -1,0 +1,153 @@
+{
+  "_meta": {
+    "status": "M28 seed — draft for review, NOT wired into tools/build-content.js. See m28_emphasis_layer_scope.md.",
+    "why": "Appended to content/curriculum.json `lessons` at implementation. Orders follow each unit's existing lessons; no existing node is renumbered."
+  },
+  "lessons": [
+    {
+      "id": "a0-sounds-throat",
+      "unitId": "a0-u1",
+      "order": 5,
+      "title": "Hear the Throat Sounds",
+      "blurb": "Tell ح from ه and ع from ء by ear in four real word pairs, then trace ح and ع.",
+      "level": "A0",
+      "skills": [
+        "listening",
+        "pronunciation",
+        "writing"
+      ],
+      "objectives": [
+        "let:ha1",
+        "let:ha2",
+        "let:ayn",
+        "mrk:hamza"
+      ],
+      "status": "available",
+      "source": "steps:a0-sounds-throat",
+      "fr": {
+        "title": "Entendre les sons de la gorge",
+        "blurb": "Distinguez ح de ه et ع de ء à l'oreille dans quatre paires de vrais mots, puis tracez ح et ع."
+      }
+    },
+    {
+      "id": "a0-sounds-heavy",
+      "unitId": "a0-u1",
+      "order": 6,
+      "title": "Heavy and Light Sounds",
+      "blurb": "Hear ص, ط and ض against their light twins س, ت and د in five word pairs, then trace ص and ط.",
+      "level": "A0",
+      "skills": [
+        "listening",
+        "pronunciation",
+        "writing"
+      ],
+      "objectives": [
+        "let:sad",
+        "let:sin",
+        "let:ta2",
+        "let:ta1",
+        "let:dad",
+        "let:dal"
+      ],
+      "status": "available",
+      "source": "steps:a0-sounds-heavy",
+      "fr": {
+        "title": "Sons lourds et sons légers",
+        "blurb": "Entendez ص, ط et ض face à leurs jumeaux légers س, ت et د dans cinq paires de mots, puis tracez ص et ط."
+      }
+    },
+    {
+      "id": "a0-sounds-back",
+      "unitId": "a0-u1",
+      "order": 7,
+      "title": "The Deep k, Then a Mixed Review",
+      "blurb": "Hear ق against ك in two word pairs, trace both, then review every contrast from this unit.",
+      "level": "A0",
+      "skills": [
+        "listening",
+        "pronunciation",
+        "writing"
+      ],
+      "objectives": [
+        "let:qaf",
+        "let:kaf",
+        "let:ha1",
+        "let:ha2",
+        "let:ayn",
+        "mrk:hamza",
+        "let:sad",
+        "let:ta2",
+        "let:dal"
+      ],
+      "status": "available",
+      "source": "steps:a0-sounds-back",
+      "fr": {
+        "title": "Le k profond, puis une révision",
+        "blurb": "Entendez ق face à ك dans deux paires de mots, tracez-les, puis révisez tous les contrastes de l'unité."
+      }
+    },
+    {
+      "id": "a0-hear-short-vowels",
+      "unitId": "a0-u2",
+      "order": 3,
+      "title": "Hear the Short Vowels",
+      "blurb": "Pick out fatḥah, kasrah and ḍammah by ear, then hear when a sukūn closes the sound.",
+      "level": "A0",
+      "skills": [
+        "listening",
+        "pronunciation"
+      ],
+      "objectives": [
+        "mrk:fatha",
+        "mrk:kasra",
+        "mrk:damma",
+        "mrk:sukun",
+        "syl:cvc-ba",
+        "syl:cvc-bi",
+        "syl:cvc-mu",
+        "syl:cvc-ti"
+      ],
+      "status": "available",
+      "source": "steps:a0-hear-short-vowels",
+      "fr": {
+        "title": "Entendre les voyelles brèves",
+        "blurb": "Reconnaissez à l'oreille la fatḥah, la kasrah et la ḍammah, puis entendez quand un sukūn ferme le son."
+      }
+    },
+    {
+      "id": "a0-hear-long-and-short",
+      "unitId": "a0-u3",
+      "order": 3,
+      "title": "Short or Long? Then Real Word Pairs",
+      "blurb": "Hear short against long vowels, then read and choose real words that differ by a single sound.",
+      "level": "A0",
+      "skills": [
+        "listening",
+        "reading",
+        "pronunciation"
+      ],
+      "objectives": [
+        "mrk:madd-alif",
+        "mrk:madd-ya",
+        "mrk:madd-waw",
+        "syl:cvv-ba",
+        "syl:cvv-bu",
+        "syl:cvv-mi",
+        "syl:cvv-ta",
+        "syl:cvv-tu",
+        "let:ha1",
+        "let:ha2",
+        "let:ayn",
+        "mrk:hamza",
+        "let:qaf",
+        "let:kaf"
+      ],
+      "status": "available",
+      "source": "steps:a0-hear-long-and-short",
+      "fr": {
+        "title": "Brève ou longue ? Puis de vraies paires de mots",
+        "blurb": "Entendez les voyelles brèves face aux longues, puis lisez et choisissez de vrais mots qui ne diffèrent que d'un son."
+      }
+    }
+  ]
+}

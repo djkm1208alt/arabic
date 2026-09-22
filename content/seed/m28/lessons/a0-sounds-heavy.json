@@ -1,0 +1,492 @@
+{
+  "id": "a0-sounds-heavy",
+  "unitId": "a0-u1",
+  "curriculumLessonId": "a0-sounds-heavy",
+  "title": "Heavy and Light Sounds",
+  "level": "A0",
+  "skills": [
+    "listening",
+    "pronunciation",
+    "writing"
+  ],
+  "objectives": [
+    "let:sad",
+    "let:sin",
+    "let:ta2",
+    "let:ta1",
+    "let:dad",
+    "let:dal"
+  ],
+  "emphasisTag": "both",
+  "fr": {
+    "title": "Sons lourds et sons légers"
+  },
+  "steps": [
+    {
+      "type": "explain",
+      "title": "Three sounds with a heavy twin",
+      "body": [
+        "Three everyday sounds have a “heavy” twin in Arabic: ص is a heavy س, ط is a heavy ت, and ض is a heavy د.",
+        "To make a heavy sound, say the light one while pulling the back of your tongue up and back. The sound gets deeper, and the vowel after it sounds darker. That darker vowel is often the easiest clue.",
+        "The audio uses your device's built-in voice. If two words sound the same to you, replay them: some device voices blur these sounds."
+      ],
+      "fr": {
+        "title": "Trois sons et leur jumeau lourd",
+        "body": [
+          "Trois sons courants ont un jumeau « lourd » en arabe : ص est un س lourd, ط est un ت lourd, et ض est un د lourd.",
+          "Pour produire un son lourd, dites le son léger en tirant l'arrière de la langue vers le haut et vers l'arrière. Le son devient plus grave, et la voyelle qui suit paraît plus sombre. Cette voyelle plus sombre est souvent l'indice le plus facile.",
+          "L'audio utilise la voix intégrée de votre appareil. Si deux mots vous semblent identiques, réécoutez-les : certaines voix d'appareil estompent ces sons."
+        ]
+      },
+      "previewSymbols": [
+        "ص",
+        "س",
+        "ط",
+        "ت",
+        "ض",
+        "د"
+      ]
+    },
+    {
+      "type": "exercise",
+      "title": "Which sound?",
+      "fr": {
+        "title": "Quel son ?"
+      },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "minimal-pair",
+        "skill": "listening",
+        "objectIds": [
+          "let:sad",
+          "let:sin"
+        ],
+        "contrastPhonemes": [
+          "let:sad",
+          "let:sin"
+        ],
+        "pairRef": {
+          "pairId": "mp:sad-sin-sayf",
+          "heard": "let:sad"
+        },
+        "audioText": "صَيْف",
+        "audioKey": "pairs/sayf-sad",
+        "prompt": "Listen. Which sound does this word start with?",
+        "options": [
+          {
+            "label": "ص",
+            "correct": true
+          },
+          {
+            "label": "س",
+            "correct": false
+          }
+        ],
+        "explanation": "صَيْف (ṣayf), “summer”, starts with ص: the heavy s.",
+        "fr": {
+          "prompt": "Écoutez. Par quel son ce mot commence-t-il ?",
+          "explanation": "صَيْف (ṣayf), « été », commence par ص : le s lourd."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Which sound?",
+      "fr": {
+        "title": "Quel son ?"
+      },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "minimal-pair",
+        "skill": "listening",
+        "objectIds": [
+          "let:ta1",
+          "let:ta2"
+        ],
+        "contrastPhonemes": [
+          "let:ta2",
+          "let:ta1"
+        ],
+        "pairRef": {
+          "pairId": "mp:ta2-ta1-taba",
+          "heard": "let:ta1"
+        },
+        "audioText": "تَابَ",
+        "audioKey": "pairs/taba-ta1",
+        "prompt": "Listen. Which sound does this word start with?",
+        "options": [
+          {
+            "label": "ت",
+            "correct": true
+          },
+          {
+            "label": "ط",
+            "correct": false
+          }
+        ],
+        "explanation": "تَابَ (tāba), “to repent”, starts with ت: the light t.",
+        "fr": {
+          "prompt": "Écoutez. Par quel son ce mot commence-t-il ?",
+          "explanation": "تَابَ (tāba), « se repentir », commence par ت : le t léger."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Which sound?",
+      "fr": {
+        "title": "Quel son ?"
+      },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "minimal-pair",
+        "skill": "listening",
+        "objectIds": [
+          "let:dad",
+          "let:dal"
+        ],
+        "contrastPhonemes": [
+          "let:dad",
+          "let:dal"
+        ],
+        "pairRef": {
+          "pairId": "mp:dad-dal-dalla",
+          "heard": "let:dad"
+        },
+        "audioText": "ضَلَّ",
+        "audioKey": "pairs/dalla-dad",
+        "prompt": "Listen. Which sound does this word start with?",
+        "options": [
+          {
+            "label": "د",
+            "correct": false
+          },
+          {
+            "label": "ض",
+            "correct": true
+          }
+        ],
+        "explanation": "ضَلَّ (ḍalla), “to go astray”, starts with ض: the heavy d.",
+        "fr": {
+          "prompt": "Écoutez. Par quel son ce mot commence-t-il ?",
+          "explanation": "ضَلَّ (ḍalla), « s'égarer », commence par ض : le d lourd."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Which sound?",
+      "fr": {
+        "title": "Quel son ?"
+      },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "minimal-pair",
+        "skill": "listening",
+        "objectIds": [
+          "let:sin",
+          "let:sad"
+        ],
+        "contrastPhonemes": [
+          "let:sad",
+          "let:sin"
+        ],
+        "pairRef": {
+          "pairId": "mp:sad-sin-sara",
+          "heard": "let:sin"
+        },
+        "audioText": "سَارَ",
+        "audioKey": "pairs/sara-sin",
+        "prompt": "Listen. Which sound does this word start with?",
+        "options": [
+          {
+            "label": "ص",
+            "correct": false
+          },
+          {
+            "label": "س",
+            "correct": true
+          }
+        ],
+        "explanation": "سَارَ (sāra), “to walk, to travel”, starts with س: the light s.",
+        "fr": {
+          "prompt": "Écoutez. Par quel son ce mot commence-t-il ?",
+          "explanation": "سَارَ (sāra), « marcher, voyager », commence par س : le s léger."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Which sound?",
+      "fr": {
+        "title": "Quel son ?"
+      },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "minimal-pair",
+        "skill": "listening",
+        "objectIds": [
+          "let:ta2",
+          "let:ta1"
+        ],
+        "contrastPhonemes": [
+          "let:ta2",
+          "let:ta1"
+        ],
+        "pairRef": {
+          "pairId": "mp:ta2-ta1-tin",
+          "heard": "let:ta2"
+        },
+        "audioText": "طِين",
+        "audioKey": "pairs/tin-ta2",
+        "prompt": "Listen. Which sound does this word start with?",
+        "options": [
+          {
+            "label": "ت",
+            "correct": false
+          },
+          {
+            "label": "ط",
+            "correct": true
+          }
+        ],
+        "explanation": "طِين (ṭīn), “clay”, starts with ط: the heavy t.",
+        "fr": {
+          "prompt": "Écoutez. Par quel son ce mot commence-t-il ?",
+          "explanation": "طِين (ṭīn), « argile », commence par ط : le t lourd."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Which sound?",
+      "fr": {
+        "title": "Quel son ?"
+      },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "minimal-pair",
+        "skill": "listening",
+        "objectIds": [
+          "let:sin",
+          "let:sad"
+        ],
+        "contrastPhonemes": [
+          "let:sad",
+          "let:sin"
+        ],
+        "pairRef": {
+          "pairId": "mp:sad-sin-sayf",
+          "heard": "let:sin"
+        },
+        "audioText": "سَيْف",
+        "audioKey": "pairs/sayf-sin",
+        "prompt": "Listen. Which sound does this word start with?",
+        "options": [
+          {
+            "label": "س",
+            "correct": true
+          },
+          {
+            "label": "ص",
+            "correct": false
+          }
+        ],
+        "explanation": "سَيْف (sayf), “sword”, starts with س: the light s.",
+        "fr": {
+          "prompt": "Écoutez. Par quel son ce mot commence-t-il ?",
+          "explanation": "سَيْف (sayf), « épée », commence par س : le s léger."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Which sound?",
+      "fr": {
+        "title": "Quel son ?"
+      },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "minimal-pair",
+        "skill": "listening",
+        "objectIds": [
+          "let:dal",
+          "let:dad"
+        ],
+        "contrastPhonemes": [
+          "let:dad",
+          "let:dal"
+        ],
+        "pairRef": {
+          "pairId": "mp:dad-dal-dalla",
+          "heard": "let:dal"
+        },
+        "audioText": "دَلَّ",
+        "audioKey": "pairs/dalla-dal",
+        "prompt": "Listen. Which sound does this word start with?",
+        "options": [
+          {
+            "label": "د",
+            "correct": true
+          },
+          {
+            "label": "ض",
+            "correct": false
+          }
+        ],
+        "explanation": "دَلَّ (dalla), “to guide, to point the way”, starts with د: the light d.",
+        "fr": {
+          "prompt": "Écoutez. Par quel son ce mot commence-t-il ?",
+          "explanation": "دَلَّ (dalla), « guider, indiquer le chemin », commence par د : le d léger."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Which sound?",
+      "fr": {
+        "title": "Quel son ?"
+      },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "minimal-pair",
+        "skill": "listening",
+        "objectIds": [
+          "let:ta2",
+          "let:ta1"
+        ],
+        "contrastPhonemes": [
+          "let:ta2",
+          "let:ta1"
+        ],
+        "pairRef": {
+          "pairId": "mp:ta2-ta1-taba",
+          "heard": "let:ta2"
+        },
+        "audioText": "طَابَ",
+        "audioKey": "pairs/taba-ta2",
+        "prompt": "Listen. Which sound does this word start with?",
+        "options": [
+          {
+            "label": "ت",
+            "correct": false
+          },
+          {
+            "label": "ط",
+            "correct": true
+          }
+        ],
+        "explanation": "طَابَ (ṭāba), “to be good, pleasant”, starts with ط: the heavy t.",
+        "fr": {
+          "prompt": "Écoutez. Par quel son ce mot commence-t-il ?",
+          "explanation": "طَابَ (ṭāba), « être bon, agréable », commence par ط : le t lourd."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Which sound?",
+      "fr": {
+        "title": "Quel son ?"
+      },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "minimal-pair",
+        "skill": "listening",
+        "objectIds": [
+          "let:sad",
+          "let:sin"
+        ],
+        "contrastPhonemes": [
+          "let:sad",
+          "let:sin"
+        ],
+        "pairRef": {
+          "pairId": "mp:sad-sin-sara",
+          "heard": "let:sad"
+        },
+        "audioText": "صَارَ",
+        "audioKey": "pairs/sara-sad",
+        "prompt": "Listen. Which sound does this word start with?",
+        "options": [
+          {
+            "label": "ص",
+            "correct": true
+          },
+          {
+            "label": "س",
+            "correct": false
+          }
+        ],
+        "explanation": "صَارَ (ṣāra), “to become”, starts with ص: the heavy s.",
+        "fr": {
+          "prompt": "Écoutez. Par quel son ce mot commence-t-il ?",
+          "explanation": "صَارَ (ṣāra), « devenir », commence par ص : le s lourd."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Which sound?",
+      "fr": {
+        "title": "Quel son ?"
+      },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "minimal-pair",
+        "skill": "listening",
+        "objectIds": [
+          "let:ta1",
+          "let:ta2"
+        ],
+        "contrastPhonemes": [
+          "let:ta2",
+          "let:ta1"
+        ],
+        "pairRef": {
+          "pairId": "mp:ta2-ta1-tin",
+          "heard": "let:ta1"
+        },
+        "audioText": "تِين",
+        "audioKey": "words/foo-14",
+        "prompt": "Listen. Which sound does this word start with?",
+        "options": [
+          {
+            "label": "ط",
+            "correct": false
+          },
+          {
+            "label": "ت",
+            "correct": true
+          }
+        ],
+        "explanation": "تِين (tīn), “figs”, starts with ت: the light t.",
+        "fr": {
+          "prompt": "Écoutez. Par quel son ce mot commence-t-il ?",
+          "explanation": "تِين (tīn), « figues », commence par ت : le t léger."
+        }
+      }
+    },
+    {
+      "type": "trace-letter",
+      "letterId": "let:sad",
+      "strokes": "fromLetter"
+    },
+    {
+      "type": "trace-letter",
+      "letterId": "let:ta2",
+      "strokes": "fromLetter"
+    },
+    {
+      "type": "complete",
+      "title": "Heavy or light: you can hear it",
+      "message": "You told the heavy sounds ص ط ض from their light twins س ت د in five word pairs, then wrote ص and ط.",
+      "finishLabel": "Finish",
+      "fr": {
+        "title": "Lourd ou léger : vous l'entendez",
+        "message": "Vous avez distingué les sons lourds ص ط ض de leurs jumeaux légers س ت د dans cinq paires de mots, puis écrit ص et ط.",
+        "finishLabel": "Terminer"
+      }
+    }
+  ]
+}

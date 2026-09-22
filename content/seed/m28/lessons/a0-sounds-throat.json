@@ -1,0 +1,406 @@
+{
+  "id": "a0-sounds-throat",
+  "unitId": "a0-u1",
+  "curriculumLessonId": "a0-sounds-throat",
+  "title": "Hear the Throat Sounds",
+  "level": "A0",
+  "skills": [
+    "listening",
+    "pronunciation",
+    "writing"
+  ],
+  "objectives": [
+    "let:ha1",
+    "let:ha2",
+    "let:ayn",
+    "mrk:hamza"
+  ],
+  "emphasisTag": "both",
+  "fr": {
+    "title": "Entendre les sons de la gorge"
+  },
+  "steps": [
+    {
+      "type": "explain",
+      "title": "Two h sounds and two throat sounds",
+      "body": [
+        "English has one “h”. Arabic has two. ه is the light h of “hello”. ح is stronger: tighten your throat and push the air through, like a loud, whispered “haa”.",
+        "Arabic also has two sounds made by closing the throat. ء (hamza) is a quick catch, like the break in “uh-oh”. ع comes from the same tight place as ح, but with your voice switched on.",
+        "You'll hear real Arabic words that differ only in their first sound. You don't need their meanings yet: just listen for that sound and pick its letter.",
+        "The audio uses your device's built-in voice. If two words sound the same to you, replay them: some device voices blur these sounds."
+      ],
+      "fr": {
+        "title": "Deux « h » et deux sons de gorge",
+        "body": [
+          "L'arabe a deux « h ». ه est un simple souffle, comme le h de l'anglais « hello ». ح est plus fort : serrez la gorge et poussez l'air, comme un « haa » chuchoté avec force.",
+          "L'arabe a aussi deux sons produits en fermant la gorge. ء (hamza) est un petit coup de glotte, comme la coupure au milieu de « oh-oh ». ع vient du même endroit serré que ح, mais avec la voix.",
+          "Vous allez entendre de vrais mots arabes qui ne diffèrent que par leur premier son. Inutile de connaître leur sens : écoutez ce son et choisissez sa lettre.",
+          "L'audio utilise la voix intégrée de votre appareil. Si deux mots vous semblent identiques, réécoutez-les : certaines voix d'appareil estompent ces sons."
+        ]
+      },
+      "previewSymbols": [
+        "ح",
+        "ه",
+        "ع",
+        "ء"
+      ]
+    },
+    {
+      "type": "exercise",
+      "title": "Which sound?",
+      "fr": {
+        "title": "Quel son ?"
+      },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "minimal-pair",
+        "skill": "listening",
+        "objectIds": [
+          "let:ha1",
+          "let:ha2"
+        ],
+        "contrastPhonemes": [
+          "let:ha1",
+          "let:ha2"
+        ],
+        "pairRef": {
+          "pairId": "mp:ha1-ha2-haram",
+          "heard": "let:ha1"
+        },
+        "audioText": "حَرَم",
+        "audioKey": "pairs/haram-ha1",
+        "prompt": "Listen. Which sound does this word start with?",
+        "options": [
+          {
+            "label": "ح",
+            "correct": true
+          },
+          {
+            "label": "ه",
+            "correct": false
+          }
+        ],
+        "explanation": "حَرَم (ḥaram), “sanctuary”, starts with ح: the strong throat h.",
+        "fr": {
+          "prompt": "Écoutez. Par quel son ce mot commence-t-il ?",
+          "explanation": "حَرَم (ḥaram), « sanctuaire », commence par ح : le h fort de la gorge."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Which sound?",
+      "fr": {
+        "title": "Quel son ?"
+      },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "minimal-pair",
+        "skill": "listening",
+        "objectIds": [
+          "mrk:hamza",
+          "let:ayn"
+        ],
+        "contrastPhonemes": [
+          "let:ayn",
+          "mrk:hamza"
+        ],
+        "pairRef": {
+          "pairId": "mp:ayn-hamza-amal",
+          "heard": "mrk:hamza"
+        },
+        "audioText": "أَمَل",
+        "audioKey": "pairs/amal-hamza",
+        "prompt": "Listen. Which sound does this word start with?",
+        "options": [
+          {
+            "label": "ع",
+            "correct": false
+          },
+          {
+            "label": "ء",
+            "correct": true
+          }
+        ],
+        "explanation": "أَمَل (amal), “hope”, starts with ء: the throat catch (hamza), written here on an alif (أ).",
+        "fr": {
+          "prompt": "Écoutez. Par quel son ce mot commence-t-il ?",
+          "explanation": "أَمَل (amal), « espoir », commence par ء : le coup de glotte (hamza), écrit ici sur un alif (أ)."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Which sound?",
+      "fr": {
+        "title": "Quel son ?"
+      },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "minimal-pair",
+        "skill": "listening",
+        "objectIds": [
+          "let:ha2",
+          "let:ha1"
+        ],
+        "contrastPhonemes": [
+          "let:ha1",
+          "let:ha2"
+        ],
+        "pairRef": {
+          "pairId": "mp:ha1-ha2-habba",
+          "heard": "let:ha2"
+        },
+        "audioText": "هَبَّ",
+        "audioKey": "pairs/habba-ha2",
+        "prompt": "Listen. Which sound does this word start with?",
+        "options": [
+          {
+            "label": "ح",
+            "correct": false
+          },
+          {
+            "label": "ه",
+            "correct": true
+          }
+        ],
+        "explanation": "هَبَّ (habba), “to blow (of wind)”, starts with ه: the light h.",
+        "fr": {
+          "prompt": "Écoutez. Par quel son ce mot commence-t-il ?",
+          "explanation": "هَبَّ (habba), « souffler (le vent) », commence par ه : le h léger."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Which sound?",
+      "fr": {
+        "title": "Quel son ?"
+      },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "minimal-pair",
+        "skill": "listening",
+        "objectIds": [
+          "let:ayn",
+          "mrk:hamza"
+        ],
+        "contrastPhonemes": [
+          "let:ayn",
+          "mrk:hamza"
+        ],
+        "pairRef": {
+          "pairId": "mp:ayn-hamza-alima",
+          "heard": "let:ayn"
+        },
+        "audioText": "عَلِمَ",
+        "audioKey": "pairs/alima-ayn",
+        "prompt": "Listen. Which sound does this word start with?",
+        "options": [
+          {
+            "label": "ع",
+            "correct": true
+          },
+          {
+            "label": "ء",
+            "correct": false
+          }
+        ],
+        "explanation": "عَلِمَ (ʿalima), “to know”, starts with ع: the tight throat sound, with your voice on.",
+        "fr": {
+          "prompt": "Écoutez. Par quel son ce mot commence-t-il ?",
+          "explanation": "عَلِمَ (ʿalima), « savoir », commence par ع : le son serré de la gorge, avec la voix."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Which sound?",
+      "fr": {
+        "title": "Quel son ?"
+      },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "minimal-pair",
+        "skill": "listening",
+        "objectIds": [
+          "let:ha2",
+          "let:ha1"
+        ],
+        "contrastPhonemes": [
+          "let:ha1",
+          "let:ha2"
+        ],
+        "pairRef": {
+          "pairId": "mp:ha1-ha2-haram",
+          "heard": "let:ha2"
+        },
+        "audioText": "هَرَم",
+        "audioKey": "pairs/haram-ha2",
+        "prompt": "Listen. Which sound does this word start with?",
+        "options": [
+          {
+            "label": "ه",
+            "correct": true
+          },
+          {
+            "label": "ح",
+            "correct": false
+          }
+        ],
+        "explanation": "هَرَم (haram), “pyramid”, starts with ه: the light h.",
+        "fr": {
+          "prompt": "Écoutez. Par quel son ce mot commence-t-il ?",
+          "explanation": "هَرَم (haram), « pyramide », commence par ه : le h léger."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Which sound?",
+      "fr": {
+        "title": "Quel son ?"
+      },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "minimal-pair",
+        "skill": "listening",
+        "objectIds": [
+          "let:ayn",
+          "mrk:hamza"
+        ],
+        "contrastPhonemes": [
+          "let:ayn",
+          "mrk:hamza"
+        ],
+        "pairRef": {
+          "pairId": "mp:ayn-hamza-amal",
+          "heard": "let:ayn"
+        },
+        "audioText": "عَمَل",
+        "audioKey": "words/wrk-11",
+        "prompt": "Listen. Which sound does this word start with?",
+        "options": [
+          {
+            "label": "ء",
+            "correct": false
+          },
+          {
+            "label": "ع",
+            "correct": true
+          }
+        ],
+        "explanation": "عَمَل (ʿamal), “work / job”, starts with ع: the tight throat sound, with your voice on.",
+        "fr": {
+          "prompt": "Écoutez. Par quel son ce mot commence-t-il ?",
+          "explanation": "عَمَل (ʿamal), « travail », commence par ع : le son serré de la gorge, avec la voix."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Which sound?",
+      "fr": {
+        "title": "Quel son ?"
+      },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "minimal-pair",
+        "skill": "listening",
+        "objectIds": [
+          "let:ha1",
+          "let:ha2"
+        ],
+        "contrastPhonemes": [
+          "let:ha1",
+          "let:ha2"
+        ],
+        "pairRef": {
+          "pairId": "mp:ha1-ha2-habba",
+          "heard": "let:ha1"
+        },
+        "audioText": "حَبَّ",
+        "audioKey": "pairs/habba-ha1",
+        "prompt": "Listen. Which sound does this word start with?",
+        "options": [
+          {
+            "label": "ه",
+            "correct": false
+          },
+          {
+            "label": "ح",
+            "correct": true
+          }
+        ],
+        "explanation": "حَبَّ (ḥabba), “to love”, starts with ح: the strong throat h.",
+        "fr": {
+          "prompt": "Écoutez. Par quel son ce mot commence-t-il ?",
+          "explanation": "حَبَّ (ḥabba), « aimer », commence par ح : le h fort de la gorge."
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Which sound?",
+      "fr": {
+        "title": "Quel son ?"
+      },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "minimal-pair",
+        "skill": "listening",
+        "objectIds": [
+          "mrk:hamza",
+          "let:ayn"
+        ],
+        "contrastPhonemes": [
+          "let:ayn",
+          "mrk:hamza"
+        ],
+        "pairRef": {
+          "pairId": "mp:ayn-hamza-alima",
+          "heard": "mrk:hamza"
+        },
+        "audioText": "أَلِمَ",
+        "audioKey": "pairs/alima-hamza",
+        "prompt": "Listen. Which sound does this word start with?",
+        "options": [
+          {
+            "label": "ء",
+            "correct": true
+          },
+          {
+            "label": "ع",
+            "correct": false
+          }
+        ],
+        "explanation": "أَلِمَ (alima), “to feel pain”, starts with ء: the throat catch (hamza), written here on an alif (أ).",
+        "fr": {
+          "prompt": "Écoutez. Par quel son ce mot commence-t-il ?",
+          "explanation": "أَلِمَ (alima), « souffrir », commence par ء : le coup de glotte (hamza), écrit ici sur un alif (أ)."
+        }
+      }
+    },
+    {
+      "type": "trace-letter",
+      "letterId": "let:ha1",
+      "strokes": "fromLetter"
+    },
+    {
+      "type": "trace-letter",
+      "letterId": "let:ayn",
+      "strokes": "fromLetter"
+    },
+    {
+      "type": "complete",
+      "title": "Your ear is tuning in",
+      "message": "You told ح from ه and ع from ء in four real word pairs, then wrote ح and ع. These sounds come back at every level.",
+      "finishLabel": "Finish",
+      "fr": {
+        "title": "Votre oreille s'affine",
+        "message": "Vous avez distingué ح de ه et ع de ء dans quatre paires de vrais mots, puis écrit ح et ع. Ces sons reviennent à tous les niveaux.",
+        "finishLabel": "Terminer"
+      }
+    }
+  ]
+}

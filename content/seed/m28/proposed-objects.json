@@ -1,0 +1,29 @@
+{
+  "_meta": {
+    "status": "M28 seed — draft for review, NOT wired into tools/build-content.js. See m28_emphasis_layer_scope.md.",
+    "why": "ع/ء needs a learning object for the hamza sound; none exists (hamza is only mentioned in the M20.9 alif diagram caption). Additive to content/marks.json."
+  },
+  "marks": [
+    {
+      "id": "mrk:hamza",
+      "kind": "mark",
+      "symbol": "ء",
+      "ar": "ء",
+      "translit": "ʾ",
+      "name": "hamzah",
+      "markClass": "hamza",
+      "fn": "A quick catch in the throat, like the break in “uh-oh”. Often written on a seat letter: أ إ ؤ ئ.",
+      "fr": {
+        "fn": "Un petit coup de glotte, comme la coupure au milieu de « oh-oh ». Souvent écrit sur une lettre support : أ إ ؤ ئ."
+      },
+      "level": "A0",
+      "skills": [
+        "reading",
+        "pronunciation"
+      ],
+      "prereqs": [
+        "let:alif"
+      ]
+    }
+  ]
+}
