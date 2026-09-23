@@ -6001,5 +6001,93 @@
     "prereqs": [
       "gr:maful-lahu"
     ]
+  },
+  {
+    "id": "txt:dlg-greet-general",
+    "kind": "text",
+    "textType": "dialogue",
+    "source": "m20",
+    "emphasisTag": "general",
+    "vowelled": "السَّلَامُ عَلَيْكُمْ — وَعَلَيْكُمُ السَّلَامُ وَرَحْمَةُ اللهِ — مَا اسْمُكَ؟ — اسْمِي سَمِيرٌ، وَأَنَا مُعَلِّمٌ. وَأَنْتَ؟ — أَنَا دَانِيَال، وَأَنَا طَالِبٌ.",
+    "translit": "as-salāmu ʿalaykum — wa-ʿalaykumu s-salāmu wa-raḥmatu llāhi — mā smuka? — ismī samīrun, wa-anā muʿallimun. wa-anta? — anā dāniyāl, wa-anā ṭālibun.",
+    "en": "— Peace be upon you. — And upon you be peace and Allah's mercy. — What is your name? — My name is Samir, and I am a teacher. And you? — I am Daniel, and I am a student.",
+    "turns": [
+      {
+        "ar": "السَّلَامُ عَلَيْكُمْ",
+        "translit": "as-salāmu ʿalaykum",
+        "en": "Peace be upon you."
+      },
+      {
+        "ar": "وَعَلَيْكُمُ السَّلَامُ وَرَحْمَةُ اللهِ",
+        "translit": "wa-ʿalaykumu s-salāmu wa-raḥmatu llāhi",
+        "en": "And upon you be peace and Allah's mercy."
+      },
+      {
+        "ar": "مَا اسْمُكَ؟",
+        "translit": "mā smuka?",
+        "en": "What is your name?"
+      },
+      {
+        "ar": "اسْمِي سَمِيرٌ، وَأَنَا مُعَلِّمٌ. وَأَنْتَ؟",
+        "translit": "ismī samīrun, wa-anā muʿallimun. wa-anta?",
+        "en": "My name is Samir, and I am a teacher. And you?"
+      },
+      {
+        "ar": "أَنَا دَانِيَال، وَأَنَا طَالِبٌ.",
+        "translit": "anā dāniyāl, wa-anā ṭālibun.",
+        "en": "I am Daniel, and I am a student."
+      }
+    ],
+    "level": "A1",
+    "skills": [
+      "reading",
+      "listening",
+      "comprehension"
+    ],
+    "prereqs": []
+  },
+  {
+    "id": "txt:dlg-greet-quranic",
+    "kind": "text",
+    "textType": "dialogue",
+    "source": "m20",
+    "emphasisTag": "quranic",
+    "vowelled": "السَّلَامُ عَلَيْكُمْ يَا أَخِي — وَعَلَيْكُمُ السَّلَامُ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ — هَلْ أَنْتَ ذَاهِبٌ إِلَى الْمَسْجِدِ؟ — نَعَمْ، أَنَا ذَاهِبٌ لِلصَّلَاةِ إِنْ شَاءَ اللهُ — أَنَا قَادِمٌ مَعَكَ",
+    "translit": "as-salāmu ʿalaykum yā akhī — wa-ʿalaykumu s-salāmu wa-raḥmatu llāhi wa-barakātuhu — hal anta dhāhibun ilā l-masjidi? — naʿam, anā dhāhibun li-ṣ-ṣalāti in shāʾa llāhu — anā qādimun maʿaka",
+    "en": "— Peace be upon you, my brother. — And upon you be peace, and Allah's mercy and blessings. — Are you going to the mosque? — Yes, I am going for the prayer, God willing. — I am coming with you.",
+    "turns": [
+      {
+        "ar": "السَّلَامُ عَلَيْكُمْ يَا أَخِي",
+        "translit": "as-salāmu ʿalaykum yā akhī",
+        "en": "Peace be upon you, my brother."
+      },
+      {
+        "ar": "وَعَلَيْكُمُ السَّلَامُ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ",
+        "translit": "wa-ʿalaykumu s-salāmu wa-raḥmatu llāhi wa-barakātuhu",
+        "en": "And upon you be peace, and Allah's mercy and blessings."
+      },
+      {
+        "ar": "هَلْ أَنْتَ ذَاهِبٌ إِلَى الْمَسْجِدِ؟",
+        "translit": "hal anta dhāhibun ilā l-masjidi?",
+        "en": "Are you going to the mosque?"
+      },
+      {
+        "ar": "نَعَمْ، أَنَا ذَاهِبٌ لِلصَّلَاةِ إِنْ شَاءَ اللهُ",
+        "translit": "naʿam, anā dhāhibun li-ṣ-ṣalāti in shāʾa llāhu",
+        "en": "Yes, I am going for the prayer, God willing."
+      },
+      {
+        "ar": "أَنَا قَادِمٌ مَعَكَ",
+        "translit": "anā qādimun maʿaka",
+        "en": "I am coming with you."
+      }
+    ],
+    "level": "A1",
+    "skills": [
+      "reading",
+      "listening",
+      "comprehension"
+    ],
+    "prereqs": []
   }
 ]

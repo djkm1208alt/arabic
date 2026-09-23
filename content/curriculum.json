@@ -2801,6 +2801,29 @@
         "title": "Ceci & cela — avec les mots qui s'accordent",
         "blurb": "Montrez avec هَذَا / هَذِهِ et accordez le mot qui décrit — avec des mots du quotidien et du Coran."
       }
+    },
+    {
+      "id": "a1-dual-greetings",
+      "unitId": "a1-u4",
+      "order": 6,
+      "title": "Greetings & Introducing Yourself",
+      "blurb": "Say hello and introduce yourself — read an everyday and a Quranic-flavoured exchange.",
+      "level": "A1",
+      "skills": [
+        "reading",
+        "listening",
+        "comprehension"
+      ],
+      "objectives": [
+        "txt:dlg-greet-general",
+        "txt:dlg-greet-quranic"
+      ],
+      "status": "available",
+      "source": "steps:a1-dual-greetings",
+      "fr": {
+        "title": "Salutations & se présenter",
+        "blurb": "Saluez et présentez-vous — lisez un échange du quotidien et un échange coranique."
+      }
     }
   ]
 }

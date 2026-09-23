@@ -1,0 +1,74 @@
+{
+  "id": "a1-dual-greetings",
+  "unitId": "a1-u4",
+  "curriculumLessonId": "a1-dual-greetings",
+  "title": "Greetings & Introducing Yourself",
+  "level": "A1",
+  "skills": ["reading", "listening", "comprehension"],
+  "objectives": ["txt:dlg-greet-general", "txt:dlg-greet-quranic"],
+  "emphasisTag": "both",
+  "fr": { "title": "Salutations & se présenter" },
+  "steps": [
+    {
+      "type": "explain",
+      "title": "Saying hello, and who you are",
+      "body": [
+        "السَّلَامُ عَلَيْكُمْ (\"peace be upon you\") is the everyday greeting; the reply is وَعَلَيْكُمُ السَّلَامُ.",
+        "To say your name: اسْمِي… (\"my name is…\"). To say what you do: أَنَا… (\"I am…\").",
+        "Read the short exchange below, then check you followed it."
+      ],
+      "fr": {
+        "title": "Dire bonjour, et qui vous êtes",
+        "body": [
+          "السَّلَامُ عَلَيْكُمْ (« que la paix soit sur vous ») est la salutation courante ; la réponse est وَعَلَيْكُمُ السَّلَامُ.",
+          "Pour dire votre nom : اسْمِي… (« mon nom est… »). Pour dire ce que vous faites : أَنَا… (« je suis… »).",
+          "Lisez le court échange ci-dessous, puis vérifiez votre compréhension."
+        ]
+      }
+    },
+    {
+      "type": "reading-practice",
+      "title": "A short conversation",
+      "intro": "Read the exchange and tap 🔊. Reveal the meaning to check yourself.",
+      "fr": { "title": "Une courte conversation", "intro": "Lisez l'échange et appuyez sur 🔊. Affichez le sens pour vérifier." },
+      "items": [
+        {
+          "arabic": "السَّلَامُ عَلَيْكُمْ — وَعَلَيْكُمُ السَّلَامُ وَرَحْمَةُ اللهِ — مَا اسْمُكَ؟ — اسْمِي سَمِيرٌ، وَأَنَا مُعَلِّمٌ. وَأَنْتَ؟ — أَنَا دَانِيَال، وَأَنَا طَالِبٌ.",
+          "translit": "as-salāmu ʿalaykum — wa-ʿalaykumu s-salāmu wa-raḥmatu llāhi — mā smuka? — ismī samīrun, wa-anā muʿallimun. wa-anta? — anā dāniyāl, wa-anā ṭālibun.",
+          "english": "— Peace be upon you. — And upon you be peace and Allah's mercy. — What is your name? — My name is Samir, and I am a teacher. And you? — I am Daniel, and I am a student.",
+          "emphasisTag": "general"
+        },
+        {
+          "arabic": "السَّلَامُ عَلَيْكُمْ يَا أَخِي — وَعَلَيْكُمُ السَّلَامُ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ — هَلْ أَنْتَ ذَاهِبٌ إِلَى الْمَسْجِدِ؟ — نَعَمْ، أَنَا ذَاهِبٌ لِلصَّلَاةِ إِنْ شَاءَ اللهُ — أَنَا قَادِمٌ مَعَكَ.",
+          "translit": "as-salāmu ʿalaykum yā akhī — wa-ʿalaykumu s-salāmu wa-raḥmatu llāhi wa-barakātuhu — hal anta dhāhibun ilā l-masjidi? — naʿam, anā dhāhibun li-ṣ-ṣalāti in shāʾa llāhu — anā qādimun maʿaka.",
+          "english": "— Peace be upon you, my brother. — And upon you be peace, and Allah's mercy and blessings. — Are you going to the mosque? — Yes, I am going for the prayer, God willing. — I am coming with you.",
+          "emphasisTag": "quranic"
+        }
+      ]
+    },
+    {
+      "type": "practice-choice",
+      "title": "Did you follow it?",
+      "arabicPrompt": "السَّلَامُ عَلَيْكُمْ",
+      "prompt": "What does this greeting mean?",
+      "options": [
+        { "label": "Peace be upon you", "correct": true },
+        { "label": "Where are you going?", "correct": false },
+        { "label": "What is your name?", "correct": false }
+      ],
+      "explanation": "السَّلَامُ عَلَيْكُمْ means \"peace be upon you\" — the everyday greeting.",
+      "fr": {
+        "title": "Avez-vous suivi ?",
+        "prompt": "Que signifie cette salutation ?",
+        "explanation": "السَّلَامُ عَلَيْكُمْ signifie « que la paix soit sur vous » — la salutation courante."
+      }
+    },
+    {
+      "type": "complete",
+      "title": "You can greet and introduce yourself",
+      "message": "You read a greeting-and-introduction exchange and checked your understanding — in an everyday and a Quranic-flavoured version.",
+      "finishLabel": "Finish",
+      "fr": { "title": "Vous savez saluer et vous présenter", "message": "Vous avez lu un échange de salutation et de présentation et vérifié votre compréhension — dans une version du quotidien et une version coranique.", "finishLabel": "Terminer" }
+    }
+  ]
+}
