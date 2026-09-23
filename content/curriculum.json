@@ -2947,6 +2947,28 @@
         "title": "Les petits mots de liaison — les prépositions",
         "blurb": "Choisissez la bonne préposition — où est une chose et où elle va — dans des phrases du quotidien et du Coran."
       }
+    },
+    {
+      "id": "a2-dual-paragraph",
+      "unitId": "a2-u5",
+      "order": 2,
+      "title": "Read a Short Paragraph",
+      "blurb": "Read three connected sentences — an everyday or a devotional paragraph — and check your understanding.",
+      "level": "A2",
+      "skills": [
+        "reading",
+        "comprehension"
+      ],
+      "objectives": [
+        "txt:para-general",
+        "txt:para-quranic"
+      ],
+      "status": "available",
+      "source": "steps:a2-dual-paragraph",
+      "fr": {
+        "title": "Lire un court paragraphe",
+        "blurb": "Lisez trois phrases enchaînées — un paragraphe du quotidien ou dévotionnel — et vérifiez votre compréhension."
+      }
     }
   ]
 }

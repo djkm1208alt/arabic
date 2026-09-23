@@ -1,0 +1,78 @@
+{
+  "id": "a2-dual-paragraph",
+  "unitId": "a2-u5",
+  "curriculumLessonId": "a2-dual-paragraph",
+  "title": "Read a Short Paragraph",
+  "level": "A2",
+  "skills": ["reading", "comprehension"],
+  "objectives": ["txt:para-general", "txt:para-quranic"],
+  "emphasisTag": "both",
+  "fr": { "title": "Lire un court paragraphe" },
+  "steps": [
+    {
+      "type": "explain",
+      "title": "Putting sentences together",
+      "body": [
+        "You've read single sentences; now read three in a row. Everything here uses words and verbs you already know.",
+        "Read your paragraph, tap 🔊, then check you understood it."
+      ],
+      "fr": {
+        "title": "Enchaîner les phrases",
+        "body": [
+          "Vous avez lu des phrases isolées ; lisez-en maintenant trois de suite. Tout ici emploie des mots et des verbes que vous connaissez déjà.",
+          "Lisez votre paragraphe, appuyez sur 🔊, puis vérifiez votre compréhension."
+        ]
+      }
+    },
+    {
+      "type": "reading-practice",
+      "title": "Your paragraph",
+      "intro": "Read it through, then reveal the meaning.",
+      "fr": { "title": "Votre paragraphe", "intro": "Lisez-le en entier, puis affichez le sens." },
+      "items": [
+        {
+          "arabic": "الطَّالِبُ يَدْخُلُ الْمَدْرَسَةَ. يَقْرَأُ الرِّسَالَةَ وَيَكْتُبُ فِي الْمَكْتَبِ. هُوَ طَالِبٌ جَدِيدٌ.",
+          "translit": "aṭ-ṭālibu yadkhulu al-madrasata. yaqraʾu ar-risālata wa-yaktubu fī al-maktabi. huwa ṭālibun jadīdun.",
+          "english": "The student enters the school. He reads the letter and writes at the desk. He is a new student.",
+          "emphasisTag": "general"
+        },
+        {
+          "arabic": "الْمُسْلِمُ يَدْخُلُ الْمَسْجِدَ. يَقْرَأُ الْقُرْآنَ وَيَذْكُرُ اللهَ. يَطْلُبُ الْمَغْفِرَةَ.",
+          "translit": "al-muslimu yadkhulu al-masjida. yaqraʾu al-qurʾāna wa-yadhkuru llāha. yaṭlubu al-maghfirata.",
+          "english": "The Muslim enters the mosque. He reads the Quran and remembers God. He seeks forgiveness.",
+          "emphasisTag": "quranic"
+        }
+      ]
+    },
+    {
+      "type": "practice-choice",
+      "title": "Did you follow it?",
+      "prompt": "In your paragraph, what does the person do first?",
+      "options": [
+        { "label": "Enters (a place)", "correct": true },
+        { "label": "Sleeps", "correct": false },
+        { "label": "Eats", "correct": false }
+      ],
+      "explanation": "Both paragraphs open with يَدْخُلُ — “he enters”.",
+      "fr": {
+        "title": "Avez-vous suivi ?",
+        "prompt": "Dans votre paragraphe, que fait la personne en premier ?",
+        "explanation": "Les deux paragraphes commencent par يَدْخُلُ — « il entre »."
+      }
+    },
+    {
+      "type": "complete",
+      "title": "You read a paragraph",
+      "message": "You read three connected sentences and checked your understanding — the first real paragraph, in your chosen focus.",
+      "finishLabel": "Finish",
+      "fr": { "title": "Vous avez lu un paragraphe", "message": "Vous avez lu trois phrases enchaînées et vérifié votre compréhension — le premier vrai paragraphe, dans votre parcours.", "finishLabel": "Terminer" }
+    }
+  ],
+  "smartNudge": {
+    "rule": "general-to-quranic",
+    "trigger": { "on": "lesson-complete" },
+    "prompt": "You read an everyday paragraph. Here's a devotional one, built exactly the same way.",
+    "fr": { "prompt": "Vous avez lu un paragraphe du quotidien. En voici un dévotionnel, construit exactement de la même façon." },
+    "payload": { "textId": "txt:para-quranic" }
+  }
+}

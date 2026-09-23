@@ -1,6 +1,6 @@
 # M28-B3 — Third dual-track content batch (A2 Units 4–6)
 
-**Status:** Draft for review — held for approval (ROADMAP standing rule 6). No content authored yet; this plans the work.
+**Status:** Approved 2026-09-23; **built** in four QA-gated commits on branch `claude/m28b3-a2-dual-track-scope` (vocab; `a2-dual-daily-verbs`; `a2-dual-prepositions`; `a2-dual-paragraph` + bridge nudge). No new engine or Quranic quotation (paragraphs are original A2 sentences), so no muṣḥaf check this batch. §9 decisions carried from m28b2 unchanged. All authored Arabic pending the user's linguistic review (rule 1).
 **Parent:** [ROADMAP.md](ROADMAP.md) M28 · completes A2 after [m28b2_a2_dual_track_content_scope.md](m28b2_a2_dual_track_content_scope.md) (Units 1–3, merged). Reuses all m28 machinery (payload selector, per-track `variants`, `cloze`, Smart Nudge, role styling, `acceptedOrders`). Source: [docs/EXPANDED_DUAL_TRACK_CONTENT_A1_A2.md](docs/EXPANDED_DUAL_TRACK_CONTENT_A1_A2.md) and [docs/MASTER_CURRICULUM_SPEC.md](docs/MASTER_CURRICULUM_SPEC.md).
 
 ---

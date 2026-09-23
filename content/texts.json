@@ -6136,5 +6136,37 @@
       "reading"
     ],
     "prereqs": []
+  },
+  {
+    "id": "txt:para-general",
+    "kind": "text",
+    "textType": "paragraph",
+    "source": "m20",
+    "emphasisTag": "general",
+    "vowelled": "الطَّالِبُ يَدْخُلُ الْمَدْرَسَةَ. يَقْرَأُ الرِّسَالَةَ وَيَكْتُبُ فِي الْمَكْتَبِ. هُوَ طَالِبٌ جَدِيدٌ.",
+    "translit": "aṭ-ṭālibu yadkhulu al-madrasata. yaqraʾu ar-risālata wa-yaktubu fī al-maktabi. huwa ṭālibun jadīdun.",
+    "en": "The student enters the school. He reads the letter and writes at the desk. He is a new student.",
+    "level": "A2",
+    "skills": [
+      "reading",
+      "comprehension"
+    ],
+    "prereqs": []
+  },
+  {
+    "id": "txt:para-quranic",
+    "kind": "text",
+    "textType": "paragraph",
+    "source": "m20",
+    "emphasisTag": "quranic",
+    "vowelled": "الْمُسْلِمُ يَدْخُلُ الْمَسْجِدَ. يَقْرَأُ الْقُرْآنَ وَيَذْكُرُ اللهَ. يَطْلُبُ الْمَغْفِرَةَ.",
+    "translit": "al-muslimu yadkhulu al-masjida. yaqraʾu al-qurʾāna wa-yadhkuru llāha. yaṭlubu al-maghfirata.",
+    "en": "The Muslim enters the mosque. He reads the Quran and remembers God. He seeks forgiveness.",
+    "level": "A2",
+    "skills": [
+      "reading",
+      "comprehension"
+    ],
+    "prereqs": []
   }
 ]
