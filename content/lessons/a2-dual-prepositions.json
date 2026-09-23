@@ -1,0 +1,89 @@
+{
+  "id": "a2-dual-prepositions",
+  "unitId": "a2-u6",
+  "curriculumLessonId": "a2-dual-prepositions",
+  "title": "Small Words that Link — Prepositions",
+  "level": "A2",
+  "skills": ["grammar", "reading"],
+  "objectives": ["gr:core-prepositions", "lex:hom-09", "lex:tim-65", "lex:ver-38"],
+  "emphasisTag": "both",
+  "fr": { "title": "Les petits mots de liaison — les prépositions" },
+  "steps": [
+    {
+      "type": "explain",
+      "title": "Where, and toward what",
+      "body": [
+        "Prepositions are small linking words: فِي (in), عَلَى (on), إِلَى (to), مِنْ (from), مَعَ (with).",
+        "The noun after a preposition takes a kasra: عَلَى الْكُرْسِيِّ (on the chair).",
+        "Pick the one that fits each gap below."
+      ],
+      "fr": {
+        "title": "Où, et vers quoi",
+        "body": [
+          "Les prépositions sont de petits mots de liaison : فِي (dans), عَلَى (sur), إِلَى (vers), مِنْ (de), مَعَ (avec).",
+          "Le nom après une préposition prend une kasra : عَلَى الْكُرْسِيِّ (sur la chaise).",
+          "Choisissez celle qui convient à chaque trou ci-dessous."
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Fill the gap",
+      "fr": { "title": "Complétez" },
+      "exercise": {
+        "kind": "cloze",
+        "drillType": "fill-in-blank",
+        "skill": "grammar",
+        "objectId": "gr:core-prepositions",
+        "objectIds": ["gr:core-prepositions"],
+        "prompt": "Choose the preposition that fits.",
+        "fr": { "prompt": "Choisissez la préposition qui convient." },
+        "variants": {
+          "general": {
+            "before": "الطَّالِبُ يَجْلِسُ ",
+            "after": " الْكُرْسِيِّ",
+            "options": ["عَلَى", "فِي", "مِنْ"],
+            "answer": "عَلَى"
+          },
+          "quranic": {
+            "before": "الْمُؤْمِنُ يَدْعُو اللهَ ",
+            "after": " كُلِّ وَقْتٍ",
+            "options": ["فِي", "عَلَى", "إِلَى"],
+            "answer": "فِي"
+          },
+          "both": {
+            "before": "يَذْهَبُ الْوَلَدُ ",
+            "after": " الْبَيْتِ",
+            "options": ["إِلَى", "مِنْ", "مَعَ"],
+            "answer": "إِلَى"
+          }
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "One more",
+      "fr": { "title": "Encore une" },
+      "exercise": {
+        "kind": "cloze",
+        "drillType": "fill-in-blank",
+        "skill": "grammar",
+        "objectId": "gr:core-prepositions",
+        "objectIds": ["gr:core-prepositions"],
+        "prompt": "Choose the preposition that fits.",
+        "before": "الْكِتَابُ ",
+        "after": " الْمَكْتَبِ",
+        "options": ["عَلَى", "إِلَى", "مَعَ"],
+        "answer": "عَلَى",
+        "fr": { "prompt": "Choisissez la préposition qui convient." }
+      }
+    },
+    {
+      "type": "complete",
+      "title": "You can link with prepositions",
+      "message": "You chose the right small linking word — where something is, and where it's going — in everyday and Quranic sentences.",
+      "finishLabel": "Finish",
+      "fr": { "title": "Vous savez lier avec les prépositions", "message": "Vous avez choisi le bon petit mot de liaison — où est une chose, et où elle va — dans des phrases du quotidien et du Coran.", "finishLabel": "Terminer" }
+    }
+  ]
+}

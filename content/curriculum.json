@@ -2923,6 +2923,30 @@
         "title": "Actions du quotidien — le présent",
         "blurb": "Lisez des actions au présent et distinguez-les du passé — les mêmes verbes avec des compléments du quotidien et du Coran."
       }
+    },
+    {
+      "id": "a2-dual-prepositions",
+      "unitId": "a2-u6",
+      "order": 3,
+      "title": "Small Words that Link — Prepositions",
+      "blurb": "Choose the right preposition — where something is and where it's going — in everyday and Quranic sentences.",
+      "level": "A2",
+      "skills": [
+        "grammar",
+        "reading"
+      ],
+      "objectives": [
+        "gr:core-prepositions",
+        "lex:hom-09",
+        "lex:tim-65",
+        "lex:ver-38"
+      ],
+      "status": "available",
+      "source": "steps:a2-dual-prepositions",
+      "fr": {
+        "title": "Les petits mots de liaison — les prépositions",
+        "blurb": "Choisissez la bonne préposition — où est une chose et où elle va — dans des phrases du quotidien et du Coran."
+      }
     }
   ]
 }
