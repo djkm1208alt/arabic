@@ -2897,6 +2897,32 @@
         "title": "Une racine, une famille de mots",
         "blurb": "Voyez la racine ك-ت-ب dans كَتَبَ / كِتَاب / مَكْتَب / مَكْتَبَة — la clé du vocabulaire arabe."
       }
+    },
+    {
+      "id": "a2-dual-daily-verbs",
+      "unitId": "a2-u6",
+      "order": 2,
+      "title": "Everyday Actions — Present Tense",
+      "blurb": "Read present-tense actions and tell them from the past — the same verbs with everyday and Quranic objects.",
+      "level": "A2",
+      "skills": [
+        "grammar",
+        "reading"
+      ],
+      "objectives": [
+        "gr:present-tense",
+        "lex:ver-05",
+        "lex:ver-07",
+        "lex:ver-34",
+        "lex:obj-10",
+        "lex:exp-23"
+      ],
+      "status": "available",
+      "source": "steps:a2-dual-daily-verbs",
+      "fr": {
+        "title": "Actions du quotidien — le présent",
+        "blurb": "Lisez des actions au présent et distinguez-les du passé — les mêmes verbes avec des compléments du quotidien et du Coran."
+      }
     }
   ]
 }

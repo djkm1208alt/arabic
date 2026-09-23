@@ -1,0 +1,99 @@
+{
+  "id": "a2-dual-daily-verbs",
+  "unitId": "a2-u6",
+  "curriculumLessonId": "a2-dual-daily-verbs",
+  "title": "Everyday Actions — Present Tense",
+  "level": "A2",
+  "skills": ["grammar", "reading"],
+  "objectives": ["gr:present-tense", "lex:ver-05", "lex:ver-07", "lex:ver-34", "lex:obj-10", "lex:exp-23"],
+  "emphasisTag": "both",
+  "fr": { "title": "Actions du quotidien — le présent" },
+  "steps": [
+    {
+      "type": "explain",
+      "title": "What someone does now",
+      "body": [
+        "The present tense says what someone is doing now or regularly. It starts with a prefix: يَـ for “he”.",
+        "So قَرَأَ (“he read”) becomes يَقْرَأُ (“he reads”); دَخَلَ becomes يَدْخُلُ.",
+        "The same verb takes different objects — read the examples for your focus."
+      ],
+      "fr": {
+        "title": "Ce qu'on fait maintenant",
+        "body": [
+          "Le présent dit ce qu'on fait maintenant ou régulièrement. Il commence par un préfixe : يَـ pour « il ».",
+          "Ainsi قَرَأَ (« il a lu ») devient يَقْرَأُ (« il lit ») ; دَخَلَ devient يَدْخُلُ.",
+          "Le même verbe prend différents compléments — lisez les exemples adaptés à votre parcours."
+        ]
+      },
+      "previewSymbols": ["يَقْرَأُ", "يَسْمَعُ", "يَطْلُبُ"]
+    },
+    {
+      "type": "reading-practice",
+      "title": "Read these actions",
+      "intro": "Read each one and tap 🔊. Reveal the meaning to check yourself.",
+      "fr": { "title": "Lisez ces actions", "intro": "Lisez chacune et appuyez sur 🔊. Affichez le sens pour vérifier." },
+      "items": [
+        { "arabic": "يَقْرَأُ الرِّسَالَةَ", "translit": "yaqraʾu ar-risālata", "english": "he reads the letter", "emphasisTag": "general" },
+        { "arabic": "يَسْمَعُ الصَّوْتَ", "translit": "yasmaʿu aṣ-ṣawta", "english": "he hears the sound", "emphasisTag": "general" },
+        { "arabic": "يَطْلُبُ الْمُسَاعَدَةَ", "translit": "yaṭlubu al-musāʿadata", "english": "he asks for help", "emphasisTag": "general" },
+        { "arabic": "يَقْرَأُ الْقُرْآنَ", "translit": "yaqraʾu al-qurʾāna", "english": "he reads the Quran", "emphasisTag": "quranic" },
+        { "arabic": "يَسْمَعُ الْأَذَانَ", "translit": "yasmaʿu al-adhāna", "english": "he hears the call to prayer", "emphasisTag": "quranic" },
+        { "arabic": "يَطْلُبُ الْمَغْفِرَةَ", "translit": "yaṭlubu al-maghfirata", "english": "he seeks forgiveness", "emphasisTag": "quranic" },
+        { "arabic": "يَدْخُلُ الْبَيْتَ", "translit": "yadkhulu al-bayta", "english": "he enters the house", "emphasisTag": "both" }
+      ]
+    },
+    {
+      "type": "exercise",
+      "title": "Now, not before",
+      "fr": { "title": "Maintenant, pas avant" },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "present-tense",
+        "skill": "grammar",
+        "objectIds": ["gr:present-tense"],
+        "arabicOptions": true,
+        "prompt": "Choose the present-tense verb (what he does now).",
+        "fr": { "prompt": "Choisissez le verbe au présent (ce qu'il fait maintenant)." },
+        "variants": {
+          "general": {
+            "arabicPrompt": "الطَّالِبُ ___ الرِّسَالَةَ",
+            "options": [
+              { "label": "يَقْرَأُ", "correct": true },
+              { "label": "قَرَأَ", "correct": false },
+              { "label": "يَكْتُبُ", "correct": false }
+            ],
+            "explanation": "يَقْرَأُ is the present (“reads”); قَرَأَ is the past (“read”).",
+            "fr": { "explanation": "يَقْرَأُ est le présent (« lit ») ; قَرَأَ est le passé (« a lu »)." }
+          },
+          "quranic": {
+            "arabicPrompt": "الْمُسْلِمُ ___ الْقُرْآنَ",
+            "options": [
+              { "label": "يَقْرَأُ", "correct": true },
+              { "label": "قَرَأَ", "correct": false },
+              { "label": "يَسْمَعُ", "correct": false }
+            ],
+            "explanation": "يَقْرَأُ is the present (“reads”); قَرَأَ is the past (“read”).",
+            "fr": { "explanation": "يَقْرَأُ est le présent (« lit ») ; قَرَأَ est le passé (« a lu »)." }
+          },
+          "both": {
+            "arabicPrompt": "الْوَلَدُ ___ الْبَيْتَ",
+            "options": [
+              { "label": "يَدْخُلُ", "correct": true },
+              { "label": "دَخَلَ", "correct": false },
+              { "label": "يَقْرَأُ", "correct": false }
+            ],
+            "explanation": "يَدْخُلُ is the present (“enters”); دَخَلَ is the past (“entered”).",
+            "fr": { "explanation": "يَدْخُلُ est le présent (« entre ») ; دَخَلَ est le passé (« est entré »)." }
+          }
+        }
+      }
+    },
+    {
+      "type": "complete",
+      "title": "You can read the present tense",
+      "message": "You read present-tense actions and picked the “now” form over the past — the same verbs with everyday and Quranic objects.",
+      "finishLabel": "Finish",
+      "fr": { "title": "Vous savez lire le présent", "message": "Vous avez lu des actions au présent et choisi la forme « maintenant » plutôt que le passé — les mêmes verbes avec des compléments du quotidien et du Coran.", "finishLabel": "Terminer" }
+    }
+  ]
+}
