@@ -363,6 +363,36 @@ async function main() {
         await context.close();
     });
 
+    await check("M28-B1 — Smart Nudge fires for the off-track learner only, ≤1/day, permanent dismiss", async () => {
+        const { context, page, pageErrors } = await freshPage(browser);
+        await gotoApp(page);
+        const r = await page.evaluate(() => {
+            const lesson = { id: "t", curriculumLessonId: "t", smartNudge: { rule: "general-to-quranic", trigger: { on: "lesson-complete" }, prompt: "p", payload: { textId: "txt:quran-buruj-21-22" } } };
+            const run = (pref, setup) => {
+                progress.emphasis = pref; progress.nudgeLastShown = null; progress.nudgesDismissed = [];
+                if (setup) setup();
+                closeEmphasisModal();
+                maybeShowNudge(lesson);
+                const shown = !!document.getElementById("emphasisModal");
+                closeEmphasisModal();
+                return shown;
+            };
+            const both = run("both");
+            const quranicAudienceMismatch = run("quranic"); // general-to-quranic shows to general only
+            const general = run("general");
+            const sameDay = run("general", () => { progress.nudgeLastShown = new Date().toISOString().slice(0, 10); });
+            const dismissed = run("general", () => { progress.nudgesDismissed = ["t:general-to-quranic"]; });
+            return { both, quranicAudienceMismatch, general, sameDay, dismissed };
+        });
+        assert(r.general === true, "nudge did not fire for the general (off-track) learner");
+        assert(r.both === false, "nudge wrongly fired for a both learner");
+        assert(r.quranicAudienceMismatch === false, "nudge wrongly fired for the wrong audience");
+        assert(r.sameDay === false, "nudge fired twice in one day");
+        assert(r.dismissed === false, "dismissed nudge came back");
+        assert(pageErrors.length === 0, `pageerror(s): ${pageErrors.join(" | ")}`);
+        await context.close();
+    });
+
     for (const width of BREAKPOINTS) {
         await check(`no horizontal overflow at ${width}px (all nav views)`, async () => {
             const { context, page } = await freshPage(browser);

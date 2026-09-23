@@ -4,10 +4,19 @@
   "curriculumLessonId": "a1-dual-greetings",
   "title": "Greetings & Introducing Yourself",
   "level": "A1",
-  "skills": ["reading", "listening", "comprehension"],
-  "objectives": ["txt:dlg-greet-general", "txt:dlg-greet-quranic"],
+  "skills": [
+    "reading",
+    "listening",
+    "comprehension"
+  ],
+  "objectives": [
+    "txt:dlg-greet-general",
+    "txt:dlg-greet-quranic"
+  ],
   "emphasisTag": "both",
-  "fr": { "title": "Salutations & se présenter" },
+  "fr": {
+    "title": "Salutations & se présenter"
+  },
   "steps": [
     {
       "type": "explain",
@@ -30,7 +39,10 @@
       "type": "reading-practice",
       "title": "A short conversation",
       "intro": "Read the exchange and tap 🔊. Reveal the meaning to check yourself.",
-      "fr": { "title": "Une courte conversation", "intro": "Lisez l'échange et appuyez sur 🔊. Affichez le sens pour vérifier." },
+      "fr": {
+        "title": "Une courte conversation",
+        "intro": "Lisez l'échange et appuyez sur 🔊. Affichez le sens pour vérifier."
+      },
       "items": [
         {
           "arabic": "السَّلَامُ عَلَيْكُمْ — وَعَلَيْكُمُ السَّلَامُ وَرَحْمَةُ اللهِ — مَا اسْمُكَ؟ — اسْمِي سَمِيرٌ، وَأَنَا مُعَلِّمٌ. وَأَنْتَ؟ — أَنَا دَانِيَال، وَأَنَا طَالِبٌ.",
@@ -52,9 +64,18 @@
       "arabicPrompt": "السَّلَامُ عَلَيْكُمْ",
       "prompt": "What does this greeting mean?",
       "options": [
-        { "label": "Peace be upon you", "correct": true },
-        { "label": "Where are you going?", "correct": false },
-        { "label": "What is your name?", "correct": false }
+        {
+          "label": "Peace be upon you",
+          "correct": true
+        },
+        {
+          "label": "Where are you going?",
+          "correct": false
+        },
+        {
+          "label": "What is your name?",
+          "correct": false
+        }
       ],
       "explanation": "السَّلَامُ عَلَيْكُمْ means \"peace be upon you\" — the everyday greeting.",
       "fr": {
@@ -68,7 +89,24 @@
       "title": "You can greet and introduce yourself",
       "message": "You read a greeting-and-introduction exchange and checked your understanding — in an everyday and a Quranic-flavoured version.",
       "finishLabel": "Finish",
-      "fr": { "title": "Vous savez saluer et vous présenter", "message": "Vous avez lu un échange de salutation et de présentation et vérifié votre compréhension — dans une version du quotidien et une version coranique.", "finishLabel": "Terminer" }
+      "fr": {
+        "title": "Vous savez saluer et vous présenter",
+        "message": "Vous avez lu un échange de salutation et de présentation et vérifié votre compréhension — dans une version du quotidien et une version coranique.",
+        "finishLabel": "Terminer"
+      }
     }
-  ]
+  ],
+  "smartNudge": {
+    "rule": "quranic-to-general",
+    "trigger": {
+      "on": "lesson-complete"
+    },
+    "prompt": "You just greeted in a devotional way. Here's the everyday version you'll hear in a shop or a class.",
+    "fr": {
+      "prompt": "Vous venez de saluer de façon cultuelle. Voici la version du quotidien, qu'on entend dans un magasin ou en classe."
+    },
+    "payload": {
+      "textId": "txt:dlg-greet-general"
+    }
+  }
 }

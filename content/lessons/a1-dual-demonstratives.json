@@ -28,6 +28,20 @@
       "previewSymbols": ["هَذَا", "هَذِهِ"]
     },
     {
+      "type": "role-pattern",
+      "title": "See the pattern",
+      "intro": "The colours show the parts: the thing (green, solid line) and the word that describes it (amber, dotted line).",
+      "tokens": [
+        { "text": "هَذَا" },
+        { "text": "بَيْتٌ", "role": "topic" },
+        { "text": "كَبِيرٌ", "role": "description" }
+      ],
+      "fr": {
+        "title": "Voir le modèle",
+        "intro": "Les couleurs montrent les parties : la chose (vert, trait plein) et le mot qui la décrit (ambre, pointillés)."
+      }
+    },
+    {
       "type": "reading-practice",
       "title": "Read these, your way",
       "intro": "Read each one and tap 🔊. Reveal the meaning to check yourself.",
@@ -129,5 +143,12 @@
       "finishLabel": "Finish",
       "fr": { "title": "Bien accordé", "message": "Vous avez montré avec هَذَا / هَذِهِ et accordé le mot qui décrit — dans des mots du quotidien comme du Coran.", "finishLabel": "Terminer" }
     }
-  ]
+  ],
+  "smartNudge": {
+    "rule": "general-to-quranic",
+    "trigger": { "on": "lesson-complete" },
+    "prompt": "You can now make describing words match. Here's that same pattern in a famous Quranic verse.",
+    "fr": { "prompt": "Vous savez maintenant accorder les mots qui décrivent. Voici ce même modèle dans un verset célèbre du Coran." },
+    "payload": { "textId": "txt:quran-buruj-21-22" }
+  }
 }

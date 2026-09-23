@@ -411,7 +411,9 @@ function load() {
         const STEP_TYPES = new Set([
             "explain", "example-set", "practice-choice", "quiz", "trace-letter",
             "reading-practice", "audio-exercise", "listen-repeat", "exercise", "complete",
+            "role-pattern",   // M28-B1 — colour-coded grammar pattern
         ]);
+        const NUDGE_RULES = new Set(["general-to-quranic", "quranic-to-general"]);
         // M20-B5: `exercise` steps may also expand from objectives — one `build`
         // exercise per eligible objective, tiles generated at compile time.
         const FROM_OBJECTIVES_OK = new Set(["example-set", "reading-practice", "exercise"]);
@@ -441,10 +443,30 @@ function load() {
                 if (L.level in levelIdx && levelIdx[objLevel[oid]] > levelIdx[L.level])
                     errors.push(`lesson ${L.id} (${L.level}): objective ${oid} is a higher level (${objLevel[oid]})`);
             }
+            // M28-B1 — Smart Nudge on a lesson: valid rule, a trigger, and a
+            // payload that resolves to a real object.
+            if (L.smartNudge != null) {
+                const nz = L.smartNudge;
+                if (!NUDGE_RULES.has(nz.rule)) errors.push(`lesson ${L.id}: smartNudge.rule "${nz.rule}" must be general-to-quranic | quranic-to-general`);
+                if (!nz.trigger || !nz.trigger.on) errors.push(`lesson ${L.id}: smartNudge.trigger.on is required`);
+                const pid = nz.payload && (nz.payload.textId || nz.payload.lexemeId);
+                if (!pid) errors.push(`lesson ${L.id}: smartNudge.payload needs a textId or lexemeId`);
+                else if (!allIds.has(pid)) errors.push(`lesson ${L.id}: smartNudge payload "${pid}" does not resolve`);
+            }
             if (!Array.isArray(L.steps) || L.steps.length === 0) errors.push(`lesson ${L.id}: steps must be a non-empty array`);
             else L.steps.forEach((s, j) => {
                 if (!s || !STEP_TYPES.has(s.type))
                     errors.push(`lesson ${L.id}: step[${j}] type "${s && s.type}" is not a known renderer`);
+                // M28-B1 — a role-pattern step needs a non-empty tokens[]; tagged
+                // tokens name a role the renderer knows.
+                if (s && s.type === "role-pattern") {
+                    if (!Array.isArray(s.tokens) || !s.tokens.length) errors.push(`lesson ${L.id}: step[${j}] role-pattern needs a non-empty tokens[]`);
+                    else for (const tk of s.tokens) {
+                        if (!tk || !tk.text) errors.push(`lesson ${L.id}: step[${j}] role-pattern token missing text`);
+                        if (tk && tk.role && !["topic", "doer", "receiver", "description"].includes(tk.role))
+                            errors.push(`lesson ${L.id}: step[${j}] role-pattern token role "${tk.role}" is not topic|doer|receiver|description`);
+                    }
+                }
                 if (s && s.fromObjectives && !FROM_OBJECTIVES_OK.has(s.type))
                     errors.push(`lesson ${L.id}: step[${j}] "fromObjectives" is only valid on ${[...FROM_OBJECTIVES_OK].join(" / ")}`);
                 // M28 — a step may carry its own emphasisTag (else it inherits the lesson's).
