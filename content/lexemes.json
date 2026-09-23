@@ -1365,7 +1365,8 @@
     "skills": [
       "vocabulary"
     ],
-    "prereqs": []
+    "prereqs": [],
+    "emphasisTag": "both"
   },
   {
     "id": "lex:hom-03",
@@ -1482,7 +1483,8 @@
     "skills": [
       "vocabulary"
     ],
-    "prereqs": []
+    "prereqs": [],
+    "emphasisTag": "both"
   },
   {
     "id": "lex:hom-10",
@@ -7247,5 +7249,47 @@
     ],
     "prereqs": [],
     "notes": "Present tense: يَدْعُو (yadʿū). Defective verb (root د-ع-و)."
+  },
+  {
+    "id": "lex:exp-23",
+    "kind": "lexeme",
+    "ar": "مُسَاعَدَة",
+    "translit": "musāʿadah",
+    "en": "help / assistance",
+    "pos": "noun",
+    "topic": "expressions",
+    "level": "A2",
+    "emphasisTag": "general",
+    "example": {
+      "ar": "طَلَبَ الْمُسَاعَدَةَ.",
+      "en": "He asked for help."
+    },
+    "fr": "aide",
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
+  },
+  {
+    "id": "lex:tim-65",
+    "kind": "lexeme",
+    "ar": "وَقْت",
+    "translit": "waqt",
+    "en": "time",
+    "pos": "noun",
+    "topic": "time",
+    "level": "A2",
+    "emphasisTag": "both",
+    "example": {
+      "ar": "مَا الْوَقْتُ؟",
+      "en": "What is the time?"
+    },
+    "fr": "temps / heure",
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
   }
 ]
