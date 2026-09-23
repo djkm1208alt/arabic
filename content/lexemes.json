@@ -369,7 +369,7 @@
       "vocabulary"
     ],
     "prereqs": [],
-    "emphasisTag": "general"
+    "emphasisTag": "both"
   },
   {
     "id": "lex:peo-12",
@@ -1546,7 +1546,7 @@
       "vocabulary"
     ],
     "prereqs": [],
-    "emphasisTag": "general"
+    "emphasisTag": "both"
   },
   {
     "id": "lex:sch-02",
@@ -1901,7 +1901,7 @@
       "vocabulary"
     ],
     "prereqs": [],
-    "emphasisTag": "quranic"
+    "emphasisTag": "both"
   },
   {
     "id": "lex:pla-05",
@@ -1951,7 +1951,7 @@
       "vocabulary"
     ],
     "prereqs": [],
-    "emphasisTag": "general"
+    "emphasisTag": "both"
   },
   {
     "id": "lex:pla-08",
@@ -4740,7 +4740,7 @@
       "vocabulary"
     ],
     "prereqs": [],
-    "emphasisTag": "general"
+    "emphasisTag": "both"
   },
   {
     "id": "lex:wrk-02",
@@ -5951,7 +5951,7 @@
       "vocabulary"
     ],
     "prereqs": [],
-    "emphasisTag": "general"
+    "emphasisTag": "both"
   },
   {
     "id": "lex:ver-27",
