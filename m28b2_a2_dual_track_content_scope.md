@@ -1,6 +1,6 @@
 # M28-B2 — Second dual-track content batch (A2)
 
-**Status:** Draft for review — held for approval (ROADMAP standing rule 6). No content authored yet; this plans the work.
+**Status:** Approved 2026-09-23 with these decisions: (1) Rule B fires on `lesson-complete` (no engine change); (2) role pills render **below** the sentence line (a legend), not inline; (3) author a small muṣḥaf-checked Quranic text set (user verifies against a physical copy); (4) **split A2 in two** — **m28b2 = Units 1–3** (Verbal Sentence, Iḍāfa, Root & Pattern), **m28b3 = Units 4–6** (Numbers/Time, Reading Paragraphs, Everyday Exchanges) — to keep QA manageable. **Built 2026-09-23** on branch `claude/m28b2-a2-dual-track-scope` (vocab + pills-below rendering; `a2-dual-verbal-sentence` with acceptedOrders VSO/SVO + A2 role pills; `a2-dual-idafa`; `a2-dual-root-pattern` + Rule B nudge; two texts incl. `txt:quran-fatiha-2` **awaiting the user's muṣḥaf check**). QA 109/109, a11y clean. All authored Arabic pending the user's linguistic review (rule 1).
 **Parent:** [ROADMAP.md](ROADMAP.md) M28 · builds on [m28b1_a1_dual_track_content_scope.md](m28b1_a1_dual_track_content_scope.md) (the A1 batch, merged) and reuses all its machinery (payload selector, per-track `variants`, Smart Nudge, role styling, `acceptedOrders`). Source: [docs/EXPANDED_DUAL_TRACK_CONTENT_A1_A2.md](docs/EXPANDED_DUAL_TRACK_CONTENT_A1_A2.md) (its A2 material) and [docs/MASTER_CURRICULUM_SPEC.md](docs/MASTER_CURRICULUM_SPEC.md) (A2, Units 08–10).
 
 ---
@@ -16,9 +16,11 @@ The A2 dual-track content batch — the same pattern as m28b1, one level up, on 
 
 ## 2. Scope boundary
 
-**In:** app level **A2**, primarily `a2-u1` (The Verbal Sentence) and `a2-u6` (Everyday Exchanges), plus the A2 vocabulary, verbal-sentence + present-tense drills, preposition cloze, Smart Nudge(s), and role-annotated (pilled) examples from the pack's A2 material.
+**In (m28b2 = A2 Units 1–3):** `a2-u1` (The Verbal Sentence), `a2-u2` (Iḍāfa / genitive construct), `a2-u3` (Root & Pattern) — verbal-sentence content (the acceptedOrders VSO/SVO demo + A2 role pills), dual-track iḍāfa possession, root-family examples, the Rule B nudge (ك-ت-ب), and the muṣḥaf-checked Quranic text set.
 
-**Out (later):** B1+ content; French UI chrome (M29); any new exercise engine (the `variants`, `acceptedOrders`, cloze, and nudge machinery all already exist).
+**Deferred to m28b3 (A2 Units 4–6):** `a2-u4` (Numbers/Counting/Time), `a2-u5` (Reading Paragraphs), `a2-u6` (Everyday Exchanges) — the present-tense daily-routine drills and preposition `cloze` move there.
+
+**Out (later still):** B1+ content; French UI chrome (M29); any new exercise engine (all machinery already exists).
 
 ## 3. Source & provenance (standing rule 1)
 
@@ -31,14 +33,15 @@ Same discipline as m28b1: the pack is AI-drafted, so every string is verified ag
 - **Tag existing A2-relevant lexemes `both`** (everyday words are universal, per the m28b1 decision): the prepositions في/على/مِن/إلى/مع (`lex:prt-*`) and verbs كَتَبَ/جَلَسَ/فَتَحَ (`lex:ver-*`) — additive `emphasisTag` only.
 - **~6 new A2 lexemes to author + verify:** رِسَالَة (letter/message, general), صَوْت (sound/voice, both), أَذَان (call to prayer, quranic), مَغْفِرَة (forgiveness, quranic), دَعَا/يَدْعُو (to supplicate, quranic), فَجْر (dawn, both). Each with translit, gloss, level A2, `emphasisTag`, a verified example, and present-tense note for the verb.
 
-### 4.2 Lessons (on the existing A2 spine)
+### 4.2 Lessons (m28b2 = Units 1–3)
 
-1. **`a2-dual-verbal-sentence`** (`a2-u1`) — teaches the verbal sentence with a **`build`/`word` `acceptedOrders`** drill accepting VSO + SVO, and per-track `variants` (general everyday sentence vs a Quranic one). This is the deferred multi-order demo (acceptance criterion 5 from m28b1).
-2. **`a2-dual-daily-verbs`** (`a2-u6`) — present-tense routine with dual-track verb objects via the payload selector / `variants` (يَقْرَأُ الرِّسَالَةَ ↔ الْقُرْآنَ; يَسْمَعُ الصَّوْتَ ↔ الْأَذَانَ; يَطْلُبُ الْمُسَاعَدَةَ ↔ الْمَغْفِرَةَ), plus a **preposition `cloze`** drill.
+1. **`a2-dual-verbal-sentence`** (`a2-u1`) — the verbal sentence with a **`build`/`word` `acceptedOrders`** drill accepting VSO + SVO, per-track `variants` (everyday vs Quranic sentence), and the A2 role-pattern step (§4.3). The deferred multi-order demo (m28b1 acceptance criterion 5).
+2. **`a2-dual-idafa`** (`a2-u2`) — dual-track possession/genitive: general (بَيْتُ الْمُعَلِّمِ) vs Quranic (كِتَابُ اللهِ, رَسُولُ اللهِ), on the shared `gr:idafa` rule.
+3. **`a2-dual-root-pattern`** (`a2-u3`) — one root across its family (ك-ت-ب → كَتَبَ / كِتَاب / مَكْتَب / مَكْتَبَة, all `both`), and the **Rule B nudge** (mastery of ك-ت-ب → everyday-email use) on lesson completion.
 
-### 4.3 Role pills (A2 — first use)
+### 4.3 Role pills (A2 — first use, pills BELOW the line)
 
-Add a `role-pattern` step **with `showLabels: true`** to the verbal-sentence lesson: a verbal sentence colour-coded with **Doer** (green) + **Receiver** (blue) + optional **Description** (amber) pills. This is the first place the A2 tap-labels appear (A1 was colour+underline only). **Resolve the RTL pill-placement** flagged in M28.3 here — with multiple pills in an RTL line, lay them out cleanly (e.g. pill directly after its chunk with `white-space:nowrap` on the pair, or a small legend), and re-verify a11y.
+Add a `role-pattern` step **with `showLabels: true`** to the verbal-sentence lesson: the sentence colour-coded (Doer green / Receiver blue / Description amber), with the role labels rendered as a **legend row beneath the sentence** (decision 2), not inline — cleaner in RTL and at 320px. `renderRolePattern` changes: when `showLabels`, emit the coloured line, then a `.role-pattern-legend` row of one pill per distinct role present (reading order). Re-verify a11y in both themes.
 
 ### 4.4 Smart Nudges
 
@@ -74,12 +77,12 @@ Same four-stage rhythm as m28b1, each its own commit + QA/a11y:
 3. `a2-dual-daily-verbs` (present-tense dual-track + preposition cloze).
 4. Smart Nudges (Rule A + Rule B) + any Quranic text objects (muṣḥaf-checked).
 
-## 9. Open decisions
+## 9. Decisions (resolved 2026-09-23)
 
-1. **Rule B trigger:** `lesson-complete` (recommended, no engine change) or add an `object-mastered` trigger for "mastering the root ك-ت-ب"?
-2. **RTL pill layout:** pill-after-chunk with `nowrap`, or a legend below the sentence? (Lean: nowrap pairs; fall back to a legend if it crowds at 320px.)
-3. **New Quranic text objects** for the A2 nudge/examples — confirm we author a small muṣḥaf-checked set (as in m28b1).
-4. **Batch size:** all of A2's dual-track content in m28b2, or split verbal-sentence (m28b2) from everyday-exchanges (m28b3)? (Lean: one A2 batch.)
+1. **Rule B trigger:** `lesson-complete` (no engine change).
+2. **RTL pill layout:** labels as a **legend row below** the sentence, not inline.
+3. **Quranic text objects:** author a small muṣḥaf-checked set; the user verifies against a physical copy.
+4. **Batch size:** split — **m28b2 = Units 1–3**, **m28b3 = Units 4–6**.
 
 ## 10. Risks
 

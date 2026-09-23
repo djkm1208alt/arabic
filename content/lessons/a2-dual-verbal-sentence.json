@@ -1,0 +1,116 @@
+{
+  "id": "a2-dual-verbal-sentence",
+  "unitId": "a2-u1",
+  "curriculumLessonId": "a2-dual-verbal-sentence",
+  "title": "The Verbal Sentence — Doer & Receiver",
+  "level": "A2",
+  "skills": ["grammar", "reading"],
+  "objectives": ["gr:verbal-sentence", "gr:present-tense", "lex:ver-05", "lex:obj-10"],
+  "emphasisTag": "both",
+  "fr": { "title": "La phrase verbale — auteur & complément" },
+  "steps": [
+    {
+      "type": "explain",
+      "title": "A verb, a Doer, and a Receiver",
+      "body": [
+        "A verbal sentence starts with an action. The one who does it is the Doer; the thing it happens to is the Receiver.",
+        "Arabic is flexible about order: you can say the verb first (يَقْرَأُ الْمُسْلِمُ الْقُرْآنَ) or the Doer first (الْمُسْلِمُ يَقْرَأُ الْقُرْآنَ). Both are correct.",
+        "The colours below show the parts."
+      ],
+      "fr": {
+        "title": "Un verbe, un auteur, un complément",
+        "body": [
+          "Une phrase verbale commence par une action. Celui qui la fait est l'auteur ; ce qu'elle touche est le complément.",
+          "L'arabe est souple sur l'ordre : le verbe d'abord (يَقْرَأُ الْمُسْلِمُ الْقُرْآنَ) ou l'auteur d'abord (الْمُسْلِمُ يَقْرَأُ الْقُرْآنَ). Les deux sont corrects.",
+          "Les couleurs ci-dessous montrent les parties."
+        ]
+      }
+    },
+    {
+      "type": "role-pattern",
+      "title": "See the parts",
+      "intro": "The Doer (green) does the action; the Receiver (blue) has it done to them. The verb sits between them.",
+      "showLabels": true,
+      "tokens": [
+        { "text": "الْمُسْلِمُ", "role": "doer" },
+        { "text": "يَقْرَأُ" },
+        { "text": "الْقُرْآنَ", "role": "receiver" }
+      ],
+      "fr": {
+        "title": "Voir les parties",
+        "intro": "L'auteur (vert) fait l'action ; le complément (bleu) la subit. Le verbe se place entre les deux."
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Build it — either order works",
+      "fr": { "title": "Construisez — les deux ordres marchent" },
+      "exercise": {
+        "kind": "build",
+        "unit": "word",
+        "drillType": "sentence-builder",
+        "skill": "reading",
+        "objectId": "gr:verbal-sentence",
+        "objectIds": ["gr:verbal-sentence"],
+        "prompt": "Build: “The Muslim reads the Quran.” (either word order is correct)",
+        "hint": "Verb-first or Doer-first — both are accepted.",
+        "fr": { "prompt": "Construisez : « Le musulman lit le Coran. » (les deux ordres sont corrects)", "hint": "Verbe d'abord ou auteur d'abord — les deux sont acceptés." },
+        "target": ["الْمُسْلِمُ", "يَقْرَأُ", "الْقُرْآنَ"],
+        "acceptedOrders": [[0, 1, 2], [1, 0, 2]]
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Who is the Doer?",
+      "fr": { "title": "Qui est l'auteur ?" },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "role-recognition",
+        "skill": "grammar",
+        "objectIds": ["gr:verbal-sentence"],
+        "arabicOptions": true,
+        "prompt": "Which word is the Doer — the one performing the action?",
+        "fr": { "prompt": "Quel mot est l'auteur — celui qui fait l'action ?" },
+        "variants": {
+          "general": {
+            "arabicPrompt": "الطَّالِبُ يَقْرَأُ الرِّسَالَةَ",
+            "options": [
+              { "label": "الطَّالِبُ", "correct": true },
+              { "label": "يَقْرَأُ", "correct": false },
+              { "label": "الرِّسَالَةَ", "correct": false }
+            ],
+            "explanation": "الطَّالِبُ is the Doer — the one reading. الرِّسَالَةَ is the Receiver.",
+            "fr": { "explanation": "الطَّالِبُ est l'auteur — celui qui lit. الرِّسَالَةَ est le complément." }
+          },
+          "quranic": {
+            "arabicPrompt": "الْمُسْلِمُ يَقْرَأُ الْقُرْآنَ",
+            "options": [
+              { "label": "الْمُسْلِمُ", "correct": true },
+              { "label": "يَقْرَأُ", "correct": false },
+              { "label": "الْقُرْآنَ", "correct": false }
+            ],
+            "explanation": "الْمُسْلِمُ is the Doer — the one reading. الْقُرْآنَ is the Receiver.",
+            "fr": { "explanation": "الْمُسْلِمُ est l'auteur — celui qui lit. الْقُرْآنَ est le complément." }
+          },
+          "both": {
+            "arabicPrompt": "الْوَلَدُ يَكْتُبُ الرِّسَالَةَ",
+            "options": [
+              { "label": "الْوَلَدُ", "correct": true },
+              { "label": "يَكْتُبُ", "correct": false },
+              { "label": "الرِّسَالَةَ", "correct": false }
+            ],
+            "explanation": "الْوَلَدُ is the Doer — the one writing. الرِّسَالَةَ is the Receiver.",
+            "fr": { "explanation": "الْوَلَدُ est l'auteur — celui qui écrit. الرِّسَالَةَ est le complément." }
+          }
+        }
+      }
+    },
+    {
+      "type": "complete",
+      "title": "You can read a verbal sentence",
+      "message": "You saw the Doer and the Receiver, built a sentence in both word orders, and spotted the Doer — in everyday and Quranic sentences.",
+      "finishLabel": "Finish",
+      "fr": { "title": "Vous savez lire une phrase verbale", "message": "Vous avez repéré l'auteur et le complément, construit une phrase dans les deux ordres, et identifié l'auteur — dans des phrases du quotidien et du Coran.", "finishLabel": "Terminer" }
+    }
+  ]
+}

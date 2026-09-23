@@ -1,0 +1,74 @@
+{
+  "id": "a2-dual-root-pattern",
+  "unitId": "a2-u3",
+  "curriculumLessonId": "a2-dual-root-pattern",
+  "title": "One Root, a Family of Words",
+  "level": "A2",
+  "skills": ["vocabulary", "reading"],
+  "objectives": ["gr:root-pattern", "lex:ver-04", "lex:sch-06", "lex:wrk-01", "lex:pla-10"],
+  "emphasisTag": "both",
+  "fr": { "title": "Une racine, une famille de mots" },
+  "steps": [
+    {
+      "type": "explain",
+      "title": "Three letters, many words",
+      "body": [
+        "Most Arabic words are built on a root of three letters. The root ك-ت-ب carries the idea of writing.",
+        "Pour it into different shapes and you get a family: كَتَبَ (wrote), كِتَاب (book), مَكْتَب (desk), مَكْتَبَة (library).",
+        "Spot the ك-ت-ب inside each one."
+      ],
+      "fr": {
+        "title": "Trois lettres, plusieurs mots",
+        "body": [
+          "La plupart des mots arabes sont bâtis sur une racine de trois lettres. La racine ك-ت-ب porte l'idée d'écrire.",
+          "Coulez-la dans différentes formes et vous obtenez une famille : كَتَبَ (a écrit), كِتَاب (livre), مَكْتَب (bureau), مَكْتَبَة (bibliothèque).",
+          "Repérez le ك-ت-ب dans chacun."
+        ]
+      },
+      "previewSymbols": ["كَتَبَ", "كِتَاب", "مَكْتَب", "مَكْتَبَة"]
+    },
+    {
+      "type": "reading-practice",
+      "title": "The ك-ت-ب family",
+      "intro": "Read each word and tap 🔊. The same three letters run through them all.",
+      "fr": { "title": "La famille ك-ت-ب", "intro": "Lisez chaque mot et appuyez sur 🔊. Les trois mêmes lettres les traversent tous." },
+      "items": [
+        { "arabic": "كَتَبَ", "translit": "kataba", "english": "he wrote" },
+        { "arabic": "كِتَاب", "translit": "kitāb", "english": "book" },
+        { "arabic": "مَكْتَب", "translit": "maktab", "english": "desk / office" },
+        { "arabic": "مَكْتَبَة", "translit": "maktabah", "english": "library" }
+      ]
+    },
+    {
+      "type": "practice-choice",
+      "title": "Which one is the odd word out?",
+      "prompt": "Which word is NOT built on the root ك-ت-ب?",
+      "arabicOptions": true,
+      "options": [
+        { "label": "مَدْرَسَة", "correct": true },
+        { "label": "كِتَاب", "correct": false },
+        { "label": "مَكْتَبَة", "correct": false }
+      ],
+      "explanation": "مَدْرَسَة is from the root د-ر-س (studying). كِتَاب and مَكْتَبَة both carry ك-ت-ب.",
+      "fr": {
+        "title": "Lequel est l'intrus ?",
+        "prompt": "Quel mot n'est PAS bâti sur la racine ك-ت-ب ?",
+        "explanation": "مَدْرَسَة vient de la racine د-ر-س (étudier). كِتَاب et مَكْتَبَة portent tous deux ك-ت-ب."
+      }
+    },
+    {
+      "type": "complete",
+      "title": "You can see the root",
+      "message": "You found the root ك-ت-ب running through a whole family of words — the key that unlocks Arabic vocabulary.",
+      "finishLabel": "Finish",
+      "fr": { "title": "Vous voyez la racine", "message": "Vous avez repéré la racine ك-ت-ب dans toute une famille de mots — la clé du vocabulaire arabe.", "finishLabel": "Terminer" }
+    }
+  ],
+  "smartNudge": {
+    "rule": "quranic-to-general",
+    "trigger": { "on": "lesson-complete" },
+    "prompt": "You know كَتَبَ from the root ك-ت-ب. Here's how you'd use it in everyday life.",
+    "fr": { "prompt": "Vous connaissez كَتَبَ de la racine ك-ت-ب. Voici comment l'employer au quotidien." },
+    "payload": { "textId": "txt:everyday-write-msg" }
+  }
+}

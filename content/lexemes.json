@@ -2378,7 +2378,8 @@
     "skills": [
       "vocabulary"
     ],
-    "prereqs": []
+    "prereqs": [],
+    "emphasisTag": "both"
   },
   {
     "id": "lex:ver-05",
@@ -4288,7 +4289,8 @@
     "skills": [
       "vocabulary"
     ],
-    "prereqs": []
+    "prereqs": [],
+    "emphasisTag": "both"
   },
   {
     "id": "lex:ver-20",
@@ -4328,7 +4330,8 @@
     "skills": [
       "vocabulary"
     ],
-    "prereqs": []
+    "prereqs": [],
+    "emphasisTag": "both"
   },
   {
     "id": "lex:ver-22",
@@ -4412,7 +4415,8 @@
     "skills": [
       "vocabulary"
     ],
-    "prereqs": []
+    "prereqs": [],
+    "emphasisTag": "both"
   },
   {
     "id": "lex:prt-02",
@@ -4427,7 +4431,8 @@
     "skills": [
       "vocabulary"
     ],
-    "prereqs": []
+    "prereqs": [],
+    "emphasisTag": "both"
   },
   {
     "id": "lex:prt-03",
@@ -4458,7 +4463,8 @@
     "skills": [
       "vocabulary"
     ],
-    "prereqs": []
+    "prereqs": [],
+    "emphasisTag": "both"
   },
   {
     "id": "lex:prt-05",
@@ -4473,7 +4479,8 @@
     "skills": [
       "vocabulary"
     ],
-    "prereqs": []
+    "prereqs": [],
+    "emphasisTag": "both"
   },
   {
     "id": "lex:prt-06",
@@ -6302,7 +6309,8 @@
     "skills": [
       "vocabulary"
     ],
-    "prereqs": []
+    "prereqs": [],
+    "emphasisTag": "both"
   },
   {
     "id": "lex:prt-19",
@@ -7115,5 +7123,129 @@
       "vocabulary"
     ],
     "prereqs": []
+  },
+  {
+    "id": "lex:obj-10",
+    "kind": "lexeme",
+    "ar": "رِسَالَة",
+    "translit": "risālah",
+    "en": "letter / message",
+    "pos": "noun",
+    "topic": "objects",
+    "level": "A2",
+    "emphasisTag": "general",
+    "example": {
+      "ar": "قَرَأَ الرِّسَالَةَ.",
+      "en": "He read the letter."
+    },
+    "fr": "lettre / message",
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
+  },
+  {
+    "id": "lex:obj-11",
+    "kind": "lexeme",
+    "ar": "صَوْت",
+    "translit": "ṣawt",
+    "en": "sound / voice",
+    "pos": "noun",
+    "topic": "objects",
+    "level": "A2",
+    "emphasisTag": "both",
+    "example": {
+      "ar": "سَمِعَ صَوْتًا.",
+      "en": "He heard a sound."
+    },
+    "fr": "son / voix",
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
+  },
+  {
+    "id": "lex:tim-64",
+    "kind": "lexeme",
+    "ar": "فَجْر",
+    "translit": "fajr",
+    "en": "dawn",
+    "pos": "noun",
+    "topic": "time",
+    "level": "A2",
+    "emphasisTag": "both",
+    "example": {
+      "ar": "الْفَجْرُ قَرِيبٌ.",
+      "en": "Dawn is near."
+    },
+    "fr": "aube",
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
+  },
+  {
+    "id": "lex:wor-1",
+    "kind": "lexeme",
+    "ar": "أَذَان",
+    "translit": "adhān",
+    "en": "call to prayer",
+    "pos": "noun",
+    "topic": "worship",
+    "level": "A2",
+    "emphasisTag": "quranic",
+    "example": {
+      "ar": "سَمِعَ الْأَذَانَ.",
+      "en": "He heard the call to prayer."
+    },
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
+  },
+  {
+    "id": "lex:wor-2",
+    "kind": "lexeme",
+    "ar": "مَغْفِرَة",
+    "translit": "maghfirah",
+    "en": "forgiveness",
+    "pos": "noun",
+    "topic": "worship",
+    "level": "A2",
+    "emphasisTag": "quranic",
+    "example": {
+      "ar": "طَلَبَ الْمَغْفِرَةَ.",
+      "en": "He sought forgiveness."
+    },
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": []
+  },
+  {
+    "id": "lex:ver-38",
+    "kind": "lexeme",
+    "ar": "دَعَا",
+    "translit": "daʿā",
+    "en": "to supplicate / to call upon",
+    "pos": "verb",
+    "topic": "verbs",
+    "level": "A2",
+    "emphasisTag": "quranic",
+    "example": {
+      "ar": "دَعَا اللهَ.",
+      "en": "He supplicated to God."
+    },
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": [],
+    "notes": "Present tense: يَدْعُو (yadʿū). Defective verb (root د-ع-و)."
   }
 ]

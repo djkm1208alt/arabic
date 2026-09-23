@@ -6105,5 +6105,36 @@
       "reading"
     ],
     "prereqs": []
+  },
+  {
+    "id": "txt:quran-fatiha-2",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m20",
+    "emphasisTag": "quranic",
+    "vowelled": "الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ",
+    "translit": "al-ḥamdu lillāhi rabbi l-ʿālamīna",
+    "en": "All praise is due to God, Lord of the worlds.",
+    "notes": "Qur'an 1:2 (Sūrat al-Fātiḥah). Contains the iḍāfa رَبِّ الْعَالَمِينَ. VERIFY against a muṣḥaf before merge.",
+    "level": "A2",
+    "skills": [
+      "reading"
+    ],
+    "prereqs": []
+  },
+  {
+    "id": "txt:everyday-write-msg",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m20",
+    "emphasisTag": "general",
+    "vowelled": "أَكْتُبُ رِسَالَةً إِلَى صَدِيقِي",
+    "translit": "aktubu risālatan ilā ṣadīqī",
+    "en": "I write a message to my friend.",
+    "level": "A2",
+    "skills": [
+      "reading"
+    ],
+    "prereqs": []
   }
 ]

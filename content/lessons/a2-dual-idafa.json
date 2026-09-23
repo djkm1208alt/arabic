@@ -1,0 +1,75 @@
+{
+  "id": "a2-dual-idafa",
+  "unitId": "a2-u2",
+  "curriculumLessonId": "a2-dual-idafa",
+  "title": "Possession — “X of Y”",
+  "level": "A2",
+  "skills": ["grammar", "reading"],
+  "objectives": ["gr:idafa", "lex:sch-06", "lex:sch-02", "lex:peo-28"],
+  "emphasisTag": "both",
+  "fr": { "title": "La possession — « X de Y »" },
+  "steps": [
+    {
+      "type": "explain",
+      "title": "Joining two words to show possession",
+      "body": [
+        "To say “the X of Y”, put the two nouns side by side: كِتَابُ الطَّالِبِ = “the student's book”.",
+        "The first word drops الـ and any tanwīn; the second word takes a kasra at the end (الطَّالِبِ).",
+        "Read the examples below — yours will match your focus."
+      ],
+      "fr": {
+        "title": "Joindre deux mots pour la possession",
+        "body": [
+          "Pour dire « le X de Y », placez les deux noms côte à côte : كِتَابُ الطَّالِبِ = « le livre de l'étudiant ».",
+          "Le premier mot perd الـ et le tanwīn ; le second prend une kasra à la fin (الطَّالِبِ).",
+          "Lisez les exemples ci-dessous — ils s'adaptent à votre parcours."
+        ]
+      }
+    },
+    {
+      "type": "reading-practice",
+      "title": "Read these pairings",
+      "intro": "Read each one and tap 🔊. Reveal the meaning to check yourself.",
+      "fr": { "title": "Lisez ces associations", "intro": "Lisez chacune et appuyez sur 🔊. Affichez le sens pour vérifier." },
+      "items": [
+        { "arabic": "بَيْتُ الْمُعَلِّمِ", "translit": "baytu al-muʿallimi", "english": "the teacher's house", "emphasisTag": "general" },
+        { "arabic": "كِتَابُ الطَّالِبِ", "translit": "kitābu aṭ-ṭālibi", "english": "the student's book", "emphasisTag": "general" },
+        { "arabic": "كِتَابُ اللهِ", "translit": "kitābu llāhi", "english": "the Book of God", "emphasisTag": "quranic" },
+        { "arabic": "رَسُولُ اللهِ", "translit": "rasūlu llāhi", "english": "the Messenger of God", "emphasisTag": "quranic" },
+        { "arabic": "بَابُ الْبَيْتِ", "translit": "bābu al-bayti", "english": "the door of the house", "emphasisTag": "both" }
+      ]
+    },
+    {
+      "type": "exercise",
+      "title": "Finish the pairing",
+      "fr": { "title": "Complétez l'association" },
+      "exercise": {
+        "kind": "cloze",
+        "drillType": "idafa",
+        "skill": "grammar",
+        "objectId": "gr:idafa",
+        "objectIds": ["gr:idafa"],
+        "prompt": "The second word of the pair takes a kasra. Choose it.",
+        "before": "كِتَابُ ",
+        "after": "",
+        "options": ["الطَّالِبِ", "الطَّالِبُ"],
+        "answer": "الطَّالِبِ",
+        "fr": { "prompt": "Le second mot de la paire prend une kasra. Choisissez-le." }
+      }
+    },
+    {
+      "type": "complete",
+      "title": "You can read possession",
+      "message": "You joined two words to show “X of Y”, with the second word in the genitive — in everyday and Quranic pairings.",
+      "finishLabel": "Finish",
+      "fr": { "title": "Vous savez lire la possession", "message": "Vous avez joint deux mots pour dire « X de Y », le second au génitif — dans des associations du quotidien et du Coran.", "finishLabel": "Terminer" }
+    }
+  ],
+  "smartNudge": {
+    "rule": "general-to-quranic",
+    "trigger": { "on": "lesson-complete" },
+    "prompt": "You can now read “X of Y”. Here it is in a verse you may know — رَبِّ الْعَالَمِينَ is exactly this pattern.",
+    "fr": { "prompt": "Vous savez lire « X de Y ». Le voici dans un verset que vous connaissez peut-être — رَبِّ الْعَالَمِينَ suit exactement ce modèle." },
+    "payload": { "textId": "txt:quran-fatiha-2" }
+  }
+}

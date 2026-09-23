@@ -2824,6 +2824,79 @@
         "title": "Salutations & se présenter",
         "blurb": "Saluez et présentez-vous — lisez un échange du quotidien et un échange coranique."
       }
+    },
+    {
+      "id": "a2-dual-verbal-sentence",
+      "unitId": "a2-u1",
+      "order": 3,
+      "title": "The Verbal Sentence — Doer & Receiver",
+      "blurb": "Read a verbal sentence: the Doer, the Receiver, and either word order — with everyday and Quranic examples.",
+      "level": "A2",
+      "skills": [
+        "grammar",
+        "reading"
+      ],
+      "objectives": [
+        "gr:verbal-sentence",
+        "gr:present-tense",
+        "lex:ver-05",
+        "lex:obj-10"
+      ],
+      "status": "available",
+      "source": "steps:a2-dual-verbal-sentence",
+      "fr": {
+        "title": "La phrase verbale — auteur & complément",
+        "blurb": "Lisez une phrase verbale : l'auteur, le complément et les deux ordres — avec des exemples du quotidien et du Coran."
+      }
+    },
+    {
+      "id": "a2-dual-idafa",
+      "unitId": "a2-u2",
+      "order": 2,
+      "title": "Possession — “X of Y”",
+      "blurb": "Join two words to show possession, the second in the genitive — everyday and Quranic pairings.",
+      "level": "A2",
+      "skills": [
+        "grammar",
+        "reading"
+      ],
+      "objectives": [
+        "gr:idafa",
+        "lex:sch-06",
+        "lex:sch-02",
+        "lex:peo-28"
+      ],
+      "status": "available",
+      "source": "steps:a2-dual-idafa",
+      "fr": {
+        "title": "La possession — « X de Y »",
+        "blurb": "Joignez deux mots pour la possession, le second au génitif — associations du quotidien et du Coran."
+      }
+    },
+    {
+      "id": "a2-dual-root-pattern",
+      "unitId": "a2-u3",
+      "order": 2,
+      "title": "One Root, a Family of Words",
+      "blurb": "See the root ك-ت-ب run through كَتَبَ / كِتَاب / مَكْتَب / مَكْتَبَة — the key to Arabic vocabulary.",
+      "level": "A2",
+      "skills": [
+        "vocabulary",
+        "reading"
+      ],
+      "objectives": [
+        "gr:root-pattern",
+        "lex:ver-04",
+        "lex:sch-06",
+        "lex:wrk-01",
+        "lex:pla-10"
+      ],
+      "status": "available",
+      "source": "steps:a2-dual-root-pattern",
+      "fr": {
+        "title": "Une racine, une famille de mots",
+        "blurb": "Voyez la racine ك-ت-ب dans كَتَبَ / كِتَاب / مَكْتَب / مَكْتَبَة — la clé du vocabulaire arabe."
+      }
     }
   ]
 }
