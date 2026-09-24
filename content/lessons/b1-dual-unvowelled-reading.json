@@ -1,0 +1,129 @@
+{
+  "id": "b1-dual-unvowelled-reading",
+  "unitId": "b1-u4",
+  "curriculumLessonId": "b1-dual-unvowelled-reading",
+  "title": "Reading Without Ḥarakāt",
+  "level": "B1",
+  "skills": ["reading", "comprehension"],
+  "objectives": ["txt:b1-read-general", "txt:b1-read-quranic"],
+  "emphasisTag": "both",
+  "fr": { "title": "Lire sans ḥarakāt" },
+  "steps": [
+    {
+      "type": "explain",
+      "title": "Real Arabic drops the vowels",
+      "body": [
+        "Outside textbooks and the muṣḥaf, Arabic is written without ḥarakāt: القراءة علم, not الْقِرَاءَةُ عِلْمٌ.",
+        "You supply the vowels yourself, from the word's shape and its place in the sentence — which is exactly what the roots and patterns you have learned are for.",
+        "Read the passage below as it is written. Then reveal the transliteration to check the vowels you guessed, and the meaning."
+      ],
+      "fr": {
+        "title": "L'arabe réel se passe des voyelles",
+        "body": [
+          "Hors des manuels et du muṣḥaf, l'arabe s'écrit sans ḥarakāt : القراءة علم, et non الْقِرَاءَةُ عِلْمٌ.",
+          "C'est vous qui fournissez les voyelles, d'après la forme du mot et sa place dans la phrase — précisément ce à quoi servent les racines et les schèmes appris.",
+          "Lisez le passage tel qu'il est écrit. Affichez ensuite la translittération pour vérifier les voyelles devinées, et le sens."
+        ]
+      },
+      "previewSymbols": ["القراءة", "الذكر", "يقرأ"]
+    },
+    {
+      "type": "reading-practice",
+      "title": "Read it unvowelled",
+      "intro": "No ḥarakāt. Read it aloud first, then reveal to check your vowels and the meaning.",
+      "fr": { "title": "Lisez sans voyelles", "intro": "Aucune ḥaraka. Lisez à voix haute d'abord, puis affichez pour vérifier vos voyelles et le sens." },
+      "items": [
+        {
+          "arabic": "القراءة علم والكتابة عمل. الطالب يدخل المكتبة ويقرأ كتابا جديدا. هو دارس جديد.",
+          "english": "al-qirāʾatu ʿilmun wa-l-kitābatu ʿamalun. aṭ-ṭālibu yadkhulu al-maktabata wa-yaqraʾu kitāban jadīdan. huwa dārisun jadīdun. — “Reading is knowledge and writing is work. The student enters the library and reads a new book. He is a new student.”",
+          "emphasisTag": "general"
+        },
+        {
+          "arabic": "الذكر عبادة والدعاء عبادة. المؤمن يدخل المسجد ويقرأ القرآن. هو عابد ذاكر.",
+          "english": "adh-dhikru ʿibādatun wa-d-duʿāʾu ʿibādatun. al-muʾminu yadkhulu al-masjida wa-yaqraʾu al-qurʾāna. huwa ʿābidun dhākirun. — “Remembrance is worship and supplication is worship. The believer enters the mosque and reads the Quran. He is a worshipper who remembers God.”",
+          "emphasisTag": "quranic"
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "title": "Which word is it?",
+      "fr": { "title": "Quel mot est-ce ?" },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "unvowelled-reading",
+        "skill": "reading",
+        "objectIds": ["txt:b1-read-general"],
+        "prompt": "Unvowelled, this word could be read more than one way. In this sentence, which reading is right?",
+        "fr": { "prompt": "Sans voyelles, ce mot peut se lire de plusieurs façons. Dans cette phrase, quelle lecture est correcte ?" },
+        "variants": {
+          "general": {
+            "arabicPrompt": "الطالب يدخل المكتبة ويقرأ كتابا جديدا",
+            "prompt": "How should يقرأ be read in this sentence?",
+            "options": [
+              { "label": "yaqraʾu — he reads (present)", "correct": true },
+              { "label": "qaraʾa — he read (past)", "correct": false },
+              { "label": "qirāʾah — reading (the act)", "correct": false }
+            ],
+            "explanation": "The يـ prefix and the sentence's flow give يَقْرَأُ — “he reads”. The past would be قَرَأَ, with no prefix.",
+            "fr": {
+              "prompt": "Comment faut-il lire يقرأ dans cette phrase ?",
+              "explanation": "Le préfixe يـ et le fil de la phrase donnent يَقْرَأُ — « il lit ». Le passé serait قَرَأَ, sans préfixe."
+            }
+          },
+          "quranic": {
+            "arabicPrompt": "المؤمن يدخل المسجد ويقرأ القرآن",
+            "prompt": "How should يقرأ be read in this sentence?",
+            "options": [
+              { "label": "yaqraʾu — he reads (present)", "correct": true },
+              { "label": "qaraʾa — he read (past)", "correct": false },
+              { "label": "qirāʾah — reading (the act)", "correct": false }
+            ],
+            "explanation": "The يـ prefix and the sentence's flow give يَقْرَأُ — “he reads”. The past would be قَرَأَ, with no prefix.",
+            "fr": {
+              "prompt": "Comment faut-il lire يقرأ dans cette phrase ?",
+              "explanation": "Le préfixe يـ et le fil de la phrase donnent يَقْرَأُ — « il lit ». Le passé serait قَرَأَ, sans préfixe."
+            }
+          },
+          "both": {
+            "arabicPrompt": "هو عالم كبير",
+            "prompt": "How should عالم be read in this sentence?",
+            "options": [
+              { "label": "ʿālim — a scholar (the doer)", "correct": true },
+              { "label": "ʿilm — knowledge (the act)", "correct": false },
+              { "label": "maʿlūm — known (the done-to)", "correct": false }
+            ],
+            "explanation": "The long ا after the first letter marks the active participle عَالِم — “a scholar”. عِلْم has no such alif.",
+            "fr": {
+              "prompt": "Comment faut-il lire عالم dans cette phrase ?",
+              "explanation": "Le ا long après la première lettre marque le participe actif عَالِم — « un savant ». عِلْم n'a pas cet alif."
+            }
+          }
+        }
+      }
+    },
+    {
+      "type": "practice-choice",
+      "title": "Did you follow it?",
+      "prompt": "In your passage, what does the person do?",
+      "options": [
+        { "label": "Enters a building and reads", "correct": true },
+        { "label": "Travels to another city", "correct": false },
+        { "label": "Writes a letter to a friend", "correct": false }
+      ],
+      "explanation": "Both passages run the same way: يدخل (he enters) then يقرأ (he reads).",
+      "fr": {
+        "title": "Avez-vous suivi ?",
+        "prompt": "Dans votre passage, que fait la personne ?",
+        "explanation": "Les deux passages suivent le même fil : يدخل (il entre) puis يقرأ (il lit)."
+      }
+    },
+    {
+      "type": "complete",
+      "title": "You read unvowelled Arabic",
+      "message": "You read a passage with no ḥarakāt, supplied the vowels yourself from root and pattern, and checked them against the transliteration — the way Arabic is actually written.",
+      "finishLabel": "Finish",
+      "fr": { "title": "Vous lisez l'arabe sans voyelles", "message": "Vous avez lu un passage sans ḥarakāt, fourni vous-même les voyelles d'après la racine et le schème, et vérifié avec la translittération — la façon dont l'arabe s'écrit réellement.", "finishLabel": "Terminer" }
+    }
+  ]
+}

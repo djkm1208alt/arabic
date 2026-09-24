@@ -314,7 +314,7 @@
       "skills": [
         "reading"
       ],
-      "status": "planned",
+      "status": "available",
       "prereqs": [
         "a2-u5"
       ]
@@ -3024,6 +3024,28 @@
       "fr": {
         "title": "Les participes — l'auteur & le subi",
         "blurb": "Distinguez le participe actif (ism fāʿil, l'auteur : كَاتِب، عَابِد) du passif (ism mafʿūl, le subi : مَكْتُوب، مَعْبُود)."
+      }
+    },
+    {
+      "id": "b1-dual-unvowelled-reading",
+      "unitId": "b1-u4",
+      "order": 1,
+      "title": "Reading Without Ḥarakāt",
+      "blurb": "Read a B1 passage as Arabic is really written — no vowel marks — supplying the vowels yourself from root and pattern.",
+      "level": "B1",
+      "skills": [
+        "reading",
+        "comprehension"
+      ],
+      "objectives": [
+        "txt:b1-read-general",
+        "txt:b1-read-quranic"
+      ],
+      "status": "available",
+      "source": "steps:b1-dual-unvowelled-reading",
+      "fr": {
+        "title": "Lire sans ḥarakāt",
+        "blurb": "Lisez un passage B1 tel que l'arabe s'écrit vraiment — sans voyelles — en fournissant vous-même les voyelles d'après la racine et le schème."
       }
     }
   ]
