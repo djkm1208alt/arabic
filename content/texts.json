@@ -6178,7 +6178,7 @@
     "vowelled": "وَلْيَكْتُبْ بَيْنَكُمْ كَاتِبٌ بِالْعَدْلِ",
     "translit": "wa-l-yaktub baynakum kātibun bi-l-ʿadli",
     "en": "and let a scribe write [it] between you in justice.",
-    "notes": "Qur'an 2:282 (partial, Sūrat al-Baqarah) — the interplay of كَاتِبٌ (scribe) and فَلْيَكْتُبْ (let him write). Supplied by the user; confirm against a muṣḥaf before merge.",
+    "notes": "Qur'an 2:282 (partial, Sūrat al-Baqarah) — كَاتِبٌ (scribe) + يَكْتُبْ (let him write). Verified against a muṣḥaf by the user, 2026-09-24.",
     "level": "B1",
     "skills": [
       "reading"
