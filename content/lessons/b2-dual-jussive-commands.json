@@ -1,0 +1,116 @@
+{
+  "id": "b2-dual-jussive-commands",
+  "unitId": "b2-u2",
+  "curriculumLessonId": "b2-dual-jussive-commands",
+  "title": "The Jussive in Commands & Prohibitions",
+  "level": "B2",
+  "skills": ["grammar", "reading"],
+  "objectives": ["gr:mudari-mood", "lex:exp-06"],
+  "emphasisTag": "both",
+  "fr": { "title": "Le jussif dans l'ordre et la défense" },
+  "steps": [
+    {
+      "type": "explain",
+      "title": "Al-Majzūm (الْمَجْزُوم) — the clipped form",
+      "body": [
+        "You have already met Al-Majzūm (الْمَجْزُوم) → “the jussive, the clipped form” after لَمْ: لَمْ يَكْتُبْ (“he did not write”). The final ḍamma is clipped to a sukūn.",
+        "Two more places use it. Prohibition — Lā an-Nāhiya (لَا النَّاهِيَة) → “the ‘don't’ lā”: لَا تَكْتُبْ (“don't write”), with the same clipped ending.",
+        "And the command — Al-Amr (الْأَمْر) → “the imperative”: drop the تَـ of تَكْتُبْ and add a helping alif at the front — اُكْتُبْ (“write!”).",
+        "Watch the contrast: لَمْ تَكْتُبْ is “you did not write”, لَا تَكْتُبْ is “don't write”. Same clipped verb, different particle, very different meaning."
+      ],
+      "fr": {
+        "title": "Al-Majzūm (الْمَجْزُوم) — la forme abrégée",
+        "body": [
+          "Vous avez déjà rencontré Al-Majzūm (الْمَجْزُوم) → « le jussif, la forme abrégée » après لَمْ : لَمْ يَكْتُبْ (« il n'a pas écrit »). La ḍamma finale devient un sukūn.",
+          "Deux autres emplois. La défense — Lā an-Nāhiya (لَا النَّاهِيَة) → « le lā de défense » : لَا تَكْتُبْ (« n'écris pas »), avec la même finale abrégée.",
+          "Et l'ordre — Al-Amr (الْأَمْر) → « l'impératif » : on retire le تَـ de تَكْتُبْ et on ajoute un alif d'appui — اُكْتُبْ (« écris ! »).",
+          "Notez le contraste : لَمْ تَكْتُبْ = « tu n'as pas écrit », لَا تَكْتُبْ = « n'écris pas ». Même verbe abrégé, particule différente, sens très différent."
+        ]
+      },
+      "previewSymbols": ["لَمْ يَكْتُبْ", "لَا تَكْتُبْ", "اُكْتُبْ"]
+    },
+    {
+      "type": "reading-practice",
+      "title": "Commands and prohibitions",
+      "intro": "Read each one and tap 🔊. Reveal the meaning to check yourself.",
+      "fr": { "title": "Ordres et défenses", "intro": "Lisez chacun et appuyez sur 🔊. Affichez le sens pour vérifier." },
+      "items": [
+        { "arabic": "اُكْتُبْ رِسَالَةً", "translit": "uktub risālatan", "english": "Write a letter.", "emphasisTag": "general" },
+        { "arabic": "لَا تَكْتُبْ هُنَا", "translit": "lā taktub hunā", "english": "Don't write here.", "emphasisTag": "general" },
+        { "arabic": "اُذْكُرِ اللهَ", "translit": "udhkuri llāha", "english": "Remember God.", "emphasisTag": "quranic" },
+        { "arabic": "لَا تَنْسَ الصَّلَاةَ", "translit": "lā tansa ṣ-ṣalāta", "english": "Don't forget the prayer.", "emphasisTag": "quranic" },
+        { "arabic": "لَا تَخَفْ", "translit": "lā takhaf", "english": "Don't be afraid.", "emphasisTag": "both" }
+      ]
+    },
+    {
+      "type": "exercise",
+      "title": "Give the command",
+      "fr": { "title": "Donnez l'ordre" },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "jussive-command",
+        "skill": "grammar",
+        "objectIds": ["gr:mudari-mood"],
+        "arabicOptions": true,
+        "prompt": "Which is the command form (الْأَمْر) of this verb?",
+        "fr": { "prompt": "Quelle est la forme d'ordre (الْأَمْر) de ce verbe ?" },
+        "variants": {
+          "general": {
+            "arabicPrompt": "كَتَبَ ← ؟",
+            "options": [
+              { "label": "اُكْتُبْ", "correct": true },
+              { "label": "يَكْتُبُ", "correct": false },
+              { "label": "كُتِبَ", "correct": false }
+            ],
+            "explanation": "Drop the تَـ from تَكْتُبْ and add the helping alif: اُكْتُبْ. يَكْتُبُ is “he writes”; كُتِبَ is the passive “it was written”.",
+            "fr": { "explanation": "Retirez le تَـ de تَكْتُبْ et ajoutez l'alif d'appui : اُكْتُبْ. يَكْتُبُ = « il écrit » ; كُتِبَ = le passif « il a été écrit »." }
+          },
+          "quranic": {
+            "arabicPrompt": "ذَكَرَ ← ؟",
+            "options": [
+              { "label": "اُذْكُرْ", "correct": true },
+              { "label": "يَذْكُرُ", "correct": false },
+              { "label": "ذُكِرَ", "correct": false }
+            ],
+            "explanation": "Drop the تَـ from تَذْكُرْ and add the helping alif: اُذْكُرْ. يَذْكُرُ is “he remembers”; ذُكِرَ is the passive “it was mentioned”.",
+            "fr": { "explanation": "Retirez le تَـ de تَذْكُرْ et ajoutez l'alif d'appui : اُذْكُرْ. يَذْكُرُ = « il se souvient » ; ذُكِرَ = le passif « il a été mentionné »." }
+          },
+          "both": {
+            "arabicPrompt": "قَرَأَ ← ؟",
+            "options": [
+              { "label": "اِقْرَأْ", "correct": true },
+              { "label": "يَقْرَأُ", "correct": false },
+              { "label": "قُرِئَ", "correct": false }
+            ],
+            "explanation": "Drop the تَـ from تَقْرَأْ and add the helping alif: اِقْرَأْ. يَقْرَأُ is “he reads”; قُرِئَ is the passive “it was read”.",
+            "fr": { "explanation": "Retirez le تَـ de تَقْرَأْ et ajoutez l'alif d'appui : اِقْرَأْ. يَقْرَأُ = « il lit » ; قُرِئَ = le passif « il a été lu »." }
+          }
+        }
+      }
+    },
+    {
+      "type": "practice-choice",
+      "title": "لَمْ or لَا?",
+      "arabicPrompt": "لَا تَكْتُبْ",
+      "prompt": "What does this mean?",
+      "options": [
+        { "label": "Don't write. (a prohibition)", "correct": true },
+        { "label": "You did not write. (a statement about the past)", "correct": false },
+        { "label": "You will not write. (a statement about the future)", "correct": false }
+      ],
+      "explanation": "Both لَمْ and لَا clip the verb to the jussive, but لَمْ تَكْتُبْ reports the past (“you did not write”) while لَا تَكْتُبْ forbids (“don't write”). For the future you would need لَنْ تَكْتُبَ.",
+      "fr": {
+        "title": "لَمْ ou لَا ?",
+        "prompt": "Que signifie ceci ?",
+        "explanation": "لَمْ et لَا abrègent tous deux le verbe au jussif, mais لَمْ تَكْتُبْ rapporte le passé (« tu n'as pas écrit ») tandis que لَا تَكْتُبْ interdit (« n'écris pas »). Pour le futur il faudrait لَنْ تَكْتُبَ."
+      }
+    },
+    {
+      "type": "complete",
+      "title": "You can command and forbid",
+      "message": "You built the imperative from the jussive and told a prohibition (لَا تَكْتُبْ) apart from a past negation (لَمْ تَكْتُبْ) — the same clipped verb, two different jobs.",
+      "finishLabel": "Finish",
+      "fr": { "title": "Vous savez ordonner et défendre", "message": "Vous avez formé l'impératif à partir du jussif et distingué la défense (لَا تَكْتُبْ) de la négation du passé (لَمْ تَكْتُبْ) — même verbe abrégé, deux rôles différents.", "finishLabel": "Terminer" }
+    }
+  ]
+}

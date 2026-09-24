@@ -3119,6 +3119,28 @@
         "title": "Le passif — quand l'auteur n'est pas nommé",
         "blurb": "Changez les voyelles du verbe pour supprimer l'auteur (كَتَبَ → كُتِبَ), et nommez ce qui prend sa place — نَائِب الْفَاعِل."
       }
+    },
+    {
+      "id": "b2-dual-jussive-commands",
+      "unitId": "b2-u2",
+      "order": 3,
+      "title": "The Jussive in Commands & Prohibitions",
+      "blurb": "Build the imperative from the jussive (اُكْتُبْ) and tell a prohibition (لَا تَكْتُبْ) from a past negation (لَمْ تَكْتُبْ).",
+      "level": "B2",
+      "skills": [
+        "grammar",
+        "reading"
+      ],
+      "objectives": [
+        "gr:mudari-mood",
+        "lex:exp-06"
+      ],
+      "status": "available",
+      "source": "steps:b2-dual-jussive-commands",
+      "fr": {
+        "title": "Le jussif dans l'ordre et la défense",
+        "blurb": "Formez l'impératif à partir du jussif (اُكْتُبْ) et distinguez la défense (لَا تَكْتُبْ) de la négation du passé (لَمْ تَكْتُبْ)."
+      }
     }
   ]
 }
