@@ -3141,6 +3141,33 @@
         "title": "Le jussif dans l'ordre et la défense",
         "blurb": "Formez l'impératif à partir du jussif (اُكْتُبْ) et distinguez la défense (لَا تَكْتُبْ) de la négation du passé (لَمْ تَكْتُبْ)."
       }
+    },
+    {
+      "id": "b2-dual-conditionals",
+      "unitId": "b2-u2",
+      "order": 4,
+      "title": "Conditional Sentences — If and When",
+      "blurb": "Match the particle to its pattern: إِنْ clips both verbs to the jussive; إِذَا takes a past-form verb and links its answer with فَ.",
+      "level": "B2",
+      "skills": [
+        "grammar",
+        "reading"
+      ],
+      "objectives": [
+        "gr:conditional",
+        "lex:prt-43",
+        "lex:prt-44",
+        "txt:gram-conditional-read",
+        "txt:gram-conditional-travel",
+        "txt:quran-zalzalah-7-conditional",
+        "txt:quran-baqarah-197-conditional"
+      ],
+      "status": "available",
+      "source": "steps:b2-dual-conditionals",
+      "fr": {
+        "title": "La phrase conditionnelle — si et quand",
+        "blurb": "Associez chaque particule à son schéma : إِنْ abrège les deux verbes au jussif ; إِذَا prend un verbe au passé et relie sa réponse par فَ."
+      }
     }
   ]
 }

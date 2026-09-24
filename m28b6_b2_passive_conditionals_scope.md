@@ -1,6 +1,6 @@
 # M28-B6 — B2, first batch: completing the Passive, Jussive & Conditionals unit
 
-**Status:** Draft for review — held for approval (ROADMAP standing rule 6). No content authored yet; this plans the work.
+**Status:** Approved 2026-09-24 — all four §9 decisions confirmed, with the user supplying the four Qurʾānic verses (2:183, 4:28, 99:7, 2:197). **Built** in four QA-gated commits on branch `claude/m28b6-b2-scope` (grammar objects + texts + vocab; passive; jussive commands; conditionals). **`b2-u2` now delivers its full title** — mood, passive, jussive and conditionals. No engine change. QA 120 green; a11y clean. All authored Arabic pending the user's linguistic review (rule 1); the four verses flagged for muṣḥaf confirmation.
 **Parent:** [ROADMAP.md](ROADMAP.md) M28 · first B2 batch, following m28b4/m28b5 (B1, complete and merged). Reuses all m28 machinery; continues the dual-track emphasis layer and the B1 dual-label convention. No pack source — B2 content is authored from the app's leveled lexicon and `CURRICULUM_ARCHITECTURE.md`, reviewed by the user.
 
 ---

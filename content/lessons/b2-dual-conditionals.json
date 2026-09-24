@@ -1,0 +1,127 @@
+{
+  "id": "b2-dual-conditionals",
+  "unitId": "b2-u2",
+  "curriculumLessonId": "b2-dual-conditionals",
+  "title": "Conditional Sentences — If and When",
+  "level": "B2",
+  "skills": ["grammar", "reading"],
+  "objectives": ["gr:conditional", "lex:prt-43", "lex:prt-44", "txt:gram-conditional-read", "txt:gram-conditional-travel", "txt:quran-zalzalah-7-conditional", "txt:quran-baqarah-197-conditional"],
+  "emphasisTag": "both",
+  "fr": { "title": "La phrase conditionnelle — si et quand" },
+  "steps": [
+    {
+      "type": "explain",
+      "title": "Jumlat ash-Sharṭ (جُمْلَة الشَّرْط) — the conditional sentence",
+      "body": [
+        "A conditional sentence has two halves: Ash-Sharṭ (الشَّرْط) → “the condition”, and Jawāb ash-Sharṭ (جَوَاب الشَّرْط) → “its answer”.",
+        "With إِنْ (“if”) BOTH verbs go into the jussive — clipped, just as after لَمْ: إِنْ تَقْرَأْ تَعْلَمْ (“if you read, you will know”). مَنْ (“whoever”) and مَا (“whatever”) work the same way when they are conditional.",
+        "إِذَا (“when / if”) behaves differently: it normally takes a past-form verb in the condition, and its answer is often linked with فَ — إِذَا سَافَرْتَ فَاكْتُبْ لِي.",
+        "The difference in feel: إِنْ is for something that may or may not happen; إِذَا is for something you expect to happen."
+      ],
+      "fr": {
+        "title": "Jumlat ash-Sharṭ (جُمْلَة الشَّرْط) — la phrase conditionnelle",
+        "body": [
+          "Une phrase conditionnelle a deux moitiés : Ash-Sharṭ (الشَّرْط) → « la condition », et Jawāb ash-Sharṭ (جَوَاب الشَّرْط) → « sa réponse ».",
+          "Avec إِنْ (« si »), les DEUX verbes passent au jussif — abrégés, comme après لَمْ : إِنْ تَقْرَأْ تَعْلَمْ (« si tu lis, tu sauras »). مَنْ (« quiconque ») et مَا (« quoi que ») fonctionnent de même en emploi conditionnel.",
+          "إِذَا (« quand / si ») se comporte autrement : il prend normalement un verbe au passé dans la condition, et sa réponse est souvent reliée par فَ — إِذَا سَافَرْتَ فَاكْتُبْ لِي.",
+          "La nuance : إِنْ pour ce qui peut arriver ou non ; إِذَا pour ce qu'on s'attend à voir arriver."
+        ]
+      },
+      "previewSymbols": ["إِنْ", "إِذَا", "مَنْ"]
+    },
+    {
+      "type": "reading-practice",
+      "title": "Read the conditionals",
+      "intro": "Read each one and tap 🔊. Watch both verbs in the إِنْ sentences — they are clipped. Reveal the meaning to check yourself.",
+      "fr": { "title": "Lisez les conditionnelles", "intro": "Lisez chacune et appuyez sur 🔊. Observez les deux verbes des phrases avec إِنْ — ils sont abrégés. Affichez le sens pour vérifier." },
+      "items": [
+        { "arabic": "إِنْ تَقْرَأْ تَعْلَمْ", "translit": "in taqraʾ taʿlam", "english": "If you read, you will know.", "emphasisTag": "general" },
+        { "arabic": "إِذَا سَافَرْتَ فَاكْتُبْ لِي", "translit": "idhā sāfarta fa-ktub lī", "english": "When you travel, write to me.", "emphasisTag": "general" },
+        { "arabic": "فَمَنْ يَعْمَلْ مِثْقَالَ ذَرَّةٍ خَيْرًا يَرَهُ", "translit": "fa-man yaʿmal mithqāla dharratin khayran yarah", "english": "So whoever does an atom's weight of good will see it. (Qur'an 99:7)", "emphasisTag": "quranic" },
+        { "arabic": "وَمَا تَفْعَلُوا مِنْ خَيْرٍ يَعْلَمْهُ اللهُ", "translit": "wa-mā tafʿalū min khayrin yaʿlamhu llāhu", "english": "And whatever good you do, God knows it. (Qur'an 2:197)", "emphasisTag": "quranic" }
+      ]
+    },
+    {
+      "type": "exercise",
+      "title": "Which particle?",
+      "fr": { "title": "Quelle particule ?" },
+      "exercise": {
+        "kind": "cloze",
+        "drillType": "conditional-particle",
+        "skill": "grammar",
+        "objectId": "gr:conditional",
+        "objectIds": ["gr:conditional"],
+        "prompt": "Choose the particle that fits.",
+        "fr": { "prompt": "Choisissez la particule qui convient." },
+        "variants": {
+          "general": {
+            "before": "",
+            "after": " تَقْرَأْ تَعْلَمْ",
+            "options": ["إِنْ", "إِذَا", "إِنَّ"],
+            "answer": "إِنْ"
+          },
+          "quranic": {
+            "before": "",
+            "after": " تَعْمَلْ خَيْرًا تَجِدْهُ",
+            "options": ["إِنْ", "إِذَا", "إِنَّ"],
+            "answer": "إِنْ"
+          },
+          "both": {
+            "before": "",
+            "after": " سَافَرْتَ فَاكْتُبْ لِي",
+            "options": ["إِذَا", "إِنْ", "لَمْ"],
+            "answer": "إِذَا"
+          }
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Build the condition",
+      "fr": { "title": "Construisez la condition" },
+      "exercise": {
+        "kind": "build",
+        "unit": "word",
+        "drillType": "sentence-builder",
+        "skill": "grammar",
+        "objectId": "gr:conditional",
+        "objectIds": ["gr:conditional"],
+        "prompt": "Build: “If you read, you will know.”",
+        "hint": "The condition comes first, then its answer — and both verbs stay clipped.",
+        "target": ["إِنْ", "تَقْرَأْ", "تَعْلَمْ"],
+        "acceptedOrders": [[0, 1, 2]],
+        "fr": { "prompt": "Construisez : « Si tu lis, tu sauras. »", "hint": "La condition d'abord, puis sa réponse — et les deux verbes restent abrégés." }
+      }
+    },
+    {
+      "type": "practice-choice",
+      "title": "إِنْ or إِذَا?",
+      "prompt": "Which one would you use for something you fully expect to happen — “when the sun rises…”?",
+      "options": [
+        { "label": "إِذَا — it is for what is expected, and takes a past-form verb.", "correct": true },
+        { "label": "إِنْ — it is for what is expected, and takes the jussive.", "correct": false },
+        { "label": "Either one; they are interchangeable in every context.", "correct": false }
+      ],
+      "explanation": "إِذَا suits the expected (“when”), with a past-form verb and often a فَ before its answer. إِنْ suits the uncertain (“if”), and clips both verbs to the jussive.",
+      "fr": {
+        "title": "إِنْ ou إِذَا ?",
+        "prompt": "Lequel emploieriez-vous pour ce qu'on attend certainement — « quand le soleil se lève… » ?",
+        "explanation": "إِذَا convient à l'attendu (« quand »), avec un verbe au passé et souvent un فَ devant sa réponse. إِنْ convient à l'incertain (« si »), et abrège les deux verbes au jussif."
+      }
+    },
+    {
+      "type": "complete",
+      "title": "You can read a conditional",
+      "message": "You matched the particle to its pattern — إِنْ clipping both verbs, إِذَا taking a past-form verb with a فَ answer — and saw مَنْ and مَا doing the same work.",
+      "finishLabel": "Finish",
+      "fr": { "title": "Vous savez lire une conditionnelle", "message": "Vous avez associé chaque particule à son schéma — إِنْ abrégeant les deux verbes, إِذَا prenant un verbe au passé avec une réponse en فَ — et vu مَنْ et مَا faire le même travail.", "finishLabel": "Terminer" }
+    }
+  ],
+  "smartNudge": {
+    "rule": "general-to-quranic",
+    "trigger": { "on": "lesson-complete" },
+    "prompt": "This exact pattern — a conditional with both verbs clipped — carries one of the Qur'an's most quoted promises.",
+    "fr": { "prompt": "Ce schéma exact — une conditionnelle aux deux verbes abrégés — porte l'une des promesses les plus citées du Coran." },
+    "payload": { "textId": "txt:quran-zalzalah-7-conditional" }
+  }
+}
