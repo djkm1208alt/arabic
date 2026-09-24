@@ -1,0 +1,98 @@
+{
+  "id": "b1-dual-writing",
+  "unitId": "b1-u6",
+  "curriculumLessonId": "b1-dual-writing",
+  "title": "Writing a Connected Sentence",
+  "level": "B1",
+  "skills": ["writing", "grammar"],
+  "objectives": ["gr:verbal-sentence", "lex:sch-23", "lex:wor-5"],
+  "emphasisTag": "both",
+  "fr": { "title": "Écrire une phrase suivie" },
+  "steps": [
+    {
+      "type": "explain",
+      "title": "Put the pieces in order",
+      "body": [
+        "You have the pieces: a doer, a present-tense verb, an object, a describing word. Writing is choosing their order.",
+        "Arabic lets you start with the verb (يَقْرَأُ الطَّالِبُ…) or with the doer (الطَّالِبُ يَقْرَأُ…) — both are correct, so both are accepted below.",
+        "One thing that does not move: a describing word follows the noun it describes — كِتَابًا جَدِيدًا, never the other way round."
+      ],
+      "fr": {
+        "title": "Mettre les pièces dans l'ordre",
+        "body": [
+          "Vous avez les pièces : un auteur, un verbe au présent, un complément, un qualificatif. Écrire, c'est choisir leur ordre.",
+          "L'arabe permet de commencer par le verbe (يَقْرَأُ الطَّالِبُ…) ou par l'auteur (الطَّالِبُ يَقْرَأُ…) — les deux sont corrects, donc les deux sont acceptés ci-dessous.",
+          "Une chose ne bouge pas : le qualificatif suit le nom qu'il qualifie — كِتَابًا جَدِيدًا, jamais l'inverse."
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "Build the sentence",
+      "fr": { "title": "Construisez la phrase" },
+      "exercise": {
+        "kind": "build",
+        "unit": "word",
+        "drillType": "sentence-builder",
+        "skill": "writing",
+        "objectId": "gr:verbal-sentence",
+        "objectIds": ["gr:verbal-sentence"],
+        "prompt": "Put the words in order. Either the doer or the verb may come first.",
+        "hint": "The describing word stays right after the noun it describes.",
+        "fr": { "prompt": "Mettez les mots dans l'ordre. L'auteur ou le verbe peut venir en premier.", "hint": "Le qualificatif reste juste après le nom qu'il qualifie." },
+        "variants": {
+          "general": {
+            "prompt": "Build: “The student reads a new book.”",
+            "target": ["الطَّالِبُ", "يَقْرَأُ", "كِتَابًا", "جَدِيدًا"],
+            "acceptedOrders": [[0, 1, 2, 3], [1, 0, 2, 3]],
+            "fr": { "prompt": "Construisez : « L'étudiant lit un nouveau livre. »" }
+          },
+          "quranic": {
+            "prompt": "Build: “The believer reads the Quran.”",
+            "target": ["الْمُؤْمِنُ", "يَقْرَأُ", "الْقُرْآنَ"],
+            "acceptedOrders": [[0, 1, 2], [1, 0, 2]],
+            "fr": { "prompt": "Construisez : « Le croyant lit le Coran. »" }
+          },
+          "both": {
+            "prompt": "Build: “The scholar writes a new book.”",
+            "target": ["الْعَالِمُ", "يَكْتُبُ", "كِتَابًا", "جَدِيدًا"],
+            "acceptedOrders": [[0, 1, 2, 3], [1, 0, 2, 3]],
+            "fr": { "prompt": "Construisez : « Le savant écrit un nouveau livre. »" }
+          }
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "One more — a nominal sentence",
+      "fr": { "title": "Encore une — une phrase nominale" },
+      "exercise": {
+        "kind": "build",
+        "unit": "word",
+        "drillType": "sentence-builder",
+        "skill": "writing",
+        "objectId": "gr:verbal-sentence",
+        "objectIds": ["gr:verbal-sentence"],
+        "prompt": "Build: “Studying is great work.”",
+        "hint": "No verb here — a topic and what is said about it.",
+        "target": ["الدِّرَاسَةُ", "عَمَلٌ", "كَبِيرٌ"],
+        "acceptedOrders": [[0, 1, 2]],
+        "fr": { "prompt": "Construisez : « L'étude est un grand travail. »", "hint": "Pas de verbe ici — un thème et ce qu'on en dit." }
+      }
+    },
+    {
+      "type": "complete",
+      "title": "You wrote a connected sentence",
+      "message": "You ordered a doer, a verb and a described object into correct Arabic — in both word orders — and built a nominal sentence too.",
+      "finishLabel": "Finish",
+      "fr": { "title": "Vous avez écrit une phrase suivie", "message": "Vous avez ordonné un auteur, un verbe et un complément qualifié en arabe correct — dans les deux ordres — et construit aussi une phrase nominale.", "finishLabel": "Terminer" }
+    }
+  ],
+  "smartNudge": {
+    "rule": "quranic-to-general",
+    "trigger": { "on": "lesson-complete" },
+    "prompt": "You can order an Arabic sentence now. Here is the same skill in everyday use — writing a message to a friend.",
+    "fr": { "prompt": "Vous savez ordonner une phrase arabe. Voici la même compétence au quotidien — écrire un message à un ami." },
+    "payload": { "textId": "txt:everyday-write-msg" }
+  }
+}

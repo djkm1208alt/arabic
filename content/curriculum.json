@@ -343,7 +343,7 @@
       "skills": [
         "writing"
       ],
-      "status": "planned",
+      "status": "available",
       "prereqs": [
         "b1-u2"
       ]
@@ -3069,6 +3069,29 @@
       "fr": {
         "title": "Écouter l'arabe standard",
         "blurb": "Saisissez des phrases B1 entières à l'oreille — repérez le préfixe du présent et distinguez un nom d'action d'un auteur."
+      }
+    },
+    {
+      "id": "b1-dual-writing",
+      "unitId": "b1-u6",
+      "order": 1,
+      "title": "Writing a Connected Sentence",
+      "blurb": "Order a doer, a verb and a described object into correct Arabic — in either word order — and build a nominal sentence too.",
+      "level": "B1",
+      "skills": [
+        "writing",
+        "grammar"
+      ],
+      "objectives": [
+        "gr:verbal-sentence",
+        "lex:sch-23",
+        "lex:wor-5"
+      ],
+      "status": "available",
+      "source": "steps:b1-dual-writing",
+      "fr": {
+        "title": "Écrire une phrase suivie",
+        "blurb": "Ordonnez un auteur, un verbe et un complément qualifié en arabe correct — dans les deux ordres — et construisez aussi une phrase nominale."
       }
     }
   ]

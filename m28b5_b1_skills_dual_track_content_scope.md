@@ -1,6 +1,6 @@
 # M28-B5 — Dual-track content, B1 skill units (second B1 batch)
 
-**Status:** Draft for review — held for approval (ROADMAP standing rule 6). No content authored yet; this plans the work.
+**Status:** Approved 2026-09-24 (§9.5 confirmed: content-only, existing `unvowelled` field; the stepwise de-vowelling reader becomes its own feature milestone later). **Built** in four QA-gated commits on branch `claude/m28b5-b1-skills-scope` (passages; `b1-dual-unvowelled-reading`; `b1-dual-listening`; `b1-dual-writing`). **B1 is now complete — all seven units available.** No engine change at all; no Qur'anic quotation added (passages are original), so no muṣḥaf check this batch. All authored Arabic pending the user's linguistic review (rule 1).
 **Parent:** [ROADMAP.md](ROADMAP.md) M28 · follows m28b4 (B1 grammar, b1-u3, merged). Finishes B1 by filling its three **skill** units. Reuses all m28 machinery; no new engine. Continues the arc m28b1 (A1) → m28b2/b3 (A2) → m28b4 (B1 grammar).
 
 ---
