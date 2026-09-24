@@ -2997,6 +2997,34 @@
         "title": "Les noms verbaux (maṣdar)",
         "blurb": "Transformez un verbe en nom d'action — le maṣdar (كِتَابَة، عِبَادَة، عِلْم) — et distinguez-le de l'auteur et du complément."
       }
+    },
+    {
+      "id": "b1-dual-participles",
+      "unitId": "b1-u3",
+      "order": 2,
+      "title": "Participles — The Doer & the Done-To",
+      "blurb": "Tell the active participle (ism fāʿil, the doer: كَاتِب، عَابِد) from the passive (ism mafʿūl, the done-to: مَكْتُوب، مَعْبُود).",
+      "level": "B1",
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading"
+      ],
+      "objectives": [
+        "gr:root-pattern",
+        "lex:peo-29",
+        "lex:adj-19",
+        "lex:wor-6",
+        "lex:wor-9",
+        "lex:peo-31",
+        "lex:adj-20"
+      ],
+      "status": "available",
+      "source": "steps:b1-dual-participles",
+      "fr": {
+        "title": "Les participes — l'auteur & le subi",
+        "blurb": "Distinguez le participe actif (ism fāʿil, l'auteur : كَاتِب، عَابِد) du passif (ism mafʿūl, le subi : مَكْتُوب، مَعْبُود)."
+      }
     }
   ]
 }

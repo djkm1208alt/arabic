@@ -1,0 +1,111 @@
+{
+  "id": "b1-dual-participles",
+  "unitId": "b1-u3",
+  "curriculumLessonId": "b1-dual-participles",
+  "title": "Participles — The Doer & the Done-To",
+  "level": "B1",
+  "skills": ["grammar", "vocabulary", "reading"],
+  "objectives": ["gr:root-pattern", "lex:peo-29", "lex:adj-19", "lex:wor-6", "lex:wor-9", "lex:peo-31", "lex:adj-20"],
+  "emphasisTag": "both",
+  "fr": { "title": "Les participes — l'auteur & le subi" },
+  "steps": [
+    {
+      "type": "explain",
+      "title": "Two participles from one root",
+      "body": [
+        "From a verb's root you get two people-or-thing words. Ism Fāʿil (اسْم الفَاعِل) — the Active Participle, “the Doer”: كَاتِب (writer), عَابِد (worshipper), عَالِم (scholar).",
+        "Ism Mafʿūl (اسْم المَفْعُول) — the Passive Participle, “the Receiver of the action”: مَكْتُوب (written), مَعْبُود (worshipped), مَعْلُوم (known).",
+        "Same three letters, opposite roles: the one who does vs. the one it is done to."
+      ],
+      "fr": {
+        "title": "Deux participes d'une même racine",
+        "body": [
+          "De la racine d'un verbe naissent deux mots. Ism Fāʿil (اسْم الفَاعِل) — le participe actif, « l'auteur » : كَاتِب (écrivain), عَابِد (adorateur), عَالِم (savant).",
+          "Ism Mafʿūl (اسْم المَفْعُول) — le participe passif, « celui qui subit l'action » : مَكْتُوب (écrit), مَعْبُود (adoré), مَعْلُوم (connu).",
+          "Les mêmes trois lettres, des rôles opposés : celui qui fait vs. celui qui subit."
+        ]
+      }
+    },
+    {
+      "type": "role-pattern",
+      "title": "Doer vs done-to",
+      "intro": "The Active Participle (green) is the Doer; the Passive Participle (blue) is the Receiver of the action.",
+      "showLabels": true,
+      "tokens": [
+        { "text": "كَاتِب", "role": "doer" },
+        { "text": "مَكْتُوب", "role": "receiver" }
+      ],
+      "fr": {
+        "title": "Auteur vs subi",
+        "intro": "Le participe actif (vert) est l'auteur ; le participe passif (bleu) est celui qui subit l'action."
+      }
+    },
+    {
+      "type": "reading-practice",
+      "title": "Read the participles",
+      "intro": "Read each in a sentence and tap 🔊. Reveal the meaning to check yourself.",
+      "fr": { "title": "Lisez les participes", "intro": "Lisez chacun dans une phrase et appuyez sur 🔊. Affichez le sens pour vérifier." },
+      "items": [
+        { "arabic": "هُوَ كَاتِبٌ", "translit": "huwa kātibun", "english": "He is a writer (the doer).", "emphasisTag": "general" },
+        { "arabic": "هَذَا مَكْتُوبٌ", "translit": "hādhā maktūbun", "english": "This is written (the done-to).", "emphasisTag": "general" },
+        { "arabic": "هُوَ عَابِدٌ", "translit": "huwa ʿābidun", "english": "He is a worshipper (the doer).", "emphasisTag": "quranic" },
+        { "arabic": "اللهُ مَعْبُودٌ", "translit": "allāhu maʿbūdun", "english": "God is worshipped (the done-to).", "emphasisTag": "quranic" },
+        { "arabic": "هُوَ عَالِمٌ", "translit": "huwa ʿālimun", "english": "He is a scholar (the doer).", "emphasisTag": "both" },
+        { "arabic": "هَذَا مَعْلُومٌ", "translit": "hādhā maʿlūmun", "english": "This is known (the done-to).", "emphasisTag": "both" }
+      ]
+    },
+    {
+      "type": "exercise",
+      "title": "Which is the Doer?",
+      "fr": { "title": "Lequel est l'auteur ?" },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "root-pattern",
+        "skill": "grammar",
+        "objectIds": ["gr:root-pattern"],
+        "arabicOptions": true,
+        "prompt": "Choose the Active Participle — the Doer (ism fāʿil).",
+        "fr": { "prompt": "Choisissez le participe actif — l'auteur (ism fāʿil)." },
+        "variants": {
+          "general": {
+            "arabicPrompt": "ك-ت-ب",
+            "options": [
+              { "label": "كَاتِب", "correct": true },
+              { "label": "مَكْتُوب", "correct": false },
+              { "label": "كِتَابَة", "correct": false }
+            ],
+            "explanation": "كَاتِب is the Doer (active participle). مَكْتُوب is the done-to; كِتَابَة is the action itself (maṣdar).",
+            "fr": { "explanation": "كَاتِب est l'auteur (participe actif). مَكْتُوب est le subi ; كِتَابَة est l'action elle-même (maṣdar)." }
+          },
+          "quranic": {
+            "arabicPrompt": "ع-ب-د",
+            "options": [
+              { "label": "عَابِد", "correct": true },
+              { "label": "مَعْبُود", "correct": false },
+              { "label": "عِبَادَة", "correct": false }
+            ],
+            "explanation": "عَابِد is the Doer (worshipper). مَعْبُود is the One worshipped; عِبَادَة is the act (maṣdar).",
+            "fr": { "explanation": "عَابِد est l'auteur (l'adorateur). مَعْبُود est Celui qui est adoré ; عِبَادَة est l'acte (maṣdar)." }
+          },
+          "both": {
+            "arabicPrompt": "ع-ل-م",
+            "options": [
+              { "label": "عَالِم", "correct": true },
+              { "label": "مَعْلُوم", "correct": false },
+              { "label": "عِلْم", "correct": false }
+            ],
+            "explanation": "عَالِم is the Doer (knower/scholar). مَعْلُوم is what is known; عِلْم is the knowledge itself (maṣdar).",
+            "fr": { "explanation": "عَالِم est l'auteur (le savant). مَعْلُوم est ce qui est connu ; عِلْم est le savoir lui-même (maṣdar)." }
+          }
+        }
+      }
+    },
+    {
+      "type": "complete",
+      "title": "You can tell the two participles apart",
+      "message": "You separated the Doer (ism fāʿil) from the Receiver of the action (ism mafʿūl) across everyday and Quranic roots.",
+      "finishLabel": "Finish",
+      "fr": { "title": "Vous distinguez les deux participes", "message": "Vous avez séparé l'auteur (ism fāʿil) de celui qui subit l'action (ism mafʿūl) à travers des racines du quotidien et du Coran.", "finishLabel": "Terminer" }
+    }
+  ]
+}
