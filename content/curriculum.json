@@ -2969,6 +2969,34 @@
         "title": "Lire un court paragraphe",
         "blurb": "Lisez trois phrases enchaînées — un paragraphe du quotidien ou dévotionnel — et vérifiez votre compréhension."
       }
+    },
+    {
+      "id": "b1-dual-verbal-nouns",
+      "unitId": "b1-u3",
+      "order": 1,
+      "title": "Verbal Nouns (Maṣdar)",
+      "blurb": "Turn a verb into its action-noun — the maṣdar (كِتَابَة، عِبَادَة، عِلْم) — and tell it from the doer and the done-to.",
+      "level": "B1",
+      "skills": [
+        "grammar",
+        "vocabulary",
+        "reading"
+      ],
+      "objectives": [
+        "gr:root-pattern",
+        "lex:sch-23",
+        "lex:sch-24",
+        "lex:sch-26",
+        "lex:wor-3",
+        "lex:wor-4",
+        "lex:wor-5"
+      ],
+      "status": "available",
+      "source": "steps:b1-dual-verbal-nouns",
+      "fr": {
+        "title": "Les noms verbaux (maṣdar)",
+        "blurb": "Transformez un verbe en nom d'action — le maṣdar (كِتَابَة، عِبَادَة، عِلْم) — et distinguez-le de l'auteur et du complément."
+      }
     }
   ]
 }

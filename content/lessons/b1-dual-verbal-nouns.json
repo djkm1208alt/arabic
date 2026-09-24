@@ -1,0 +1,97 @@
+{
+  "id": "b1-dual-verbal-nouns",
+  "unitId": "b1-u3",
+  "curriculumLessonId": "b1-dual-verbal-nouns",
+  "title": "Verbal Nouns (Maṣdar)",
+  "level": "B1",
+  "skills": ["grammar", "vocabulary", "reading"],
+  "objectives": ["gr:root-pattern", "lex:sch-23", "lex:sch-24", "lex:sch-26", "lex:wor-3", "lex:wor-4", "lex:wor-5"],
+  "emphasisTag": "both",
+  "fr": { "title": "Les noms verbaux (maṣdar)" },
+  "steps": [
+    {
+      "type": "explain",
+      "title": "Maṣdar (المَصْدَر) — the action as a noun",
+      "body": [
+        "A Maṣdar (المَصْدَر) is the “verbal noun” — the action turned into a concept. Where the verb كَتَبَ means “he wrote”, the maṣdar كِتَابَة means “writing” (the act itself).",
+        "So قَرَأَ → قِرَاءَة (reading), دَرَسَ → دِرَاسَة (studying), عَبَدَ → عِبَادَة (worship), ذَكَرَ → ذِكْر (remembrance).",
+        "Read the examples for your focus, then match each verb to its maṣdar."
+      ],
+      "fr": {
+        "title": "Le maṣdar (المَصْدَر) — l'action en tant que nom",
+        "body": [
+          "Le maṣdar (المَصْدَر) est le « nom verbal » — l'action devenue concept. Là où le verbe كَتَبَ signifie « il a écrit », le maṣdar كِتَابَة signifie « l'écriture » (l'acte lui-même).",
+          "Ainsi قَرَأَ → قِرَاءَة (lecture), دَرَسَ → دِرَاسَة (étude), عَبَدَ → عِبَادَة (adoration), ذَكَرَ → ذِكْر (rappel).",
+          "Lisez les exemples adaptés à votre parcours, puis reliez chaque verbe à son maṣdar."
+        ]
+      },
+      "previewSymbols": ["كِتَابَة", "قِرَاءَة", "عِبَادَة", "ذِكْر"]
+    },
+    {
+      "type": "reading-practice",
+      "title": "Actions as concepts",
+      "intro": "Read each maṣdar in a sentence and tap 🔊. Reveal the meaning to check yourself.",
+      "fr": { "title": "Les actions comme concepts", "intro": "Lisez chaque maṣdar dans une phrase et appuyez sur 🔊. Affichez le sens pour vérifier." },
+      "items": [
+        { "arabic": "الْكِتَابَةُ جَمِيلَةٌ", "translit": "al-kitābatu jamīlatun", "english": "Writing is beautiful.", "emphasisTag": "general" },
+        { "arabic": "الْقِرَاءَةُ عِلْمٌ", "translit": "al-qirāʾatu ʿilmun", "english": "Reading is knowledge.", "emphasisTag": "general" },
+        { "arabic": "الدُّعَاءُ عِبَادَةٌ", "translit": "ad-duʿāʾu ʿibādatun", "english": "Supplication is worship.", "emphasisTag": "quranic" },
+        { "arabic": "ذِكْرُ اللهِ عِبَادَةٌ", "translit": "dhikru llāhi ʿibādatun", "english": "Remembrance of God is worship.", "emphasisTag": "quranic" },
+        { "arabic": "الْعِلْمُ عَمَلٌ", "translit": "al-ʿilmu ʿamalun", "english": "Knowledge is action.", "emphasisTag": "both" }
+      ]
+    },
+    {
+      "type": "exercise",
+      "title": "Verb → Maṣdar",
+      "fr": { "title": "Verbe → maṣdar" },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "root-pattern",
+        "skill": "grammar",
+        "objectIds": ["gr:root-pattern"],
+        "arabicOptions": true,
+        "prompt": "Choose the maṣdar (verbal noun) of this verb.",
+        "fr": { "prompt": "Choisissez le maṣdar (nom verbal) de ce verbe." },
+        "variants": {
+          "general": {
+            "arabicPrompt": "كَتَبَ ← ؟",
+            "options": [
+              { "label": "كِتَابَة", "correct": true },
+              { "label": "كَاتِب", "correct": false },
+              { "label": "مَكْتُوب", "correct": false }
+            ],
+            "explanation": "كِتَابَة is the maṣdar (“writing”). كَاتِب is the doer (writer); مَكْتُوب is the done-to (written).",
+            "fr": { "explanation": "كِتَابَة est le maṣdar (« l'écriture »). كَاتِب est l'auteur ; مَكْتُوب est ce qui est écrit." }
+          },
+          "quranic": {
+            "arabicPrompt": "عَبَدَ ← ؟",
+            "options": [
+              { "label": "عِبَادَة", "correct": true },
+              { "label": "عَابِد", "correct": false },
+              { "label": "مَعْبُود", "correct": false }
+            ],
+            "explanation": "عِبَادَة is the maṣdar (“worship”). عَابِد is the worshipper; مَعْبُود is the One worshipped.",
+            "fr": { "explanation": "عِبَادَة est le maṣdar (« l'adoration »). عَابِد est l'adorateur ; مَعْبُود est Celui qui est adoré." }
+          },
+          "both": {
+            "arabicPrompt": "عَلِمَ ← ؟",
+            "options": [
+              { "label": "عِلْم", "correct": true },
+              { "label": "عَالِم", "correct": false },
+              { "label": "مَعْلُوم", "correct": false }
+            ],
+            "explanation": "عِلْم is the maṣdar (“knowledge”). عَالِم is the knower (scholar); مَعْلُوم is what is known.",
+            "fr": { "explanation": "عِلْم est le maṣdar (« le savoir »). عَالِم est le savant ; مَعْلُوم est ce qui est connu." }
+          }
+        }
+      }
+    },
+    {
+      "type": "complete",
+      "title": "You know the maṣdar",
+      "message": "You turned verbs into their action-nouns — the maṣdar — and told it apart from the doer and the done-to, with everyday and Quranic words.",
+      "finishLabel": "Finish",
+      "fr": { "title": "Vous connaissez le maṣdar", "message": "Vous avez transformé des verbes en noms d'action — le maṣdar — et l'avez distingué de l'auteur et du complément, avec des mots du quotidien et du Coran.", "finishLabel": "Terminer" }
+    }
+  ]
+}
