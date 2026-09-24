@@ -1,6 +1,6 @@
 # M28-B4 — Dual-track content, B1 (first B1 batch)
 
-**Status:** Draft for review — held for approval (ROADMAP standing rule 6). No content authored yet; this plans the work.
+**Status:** Approved 2026-09-24 with steering (dual-label format `Term (العربية) → English functional meaning`; expanded verified 18-lexeme root-triad set; ك-ت-ب → Qur'an 2:282 discovery nudge). **Built** in four QA-gated commits on branch `claude/m28b4-b1-dual-track-scope` (vocab; `b1-dual-verbal-nouns`; `b1-dual-participles`; the 2:282 nudge + b1-u3 flipped to available). No new engine. QA 114→ green; a11y clean. All authored Arabic pending the user's linguistic review (rule 1); the 2:282 verse text flagged for the user's muṣḥaf confirmation.
 **Parent:** [ROADMAP.md](ROADMAP.md) M28 · first dual-track batch above A2. Reuses all m28 machinery (payload selector, per-track `variants`, `cloze`, Smart Nudge, role styling + pills, `acceptedOrders`). Continues the arc of m28b1 (A1) → m28b2/m28b3 (A2). No pack source (the dual-track pack was A1–A2 only) — B1 content is authored from the app's leveled lexicon + `CURRICULUM_ARCHITECTURE.md`, reviewed by the user.
 
 ---

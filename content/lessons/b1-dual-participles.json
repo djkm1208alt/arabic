@@ -107,5 +107,12 @@
       "finishLabel": "Finish",
       "fr": { "title": "Vous distinguez les deux participes", "message": "Vous avez séparé l'auteur (ism fāʿil) de celui qui subit l'action (ism mafʿūl) à travers des racines du quotidien et du Coran.", "finishLabel": "Terminer" }
     }
-  ]
+  ],
+  "smartNudge": {
+    "rule": "general-to-quranic",
+    "trigger": { "on": "lesson-complete" },
+    "prompt": "You just met كَاتِب (writer) and مَكْتُوب (written). Here is the root ك-ت-ب at work in the Qur'an's longest verse — كَاتِبٌ (a scribe) and يَكْتُبْ (let him write) side by side.",
+    "fr": { "prompt": "Vous venez de voir كَاتِب (écrivain) et مَكْتُوب (écrit). Voici la racine ك-ت-ب à l'œuvre dans le plus long verset du Coran — كَاتِبٌ (un scribe) et يَكْتُبْ (qu'il écrive) côte à côte." },
+    "payload": { "textId": "txt:quran-baqarah-282-scribe" }
+  }
 }

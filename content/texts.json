@@ -6168,5 +6168,21 @@
       "comprehension"
     ],
     "prereqs": []
+  },
+  {
+    "id": "txt:quran-baqarah-282-scribe",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m20",
+    "emphasisTag": "quranic",
+    "vowelled": "وَلْيَكْتُبْ بَيْنَكُمْ كَاتِبٌ بِالْعَدْلِ",
+    "translit": "wa-l-yaktub baynakum kātibun bi-l-ʿadli",
+    "en": "and let a scribe write [it] between you in justice.",
+    "notes": "Qur'an 2:282 (partial, Sūrat al-Baqarah) — the interplay of كَاتِبٌ (scribe) and فَلْيَكْتُبْ (let him write). Supplied by the user; confirm against a muṣḥaf before merge.",
+    "level": "B1",
+    "skills": [
+      "reading"
+    ],
+    "prereqs": []
   }
 ]
