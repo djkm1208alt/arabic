@@ -6228,7 +6228,7 @@
     "vowelled": "كُتِبَ عَلَيْكُمُ الصِّيَامُ",
     "translit": "kutiba ʿalaykumu ṣ-ṣiyāmu",
     "en": "Fasting has been prescribed for you.",
-    "notes": "Qur'an 2:183 (partial). Passive كُتِبَ with الصِّيَامُ as نَائِب الْفَاعِل. Qur'anic quotation supplied by the user 2026-09-24. English is an ORIGINAL literal working gloss (NOT a published translation — see the copyright constraint). VERIFY orthography and ḥarakāt against a muṣḥaf before merge.",
+    "notes": "Qur'an 2:183 (partial). Passive كُتِبَ with الصِّيَامُ as نَائِب الْفَاعِل. Verified against a muṣḥaf by the user, 2026-09-25; literal working gloss approved (original, not a published translation).",
     "level": "B2",
     "skills": [
       "reading"
@@ -6241,10 +6241,10 @@
     "textType": "sentence",
     "source": "m20",
     "emphasisTag": "quranic",
-    "vowelled": "خُلِقَ الْإِنْسَانُ ضَعِيفًا",
-    "translit": "khuliqa l-insānu ḍaʿīfan",
+    "vowelled": "وَخُلِقَ الْإِنْسَانُ ضَعِيفًا",
+    "translit": "wa-khuliqa l-insānu ḍaʿīfan",
     "en": "The human being was created weak.",
-    "notes": "Qur'an 4:28 (partial; in the muṣḥaf it follows a connecting wāw). Passive خُلِقَ with الْإِنْسَانُ as نَائِب الْفَاعِل and ضَعِيفًا as حَال. Qur'anic quotation supplied by the user 2026-09-24. English is an ORIGINAL literal working gloss (NOT a published translation — see the copyright constraint). VERIFY orthography and ḥarakāt against a muṣḥaf before merge.",
+    "notes": "Qur'an 4:28 (partial). Passive خُلِقَ with الْإِنْسَانُ as نَائِب الْفَاعِل and ضَعِيفًا as حَال. Verified against a muṣḥaf by the user, 2026-09-25; literal working gloss approved (original, not a published translation).",
     "level": "B2",
     "skills": [
       "reading"
@@ -6260,7 +6260,7 @@
     "vowelled": "فَمَنْ يَعْمَلْ مِثْقَالَ ذَرَّةٍ خَيْرًا يَرَهُ",
     "translit": "fa-man yaʿmal mithqāla dharratin khayran yarah",
     "en": "So whoever does an atom's weight of good will see it.",
-    "notes": "Qur'an 99:7. Conditional مَنْ with BOTH verbs jussive — يَعْمَلْ (شَرْط) and يَرَهُ (جَوَاب). Qur'anic quotation supplied by the user 2026-09-24. English is an ORIGINAL literal working gloss (NOT a published translation — see the copyright constraint). VERIFY orthography and ḥarakāt against a muṣḥaf before merge.",
+    "notes": "Qur'an 99:7. Conditional مَنْ with BOTH verbs jussive — يَعْمَلْ (شَرْط) and يَرَهُ (جَوَاب). Verified against a muṣḥaf by the user, 2026-09-25; literal working gloss approved (original, not a published translation).",
     "level": "B2",
     "skills": [
       "reading"
@@ -6276,7 +6276,7 @@
     "vowelled": "وَمَا تَفْعَلُوا مِنْ خَيْرٍ يَعْلَمْهُ اللهُ",
     "translit": "wa-mā tafʿalū min khayrin yaʿlamhu llāhu",
     "en": "And whatever good you do, God knows it.",
-    "notes": "Qur'an 2:197 (partial). Conditional مَا with both verbs jussive — تَفْعَلُوا (شَرْط) and يَعْلَمْهُ (جَوَاب). Qur'anic quotation supplied by the user 2026-09-24. English is an ORIGINAL literal working gloss (NOT a published translation — see the copyright constraint). VERIFY orthography and ḥarakāt against a muṣḥaf before merge.",
+    "notes": "Qur'an 2:197 (partial). Conditional مَا with both verbs jussive — تَفْعَلُوا (شَرْط) and يَعْلَمْهُ (جَوَاب). Verified against a muṣḥaf by the user, 2026-09-25; literal working gloss approved (original, not a published translation).",
     "level": "B2",
     "skills": [
       "reading"
