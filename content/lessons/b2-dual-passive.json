@@ -1,0 +1,134 @@
+{
+  "id": "b2-dual-passive",
+  "unitId": "b2-u2",
+  "curriculumLessonId": "b2-dual-passive",
+  "title": "The Passive — When the Doer Is Not Named",
+  "level": "B2",
+  "skills": ["grammar", "reading"],
+  "objectives": ["gr:passive", "txt:gram-passive-letter", "txt:gram-passive-door", "txt:quran-baqarah-183-passive", "txt:quran-nisa-28-passive", "lex:adj-22"],
+  "emphasisTag": "both",
+  "fr": { "title": "Le passif — quand l'auteur n'est pas nommé" },
+  "steps": [
+    {
+      "type": "explain",
+      "title": "Al-Mabnī li-l-Majhūl (الْمَبْنِي لِلْمَجْهُول) — the passive",
+      "body": [
+        "Al-Mabnī li-l-Majhūl (الْمَبْنِي لِلْمَجْهُول) means “built for the unknown”: the action is reported, the doer is not named. English adds words (“was written”); Arabic changes the verb's vowels instead.",
+        "Past tense: first letter takes ḍamma, the letter before the last takes kasra — كَتَبَ → كُتِبَ, فَتَحَ → فُتِحَ, خَلَقَ → خُلِقَ. Present tense: the prefix takes ḍamma, the letter before the last takes fatḥa — يَكْتُبُ → يُكْتَبُ.",
+        "The thing it happened to then steps into the subject's empty place and takes the nominative. It has its own name: Nāʾib al-Fāʿil (نَائِب الْفَاعِل) → “the stand-in for the doer”."
+      ],
+      "fr": {
+        "title": "Al-Mabnī li-l-Majhūl (الْمَبْنِي لِلْمَجْهُول) — le passif",
+        "body": [
+          "Al-Mabnī li-l-Majhūl (الْمَبْنِي لِلْمَجْهُول) signifie « bâti pour l'inconnu » : l'action est rapportée, l'auteur n'est pas nommé. Le français ajoute des mots (« a été écrit ») ; l'arabe change les voyelles du verbe.",
+          "Passé : la première lettre prend une ḍamma, l'avant-dernière une kasra — كَتَبَ → كُتِبَ, فَتَحَ → فُتِحَ, خَلَقَ → خُلِقَ. Présent : le préfixe prend une ḍamma, l'avant-dernière lettre une fatḥa — يَكْتُبُ → يُكْتَبُ.",
+          "Ce que l'action a touché prend alors la place vide du sujet, au nominatif. Cela porte un nom : Nāʾib al-Fāʿil (نَائِب الْفَاعِل) → « le remplaçant de l'auteur »."
+        ]
+      },
+      "previewSymbols": ["كُتِبَ", "فُتِحَ", "خُلِقَ"]
+    },
+    {
+      "type": "role-pattern",
+      "title": "Who stepped into the subject's place",
+      "intro": "The verb is passive, so no doer is named. الرِّسَالَةُ — the thing written — moves into the empty subject slot and takes the nominative. That is نَائِب الْفَاعِل.",
+      "showLabels": true,
+      "tokens": [
+        { "text": "كُتِبَتِ" },
+        { "text": "الرِّسَالَةُ", "role": "topic" }
+      ],
+      "fr": {
+        "title": "Qui a pris la place du sujet",
+        "intro": "Le verbe est au passif : aucun auteur n'est nommé. الرِّسَالَةُ — ce qui a été écrit — occupe la place vide du sujet et prend le nominatif. C'est نَائِب الْفَاعِل."
+      }
+    },
+    {
+      "type": "reading-practice",
+      "title": "Read the passive",
+      "intro": "Read each one and tap 🔊. Reveal the meaning to check yourself.",
+      "fr": { "title": "Lisez le passif", "intro": "Lisez chacune et appuyez sur 🔊. Affichez le sens pour vérifier." },
+      "items": [
+        { "arabic": "كُتِبَتِ الرِّسَالَةُ", "translit": "kutibati r-risālatu", "english": "The letter was written.", "emphasisTag": "general" },
+        { "arabic": "فُتِحَ الْبَابُ", "translit": "futiḥa l-bābu", "english": "The door was opened.", "emphasisTag": "general" },
+        { "arabic": "كُتِبَ عَلَيْكُمُ الصِّيَامُ", "translit": "kutiba ʿalaykumu ṣ-ṣiyāmu", "english": "Fasting has been prescribed for you. (Qur'an 2:183)", "emphasisTag": "quranic" },
+        { "arabic": "خُلِقَ الْإِنْسَانُ ضَعِيفًا", "translit": "khuliqa l-insānu ḍaʿīfan", "english": "The human being was created weak. (Qur'an 4:28)", "emphasisTag": "quranic" }
+      ]
+    },
+    {
+      "type": "exercise",
+      "title": "Make it passive",
+      "fr": { "title": "Mettez au passif" },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "active-to-passive",
+        "skill": "grammar",
+        "objectIds": ["gr:passive"],
+        "arabicOptions": true,
+        "prompt": "Turn this into the passive — drop the doer and shift the vowels.",
+        "fr": { "prompt": "Mettez au passif — supprimez l'auteur et changez les voyelles." },
+        "variants": {
+          "general": {
+            "arabicPrompt": "كَتَبَ الطَّالِبُ الرِّسَالَةَ",
+            "options": [
+              { "label": "كُتِبَتِ الرِّسَالَةُ", "correct": true },
+              { "label": "كَتَبَتِ الرِّسَالَةُ", "correct": false },
+              { "label": "كُتِبَ الطَّالِبُ", "correct": false }
+            ],
+            "explanation": "كَتَبَ → كُتِبَ (ḍamma, then kasra), the doer الطَّالِبُ disappears, and الرِّسَالَةُ becomes نَائِب الْفَاعِل in the nominative.",
+            "fr": { "explanation": "كَتَبَ → كُتِبَ (ḍamma puis kasra), l'auteur الطَّالِبُ disparaît, et الرِّسَالَةُ devient نَائِب الْفَاعِل au nominatif." }
+          },
+          "quranic": {
+            "arabicPrompt": "خَلَقَ اللهُ الْإِنْسَانَ",
+            "options": [
+              { "label": "خُلِقَ الْإِنْسَانُ", "correct": true },
+              { "label": "خَلَقَ الْإِنْسَانُ", "correct": false },
+              { "label": "خُلِقَ اللهُ", "correct": false }
+            ],
+            "explanation": "خَلَقَ → خُلِقَ, and الْإِنْسَانَ moves from the accusative into the subject's place as الْإِنْسَانُ — exactly the wording of Qur'an 4:28.",
+            "fr": { "explanation": "خَلَقَ → خُلِقَ, et الْإِنْسَانَ passe de l'accusatif à la place du sujet : الْإِنْسَانُ — la formulation même du Coran 4:28." }
+          },
+          "both": {
+            "arabicPrompt": "فَتَحَ الْوَلَدُ الْبَابَ",
+            "options": [
+              { "label": "فُتِحَ الْبَابُ", "correct": true },
+              { "label": "فَتَحَ الْبَابُ", "correct": false },
+              { "label": "فُتِحَ الْوَلَدُ", "correct": false }
+            ],
+            "explanation": "فَتَحَ → فُتِحَ, the doer الْوَلَدُ drops out, and الْبَابَ becomes الْبَابُ — نَائِب الْفَاعِل.",
+            "fr": { "explanation": "فَتَحَ → فُتِحَ, l'auteur الْوَلَدُ disparaît, et الْبَابَ devient الْبَابُ — نَائِب الْفَاعِل." }
+          }
+        }
+      }
+    },
+    {
+      "type": "practice-choice",
+      "title": "Why the nominative?",
+      "arabicPrompt": "فُتِحَ الْبَابُ",
+      "prompt": "Why does الْبَابُ carry a ḍamma here?",
+      "options": [
+        { "label": "It is نَائِب الْفَاعِل — it stands in for the doer, so it takes the subject's case.", "correct": true },
+        { "label": "It is the direct object, and objects take ḍamma.", "correct": false },
+        { "label": "Words after a passive verb always take ḍamma, whatever their role.", "correct": false }
+      ],
+      "explanation": "The passive leaves the subject's place empty; الْبَابُ moves into it and therefore takes the nominative — that role is called نَائِب الْفَاعِل.",
+      "fr": {
+        "title": "Pourquoi le nominatif ?",
+        "prompt": "Pourquoi الْبَابُ porte-t-il une ḍamma ici ?",
+        "explanation": "Le passif laisse la place du sujet vide ; الْبَابُ l'occupe et prend donc le nominatif — ce rôle s'appelle نَائِب الْفَاعِل."
+      }
+    },
+    {
+      "type": "complete",
+      "title": "You can read the passive",
+      "message": "You shifted a verb's vowels to drop the doer, and you can name what takes its place — نَائِب الْفَاعِل, in the nominative.",
+      "finishLabel": "Finish",
+      "fr": { "title": "Vous savez lire le passif", "message": "Vous avez changé les voyelles d'un verbe pour supprimer l'auteur, et vous savez nommer ce qui prend sa place — نَائِب الْفَاعِل, au nominatif.", "finishLabel": "Terminer" }
+    }
+  ],
+  "smartNudge": {
+    "rule": "general-to-quranic",
+    "trigger": { "on": "lesson-complete" },
+    "prompt": "The passive is everywhere in the Qur'an — often because the doer is understood without being named. Here it is in a verse you may know.",
+    "fr": { "prompt": "Le passif est partout dans le Coran — souvent parce que l'auteur est compris sans être nommé. Le voici dans un verset que vous connaissez peut-être." },
+    "payload": { "textId": "txt:quran-baqarah-183-passive" }
+  }
+}

@@ -3093,6 +3093,32 @@
         "title": "Écrire une phrase suivie",
         "blurb": "Ordonnez un auteur, un verbe et un complément qualifié en arabe correct — dans les deux ordres — et construisez aussi une phrase nominale."
       }
+    },
+    {
+      "id": "b2-dual-passive",
+      "unitId": "b2-u2",
+      "order": 2,
+      "title": "The Passive — When the Doer Is Not Named",
+      "blurb": "Shift a verb's vowels to drop the doer (كَتَبَ → كُتِبَ), and name what takes its place — نَائِب الْفَاعِل.",
+      "level": "B2",
+      "skills": [
+        "grammar",
+        "reading"
+      ],
+      "objectives": [
+        "gr:passive",
+        "txt:gram-passive-letter",
+        "txt:gram-passive-door",
+        "txt:quran-baqarah-183-passive",
+        "txt:quran-nisa-28-passive",
+        "lex:adj-22"
+      ],
+      "status": "available",
+      "source": "steps:b2-dual-passive",
+      "fr": {
+        "title": "Le passif — quand l'auteur n'est pas nommé",
+        "blurb": "Changez les voyelles du verbe pour supprimer l'auteur (كَتَبَ → كُتِبَ), et nommez ce qui prend sa place — نَائِب الْفَاعِل."
+      }
     }
   ]
 }
