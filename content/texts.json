@@ -6184,5 +6184,39 @@
       "reading"
     ],
     "prereqs": []
+  },
+  {
+    "id": "txt:b1-read-general",
+    "kind": "text",
+    "textType": "paragraph",
+    "source": "m20",
+    "emphasisTag": "general",
+    "vowelled": "الْقِرَاءَةُ عِلْمٌ وَالْكِتَابَةُ عَمَلٌ. الطَّالِبُ يَدْخُلُ الْمَكْتَبَةَ وَيَقْرَأُ كِتَابًا جَدِيدًا. هُوَ دَارِسٌ جَدِيدٌ.",
+    "unvowelled": "القراءة علم والكتابة عمل. الطالب يدخل المكتبة ويقرأ كتابا جديدا. هو دارس جديد.",
+    "translit": "al-qirāʾatu ʿilmun wa-l-kitābatu ʿamalun. aṭ-ṭālibu yadkhulu al-maktabata wa-yaqraʾu kitāban jadīdan. huwa dārisun jadīdun.",
+    "en": "Reading is knowledge and writing is work. The student enters the library and reads a new book. He is a new student.",
+    "notes": "B1 unvowelled-reading passage (general track). Original sentences built from A1–B1 vocabulary, incl. the m28b4 maṣdar/participle set.",
+    "level": "B1",
+    "skills": [
+      "reading"
+    ],
+    "prereqs": []
+  },
+  {
+    "id": "txt:b1-read-quranic",
+    "kind": "text",
+    "textType": "paragraph",
+    "source": "m20",
+    "emphasisTag": "quranic",
+    "vowelled": "الذِّكْرُ عِبَادَةٌ وَالدُّعَاءُ عِبَادَةٌ. الْمُؤْمِنُ يَدْخُلُ الْمَسْجِدَ وَيَقْرَأُ الْقُرْآنَ. هُوَ عَابِدٌ ذَاكِرٌ.",
+    "unvowelled": "الذكر عبادة والدعاء عبادة. المؤمن يدخل المسجد ويقرأ القرآن. هو عابد ذاكر.",
+    "translit": "adh-dhikru ʿibādatun wa-d-duʿāʾu ʿibādatun. al-muʾminu yadkhulu al-masjida wa-yaqraʾu al-qurʾāna. huwa ʿābidun dhākirun.",
+    "en": "Remembrance is worship and supplication is worship. The believer enters the mosque and reads the Quran. He is a worshipper who remembers God.",
+    "notes": "B1 unvowelled-reading passage (Quranic/devotional track). ORIGINAL devotional sentences — not a Qur'anic quotation, so no muṣḥaf check needed.",
+    "level": "B1",
+    "skills": [
+      "reading"
+    ],
+    "prereqs": []
   }
 ]
