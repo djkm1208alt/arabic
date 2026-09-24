@@ -800,5 +800,49 @@
       "gr:verbal-sentence",
       "gr:maful-mutlaq"
     ]
+  },
+  {
+    "id": "gr:passive",
+    "kind": "grammar",
+    "level": "B2",
+    "name": "The passive (الْمَبْنِي لِلْمَجْهُول)",
+    "rule": "الْمَبْنِي لِلْمَجْهُول (\"built for the unknown\") is the passive — the doer is not named. You do not add a word; you change the verb's vowels. In the past tense the first letter takes ḍamma and the letter before the last takes kasra: كَتَبَ (\"he wrote\") → كُتِبَ (\"it was written\"); فَتَحَ → فُتِحَ; خَلَقَ → خُلِقَ. In the present, the prefix takes ḍamma and the letter before the last takes fatḥa: يَكْتُبُ → يُكْتَبُ. The thing the action happened to then steps into the subject's place and takes the nominative — it is called نَائِب الْفَاعِل (\"the stand-in for the doer\"): كُتِبَتِ الرِّسَالَةُ, خُلِقَ الْإِنْسَانُ ضَعِيفًا. The original doer is simply not mentioned; that is the point of the construction.",
+    "examples": [
+      "txt:gram-passive-letter",
+      "txt:gram-passive-door",
+      "txt:quran-baqarah-183-passive",
+      "txt:quran-nisa-28-passive"
+    ],
+    "commonErrors": [
+      "Reading a passive verb as active because the ḥarakāt were not written — unvowelled كتب could be كَتَبَ (\"he wrote\") or كُتِبَ (\"it was written\"); the sentence decides.",
+      "Leaving نَائِب الْفَاعِل in the accusative: it takes the NOMINATIVE, because it now occupies the subject's position — كُتِبَتِ الرِّسَالَةُ, not الرِّسَالَةَ.",
+      "Trying to name the doer inside the passive (\"was written BY the student\") — if the doer is to be named, Arabic normally uses the active voice instead."
+    ],
+    "skills": [
+      "grammar"
+    ],
+    "prereqs": []
+  },
+  {
+    "id": "gr:conditional",
+    "kind": "grammar",
+    "level": "B2",
+    "name": "The conditional sentence (جُمْلَة الشَّرْط)",
+    "rule": "A conditional sentence has two halves: the condition (الشَّرْط) and its answer (جَوَاب الشَّرْط). With إِنْ (\"if\"), and with مَنْ (\"whoever\") and مَا (\"whatever\") used conditionally, BOTH verbs go into the jussive (مَجْزُوم): إِنْ تَقْرَأْ تَعْلَمْ (\"if you read, you will know\"); فَمَنْ يَعْمَلْ مِثْقَالَ ذَرَّةٍ خَيْرًا يَرَهُ. إِذَا (\"when / if\") behaves differently — it normally takes a past-form verb in the condition, and its answer is often linked with فَ: إِذَا سَافَرْتَ فَاكْتُبْ لِي. Use إِنْ for something that may or may not happen; use إِذَا for something expected to happen.",
+    "examples": [
+      "txt:gram-conditional-read",
+      "txt:gram-conditional-travel",
+      "txt:quran-zalzalah-7-conditional",
+      "txt:quran-baqarah-197-conditional"
+    ],
+    "commonErrors": [
+      "Leaving the verbs in the indicative after إِنْ — both the شَرْط and the جَوَاب take the jussive: إِنْ تَقْرَأْ تَعْلَمْ, not إِنْ تَقْرَأُ تَعْلَمُ.",
+      "Treating إِذَا like إِنْ — إِذَا normally takes a past-form verb and often links its answer with فَ.",
+      "Forgetting that مَنْ and مَا can be conditional, not only interrogative: مَنْ يَعْمَلْ… is \"whoever does…\", not \"who does…?\"."
+    ],
+    "skills": [
+      "grammar"
+    ],
+    "prereqs": []
   }
 ]

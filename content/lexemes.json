@@ -7679,5 +7679,92 @@
     ],
     "prereqs": [],
     "notes": "Passive participle (ism mafʿūl) of ع-م-ل."
+  },
+  {
+    "id": "lex:prt-43",
+    "kind": "lexeme",
+    "ar": "إِنْ",
+    "translit": "in",
+    "en": "if (conditional)",
+    "pos": "particle",
+    "topic": "particles",
+    "level": "B2",
+    "emphasisTag": "both",
+    "example": {
+      "ar": "إِنْ تَقْرَأْ تَعْلَمْ.",
+      "en": "If you read, you will know."
+    },
+    "fr": "si",
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": [],
+    "notes": "Conditional particle; both verbs take the jussive. Distinct from إِنَّ (\"indeed\", lex:prt-32)."
+  },
+  {
+    "id": "lex:prt-44",
+    "kind": "lexeme",
+    "ar": "إِذَا",
+    "translit": "idhā",
+    "en": "when / if",
+    "pos": "particle",
+    "topic": "particles",
+    "level": "B2",
+    "emphasisTag": "both",
+    "example": {
+      "ar": "إِذَا سَافَرْتَ فَاكْتُبْ لِي.",
+      "en": "When you travel, write to me."
+    },
+    "fr": "quand / si",
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": [],
+    "notes": "Conditional particle for something expected; normally takes a past-form verb, answer often linked with فَ."
+  },
+  {
+    "id": "lex:wor-10",
+    "kind": "lexeme",
+    "ar": "صِيَام",
+    "translit": "ṣiyām",
+    "en": "fasting",
+    "pos": "noun",
+    "topic": "worship",
+    "level": "B2",
+    "emphasisTag": "quranic",
+    "example": {
+      "ar": "كُتِبَ عَلَيْكُمُ الصِّيَامُ.",
+      "en": "Fasting has been prescribed for you."
+    },
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": [],
+    "notes": "Verbal noun (maṣdar) of ص-و-م."
+  },
+  {
+    "id": "lex:adj-22",
+    "kind": "lexeme",
+    "ar": "ضَعِيف",
+    "translit": "ḍaʿīf",
+    "en": "weak",
+    "pos": "adjective",
+    "topic": "adjectives",
+    "level": "B2",
+    "emphasisTag": "both",
+    "example": {
+      "ar": "خُلِقَ الْإِنْسَانُ ضَعِيفًا.",
+      "en": "The human being was created weak."
+    },
+    "fr": "faible",
+    "tags": [],
+    "skills": [
+      "vocabulary"
+    ],
+    "prereqs": [],
+    "notes": "Adjective on the فَعِيل pattern (root ض-ع-ف)."
   }
 ]

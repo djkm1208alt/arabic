@@ -6218,5 +6218,133 @@
       "reading"
     ],
     "prereqs": []
+  },
+  {
+    "id": "txt:quran-baqarah-183-passive",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m20",
+    "emphasisTag": "quranic",
+    "vowelled": "كُتِبَ عَلَيْكُمُ الصِّيَامُ",
+    "translit": "kutiba ʿalaykumu ṣ-ṣiyāmu",
+    "en": "Fasting has been prescribed for you.",
+    "notes": "Qur'an 2:183 (partial). Passive كُتِبَ with الصِّيَامُ as نَائِب الْفَاعِل. Qur'anic quotation supplied by the user 2026-09-24. English is an ORIGINAL literal working gloss (NOT a published translation — see the copyright constraint). VERIFY orthography and ḥarakāt against a muṣḥaf before merge.",
+    "level": "B2",
+    "skills": [
+      "reading"
+    ],
+    "prereqs": []
+  },
+  {
+    "id": "txt:quran-nisa-28-passive",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m20",
+    "emphasisTag": "quranic",
+    "vowelled": "خُلِقَ الْإِنْسَانُ ضَعِيفًا",
+    "translit": "khuliqa l-insānu ḍaʿīfan",
+    "en": "The human being was created weak.",
+    "notes": "Qur'an 4:28 (partial; in the muṣḥaf it follows a connecting wāw). Passive خُلِقَ with الْإِنْسَانُ as نَائِب الْفَاعِل and ضَعِيفًا as حَال. Qur'anic quotation supplied by the user 2026-09-24. English is an ORIGINAL literal working gloss (NOT a published translation — see the copyright constraint). VERIFY orthography and ḥarakāt against a muṣḥaf before merge.",
+    "level": "B2",
+    "skills": [
+      "reading"
+    ],
+    "prereqs": []
+  },
+  {
+    "id": "txt:quran-zalzalah-7-conditional",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m20",
+    "emphasisTag": "quranic",
+    "vowelled": "فَمَنْ يَعْمَلْ مِثْقَالَ ذَرَّةٍ خَيْرًا يَرَهُ",
+    "translit": "fa-man yaʿmal mithqāla dharratin khayran yarah",
+    "en": "So whoever does an atom's weight of good will see it.",
+    "notes": "Qur'an 99:7. Conditional مَنْ with BOTH verbs jussive — يَعْمَلْ (شَرْط) and يَرَهُ (جَوَاب). Qur'anic quotation supplied by the user 2026-09-24. English is an ORIGINAL literal working gloss (NOT a published translation — see the copyright constraint). VERIFY orthography and ḥarakāt against a muṣḥaf before merge.",
+    "level": "B2",
+    "skills": [
+      "reading"
+    ],
+    "prereqs": []
+  },
+  {
+    "id": "txt:quran-baqarah-197-conditional",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m20",
+    "emphasisTag": "quranic",
+    "vowelled": "وَمَا تَفْعَلُوا مِنْ خَيْرٍ يَعْلَمْهُ اللهُ",
+    "translit": "wa-mā tafʿalū min khayrin yaʿlamhu llāhu",
+    "en": "And whatever good you do, God knows it.",
+    "notes": "Qur'an 2:197 (partial). Conditional مَا with both verbs jussive — تَفْعَلُوا (شَرْط) and يَعْلَمْهُ (جَوَاب). Qur'anic quotation supplied by the user 2026-09-24. English is an ORIGINAL literal working gloss (NOT a published translation — see the copyright constraint). VERIFY orthography and ḥarakāt against a muṣḥaf before merge.",
+    "level": "B2",
+    "skills": [
+      "reading"
+    ],
+    "prereqs": []
+  },
+  {
+    "id": "txt:gram-passive-letter",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m20",
+    "emphasisTag": "general",
+    "vowelled": "كُتِبَتِ الرِّسَالَةُ",
+    "translit": "kutibati r-risālatu",
+    "en": "The letter was written.",
+    "notes": "Passive of كَتَبَ; الرِّسَالَةُ is نَائِب الْفَاعِل. Original example sentence.",
+    "level": "B2",
+    "skills": [
+      "reading"
+    ],
+    "prereqs": []
+  },
+  {
+    "id": "txt:gram-passive-door",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m20",
+    "emphasisTag": "general",
+    "vowelled": "فُتِحَ الْبَابُ",
+    "translit": "futiḥa l-bābu",
+    "en": "The door was opened.",
+    "notes": "Passive of فَتَحَ; الْبَابُ is نَائِب الْفَاعِل. Original example sentence.",
+    "level": "B2",
+    "skills": [
+      "reading"
+    ],
+    "prereqs": []
+  },
+  {
+    "id": "txt:gram-conditional-read",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m20",
+    "emphasisTag": "general",
+    "vowelled": "إِنْ تَقْرَأْ تَعْلَمْ",
+    "translit": "in taqraʾ taʿlam",
+    "en": "If you read, you will know.",
+    "notes": "Conditional إِنْ with both verbs jussive — تَقْرَأْ (شَرْط) and تَعْلَمْ (جَوَاب). Original example sentence.",
+    "level": "B2",
+    "skills": [
+      "reading"
+    ],
+    "prereqs": []
+  },
+  {
+    "id": "txt:gram-conditional-travel",
+    "kind": "text",
+    "textType": "sentence",
+    "source": "m20",
+    "emphasisTag": "general",
+    "vowelled": "إِذَا سَافَرْتَ فَاكْتُبْ لِي",
+    "translit": "idhā sāfarta fa-ktub lī",
+    "en": "When you travel, write to me.",
+    "notes": "Conditional إِذَا takes a past-form verb in the شَرْط, and its جَوَاب is linked with فَ — here an imperative. Original example sentence.",
+    "level": "B2",
+    "skills": [
+      "reading"
+    ],
+    "prereqs": []
   }
 ]
