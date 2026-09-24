@@ -1,0 +1,113 @@
+{
+  "id": "b1-dual-listening",
+  "unitId": "b1-u5",
+  "curriculumLessonId": "b1-dual-listening",
+  "title": "Listening to Standard Arabic",
+  "level": "B1",
+  "skills": ["listening", "comprehension"],
+  "objectives": ["gr:present-tense", "lex:sch-24", "lex:wor-3"],
+  "emphasisTag": "both",
+  "fr": { "title": "Écouter l'arabe standard" },
+  "steps": [
+    {
+      "type": "explain",
+      "title": "Understand it by ear",
+      "body": [
+        "Now without the text in front of you. Press ▶, listen to the whole sentence, and choose what it means.",
+        "Listen for the shapes you know: the يـ prefix of the present tense, the long ا of a doer (عَالِم), the ـة ending of an action-noun (قِرَاءَة).",
+        "The voice here is synthesized by your device, not a native speaker — it is a practice aid, not a pronunciation model."
+      ],
+      "fr": {
+        "title": "Comprendre à l'oreille",
+        "body": [
+          "Cette fois sans le texte sous les yeux. Appuyez sur ▶, écoutez toute la phrase, puis choisissez ce qu'elle signifie.",
+          "Écoutez les formes que vous connaissez : le préfixe يـ du présent, le ا long de l'auteur (عَالِم), la terminaison ـة du nom d'action (قِرَاءَة).",
+          "La voix est synthétisée par votre appareil, ce n'est pas un locuteur natif — c'est une aide, pas un modèle de prononciation."
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "What did you hear?",
+      "fr": { "title": "Qu'avez-vous entendu ?" },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "listen-choose-meaning",
+        "skill": "listening",
+        "objectIds": ["gr:present-tense"],
+        "prompt": "Listen, then choose what the sentence means.",
+        "fr": { "prompt": "Écoutez, puis choisissez le sens de la phrase." },
+        "variants": {
+          "general": {
+            "audioText": "الطَّالِبُ يَدْخُلُ الْمَكْتَبَةَ وَيَقْرَأُ كِتَابًا جَدِيدًا.",
+            "options": [
+              { "label": "The student enters the library and reads a new book.", "correct": true },
+              { "label": "The student left the library and wrote a book.", "correct": false },
+              { "label": "The teacher enters the school and asks a question.", "correct": false }
+            ],
+            "explanation": "يَدْخُلُ and يَقْرَأُ are both present tense — he enters and reads, not entered and wrote.",
+            "fr": { "explanation": "يَدْخُلُ et يَقْرَأُ sont au présent — il entre et il lit, non pas il est entré et il a écrit." }
+          },
+          "quranic": {
+            "audioText": "الْمُؤْمِنُ يَدْخُلُ الْمَسْجِدَ وَيَقْرَأُ الْقُرْآنَ.",
+            "options": [
+              { "label": "The believer enters the mosque and reads the Quran.", "correct": true },
+              { "label": "The believer left the mosque after the prayer.", "correct": false },
+              { "label": "The worshipper seeks forgiveness and supplicates.", "correct": false }
+            ],
+            "explanation": "يَدْخُلُ and يَقْرَأُ are both present tense — he enters and reads.",
+            "fr": { "explanation": "يَدْخُلُ et يَقْرَأُ sont au présent — il entre et il lit." }
+          },
+          "both": {
+            "audioText": "الْقِرَاءَةُ عِلْمٌ وَالْكِتَابَةُ عَمَلٌ.",
+            "options": [
+              { "label": "Reading is knowledge and writing is work.", "correct": true },
+              { "label": "The reader is a scholar and the writer is a worker.", "correct": false },
+              { "label": "He reads knowledge and writes work.", "correct": false }
+            ],
+            "explanation": "قِرَاءَة and كِتَابَة are action-nouns (maṣdar) — “reading” and “writing”, not “reader” and “writer” (قَارِئ / كَاتِب).",
+            "fr": { "explanation": "قِرَاءَة et كِتَابَة sont des noms d'action (maṣdar) — « la lecture » et « l'écriture », non « le lecteur » et « l'écrivain » (قَارِئ / كَاتِب)." }
+          }
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "title": "One more",
+      "fr": { "title": "Encore une" },
+      "exercise": {
+        "kind": "choice",
+        "drillType": "listen-choose-meaning",
+        "skill": "listening",
+        "objectIds": ["gr:root-pattern"],
+        "audioText": "هُوَ عَالِمٌ كَبِيرٌ.",
+        "prompt": "Listen, then choose what the sentence means.",
+        "options": [
+          { "label": "He is a great scholar.", "correct": true },
+          { "label": "He has great knowledge.", "correct": false },
+          { "label": "This is well known.", "correct": false }
+        ],
+        "explanation": "عَالِم (with the long ا) is the doer — “a scholar”. “Knowledge” would be عِلْم; “known” would be مَعْلُوم.",
+        "fr": {
+          "prompt": "Écoutez, puis choisissez le sens de la phrase.",
+          "explanation": "عَالِم (avec le ا long) est l'auteur — « un savant ». « Le savoir » serait عِلْم ; « connu » serait مَعْلُوم."
+        }
+      }
+    },
+    {
+      "type": "listen-repeat",
+      "word": {
+        "arabic": "الْقِرَاءَةُ عِلْمٌ",
+        "translit": "al-qirāʾatu ʿilmun",
+        "english": "Reading is knowledge."
+      }
+    },
+    {
+      "type": "complete",
+      "title": "You understood it by ear",
+      "message": "You took in whole B1 sentences by listening alone — catching the present-tense prefix and telling an action-noun from a doer — then said one aloud yourself.",
+      "finishLabel": "Finish",
+      "fr": { "title": "Vous avez compris à l'oreille", "message": "Vous avez saisi des phrases B1 entières à l'écoute seule — en repérant le préfixe du présent et en distinguant un nom d'action d'un auteur — puis vous en avez prononcé une.", "finishLabel": "Terminer" }
+    }
+  ]
+}

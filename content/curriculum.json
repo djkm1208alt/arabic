@@ -329,7 +329,7 @@
         "listening",
         "comprehension"
       ],
-      "status": "planned",
+      "status": "available",
       "prereqs": [
         "a2-u6"
       ]
@@ -3046,6 +3046,29 @@
       "fr": {
         "title": "Lire sans ḥarakāt",
         "blurb": "Lisez un passage B1 tel que l'arabe s'écrit vraiment — sans voyelles — en fournissant vous-même les voyelles d'après la racine et le schème."
+      }
+    },
+    {
+      "id": "b1-dual-listening",
+      "unitId": "b1-u5",
+      "order": 1,
+      "title": "Listening to Standard Arabic",
+      "blurb": "Take in whole B1 sentences by ear alone — catch the present-tense prefix and tell an action-noun from a doer.",
+      "level": "B1",
+      "skills": [
+        "listening",
+        "comprehension"
+      ],
+      "objectives": [
+        "gr:present-tense",
+        "lex:sch-24",
+        "lex:wor-3"
+      ],
+      "status": "available",
+      "source": "steps:b1-dual-listening",
+      "fr": {
+        "title": "Écouter l'arabe standard",
+        "blurb": "Saisissez des phrases B1 entières à l'oreille — repérez le préfixe du présent et distinguez un nom d'action d'un auteur."
       }
     }
   ]
