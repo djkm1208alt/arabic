@@ -70,3 +70,23 @@ curriculum content. It is **not** part of the app, is **not** committed
 reference source: read it, understand it, then write original curriculum
 content, going through the normal scope-doc process for anything
 non-trivial.
+
+Known files currently there (present only on the user's local machine —
+this repo's remote history never has them, so don't expect them to exist
+in a fresh clone or a cloud sandbox checkout):
+
+- `reference/iraablessons1.pdf` — iʿrāb (Arabic grammatical case-ending
+  analysis) lessons, part 1.
+- `reference/iraablessons2.pdf` — iʿrāb lessons, part 2.
+
+There is no automatic full-text ingestion of these — Claude Code has no
+persistent "project knowledge" store that pre-loads a PDF's whole content
+into every session's context. The practical way to make a session actually
+useful against them: ask it to read the specific PDF and the specific
+`content/*.json` file(s) you're checking, in the same request (e.g. "check
+`reference/iraablessons1.pdf` lesson 3 against the case-ending coverage in
+`content/grammar.json`"). If you want durable, low-cost recall across many
+future sessions, ask a session to distill what it reads into a short
+`reference/iraab-notes.md` (also gitignored) — a session can then read
+that notes file in a couple seconds instead of re-parsing the full PDFs
+each time.
